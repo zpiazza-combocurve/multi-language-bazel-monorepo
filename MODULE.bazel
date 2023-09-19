@@ -5,11 +5,17 @@ module(
 
 bazel_dep(name = "rules_python", version = "0.25.0")
 
-pip = use_extension("@rules_python//python/extensions:pip.bzl", "pip")
+python = use_extension("@rules_python//python/extensions:python.bzl", "python")
+python.toolchain(
+    configure_coverage_tool = True,
+    python_version = "3.9",
+)
 
+pip = use_extension("@rules_python//python/extensions:pip.bzl", "pip")
 pip.parse(
     name = "pip",
     requirements_lock = "//:requirements_lock.txt",
+    requirements_windows = "//:requirements_windows.txt",
 )
 
 use_repo(pip, "pip")
