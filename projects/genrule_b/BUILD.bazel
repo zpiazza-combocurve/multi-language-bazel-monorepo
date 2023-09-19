@@ -1,5 +1,0 @@
-genrule(
-    name = "bar",
-    outs = ["bar.txt"],
-    cmd_bash = "sleep 3 && echo 'Hello Globe!' >$@",
-)
