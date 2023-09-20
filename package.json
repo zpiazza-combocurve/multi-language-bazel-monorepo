@@ -31,5 +31,8 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/zpiazza-combocurve/multi-language-bazel-monorepo.git"
+  },
+  "volta": {
+    "node": "20.6.1"
   }
 }
