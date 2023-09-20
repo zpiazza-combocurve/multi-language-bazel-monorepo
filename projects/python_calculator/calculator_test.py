@@ -13,6 +13,10 @@ class TestSum(unittest.TestCase):
   def test_sum_zero(self):
     calculator = Calculator()
     self.assertEqual(calculator.add(0, 0), 0)
+  
+  def test_sum_float(self):
+    calculator = Calculator()
+    self.assertEqual(calculator.add(1.5, 2.5), 4)
 
 if __name__ == '__main__':
   unittest.main()
