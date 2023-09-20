@@ -1,0 +1,2 @@
+build --enable_runfiles
+startup --windows_enable_symlinks
