@@ -12,7 +12,7 @@ import (
 
 func YourHandler(w http.ResponseWriter, r *http.Request) {
 	log.Println("Received request")
-	w.Write([]byte(go_hello_world.HelloWorld() + " Bazoku is cool!!"))
+	w.Write([]byte(go_hello_world.HelloWorld() + " Bazoku is SUPER cool!!"))
 }
 
 func getPort() string {
