@@ -22,7 +22,7 @@ def hello2():
 
 @app.route('/hello3')
 def hello3():
-  num1 = randint(0, 100)
+  num1 = randint(0, 10)
   num2 = randint(0, 100)
   message = "Elementary my dear Watson... {} + {} = {}?".format(num1, num2, my_calculator.add(num1, num2))
   return message
