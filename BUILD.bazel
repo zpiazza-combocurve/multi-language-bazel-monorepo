@@ -26,4 +26,4 @@ gazelle(
     command = "update-repos",
 )
 
-npm_link_all_packages(name = "npm")
+npm_link_all_packages(name = "node_modules")

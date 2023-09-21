@@ -1,0 +1,18 @@
+export const discountDetails = [
+	'0% Discount Cash Flow (M$)',
+	'2% Discount Cash Flow (M$)',
+	'5% Discount Cash Flow (M$)',
+	'8% Discount Cash Flow (M$)',
+	'10% Discount Cash Flow (M$)',
+	'12% Discount Cash Flow (M$)',
+	'15% Discount Cash Flow (M$)',
+	'20% Discount Cash Flow (M$)',
+	'25% Discount Cash Flow (M$)',
+	'30% Discount Cash Flow (M$)',
+	'40% Discount Cash Flow (M$)',
+	'50% Discount Cash Flow (M$)',
+	'60% Discount Cash Flow (M$)',
+	'70% Discount Cash Flow (M$)',
+	'80% Discount Cash Flow (M$)',
+	'100% Discount Cash Flow (M$)',
+];

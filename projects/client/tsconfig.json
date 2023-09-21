@@ -1,0 +1,41 @@
+{
+	"compilerOptions": {
+		"target": "esnext",
+		"module": "commonjs",
+
+		"allowJs": true,
+		"checkJs": false,
+		"jsx": "react-jsx",
+
+		"rootDirs": ["./src", "./tests", "../internal-api/src/inpt-shared", "../packages/factories/src"],
+
+		"noEmit": true,
+
+		"strict": true,
+		"noImplicitAny": false,
+		"useUnknownInCatchVariables": false,
+		"noUnusedLocals": false,
+
+		"moduleResolution": "node",
+		"baseUrl": "./",
+
+		"lib": ["esnext", "webworker", "dom", "dom.iterable"],
+
+		"paths": {
+			"@/factories/*": ["../packages/factories/src/*"],
+			"@/inpt-shared/*": ["../internal-api/src/inpt-shared/*"],
+			"@/tests/*": ["./tests/*"],
+			"@/*": ["./src/*"],
+			"@combocurve/forecast/models": ["../packages/forecast/src/models/index.ts"],
+			"@combocurve/forecast/helpers": ["../packages/forecast/src/helpers/index.ts"],
+			"@combocurve/types/*": ["../packages/types/src/*"]
+		},
+
+		"esModuleInterop": true,
+
+		"resolveJsonModule": true,
+		"skipLibCheck": true,
+		"forceConsistentCasingInFileNames": true
+	},
+	"exclude": ["build", "node_modules", "playground"]
+}

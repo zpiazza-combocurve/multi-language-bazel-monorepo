@@ -1,0 +1,8 @@
+.dialog {
+	width: 296px;
+	height: 468px;
+
+	> :global(.MuiBackdrop-root) {
+		display: none;
+	}
+}

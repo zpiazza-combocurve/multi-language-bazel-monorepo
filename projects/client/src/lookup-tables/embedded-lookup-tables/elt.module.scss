@@ -1,0 +1,84 @@
+.drag {
+	cursor: move;
+	margin-right: 1rem;
+	padding: 0 6px;
+}
+
+.lookup-rules {
+	.lookup-rules-table {
+		height: 100%;
+	}
+}
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+}
+
+.box {
+	display: flex;
+	flex-direction: column;
+	/* Use box-sizing so that element's outerwidth will match width property */
+	box-sizing: border-box;
+
+	/* Allow box to grow and shrink, and ensure they are all equally sized */
+	flex: 1 1 auto;
+}
+
+.handler {
+	cursor: ns-resize;
+	padding: 1rem 0 1rem 0;
+}
+
+.select-headers-dialog {
+	.select-headers-dialog-title,
+	.header-row,
+	.select-headers-dialog-actions,
+	.justified-content {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	:global(.MuiDialogTitle-root) {
+		padding-bottom: 0;
+	}
+
+	.select-headers-dialog-actions {
+		padding: 24px;
+	}
+
+	.select-header,
+	.select-behavior {
+		:global(.MuiAutocomplete-inputRoot[class*='MuiOutlinedInput-root']) {
+			padding-top: 0;
+			padding-bottom: 0;
+		}
+	}
+
+	.select-header {
+		width: 280px;
+	}
+
+	.select-behavior {
+		margin-left: 1rem;
+		width: 170px;
+	}
+
+	.header-row {
+		margin-bottom: 1.5rem;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	.header-row-desc {
+		margin-top: 3rem;
+		margin-bottom: 0;
+	}
+
+	:global(hr.MuiDivider-root) {
+		margin-top: 1rem;
+		margin-bottom: 1.5rem;
+	}
+}

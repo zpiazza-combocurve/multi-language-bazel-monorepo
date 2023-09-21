@@ -1,0 +1,32 @@
+@use '~@ag-grid-community/styles' as ag;
+
+// https://www.ag-grid.com/react-data-grid/global-style-customisation-sass/
+// configures the alpine theme with combocurve colors, this is meant to be used with ag grid > 28
+// only applies the theme under the cc-ag-grid-modules class
+
+body.light .cc-ag-grid-modules {
+	@include ag.grid-styles(
+		(
+			theme: 'cc',
+			extend-theme: 'alpine',
+		)
+	);
+}
+
+body.dark .cc-ag-grid-modules {
+	@include ag.grid-styles(
+		(
+			theme: 'cc',
+			extend-theme: 'alpine-dark',
+		)
+	);
+}
+
+.cc-ag-grid-modules {
+	.ag-theme-alpine,
+	.ag-theme-alpine-dark {
+		--ag-background-color: var(--background);
+		--ag-odd-row-background-color: var(--background-opaque);
+		--ag-header-background-color: var(--background);
+	}
+}

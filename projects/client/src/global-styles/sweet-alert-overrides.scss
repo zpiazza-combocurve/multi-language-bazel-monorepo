@@ -1,0 +1,256 @@
+@import 'vars.scss';
+
+body.swal2-shown.swal2-height-auto {
+	height: 100vh !important;
+}
+
+// https://github.com/sweetalert2/sweetalert2/issues/665
+.swal2-container.swal2-container {
+	z-index: 3000;
+}
+
+.swal2-modal,
+.swal2-input,
+.swal2-container .swal2-popup,
+.swal2-popup .swal2-title,
+.swal2-popup .swal2-content {
+	color: $color;
+	background-color: $background;
+}
+
+.swal2-container .swal2-popup .swal2-title {
+	word-wrap: anywhere;
+}
+
+.swal2-modal.swal2-generic-failure-alert {
+	// $reduction-factor: 1.2;
+	padding: 1.25rem 3rem;
+	width: unset;
+	.swal2-header {
+		padding: 0;
+		.swal2-title {
+			font-size: 1.5rem;
+			margin: 0 0 0.5rem 0;
+		}
+		// keeping in case we want the icon back, this block adjusts its size based on the reduction-factor
+		// .swal2-icon {
+		// 	border-width: 0.25rem;
+		// 	height: calc(5rem / #{$reduction-factor});
+		// 	line-height: calc(5rem / #{$reduction-factor});
+		// 	margin: 0 0 1rem 0;
+		// 	width: calc(5rem / #{$reduction-factor});
+		// 	.swal2-x-mark {
+		// 		.swal2-x-mark-line-left,
+		// 		.swal2-x-mark-line-right {
+		// 			height: calc(0.3125rem / #{$reduction-factor});
+		// 			top: calc(2.3125rem / #{$reduction-factor});
+		// 			width: calc(2.9375rem / #{$reduction-factor});
+		// 		}
+		// 		.swal2-x-mark-line-left {
+		// 			left: calc(1.0625rem / #{$reduction-factor});
+		// 		}
+		// 		.swal2-x-mark-line-right {
+		// 			right: calc(1rem / #{$reduction-factor});
+		// 		}
+		// 	}
+		// 	}
+	}
+	.swal2-actions {
+		flex-direction: column;
+		margin-top: 2rem !important;
+		button.swal2-cancel {
+			background-color: $purple !important;
+			text-transform: unset;
+		}
+		button.swal2-confirm {
+			background-color: unset !important;
+			border: none !important;
+			border-bottom: 1px solid !important;
+			border-radius: 0 !important;
+			box-shadow: none !important;
+			color: $color !important;
+			margin-top: 0.5rem !important;
+			text-transform: unset;
+			&:hover {
+				background-image: none !important;
+			}
+		}
+	}
+}
+
+.swal2-popup.swal2-success-alert {
+	.swal2-success-circular-line-left,
+	.swal2-success-fix,
+	.swal2-success-circular-line-right {
+		display: none;
+	}
+	.swal2-success-line-tip,
+	.swal2-success-line-long {
+		background-color: $primary !important;
+	}
+	.swal2-success-ring {
+		border-color: $primary !important;
+	}
+}
+
+.swal2-toast.swal2-success-toast {
+	border: 2px solid $primary;
+
+	.swal2-success-ring {
+		border: 0.25em solid rgba($primary--rgb, 0.3) !important;
+	}
+
+	.swal2-icon.swal2-success [class^='swal2-success-line'] {
+		background-color: rgba($primary--rgb, 1) !important;
+	}
+
+	.swal2-icon.swal2-success {
+		border-color: $primary !important;
+	}
+}
+
+.swal2-toast.swal2-failure-toast {
+	border: 2px solid $warning;
+}
+
+.swal2-toast.swal2-warning-toast {
+	border: 2px solid $warning-alternative;
+
+	.swal2-icon-text {
+		font-size: 2em !important;
+	}
+
+	.swal2-icon.swal2-warning {
+		color: $warning-alternative;
+		border-color: rgba($warning-alternative, 0.5);
+	}
+}
+
+.swal2-popup .swal2-icon.swal2-error {
+	border-color: $warning;
+}
+
+.swal2-popup .swal2-icon.swal2-error [class^='swal2-x-mark-line'] {
+	background-color: $warning;
+}
+
+.swal2-confirm {
+	background-color: $primary !important;
+}
+
+.swal2-icon-text {
+	font-size: 3.75em !important;
+}
+
+.swal2-info-toast .swal2-icon-text {
+	font-size: 2em !important;
+}
+
+.swal2-info-toast.swal2-popup {
+	.swal2-actions {
+		margin-top: 0px !important;
+		button.swal2-confirm {
+			background-color: #3fc3ee !important;
+		}
+	}
+}
+
+.swal2-textarea {
+	display: none !important;
+}
+
+.swal2-footer {
+	flex-direction: column;
+	text-align: center;
+}
+
+.swal2-content {
+	font-weight: 500 !important;
+	font-size: 1.1rem !important;
+}
+
+.swal2-container {
+	/* Change Autocomplete styles in Chrome*/
+	input:-webkit-autofill,
+	input:-webkit-autofill:hover,
+	input:-webkit-autofill:focus,
+	textarea:-webkit-autofill,
+	textarea:-webkit-autofill:hover,
+	textarea:-webkit-autofill:focus,
+	select:-webkit-autofill,
+	select:-webkit-autofill:hover,
+	select:-webkit-autofill:focus {
+		caret-color: $color;
+		-webkit-text-fill-color: $color;
+		-webkit-box-shadow: 0 0 0px 1000px transparent inset;
+		transition: background-color 5000s ease-in-out 0s;
+	}
+}
+
+.swal2-popup.swal2-toast .swal2-header button.swal2-close {
+	line-height: 0.4;
+	align-items: baseline;
+}
+
+.swal2-popup .swal2-actions {
+	margin: 30px 0 0 !important;
+	justify-content: space-evenly !important;
+}
+
+.swal2-input:focus {
+	transform-origin: left !important;
+	border-bottom: 1px solid $secondary !important;
+	transition: border-bottom 1s ease !important;
+}
+
+.swal2-progresssteps .swal2-progresscircle,
+.swal2-progresssteps .swal2-progressline,
+.swal2-progresssteps .swal2-progresscircle.swal2-activeprogressstep {
+	background: $secondary !important;
+}
+
+.swal2-progresssteps .swal2-progresscircle.swal2-activeprogressstep ~ .swal2-progressline,
+.swal2-progresssteps .swal2-progresscircle.swal2-activeprogressstep ~ .swal2-progresscircle {
+	background: #cec7dc !important;
+}
+
+.swal2-actions.swal2-loading .swal2-confirm,
+.swal2-actions.swal2-loading .swal2-styled {
+	height: 2.5em !important;
+	border-left-color: $secondary !important;
+	border-right-color: $secondary !important;
+}
+
+.swal2-input {
+	width: 90%;
+	display: flex;
+	box-shadow: none !important;
+	border-radius: 0 !important;
+	border-top: none !important;
+	border-left: none !important;
+	border-right: none !important;
+	padding-left: 10px !important;
+	border-bottom: 1px solid #cecbcb !important;
+}
+
+.swal2-cancel,
+.swal2-actions:not(.swal2-loading) .swal2-styled,
+.swal2-actions:not(.swal2-loading) .swal2-confirm {
+	height: 36px;
+	font-size: 1rem;
+	min-width: 64px;
+	font-weight: 600;
+	line-height: 1.4em;
+	border-radius: 4px;
+	margin: 0 !important;
+	box-sizing: border-box;
+	color: white !important;
+	text-transform: uppercase;
+	padding: 0px 16px !important;
+	letter-spacing: 1px !important;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important;
+	transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+		box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+	box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14),
+		0px 3px 1px -2px rgba(0, 0, 0, 0.12) !important;
+}

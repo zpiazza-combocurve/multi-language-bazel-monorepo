@@ -1,0 +1,74 @@
+@use '~ag-grid-community/src/styles/ag-grid.scss';
+@use '~ag-grid-community/src/styles/ag-theme-alpine/sass/ag-theme-alpine-mixin.scss' as ag-theme-alpine;
+@use '~ag-grid-community/src/styles/ag-theme-alpine-dark/sass/ag-theme-alpine-dark-mixin.scss' as ag-theme-alpine-dark;
+
+@import '../global-styles/themes-colors';
+
+$cc-ag-combocurve-basic: (
+	grid-size: 6px,
+	input-focus-box-shadow: null,
+	input-focus-border-color: null,
+	value-change-value-highlight-background-color: ag-theme-alpine.ag-derived(range-selection-highlight-color),
+);
+
+$cc-ag-combocurve-dark: (
+	foreground-color: $dark-text-color,
+	data-color: $dark-text-color,
+	secondary-foreground-color: $dark-text-color-secondary,
+	background-color: $dark-background,
+	header-background-color: $dark-background,
+	subheader-background-color: $dark-background,
+	subheader-toolbar-background-color: $dark-background,
+	control-panel-background-color: $dark-background,
+	odd-row-background-color: $dark-background-opaque,
+);
+
+$cc-ag-combocurve-light: (
+	foreground-color: $light-text-color,
+	data-color: $light-text-color,
+	secondary-foreground-color: $light-text-color-secondary,
+	background-color: $light-background,
+	header-background-color: $light-background,
+	subheader-background-color: $light-background,
+	subheader-toolbar-background-color: $light-background,
+	control-panel-background-color: $light-background,
+	odd-row-background-color: $light-background-opaque,
+);
+
+body.light .ag-theme-combocurve {
+	@include ag-theme-alpine.ag-theme-alpine(map-merge($cc-ag-combocurve-basic, $cc-ag-combocurve-light));
+}
+
+body.dark .ag-theme-combocurve {
+	@include ag-theme-alpine-dark.ag-theme-alpine-dark(map-merge($cc-ag-combocurve-basic, $cc-ag-combocurve-dark));
+}
+
+.ag-theme-combocurve {
+	.ag-column-select-indent-1 {
+		padding-left: 32px;
+	}
+
+	.ag-column-select-header-filter-wrapper {
+		padding-left: 8px;
+	}
+
+	.ag-column-select-column-group-drag-handle,
+	.ag-column-select-column-drag-handle {
+		padding-left: 4px;
+		padding-right: 4px;
+	}
+}
+
+// For popups that are anchored to the body and are inside dialogs, these aesthetic adjustments are needed
+// see https://www.ag-grid.com/react-data-grid/context-menu/#popup-parent
+body {
+	> .ag-popup {
+		> .ag-menu {
+			z-index: 9999;
+			.ag-menu-option-icon {
+				// since all the ag grid css is scoped to the ag grid element, elements anchored to the body are missing some styles. TODO consider moving the ag grid styles to the global scope
+				padding-left: 16px;
+			}
+		}
+	}
+}

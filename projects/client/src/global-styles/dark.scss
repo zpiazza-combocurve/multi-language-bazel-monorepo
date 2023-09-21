@@ -1,0 +1,34 @@
+@import 'themes-colors';
+// dark-theme
+
+.dark.dark {
+	--text-color: #{$dark-text-color};
+	--text-color-disabled: rgba(255, 255, 255, 0.3);
+	--text-color-secondary: #{$dark-text-color-secondary};
+
+	--primary-color-solid-opaque: #143c3b;
+
+	--secondary-color-solid-opaque: #10516f;
+
+	--warn-color-solid-opaque: #452324;
+
+	--border-color: rgba(255, 255, 255, 0.12);
+
+	--grey-color-accent: #4c4c4c;
+	--grey-color-accent--rgb: 76, 76, 76;
+	--grey-color-opaque: rgba(177, 176, 176, 0.12);
+
+	--data-grid-group-1: #4f4f4f;
+	--data-grid-group-2: #606060;
+	--data-grid-group-3: #717171;
+	--data-grid-group-4: #818181;
+	--data-grid-group-5: #919191;
+
+	--dash-cell-background: repeating-linear-gradient(-45deg, transparent 0px 6px, rgba(255, 255, 255, 0.1) 6px 8px);
+
+	--background: #{$dark-background};
+	--background-opaque: #{$dark-background-opaque};
+	--data-grid-cell-readonly: #404040;
+	--grey-wells-color: #c8c8c8;
+	--wells-background: #565656;
+}

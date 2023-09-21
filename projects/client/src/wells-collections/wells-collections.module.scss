@@ -1,0 +1,100 @@
+@import '../global-styles/vars.scss';
+
+.menu-button {
+	text-transform: unset;
+}
+
+.wells-collection-dialog {
+	.dialog-title {
+		padding-bottom: 0;
+		display: flex;
+		justify-content: space-between;
+
+		p {
+			font-size: 18px;
+		}
+	}
+
+	.dialog-content {
+		padding-top: 0;
+		padding-bottom: 0;
+
+		.divider {
+			height: 2px;
+			margin: 2rem 0;
+		}
+	}
+
+	.dialog-actions {
+		padding: 0 24px 1.5rem 24px;
+	}
+}
+
+.add-wells-to-collection-dialog {
+	.dialog-content {
+		padding-bottom: 2rem;
+
+		.divider {
+			height: 1px;
+			margin: 1rem 0;
+		}
+
+		.headers {
+			display: flex;
+			justify-content: space-between;
+			padding-top: 2.5rem;
+		}
+
+		.collections-list {
+			padding: 0;
+			max-height: 400px;
+			overflow-y: auto;
+
+			.collections-list-item {
+				display: flex;
+				justify-content: space-between;
+				padding: 1rem 1.25rem;
+				background-color: $background-opaque;
+				border-radius: 4px;
+				cursor: pointer;
+				margin-top: 1rem;
+
+				&.chosen {
+					border: 1px solid $secondary;
+				}
+			}
+		}
+	}
+}
+
+.mass-wells-collection-dialog {
+	.mass-collection-title {
+		padding-bottom: 0;
+		display: flex;
+		justify-content: space-between;
+
+		p {
+			font-size: 18px;
+		}
+	}
+
+	.mass-collection-content {
+		.mass-collection-fields {
+			display: flex;
+			margin-top: 20px;
+
+			.mass-collection-name-field {
+				flex: 1;
+				margin-right: 10px;
+			}
+		}
+
+		.mass-collections-header-as-name {
+			margin-top: 20px;
+		}
+	}
+
+	.mass-collection-actions {
+		margin-top: 20px;
+	}
+}

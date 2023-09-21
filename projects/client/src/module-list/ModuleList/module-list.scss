@@ -1,0 +1,13 @@
+@import '../../global-styles/vars.scss';
+
+@keyframes running {
+	0% {
+		background-color: $background;
+	}
+	50% {
+		background-color: $primary-opaque;
+	}
+	100% {
+		background-color: $background;
+	}
+}

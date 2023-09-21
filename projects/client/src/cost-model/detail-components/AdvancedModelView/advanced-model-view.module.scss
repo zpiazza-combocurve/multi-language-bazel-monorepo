@@ -1,0 +1,19 @@
+.wrapper {
+	display: flex;
+	flex-direction: column;
+}
+
+.box {
+	display: flex;
+	flex-direction: column;
+	/* Use box-sizing so that element's outer width will match width property */
+	box-sizing: border-box;
+
+	/* Allow box to grow and shrink, and ensure they are all equally sized */
+	flex: 1 1 auto;
+}
+
+.handler {
+	cursor: ns-resize;
+	padding: 1rem 0 1rem 0;
+}

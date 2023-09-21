@@ -1,0 +1,91 @@
+@import 'themes-colors';
+
+// default theme - light theme
+:root {
+	--primary-color: #12c498;
+	--primary-color--rgb: 18, 196, 152;
+	--primary-color-opaque: rgba(18, 196, 152, 0.2);
+	--primary-color-solid-opaque: #d0f3ea;
+	--primary-color-solid-opaque-dark: var(--primary-color-solid-opaque);
+	--secondary-color: #228ada;
+	--secondary-color--rgb: 34, 138, 218;
+
+	--secondary-color-opaque: rgba(34, 138, 218, 0.12);
+	--secondary-color-solid-opaque: #d3e8f8;
+	--secondary-color-solid-opaque-dark: var(--secondary-color-solid-opaque);
+
+	--warning-color: #f9534b;
+	--warning-color--rgb: 249, 83, 75;
+	--warning-color-opaque: rgba(249, 83, 75, 0.2);
+	--warning-color-solid-opaque: #fedddb;
+	--warning-color-solid-opaque-dark: var(--warning-color-solid-opaque);
+
+	--warning-alternative-color: #fd9559;
+	--warning-alternative-color--rgb: 253, 149, 89;
+	--warning-alternative-color-opaque: rgba(253, 149, 89, 0.2);
+
+	--warning-alternative-maroon-color: #c0392b;
+	--warning-alternative-maroon-color--rgb: 192, 57, 43;
+	--warning-alternative-maroon-color-opaque: rgba(192, 57, 43, 0.2);
+
+	--purple-color: #c65efc;
+	--purple-color--rgb: 198, 94, 252;
+	--purple-color-opaque: rgba(198, 94, 252, 0.2);
+
+	--border-color: rgba(0, 0, 0, 0.12);
+
+	--data-grid-cell-readonly: #eae9e9;
+
+	--grey-color: #b1b0b0;
+	--grey-color--rgb: 177, 176, 176;
+	--grey-color-accent: #a5a4a4;
+	--grey-color-accent--rgb: 165, 164, 164;
+	--purple-color--rgb: 153, 102, 255;
+
+	// other colors
+	--oil-color: #12c498;
+	--oil-color--rgb: 18, 196, 152;
+	--gas-color: #f9534b;
+	--gas-color--rgb: 249, 83, 75;
+	--water-color: #228ada;
+	--water-color--rgb: 34, 138, 218;
+	--text-unit-color: #9a9a9a;
+	--grey-wells-color: #404040;
+	--wells-background: #c8c8c8;
+}
+
+// light-theme (also swal2)
+.swal2-container,
+:root,
+.light {
+	--text-color: #{$light-text-color};
+	--text-color-disabled: rgba(0, 0, 0, 0.2);
+	--text-color-secondary: #{$light-text-color-secondary};
+	--text-placeholder-color: rgba(0, 0, 0, 0.87);
+
+	--background: #{$light-background};
+	--background-opaque: #{$light-background-opaque};
+
+	--secondary-color-solid-opaque: #d7edf6;
+
+	--warning-color-solid-opaque: #f5d1ce;
+
+	--border-color: rgba(0, 0, 0, 0.12);
+
+	--data-grid-cell-readonly: #eae9e9;
+
+	--grey-color: #b1b0b0;
+	--grey-color--rgb: 177, 176, 176;
+	--grey-color-accent: #a5a4a4;
+	--grey-color-accent--rgb: 165, 164, 164;
+	--grey-color-opaque: rgba(212, 209, 209, 0.35);
+
+	--data-grid-group-1: #dedede;
+	--data-grid-group-2: #e6e6e6;
+	--data-grid-group-3: #f0f0f0;
+	--data-grid-group-4: #f7f7f7;
+
+	--dash-cell-background: repeating-linear-gradient(-45deg, transparent 0px 6px, rgba(0, 0, 0, 0.1) 6px 8px);
+
+	--box-shadow-1: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+}

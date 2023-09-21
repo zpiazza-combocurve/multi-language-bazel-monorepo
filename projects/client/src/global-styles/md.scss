@@ -1,0 +1,25 @@
+@import './vars.scss';
+
+$md-primary-color: #12c498;
+$md-secondary-color: #228ada;
+
+$md-font-size-base: 16;
+
+// light theme fixes
+$md-light-theme-background-color: $background;
+$md-light-theme-card-color: $background;
+
+// dark theme fixes
+$md-dark-theme-background-color: $background;
+$md-dark-theme-card-color: $background;
+$md-data-table-dark-theme-selected-color: $background-opaque;
+$md-data-table-dark-theme-hover-color: $background-opaque;
+
+// turn off some warnings
+$md-colors-warn-md: false;
+
+@import '~react-md/src/scss/react-md';
+
+@include react-md-everything;
+
+@include react-md-theme-everything($md-primary-color, $md-secondary-color, false, 'react-md-dark-theme');

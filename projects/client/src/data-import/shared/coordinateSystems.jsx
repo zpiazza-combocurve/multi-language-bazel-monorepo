@@ -1,0 +1,1 @@
+export const COORDINATE_REFERENCE_SYSTEMS = ['WGS84', 'NAD27', 'NAD83'];

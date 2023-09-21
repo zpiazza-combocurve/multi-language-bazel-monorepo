@@ -1,0 +1,31 @@
+{
+	"ignoreUnresolved": [
+		"../types",
+		"./types",
+		"@/inpt-shared/display-templates/wells/well_days_units",
+		"@/module-list/types",
+		"@/types",
+		"zingchart"
+	],
+	"ignoreUnused": [
+		"@fortawesome/fontawesome-pro",
+		"@types/react-virtualized-auto-sizer",
+		"crypto",
+		"identity-obj-proxy",
+		"minimatch",
+		"react-app-polyfill"
+	],
+	"ignoreUnimported": [
+		"src/components/ControlledAgGrid.tsx",
+		"src/components/TestExample.js",
+		"src/components/ThrottledSlider.tsx",
+		"src/components/hooks/hook-test-helper.tsx",
+		"src/components/hooks/useFlexibleSelection.ts",
+		"src/debug/index.tsx",
+		"src/helpers/__mocks__/headers.ts",
+		"src/helpers/__mocks__/pusher.ts",
+		"src/helpers/__mocks__/zing.ts",
+		"src/login/__mocks__/authClient.ts",
+		"src/mocks/Wrapper.tsx"
+	]
+}

@@ -1,0 +1,56 @@
+@import './vars.scss';
+
+$zIndexOverlay: 9998;
+$zIndexHighlight: $zIndexOverlay + 1;
+$zIndexArrow: $zIndexHighlight + 1;
+
+$gutter: 1rem;
+
+body {
+	.shepherd-element {
+		color: $color;
+		background: $background !important;
+		width: 22rem;
+		z-index: $zIndexArrow;
+		.shepherd-arrow {
+			&::before {
+				background: $background !important;
+			}
+		}
+		.shepherd-content {
+			background: inherit;
+			color: inherit;
+			padding: $gutter;
+			& > * {
+				background: inherit !important;
+				color: inherit !important;
+				padding: 0 !important;
+				&:not(:first-child) {
+					margin-top: $gutter;
+				}
+			}
+			.shepherd-header {
+				.shepherd-cancel-icon {
+					color: inherit;
+				}
+			}
+			.shepherd-text {
+				font-size: inherit;
+				line-height: inherit;
+			}
+			.shepherd-footer {
+				.shepherd-button {
+					padding: 6px 16px !important;
+					color: $color;
+					&.MuiButton-containedSecondary {
+						background: $secondary;
+					}
+					&.MuiButton-secondary {
+						color: $secondary;
+						background: transparent;
+					}
+				}
+			}
+		}
+	}
+}

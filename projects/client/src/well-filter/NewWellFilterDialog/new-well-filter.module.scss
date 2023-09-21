@@ -1,0 +1,64 @@
+@import '../../manage-wells/WellsPage/TableView/CollectionTable/HeadersTable.module.scss';
+
+.new-wells-filtering-wrapper {
+	:global(.MuiDialogTitle-root) {
+		display: flex;
+		justify-content: space-between;
+		padding: 0.75rem 1rem;
+
+		p {
+			font-size: 1.25rem;
+		}
+	}
+
+	.sidebar-footer-wrapper {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.content-header {
+		align-items: center;
+		display: flex;
+
+		:global(.MuiBox-root) {
+			line-height: 30px;
+		}
+
+		.content-header-title {
+			font-size: 20px;
+			margin-right: 1rem;
+		}
+
+		.apply-selection-button {
+			text-transform: unset;
+			padding: 0;
+			margin-left: 1rem;
+		}
+
+		.view-button-group {
+			margin-left: 1.5rem;
+		}
+	}
+
+	:global(.MuiDialogContent-root) {
+		padding: 0;
+	}
+
+	.ag-grid-wrapper {
+		height: 100%;
+	}
+
+	.with-pch-circle {
+		:global(.ag-column-select-column-label) {
+			&::before {
+				content: ' ';
+				display: inline-block;
+				margin-right: 0.3rem;
+				height: 0.5rem;
+				width: 0.5rem;
+				background-color: $color;
+				border-radius: 50%;
+			}
+		}
+	}
+}

@@ -1,0 +1,425 @@
+@import '../global-styles/vars.scss';
+
+$table-checkbox-size: 34px;
+
+#well-filter-dialog {
+	width: 100%;
+	height: 100%;
+
+	.md-list-tile--active {
+		background-color: unset;
+	}
+
+	#filter-range {
+		display: flex;
+		flex-direction: row;
+
+		.filter-input-start,
+		.filter-start-date {
+			margin-right: 20px;
+		}
+	}
+
+	.filter-inline-indicator {
+		align-items: flex-end;
+		display: flex;
+		font-size: 1rem;
+		margin-right: 0.5rem;
+		padding-bottom: 0.5rem;
+
+		.fa-search:hover {
+			cursor: pointer;
+			color: $primary;
+		}
+	}
+
+	.filter-input {
+		margin-left: 40px;
+		width: calc(100% - 40px);
+	}
+
+	#filter-multi-select-chips {
+		display: flex;
+		flex-wrap: wrap;
+		margin-bottom: 5px;
+		justify-content: center;
+
+		.secondary-chip {
+			max-width: 105px;
+			margin-bottom: 2px;
+			span {
+				overflow: hidden;
+				white-space: nowrap;
+				text-overflow: ellipsis;
+			}
+		}
+	}
+
+	#filter-multi-select-search-results {
+		.results-btn {
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			width: 100%;
+		}
+
+		.multi-search-results-list {
+			overflow-x: auto;
+			max-height: 250px;
+
+			.multi-search-results-list-item {
+				.md-list-tile {
+					padding: 10px;
+				}
+			}
+		}
+	}
+
+	.well-filter-side-bar-subheader {
+		cursor: pointer;
+	}
+
+	.list-left-icon {
+		font-size: 24px;
+		margin-left: 0.5rem;
+		margin-right: 0.5rem;
+
+		&.checked {
+			color: $secondary;
+		}
+	}
+	#filter-checks {
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: row;
+
+		.filter-checks {
+			margin-right: 5px;
+
+			.md-btn--icon {
+				display: flex;
+				margin-right: 5px;
+				align-items: center;
+				justify-content: center;
+			}
+		}
+
+		&.yesNo-filter-check {
+			margin-left: 2rem;
+		}
+	}
+}
+
+#well-filter-side-bar {
+	height: 100%;
+	display: flex;
+	min-width: 300px;
+	max-width: 300px;
+	overflow: hidden;
+	padding-top: 0.5rem;
+	flex-direction: column;
+
+	.md-divider {
+		flex-shrink: 0;
+	}
+
+	#well-filter-side-bar-list-container {
+		display: flex;
+		flex-direction: column;
+		overflow: hidden;
+
+		.md-list {
+			padding-bottom: 0;
+		}
+
+		.saved-filters-list {
+			flex-shrink: 0;
+			max-height: calc(100% - 36px);
+			overflow-y: auto;
+		}
+
+		.md-list-tile {
+			padding-top: 8px;
+			padding-bottom: 8px;
+		}
+
+		.md-subheader {
+			line-height: 36px;
+			height: 36px;
+		}
+	}
+
+	#filter-headers-list-and-search {
+		display: flex;
+		flex-direction: column;
+		overflow: hidden;
+	}
+
+	#filter-headers-list {
+		display: flex;
+		flex-direction: column;
+		overflow-y: auto;
+
+		.list-item.primary .md-tile-content .md-text {
+			font-weight: bolder;
+			color: $primary;
+		}
+		.list-item.secondary .md-tile-content .md-text {
+			font-weight: bolder;
+			color: $secondary;
+		}
+	}
+
+	.list-right-icon-btn {
+		position: relative;
+	}
+
+	.nested-list .md-list-tile {
+		padding-left: 25px;
+	}
+
+	.nested-list-2 .md-list-tile {
+		padding-left: 50px;
+	}
+
+	#well-filter-side-bar-header {
+		padding: 0 15px;
+
+		#well-filter-title {
+			margin-bottom: 0;
+		}
+	}
+
+	#filters-subheader {
+		display: flex;
+		overflow: hidden;
+		justify-content: space-between;
+
+		&.has-sub {
+			.secondary-subheader {
+				font-size: 12px;
+				max-width: 120px;
+				text-overflow: ellipsis;
+				overflow: hidden;
+				white-space: nowrap;
+			}
+		}
+	}
+
+	.well-filter-side-bar-subheader {
+		cursor: pointer;
+	}
+
+	.list-left-icon {
+		font-size: 20px;
+
+		&.checked {
+			color: $secondary;
+		}
+	}
+
+	.list-item {
+		&.filter-view-btn {
+			cursor: pointer;
+		}
+		.md-tile-content--left-icon {
+			padding-left: 16px !important;
+		}
+
+		&.active-item {
+			color: $primary;
+		}
+	}
+
+	.search-list-item {
+		height: 55px;
+
+		.list-left-icon:hover {
+			cursor: pointer;
+			color: $primary;
+		}
+	}
+
+	.sort-list-item {
+		.list-left-icon {
+			font-size: 25px;
+		}
+	}
+}
+
+#well-filter-headers-view {
+	z-index: 5;
+	height: 100%;
+	padding: 0.5rem 1rem;
+	overflow-y: auto;
+
+	.single-header-filter {
+		display: flex;
+		flex-wrap: wrap;
+		margin-bottom: 15px;
+		align-items: baseline;
+		flex-direction: column;
+
+		.header-name {
+			width: 100%;
+			display: flex;
+			margin-right: 20px;
+			white-space: nowrap;
+			align-items: flex-end;
+			justify-content: space-between;
+		}
+	}
+}
+
+#well-filter-main {
+	height: 100%;
+	width: 330px;
+
+	.well-filter-main-container {
+		height: 100% !important;
+		width: 330px;
+	}
+
+	&.headers-collapsed {
+		width: 0;
+		opacity: 0;
+	}
+}
+
+#well-filter-well-view {
+	display: flex;
+	flex-direction: column;
+	z-index: 15;
+	height: 100%;
+	flex-grow: 0.98;
+	min-width: 950px;
+
+	.filter-map {
+		width: 100%;
+		height: 100%;
+	}
+}
+
+.well-filter-view-table-header {
+	font-size: 15px;
+}
+
+#well-filter-vis-1-view {
+	height: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+
+	#vis-1-charts-container {
+		width: 100%;
+		flex-grow: 1;
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: row;
+		gap: 0.5rem;
+
+		.vis-1-chart-paper {
+			width: calc(50% - 0.5rem);
+			height: calc(50% - 0.5rem);
+
+			display: flex;
+			flex-direction: column;
+
+			.chart-header {
+				height: 40px;
+				display: flex;
+				margin-top: 9px;
+				align-items: baseline;
+				justify-content: center;
+
+				h5 {
+					margin-bottom: 0;
+				}
+
+				.vis-1-chart-select {
+					margin-left: 1rem;
+					min-width: 250px;
+				}
+			}
+		}
+	}
+}
+
+#save-filter {
+	display: flex;
+	flex-direction: column;
+
+	#update-current,
+	#save-new {
+		display: flex;
+		flex-direction: column;
+		button {
+			width: 100%;
+		}
+	}
+}
+
+#date-filter-range {
+	width: 100%;
+	display: flex;
+
+	.filter-input-start {
+		margin-right: 10px;
+	}
+
+	.md-text-field-container {
+		flex-grow: 1;
+	}
+}
+
+.date-input {
+	margin-bottom: 5px;
+}
+
+.start-date {
+	margin-right: 1rem;
+}
+
+.exclude {
+	display: flex;
+	width: 100%;
+
+	.exclude-option {
+		width: 50%;
+		margin-left: -3rem;
+		margin-top: -2rem;
+	}
+}
+
+.row-number {
+	width: 3.1pc;
+}
+
+.filter-bottom {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	margin-left: 30px;
+	justify-content: space-between;
+	width: 90%;
+
+	.filter-bottom-left {
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-start;
+		margin-left: 0;
+
+		& > div {
+			margin-right: 5px;
+		}
+	}
+	.filter-bottom-right {
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-end;
+
+		& > div {
+			margin-left: 5px;
+		}
+	}
+}

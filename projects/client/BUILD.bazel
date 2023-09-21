@@ -1,0 +1,84 @@
+load("@aspect_bazel_lib//lib:copy_to_bin.bzl", "copy_to_bin")
+load("@npm//:vite/package_json.bzl", vite_bin = "bin")
+load("@npm//:vitest/package_json.bzl", vitest_bin = "bin")
+
+
+filegroup(
+    name = "config",
+    srcs = [
+      "vite.config.ts",
+      "package.json",
+      "tsconfig.json",
+      "index.html",
+    ],
+)
+
+filegroup(
+    name = "vite_srcs_tests",
+    srcs = glob([
+        "src/**/*.spec.ts",
+        "tests/**/*",
+    ]),
+    visibility = ["//visibility:public"],
+)
+
+filegroup(
+    name = "vite_public_export",
+    srcs = glob(["public/**/*"]),
+    visibility = ["//visibility:public"],
+)
+
+# BUILD_DEPS = [":node_modules/" + d for d in [
+#     "vite",
+#     "@testing-library/dom",
+#     "@testing-library/jest-dom",
+#     "@testing-library/user-event",
+#     "@testing-library/react",
+#     "jsdom",
+#     "react",
+#     "react-dom",
+# ]]
+
+copy_to_bin(
+    name = "vite_srcs_export",
+    srcs = glob([
+        "src/**/*.css",
+        "src/**/*.svg",
+        "src/**/*.ts",
+        "src/**/*.tsx",
+        "utils/**/*.ts",
+        "utils/**/*.tsx",
+        "public/**/*.json",
+        "public/**/*.svg",
+    ]),
+)
+
+vite_bin.vite(
+    name = "vite",
+    srcs = [
+      ":config",
+      ":node_modules",
+      ":vite_public_export",
+      ":vite_srcs_export",
+    ],
+    args = ["build --config vite.config.ts"],
+    chdir = package_name(),
+    out_dirs = ["dist"],
+    visibility = ["//visibility:public"],
+)
+
+vitest_bin.vitest_test(
+    name = "client_test",
+    args = [
+        "run",
+        "--config=vite.config.ts",
+    ],
+    chdir = package_name(),
+    data = [
+        ":config",
+        ":node_modules",
+        ":vite_public_export",
+        ":vite_srcs_export",
+        ":vite_srcs_tests",
+    ]
+)

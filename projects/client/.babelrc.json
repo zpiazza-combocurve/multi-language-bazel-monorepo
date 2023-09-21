@@ -1,0 +1,4 @@
+{
+	"presets": [["react-app", { "runtime": "automatic", "flow": false }]],
+	"plugins": ["styled-components", "lodash"]
+}

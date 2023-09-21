@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<title>Sign In with Auth0</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link href="https://fonts.googleapis.com/css?family=K2D&display=swap" rel="stylesheet" />
+		<style>
+			/* our custon styles */
+			* {
+				font-family: 'K2D', sans-serif !important;
+			}
+
+			.auth0-lock.auth0-lock .auth0-global-message.auth0-global-message-error {
+				background: transparent !important;
+				color: #ff0000 !important;
+			}
+
+			.auth0-lock.auth0-lock.auth0-lock-mode-loading .auth0-loading-container {
+				animation: unset !important;
+			}
+
+			.auth0-lock.auth0-lock .auth0-global-message-success span {
+				color: #00bfa5 !important;
+				font-weight: 400 !important;
+			}
+
+			.auth0-lock.auth0-lock .auth0-loading-container .auth0-loading {
+				width: 20px !important;
+				height: 20px !important;
+				top: 3px !important;
+			}
+
+			.auth0-lock-widget {
+				box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12),
+					0 3px 1px -2px rgba(0, 0, 0, 0.2) !important;
+			}
+
+			.auth0-lock-cred-pane-internal-wrapper {
+				background: #191c21 !important;
+			}
+
+			.auth0-lock.auth0-lock.auth0-lock-opened .auth0-lock-header-bg .auth0-lock-header-bg-blur {
+				opacity: 1 !important;
+			}
+
+			.auth0-lock.auth0-lock .auth0-lock-header {
+				background: transparent !important;
+				color: #191c21 !important;
+			}
+
+			.auth0-lock.auth0-lock .auth0-lock-header-bg .auth0-lock-header-bg-solid {
+				background-color: #191c21 !important;
+			}
+
+			.auth0-lock.auth0-lock .auth0-lock-header-bg {
+				background: transparent !important;
+			}
+
+			.auth0-lock.auth0-lock .auth0-lock-header-bg .auth0-lock-header-bg-blur {
+				background-color: transparent !important;
+			}
+
+			.auth0-lock.auth0-lock .auth0-lock-name {
+				color: #f5f5f5 !important;
+			}
+
+			.auth0-lock.auth0-lock .auth0-lock-input-wrap,
+			.auth0-lock.auth0-lock .auth0-lock-input-wrap.auth0-lock-focused {
+				border-radius: 0 !important;
+				border: none !important;
+				border-bottom: 1px solid #00bfa5 !important;
+				background: #191c21 !important;
+			}
+
+			.auth0-lock.auth0-lock .auth0-lock-input-wrap .auth0-lock-input {
+				background: #191c21 !important;
+				color: #f5f5f5 !important;
+			}
+
+			.auth0-lock.auth0-lock .auth0-lock-form .auth0-lock-alternative .auth0-lock-alternative-link {
+				color: #f5f5f5 !important;
+				opacity: 0.3 !important;
+			}
+
+			.auth0-lock.auth0-lock .auth0-lock-form .auth0-lock-alternative .auth0-lock-alternative-link:hover {
+				color: #f5f5f5 !important;
+				opacity: 1 !important;
+			}
+
+			.auth0-lock.auth0-lock .auth0-lock-submit {
+				padding: 0 !important;
+				margin: 10px !important;
+				width: unset !important;
+				border-radius: 5px !important;
+			}
+
+			.auth0-lock.auth0-lock .auth0-lock-cred-pane {
+				background: transparent !important;
+				border-radius: 5px !important;
+			}
+
+			.auth0-lock.auth0-lock .auth0-lock-cred-pane-internal-wrapper {
+				border-radius: 5px !important;
+			}
+
+			.auth0-lock.auth0-lock .auth0-lock-submit .auth0-label-submit {
+				top: 1px !important;
+				height: 30px !important;
+				line-height: 30px !important;
+				position: relative !important;
+			}
+
+			.auth0-lock.auth0-lock .auth0-lock-badge-bottom {
+				display: none !important;
+			}
+
+			.auth0-lock.auth0-lock {
+				background: #191c21 !important;
+			}
+
+			.auth0-lock.auth0-lock .auth0-lock-form {
+				padding-bottom: 10px !important;
+			}
+
+			.auth0-lock.auth0-lock .auth0-lock-input-block {
+				margin-bottom: 30px !important;
+			}
+
+			body ::-webkit-scrollbar,
+			body ::-webkit-scrollbar-track {
+				display: none !important;
+			}
+
+			.auth0-lock.auth0-lock .auth0-lock-content-wrapper {
+				min-height: 166px !important;
+			}
+
+			.auth0-lock.auth0-lock .auth0-lock-cred-pane-internal-wrapper {
+				min-height: 297px !important;
+			}
+
+			@media screen and (max-width: 480px) {
+				.auth0-lock.auth0-lock.auth0-lock-opened .auth0-lock-body-content {
+					background: #191c21 !important;
+				}
+			}
+
+			.auth0-lock.auth0-lock .auth0-lock-form p span {
+				color: #f5f5f5 !important;
+			}
+
+			.auth0-lock.auth0-lock .auth0-lock-close-button,
+			.auth0-lock.auth0-lock .auth0-lock-back-button {
+				background: #00bfa5 !important;
+				border: 6px solid #00bfa5 !important;
+			}
+
+			.auth0-lock.auth0-lock .auth0-lock-close-button svg polyline,
+			.auth0-lock.auth0-lock .auth0-lock-close-button svg line,
+			.auth0-lock.auth0-lock .auth0-lock-back-button svg polyline,
+			.auth0-lock.auth0-lock .auth0-lock-back-button svg line {
+				stroke: #f5f5f5 !important;
+				stroke-width: 4 !important;
+			}
+
+			.auth0-lock.auth0-lock .auth0-lock-back-button {
+				top: 16px !important;
+			}
+
+			.auth0-lock.auth0-lock .auth0-global-message.auth0-global-message-success {
+				background: #191c21 !important;
+			}
+
+			/* Remove autocomplete bg color change in firefox */
+			input {
+				filter: none;
+			}
+
+			/* Change Autocomplete styles in Chrome*/
+			input:-webkit-autofill,
+			input:-webkit-autofill:hover,
+			input:-webkit-autofill:focus,
+			textarea:-webkit-autofill,
+			textarea:-webkit-autofill:hover,
+			textarea:-webkit-autofill:focus,
+			select:-webkit-autofill,
+			select:-webkit-autofill:hover,
+			select:-webkit-autofill:focus {
+				caret-color: #f5f5f5;
+				-webkit-text-fill-color: #f5f5f5;
+				-webkit-box-shadow: 0 0 0px 1000px #191c21 inset;
+				transition: background-color 5000s ease-in-out 0s;
+			}
+		</style>
+	</head>
+	<body>
+		<!--[if IE 8]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/ie8/0.2.5/ie8.js"></script>
+		<![endif]-->
+
+		<!--[if lte IE 9]>
+			<script src="https://cdn.auth0.com/js/base64.js"></script>
+			<script src="https://cdn.auth0.com/js/es5-shim.min.js"></script>
+		<![endif]-->
+
+		<script src="https://cdn.auth0.com/js/lock/11.17/lock.min.js"></script>
+		<script>
+			// Decode utf8 characters properly
+			var config = JSON.parse(decodeURIComponent(escape(window.atob('@@config@@'))));
+			config.extraParams = config.extraParams || {};
+			var connection = config.connection;
+			var prompt = config.prompt;
+			var languageDictionary;
+			var language;
+
+			var loginSupportMessage = ' If you continue having trouble, contact us at login@combocurve.com';
+			if (config.dict && config.dict.signin && config.dict.signin.title) {
+				languageDictionary = { title: config.dict.signin.title };
+			} else if (typeof config.dict === 'string') {
+				language = config.dict;
+			}
+			var loginHint = config.extraParams.login_hint;
+			var colors = config.colors || {};
+
+			// Available Lock configuration options: https://auth0.com/docs/libraries/lock/v11/configuration
+			var lock = new Auth0Lock(config.clientID, config.auth0Domain, {
+				auth: {
+					redirectUrl: config.callbackURL,
+					responseType:
+						(config.internalOptions || {}).response_type ||
+						(config.callbackOnLocationHash ? 'token' : 'code'),
+					params: config.internalOptions,
+				},
+				configurationBaseUrl: config.clientConfigurationBaseUrl,
+				overrides: {
+					__tenant: config.auth0Tenant,
+					__token_issuer: 'login.combocurve.com',
+				},
+				/* additional configuration needed for custom domains
+				configurationBaseUrl: config.clientConfigurationBaseUrl,
+				overrides: {
+					__tenant: config.auth0Tenant,
+					__token_issuer: 'YOUR_CUSTOM_DOMAIN'
+				}, */
+				assetsUrl: config.assetsUrl,
+				allowedConnections: connection ? [connection] : null,
+				rememberLastLogin: !prompt,
+				language: language,
+				languageDictionary: {
+					...languageDictionary,
+					error: {
+						login: {
+							blocked_user: 'The user is blocked.' + loginSupportMessage,
+							invalid_user_password: 'Wrong credentials.' + loginSupportMessage,
+							// invalid_captcha: 'Solve the challenge question to verify you are not a robot.',
+							// invalid_recaptcha: 'Select the checkbox to verify you are not a robot.',
+							'lock.fallback':
+								"We're sorry, something went wrong when attempting to log in." + loginSupportMessage,
+							'lock.invalid_code': 'Wrong code.',
+							'lock.invalid_email_password': 'Wrong email or password.',
+							'lock.invalid_username_password': 'Wrong username or password.',
+							'lock.network':
+								'We could not reach the server. Please check your connection and try again.' +
+								loginSupportMessage,
+							'lock.popup_closed': 'Popup window closed. Try again.',
+							'lock.unauthorized': 'Permissions were not granted. Try again.',
+							'lock.mfa_registration_required':
+								'Multifactor authentication is required but your device is not enrolled. Please enroll it before moving on.' +
+								loginSupportMessage,
+							'lock.mfa_invalid_code': 'Wrong code. Please try again.' + loginSupportMessage,
+							password_change_required:
+								'You need to update your password because this is the first time you are logging in, or because your password has expired.' +
+								loginSupportMessage, // TODO: verify error code
+							password_leaked:
+								'We have detected a potential security issue with this account. To protect your account, we have blocked this login. An email was sent with instruction on how to unblock your account.' +
+								loginSupportMessage,
+							too_many_attempts:
+								'Your account has been blocked after multiple consecutive login attempts.' +
+								loginSupportMessage,
+							too_many_requests:
+								"We're sorry. There are too many requests right now. Please reload the page and try again. If this persists, please try again later." +
+								loginSupportMessage,
+							session_missing:
+								"Couldn't complete your authentication request. Please try again after closing all open dialogs" +
+								loginSupportMessage,
+							'hrd.not_matching_email': 'Please use your corporate email to login.',
+						},
+					},
+				},
+				theme: {
+					logo: '',
+					primaryColor: colors.primary ? colors.primary : 'green',
+				},
+				prefill: loginHint ? { email: loginHint, username: loginHint } : null,
+				closable: false,
+				defaultADUsernameFromEmailPrefix: false,
+				// uncomment if you want small buttons for social providers
+				// socialButtonStyle: 'small'
+			});
+
+			if (colors.page_background) {
+				var css = '.auth0-lock.auth0-lock .auth0-lock-overlay { background: ' + colors.page_background + ' }';
+				var style = document.createElement('style');
+
+				style.appendChild(document.createTextNode(css));
+
+				document.body.appendChild(style);
+			}
+
+			lock.show();
+		</script>
+	</body>
+</html>

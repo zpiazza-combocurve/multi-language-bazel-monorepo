@@ -1,0 +1,116 @@
+@import '../../global-styles/vars.scss';
+
+.merge-sidebar {
+	padding: 1rem 1rem 0 1.5rem;
+
+	:global(.MuiTextField-root) {
+		width: 100%;
+	}
+}
+
+.merge-sidebar-block {
+	& > hr {
+		background-color: $border-color;
+		height: 2px;
+		margin-top: 18px;
+		margin-bottom: 22px;
+	}
+}
+
+.merge-sidebar-block {
+	margin-bottom: 24px;
+
+	.merge-sidebar-block-header {
+		position: relative;
+		display: flex;
+		justify-content: space-between;
+
+		& > p {
+			font-weight: bold;
+			line-height: 34px;
+
+			&:nth-of-type(2) {
+				font-weight: 300;
+				color: $color-secondary;
+			}
+		}
+
+		&.main {
+			flex-direction: column;
+
+			& > p {
+				&:nth-of-type(2) {
+					font-size: 12px;
+					line-height: 18px;
+				}
+			}
+		}
+	}
+
+	& > hr {
+		margin-top: 3px;
+	}
+}
+
+.merge-list {
+	padding: 0;
+}
+
+.merged-name {
+	:global(.MuiOutlinedInput-input) {
+		padding: 12px 14px;
+	}
+
+	:global(.MuiInputLabel-outlined.Mui-error:not(.MuiInputLabel-shrink)) {
+		transform: translate(14px, 14px) scale(1);
+	}
+}
+
+.merge-item {
+	margin-bottom: 15px;
+	padding: 0;
+
+	&.bordered {
+		padding: 8px;
+		border: 1px solid;
+		border-radius: 4px;
+	}
+
+	.dragger {
+		cursor: move;
+		margin-right: 6px;
+	}
+
+	.merge-item-info {
+		display: flex;
+		justify-content: space-between;
+		flex: 1;
+
+		span {
+			font-weight: 300;
+
+			&:nth-of-type(2) {
+				text-align: right;
+
+				p {
+					&:nth-of-type(1) {
+						font-weight: bold;
+
+						&.wells-count {
+							color: $color-secondary;
+							font-weight: normal;
+						}
+					}
+				}
+			}
+
+			p {
+				&:nth-of-type(2) {
+					color: $color-secondary;
+					font-size: 14px;
+					font-weight: 300;
+				}
+			}
+		}
+	}
+}

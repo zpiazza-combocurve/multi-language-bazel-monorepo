@@ -1,0 +1,14 @@
+@import './md.scss';
+
+// TODO: legacy react-md icon buttons of econ models page; change buttons to MUI
+.add-row:not(.md-text--disabled) {
+	color: $primary;
+
+	.md-icon {
+		color: inherit;
+	}
+}
+
+.md-dialog-container.md-overlay {
+	z-index: 1300; //fix to match z-index of react-md dialogs to material-ui dialogs
+}

@@ -1,0 +1,130 @@
+@import './vars.scss';
+
+@mixin cc-datasheet() {
+	span.data-grid-container {
+		display: flex;
+
+		table.data-grid:not(.react-datasheet) {
+			display: flex;
+			border-radius: 0;
+			border: 1px solid rgba($grey-accent--rgb, 0.5) !important;
+			tr td:first-child {
+				border-left: 1px solid transparent !important;
+			}
+			tr td:last-child {
+				border-right: 1px solid transparent !important;
+			}
+			tr:first-child td.cell:not(.selected) {
+				border-top: 1px solid transparent !important;
+			}
+			tr:last-child td.cell {
+				border-bottom: 1px solid transparent;
+			}
+			td.cell {
+				height: 50px;
+				padding: 0 16px;
+				vertical-align: middle;
+
+				&--hidden {
+					display: none;
+				}
+
+				&.read-only {
+					padding: 0 10px;
+				}
+				&.updated {
+					background-color: unset;
+				}
+				&.full-width-cell:not(:first-child):not(.selected) {
+					border-left: none !important;
+				}
+				&.full-width-cell:not(:last-child):not(.selected) {
+					border-right: none !important;
+				}
+				&.selected {
+					border: 1px double $primary !important;
+					box-shadow: inset 0 -200px 0 $primary-opaque;
+				}
+				.data-sheet-select {
+					width: 100%;
+				}
+				.value-viewer {
+					text-align: left;
+				}
+			}
+
+			td.cell.short-row {
+				height: 25px;
+				border-top: none !important;
+				border-bottom: none !important;
+			}
+			#empty-sheet-item {
+				font-weight: 400;
+				font-style: italic;
+				&.required {
+					color: $warning;
+				}
+			}
+
+			.row-view-collapse {
+				position: relative;
+				display: flex;
+				align-items: center;
+			}
+
+			.row-view-collapse,
+			.text-cell-with-arrow.collapse-toggle {
+				button {
+					width: 28px;
+					height: 28px;
+					min-width: 28px;
+					min-height: 28px;
+					margin-left: 5px;
+
+					.md-icon {
+						font-size: 16px;
+					}
+				}
+			}
+
+			.cell .add-row,
+			.cell .delete-row {
+				width: 28px;
+				height: 28px;
+				min-width: 28px;
+				min-height: 28px;
+				margin-left: 5px;
+				.md-icon {
+					font-size: 16px;
+				}
+			}
+		}
+	}
+
+	span.data-grid-container {
+		table.data-grid:not(.react-datasheet) {
+			.md-list {
+				background: $background;
+			}
+			td.cell {
+				border: 1px solid rgba($grey-accent--rgb, 0.5);
+				&.read-only {
+					color: $color-secondary;
+					background: $grid-cell-color-readonly;
+					input.data-editor {
+						color: #868585;
+					}
+				}
+				&:not(.read-only) .value-viewer {
+					color: $color;
+				}
+				.md-text-field-inline-indicator {
+					color: $color;
+				}
+			}
+			tbody tr:last-child td.cell.short-row {
+				border-bottom: 1px solid #484848 !important;
+			}
+		}
+	}
+}

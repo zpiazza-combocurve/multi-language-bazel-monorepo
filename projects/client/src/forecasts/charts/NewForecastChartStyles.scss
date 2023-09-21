@@ -1,0 +1,97 @@
+@import '../../global-styles/vars.scss';
+
+$chart-title-height: 3.5rem;
+$chart-controls-padding: 0.5rem;
+
+#forecast-chart-container {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	padding-top: $chart-controls-padding;
+	width: 100%;
+	#forecast-chart-controls {
+		align-items: center;
+		align-self: center;
+		border-radius: 5px;
+		display: flex;
+		justify-content: space-around;
+		margin-bottom: $chart-controls-padding;
+		padding: 0.5rem 0;
+		width: calc(100% - 2rem);
+		.control-selection-option {
+			flex-grow: 1;
+			margin: 0 0.5rem;
+		}
+	}
+	.chart-area-container {
+		display: flex;
+		flex-grow: 1;
+		flex-wrap: wrap;
+		padding: 0 0.5rem;
+		.chart-title {
+			align-items: center;
+			display: flex;
+			height: $chart-title-height;
+			justify-content: space-between;
+			padding-left: 0.75%;
+			width: 100%;
+			.title-select {
+				align-items: center;
+				display: flex;
+				flex-grow: 1;
+				.title-label {
+					display: flex;
+					flex-direction: column;
+					margin-left: 0.75rem;
+					.title-text {
+						font-size: 0.85rem;
+						.text-item {
+							padding-right: 0.5rem;
+						}
+						.text-item:not(:first-child) {
+							border-left: 1px solid $secondary;
+							padding-left: 0.5rem;
+						}
+					}
+					.title-sub-text {
+						font-size: 0.7rem;
+						span {
+							margin-right: 0.5rem;
+						}
+						.last-segment-parameters {
+							color: $primary;
+						}
+					}
+					&.large-title-text {
+						.title-text {
+							font-size: 1.1rem;
+						}
+						.title-sub-text {
+							font-size: 0.9rem;
+						}
+					}
+				}
+				.download-well-forecast-btn {
+					height: 2.75rem;
+					margin-left: auto;
+					width: 2.75rem;
+					.md-icon {
+						font-size: 1.25rem;
+					}
+				}
+			}
+			.title-labels {
+				align-items: center;
+				display: flex;
+				margin-right: 0.75rem;
+				.styled-chip {
+					margin-left: 1rem;
+				}
+			}
+		}
+		.chart-area {
+			height: calc(100% - #{$chart-title-height});
+			width: calc(100% - 0.5rem);
+		}
+	}
+}

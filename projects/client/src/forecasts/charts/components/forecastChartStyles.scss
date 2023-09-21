@@ -1,0 +1,75 @@
+@import '../../../global-styles/vars.scss';
+
+#simple-phase-chart-container,
+#phase-chart-with-ctrls {
+	align-content: flex-start;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	margin: 0.5%;
+	padding: 0 0.5% 0.5% 0;
+	.loading-container {
+		font-size: 1rem;
+	}
+	.chart-title {
+		align-items: center;
+		display: flex;
+		justify-content: space-between;
+		padding-left: 0.75%;
+		width: 100%;
+		.title-select {
+			align-items: center;
+			display: flex;
+			flex-grow: 1;
+			.title-label {
+				display: flex;
+				flex-direction: column;
+				flex-grow: 1;
+				margin-left: 0.75rem;
+				.title-sub-text {
+					font-size: 0.7rem;
+					span {
+						margin-right: 0.5rem;
+					}
+					.last-segment-parameters {
+						color: $primary;
+					}
+				}
+				&.large-title-text {
+					.title-sub-text {
+						font-size: 0.85rem;
+					}
+				}
+			}
+			.download-well-forecast-btn {
+				height: 2.75rem;
+				margin-left: auto;
+				width: 2.75rem;
+				.md-icon {
+					font-size: 1.25rem;
+				}
+			}
+		}
+		.title-labels {
+			align-items: center;
+			display: flex;
+			.styled-chip {
+				.md-chip-text {
+					font-size: 0.7rem;
+				}
+				&.large-text {
+					.md-chip-text {
+						font-size: 1rem;
+					}
+				}
+			}
+			& > * {
+				margin: 0 0.25rem;
+			}
+		}
+	}
+	.chart-area {
+		flex-grow: 1;
+	}
+}

@@ -1,0 +1,197 @@
+@import '../../global-styles/vars.scss';
+
+#cost-model-detail {
+	display: flex;
+	align-items: center;
+	flex-direction: row;
+	height: 100%;
+	justify-content: flex-start;
+
+	.cost-model-detail-divider {
+		width: 100%;
+		margin: 20px 0;
+	}
+
+	.data-grid-container {
+		td {
+			height: 41px;
+			padding: 0 7px;
+		}
+	}
+
+	.price-data-sheets {
+		display: flex;
+		flex-wrap: wrap;
+	}
+}
+
+#cost-model-detail-inputs {
+	// top: -10px;
+	display: flex;
+	margin-left: 20px;
+	margin-right: 20px;
+	position: relative;
+	margin-bottom: 50px;
+	align-self: flex-start;
+	flex-direction: column;
+
+	table .cell.warn-icon .value-viewer {
+		color: $warning;
+	}
+
+	.text-cell-with-arrow {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	.cost-model-detail-header-row {
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: row;
+		justify-content: space-between;
+		&.long {
+			justify-content: flex-start;
+		}
+		// h2 {
+		// 	margin-bottom: 0;
+		// }
+		#add-delete-row {
+			// margin-bottom: 10px;
+			&.long {
+				margin-left: 20px;
+			}
+			#theme-pop-up-menu-list {
+				min-width: 180px;
+				.md-list-tile {
+					padding: 16px 10px;
+				}
+				.md-tile-content--left-icon {
+					padding-left: 0;
+				}
+			}
+		}
+	}
+
+	.reversion-header {
+		display: flex;
+	}
+
+	.not-default {
+		span {
+			color: $secondary;
+		}
+	}
+
+	.wider-cell-input {
+		.select-editor__value-container {
+			width: 100px;
+		}
+	}
+}
+
+#cost-model-detail-sheets-container {
+	display: grid;
+	height: 100%;
+	overflow-y: auto;
+	padding-top: 10px;
+	grid-template-columns: auto auto auto;
+
+	table.data-grid:not(.react-datasheet).data-sheet-paper {
+		margin-right: 15px;
+		.small-cell-description {
+			color: red;
+			font-size: 11px;
+		}
+	}
+
+	.table-layout {
+		margin-bottom: 1rem;
+	}
+
+	&.capex-layout {
+		display: flex;
+		flex-wrap: wrap;
+
+		& > * {
+			flex-grow: 1;
+		}
+
+		& > :first-child {
+			width: 95%;
+		}
+
+		.cost-model-detail-header-row {
+			align-items: flex-start;
+		}
+
+		.capex_sheet {
+			td {
+				> .md-text-field-container.data-sheet-input {
+					min-width: 90px;
+				}
+				> .react-datepicker-wrapper.__inpt_date_picker {
+					min-width: 130px;
+				}
+			}
+		}
+	}
+
+	&.flowing {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+
+		#cost-model-detail-inputs {
+			.price-data-sheets {
+				&.phase-cat-selects {
+					.var-exp {
+						margin-right: 0px;
+						margin-bottom: 20px;
+					}
+					.price-diff {
+						margin-right: 0px;
+						margin-bottom: 0px;
+					}
+				}
+				&.main-expense-options {
+					.expense-table-container {
+						margin-bottom: 10px;
+						margin-right: 30px;
+					}
+					.fifteen-selection-container {
+						margin-bottom: 20px;
+						max-width: 368px;
+					}
+					.ownership-table-container {
+						margin-bottom: 20px;
+						margin-right: 10px;
+						.small-empty-header {
+							height: 10px;
+							border: 0;
+							background: transparent;
+						}
+						.ignore-header {
+							display: none;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.dda-prebuild {
+		margin-right: 0px;
+		margin-bottom: 20px;
+	}
+
+	.data-sheet-end-date.disabled {
+		svg {
+			opacity: 0.2;
+		}
+		.md-text--disabled {
+			color: unset;
+		}
+	}
+}

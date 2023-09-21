@@ -1,0 +1,304 @@
+@import '../../global-styles/vars.scss';
+
+@mixin qualifierBorder {
+	border-radius: 4px;
+	border: 1px solid $border-color;
+}
+
+.assumptions-container {
+	padding: 1rem;
+	height: 100%;
+
+	& > hr {
+		background-color: $border-color;
+		height: 2px;
+		margin: 18px 24px 18px 4px;
+	}
+
+	.customize-qualifiers {
+		display: flex;
+		justify-content: space-between;
+		margin: 0 23px 0 4px;
+
+		p {
+			display: inline-block;
+			margin-bottom: 0;
+			font-weight: bold;
+		}
+
+		:global(.material-icons) {
+			display: inline;
+			position: relative;
+			margin-left: 8px;
+			top: 3px;
+		}
+
+		.toggle-all,
+		.mass-update {
+			font-weight: 500;
+			margin-left: 10px;
+		}
+
+		.description-with-buttons {
+			position: relative;
+
+			hr {
+				width: 2px;
+				background-color: $border-color;
+				position: absolute;
+				top: -2px;
+				left: 424px;
+				max-height: 36px;
+			}
+		}
+	}
+
+	.assumptions-list {
+		padding: 3px 15px 0px 3px;
+		height: calc(100% - 65px);
+		overflow-y: auto;
+
+		&::-webkit-scrollbar,
+		&::-webkit-scrollbar-track {
+			width: 8px;
+		}
+		&::-webkit-scrollbar-thumb {
+			width: 3px;
+		}
+
+		.assumption-details {
+			display: block;
+			width: 100%;
+			padding: 0;
+			margin-bottom: 20px;
+			border-radius: 6px;
+
+			.assumption-merge-header {
+				border-radius: 4px;
+				background-color: $background-opaque;
+				display: flex;
+				justify-content: space-between;
+				width: 100%;
+				height: 40px;
+				padding: 5px 0 5px 20px;
+
+				.merge-info {
+					padding: 5px 16px 5px 0;
+					display: flex;
+					justify-content: space-between;
+					width: 100%;
+
+					p {
+						line-height: 20px;
+
+						button {
+							margin: 0 10px;
+						}
+					}
+
+					.qualifiers-info {
+						display: flex;
+						justify-content: space-between;
+					}
+
+					.qualifiers-p {
+						font-size: 14px;
+						font-weight: 300;
+						color: $color-secondary;
+					}
+
+					.assumption-status-icon {
+						margin: 0 15px;
+					}
+				}
+
+				.toggle {
+					display: flex;
+
+					button {
+						margin: 0 5px;
+					}
+				}
+			}
+
+			.merge-workspace {
+				width: 100%;
+
+				.columns {
+					width: 100%;
+					display: flex;
+					justify-content: space-between;
+					padding: 0 0 10px 0;
+
+					.qualifiers-list-wrapper {
+						flex: 1;
+						padding: 10px 15px 0 15px;
+						position: relative;
+						margin-top: 20px;
+
+						:global(.MuiList-root) {
+							padding: 0;
+						}
+
+						:global(.MuiDivider-vertical) {
+							width: 2px;
+							position: absolute;
+							right: -1px;
+							top: 0;
+						}
+
+						.qualifiers-header {
+							margin-bottom: 15px;
+							display: flex;
+							justify-content: space-between;
+
+							p {
+								padding: 6px 0;
+							}
+
+							button {
+								color: $secondary;
+								font-weight: 400;
+							}
+						}
+
+						.qualifier {
+							@include qualifierBorder;
+							height: 40px;
+							margin-bottom: 20px;
+							padding: 5px;
+
+							&:last-child {
+								margin-bottom: 0;
+							}
+
+							.qualifier-element {
+								display: flex;
+								justify-content: space-between;
+								width: 100%;
+
+								.labels {
+									display: flex;
+									justify-content: space-between;
+									width: 100%;
+									padding: 3px;
+								}
+							}
+						}
+					}
+
+					.merged-qualifiers-wrapper {
+						:global(.MuiListItem-root) {
+							display: block;
+						}
+
+						.merged-qualifier {
+							border: none;
+							height: unset;
+							cursor: default;
+							padding: 0;
+
+							:global(.MuiChip-root) {
+								height: auto;
+							}
+
+							:global(.MuiOutlinedInput-input) {
+								padding: 10px 10px 11px 10px;
+							}
+
+							:global(.MuiInputBase-root) {
+								padding-right: 7px;
+							}
+
+							.merged-qualifier-input {
+								display: block;
+
+								:global(.MuiTextField-root) {
+									width: 100%;
+								}
+
+								.chevron-divider {
+									position: initial;
+									width: 1px;
+									height: 28px;
+									margin: 0 5px;
+								}
+							}
+
+							.merged-qualifier-details {
+								margin-top: 10px;
+								padding: 2px;
+
+								& > p {
+									color: $secondary;
+								}
+
+								.merged-qualifier-part {
+									@include qualifierBorder;
+									padding: 10px;
+									margin-bottom: 15px;
+									display: flex;
+									justify-content: space-between;
+									width: 100%;
+
+									&:last-child {
+										margin-bottom: 0;
+									}
+
+									.names,
+									.wells-values {
+										display: flex;
+										justify-content: space-between;
+									}
+
+									.part-value {
+										display: flex;
+										justify-content: space-between;
+										flex-direction: column;
+										margin-right: 10px;
+										text-align: right;
+
+										&:last-child {
+											margin-right: 0;
+										}
+
+										p {
+											font-size: 14px;
+										}
+									}
+
+									.names {
+										button {
+											margin-top: 6px;
+											margin-right: 10px;
+										}
+
+										.part-value {
+											text-align: left;
+										}
+									}
+								}
+							}
+						}
+
+						.drop-qualifier {
+							box-shadow: none;
+							border: 1px dashed $border-color;
+							text-align: center;
+
+							p {
+								font-size: 14px;
+								line-height: 28px;
+								color: $color-secondary;
+							}
+						}
+					}
+				}
+
+				.drag {
+					cursor: move;
+				}
+			}
+		}
+	}
+}

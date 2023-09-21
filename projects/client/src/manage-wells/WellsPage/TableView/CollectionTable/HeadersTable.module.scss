@@ -1,0 +1,23 @@
+$SIZE: 0.7rem;
+$color: #fdcc59;
+
+// from scenario page
+.colored-circle {
+	display: inline-block;
+	margin-right: 0.5rem;
+	min-height: $SIZE;
+	min-width: $SIZE;
+	height: $SIZE;
+	width: $SIZE;
+	background-color: $color;
+	border-radius: 50%;
+}
+
+:export {
+	// TODO move this to a global export in vars.scss or some other more accessible place
+	projectCustomHeaderColor: $color;
+}
+
+.right-aligned-cells {
+	text-align: right;
+}

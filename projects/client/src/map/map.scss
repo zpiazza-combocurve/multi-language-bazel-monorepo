@@ -1,0 +1,358 @@
+@import '../global-styles/vars.scss';
+
+#map-settings-main {
+	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+
+	#map-settings-map-container {
+		flex-grow: 1;
+		position: relative;
+		display: flex;
+		height: calc(100% - 3rem);
+
+		#map-settings-form {
+			flex-grow: 1;
+			overflow-y: auto;
+			overflow-x: hidden;
+
+			#map-settings-form-header {
+				display: flex;
+				align-items: center;
+
+				h3 {
+					margin-bottom: 0;
+					padding: 0;
+				}
+			}
+
+			#map-settings-form-content {
+				padding: 1rem;
+				max-width: 400px;
+
+				& > :not(:first-child) {
+					margin-top: 1rem;
+				}
+
+				.layer-color-picker {
+					margin-top: 1rem;
+				}
+			}
+		}
+
+		#mapbox,
+		#fit-map,
+		#single-well-map {
+			width: 100%;
+			height: 100%;
+
+			.map-marker {
+				margin-top: -15px;
+
+				&:hover {
+					.marker-icon,
+					.marker-icon-badge {
+						color: $primary !important;
+					}
+				}
+			}
+
+			.map-marker,
+			.md-badge-container {
+				width: 24px;
+				height: 24px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+
+				.marker-icon {
+					width: 100%;
+					height: 100%;
+				}
+
+				.marker-icon-badge {
+					font-weight: 600;
+				}
+			}
+
+			.map-marker.selected {
+				.marker-icon,
+				.marker-icon-badge {
+					color: $secondary;
+				}
+			}
+
+			.map-marker.not-selected {
+				.marker-icon,
+				.marker-icon-badge {
+					color: $warning;
+				}
+			}
+		}
+	}
+}
+
+.map-container {
+	width: 100%;
+	height: 100%;
+}
+
+.map-with-layers .map-container {
+	position: relative;
+	height: calc(100%);
+}
+
+#mapbox,
+#fit-map,
+#single-well-map {
+	width: 100%;
+	height: 100%;
+
+	.map-marker {
+		margin-top: -15px;
+
+		&:hover {
+			.marker-icon,
+			.marker-icon-badge {
+				color: $primary !important;
+			}
+		}
+	}
+
+	.map-marker,
+	.md-badge-container {
+		width: 24px;
+		height: 24px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		.marker-icon {
+			width: 100%;
+			height: 100%;
+		}
+
+		.marker-icon-badge {
+			font-weight: 600;
+		}
+	}
+	.map-marker.selected {
+		.marker-icon,
+		.marker-icon-badge {
+			color: $secondary;
+		}
+	}
+	.map-marker.not-selected {
+		.marker-icon,
+		.marker-icon-badge {
+			color: $warning;
+		}
+	}
+}
+
+#popup {
+	text-decoration: none;
+	color: $primary;
+}
+
+#current-color {
+	display: flex;
+	align-items: center;
+
+	& > :not(:first-child) {
+		margin-left: 1rem;
+	}
+}
+
+#requirements {
+	width: 100%;
+}
+
+#headers-list {
+	margin-left: 10%;
+	overflow-y: 'scroll';
+}
+
+#header-list {
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+
+#selected-headers {
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+.dot {
+	height: 25px;
+	width: 25px;
+	border-radius: 50%;
+	display: inline-block;
+	margin-top: 0.3cm;
+}
+
+#list-headers-values {
+	display: inline-flex;
+	margin-top: -0.4cm;
+}
+
+#value-header {
+	margin-left: 10%;
+}
+
+#alls-headers {
+	overflow-y: scroll;
+	width: 100%;
+	margin-left: -4cm;
+}
+
+#search-header {
+	width: 5cm;
+}
+
+#search-header input[type='text'] {
+	padding-left: 18px;
+}
+
+#change-color {
+	margin-left: 2.3cm;
+
+	p {
+		margin-left: 0.5cm;
+	}
+}
+
+#input-search {
+	background-color: transparent;
+	border-color: transparent;
+}
+
+#divider {
+	width: 5.6cm;
+}
+
+#first-item {
+	margin-top: 1cm;
+}
+
+#headers-item {
+	margin-left: -1.4cm;
+}
+
+#header-button-menu-options {
+	overflow-y: hidden;
+	width: 5cm;
+	display: flex;
+	flex-direction: column;
+}
+
+#header-button-menu {
+	flex-grow: 0;
+}
+
+#change-color-for {
+	margin-left: 3pc;
+}
+
+#search-values {
+	width: 80%;
+	margin-left: 5.5rem;
+
+	input[type='text'] {
+		margin-left: 2rem;
+	}
+
+	:first-child :nth-child(2) {
+		margin-left: 7px;
+	}
+}
+
+#text-list {
+	margin-top: 1rem;
+}
+
+#header-legend {
+	position: absolute;
+	z-index: 1;
+	height: 100%;
+	opacity: 0.75;
+	width: 15rem;
+	height: 100%;
+}
+
+.inpt-select-field {
+	flex-grow: 0;
+}
+
+.dark .mapboxgl-popup-content {
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	p,
+	span {
+		color: black;
+	}
+}
+
+.mapboxgl-popup {
+	max-width: 300px !important;
+
+	.mapboxgl-popup-content {
+		strong {
+			color: #484848;
+		}
+
+		.mapboxgl-popup-close-button {
+			color: #f44336;
+			line-height: 1em;
+			font-size: 150%;
+		}
+
+		.map-well-info {
+			display: flex;
+			flex-direction: column;
+			margin-top: 1em;
+			line-height: 1.6em;
+			font-size: 80%;
+
+			.view-well-btn {
+				width: 9em;
+				height: 3em;
+				align-self: center;
+				margin-top: 0.3rem;
+				margin-bottom: -0.3rem;
+				cursor: pointer;
+				font-size: inherit !important;
+				line-height: inherit !important;
+				color: #484848;
+			}
+		}
+
+		.layer-tooltip {
+			p {
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+
+.mapbox-gl-draw_ctrl-draw-btn.custom-mapbox-control {
+	color: black;
+
+	&.selected {
+		color: $secondary;
+		background-color: $grey;
+	}
+
+	&:disabled {
+		color: $grey;
+		cursor: default;
+	}
+}
+
+.mapboxgl-ctrl.mapboxgl-ctrl-attrib.mapboxgl-compact {
+	min-height: 23px;
+}

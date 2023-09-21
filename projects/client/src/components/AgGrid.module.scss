@@ -1,0 +1,61 @@
+@import '../global-styles/vars.scss';
+
+.right-aligned-cells {
+	text-align: right;
+}
+
+.disabled-cells {
+	color: var(--text-color-secondary);
+}
+
+.warning-cells:not(:global(.ag-cell-range-selected)) {
+	border-top: 1px solid $warning-alternative !important;
+	border-bottom: 1px solid $warning-alternative !important;
+}
+
+.error-cells {
+	background-color: $warning !important;
+}
+
+:global(.ag-group-child-count) {
+	margin-left: 2px;
+}
+
+.dashed-cells {
+	// https://developer.mozilla.org/en-US/docs/Web/CSS/gradient/repeating-linear-gradient()
+	color: var(--text-color-secondary);
+	background-color: gray;
+	background: var(--dash-cell-background);
+	// HACK with the border the dashed pattern looks odd
+	&.ag-cell:not(.ag-cell-range-selected) {
+		border: 0;
+	}
+}
+
+.selected-cell-out-of-focus {
+	:global .ag-body-viewport:not(.ag-has-focus) {
+		.ag-cell-focus:not(
+				.ag-cell-range-selected.ag-cell-range-left,
+				.ag-cell-range-selected.ag-cell-range-right,
+				.ag-cell-range-selected.ag-cell-range-top,
+				.ag-cell-range-selected.ag-cell-range-bottom
+			) {
+			border-color: var(--light-background) !important;
+		}
+		.ag-cell-range-selected {
+			background-color: var(--background-opaque) !important;
+		}
+		.ag-cell-range-selected.ag-cell-range-top {
+			border-top-color: var(--light-background) !important;
+		}
+		.ag-cell-range-selected.ag-cell-range-right {
+			border-right-color: var(--light-background) !important;
+		}
+		.ag-cell-range-selected.ag-cell-range-left {
+			border-left-color: var(--light-background) !important;
+		}
+		.ag-cell-range-selected.ag-cell-range-bottom {
+			border-bottom-color: var(--light-background) !important;
+		}
+	}
+}

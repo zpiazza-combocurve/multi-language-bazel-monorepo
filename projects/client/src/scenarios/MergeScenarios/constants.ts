@@ -1,0 +1,3 @@
+export const MAX_NUMBER_OF_MERGED_QUALIFIERS = 20;
+
+export const MAX_NUMBER_OF_SCENARIOS_TO_MERGE = 2;

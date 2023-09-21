@@ -1,0 +1,79 @@
+$color: var(--text-color);
+$color-secondary: var(--text-color-secondary); // placeholder
+$background: var(--background);
+$background-opaque: var(--background-opaque);
+
+$primary: var(--primary-color);
+$primary--rgb: var(--primary-color--rgb);
+$primary-opaque: var(--primary-color-opaque);
+$primary-solid-opaque: var(--primary-color-solid-opaque);
+
+$secondary: var(--secondary-color);
+$secondary--rgb: var(--secondary-color--rgb);
+$secondary-opaque: var(--secondary-color-opaque);
+$secondary-solid-opaque: var(--secondary-color-solid-opaque);
+
+$purple: var(--purple-color);
+$purple--rgb: var(--purple-color--rgb);
+$purple-opaque: var(--purple-color-opaque);
+
+$warning: var(--warning-color);
+$warning--rgb: var(--warning-color--rgb);
+$warning-opaque: var(--warning-color-opaque);
+$warning-solid-opaque: var(--warning-color-solid-opaque);
+
+$warning-alternative: var(--warning-alternative-color);
+$warning-alternative-opaque: var(--warning-alternative-color-opaque);
+
+$warning-alternative-maroon: var(--warning-alternative-maroon-color);
+
+$grid-cell-color-readonly: var(--data-grid-cell-readonly);
+
+$grey: var(--grey-color);
+$grey--rgb: var(--grey-color--rgb);
+$grey-accent: var(--grey-color-accent);
+$grey-accent--rgb: var(--grey-color-accent--rgb);
+$grey-opaque: var(--grey-color-opaque);
+
+$border-color: var(--grey-color);
+
+$box-shadow-1: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+$box-shadow-2: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.4);
+$box-shadow-4: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.4);
+
+$box-shadow-primary: 0 8px 10px 1px rgba(0, 191, 165, 0.14), 0 3px 14px 2px rgba(0, 191, 165, 0.12),
+	0 5px 5px -3px rgba(0, 191, 165, 0.4);
+
+$golden-ratio: 1.61803398875;
+
+$oil-color: var(--oil-color);
+$oil-color--rgb: var(--oil-color--rgb);
+$gas-color: var(--gas-color);
+$gas-color--rgb: var(--gas-color--rgb);
+$water-color: var(--water-color);
+$water-color--rgb: var(--water-color--rgb);
+
+/* spacing levels for margin/padding */
+
+$space-xs: 0.25rem;
+$space-sm: 0.5rem;
+$space-md: 1rem; // (default)
+$space-lg: 1.5rem;
+$space-xl: 2rem;
+
+:export {
+	boxShadow1: $box-shadow-1;
+	boxShadow2: $box-shadow-1;
+	boxShadow4: $box-shadow-4;
+	boxShadowPrimary: $box-shadow-primary;
+
+	oilColor: $oil-color;
+	gasColor: $gas-color;
+	waterColor: $water-color;
+
+	goldenRatio: $golden-ratio;
+
+	spaceXs: $space-xs;
+	spaceSm: $space-sm;
+	spaceMd: $space-md;
+}

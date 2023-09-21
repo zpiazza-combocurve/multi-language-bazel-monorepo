@@ -1,0 +1,338 @@
+@import '../../global-styles/vars.scss';
+
+@mixin pchBorder {
+	border-radius: 4px;
+	border: 1px solid $border-color;
+}
+
+.content-wrapper {
+	padding: 1rem;
+	height: 100%;
+}
+
+.merge-projects-content {
+	padding: 3px 15px 0px 3px;
+	height: calc(100% - 65px);
+	overflow-y: auto;
+
+	&::-webkit-scrollbar,
+	&::-webkit-scrollbar-track {
+		width: 8px;
+	}
+	&::-webkit-scrollbar-thumb {
+		width: 3px;
+	}
+}
+
+.modifier-options {
+	margin-top: 0px;
+}
+
+.well-identifier-select {
+	margin-top: -16px;
+}
+
+.merge-projects-header {
+	display: flex;
+	justify-content: space-between;
+	margin: 0 23px 0 4px;
+
+	p {
+		display: inline-block;
+		margin-bottom: 0;
+		font-weight: bold;
+		line-height: 34px;
+	}
+
+	.toggle-all {
+		font-weight: 500;
+		margin-left: 10px;
+	}
+}
+
+.content-header-divider {
+	background-color: $border-color;
+	height: 2px;
+	margin: 18px 24px 18px 4px;
+}
+
+.collisions {
+	.module-count-info {
+		:global(.MuiChip-sizeSmall) {
+			margin-top: -2px;
+			margin-right: 8px;
+
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+
+	.matching-names-list {
+		padding: 0;
+
+		li {
+			padding: 0;
+
+			&:first-child {
+				p {
+					font-weight: 600;
+				}
+			}
+
+			&.no-matches {
+				border-bottom: none;
+
+				p {
+					color: $color-secondary;
+				}
+			}
+
+			.duplicate-description {
+				flex: 1;
+				display: flex;
+				justify-content: space-between;
+				border-bottom: 1px solid $border-color;
+				padding: 10px 10px 10px 0;
+				margin-right: 20px;
+
+				&:last-child {
+					margin-right: 0;
+				}
+
+				p {
+					font-size: 14px;
+				}
+
+				.module-item-details {
+					color: $grey;
+					font-size: 12px;
+					display: inline;
+				}
+			}
+		}
+	}
+}
+
+.expandable-header-section {
+	margin-bottom: 24px;
+
+	.header-wrapper {
+		border-radius: 4px;
+		background: $background-opaque;
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+		height: 40px;
+		padding: 5px 0 5px 20px;
+
+		.section-info {
+			padding: 5px 16px 5px 0;
+			display: flex;
+			justify-content: space-between;
+			width: 100%;
+
+			p {
+				line-height: 20px;
+
+				button {
+					margin: 0 10px;
+				}
+			}
+
+			.section-sub-info {
+				display: flex;
+				justify-content: space-between;
+			}
+
+			.info-p {
+				font-size: 14px;
+				font-weight: 300;
+				color: $color-secondary;
+			}
+
+			.status-icon {
+				margin: 0 15px;
+			}
+		}
+
+		.toggle {
+			display: flex;
+
+			button {
+				margin: 0 5px;
+			}
+		}
+	}
+}
+
+.custom-headers-merge {
+	width: 100%;
+
+	.columns {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		padding: 0 0 10px 0;
+
+		.headers-list-wrapper {
+			flex: 1;
+			padding: 0 15px 0 15px;
+			position: relative;
+			margin-top: 15px;
+
+			:global(.MuiList-root) {
+				padding: 0;
+			}
+
+			:global(.MuiDivider-vertical) {
+				width: 2px;
+				position: absolute;
+				right: -1px;
+				top: 0;
+			}
+
+			.header-header {
+				margin-bottom: 15px;
+				display: flex;
+				justify-content: space-between;
+
+				p {
+					padding: 6px 0;
+				}
+
+				button {
+					color: $secondary;
+					font-weight: 400;
+				}
+			}
+
+			.custom-header {
+				@include pchBorder;
+				height: 40px;
+				margin-bottom: 20px;
+				padding: 5px;
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+
+				.custom-header-element {
+					display: flex;
+					justify-content: space-between;
+					width: 100%;
+
+					.labels {
+						display: flex;
+						justify-content: space-between;
+						width: 100%;
+						padding: 3px;
+					}
+				}
+			}
+		}
+
+		.merged-headers-wrapper {
+			:global(.MuiListItem-root) {
+				display: block;
+			}
+
+			.merged-custom-header {
+				border: none;
+				height: unset;
+				cursor: default;
+				padding: 0;
+
+				:global(.MuiChip-root) {
+					height: auto;
+				}
+
+				:global(.MuiOutlinedInput-input) {
+					padding: 10px 10px 11px 10px;
+				}
+
+				:global(.MuiInputBase-root) {
+					padding-right: 7px;
+				}
+
+				.merged-custom-header-input {
+					display: block;
+
+					:global(.MuiTextField-root) {
+						width: 100%;
+					}
+
+					.chevron-divider {
+						position: initial;
+						width: 1px;
+						height: 28px;
+						margin: 0 5px;
+					}
+				}
+
+				.merged-custom-header-details {
+					margin-top: 10px;
+					padding: 2px;
+
+					& > p {
+						color: $secondary;
+					}
+
+					.merged-custom-header-part {
+						@include pchBorder;
+						padding: 10px;
+						margin-bottom: 15px;
+						display: flex;
+						justify-content: space-between;
+						width: 100%;
+
+						&:last-child {
+							margin-bottom: 0;
+						}
+
+						.names {
+							display: flex;
+							justify-content: space-between;
+
+							button {
+								margin-top: 6px;
+								margin-right: 10px;
+							}
+
+							.part-value {
+								display: flex;
+								justify-content: space-between;
+								flex-direction: column;
+								margin-right: 10px;
+
+								&:last-child {
+									margin-right: 0;
+								}
+
+								p {
+									font-size: 14px;
+								}
+							}
+						}
+					}
+				}
+			}
+
+			.drop-header {
+				box-shadow: none;
+				border: 1px dashed $border-color;
+				text-align: center;
+
+				p {
+					font-size: 14px;
+					line-height: 28px;
+					color: $color-secondary;
+				}
+			}
+		}
+	}
+
+	.drag {
+		cursor: move;
+	}
+}

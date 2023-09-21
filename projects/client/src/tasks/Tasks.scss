@@ -1,0 +1,77 @@
+@import '@/global-styles/vars.scss';
+
+#task-overlay {
+	display: none;
+	&.active {
+		align-items: center;
+		background-color: rgba(0, 0, 0, 0.8);
+		bottom: 0;
+		display: flex;
+		flex-direction: column;
+		height: 100vh;
+		justify-content: center;
+		left: 0;
+		position: fixed;
+		right: 0;
+		top: 0;
+		width: 100vw;
+		z-index: 9000; // just below the side-drawer z-index of 9001
+		.loading,
+		.progress-text,
+		.task-description,
+		.task-title {
+			color: white; // must be white since the overlay is always dark/shaded dark
+		}
+		.loading {
+			font-size: 4rem;
+		}
+		.side-nav-btn {
+			position: absolute;
+			left: 2rem;
+			top: 50%;
+			transform: translateY(-50%) rotate(0deg);
+			transition: all 0.5s cubic-bezier(0, 0, 0.2, 1) 0.1s;
+			&.nav-active {
+				left: calc(2rem + 256px); // width of the side-nav is 256px
+				transform: translateY(-50%) rotate(-180deg);
+				transition: all 0.3s cubic-bezier(0, 0, 0.2, 1);
+			}
+			.side-nav-icon {
+				height: 5rem;
+				width: 5rem;
+				.md-icon {
+					color: white; // must be white since the overlay is always dark/shaded dark
+					font-size: 2.5rem;
+				}
+			}
+		}
+		.task-title {
+			font-size: 4rem;
+			margin-bottom: 1rem;
+			margin-top: auto;
+		}
+		.task-description {
+			font-size: 2rem;
+			margin-bottom: 1rem;
+		}
+		.task-actions {
+			display: flex;
+			justify-content: space-around;
+			margin-top: 2rem;
+			button {
+				margin: 0 1rem;
+			}
+		}
+		.task-progress {
+			align-items: center;
+			display: flex;
+			flex-direction: column;
+			margin-bottom: 2.5rem;
+			margin-top: auto;
+			width: 100%;
+			.progress-text {
+				font-size: 2rem;
+			}
+		}
+	}
+}

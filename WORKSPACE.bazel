@@ -128,10 +128,11 @@ nodejs_register_toolchains(
     node_version = DEFAULT_NODE_VERSION,
 )
 
-load("@aspect_rules_js//npm:repositories.bzl", "npm_translate_lock")
+load("@aspect_rules_js//npm:npm_import.bzl", "npm_translate_lock")
 
 npm_translate_lock(
     name = "npm",
+    npmrc = "@//:.npmrc",
     pnpm_lock = "//:pnpm-lock.yaml",
     verify_node_modules_ignored = "//:.bazelignore",
 )
@@ -139,6 +140,22 @@ npm_translate_lock(
 load("@npm//:repositories.bzl", "npm_repositories")
 
 npm_repositories()
+
+http_archive(
+    name = "aspect_rules_rollup",
+    sha256 = "bca82203e3bbcf1202011b25fc8e369fc2ed641a60e293500d64884a18a77b6f",
+    strip_prefix = "rules_rollup-0.12.1",
+    url = "https://github.com/aspect-build/rules_rollup/archive/refs/tags/v0.12.1.tar.gz",
+)
+
+load("@aspect_rules_rollup//rollup:repositories.bzl", "rollup_repositories")
+
+# TODO(alexeagle): use the same rollup version from package.json
+rollup_repositories(name = "rollup")
+
+load("@rollup//:npm_repositories.bzl", rollup_npm_repositories = "npm_repositories")
+
+rollup_npm_repositories()
 
 load("@aspect_rules_ts//ts:repositories.bzl", "rules_ts_dependencies")
 
@@ -150,11 +167,6 @@ rules_ts_dependencies(
     # load("@aspect_rules_ts//ts:repositories.bzl", "LATEST_TYPESCRIPT_VERSION")
     # ts_version = LATEST_TYPESCRIPT_VERSION
 )
-
-### Bazoku Setup
-load("@bazoku//tools:deps.bzl", "bazoku_deps")
-
-bazoku_deps()
 
 ### Java
 load("@rules_jvm_external//:repositories.bzl", "rules_jvm_external_deps")

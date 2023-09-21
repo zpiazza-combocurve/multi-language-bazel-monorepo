@@ -1,0 +1,28 @@
+@import '../global-styles/vars.scss';
+
+.__inpt_tabs_layout_tab {
+	// height: calc(100% - #{$space-xs} * 2);
+	color: white;
+	cursor: pointer;
+	display: flex;
+	text-align: center;
+	width: 100%;
+
+	&.active {
+		a,
+		button {
+			border-bottom-left-radius: 0;
+			border-bottom-right-radius: 0;
+			border-bottom: 2px solid $secondary;
+		}
+	}
+	button,
+	div {
+		height: 100%;
+		width: 100%;
+		text-transform: unset;
+		font-weight: 500;
+		font-size: 1.3rem !important;
+		padding: 1rem;
+	}
+}

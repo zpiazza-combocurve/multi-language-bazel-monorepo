@@ -1,0 +1,61 @@
+.sidebar-with-content-wrapper {
+	height: 100%;
+	display: flex;
+
+	.sidebar-wrapper,
+	.content-wrapper {
+		height: 100%;
+		position: relative;
+	}
+
+	.sidebar-wrapper {
+		:global(.MuiDivider-vertical) {
+			position: absolute;
+			top: 0;
+			right: 0;
+		}
+	}
+
+	.sidebar-inner-wrapper,
+	.content-inner-wrapper {
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		padding: 1rem;
+	}
+
+	.sidebar-header,
+	.content-header {
+		align-items: center;
+		display: flex;
+		justify-content: space-between;
+		padding-bottom: 1rem;
+	}
+
+	.content-header {
+		justify-content: flex-start;
+
+		.toggle-sidebar {
+			align-self: center;
+			margin-right: 1rem;
+		}
+
+		.content-header-content {
+			display: flex;
+			flex: 1;
+			justify-content: space-between;
+		}
+	}
+
+	.sidebar-content,
+	.content {
+		flex: 1;
+		overflow: auto;
+	}
+
+	.sidebar-footer {
+		:global(.MuiDivider-root) {
+			margin-bottom: 1rem;
+		}
+	}
+}

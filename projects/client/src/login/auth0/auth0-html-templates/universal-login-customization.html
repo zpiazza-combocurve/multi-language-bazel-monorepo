@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="{{locale}}">
+	<head>
+		{%- auth0:head -%}
+		<style>
+			.footer {
+			  background-color: {{ branding.colors.page_background }};
+			  position: fixed;
+			  bottom: 0;
+			  left: 0;
+			  padding: 16px 0;
+			  width: 100%;
+			  color: white;
+			  /* Use a high z-index for future-proofing */
+			  z-index: 10;
+			}
+			.footer ul {
+			  text-align: center;
+			}
+			.footer ul li {
+			  display: inline-block;
+			  margin: 0 4px;
+			}
+			.footer ul li:not(:first-of-type) {
+			  margin-left: 0;
+			}
+			.footer ul li:not(:first-of-type)::before {
+			  content: '';
+			  display: inline-block;
+			  vertical-align: middle;
+			  width: 4px;
+			  height: 4px;
+			  margin-right: 4px;
+			  background-color: white;
+			  border-radius: 50%;
+			}
+			.footer a {
+			  color: white;
+			}
+		</style>
+		<title>{{ prompt.screen.texts.pageTitle }}</title>
+	</head>
+	<body class="_widget-auto-layout">
+		{%- auth0:widget -%}
+	</body>
+	<footer class="footer">
+		<ul>
+			<li>Having issues? Contact us at <a href="mailto:support@combocurve.com">support@combocurve.com</a></li>
+		</ul>
+	</footer>
+</html>

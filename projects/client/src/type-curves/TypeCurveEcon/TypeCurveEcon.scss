@@ -1,0 +1,200 @@
+@import '@/global-styles/vars.scss';
+
+$column-width: 150px;
+
+#econ-output-oneliner {
+	table {
+		h3,
+		h4 {
+			margin-bottom: 0;
+		}
+
+		.md-table-column,
+		.md-table-column--adjusted {
+			width: $column-width;
+			padding-right: 0;
+		}
+
+		tr td {
+			font-size: 0.85rem;
+			padding-top: 1rem;
+			padding-bottom: 1rem;
+
+			&:first-child {
+				padding-left: 1rem;
+			}
+
+			&:last-child {
+				padding-right: 1rem;
+			}
+		}
+	}
+}
+
+#econ-output-monthly {
+	table {
+		.date-column,
+		.default-thead th {
+			&:first-child {
+				position: sticky;
+				left: 0;
+			}
+		}
+
+		tr th,
+		tr td {
+			font-size: 0.9rem;
+			min-width: 4rem;
+
+			&:not(:last-child) {
+				padding-right: $space-sm;
+			}
+
+			& > * {
+				width: 8.5rem;
+			}
+		}
+
+		.econ-view-table-header {
+			padding-right: $space-sm;
+		}
+
+		.header-content {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+		}
+	}
+}
+
+.assumptions-card {
+	display: flex;
+	flex-direction: column;
+	flex-basis: 20rem;
+	overflow: auto;
+
+	.assumptions-scrollable-content {
+		flex-grow: 1;
+		overflow-y: auto;
+	}
+
+	& > .md-card {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__header {
+		padding: 10px;
+		flex-shrink: 0;
+
+		.title {
+			text-align: center;
+			width: 100%;
+
+			h3,
+			h4 {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	&__body {
+		display: flex;
+		flex-direction: column;
+		overflow: auto;
+		flex-shrink: 1;
+		flex-grow: 1;
+		max-height: 100%;
+
+		& > :not(:first-child) {
+			margin-top: $space-md;
+		}
+
+		&.asses-card-text {
+			flex-grow: 1;
+			flex-shrink: 1;
+		}
+
+		& > .md-divider {
+			width: 100%;
+
+			&:not(:first-child) {
+				margin: 1rem 0;
+			}
+		}
+
+		.ass-container {
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			flex-wrap: wrap;
+
+			.right-btn-icon {
+				margin-left: 0.25rem;
+			}
+
+			.warn-icon {
+				color: $warning;
+			}
+
+			.ass-title-tooltip {
+				font-size: 1rem;
+				margin-bottom: $space-xs;
+			}
+
+			.ass-title {
+				font-size: 1rem;
+			}
+
+			.ass-btn {
+				width: 100%;
+			}
+
+			.umbrella-menu-container {
+				display: flex;
+				flex-direction: column;
+
+				.umbrella-btn {
+					align-items: center;
+					border-radius: $space-xs;
+					display: flex;
+					height: auto;
+					padding: $space-xs $space-sm;
+					width: 100%;
+					font-size: 1rem;
+					height: 2rem;
+				}
+			}
+
+			&__button {
+				width: 100%;
+				text-align: left;
+				padding: $space-xs $space-sm;
+				border-radius: $space-xs;
+				font-size: 1rem !important; // Hate to do this but md-text is the responsible for this important war
+				height: 2rem;
+			}
+		}
+	}
+
+	&__footer {
+		display: flex;
+		justify-content: space-evenly;
+		flex-shrink: 0;
+	}
+}
+
+.econ-tc-headers-dialog {
+	&__content {
+		#econ-tc-headers-form {
+			& > :not(:first-child) {
+				margin-top: 1rem;
+			}
+		}
+	}
+
+	&__footer {
+		display: flex;
+		justify-content: space-evenly;
+	}
+}

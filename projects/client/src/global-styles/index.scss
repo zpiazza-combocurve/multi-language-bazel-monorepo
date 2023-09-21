@@ -1,0 +1,51 @@
+@import 'sweet-alert-overrides.scss';
+
+@import './light.scss';
+@import './dark.scss';
+
+@import './vars.scss';
+@import './datasheet.scss';
+
+@import './index-md.scss';
+@import './index-mui.scss';
+@import './shepherd.scss';
+
+@include cc-datasheet;
+
+body {
+	width: 100vw;
+	height: 100vh;
+	overflow: auto;
+}
+
+#root {
+	width: 100%;
+	height: 100%;
+}
+
+.light,
+.dark {
+	background: $background;
+	color: $color;
+}
+
+// removes up/down arrow in mui https://stackoverflow.com/a/65200414/6051261
+/* Firefox */
+input[type='number'] {
+	-moz-appearance: textfield;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+.delete-row:not(.md-text--disabled) {
+	color: $warning;
+
+	.md-icon {
+		color: inherit;
+	}
+}

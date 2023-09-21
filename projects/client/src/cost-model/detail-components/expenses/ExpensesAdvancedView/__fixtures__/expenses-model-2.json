@@ -1,0 +1,2591 @@
+{
+	"options": {
+		"variable_expenses": {
+			"phase": {
+				"label": "Oil",
+				"value": "oil"
+			},
+			"category": {
+				"label": "G & P",
+				"value": "gathering"
+			},
+			"oil": {
+				"subItems": {
+					"gathering": {
+						"subItems": {
+							"description": "",
+							"shrinkage_condition": {
+								"label": "Unshrunk",
+								"value": "unshrunk"
+							},
+							"escalation_model": {
+								"label": "None",
+								"value": "none"
+							},
+							"calculation": {
+								"label": "WI",
+								"value": "wi"
+							},
+							"affect_econ_limit": {
+								"label": "Yes",
+								"value": "yes"
+							},
+							"deduct_before_severance_tax": {
+								"label": "No",
+								"value": "no"
+							},
+							"deduct_before_ad_val_tax": {
+								"label": "No",
+								"value": "no"
+							},
+							"cap": "",
+							"deal_terms": 1,
+							"rate_type": {
+								"label": "Gross Well Head",
+								"value": "gross_well_head"
+							},
+							"rows_calculation_method": {
+								"label": "Non Monotonic",
+								"value": "non_monotonic"
+							},
+							"row_view": {
+								"headers": {
+									"unit_cost": {
+										"label": "$/BBL",
+										"value": "dollar_per_bbl"
+									},
+									"criteria": {
+										"label": "Flat",
+										"value": "entire_well_life"
+									}
+								},
+								"rows": [
+									{
+										"unit_cost": 0,
+										"criteria": "Flat"
+									}
+								]
+							}
+						}
+					},
+					"processing": {
+						"subItems": {
+							"description": "",
+							"shrinkage_condition": {
+								"label": "Unshrunk",
+								"value": "unshrunk"
+							},
+							"escalation_model": {
+								"label": "None",
+								"value": "none"
+							},
+							"calculation": {
+								"label": "WI",
+								"value": "wi"
+							},
+							"affect_econ_limit": {
+								"label": "Yes",
+								"value": "yes"
+							},
+							"deduct_before_severance_tax": {
+								"label": "No",
+								"value": "no"
+							},
+							"deduct_before_ad_val_tax": {
+								"label": "No",
+								"value": "no"
+							},
+							"cap": "",
+							"deal_terms": 1,
+							"rate_type": {
+								"label": "Gross Well Head",
+								"value": "gross_well_head"
+							},
+							"rows_calculation_method": {
+								"label": "Non Monotonic",
+								"value": "non_monotonic"
+							},
+							"row_view": {
+								"headers": {
+									"unit_cost": {
+										"label": "$/BBL",
+										"value": "dollar_per_bbl"
+									},
+									"criteria": {
+										"label": "Flat",
+										"value": "entire_well_life"
+									}
+								},
+								"rows": [
+									{
+										"unit_cost": 0,
+										"criteria": "Flat"
+									}
+								]
+							}
+						}
+					},
+					"transportation": {
+						"subItems": {
+							"description": "",
+							"shrinkage_condition": {
+								"label": "Unshrunk",
+								"value": "unshrunk"
+							},
+							"escalation_model": {
+								"label": "None",
+								"value": "none"
+							},
+							"calculation": {
+								"label": "WI",
+								"value": "wi"
+							},
+							"affect_econ_limit": {
+								"label": "Yes",
+								"value": "yes"
+							},
+							"deduct_before_severance_tax": {
+								"label": "No",
+								"value": "no"
+							},
+							"deduct_before_ad_val_tax": {
+								"label": "No",
+								"value": "no"
+							},
+							"cap": "",
+							"deal_terms": 1,
+							"rate_type": {
+								"label": "Gross Well Head",
+								"value": "gross_well_head"
+							},
+							"rows_calculation_method": {
+								"label": "Non Monotonic",
+								"value": "non_monotonic"
+							},
+							"row_view": {
+								"headers": {
+									"unit_cost": {
+										"label": "$/BBL",
+										"value": "dollar_per_bbl"
+									},
+									"criteria": {
+										"label": "Flat",
+										"value": "entire_well_life"
+									}
+								},
+								"rows": [
+									{
+										"unit_cost": 0,
+										"criteria": "Flat"
+									}
+								]
+							}
+						}
+					},
+					"marketing": {
+						"subItems": {
+							"description": "",
+							"shrinkage_condition": {
+								"label": "Unshrunk",
+								"value": "unshrunk"
+							},
+							"escalation_model": {
+								"label": "None",
+								"value": "none"
+							},
+							"calculation": {
+								"label": "WI",
+								"value": "wi"
+							},
+							"affect_econ_limit": {
+								"label": "Yes",
+								"value": "yes"
+							},
+							"deduct_before_severance_tax": {
+								"label": "No",
+								"value": "no"
+							},
+							"deduct_before_ad_val_tax": {
+								"label": "No",
+								"value": "no"
+							},
+							"cap": "",
+							"rate_type": {
+								"label": "Gross Well Head",
+								"value": "gross_well_head"
+							},
+							"rows_calculation_method": {
+								"label": "Non Monotonic",
+								"value": "non_monotonic"
+							},
+							"deal_terms": 1,
+							"row_view": {
+								"headers": {
+									"unit_cost": {
+										"label": "$/BBL",
+										"value": "dollar_per_bbl"
+									},
+									"criteria": {
+										"label": "Flat",
+										"value": "entire_well_life"
+									}
+								},
+								"rows": [
+									{
+										"unit_cost": 0,
+										"criteria": "Flat"
+									}
+								]
+							}
+						}
+					},
+					"other": {
+						"subItems": {
+							"description": "",
+							"shrinkage_condition": {
+								"label": "Unshrunk",
+								"value": "unshrunk"
+							},
+							"escalation_model": {
+								"label": "None",
+								"value": "none"
+							},
+							"calculation": {
+								"label": "WI",
+								"value": "wi"
+							},
+							"affect_econ_limit": {
+								"label": "Yes",
+								"value": "yes"
+							},
+							"deduct_before_severance_tax": {
+								"label": "No",
+								"value": "no"
+							},
+							"deduct_before_ad_val_tax": {
+								"label": "No",
+								"value": "no"
+							},
+							"cap": "",
+							"deal_terms": 1,
+							"rate_type": {
+								"label": "Gross Well Head",
+								"value": "gross_well_head"
+							},
+							"rows_calculation_method": {
+								"label": "Non Monotonic",
+								"value": "non_monotonic"
+							},
+							"row_view": {
+								"headers": {
+									"unit_cost": {
+										"label": "$/BBL",
+										"value": "dollar_per_bbl"
+									},
+									"criteria": {
+										"label": "Flat",
+										"value": "entire_well_life"
+									}
+								},
+								"rows": [
+									{
+										"unit_cost": 0,
+										"criteria": "Flat"
+									}
+								]
+							}
+						}
+					}
+				}
+			},
+			"gas": {
+				"subItems": {
+					"gathering": {
+						"subItems": {
+							"description": "",
+							"shrinkage_condition": {
+								"label": "Unshrunk",
+								"value": "unshrunk"
+							},
+							"escalation_model": {
+								"label": "None",
+								"value": "none"
+							},
+							"calculation": {
+								"label": "WI",
+								"value": "wi"
+							},
+							"affect_econ_limit": {
+								"label": "Yes",
+								"value": "yes"
+							},
+							"deduct_before_severance_tax": {
+								"label": "No",
+								"value": "no"
+							},
+							"deduct_before_ad_val_tax": {
+								"label": "No",
+								"value": "no"
+							},
+							"cap": "",
+							"deal_terms": 1,
+							"rate_type": {
+								"label": "Gross Well Head",
+								"value": "gross_well_head"
+							},
+							"rows_calculation_method": {
+								"label": "Non Monotonic",
+								"value": "non_monotonic"
+							},
+							"row_view": {
+								"headers": {
+									"unit_cost": {
+										"label": "$/MCF",
+										"value": "dollar_per_mcf"
+									},
+									"criteria": {
+										"label": "Flat",
+										"value": "entire_well_life"
+									}
+								},
+								"rows": [
+									{
+										"unit_cost": 0,
+										"criteria": "Flat"
+									}
+								]
+							}
+						}
+					},
+					"processing": {
+						"subItems": {
+							"description": "",
+							"shrinkage_condition": {
+								"label": "Unshrunk",
+								"value": "unshrunk"
+							},
+							"escalation_model": {
+								"label": "None",
+								"value": "none"
+							},
+							"calculation": {
+								"label": "WI",
+								"value": "wi"
+							},
+							"affect_econ_limit": {
+								"label": "Yes",
+								"value": "yes"
+							},
+							"deduct_before_severance_tax": {
+								"label": "No",
+								"value": "no"
+							},
+							"deduct_before_ad_val_tax": {
+								"label": "No",
+								"value": "no"
+							},
+							"cap": "",
+							"deal_terms": 1,
+							"rate_type": {
+								"label": "Gross Well Head",
+								"value": "gross_well_head"
+							},
+							"rows_calculation_method": {
+								"label": "Non Monotonic",
+								"value": "non_monotonic"
+							},
+							"row_view": {
+								"headers": {
+									"unit_cost": {
+										"label": "$/MCF",
+										"value": "dollar_per_mcf"
+									},
+									"criteria": {
+										"label": "Flat",
+										"value": "entire_well_life"
+									}
+								},
+								"rows": [
+									{
+										"unit_cost": 0,
+										"criteria": "Flat"
+									}
+								]
+							}
+						}
+					},
+					"transportation": {
+						"subItems": {
+							"description": "",
+							"shrinkage_condition": {
+								"label": "Unshrunk",
+								"value": "unshrunk"
+							},
+							"escalation_model": {
+								"label": "None",
+								"value": "none"
+							},
+							"calculation": {
+								"label": "WI",
+								"value": "wi"
+							},
+							"affect_econ_limit": {
+								"label": "Yes",
+								"value": "yes"
+							},
+							"deduct_before_severance_tax": {
+								"label": "No",
+								"value": "no"
+							},
+							"deduct_before_ad_val_tax": {
+								"label": "No",
+								"value": "no"
+							},
+							"cap": "",
+							"deal_terms": 1,
+							"rate_type": {
+								"label": "Gross Well Head",
+								"value": "gross_well_head"
+							},
+							"rows_calculation_method": {
+								"label": "Non Monotonic",
+								"value": "non_monotonic"
+							},
+							"row_view": {
+								"headers": {
+									"unit_cost": {
+										"label": "$/MCF",
+										"value": "dollar_per_mcf"
+									},
+									"criteria": {
+										"label": "Flat",
+										"value": "entire_well_life"
+									}
+								},
+								"rows": [
+									{
+										"unit_cost": 0,
+										"criteria": "Flat"
+									}
+								]
+							}
+						}
+					},
+					"marketing": {
+						"subItems": {
+							"description": "",
+							"shrinkage_condition": {
+								"label": "Unshrunk",
+								"value": "unshrunk"
+							},
+							"escalation_model": {
+								"label": "None",
+								"value": "none"
+							},
+							"calculation": {
+								"label": "WI",
+								"value": "wi"
+							},
+							"affect_econ_limit": {
+								"label": "Yes",
+								"value": "yes"
+							},
+							"deduct_before_severance_tax": {
+								"label": "No",
+								"value": "no"
+							},
+							"deduct_before_ad_val_tax": {
+								"label": "No",
+								"value": "no"
+							},
+							"cap": "",
+							"deal_terms": 1,
+							"rate_type": {
+								"label": "Gross Well Head",
+								"value": "gross_well_head"
+							},
+							"rows_calculation_method": {
+								"label": "Non Monotonic",
+								"value": "non_monotonic"
+							},
+							"row_view": {
+								"headers": {
+									"unit_cost": {
+										"label": "$/MCF",
+										"value": "dollar_per_mcf"
+									},
+									"criteria": {
+										"label": "Flat",
+										"value": "entire_well_life"
+									}
+								},
+								"rows": [
+									{
+										"unit_cost": 0,
+										"criteria": "Flat"
+									}
+								]
+							}
+						}
+					},
+					"other": {
+						"subItems": {
+							"description": "",
+							"shrinkage_condition": {
+								"label": "Unshrunk",
+								"value": "unshrunk"
+							},
+							"escalation_model": {
+								"label": "None",
+								"value": "none"
+							},
+							"calculation": {
+								"label": "WI",
+								"value": "wi"
+							},
+							"affect_econ_limit": {
+								"label": "Yes",
+								"value": "yes"
+							},
+							"deduct_before_severance_tax": {
+								"label": "No",
+								"value": "no"
+							},
+							"deduct_before_ad_val_tax": {
+								"label": "No",
+								"value": "no"
+							},
+							"cap": "",
+							"deal_terms": 1,
+							"rate_type": {
+								"label": "Gross Well Head",
+								"value": "gross_well_head"
+							},
+							"rows_calculation_method": {
+								"label": "Non Monotonic",
+								"value": "non_monotonic"
+							},
+							"row_view": {
+								"headers": {
+									"unit_cost": {
+										"label": "$/MCF",
+										"value": "dollar_per_mcf"
+									},
+									"criteria": {
+										"label": "Flat",
+										"value": "entire_well_life"
+									}
+								},
+								"rows": [
+									{
+										"unit_cost": 0,
+										"criteria": "Flat"
+									}
+								]
+							}
+						}
+					}
+				}
+			},
+			"ngl": {
+				"subItems": {
+					"gathering": {
+						"subItems": {
+							"description": "",
+							"escalation_model": {
+								"label": "None",
+								"value": "none"
+							},
+							"calculation": {
+								"label": "WI",
+								"value": "wi"
+							},
+							"affect_econ_limit": {
+								"label": "Yes",
+								"value": "yes"
+							},
+							"deduct_before_severance_tax": {
+								"label": "No",
+								"value": "no"
+							},
+							"deduct_before_ad_val_tax": {
+								"label": "No",
+								"value": "no"
+							},
+							"cap": "",
+							"deal_terms": 1,
+							"rate_type": {
+								"label": "Gross Well Head",
+								"value": "gross_well_head"
+							},
+							"rows_calculation_method": {
+								"label": "Non Monotonic",
+								"value": "non_monotonic"
+							},
+							"row_view": {
+								"headers": {
+									"unit_cost": {
+										"label": "$/BBL",
+										"value": "dollar_per_bbl"
+									},
+									"criteria": {
+										"label": "Flat",
+										"value": "entire_well_life"
+									}
+								},
+								"rows": [
+									{
+										"unit_cost": 0,
+										"criteria": "Flat"
+									}
+								]
+							}
+						}
+					},
+					"processing": {
+						"subItems": {
+							"description": "",
+							"escalation_model": {
+								"label": "None",
+								"value": "none"
+							},
+							"calculation": {
+								"label": "WI",
+								"value": "wi"
+							},
+							"affect_econ_limit": {
+								"label": "Yes",
+								"value": "yes"
+							},
+							"deduct_before_severance_tax": {
+								"label": "No",
+								"value": "no"
+							},
+							"deduct_before_ad_val_tax": {
+								"label": "No",
+								"value": "no"
+							},
+							"cap": "",
+							"deal_terms": 1,
+							"rate_type": {
+								"label": "Gross Well Head",
+								"value": "gross_well_head"
+							},
+							"rows_calculation_method": {
+								"label": "Non Monotonic",
+								"value": "non_monotonic"
+							},
+							"row_view": {
+								"headers": {
+									"unit_cost": {
+										"label": "$/BBL",
+										"value": "dollar_per_bbl"
+									},
+									"criteria": {
+										"label": "Flat",
+										"value": "entire_well_life"
+									}
+								},
+								"rows": [
+									{
+										"unit_cost": 0,
+										"criteria": "Flat"
+									}
+								]
+							}
+						}
+					},
+					"transportation": {
+						"subItems": {
+							"description": "",
+							"escalation_model": {
+								"label": "None",
+								"value": "none"
+							},
+							"calculation": {
+								"label": "WI",
+								"value": "wi"
+							},
+							"affect_econ_limit": {
+								"label": "Yes",
+								"value": "yes"
+							},
+							"deduct_before_severance_tax": {
+								"label": "No",
+								"value": "no"
+							},
+							"deduct_before_ad_val_tax": {
+								"label": "No",
+								"value": "no"
+							},
+							"cap": "",
+							"deal_terms": 1,
+							"rate_type": {
+								"label": "Gross Well Head",
+								"value": "gross_well_head"
+							},
+							"rows_calculation_method": {
+								"label": "Non Monotonic",
+								"value": "non_monotonic"
+							},
+							"row_view": {
+								"headers": {
+									"unit_cost": {
+										"label": "$/BBL",
+										"value": "dollar_per_bbl"
+									},
+									"criteria": {
+										"label": "Flat",
+										"value": "entire_well_life"
+									}
+								},
+								"rows": [
+									{
+										"unit_cost": 0,
+										"criteria": "Flat"
+									}
+								]
+							}
+						}
+					},
+					"marketing": {
+						"subItems": {
+							"description": "",
+							"escalation_model": {
+								"label": "None",
+								"value": "none"
+							},
+							"calculation": {
+								"label": "WI",
+								"value": "wi"
+							},
+							"affect_econ_limit": {
+								"label": "Yes",
+								"value": "yes"
+							},
+							"deduct_before_severance_tax": {
+								"label": "No",
+								"value": "no"
+							},
+							"deduct_before_ad_val_tax": {
+								"label": "No",
+								"value": "no"
+							},
+							"cap": "",
+							"deal_terms": 1,
+							"rate_type": {
+								"label": "Gross Well Head",
+								"value": "gross_well_head"
+							},
+							"rows_calculation_method": {
+								"label": "Non Monotonic",
+								"value": "non_monotonic"
+							},
+							"row_view": {
+								"headers": {
+									"unit_cost": {
+										"label": "$/BBL",
+										"value": "dollar_per_bbl"
+									},
+									"criteria": {
+										"label": "Flat",
+										"value": "entire_well_life"
+									}
+								},
+								"rows": [
+									{
+										"unit_cost": 0,
+										"criteria": "Flat"
+									}
+								]
+							}
+						}
+					},
+					"other": {
+						"subItems": {
+							"description": "",
+							"escalation_model": {
+								"label": "None",
+								"value": "none"
+							},
+							"calculation": {
+								"label": "WI",
+								"value": "wi"
+							},
+							"affect_econ_limit": {
+								"label": "Yes",
+								"value": "yes"
+							},
+							"deduct_before_severance_tax": {
+								"label": "No",
+								"value": "no"
+							},
+							"deduct_before_ad_val_tax": {
+								"label": "No",
+								"value": "no"
+							},
+							"cap": "",
+							"deal_terms": 1,
+							"rate_type": {
+								"label": "Gross Well Head",
+								"value": "gross_well_head"
+							},
+							"rows_calculation_method": {
+								"label": "Non Monotonic",
+								"value": "non_monotonic"
+							},
+							"row_view": {
+								"headers": {
+									"unit_cost": {
+										"label": "$/BBL",
+										"value": "dollar_per_bbl"
+									},
+									"criteria": {
+										"label": "Flat",
+										"value": "entire_well_life"
+									}
+								},
+								"rows": [
+									{
+										"unit_cost": 0,
+										"criteria": "Flat"
+									}
+								]
+							}
+						}
+					}
+				}
+			},
+			"drip_condensate": {
+				"subItems": {
+					"gathering": {
+						"subItems": {
+							"description": "",
+							"escalation_model": {
+								"label": "None",
+								"value": "none"
+							},
+							"calculation": {
+								"label": "WI",
+								"value": "wi"
+							},
+							"affect_econ_limit": {
+								"label": "Yes",
+								"value": "yes"
+							},
+							"deduct_before_severance_tax": {
+								"label": "No",
+								"value": "no"
+							},
+							"deduct_before_ad_val_tax": {
+								"label": "No",
+								"value": "no"
+							},
+							"cap": "",
+							"deal_terms": 1,
+							"rate_type": {
+								"label": "Gross Well Head",
+								"value": "gross_well_head"
+							},
+							"rows_calculation_method": {
+								"label": "Non Monotonic",
+								"value": "non_monotonic"
+							},
+							"row_view": {
+								"headers": {
+									"unit_cost": {
+										"label": "$/BBL",
+										"value": "dollar_per_bbl"
+									},
+									"criteria": {
+										"label": "Flat",
+										"value": "entire_well_life"
+									}
+								},
+								"rows": [
+									{
+										"unit_cost": 0,
+										"criteria": "Flat"
+									}
+								]
+							}
+						}
+					},
+					"processing": {
+						"subItems": {
+							"description": "",
+							"escalation_model": {
+								"label": "None",
+								"value": "none"
+							},
+							"calculation": {
+								"label": "WI",
+								"value": "wi"
+							},
+							"affect_econ_limit": {
+								"label": "Yes",
+								"value": "yes"
+							},
+							"deduct_before_severance_tax": {
+								"label": "No",
+								"value": "no"
+							},
+							"deduct_before_ad_val_tax": {
+								"label": "No",
+								"value": "no"
+							},
+							"cap": "",
+							"deal_terms": 1,
+							"rate_type": {
+								"label": "Gross Well Head",
+								"value": "gross_well_head"
+							},
+							"rows_calculation_method": {
+								"label": "Non Monotonic",
+								"value": "non_monotonic"
+							},
+							"row_view": {
+								"headers": {
+									"unit_cost": {
+										"label": "$/BBL",
+										"value": "dollar_per_bbl"
+									},
+									"criteria": {
+										"label": "Flat",
+										"value": "entire_well_life"
+									}
+								},
+								"rows": [
+									{
+										"unit_cost": 0,
+										"criteria": "Flat"
+									}
+								]
+							}
+						}
+					},
+					"transportation": {
+						"subItems": {
+							"description": "",
+							"escalation_model": {
+								"label": "None",
+								"value": "none"
+							},
+							"calculation": {
+								"label": "WI",
+								"value": "wi"
+							},
+							"affect_econ_limit": {
+								"label": "Yes",
+								"value": "yes"
+							},
+							"deduct_before_severance_tax": {
+								"label": "No",
+								"value": "no"
+							},
+							"deduct_before_ad_val_tax": {
+								"label": "No",
+								"value": "no"
+							},
+							"cap": "",
+							"deal_terms": 1,
+							"rate_type": {
+								"label": "Gross Well Head",
+								"value": "gross_well_head"
+							},
+							"rows_calculation_method": {
+								"label": "Non Monotonic",
+								"value": "non_monotonic"
+							},
+							"row_view": {
+								"headers": {
+									"unit_cost": {
+										"label": "$/BBL",
+										"value": "dollar_per_bbl"
+									},
+									"criteria": {
+										"label": "Flat",
+										"value": "entire_well_life"
+									}
+								},
+								"rows": [
+									{
+										"unit_cost": 0,
+										"criteria": "Flat"
+									}
+								]
+							}
+						}
+					},
+					"marketing": {
+						"subItems": {
+							"description": "",
+							"escalation_model": {
+								"label": "None",
+								"value": "none"
+							},
+							"calculation": {
+								"label": "WI",
+								"value": "wi"
+							},
+							"affect_econ_limit": {
+								"label": "Yes",
+								"value": "yes"
+							},
+							"deduct_before_severance_tax": {
+								"label": "No",
+								"value": "no"
+							},
+							"deduct_before_ad_val_tax": {
+								"label": "No",
+								"value": "no"
+							},
+							"cap": "",
+							"deal_terms": 1,
+							"rate_type": {
+								"label": "Gross Well Head",
+								"value": "gross_well_head"
+							},
+							"rows_calculation_method": {
+								"label": "Non Monotonic",
+								"value": "non_monotonic"
+							},
+							"row_view": {
+								"headers": {
+									"unit_cost": {
+										"label": "$/BBL",
+										"value": "dollar_per_bbl"
+									},
+									"criteria": {
+										"label": "Flat",
+										"value": "entire_well_life"
+									}
+								},
+								"rows": [
+									{
+										"unit_cost": 0,
+										"criteria": "Flat"
+									}
+								]
+							}
+						}
+					},
+					"other": {
+						"subItems": {
+							"description": "",
+							"escalation_model": {
+								"label": "None",
+								"value": "none"
+							},
+							"calculation": {
+								"label": "WI",
+								"value": "wi"
+							},
+							"affect_econ_limit": {
+								"label": "Yes",
+								"value": "yes"
+							},
+							"deduct_before_severance_tax": {
+								"label": "No",
+								"value": "no"
+							},
+							"deduct_before_ad_val_tax": {
+								"label": "No",
+								"value": "no"
+							},
+							"cap": "",
+							"deal_terms": 1,
+							"rate_type": {
+								"label": "Gross Well Head",
+								"value": "gross_well_head"
+							},
+							"rows_calculation_method": {
+								"label": "Non Monotonic",
+								"value": "non_monotonic"
+							},
+							"row_view": {
+								"headers": {
+									"unit_cost": {
+										"label": "$/BBL",
+										"value": "dollar_per_bbl"
+									},
+									"criteria": {
+										"label": "Flat",
+										"value": "entire_well_life"
+									}
+								},
+								"rows": [
+									{
+										"unit_cost": 0,
+										"criteria": "Flat"
+									}
+								]
+							}
+						}
+					}
+				}
+			}
+		},
+		"fixed_expenses": {
+			"category": {
+				"label": "Fixed 1",
+				"value": "monthly_well_cost"
+			},
+			"monthly_well_cost": {
+				"subItems": {
+					"description": "",
+					"escalation_model": {
+						"label": "None",
+						"value": "none"
+					},
+					"calculation": {
+						"label": "WI",
+						"value": "wi"
+					},
+					"affect_econ_limit": {
+						"label": "Yes",
+						"value": "yes"
+					},
+					"stop_at_econ_limit": {
+						"label": "Yes",
+						"value": "yes"
+					},
+					"expense_before_fpd": {
+						"label": "No",
+						"value": "no"
+					},
+					"deduct_before_severance_tax": {
+						"label": "No",
+						"value": "no"
+					},
+					"deduct_before_ad_val_tax": {
+						"label": "No",
+						"value": "no"
+					},
+					"cap": "",
+					"deal_terms": 1,
+					"rate_type": {
+						"label": "Gross Well Head",
+						"value": "gross_well_head"
+					},
+					"rows_calculation_method": {
+						"label": "Non Monotonic",
+						"value": "non_monotonic"
+					},
+					"row_view": {
+						"headers": {
+							"fixed_expense": "$/Month",
+							"criteria": {
+								"label": "Oil Rate",
+								"value": "oil_rate",
+								"disabled": false
+							}
+						},
+						"rows": [
+							{
+								"fixed_expense": 1000,
+								"criteria": {
+									"start": 0,
+									"end": 50
+								}
+							},
+							{
+								"fixed_expense": 2000,
+								"criteria": {
+									"start": 50,
+									"end": "inf"
+								}
+							}
+						]
+					}
+				}
+			},
+			"other_monthly_cost_1": {
+				"subItems": {
+					"description": "",
+					"escalation_model": {
+						"label": "None",
+						"value": "none"
+					},
+					"calculation": {
+						"label": "WI",
+						"value": "wi"
+					},
+					"affect_econ_limit": {
+						"label": "Yes",
+						"value": "yes"
+					},
+					"stop_at_econ_limit": {
+						"label": "Yes",
+						"value": "yes"
+					},
+					"expense_before_fpd": {
+						"label": "No",
+						"value": "no"
+					},
+					"deduct_before_severance_tax": {
+						"label": "No",
+						"value": "no"
+					},
+					"deduct_before_ad_val_tax": {
+						"label": "No",
+						"value": "no"
+					},
+					"cap": "",
+					"deal_terms": 1,
+					"rate_type": {
+						"label": "Gross Well Head",
+						"value": "gross_well_head"
+					},
+					"rows_calculation_method": {
+						"label": "Non Monotonic",
+						"value": "non_monotonic"
+					},
+					"row_view": {
+						"headers": {
+							"fixed_expense": "$/Month",
+							"criteria": {
+								"label": "Flat",
+								"value": "entire_well_life"
+							}
+						},
+						"rows": [
+							{
+								"fixed_expense": 0,
+								"criteria": "Flat"
+							}
+						]
+					}
+				}
+			},
+			"other_monthly_cost_2": {
+				"subItems": {
+					"description": "",
+					"escalation_model": {
+						"label": "None",
+						"value": "none"
+					},
+					"calculation": {
+						"label": "WI",
+						"value": "wi"
+					},
+					"affect_econ_limit": {
+						"label": "Yes",
+						"value": "yes"
+					},
+					"stop_at_econ_limit": {
+						"label": "Yes",
+						"value": "yes"
+					},
+					"expense_before_fpd": {
+						"label": "No",
+						"value": "no"
+					},
+					"deduct_before_severance_tax": {
+						"label": "No",
+						"value": "no"
+					},
+					"deduct_before_ad_val_tax": {
+						"label": "No",
+						"value": "no"
+					},
+					"cap": "",
+					"deal_terms": 1,
+					"rate_type": {
+						"label": "Gross Well Head",
+						"value": "gross_well_head"
+					},
+					"rows_calculation_method": {
+						"label": "Non Monotonic",
+						"value": "non_monotonic"
+					},
+					"row_view": {
+						"headers": {
+							"fixed_expense": "$/Month",
+							"criteria": {
+								"label": "Flat",
+								"value": "entire_well_life"
+							}
+						},
+						"rows": [
+							{
+								"fixed_expense": 0,
+								"criteria": "Flat"
+							}
+						]
+					}
+				}
+			},
+			"other_monthly_cost_3": {
+				"subItems": {
+					"description": "",
+					"escalation_model": {
+						"label": "None",
+						"value": "none"
+					},
+					"calculation": {
+						"label": "WI",
+						"value": "wi"
+					},
+					"affect_econ_limit": {
+						"label": "Yes",
+						"value": "yes"
+					},
+					"stop_at_econ_limit": {
+						"label": "Yes",
+						"value": "yes"
+					},
+					"expense_before_fpd": {
+						"label": "No",
+						"value": "no"
+					},
+					"deduct_before_severance_tax": {
+						"label": "No",
+						"value": "no"
+					},
+					"deduct_before_ad_val_tax": {
+						"label": "No",
+						"value": "no"
+					},
+					"cap": "",
+					"deal_terms": 1,
+					"rate_type": {
+						"label": "Gross Well Head",
+						"value": "gross_well_head"
+					},
+					"rows_calculation_method": {
+						"label": "Non Monotonic",
+						"value": "non_monotonic"
+					},
+					"row_view": {
+						"headers": {
+							"fixed_expense": "$/Month",
+							"criteria": {
+								"label": "Flat",
+								"value": "entire_well_life"
+							}
+						},
+						"rows": [
+							{
+								"fixed_expense": 0,
+								"criteria": "Flat"
+							}
+						]
+					}
+				}
+			},
+			"other_monthly_cost_4": {
+				"subItems": {
+					"description": "",
+					"escalation_model": {
+						"label": "None",
+						"value": "none"
+					},
+					"calculation": {
+						"label": "WI",
+						"value": "wi"
+					},
+					"affect_econ_limit": {
+						"label": "Yes",
+						"value": "yes"
+					},
+					"stop_at_econ_limit": {
+						"label": "Yes",
+						"value": "yes"
+					},
+					"expense_before_fpd": {
+						"label": "No",
+						"value": "no"
+					},
+					"deduct_before_severance_tax": {
+						"label": "No",
+						"value": "no"
+					},
+					"deduct_before_ad_val_tax": {
+						"label": "No",
+						"value": "no"
+					},
+					"cap": "",
+					"deal_terms": 1,
+					"rate_type": {
+						"label": "Gross Well Head",
+						"value": "gross_well_head"
+					},
+					"rows_calculation_method": {
+						"label": "Non Monotonic",
+						"value": "non_monotonic"
+					},
+					"row_view": {
+						"headers": {
+							"fixed_expense": "$/Month",
+							"criteria": {
+								"label": "Flat",
+								"value": "entire_well_life"
+							}
+						},
+						"rows": [
+							{
+								"fixed_expense": 0,
+								"criteria": "Flat"
+							}
+						]
+					}
+				}
+			},
+			"other_monthly_cost_5": {
+				"subItems": {
+					"description": "",
+					"escalation_model": {
+						"label": "None",
+						"value": "none"
+					},
+					"calculation": {
+						"label": "WI",
+						"value": "wi"
+					},
+					"affect_econ_limit": {
+						"label": "Yes",
+						"value": "yes"
+					},
+					"stop_at_econ_limit": {
+						"label": "Yes",
+						"value": "yes"
+					},
+					"expense_before_fpd": {
+						"label": "No",
+						"value": "no"
+					},
+					"deduct_before_severance_tax": {
+						"label": "No",
+						"value": "no"
+					},
+					"deduct_before_ad_val_tax": {
+						"label": "No",
+						"value": "no"
+					},
+					"cap": "",
+					"deal_terms": 1,
+					"rate_type": {
+						"label": "Gross Well Head",
+						"value": "gross_well_head"
+					},
+					"rows_calculation_method": {
+						"label": "Non Monotonic",
+						"value": "non_monotonic"
+					},
+					"row_view": {
+						"headers": {
+							"fixed_expense": "$/Month",
+							"criteria": {
+								"label": "Flat",
+								"value": "entire_well_life"
+							}
+						},
+						"rows": [
+							{
+								"fixed_expense": 0,
+								"criteria": "Flat"
+							}
+						]
+					}
+				}
+			},
+			"other_monthly_cost_6": {
+				"subItems": {
+					"description": "",
+					"escalation_model": {
+						"label": "None",
+						"value": "none"
+					},
+					"calculation": {
+						"label": "WI",
+						"value": "wi"
+					},
+					"affect_econ_limit": {
+						"label": "Yes",
+						"value": "yes"
+					},
+					"stop_at_econ_limit": {
+						"label": "Yes",
+						"value": "yes"
+					},
+					"expense_before_fpd": {
+						"label": "No",
+						"value": "no"
+					},
+					"deduct_before_severance_tax": {
+						"label": "No",
+						"value": "no"
+					},
+					"deduct_before_ad_val_tax": {
+						"label": "No",
+						"value": "no"
+					},
+					"cap": "",
+					"deal_terms": 1,
+					"rate_type": {
+						"label": "Gross Well Head",
+						"value": "gross_well_head"
+					},
+					"rows_calculation_method": {
+						"label": "Non Monotonic",
+						"value": "non_monotonic"
+					},
+					"row_view": {
+						"headers": {
+							"fixed_expense": "$/Month",
+							"criteria": {
+								"label": "Flat",
+								"value": "entire_well_life"
+							}
+						},
+						"rows": [
+							{
+								"fixed_expense": 0,
+								"criteria": "Flat"
+							}
+						]
+					}
+				}
+			},
+			"other_monthly_cost_7": {
+				"subItems": {
+					"description": "",
+					"escalation_model": {
+						"label": "None",
+						"value": "none"
+					},
+					"calculation": {
+						"label": "WI",
+						"value": "wi"
+					},
+					"affect_econ_limit": {
+						"label": "Yes",
+						"value": "yes"
+					},
+					"stop_at_econ_limit": {
+						"label": "Yes",
+						"value": "yes"
+					},
+					"expense_before_fpd": {
+						"label": "No",
+						"value": "no"
+					},
+					"deduct_before_severance_tax": {
+						"label": "No",
+						"value": "no"
+					},
+					"deduct_before_ad_val_tax": {
+						"label": "No",
+						"value": "no"
+					},
+					"cap": "",
+					"deal_terms": 1,
+					"rate_type": {
+						"label": "Gross Well Head",
+						"value": "gross_well_head"
+					},
+					"rows_calculation_method": {
+						"label": "Non Monotonic",
+						"value": "non_monotonic"
+					},
+					"row_view": {
+						"headers": {
+							"fixed_expense": "$/Month",
+							"criteria": {
+								"label": "Flat",
+								"value": "entire_well_life"
+							}
+						},
+						"rows": [
+							{
+								"fixed_expense": 0,
+								"criteria": "Flat"
+							}
+						]
+					}
+				}
+			},
+			"other_monthly_cost_8": {
+				"subItems": {
+					"description": "",
+					"escalation_model": {
+						"label": "None",
+						"value": "none"
+					},
+					"calculation": {
+						"label": "WI",
+						"value": "wi"
+					},
+					"affect_econ_limit": {
+						"label": "Yes",
+						"value": "yes"
+					},
+					"stop_at_econ_limit": {
+						"label": "Yes",
+						"value": "yes"
+					},
+					"expense_before_fpd": {
+						"label": "No",
+						"value": "no"
+					},
+					"deduct_before_severance_tax": {
+						"label": "No",
+						"value": "no"
+					},
+					"deduct_before_ad_val_tax": {
+						"label": "No",
+						"value": "no"
+					},
+					"cap": "",
+					"deal_terms": 1,
+					"rate_type": {
+						"label": "Gross Well Head",
+						"value": "gross_well_head"
+					},
+					"rows_calculation_method": {
+						"label": "Non Monotonic",
+						"value": "non_monotonic"
+					},
+					"row_view": {
+						"headers": {
+							"fixed_expense": "$/Month",
+							"criteria": {
+								"label": "Flat",
+								"value": "entire_well_life"
+							}
+						},
+						"rows": [
+							{
+								"fixed_expense": 0,
+								"criteria": "Flat"
+							}
+						]
+					}
+				}
+			}
+		},
+		"water_disposal": {
+			"escalation_model": {
+				"label": "None",
+				"value": "none"
+			},
+			"calculation": {
+				"label": "WI",
+				"value": "wi"
+			},
+			"affect_econ_limit": {
+				"label": "Yes",
+				"value": "yes"
+			},
+			"deduct_before_severance_tax": {
+				"label": "No",
+				"value": "no"
+			},
+			"deduct_before_ad_val_tax": {
+				"label": "No",
+				"value": "no"
+			},
+			"cap": "",
+			"deal_terms": 1,
+			"rate_type": {
+				"label": "Gross Well Head",
+				"value": "gross_well_head"
+			},
+			"rows_calculation_method": {
+				"label": "Non Monotonic",
+				"value": "non_monotonic"
+			},
+			"row_view": {
+				"headers": {
+					"unit_cost": {
+						"label": "$/BBL",
+						"value": "dollar_per_bbl"
+					},
+					"criteria": {
+						"label": "Flat",
+						"value": "entire_well_life"
+					}
+				},
+				"rows": [
+					{
+						"unit_cost": 0,
+						"criteria": "Flat"
+					}
+				]
+			}
+		},
+		"carbon_expenses": {
+			"category": {
+				"label": "CO2e",
+				"value": "co2e"
+			},
+			"co2e": {
+				"subItems": {
+					"description": "",
+					"escalation_model": {
+						"label": "None",
+						"value": "none"
+					},
+					"calculation": {
+						"label": "WI",
+						"value": "wi"
+					},
+					"affect_econ_limit": {
+						"label": "Yes",
+						"value": "yes"
+					},
+					"deduct_before_severance_tax": {
+						"label": "No",
+						"value": "no"
+					},
+					"deduct_before_ad_val_tax": {
+						"label": "No",
+						"value": "no"
+					},
+					"cap": "",
+					"deal_terms": 1,
+					"rate_type": {
+						"label": "Gross Well Head",
+						"value": "gross_well_head"
+					},
+					"rows_calculation_method": {
+						"label": "Non Monotonic",
+						"value": "non_monotonic"
+					},
+					"row_view": {
+						"headers": {
+							"carbon_expense": "$/MT",
+							"criteria": {
+								"label": "Flat",
+								"value": "entire_well_life"
+							}
+						},
+						"rows": [
+							{
+								"carbon_expense": 0,
+								"criteria": "Flat"
+							}
+						]
+					}
+				}
+			},
+			"co2": {
+				"subItems": {
+					"description": "",
+					"escalation_model": {
+						"label": "None",
+						"value": "none"
+					},
+					"calculation": {
+						"label": "WI",
+						"value": "wi"
+					},
+					"affect_econ_limit": {
+						"label": "Yes",
+						"value": "yes"
+					},
+					"deduct_before_severance_tax": {
+						"label": "No",
+						"value": "no"
+					},
+					"deduct_before_ad_val_tax": {
+						"label": "No",
+						"value": "no"
+					},
+					"cap": "",
+					"deal_terms": 1,
+					"rate_type": {
+						"label": "Gross Well Head",
+						"value": "gross_well_head"
+					},
+					"rows_calculation_method": {
+						"label": "Non Monotonic",
+						"value": "non_monotonic"
+					},
+					"row_view": {
+						"headers": {
+							"carbon_expense": "$/MT",
+							"criteria": {
+								"label": "Flat",
+								"value": "entire_well_life"
+							}
+						},
+						"rows": [
+							{
+								"carbon_expense": 0,
+								"criteria": "Flat"
+							}
+						]
+					}
+				}
+			},
+			"ch4": {
+				"subItems": {
+					"description": "",
+					"escalation_model": {
+						"label": "None",
+						"value": "none"
+					},
+					"calculation": {
+						"label": "WI",
+						"value": "wi"
+					},
+					"affect_econ_limit": {
+						"label": "Yes",
+						"value": "yes"
+					},
+					"deduct_before_severance_tax": {
+						"label": "No",
+						"value": "no"
+					},
+					"deduct_before_ad_val_tax": {
+						"label": "No",
+						"value": "no"
+					},
+					"cap": "",
+					"deal_terms": 1,
+					"rate_type": {
+						"label": "Gross Well Head",
+						"value": "gross_well_head"
+					},
+					"rows_calculation_method": {
+						"label": "Non Monotonic",
+						"value": "non_monotonic"
+					},
+					"row_view": {
+						"headers": {
+							"carbon_expense": "$/MT",
+							"criteria": {
+								"label": "Flat",
+								"value": "entire_well_life"
+							}
+						},
+						"rows": [
+							{
+								"carbon_expense": 0,
+								"criteria": "Flat"
+							}
+						]
+					}
+				}
+			},
+			"n2o": {
+				"subItems": {
+					"description": "",
+					"escalation_model": {
+						"label": "None",
+						"value": "none"
+					},
+					"calculation": {
+						"label": "WI",
+						"value": "wi"
+					},
+					"affect_econ_limit": {
+						"label": "Yes",
+						"value": "yes"
+					},
+					"deduct_before_severance_tax": {
+						"label": "No",
+						"value": "no"
+					},
+					"deduct_before_ad_val_tax": {
+						"label": "No",
+						"value": "no"
+					},
+					"cap": "",
+					"deal_terms": 1,
+					"rate_type": {
+						"label": "Gross Well Head",
+						"value": "gross_well_head"
+					},
+					"rows_calculation_method": {
+						"label": "Non Monotonic",
+						"value": "non_monotonic"
+					},
+					"row_view": {
+						"headers": {
+							"carbon_expense": "$/MT",
+							"criteria": {
+								"label": "Flat",
+								"value": "entire_well_life"
+							}
+						},
+						"rows": [
+							{
+								"carbon_expense": 0,
+								"criteria": "Flat"
+							}
+						]
+					}
+				}
+			}
+		}
+	},
+	"econ_function": {
+		"variable_expenses": {
+			"oil": {
+				"gathering": {
+					"description": "",
+					"shrinkage_condition": "unshrunk",
+					"escalation_model": "none",
+					"calculation": "wi",
+					"affect_econ_limit": "yes",
+					"deduct_before_severance_tax": "no",
+					"deduct_before_ad_val_tax": "no",
+					"cap": "",
+					"deal_terms": 1,
+					"rate_type": "gross_well_head",
+					"rows_calculation_method": "non_monotonic",
+					"rows": [
+						{
+							"dollar_per_bbl": 0,
+							"entire_well_life": "Flat"
+						}
+					]
+				},
+				"processing": {
+					"description": "",
+					"shrinkage_condition": "unshrunk",
+					"escalation_model": "none",
+					"calculation": "wi",
+					"affect_econ_limit": "yes",
+					"deduct_before_severance_tax": "no",
+					"deduct_before_ad_val_tax": "no",
+					"cap": "",
+					"deal_terms": 1,
+					"rate_type": "gross_well_head",
+					"rows_calculation_method": "non_monotonic",
+					"rows": [
+						{
+							"dollar_per_bbl": 0,
+							"entire_well_life": "Flat"
+						}
+					]
+				},
+				"transportation": {
+					"description": "",
+					"shrinkage_condition": "unshrunk",
+					"escalation_model": "none",
+					"calculation": "wi",
+					"affect_econ_limit": "yes",
+					"deduct_before_severance_tax": "no",
+					"deduct_before_ad_val_tax": "no",
+					"cap": "",
+					"deal_terms": 1,
+					"rate_type": "gross_well_head",
+					"rows_calculation_method": "non_monotonic",
+					"rows": [
+						{
+							"dollar_per_bbl": 0,
+							"entire_well_life": "Flat"
+						}
+					]
+				},
+				"marketing": {
+					"description": "",
+					"shrinkage_condition": "unshrunk",
+					"escalation_model": "none",
+					"calculation": "wi",
+					"affect_econ_limit": "yes",
+					"deduct_before_severance_tax": "no",
+					"deduct_before_ad_val_tax": "no",
+					"cap": "",
+					"rate_type": "gross_well_head",
+					"rows_calculation_method": "non_monotonic",
+					"deal_terms": 1,
+					"rows": [
+						{
+							"dollar_per_bbl": 0,
+							"entire_well_life": "Flat"
+						}
+					]
+				},
+				"other": {
+					"description": "",
+					"shrinkage_condition": "unshrunk",
+					"escalation_model": "none",
+					"calculation": "wi",
+					"affect_econ_limit": "yes",
+					"deduct_before_severance_tax": "no",
+					"deduct_before_ad_val_tax": "no",
+					"cap": "",
+					"deal_terms": 1,
+					"rate_type": "gross_well_head",
+					"rows_calculation_method": "non_monotonic",
+					"rows": [
+						{
+							"dollar_per_bbl": 0,
+							"entire_well_life": "Flat"
+						}
+					]
+				}
+			},
+			"gas": {
+				"gathering": {
+					"description": "",
+					"shrinkage_condition": "unshrunk",
+					"escalation_model": "none",
+					"calculation": "wi",
+					"affect_econ_limit": "yes",
+					"deduct_before_severance_tax": "no",
+					"deduct_before_ad_val_tax": "no",
+					"cap": "",
+					"deal_terms": 1,
+					"rate_type": "gross_well_head",
+					"rows_calculation_method": "non_monotonic",
+					"rows": [
+						{
+							"dollar_per_mcf": 0,
+							"entire_well_life": "Flat"
+						}
+					]
+				},
+				"processing": {
+					"description": "",
+					"shrinkage_condition": "unshrunk",
+					"escalation_model": "none",
+					"calculation": "wi",
+					"affect_econ_limit": "yes",
+					"deduct_before_severance_tax": "no",
+					"deduct_before_ad_val_tax": "no",
+					"cap": "",
+					"deal_terms": 1,
+					"rate_type": "gross_well_head",
+					"rows_calculation_method": "non_monotonic",
+					"rows": [
+						{
+							"dollar_per_mcf": 0,
+							"entire_well_life": "Flat"
+						}
+					]
+				},
+				"transportation": {
+					"description": "",
+					"shrinkage_condition": "unshrunk",
+					"escalation_model": "none",
+					"calculation": "wi",
+					"affect_econ_limit": "yes",
+					"deduct_before_severance_tax": "no",
+					"deduct_before_ad_val_tax": "no",
+					"cap": "",
+					"deal_terms": 1,
+					"rate_type": "gross_well_head",
+					"rows_calculation_method": "non_monotonic",
+					"rows": [
+						{
+							"dollar_per_mcf": 0,
+							"entire_well_life": "Flat"
+						}
+					]
+				},
+				"marketing": {
+					"description": "",
+					"shrinkage_condition": "unshrunk",
+					"escalation_model": "none",
+					"calculation": "wi",
+					"affect_econ_limit": "yes",
+					"deduct_before_severance_tax": "no",
+					"deduct_before_ad_val_tax": "no",
+					"cap": "",
+					"deal_terms": 1,
+					"rate_type": "gross_well_head",
+					"rows_calculation_method": "non_monotonic",
+					"rows": [
+						{
+							"dollar_per_mcf": 0,
+							"entire_well_life": "Flat"
+						}
+					]
+				},
+				"other": {
+					"description": "",
+					"shrinkage_condition": "unshrunk",
+					"escalation_model": "none",
+					"calculation": "wi",
+					"affect_econ_limit": "yes",
+					"deduct_before_severance_tax": "no",
+					"deduct_before_ad_val_tax": "no",
+					"cap": "",
+					"deal_terms": 1,
+					"rate_type": "gross_well_head",
+					"rows_calculation_method": "non_monotonic",
+					"rows": [
+						{
+							"dollar_per_mcf": 0,
+							"entire_well_life": "Flat"
+						}
+					]
+				}
+			},
+			"ngl": {
+				"gathering": {
+					"description": "",
+					"escalation_model": "none",
+					"calculation": "wi",
+					"affect_econ_limit": "yes",
+					"deduct_before_severance_tax": "no",
+					"deduct_before_ad_val_tax": "no",
+					"cap": "",
+					"deal_terms": 1,
+					"rate_type": "gross_well_head",
+					"rows_calculation_method": "non_monotonic",
+					"rows": [
+						{
+							"dollar_per_bbl": 0,
+							"entire_well_life": "Flat"
+						}
+					]
+				},
+				"processing": {
+					"description": "",
+					"escalation_model": "none",
+					"calculation": "wi",
+					"affect_econ_limit": "yes",
+					"deduct_before_severance_tax": "no",
+					"deduct_before_ad_val_tax": "no",
+					"cap": "",
+					"deal_terms": 1,
+					"rate_type": "gross_well_head",
+					"rows_calculation_method": "non_monotonic",
+					"rows": [
+						{
+							"dollar_per_bbl": 0,
+							"entire_well_life": "Flat"
+						}
+					]
+				},
+				"transportation": {
+					"description": "",
+					"escalation_model": "none",
+					"calculation": "wi",
+					"affect_econ_limit": "yes",
+					"deduct_before_severance_tax": "no",
+					"deduct_before_ad_val_tax": "no",
+					"cap": "",
+					"deal_terms": 1,
+					"rate_type": "gross_well_head",
+					"rows_calculation_method": "non_monotonic",
+					"rows": [
+						{
+							"dollar_per_bbl": 0,
+							"entire_well_life": "Flat"
+						}
+					]
+				},
+				"marketing": {
+					"description": "",
+					"escalation_model": "none",
+					"calculation": "wi",
+					"affect_econ_limit": "yes",
+					"deduct_before_severance_tax": "no",
+					"deduct_before_ad_val_tax": "no",
+					"cap": "",
+					"deal_terms": 1,
+					"rate_type": "gross_well_head",
+					"rows_calculation_method": "non_monotonic",
+					"rows": [
+						{
+							"dollar_per_bbl": 0,
+							"entire_well_life": "Flat"
+						}
+					]
+				},
+				"other": {
+					"description": "",
+					"escalation_model": "none",
+					"calculation": "wi",
+					"affect_econ_limit": "yes",
+					"deduct_before_severance_tax": "no",
+					"deduct_before_ad_val_tax": "no",
+					"cap": "",
+					"deal_terms": 1,
+					"rate_type": "gross_well_head",
+					"rows_calculation_method": "non_monotonic",
+					"rows": [
+						{
+							"dollar_per_bbl": 0,
+							"entire_well_life": "Flat"
+						}
+					]
+				}
+			},
+			"drip_condensate": {
+				"gathering": {
+					"description": "",
+					"escalation_model": "none",
+					"calculation": "wi",
+					"affect_econ_limit": "yes",
+					"deduct_before_severance_tax": "no",
+					"deduct_before_ad_val_tax": "no",
+					"cap": "",
+					"deal_terms": 1,
+					"rate_type": "gross_well_head",
+					"rows_calculation_method": "non_monotonic",
+					"rows": [
+						{
+							"dollar_per_bbl": 0,
+							"entire_well_life": "Flat"
+						}
+					]
+				},
+				"processing": {
+					"description": "",
+					"escalation_model": "none",
+					"calculation": "wi",
+					"affect_econ_limit": "yes",
+					"deduct_before_severance_tax": "no",
+					"deduct_before_ad_val_tax": "no",
+					"cap": "",
+					"deal_terms": 1,
+					"rate_type": "gross_well_head",
+					"rows_calculation_method": "non_monotonic",
+					"rows": [
+						{
+							"dollar_per_bbl": 0,
+							"entire_well_life": "Flat"
+						}
+					]
+				},
+				"transportation": {
+					"description": "",
+					"escalation_model": "none",
+					"calculation": "wi",
+					"affect_econ_limit": "yes",
+					"deduct_before_severance_tax": "no",
+					"deduct_before_ad_val_tax": "no",
+					"cap": "",
+					"deal_terms": 1,
+					"rate_type": "gross_well_head",
+					"rows_calculation_method": "non_monotonic",
+					"rows": [
+						{
+							"dollar_per_bbl": 0,
+							"entire_well_life": "Flat"
+						}
+					]
+				},
+				"marketing": {
+					"description": "",
+					"escalation_model": "none",
+					"calculation": "wi",
+					"affect_econ_limit": "yes",
+					"deduct_before_severance_tax": "no",
+					"deduct_before_ad_val_tax": "no",
+					"cap": "",
+					"deal_terms": 1,
+					"rate_type": "gross_well_head",
+					"rows_calculation_method": "non_monotonic",
+					"rows": [
+						{
+							"dollar_per_bbl": 0,
+							"entire_well_life": "Flat"
+						}
+					]
+				},
+				"other": {
+					"description": "",
+					"escalation_model": "none",
+					"calculation": "wi",
+					"affect_econ_limit": "yes",
+					"deduct_before_severance_tax": "no",
+					"deduct_before_ad_val_tax": "no",
+					"cap": "",
+					"deal_terms": 1,
+					"rate_type": "gross_well_head",
+					"rows_calculation_method": "non_monotonic",
+					"rows": [
+						{
+							"dollar_per_bbl": 0,
+							"entire_well_life": "Flat"
+						}
+					]
+				}
+			}
+		},
+		"fixed_expenses": {
+			"monthly_well_cost": {
+				"description": "",
+				"escalation_model": "none",
+				"calculation": "wi",
+				"affect_econ_limit": "yes",
+				"stop_at_econ_limit": "yes",
+				"expense_before_fpd": "no",
+				"deduct_before_severance_tax": "no",
+				"deduct_before_ad_val_tax": "no",
+				"cap": "",
+				"deal_terms": 1,
+				"rate_type": "gross_well_head",
+				"rows_calculation_method": "non_monotonic",
+				"rows": [
+					{
+						"fixed_expense": 1000,
+						"oil_rate": {
+							"start": 0,
+							"end": 50
+						}
+					},
+					{
+						"fixed_expense": 2000,
+						"oil_rate": {
+							"start": 50,
+							"end": "inf"
+						}
+					}
+				]
+			},
+			"other_monthly_cost_1": {
+				"description": "",
+				"escalation_model": "none",
+				"calculation": "wi",
+				"affect_econ_limit": "yes",
+				"stop_at_econ_limit": "yes",
+				"expense_before_fpd": "no",
+				"deduct_before_severance_tax": "no",
+				"deduct_before_ad_val_tax": "no",
+				"cap": "",
+				"deal_terms": 1,
+				"rate_type": "gross_well_head",
+				"rows_calculation_method": "non_monotonic",
+				"rows": [
+					{
+						"fixed_expense": 0,
+						"entire_well_life": "Flat"
+					}
+				]
+			},
+			"other_monthly_cost_2": {
+				"description": "",
+				"escalation_model": "none",
+				"calculation": "wi",
+				"affect_econ_limit": "yes",
+				"stop_at_econ_limit": "yes",
+				"expense_before_fpd": "no",
+				"deduct_before_severance_tax": "no",
+				"deduct_before_ad_val_tax": "no",
+				"cap": "",
+				"deal_terms": 1,
+				"rate_type": "gross_well_head",
+				"rows_calculation_method": "non_monotonic",
+				"rows": [
+					{
+						"fixed_expense": 0,
+						"entire_well_life": "Flat"
+					}
+				]
+			},
+			"other_monthly_cost_3": {
+				"description": "",
+				"escalation_model": "none",
+				"calculation": "wi",
+				"affect_econ_limit": "yes",
+				"stop_at_econ_limit": "yes",
+				"expense_before_fpd": "no",
+				"deduct_before_severance_tax": "no",
+				"deduct_before_ad_val_tax": "no",
+				"cap": "",
+				"deal_terms": 1,
+				"rate_type": "gross_well_head",
+				"rows_calculation_method": "non_monotonic",
+				"rows": [
+					{
+						"fixed_expense": 0,
+						"entire_well_life": "Flat"
+					}
+				]
+			},
+			"other_monthly_cost_4": {
+				"description": "",
+				"escalation_model": "none",
+				"calculation": "wi",
+				"affect_econ_limit": "yes",
+				"stop_at_econ_limit": "yes",
+				"expense_before_fpd": "no",
+				"deduct_before_severance_tax": "no",
+				"deduct_before_ad_val_tax": "no",
+				"cap": "",
+				"deal_terms": 1,
+				"rate_type": "gross_well_head",
+				"rows_calculation_method": "non_monotonic",
+				"rows": [
+					{
+						"fixed_expense": 0,
+						"entire_well_life": "Flat"
+					}
+				]
+			},
+			"other_monthly_cost_5": {
+				"description": "",
+				"escalation_model": "none",
+				"calculation": "wi",
+				"affect_econ_limit": "yes",
+				"stop_at_econ_limit": "yes",
+				"expense_before_fpd": "no",
+				"deduct_before_severance_tax": "no",
+				"deduct_before_ad_val_tax": "no",
+				"cap": "",
+				"deal_terms": 1,
+				"rate_type": "gross_well_head",
+				"rows_calculation_method": "non_monotonic",
+				"rows": [
+					{
+						"fixed_expense": 0,
+						"entire_well_life": "Flat"
+					}
+				]
+			},
+			"other_monthly_cost_6": {
+				"description": "",
+				"escalation_model": "none",
+				"calculation": "wi",
+				"affect_econ_limit": "yes",
+				"stop_at_econ_limit": "yes",
+				"expense_before_fpd": "no",
+				"deduct_before_severance_tax": "no",
+				"deduct_before_ad_val_tax": "no",
+				"cap": "",
+				"deal_terms": 1,
+				"rate_type": "gross_well_head",
+				"rows_calculation_method": "non_monotonic",
+				"rows": [
+					{
+						"fixed_expense": 0,
+						"entire_well_life": "Flat"
+					}
+				]
+			},
+			"other_monthly_cost_7": {
+				"description": "",
+				"escalation_model": "none",
+				"calculation": "wi",
+				"affect_econ_limit": "yes",
+				"stop_at_econ_limit": "yes",
+				"expense_before_fpd": "no",
+				"deduct_before_severance_tax": "no",
+				"deduct_before_ad_val_tax": "no",
+				"cap": "",
+				"deal_terms": 1,
+				"rate_type": "gross_well_head",
+				"rows_calculation_method": "non_monotonic",
+				"rows": [
+					{
+						"fixed_expense": 0,
+						"entire_well_life": "Flat"
+					}
+				]
+			},
+			"other_monthly_cost_8": {
+				"description": "",
+				"escalation_model": "none",
+				"calculation": "wi",
+				"affect_econ_limit": "yes",
+				"stop_at_econ_limit": "yes",
+				"expense_before_fpd": "no",
+				"deduct_before_severance_tax": "no",
+				"deduct_before_ad_val_tax": "no",
+				"cap": "",
+				"deal_terms": 1,
+				"rate_type": "gross_well_head",
+				"rows_calculation_method": "non_monotonic",
+				"rows": [
+					{
+						"fixed_expense": 0,
+						"entire_well_life": "Flat"
+					}
+				]
+			}
+		},
+		"water_disposal": {
+			"escalation_model": "none",
+			"calculation": "wi",
+			"affect_econ_limit": "yes",
+			"deduct_before_severance_tax": "no",
+			"deduct_before_ad_val_tax": "no",
+			"cap": "",
+			"deal_terms": 1,
+			"rate_type": "gross_well_head",
+			"rows_calculation_method": "non_monotonic",
+			"rows": [
+				{
+					"dollar_per_bbl": 0,
+					"entire_well_life": "Flat"
+				}
+			]
+		},
+		"carbon_expenses": {
+			"category": "co2e",
+			"co2e": {
+				"description": "",
+				"escalation_model": "none",
+				"calculation": "wi",
+				"affect_econ_limit": "yes",
+				"deduct_before_severance_tax": "no",
+				"deduct_before_ad_val_tax": "no",
+				"cap": "",
+				"deal_terms": 1,
+				"rate_type": "gross_well_head",
+				"rows_calculation_method": "non_monotonic",
+				"rows": [
+					{
+						"carbon_expense": 0,
+						"entire_well_life": "Flat"
+					}
+				]
+			},
+			"co2": {
+				"description": "",
+				"escalation_model": "none",
+				"calculation": "wi",
+				"affect_econ_limit": "yes",
+				"deduct_before_severance_tax": "no",
+				"deduct_before_ad_val_tax": "no",
+				"cap": "",
+				"deal_terms": 1,
+				"rate_type": "gross_well_head",
+				"rows_calculation_method": "non_monotonic",
+				"rows": [
+					{
+						"carbon_expense": 0,
+						"entire_well_life": "Flat"
+					}
+				]
+			},
+			"ch4": {
+				"description": "",
+				"escalation_model": "none",
+				"calculation": "wi",
+				"affect_econ_limit": "yes",
+				"deduct_before_severance_tax": "no",
+				"deduct_before_ad_val_tax": "no",
+				"cap": "",
+				"deal_terms": 1,
+				"rate_type": "gross_well_head",
+				"rows_calculation_method": "non_monotonic",
+				"rows": [
+					{
+						"carbon_expense": 0,
+						"entire_well_life": "Flat"
+					}
+				]
+			},
+			"n2o": {
+				"description": "",
+				"escalation_model": "none",
+				"calculation": "wi",
+				"affect_econ_limit": "yes",
+				"deduct_before_severance_tax": "no",
+				"deduct_before_ad_val_tax": "no",
+				"cap": "",
+				"deal_terms": 1,
+				"rate_type": "gross_well_head",
+				"rows_calculation_method": "non_monotonic",
+				"rows": [
+					{
+						"carbon_expense": 0,
+						"entire_well_life": "Flat"
+					}
+				]
+			}
+		}
+	}
+}

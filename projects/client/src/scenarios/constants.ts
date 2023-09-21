@@ -1,0 +1,1 @@
+export const MAX_NUMBER_OF_WELLS_IN_SCENARIO = 25000;
