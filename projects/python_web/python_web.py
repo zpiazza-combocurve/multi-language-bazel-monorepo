@@ -20,5 +20,12 @@ def hello2():
   message = "Do the math homie... {} + {} = {}?".format(num1, num2, my_calculator.add(num1, num2))
   return message
 
+@app.route('/hello3')
+def hello3():
+  num1 = randint(0, 100)
+  num2 = randint(0, 100)
+  message = "Elementary my dear Watson... {} + {} = {}?".format(num1, num2, my_calculator.add(num1, num2))
+  return message
+
 if __name__ == '__main__':
   app.run(host='0.0.0.0')
