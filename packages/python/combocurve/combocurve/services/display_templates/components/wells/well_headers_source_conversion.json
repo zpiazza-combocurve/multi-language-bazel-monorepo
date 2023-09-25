@@ -1,0 +1,1222 @@
+{
+  "title": "Well Headers Source Conversion",
+  "key": "well_headers_source_conversion",
+  "component": "wells",
+  "fields": {
+    "chosenID": {
+      "inpt": ["Chosen ID"],
+      "other": ["API 14"],
+      "internal": ["API 14"],
+      "di": ["API14"],
+      "ihs": ["UWI"],
+      "aries": ["PROPNUM"],
+      "phdwin": ["Unique Id"]
+    },
+    "abstract": {
+      "inpt": ["Abstract"],
+      "other": ["Abstract"],
+      "internal": ["Abstract"],
+      "di": ["Abstract"],
+      "ihs": [null],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "acre_spacing": {
+      "inpt": ["Acre Same Zone Spacing", "Acre Same Zone Spacing (ACRE)"],
+      "other": ["Acre Same Zone Spacing"],
+      "internal": ["Acre Same Zone Spacing"],
+      "di": [null],
+      "ihs": [null],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "allocation_type": {
+      "inpt": ["Allocation Type"],
+      "other": ["Allocation Type"],
+      "internal": ["Allocation Type"],
+      "di": [null],
+      "ihs": ["Entity Type"],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "api10": {
+      "inpt": ["API 10"],
+      "other": ["API 10"],
+      "internal": ["API 10"],
+      "di": [null],
+      "ihs": [null],
+      "aries": ["API_10"],
+      "phdwin": [null]
+    },
+    "api12": {
+      "inpt": ["API 12"],
+      "other": ["API 12"],
+      "internal": ["API 12"],
+      "di": [null],
+      "ihs": [null],
+      "aries": ["API_12"],
+      "phdwin": [null]
+    },
+    "api14": {
+      "inpt": ["API 14"],
+      "other": ["API 14"],
+      "internal": ["API 14"],
+      "di": ["API14"],
+      "ihs": ["UWI"],
+      "aries": ["API"],
+      "phdwin": [null]
+    },
+    "aries_id": {
+      "inpt": ["Aries ID"],
+      "other": ["Aries ID"],
+      "internal": ["Aries ID"],
+      "di": [null],
+      "ihs": [null],
+      "aries": ["PROPNUM"],
+      "phdwin": [null]
+    },
+    "azimuth": {
+      "inpt": ["Azimuth"],
+      "other": ["Azimuth"],
+      "internal": ["Azimuth"],
+      "di": [null],
+      "ihs": [null],
+      "aries": ["Azimuth", "Hole Azimuth", "Well Azimuth", "Lateral Azimuth"],
+      "phdwin": [null]
+    },
+    "basin": {
+      "inpt": ["Basin"],
+      "other": ["Basin"],
+      "internal": ["Basin"],
+      "di": ["DI Basin"],
+      "ihs": ["Basin"],
+      "aries": ["BASIN"],
+      "phdwin": [null]
+    },
+    "block": {
+      "inpt": ["Block"],
+      "other": ["Block"],
+      "internal": ["Block"],
+      "di": ["Block"],
+      "ihs": [null],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "casing_id": {
+      "inpt": ["Casing ID", "Casing ID (IN)"],
+      "other": ["Casing ID"],
+      "internal": ["Casing ID"],
+      "di": [null],
+      "ihs": [null],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "choke_size": {
+      "inpt": ["Choke Size", "Choke Size (IN)"],
+      "other": ["Choke Size"],
+      "internal": ["Choke Size"],
+      "di": [null],
+      "ihs": [null],
+      "aries": ["CHOKE", "CHOKE_SIZE"],
+      "phdwin": [null]
+    },
+    "completion_design": {
+      "inpt": ["Completion Design"],
+      "other": ["Completion Design"],
+      "internal": ["Completion Design"],
+      "di": [null],
+      "ihs": [null],
+      "aries": ["COMPLETION_DESIGN", "COMPLETION_TYPE"],
+      "phdwin": [null]
+    },
+    "completion_end_date": {
+      "inpt": ["Completion End Date"],
+      "other": ["Completion End Date"],
+      "internal": ["Completion End Date"],
+      "di": ["Completion Date"],
+      "ihs": ["Date Completion"],
+      "aries": ["DATE_COMP", "COMPL_DATE"],
+      "phdwin": [null]
+    },
+    "completion_start_date": {
+      "inpt": ["Completion Start Date"],
+      "other": ["Completion Start Date"],
+      "internal": ["Completion Start Date"],
+      "di": ["Start Date (First Job)"],
+      "ihs": [null],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "country": {
+      "inpt": ["Country"],
+      "other": ["Country"],
+      "internal": ["Country"],
+      "di": [null],
+      "ihs": ["Country Name"],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "county": {
+      "inpt": ["County/Parish"],
+      "other": ["County/Parish", "County"],
+      "internal": ["County/Parish", "County"],
+      "di": ["County/Parish"],
+      "ihs": ["County Name"],
+      "aries": ["COUNTY", "PARISH"],
+      "phdwin": ["County"]
+    },
+    "current_operator": {
+      "inpt": ["Current Operator"],
+      "other": ["Current Operator"],
+      "internal": ["Current Operator"],
+      "di": ["Operator Company Name"],
+      "ihs": ["Current Operator Name"],
+      "aries": ["OPERATOR"],
+      "phdwin": ["Operator"]
+    },
+    "current_operator_alias": {
+      "inpt": ["Current Operator Alias"],
+      "other": ["Current Operator Alias"],
+      "internal": ["Current Operator Alias"],
+      "di": ["Operator Alias (Legacy)"],
+      "ihs": [null],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "current_operator_code": {
+      "inpt": ["Current Operator Code"],
+      "other": ["Current Operator Code"],
+      "internal": ["Current Operator Code"],
+      "di": [null],
+      "ihs": [null],
+      "aries": ["OP_CODE"],
+      "phdwin": [null]
+    },
+    "current_operator_ticker": {
+      "inpt": ["Current Operator Ticker"],
+      "other": ["Current Operator Ticker"],
+      "internal": ["Current Operator Ticker"],
+      "di": ["Operator Ticker"],
+      "ihs": [null],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "date_rig_release": {
+      "inpt": ["Date Rig Release"],
+      "other": ["Date Rig Release"],
+      "internal": ["Date Rig Release"],
+      "di": [null],
+      "ihs": ["Date Rig Release"],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "distance_from_base_of_zone": {
+      "inpt": ["Distance From Base Of Zone", "Distance From Base Of Zone (FT)"],
+      "other": ["Distance From Base Of Zone"],
+      "internal": ["Distance From Base Of Zone"],
+      "di": ["Avg Distance From Base of Zone"],
+      "ihs": [null],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "distance_from_top_of_zone": {
+      "inpt": ["Distance From Top Of Zone", "Distance From Top Of Zone (FT)"],
+      "other": ["Distance From Top Of Zone"],
+      "internal": ["Distance From Top Of Zone"],
+      "di": ["Avg Distance From Top of Zone"],
+      "ihs": [null],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "district": {
+      "inpt": ["District"],
+      "other": ["District"],
+      "internal": ["District"],
+      "di": ["District"],
+      "ihs": ["District Name"],
+      "aries": ["DISTRICT"],
+      "phdwin": [null]
+    },
+    "drill_end_date": {
+      "inpt": ["Drill End Date"],
+      "other": ["Drill End Date"],
+      "internal": ["Drill End Date"],
+      "di": [null],
+      "ihs": [null],
+      "aries": ["DRILL_DATE"],
+      "phdwin": [null]
+    },
+    "drill_start_date": {
+      "inpt": ["Drill Start Date"],
+      "other": ["Drill Start Date"],
+      "internal": ["Drill Start Date"],
+      "di": [null],
+      "ihs": [null],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "elevation": {
+      "inpt": ["Elevation", "Elevation (FT)"],
+      "other": ["Elevation"],
+      "internal": ["Elevation"],
+      "di": ["Elevation"],
+      "ihs": ["Elevation Reference Value"],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "elevation_type": {
+      "inpt": ["Elevation Type"],
+      "other": ["Elevation Type"],
+      "internal": ["Elevation Type"],
+      "di": ["Elevation Type"],
+      "ihs": ["Elevation Reference Datum"],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "field": {
+      "inpt": ["Field"],
+      "other": ["Field"],
+      "internal": ["Field"],
+      "di": ["Field"],
+      "ihs": ["Field Name"],
+      "aries": ["FIELD", "FIELD_NAME"],
+      "phdwin": [null]
+    },
+    "first_additive_volume": {
+      "inpt": ["Additive Vol (1st Job)", "Additive Vol (1st Job) (GAL)"],
+      "other": ["Additive Vol (1st Job)"],
+      "internal": ["Additive Vol (1st Job)"],
+      "di": [null],
+      "ihs": [null],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "first_cluster_count": {
+      "inpt": ["Cluster Count (1st Job)"],
+      "other": ["Cluster Count (1st Job)"],
+      "internal": ["Cluster Count (1st Job)"],
+      "di": [null],
+      "ihs": [null],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "first_fluid_volume": {
+      "inpt": ["Total Fluid (1st Job)", "Total Fluid (1st Job) (BBL)"],
+      "other": ["Total Fluid (1st Job)"],
+      "internal": ["Total Fluid (1st Job)"],
+      "di": ["Total Fluid (First Treatment Job)"],
+      "ihs": ["Total Fluid (gals)"],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "first_frac_vendor": {
+      "inpt": ["Frac Vendor (1st Job)"],
+      "other": ["Frac Vendor (1st Job)"],
+      "internal": ["Frac Vendor (1st Job)"],
+      "di": ["Frac Vendor"],
+      "ihs": [null],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "first_max_injection_pressure": {
+      "inpt": ["Max Injection Pressure (1st Job)", "Max Injection Pressure (1st Job) (PSI)"],
+      "other": ["Max Injection Pressure (1st Job)"],
+      "internal": ["Max Injection Pressure (1st Job)"],
+      "di": [null],
+      "ihs": [null],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "first_max_injection_rate": {
+      "inpt": ["Max Injection Rate (1st Job)", "Max Injection Rate (1st Job) (BBL/MIN)"],
+      "other": ["Max Injection Rate (1st Job)"],
+      "internal": ["Max Injection Rate (1st Job)"],
+      "di": [null],
+      "ihs": [null],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "first_prod_date": {
+      "inpt": ["First Prod Date"],
+      "other": ["First Prod Date"],
+      "internal": ["First Prod Date"],
+      "di": ["First Prod Date"],
+      "ihs": ["First Prod Date"],
+      "aries": ["FIRST_PROD"],
+      "phdwin": [null]
+    },
+    "first_prop_weight": {
+      "inpt": ["Total Prop (1st Job)", "Total Prop (1st Job) (LB)"],
+      "other": ["Total Prop (1st Job)"],
+      "internal": ["Total Prop (1st Job)"],
+      "di": ["Total Proppant (First Treatment Job)"],
+      "ihs": ["Total Proppant (lbs)"],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "first_stage_count": {
+      "inpt": ["Stage Count (1st Job)"],
+      "other": ["Stage Count (1st Job)"],
+      "internal": ["Stage Count (1st Job)"],
+      "di": ["Stage Count (First Treatment Job)"],
+      "ihs": ["Num Frac Stages"],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "first_test_flow_tbg_press": {
+      "inpt": ["First Test Flow TBG Press", "First Test Flow TBG Press (PSI)"],
+      "other": ["First Test Flow TBG Press"],
+      "internal": ["First Test Flow TBG Press"],
+      "di": ["FirstTestFlowingTubingPressure"],
+      "ihs": [null],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "first_test_gas_vol": {
+      "inpt": ["First Test Gas Vol", "First Test Gas Vol (MCF)"],
+      "other": ["First Test Gas Vol"],
+      "internal": ["First Test Gas Vol"],
+      "di": ["FirstTestGasVolume"],
+      "ihs": [null],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "first_test_gor": {
+      "inpt": ["First Test Gor", "First Test Gor (CF/BBL)"],
+      "other": ["First Test Gor"],
+      "internal": ["First Test Gor"],
+      "di": ["FirstTestGOR"],
+      "ihs": [null],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "first_test_oil_vol": {
+      "inpt": ["First Test Oil Vol", "First Test Oil Vol (BBL)"],
+      "other": ["First Test Oil Vol"],
+      "internal": ["First Test Oil Vol"],
+      "di": ["FirstTestOilVolume"],
+      "ihs": [null],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "first_test_water_vol": {
+      "inpt": ["First Test Water Vol (BBL)"],
+      "other": ["First Test Water Vol"],
+      "internal": ["First Test Water Vol"],
+      "di": ["FirstTestWaterVolume"],
+      "ihs": [null],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "first_treatment_type": {
+      "inpt": ["Treatment Type (1st Job)"],
+      "other": ["Treatment Type (1st Job)"],
+      "internal": ["Treatment Type (1st Job)"],
+      "di": ["Treatment Type"],
+      "ihs": [null],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "flow_path": {
+      "inpt": ["Flow Path"],
+      "other": ["Flow Path"],
+      "internal": ["Flow Path"],
+      "di": [null],
+      "ihs": [null],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "fluid_type": {
+      "inpt": ["Fluid Type"],
+      "other": ["Fluid Type"],
+      "internal": ["Fluid Type"],
+      "di": [null],
+      "ihs": [null],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "footage_in_landing_zone": {
+      "inpt": ["Footage In Landing Zone", "Footage In Landing Zone (FT)"],
+      "other": ["Footage In Landing Zone"],
+      "internal": ["Footage In Landing Zone"],
+      "di": ["Footage in Landing Zone"],
+      "ihs": [null],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "formation_thickness_mean": {
+      "inpt": ["Formation Thickness Mean", "Formation Thickness Mean (FT)"],
+      "other": ["Formation Thickness Mean"],
+      "internal": ["Formation Thickness Mean"],
+      "di": ["Ext Formation Thickness Mean"],
+      "ihs": [null],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "gas_gatherer": {
+      "inpt": ["Gas Gatherer"],
+      "other": ["Gas Gatherer"],
+      "internal": ["Gas Gatherer"],
+      "di": ["Gas Gatherer"],
+      "ihs": ["Gatherer Gas Name"],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "gas_specific_gravity": {
+      "inpt": ["Gas Specific Gravity"],
+      "other": ["Gas Specific Gravity"],
+      "internal": ["Gas Specific Gravity"],
+      "di": ["Gas Gravity"],
+      "ihs": ["Gravity Gas"],
+      "aries": ["GAS_GRAV"],
+      "phdwin": [null]
+    },
+    "ground_elevation": {
+      "inpt": ["Ground Elevation", "Ground Elevation (FT)"],
+      "other": ["Ground Elevation"],
+      "internal": ["Ground Elevation"],
+      "di": ["Ground Elevation"],
+      "ihs": ["Ground Elevation"],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "heelLatitude": {
+      "inpt": ["Heel Latitude"],
+      "other": [null],
+      "internal": [null],
+      "di": [null],
+      "ihs": [null],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "heelLongitude": {
+      "inpt": ["Heel Longitude"],
+      "other": [null],
+      "internal": [null],
+      "di": [null],
+      "ihs": [null],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "hole_direction": {
+      "inpt": ["Hole Direction"],
+      "other": ["Hole Direction"],
+      "internal": ["Hole Direction"],
+      "di": ["Drill Type"],
+      "ihs": ["Hole Direction"],
+      "aries": ["Direction"],
+      "phdwin": [null]
+    },
+    "hz_well_spacing_any_zone": {
+      "inpt": ["Hz Well Spacing Any Zone", "Hz Well Spacing Any Zone (FT)"],
+      "other": ["Hz Well Spacing Any Zone"],
+      "internal": ["Hz Well Spacing Any Zone"],
+      "di": [null],
+      "ihs": [null],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "hz_well_spacing_same_zone": {
+      "inpt": ["Hz Well Spacing Same Zone", "Hz Well Spacing Same Zone (FT)"],
+      "other": ["Hz Well Spacing Same Zone"],
+      "internal": ["Hz Well Spacing Same Zone"],
+      "di": [null],
+      "ihs": [null],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "initial_respress": {
+      "inpt": ["Initial Respress", "Initial Respress (PSI)"],
+      "other": ["Initial Respress"],
+      "internal": ["Initial Respress"],
+      "di": [null],
+      "ihs": [null],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "initial_restemp": {
+      "inpt": ["Initial Restemp", "Initial Restemp (F)"],
+      "other": ["Initial Restemp"],
+      "internal": ["Initial Restemp"],
+      "di": [null],
+      "ihs": [null],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "landing_zone_base": {
+      "inpt": ["Landing Zone Base", "Landing Zone Base (FT)"],
+      "other": ["Landing Zone Base"],
+      "internal": ["Landing Zone Base"],
+      "di": [null],
+      "ihs": [null],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "landing_zone_top": {
+      "inpt": ["Landing Zone Top", "Landing Zone Top (FT)"],
+      "other": ["Landing Zone Top"],
+      "internal": ["Landing Zone Top"],
+      "di": [null],
+      "ihs": [null],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "landing_zone": {
+      "inpt": ["Landing Zone"],
+      "other": ["Landing Zone"],
+      "internal": ["Landing Zone"],
+      "di": ["DI Landing Zone"],
+      "ihs": ["Prod Zone Name"],
+      "aries": [null],
+      "phdwin": ["Reservoir"]
+    },
+    "lateral_length": {
+      "inpt": ["Lateral Length", "Lateral Length (FT)"],
+      "other": ["Lateral Length"],
+      "internal": ["Lateral Length"],
+      "di": ["Lateral Length"],
+      "ihs": ["Lat Len Horiz Displacement (ft)"],
+      "aries": ["LATERAL_LENGTH", "LAT_LENGTH", "LAT_LEN", "LL"],
+      "phdwin": [null]
+    },
+    "lease_name": {
+      "inpt": ["Lease Name"],
+      "other": ["Lease Name"],
+      "internal": ["Lease Name"],
+      "di": ["Lease Name"],
+      "ihs": ["Lease Name"],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "lease_number": {
+      "inpt": ["Lease Number"],
+      "other": ["Lease Number"],
+      "internal": ["Lease Number"],
+      "di": ["Producing Entity Lease Number"],
+      "ihs": ["Lease Number"],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "lower_perforation": {
+      "inpt": ["Lower Perforation", "Lower Perforation (FT)"],
+      "other": ["Lower Perforation"],
+      "internal": ["Lower Perforation"],
+      "di": ["Lower Perforation"],
+      "ihs": ["Perforation Lower"],
+      "aries": ["LWR_PERF", "LOWER_PERF"],
+      "phdwin": [null]
+    },
+    "matrix_permeability": {
+      "inpt": ["Matrix Permeability", "Matrix Permeability (nD)"],
+      "other": ["Matrix Permeability"],
+      "internal": ["Matrix Permeability"],
+      "di": [null],
+      "ihs": [null],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "measured_depth": {
+      "inpt": ["Measured Depth", "Measured Depth (FT)"],
+      "other": ["Measured Depth"],
+      "internal": ["Measured Depth"],
+      "di": ["Measured Depth (TD)"],
+      "ihs": ["Depth Total Driller"],
+      "aries": ["MD", "TD", "Depth"],
+      "phdwin": [null]
+    },
+    "num_treatment_records": {
+      "inpt": ["Num Treatment Records"],
+      "other": ["Num Treatment Records"],
+      "internal": ["Num Treatment Records"],
+      "di": [null],
+      "ihs": ["Num Treatment Records"],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "oil_api_gravity": {
+      "inpt": ["Oil API Gravity"],
+      "other": ["Oil API Gravity"],
+      "internal": ["Oil API Gravity"],
+      "di": ["Oil Gravity"],
+      "ihs": [null],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "oil_gatherer": {
+      "inpt": ["Oil Gatherer"],
+      "other": ["Oil Gatherer"],
+      "internal": ["Oil Gatherer"],
+      "di": ["Oil Gatherer"],
+      "ihs": ["Gatherer Liquid Name"],
+      "aries": ["LIQ_GATHERER"],
+      "phdwin": [null]
+    },
+    "oil_specific_gravity": {
+      "inpt": ["Oil Specific Gravity"],
+      "other": ["Oil Specific Gravity"],
+      "internal": ["Oil Specific Gravity"],
+      "di": [null],
+      "ihs": ["Gravity Oil"],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "pad_name": {
+      "inpt": ["Pad Name"],
+      "other": ["Pad Name"],
+      "internal": ["Pad Name"],
+      "di": ["Pad Name"],
+      "ihs": ["Pad Name"],
+      "aries": ["Pad"],
+      "phdwin": [null]
+    },
+    "parent_child_any_zone": {
+      "inpt": ["Parent Child Any Zone"],
+      "other": ["Parent Child Any Zone"],
+      "internal": ["Parent Child Any Zone"],
+      "di": [null],
+      "ihs": [null],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "parent_child_same_zone": {
+      "inpt": ["Parent Child Same Zone"],
+      "other": ["Parent Child Same Zone"],
+      "internal": ["Parent Child Same Zone"],
+      "di": [null],
+      "ihs": [null],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "percent_in_zone": {
+      "inpt": ["Percent In Zone"],
+      "other": ["Percent In Zone"],
+      "internal": ["Percent In Zone"],
+      "di": ["Percentage in Landing Zone"],
+      "ihs": [null],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "perf_lateral_length": {
+      "inpt": ["Perf Lateral Length", "Perf Lateral Length (FT)"],
+      "other": ["Perf Lateral Length"],
+      "internal": ["Perf Lateral Length"],
+      "di": ["Gross Perforated Interval"],
+      "ihs": ["Lat Len Gross Perf Intvl"],
+      "aries": ["PERF_LATERAL_LENGTH", "PERF_LAT_LENGTH", "PERF_LAT_LEN", "PERF_LL", "PLL"],
+      "phdwin": [null]
+    },
+    "permit_date": {
+      "inpt": ["Permit Date"],
+      "other": ["Permit Date"],
+      "internal": ["Permit Date"],
+      "di": [null],
+      "ihs": ["Permit Date"],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "phdwin_id": {
+      "inpt": ["PhdWin ID"],
+      "other": ["PhdWin ID"],
+      "internal": ["PhdWin ID"],
+      "di": [null],
+      "ihs": [null],
+      "aries": [null],
+      "phdwin": ["PHDWIN Id(Auto key)"]
+    },
+    "play": {
+      "inpt": ["Play"],
+      "other": ["Play"],
+      "internal": ["Play"],
+      "di": ["DI Play"],
+      "ihs": ["Play Name"],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "porosity": {
+      "inpt": ["Porosity"],
+      "other": ["Porosity"],
+      "internal": ["Porosity"],
+      "di": [null],
+      "ihs": [null],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "previous_operator": {
+      "inpt": ["Previous Operator"],
+      "other": ["Previous Operator"],
+      "internal": ["Previous Operator"],
+      "di": [null],
+      "ihs": ["Operator Name"],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "previous_operator_alias": {
+      "inpt": ["Previous Operator Alias"],
+      "other": ["Previous Operator Alias"],
+      "internal": ["Previous Operator Alias"],
+      "di": [null],
+      "ihs": [null],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "previous_operator_code": {
+      "inpt": ["Previous Operator Code"],
+      "other": ["Previous Operator Code"],
+      "internal": ["Previous Operator Code"],
+      "di": [null],
+      "ihs": [null],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "previous_operator_ticker": {
+      "inpt": ["Previous Operator Ticker"],
+      "other": ["Previous Operator Ticker"],
+      "internal": ["Previous Operator Ticker"],
+      "di": [null],
+      "ihs": [null],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "primary_product": {
+      "inpt": ["Primary Product"],
+      "other": ["Primary Product"],
+      "internal": ["Primary Product"],
+      "di": [null],
+      "ihs": ["Primary Product"],
+      "aries": ["MAJOR"],
+      "phdwin": [null]
+    },
+    "production_method": {
+      "inpt": ["Production Method"],
+      "other": ["Production Method"],
+      "internal": ["Production Method"],
+      "di": [null],
+      "ihs": ["Prod Method"],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "proppant_mesh_size": {
+      "inpt": ["Prop Mesh Size"],
+      "other": ["Prop Mesh Size"],
+      "internal": ["Prop Mesh Size"],
+      "di": [null],
+      "ihs": [null],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "proppant_type": {
+      "inpt": ["Prop Type"],
+      "other": ["Prop Type"],
+      "internal": ["Prop Type"],
+      "di": [null],
+      "ihs": [null],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "range": {
+      "inpt": ["Range"],
+      "other": ["Range"],
+      "internal": ["Range"],
+      "di": ["Range"],
+      "ihs": [null],
+      "aries": ["RNG"],
+      "phdwin": [null]
+    },
+    "recovery_method": {
+      "inpt": ["Recovery Method"],
+      "other": ["Recovery Method"],
+      "internal": ["Recovery Method"],
+      "di": [null],
+      "ihs": [null],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "refrac_additive_volume": {
+      "inpt": ["Additive Vol (Refrac)", "Additive Vol (Refrac) (GAL)"],
+      "other": ["Additive Vol (Refrac)"],
+      "internal": ["Additive Vol (Refrac)"],
+      "di": [null],
+      "ihs": [null],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "refrac_cluster_count": {
+      "inpt": ["Cluster Count (Refrac)"],
+      "other": ["Cluster Count (Refrac)"],
+      "internal": ["Cluster Count (Refrac)"],
+      "di": [null],
+      "ihs": [null],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "refrac_date": {
+      "inpt": ["Refrac Date"],
+      "other": ["Refrac Date"],
+      "internal": ["Refrac Date"],
+      "di": [null],
+      "ihs": [null],
+      "aries": ["REFRAC_DATE"],
+      "phdwin": [null]
+    },
+    "refrac_fluid_volume": {
+      "inpt": ["Total Fluid (Refrac)", "Total Fluid (Refrac) (BBL)"],
+      "other": ["Total Fluid (Refrac)"],
+      "internal": ["Total Fluid (Refrac)"],
+      "di": [null],
+      "ihs": [null],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "refrac_frac_vendor": {
+      "inpt": ["Frac Vendor (Refrac)"],
+      "other": ["Frac Vendor (Refrac)"],
+      "internal": ["Frac Vendor (Refrac)"],
+      "di": [null],
+      "ihs": [null],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "refrac_max_injection_pressure": {
+      "inpt": ["Max Injection Pressure (Refrac)", "Max Injection Pressure (Refrac) (PSI)"],
+      "other": ["Max Injection Pressure (Refrac)"],
+      "internal": ["Max Injection Pressure (Refrac)"],
+      "di": [null],
+      "ihs": [null],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "refrac_max_injection_rate": {
+      "inpt": ["Max Injection Rate (Refrac)", "Max Injection Rate (Refrac) (BBL/MIN)"],
+      "other": ["Max Injection Rate (Refrac)"],
+      "internal": ["Max Injection Rate (Refrac)"],
+      "di": [null],
+      "ihs": [null],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "refrac_prop_weight": {
+      "inpt": ["Total Prop (Refrac)", "Total Prop (Refrac) (LB)"],
+      "other": ["Total Prop (Refrac)"],
+      "internal": ["Total Prop (Refrac)"],
+      "di": [null],
+      "ihs": [null],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "refrac_stage_count": {
+      "inpt": ["Stage Count (Refrac)"],
+      "other": ["Stage Count (Refrac)"],
+      "internal": ["Stage Count (Refrac)"],
+      "di": [null],
+      "ihs": [null],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "refrac_treatment_type": {
+      "inpt": ["Treatment Type (Refrac)"],
+      "other": ["Treatment Type (Refrac)"],
+      "internal": ["Treatment Type (Refrac)"],
+      "di": [null],
+      "ihs": [null],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "rig": {
+      "inpt": ["Rig Name"],
+      "other": [null],
+      "internal": [null],
+      "di": [null],
+      "ihs": [null],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "section": {
+      "inpt": ["Section"],
+      "other": ["Section"],
+      "internal": ["Section"],
+      "di": ["Section"],
+      "ihs": [null],
+      "aries": ["SEC"],
+      "phdwin": [null]
+    },
+    "sg": {
+      "inpt": ["Gas Saturation", "Sg"],
+      "other": ["Sg"],
+      "internal": ["Sg"],
+      "di": [null],
+      "ihs": [null],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "so": {
+      "inpt": ["Oil Saturation", "So"],
+      "other": ["So"],
+      "internal": ["So"],
+      "di": [null],
+      "ihs": [null],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "spud_date": {
+      "inpt": ["Spud Date"],
+      "other": ["Spud Date"],
+      "internal": ["Spud Date"],
+      "di": ["Spud Date"],
+      "ihs": ["Date Spud"],
+      "aries": ["DATE_SPUD", "SPUD"],
+      "phdwin": [null]
+    },
+    "stage_spacing": {
+      "inpt": ["Stage Spacing", "Stage Spacing (FT)"],
+      "other": ["Stage Spacing"],
+      "internal": ["Stage Spacing"],
+      "di": [null],
+      "ihs": [null],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "state": {
+      "inpt": ["State"],
+      "other": ["State"],
+      "internal": ["State"],
+      "di": ["State"],
+      "ihs": ["State Name"],
+      "aries": ["STATE"],
+      "phdwin": [null]
+    },
+    "status": {
+      "inpt": ["Status"],
+      "other": ["Status"],
+      "internal": ["Status"],
+      "di": ["Well Status"],
+      "ihs": ["Status Current Name"],
+      "aries": ["STATUS"],
+      "phdwin": [null]
+    },
+    "subplay": {
+      "inpt": ["Subplay"],
+      "other": ["Subplay"],
+      "internal": ["Subplay"],
+      "di": ["DISubplay"],
+      "ihs": [null],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "surfaceLatitude": {
+      "inpt": ["Surface Latitude"],
+      "other": ["Surface Latitude"],
+      "internal": ["Surface Latitude"],
+      "di": ["Surface Hole Latitude (WGS84)"],
+      "ihs": ["Surface Latitude"],
+      "aries": ["LATITUDE", "SURF_LAT", "SH_LATITUDE", "SURFACELATITUDE"],
+      "phdwin": [null]
+    },
+    "surfaceLongitude": {
+      "inpt": ["Surface Longitude"],
+      "other": ["Surface Longitude"],
+      "internal": ["Surface Longitude"],
+      "di": ["Surface Hole Longitude (WGS84)"],
+      "ihs": ["Surface Longitude"],
+      "aries": ["LONGITUDE", "SURF_LONG", "SH_LONGITUDE", "SURFACELONGITUDE"],
+      "phdwin": [null]
+    },
+    "survey": {
+      "inpt": ["Survey"],
+      "other": ["Survey"],
+      "internal": ["Survey"],
+      "di": ["Survey"],
+      "ihs": [null],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "sw": {
+      "inpt": ["Water Saturation", "Sw"],
+      "other": ["Sw"],
+      "internal": ["Sw"],
+      "di": [null],
+      "ihs": [null],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "target_formation": {
+      "inpt": ["Target Formation"],
+      "other": ["Target Formation"],
+      "internal": ["Target Formation"],
+      "di": ["TargetFormation"],
+      "ihs": ["Formation at TD Name"],
+      "aries": ["RESERVOIR", "FORMATION"],
+      "phdwin": [null]
+    },
+    "thickness": {
+      "inpt": ["Thickness", "Thickness (FT)"],
+      "other": ["Thickness"],
+      "internal": ["Thickness"],
+      "di": [null],
+      "ihs": [null],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "til": {
+      "inpt": ["TIL"],
+      "other": ["TIL"],
+      "internal": ["TIL"],
+      "di": [null],
+      "ihs": [null],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "toe_in_landing_zone": {
+      "inpt": ["Toe In Landing Zone"],
+      "other": ["Toe In Landing Zone"],
+      "internal": ["Toe In Landing Zone"],
+      "di": ["Toe in Landing Zone"],
+      "ihs": [null],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "toeLatitude": {
+      "inpt": ["Toe Latitude"],
+      "other": ["Toe Latitude"],
+      "internal": ["Toe Latitude"],
+      "di": ["Bottom Hole Latitude (WGS84)"],
+      "ihs": ["BH Latitude"],
+      "aries": ["BH_LAT", "BHL_LAT", "BH_LATITUDE", "TOELATITUDE"],
+      "phdwin": [null]
+    },
+    "toeLongitude": {
+      "inpt": ["Toe Longitude"],
+      "other": ["Toe Longitude"],
+      "internal": ["Toe Longitude"],
+      "di": ["Bottom Hole Longitude (WGS84)"],
+      "ihs": ["BH Longitude"],
+      "aries": ["BH_LONG", "BHL_LONG", "BH_LONGITUDE", "TOELONGITUDE"],
+      "phdwin": [null]
+    },
+    "toe_up": {
+      "inpt": ["Toe Up"],
+      "other": ["Toe Up"],
+      "internal": ["Toe Up"],
+      "di": [null],
+      "ihs": [null],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "township": {
+      "inpt": ["Township"],
+      "other": ["Township"],
+      "internal": ["Township"],
+      "di": ["Township"],
+      "ihs": [null],
+      "aries": ["TWN", "TWP"],
+      "phdwin": [null]
+    },
+    "true_vertical_depth": {
+      "inpt": ["True Vertical Depth", "True Vertical Depth (FT)"],
+      "other": ["True Vertical Depth"],
+      "internal": ["True Vertical Depth"],
+      "di": ["True Vertical Depth"],
+      "ihs": ["Depth True Vertical"],
+      "aries": ["TVD"],
+      "phdwin": ["Total Depth"]
+    },
+    "tubing_depth": {
+      "inpt": ["Tubing Depth", "Tubing Depth (FT)"],
+      "other": ["Tubing Depth"],
+      "internal": ["Tubing Depth"],
+      "di": [null],
+      "ihs": [null],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "tubing_id": {
+      "inpt": ["Tubing ID", "Tubing ID (IN)"],
+      "other": ["Tubing ID"],
+      "internal": ["Tubing ID"],
+      "di": [null],
+      "ihs": [null],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "type_curve_area": {
+      "inpt": ["Type Curve Area"],
+      "other": ["Type Curve Area"],
+      "internal": ["Type Curve Area"],
+      "di": [null],
+      "ihs": [null],
+      "aries": ["TC_AREA", "TYPECURVE_AREA"],
+      "phdwin": [null]
+    },
+    "upper_perforation": {
+      "inpt": ["Upper Perforation", "Upper Perforation (FT)"],
+      "other": ["Upper Perforation"],
+      "internal": ["Upper Perforation"],
+      "di": ["Upper Perforation"],
+      "ihs": ["Perforation Upper"],
+      "aries": ["UPR_PERF", "UPPER_PERF"],
+      "phdwin": [null]
+    },
+    "vt_well_spacing_any_zone": {
+      "inpt": ["Vt Well Spacing Any Zone", "Vt Well Spacing Any Zone (FT)"],
+      "other": ["Vt Well Spacing Any Zone"],
+      "internal": ["Vt Well Spacing Any Zone"],
+      "di": [null],
+      "ihs": [null],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "vt_well_spacing_same_zone": {
+      "inpt": ["Vt Well Spacing Same Zone", "Vt Well Spacing Same Zone (FT)"],
+      "other": ["Vt Well Spacing Same Zone"],
+      "internal": ["Vt Well Spacing Same Zone"],
+      "di": [null],
+      "ihs": [null],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "well_name": {
+      "inpt": ["Well Name"],
+      "other": ["Well Name"],
+      "internal": ["Well Name"],
+      "di": ["Well Name"],
+      "ihs": ["Lease Name"],
+      "aries": ["WELL_NAME", "WELL", "LEASE"],
+      "phdwin": ["Case Name"]
+    },
+    "well_number": {
+      "inpt": ["Well Number"],
+      "other": ["Well Number"],
+      "internal": ["Well Number"],
+      "di": ["Well Number"],
+      "ihs": ["Well Num"],
+      "aries": ["WELL_ID", "WELL_NO"],
+      "phdwin": ["Well"]
+    },
+    "well_type": {
+      "inpt": ["Well Type"],
+      "other": ["Well Type"],
+      "internal": ["Well Type"],
+      "di": ["Production Type"],
+      "ihs": ["Class Initial Name"],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "prms_reserves_category": {
+      "inpt": ["PRMS Reserves Category"],
+      "other": [null],
+      "internal": [null],
+      "di": [null],
+      "ihs": [null],
+      "aries": ["RESCAT", "RES_CAT", "RSVCAT", "RSV_CAT"],
+      "phdwin": ["Class"]
+    },
+    "prms_reserves_sub_category": {
+      "inpt": ["PRMS Reserves Sub Category"],
+      "other": [null],
+      "internal": [null],
+      "di": [null],
+      "ihs": [null],
+      "aries": [null],
+      "phdwin": ["Category"]
+    }
+  }
+}

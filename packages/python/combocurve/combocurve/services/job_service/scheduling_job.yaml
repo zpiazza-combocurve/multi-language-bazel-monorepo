@@ -1,0 +1,52 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: scheduling
+spec:
+  parallelism: 1
+  completions: 1
+  backoffLimit: 1
+  template:
+    spec:
+      affinity:
+        nodeAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 1
+            preference:
+              matchExpressions:
+              - key: size
+                operator: In
+                values:
+                - small
+      backoffLimit: 1
+      serviceAccountName: job-manager
+      nodeSelector:
+        iam.gke.io/gke-metadata-server-enabled: "true"
+      restartPolicy: Never
+      containers:
+        - name: scheduling
+          resources:
+            requests:
+              cpu: "4"
+              memory: "32Gi"
+            limits:
+              cpu: "15.8"
+              memory: "115.2Gi"
+          image: gcr.io/dev14-combocurve/scheduling:latest
+          env:
+            - name: GCP_PRIMARY_PROJECT_ID
+              value: "set_at_runtime"
+            - name: GCP_REGIONAL_PROJECT_ID
+              value: "set_at_runtime"
+            - name: RUN_ID
+              value: "set_at_runtime"
+            - name: TIME_ZONE
+              value: "America/Chicago"
+            - name: TENANT
+              value: "set_at_runtime"
+            - name: REDIS_HOST
+              value: "localhost"
+            - name: REDIS_PORT
+              value: "6379"
+          command: ["/bin/bash"]
+          args: ["-c", "cd /app; python jobs/scheduling/main.py;"]

@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "test-combocurve",
+  "private_key_id": "0076298d2e021307209eab8fc0070df9d1b914fd",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQC+7gwTqLqnuqk4\n5BfUy1xp5Kl8cJQYrsX+hsiMd7xn/u6d5Ox66ZtWC9eryqSPcFxQhjy7JW6erIDO\nIpdlvA1y3LmjcNvmAUPfRDoJXNEC4SFAYjfjiznPnjQNCI6t9paDvguncjUL0Jfb\nZlAlLwZXcnuYLZcwlujlk3seUU/CUq766cFG2rCamlAFaf6QlKUcomu60pufjtOS\nyse9QTIcIJ0q1mIF7TWnaEIBR1ELCLvqMso/Brt5heP17luFydjs/Z0zXRfA/M/b\nZCCEwjIEKAockPcqH2pP5s0NM4BpLnrp6/CuDecoAmIMpfnQms+7IiYrKvYvvLMP\nf7kBYRifAgMBAAECggEASZd+bytnepP/es6sAti5j5VT4IOSCat/5Fm2PjI+nAUO\nmyxsG/oj5fgdknlCkYkZA+6hxO6qIx3RbeK2YT+pHV9HbGBpWc+eBhYJmqc8ZrQ4\nuVTCPwHgcA6F+IoWWKZFoJTlcA6ctKebiLT4akSkWJtnWSIldtSMA0UjvO1RZVAH\n22WQD8iVGCVDXSuDdIa+TcA9SKCzVDZB/qbelFlj0Af3aaQYrh/aoWA/6uJaYAfB\n6OnkeF1w937HfXH95ayoLCw/ktiNhsJaNDwMzS3oHDDdOs6VcxXb07fkFMQcukx/\new3Vku+jF8MJCyFEH8I2cv7DbeTt9/Ddv0QI/6lb/QKBgQDkuIYMo6+IMGCbFto2\nthCe0vHdRRR2VzkYuiqtZKDDCkhRgpO6YNjIsVkx9nXaCZV1f2pFVzZROUs/iigq\n49k6anBVZyPLMrsw3ZpZf1KCGmdP0lwYTQjE6HDWPzWpqREI347CJe7Ej2+bgZlR\nQ6quxpNEFERy3GIZF1tf3KaTGwKBgQDVs6mXxWawRj6jFfxWzxuBUcv4PTP+cswR\nMTOQ87GGHbrPYMb8kaGr1nS3xTExGD3ANzYZOZRQj5LocNi8zgoJrYr1Cg69rYHJ\nkfXuwYIjk3Vswo3t1y6azs8nZcMqc4we048c1uJQMRHFjaqCXSahIhHPa5hVImLb\n7DIbqUCkzQKBgQCQCYShwRNx+MVd5e5WNiIRY1bduftA630RjWwC9jQnn/obGthd\nr0/WU5mQVV2yigaNkEgkkt+qFyLESQUyvXq3xwAnSGTKOpCYHXZuljgnpukY46kL\nxLeZCajFw9jPl6EarW8B5VGQh6QJknwzKSH8HyHu5bSVgSRmGMd6f0KHsQKBgQCa\nKBxy62eESWft5XI+fPBufT8SN7RGHTGwRTnZmrG4+cFEz587myJw/yb7Wjh+HeqN\nukZANBUVeDyViLIQoOEE0jenRDYWBg/WBIDQVq82Uq0mY8JWjB+GdSFiXjpHaUrv\nAdX/C9P93Sfgxqz1lZTEL/uBETC2WTPPSbdr1NBZEQKBgQDAISkNKLzA6HKSqFKt\nx0EJNvgwXfLigeYifnO+4ZBuCOtjd5C8EVwW3lMoy1XovBkrmM5WMiWdaI/edalJ\nfiA7qY/gt2wTbvnjv6HPKnjg9uWTZD+V/pW+RwkaLZ/eRJFrBrsINTI9ONjPnrTL\naU9iHYO7/L+iD57agHGv6WSyjQ==\n-----END PRIVATE KEY-----\n",
+  "client_email": "ct-service@test-combocurve.iam.gserviceaccount.com",
+  "client_id": "117663452860552633121",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/ct-service%40test-combocurve.iam.gserviceaccount.com"
+}

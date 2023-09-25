@@ -1,0 +1,25 @@
+[{ 
+    "_id" : "642ca950bb0681001299c4ef", 
+    "typeCurve" : "642ca950bb0681001299c4ee", 
+    "well" : "5e272d39b78910dd2a1bd928", 
+    "oil" : true, 
+    "gas" : true, 
+    "water" : true, 
+    "__v" : 0
+},{ 
+    "_id" : "642ca950bb0681001299c4f0", 
+    "typeCurve" : "642ca950bb0681001299c4ee", 
+    "well" : "5e272d39b78910dd2a1bd929", 
+    "oil" : true, 
+    "gas" : true, 
+    "water" : true, 
+    "__v" : 0
+},{ 
+    "_id" : "642ca950bb0681001299c4f1", 
+    "typeCurve" : "642ca950bb0681001299c4ee", 
+    "well" : "5eadcef80bdf06ec9437d9da", 
+    "oil" : true, 
+    "gas" : true, 
+    "water" : true, 
+    "__v" : 0
+}]

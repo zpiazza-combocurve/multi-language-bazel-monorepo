@@ -1,0 +1,53 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: carbon
+spec:
+  parallelism: 1
+  completions: 1
+  backoffLimit: 3
+  template:
+    spec:
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: size
+                operator: In
+                values:
+                - small
+      backoffLimit: 3
+      serviceAccountName: job-manager
+      nodeSelector:
+        iam.gke.io/gke-metadata-server-enabled: "true"
+      restartPolicy: Never
+      containers:
+        - name: carbon
+          resources:
+            requests:
+              cpu: "1"
+              memory: "1Gi"
+            limits:
+              cpu: "15.8"
+              memory: "115.2Gi"
+          image: gcr.io/dev14-combocurve/carbon:latest
+          env:
+            - name: GCP_PRIMARY_PROJECT_ID
+              value: "dev14-combocurve"
+            - name: GCP_REGIONAL_PROJECT_ID
+              value: "dev14-combocurve"
+            - name: RUN_ID
+              value: "63990f57a2eb53188011b850"
+            - name: TIME_ZONE
+              value: "America/Chicago"
+            - name: IS_GHG
+              value: "True"
+            - name: TENANT
+              value: "dev14"
+            - name: REDIS_HOST
+              value: "localhost"
+            - name: REDIS_PORT
+              value: "6379"
+          command: ["/bin/bash"]
+          args: ["-c", "cd /app; python jobs/carbon/main.py;"]

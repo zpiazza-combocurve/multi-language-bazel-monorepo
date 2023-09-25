@@ -1,0 +1,151 @@
+{
+  "title": "Well Months Source Conversion",
+  "key": "well_months_source_conversion",
+  "component": "wells",
+  "fields": {
+    "chosenID": {
+      "inpt": ["chosenID"],
+      "other": ["API 14"],
+      "internal": ["API 14"],
+      "di": ["API/UWI"],
+      "ihs": ["API"],
+      "aries": ["PROPNUM"],
+      "phdwin": ["Unique Id"]
+    },
+    "gas": {
+      "inpt": ["Gas", "Gas (MCF/M)", "Gas (MCF/MO)"],
+      "other": ["Gas"],
+      "internal": ["Gas"],
+      "di": ["Monthly Gas"],
+      "ihs": ["Gas"],
+      "aries": ["GAS"],
+      "phdwin": ["Production[GAS]"]
+    },
+    "oil": {
+      "inpt": ["Oil", "Oil (BBL/M)", "Oil (BBL/MO)"],
+      "other": ["Oil"],
+      "internal": ["Oil"],
+      "di": ["Monthly Oil"],
+      "ihs": ["Liquid"],
+      "aries": ["OIL"],
+      "phdwin": ["Production[OIL]"]
+    },
+    "date": {
+      "inpt": ["Date"],
+      "other": ["Date"],
+      "internal": ["Date"],
+      "di": ["Monthly Production Date"],
+      "ihs": [null],
+      "aries": ["P_DATE", "DATE"],
+      "phdwin": ["Date(Key)"]
+    },
+    "year": {
+      "inpt": ["Year"],
+      "other": ["Year"],
+      "internal": ["Year"],
+      "di": [null],
+      "ihs": ["Year"],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "well": {
+      "inpt": ["Well"],
+      "other": ["Well"],
+      "internal": ["Well"],
+      "di": [null],
+      "ihs": [null],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "month": {
+      "inpt": ["Month"],
+      "other": ["Month"],
+      "internal": ["Month"],
+      "di": [null],
+      "ihs": ["Month"],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "choke": {
+      "inpt": ["Choke", "Choke (in)"],
+      "other": ["Choke"],
+      "internal": ["Choke"],
+      "di": [null],
+      "ihs": [null],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "water": {
+      "inpt": ["Water", "Water (BBL/M)", "Water (BBL/MO)"],
+      "other": ["Water"],
+      "internal": ["Water"],
+      "di": ["Monthly Water"],
+      "ihs": ["Water"],
+      "aries": ["WATER"],
+      "phdwin": ["Production[WATER]"]
+    },
+    "days_on": {
+      "inpt": ["Days On"],
+      "other": ["Days On"],
+      "internal": ["Days On"],
+      "di": ["Days"],
+      "ihs": ["Days On"],
+      "aries": ["DAYSON", "DAYS_ON"],
+      "phdwin": [null]
+    },
+    "operational_tag": {
+      "inpt": ["Operational Tag"],
+      "other": ["Operational Tag"],
+      "internal": ["Operational Tag"],
+      "di": [null],
+      "ihs": [null],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "co2Injection": {
+      "inpt": ["CO2 Injection", "CO2 Injection (MCF/M)", "CO2 Injection (MCF/MO)"],
+      "other": [null],
+      "internal": [null],
+      "di": [null],
+      "ihs": [null],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "gasInjection": {
+      "inpt": ["Gas Injection", "Gas Injection (MCF/M)", "Gas Injection (MCF/MO)"],
+      "other": [null],
+      "internal": [null],
+      "di": [null],
+      "ihs": [null],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "ngl": {
+      "inpt": ["NGL", "NGL (BBL/M)", "NGL (BBL/MO)"],
+      "other": [null],
+      "internal": [null],
+      "di": [null],
+      "ihs": [null],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "steamInjection": {
+      "inpt": ["Steam Injection", "Steam Injection (MCF/M)", "Steam Injection (MCF/MO)"],
+      "other": [null],
+      "internal": [null],
+      "di": [null],
+      "ihs": [null],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "waterInjection": {
+      "inpt": ["Water Injection", "Water Injection (BBL/M)", "Water Injection (BBL/MO)"],
+      "other": [null],
+      "internal": [null],
+      "di": [null],
+      "ihs": [null],
+      "aries": [null],
+      "phdwin": [null]
+    }
+  }
+}

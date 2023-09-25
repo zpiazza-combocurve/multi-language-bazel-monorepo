@@ -1,0 +1,214 @@
+{
+  "title": "Well Days Source Conversion",
+  "key": "well_days_source_conversion",
+  "component": "wells",
+  "fields": {
+    "chosenID": {
+      "inpt": ["chosenID"],
+      "other": ["API 14"],
+      "internal": ["API 14"],
+      "di": ["API/UWI"],
+      "ihs": ["API"],
+      "aries": ["PROPNUM"],
+      "phdwin": ["Unique Id"]
+    },
+    "day": {
+      "inpt": ["Day"],
+      "other": ["Day"],
+      "internal": ["Day"],
+      "di": [null],
+      "ihs": [null],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "gas": {
+      "inpt": ["Gas", "Gas (MCF/D)"],
+      "other": ["Gas"],
+      "internal": ["Gas"],
+      "di": [null],
+      "ihs": [null],
+      "aries": ["GAS"],
+      "phdwin": ["Production[GAS]"]
+    },
+    "oil": {
+      "inpt": ["Oil", "Oil (BBL/D)"],
+      "other": ["Oil"],
+      "internal": ["Oil"],
+      "di": [null],
+      "ihs": [null],
+      "aries": ["OIL"],
+      "phdwin": ["Production[OIL]"]
+    },
+    "date": {
+      "inpt": ["Date"],
+      "other": ["Date"],
+      "internal": ["Date"],
+      "di": [null],
+      "ihs": [null],
+      "aries": ["D_DATE", "DATE"],
+      "phdwin": ["Date(Key)"]
+    },
+    "year": {
+      "inpt": ["Year"],
+      "other": ["Year"],
+      "internal": ["Year"],
+      "di": [null],
+      "ihs": [null],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "well": {
+      "inpt": ["Well"],
+      "other": ["Well"],
+      "internal": ["Well"],
+      "di": [null],
+      "ihs": [null],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "month": {
+      "inpt": ["Month"],
+      "other": ["Month"],
+      "internal": ["Month"],
+      "di": [null],
+      "ihs": [null],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "choke": {
+      "inpt": ["Choke", "Choke (in)"],
+      "other": ["Choke"],
+      "internal": ["Choke"],
+      "di": [null],
+      "ihs": [null],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "water": {
+      "inpt": ["Water", "Water (BBL/D)"],
+      "other": ["Water"],
+      "internal": ["Water"],
+      "di": [null],
+      "ihs": [null],
+      "aries": ["WATER"],
+      "phdwin": ["Production[WATER]"]
+    },
+    "hours_on": {
+      "inpt": ["Hours On"],
+      "other": ["Hours On"],
+      "internal": ["Hours On"],
+      "di": [null],
+      "ihs": [null],
+      "aries": ["HOURS"],
+      "phdwin": [null]
+    },
+    "gas_lift_injection_pressure": {
+      "inpt": ["Gas Lift Injection Pressure", "Gas Lift Injection Pressure (PSI)"],
+      "other": ["Gas Lift Injection Pressure"],
+      "internal": ["Gas Lift Injection Pressure"],
+      "di": [null],
+      "ihs": [null],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "bottom_hole_pressure": {
+      "inpt": ["Bottom Hole Pressure", "Bottom Hole Pressure (PSI)"],
+      "other": ["Bottom Hole Pressure"],
+      "internal": ["Bottom Hole Pressure"],
+      "di": [null],
+      "ihs": [null],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "vessel_separator_pressure": {
+      "inpt": ["Vessel Separator Pressure", "Vessel Separator Pressure (PSI)"],
+      "other": ["Vessel Separator Pressure"],
+      "internal": ["Vessel Separator Pressure"],
+      "di": [null],
+      "ihs": [null],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "tubing_head_pressure": {
+      "inpt": ["Tubing Head Pressure", "Tubing Head Pressure (PSI)"],
+      "other": ["Tubing Head Pressure"],
+      "internal": ["Tubing Head Pressure"],
+      "di": [null],
+      "ihs": [null],
+      "aries": ["FTP", "TBG_PSI"],
+      "phdwin": [null]
+    },
+    "flowline_pressure": {
+      "inpt": ["Flowline Pressure", "Flowline Pressure (PSI)"],
+      "other": ["Flowline Pressure"],
+      "internal": ["Flowline Pressure"],
+      "di": [null],
+      "ihs": [null],
+      "aries": ["LINE_PRESS", "LINE_PSI"],
+      "phdwin": [null]
+    },
+    "casing_head_pressure": {
+      "inpt": ["Casing Head Pressure", "Casing Head Pressure (PSI)"],
+      "other": ["Casing Head Pressure"],
+      "internal": ["Casing Head Pressure"],
+      "di": [null],
+      "ihs": [null],
+      "aries": ["FCP", "CP", "CSG_PSI"],
+      "phdwin": [null]
+    },
+    "operational_tag": {
+      "inpt": ["Operational Tag"],
+      "other": ["Operational Tag"],
+      "internal": ["Operational Tag"],
+      "di": [null],
+      "ihs": [null],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "co2Injection": {
+      "inpt": ["CO2 Injection", "CO2 Injection (MCF/D)"],
+      "other": [null],
+      "internal": [null],
+      "di": [null],
+      "ihs": [null],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "gasInjection": {
+      "inpt": ["Gas Injection", "Gas Injection (MCF/D)"],
+      "other": [null],
+      "internal": [null],
+      "di": [null],
+      "ihs": [null],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "ngl": {
+      "inpt": ["NGL", "NGL (BBL/D)"],
+      "other": [null],
+      "internal": [null],
+      "di": [null],
+      "ihs": [null],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "steamInjection": {
+      "inpt": ["Steam Injection", "Steam Injection (MCF/D)"],
+      "other": [null],
+      "internal": [null],
+      "di": [null],
+      "ihs": [null],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "waterInjection": {
+      "inpt": ["Water Injection", "Water Injection (BBL/D)"],
+      "other": [null],
+      "internal": [null],
+      "di": [null],
+      "ihs": [null],
+      "aries": [null],
+      "phdwin": [null]
+    }
+  }
+}

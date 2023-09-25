@@ -1,0 +1,650 @@
+[
+  {
+    "_id": "63500c45bea41f312d141eaa",
+    "lastAutomaticRun": { "date": null, "source": null, "success": false },
+    "warning": { "status": false, "message": "" },
+    "ratio": { "enabled": false, "phase": "oil", "value": 1 },
+    "data_freq": "monthly",
+    "diagDate": null,
+    "forecasted": true,
+    "phase": "gas",
+    "runDate": null,
+    "forecastType": "prob",
+    "typeCurve": null,
+    "status": "in_progress",
+    "reviewedAt": null,
+    "reviewedBy": null,
+    "forecastedAt": "2022-10-19 21:59:43.927000",
+    "forecastedBy": "611beca03556540015af8562",
+    "forecast": "63500c2fbea41f312d13a065",
+    "P_dict": {
+      "P10": {
+        "diagnostics": {},
+        "eur": 2719795.8741728454,
+        "rur": 1354322.8741728454,
+        "segments": [
+          {
+            "name": "arps_modified",
+            "q_start": 731.6303901437371,
+            "q_end": 3.4818812311478307,
+            "slope": -1.0,
+            "D_eff": 0.31348684895687384,
+            "D": 0.0013263699854703958,
+            "b": 1.293441002234627,
+            "target_D_eff_sw": 0.08,
+            "realized_D_eff_sw": 0.07999999999999996,
+            "sw_idx": 46281.78070087124,
+            "q_sw": 187.7052889417655,
+            "D_exp_eff": 0.07999999999999996,
+            "D_exp": 0.00022828640366612173,
+            "start_idx": 43478.0,
+            "end_idx": 63748.0
+          }
+        ]
+      },
+      "P50": {
+        "diagnostics": {},
+        "eur": 2416822.6725793723,
+        "rur": 1051349.6725793723,
+        "segments": [
+          {
+            "name": "arps_modified",
+            "q_start": 731.6303901437371,
+            "q_end": 2.5583664645385467,
+            "slope": -1.0,
+            "D_eff": 0.3432960018559784,
+            "D": 0.0014185168074385853,
+            "b": 0.9602915003894498,
+            "target_D_eff_sw": 0.08,
+            "realized_D_eff_sw": 0.07999999999999985,
+            "sw_idx": 47305.484340906405,
+            "q_sw": 109.17714232888386,
+            "D_exp_eff": 0.07999999999999985,
+            "D_exp": 0.00022828640366612168,
+            "start_idx": 43478.0,
+            "end_idx": 63748.0
+          }
+        ]
+      },
+      "P90": {
+        "diagnostics": {},
+        "eur": 2224200.798531272,
+        "rur": 858727.798531272,
+        "segments": [
+          {
+            "name": "arps_modified",
+            "q_start": 731.6303901437371,
+            "q_end": 2.0284559987334854,
+            "slope": -1.0,
+            "D_eff": 0.39296189129889925,
+            "D": 0.0017344084196677554,
+            "b": 0.9197290223674666,
+            "target_D_eff_sw": 0.08,
+            "realized_D_eff_sw": 0.07999999999999996,
+            "sw_idx": 47613.888731424144,
+            "q_sw": 80.67858300268483,
+            "D_exp_eff": 0.07999999999999996,
+            "D_exp": 0.00022828640366612173,
+            "start_idx": 43478.0,
+            "end_idx": 63748.0
+          }
+        ]
+      },
+      "best": {
+        "diagnostics": {},
+        "eur": 2453003.118306383,
+        "rur": 1087530.118306383,
+        "segments": [
+          {
+            "name": "arps_modified",
+            "q_start": 731.6303901437371,
+            "q_end": 2.692850245719241,
+            "slope": -1.0,
+            "D_eff": 0.34917656708116396,
+            "D": 0.001486206709992123,
+            "b": 1.0508281732932576,
+            "target_D_eff_sw": 0.08,
+            "realized_D_eff_sw": 0.07999999999999996,
+            "sw_idx": 47006.27279261459,
+            "q_sw": 123.0399253319684,
+            "D_exp_eff": 0.07999999999999996,
+            "D_exp": 0.0002282864036661217,
+            "start_idx": 43478.0,
+            "end_idx": 63748.0
+          }
+        ]
+      }
+    },
+    "p_extra": {
+      "eur_ratio": {
+        "P10": 1.276382138095836,
+        "P50": 1.0,
+        "P90": 0.8242839786180027
+      }
+    },
+    "project": "6317a34710de0b00143c9de0",
+    "well": "5faad48707b5d658e828052d",
+    "__v": 0,
+    "createdAt": "2022-10-19 14:40:06.236000",
+    "updatedAt": "2022-10-19 21:59:43.927000"
+  },
+  {
+    "_id": "63500c45bea41f312d141eab",
+    "lastAutomaticRun": { "date": null, "source": null, "success": false },
+    "warning": { "status": false, "message": "" },
+    "ratio": { "enabled": false, "phase": "oil", "value": 1 },
+    "data_freq": "monthly",
+    "diagDate": null,
+    "forecasted": true,
+    "phase": "water",
+    "runDate": null,
+    "forecastType": "prob",
+    "typeCurve": null,
+    "status": "in_progress",
+    "reviewedAt": null,
+    "reviewedBy": null,
+    "forecastedAt": "2022-10-19 21:59:44.602000",
+    "forecastedBy": "611beca03556540015af8562",
+    "forecast": "63500c2fbea41f312d13a065",
+    "P_dict": {
+      "P10": {
+        "diagnostics": {},
+        "eur": 46253.79386420102,
+        "rur": 27790.79386420102,
+        "segments": [
+          {
+            "name": "arps_modified",
+            "q_start": 9.13347022587269,
+            "q_end": 0.1000077465580863,
+            "slope": -1.0,
+            "D_eff": 0.15403058803426528,
+            "D": 0.0004999893581285403,
+            "b": 1.034768107262928,
+            "target_D_eff_sw": 0.08,
+            "realized_D_eff_sw": 0.07999999999999996,
+            "sw_idx": 45929.4379253782,
+            "q_sw": 4.281492836311978,
+            "D_exp_eff": 0.07999999999999996,
+            "D_exp": 0.00022828640366612192,
+            "start_idx": 43629.0,
+            "end_idx": 62386.0
+          }
+        ]
+      },
+      "P50": {
+        "diagnostics": {},
+        "eur": 40075.25221338594,
+        "rur": 21612.25221338594,
+        "segments": [
+          {
+            "name": "arps_modified",
+            "q_start": 9.13347022587269,
+            "q_end": 0.10002172052043024,
+            "slope": -1.0,
+            "D_eff": 0.2217875903244908,
+            "D": 0.0007838309892785364,
+            "b": 1.034768107262928,
+            "target_D_eff_sw": 0.08,
+            "realized_D_eff_sw": 0.07999999999999996,
+            "sw_idx": 46629.36028668146,
+            "q_sw": 2.772645372597133,
+            "D_exp_eff": 0.07999999999999996,
+            "D_exp": 0.0002282864036661219,
+            "start_idx": 43629.0,
+            "end_idx": 61182.0
+          }
+        ]
+      },
+      "P90": {
+        "diagnostics": {},
+        "eur": 35025.996388780535,
+        "rur": 16562.996388780535,
+        "segments": [
+          {
+            "name": "arps_modified",
+            "q_start": 9.13347022587269,
+            "q_end": 0.10000735932159388,
+            "slope": -1.0,
+            "D_eff": 0.26344717475196355,
+            "D": 0.0009475734290767063,
+            "b": 0.7942305122833938,
+            "target_D_eff_sw": 0.08,
+            "realized_D_eff_sw": 0.07999999999999996,
+            "sw_idx": 47815.612235799956,
+            "q_sw": 1.521797774775387,
+            "D_exp_eff": 0.07999999999999996,
+            "D_exp": 0.00022828640366612173,
+            "start_idx": 43629.0,
+            "end_idx": 59741.0
+          }
+        ]
+      },
+      "best": {
+        "diagnostics": {},
+        "eur": 39313.87528685134,
+        "rur": 20850.87528685134,
+        "segments": [
+          {
+            "name": "arps_modified",
+            "q_start": 9.13347022587269,
+            "q_end": 0.10000844280450054,
+            "slope": -1.0,
+            "D_eff": 0.22900615428081805,
+            "D": 0.0008138185615352788,
+            "b": 1.0054572050593416,
+            "target_D_eff_sw": 0.08,
+            "realized_D_eff_sw": 0.07999999999999996,
+            "sw_idx": 46763.58119470466,
+            "q_sw": 2.5797912067344377,
+            "D_exp_eff": 0.07999999999999996,
+            "D_exp": 0.0002282864036661218,
+            "start_idx": 43629.0,
+            "end_idx": 61001.0
+          }
+        ]
+      }
+    },
+    "p_extra": {
+      "eur_ratio": {
+        "P10": 1.2780767010577796,
+        "P50": 1.0,
+        "P90": 0.772748897315074
+      }
+    },
+    "project": "6317a34710de0b00143c9de0",
+    "well": "5faad48707b5d658e828052d",
+    "__v": 0,
+    "createdAt": "2022-10-19 14:40:06.236000",
+    "updatedAt": "2022-10-19 21:59:44.602000"
+  },
+  {
+    "_id": "63500c45bea41f312d141ea9",
+    "lastAutomaticRun": { "date": null, "source": null, "success": false },
+    "warning": { "status": false, "message": "" },
+    "ratio": { "enabled": false, "phase": "oil", "value": 1 },
+    "data_freq": "monthly",
+    "diagDate": null,
+    "forecasted": true,
+    "phase": "oil",
+    "runDate": null,
+    "forecastType": "prob",
+    "typeCurve": null,
+    "status": "in_progress",
+    "reviewedAt": null,
+    "reviewedBy": null,
+    "forecastedAt": "2022-10-19 21:59:43.298000",
+    "forecastedBy": "611beca03556540015af8562",
+    "forecast": "63500c2fbea41f312d13a065",
+    "P_dict": {
+      "P10": {
+        "diagnostics": {},
+        "eur": 221751.0324982541,
+        "rur": 52507.03249825409,
+        "segments": [
+          {
+            "name": "arps_modified",
+            "q_start": 44.32032854209446,
+            "q_end": 0.13194183640855572,
+            "slope": -1.0,
+            "D_eff": 0.46420546056522505,
+            "D": 0.002618820215842886,
+            "b": 1.2838044845498922,
+            "target_D_eff_sw": 0.08,
+            "realized_D_eff_sw": 0.07999999999999996,
+            "sw_idx": 46592.657315605145,
+            "q_sw": 6.62557657522994,
+            "D_exp_eff": 0.07999999999999996,
+            "D_exp": 0.0002282864036661217,
+            "start_idx": 43478.0,
+            "end_idx": 63748.0
+          }
+        ]
+      },
+      "P50": {
+        "diagnostics": {},
+        "eur": 205817.14122839688,
+        "rur": 36573.14122839688,
+        "segments": [
+          {
+            "name": "arps_modified",
+            "q_start": 44.32032854209446,
+            "q_end": 0.10001110416234095,
+            "slope": -1.0,
+            "D_eff": 0.4954104037254199,
+            "D": 0.0026188202158428865,
+            "b": 0.9312292074241608,
+            "target_D_eff_sw": 0.08,
+            "realized_D_eff_sw": 0.07999999999999996,
+            "sw_idx": 47771.90637421094,
+            "q_sw": 3.2264469637225393,
+            "D_exp_eff": 0.07999999999999996,
+            "D_exp": 0.000228286403666122,
+            "start_idx": 43478.0,
+            "end_idx": 62989.0
+          }
+        ]
+      },
+      "P90": {
+        "diagnostics": {},
+        "eur": 196693.51514140805,
+        "rur": 27449.515141408046,
+        "segments": [
+          {
+            "name": "arps_modified",
+            "q_start": 44.32032854209446,
+            "q_end": 0.10000609530697993,
+            "slope": -1.0,
+            "D_eff": 0.5730493280806688,
+            "D": 0.0035546180580742145,
+            "b": 0.9312292074241608,
+            "target_D_eff_sw": 0.08,
+            "realized_D_eff_sw": 0.07999999999999996,
+            "sw_idx": 47879.85741228609,
+            "q_sw": 2.324012114077029,
+            "D_exp_eff": 0.07999999999999996,
+            "D_exp": 0.000228286403666122,
+            "start_idx": 43478.0,
+            "end_idx": 61660.0
+          }
+        ]
+      },
+      "best": {
+        "diagnostics": {},
+        "eur": 208224.80849893612,
+        "rur": 38980.80849893612,
+        "segments": [
+          {
+            "name": "arps_modified",
+            "q_start": 44.32032854209446,
+            "q_end": 0.10000491196790313,
+            "slope": -1.0,
+            "D_eff": 0.5147891212091261,
+            "D": 0.002996957851949387,
+            "b": 1.076892275131723,
+            "target_D_eff_sw": 0.08,
+            "realized_D_eff_sw": 0.07999999999999996,
+            "sw_idx": 47235.84167726491,
+            "q_sw": 4.057365706551941,
+            "D_exp_eff": 0.07999999999999996,
+            "D_exp": 0.00022828640366612195,
+            "start_idx": 43478.0,
+            "end_idx": 63457.0
+          }
+        ]
+      }
+    },
+    "p_extra": {
+      "eur_ratio": {
+        "P10": 1.378176125690194,
+        "P50": 1.0,
+        "P90": 0.7834591975514711
+      }
+    },
+    "project": "6317a34710de0b00143c9de0",
+    "well": "5faad48707b5d658e828052d",
+    "__v": 0,
+    "createdAt": "2022-10-19 14:40:06.236000",
+    "updatedAt": "2022-10-19 21:59:43.298000"
+  },
+  {
+    "_id": "63500c62bea41f312d14c42d",
+    "lastAutomaticRun": { "date": null, "source": null, "success": false },
+    "warning": { "status": false, "message": "" },
+    "ratio": { "enabled": false, "phase": "oil", "value": 1 },
+    "data_freq": "monthly",
+    "diagDate": null,
+    "forecasted": true,
+    "phase": "oil",
+    "runDate": null,
+    "forecastType": "flat/zero",
+    "typeCurve": null,
+    "status": "in_progress",
+    "reviewedAt": null,
+    "reviewedBy": null,
+    "forecastedAt": "2022-10-19 21:59:44.621000",
+    "forecastedBy": "611beca03556540015af8562",
+    "forecast": "63500c2fbea41f312d13a065",
+    "P_dict": {
+      "P10": {
+        "diagnostics": {},
+        "eur": 163488.0,
+        "rur": 0.0,
+        "segments": [
+          {
+            "name": "empty",
+            "slope": 0.0,
+            "q_start": 0.0,
+            "q_end": 0.0,
+            "start_idx": 42229.0,
+            "end_idx": 56078.0
+          }
+        ]
+      },
+      "P50": {
+        "diagnostics": {},
+        "eur": 163488.0,
+        "rur": 0.0,
+        "segments": [
+          {
+            "name": "empty",
+            "slope": 0.0,
+            "q_start": 0.0,
+            "q_end": 0.0,
+            "start_idx": 42229.0,
+            "end_idx": 56078.0
+          }
+        ]
+      },
+      "P90": {
+        "diagnostics": {},
+        "eur": 163488.0,
+        "rur": 0.0,
+        "segments": [
+          {
+            "name": "empty",
+            "slope": 0.0,
+            "q_start": 0.0,
+            "q_end": 0.0,
+            "start_idx": 42229.0,
+            "end_idx": 56078.0
+          }
+        ]
+      },
+      "best": {
+        "diagnostics": {},
+        "eur": 163488.0,
+        "rur": 0.0,
+        "segments": [
+          {
+            "name": "empty",
+            "slope": 0.0,
+            "q_start": 0.0,
+            "q_end": 0.0,
+            "start_idx": 42229.0,
+            "end_idx": 56078.0
+          }
+        ]
+      }
+    },
+    "p_extra": { "eur_ratio": { "P10": 1.0, "P50": 1.0, "P90": 1.0 } },
+    "project": "6317a34710de0b00143c9de0",
+    "well": "5faade0907b5d658e8361219",
+    "__v": 0,
+    "createdAt": "2022-10-19 14:40:35.223000",
+    "updatedAt": "2022-10-19 21:59:44.621000"
+  },
+  {
+    "_id": "63500c62bea41f312d14c42f",
+    "lastAutomaticRun": { "date": null, "source": null, "success": false },
+    "warning": { "status": false, "message": "" },
+    "ratio": { "enabled": false, "phase": "oil", "value": 1 },
+    "data_freq": "monthly",
+    "diagDate": null,
+    "forecasted": true,
+    "phase": "water",
+    "runDate": null,
+    "forecastType": "flat/zero",
+    "typeCurve": null,
+    "status": "in_progress",
+    "reviewedAt": null,
+    "reviewedBy": null,
+    "forecastedAt": "2022-10-19 21:59:44.648000",
+    "forecastedBy": "611beca03556540015af8562",
+    "forecast": "63500c2fbea41f312d13a065",
+    "P_dict": {
+      "P10": {
+        "diagnostics": {},
+        "eur": 480974.0,
+        "rur": 0.0,
+        "segments": [
+          {
+            "name": "empty",
+            "slope": 0.0,
+            "q_start": 0.0,
+            "q_end": 0.0,
+            "start_idx": 42229.0,
+            "end_idx": 56078.0
+          }
+        ]
+      },
+      "P50": {
+        "diagnostics": {},
+        "eur": 480974.0,
+        "rur": 0.0,
+        "segments": [
+          {
+            "name": "empty",
+            "slope": 0.0,
+            "q_start": 0.0,
+            "q_end": 0.0,
+            "start_idx": 42229.0,
+            "end_idx": 56078.0
+          }
+        ]
+      },
+      "P90": {
+        "diagnostics": {},
+        "eur": 480974.0,
+        "rur": 0.0,
+        "segments": [
+          {
+            "name": "empty",
+            "slope": 0.0,
+            "q_start": 0.0,
+            "q_end": 0.0,
+            "start_idx": 42229.0,
+            "end_idx": 56078.0
+          }
+        ]
+      },
+      "best": {
+        "diagnostics": {},
+        "eur": 480974.0,
+        "rur": 0.0,
+        "segments": [
+          {
+            "name": "empty",
+            "slope": 0.0,
+            "q_start": 0.0,
+            "q_end": 0.0,
+            "start_idx": 42229.0,
+            "end_idx": 56078.0
+          }
+        ]
+      }
+    },
+    "p_extra": { "eur_ratio": { "P10": 1.0, "P50": 1.0, "P90": 1.0 } },
+    "project": "6317a34710de0b00143c9de0",
+    "well": "5faade0907b5d658e8361219",
+    "__v": 0,
+    "createdAt": "2022-10-19 14:40:35.223000",
+    "updatedAt": "2022-10-19 21:59:44.648000"
+  },
+  {
+    "_id": "63500c62bea41f312d14c42e",
+    "lastAutomaticRun": { "date": null, "source": null, "success": false },
+    "warning": { "status": false, "message": "" },
+    "ratio": { "enabled": false, "phase": "oil", "value": 1 },
+    "data_freq": "monthly",
+    "diagDate": null,
+    "forecasted": true,
+    "phase": "gas",
+    "runDate": null,
+    "forecastType": "flat/zero",
+    "typeCurve": null,
+    "status": "in_progress",
+    "reviewedAt": null,
+    "reviewedBy": null,
+    "forecastedAt": "2022-10-19 21:59:44.634000",
+    "forecastedBy": "611beca03556540015af8562",
+    "forecast": "63500c2fbea41f312d13a065",
+    "P_dict": {
+      "P10": {
+        "diagnostics": {},
+        "eur": 149607.0,
+        "rur": 0.0,
+        "segments": [
+          {
+            "name": "empty",
+            "slope": 0.0,
+            "q_start": 0.0,
+            "q_end": 0.0,
+            "start_idx": 42168.0,
+            "end_idx": 56078.0
+          }
+        ]
+      },
+      "P50": {
+        "diagnostics": {},
+        "eur": 149607.0,
+        "rur": 0.0,
+        "segments": [
+          {
+            "name": "empty",
+            "slope": 0.0,
+            "q_start": 0.0,
+            "q_end": 0.0,
+            "start_idx": 42168.0,
+            "end_idx": 56078.0
+          }
+        ]
+      },
+      "P90": {
+        "diagnostics": {},
+        "eur": 149607.0,
+        "rur": 0.0,
+        "segments": [
+          {
+            "name": "empty",
+            "slope": 0.0,
+            "q_start": 0.0,
+            "q_end": 0.0,
+            "start_idx": 42168.0,
+            "end_idx": 56078.0
+          }
+        ]
+      },
+      "best": {
+        "diagnostics": {},
+        "eur": 149607.0,
+        "rur": 0.0,
+        "segments": [
+          {
+            "name": "empty",
+            "slope": 0.0,
+            "q_start": 0.0,
+            "q_end": 0.0,
+            "start_idx": 42168.0,
+            "end_idx": 56078.0
+          }
+        ]
+      }
+    },
+    "p_extra": { "eur_ratio": { "P10": 1.0, "P50": 1.0, "P90": 1.0 } },
+    "project": "6317a34710de0b00143c9de0",
+    "well": "5faade0907b5d658e8361219",
+    "__v": 0,
+    "createdAt": "2022-10-19 14:40:35.223000",
+    "updatedAt": "2022-10-19 21:59:44.634000"
+  }
+]

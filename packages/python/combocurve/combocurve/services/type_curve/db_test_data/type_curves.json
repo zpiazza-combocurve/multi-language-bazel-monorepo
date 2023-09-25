@@ -1,0 +1,74 @@
+[{
+  "_id": "642ca950bb0681001299c4ee",
+  "phaseType": {
+    "oil": "rate",
+    "gas": "rate",
+    "water": "rate"
+  },
+  "qFinalDict": {
+    "oil": null,
+    "gas": null,
+    "water": null,
+    "oil/gas": null,
+    "oil/water": null,
+    "gas/oil": null,
+    "gas/water": null,
+    "water/oil": null,
+    "water/gas": null
+  },
+  "fits": {
+    "oil": "642ca9b3670d176d856d605a",
+    "gas": "642ca9b3670d176d856d605c"
+  },
+  "headers": {
+    "first_prod_date": null,
+    "perf_lateral_length": null,
+    "true_vertical_depth": null,
+    "total_prop_weight": null
+  },
+  "assumptions": {
+    "capex": null,
+    "dates": null,
+    "risking": null,
+    "expenses": null,
+    "escalation": null,
+    "depreciation": null,
+    "general_options": null,
+    "production_taxes": null,
+    "production_vs_fit": null,
+    "stream_properties": null,
+    "ownership_reversion": null,
+    "pricing": null,
+    "differentials": null
+  },
+  "basePhase": "oil",
+  "fitted": false,
+  "forecastSeries": "best",
+  "normalizations": [
+    "642ca950bb0681001299c4fc",
+    "642ca950bb0681001299c4ff",
+    "642ca950bb0681001299c502"
+  ],
+  "resolutionPreference": "forecast",
+  "wells": [
+    "5e272d39b78910dd2a1bd928",
+    "5e272d39b78910dd2a1bd929",
+    "5eadcef80bdf06ec9437d9da"
+  ],
+  "wellsAdded": false,
+  "wellsRemoved": false,
+  "copiedFrom": null,
+  "pSeries": {
+    "percentile": "P50"
+  },
+  "tags": [],
+  "wellValidationCriteria": "either_have_prod_or_forecast",
+  "createdBy": "5ef0d82065ff5f0012ef6d08",
+  "forecast": "642ca8c0bb0681001299c1a7",
+  "name": "template TC",
+  "project": "642ca88cbb0681001299bfd2",
+  "tcType": "rate",
+  "createdAt": "2023-04-04T22:48:48.372+0000",
+  "updatedAt": "2023-04-04T22:50:28.006+0000",
+  "__v": 0
+}]

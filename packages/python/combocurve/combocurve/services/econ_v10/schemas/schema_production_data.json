@@ -1,0 +1,93 @@
+{
+  "type": "object",
+  "required": ["oil", "gas", "water"],
+  "properties": {
+    "oil": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "object",
+          "required": ["index", "value", "data_freq"],
+          "properties": {
+            "index": {
+              "type": "array",
+              "items": {
+                "type": "number"
+              }
+            },
+            "value": {
+              "type": "array",
+              "items": {
+                "type": "number"
+              }
+            },
+            "data_freq": {
+              "type": "string",
+              "enum": ["monthly", "daily"]
+            }
+          }
+        }
+      ]
+    },
+    "gas": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "object",
+          "required": ["index", "value", "data_freq"],
+          "properties": {
+            "index": {
+              "type": "array",
+              "items": {
+                "type": "number"
+              }
+            },
+            "value": {
+              "type": "array",
+              "items": {
+                "type": "number"
+              }
+            },
+            "data_freq": {
+              "type": "string",
+              "enum": ["monthly", "daily"]
+            }
+          }
+        }
+      ]
+    },
+    "water": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "object",
+          "required": ["index", "value", "data_freq"],
+          "properties": {
+            "index": {
+              "type": "array",
+              "items": {
+                "type": "number"
+              }
+            },
+            "value": {
+              "type": "array",
+              "items": {
+                "type": "number"
+              }
+            },
+            "data_freq": {
+              "type": "string",
+              "enum": ["monthly", "daily"]
+            }
+          }
+        }
+      ]
+    }
+  }
+}

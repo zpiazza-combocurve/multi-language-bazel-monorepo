@@ -1,0 +1,213 @@
+{
+  "type": "object",
+  "required": ["oil", "gas", "water"],
+  "properties": {
+    "oil": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "object",
+          "required": [
+            "ratio",
+            "data_freq",
+            "forecasted",
+            "forecastType",
+            "forecastSubType",
+            "phase",
+            "forecast",
+            "P_dict",
+            "well"
+          ],
+          "properties": {
+            "ratio": {
+              "type": "object",
+              "required": ["segments", "basePhase", "x"],
+              "properties": {
+                "segments": {
+                  "type": "array"
+                },
+                "basePhase": {},
+                "x": {},
+                "eur": {},
+                "rur": {},
+                "diagnostics": {
+                  "type": "object"
+                }
+              }
+            },
+            "data_freq": {
+              "type": "string",
+              "enum": ["monthly", "daily"]
+            },
+            "forecasted": {
+              "type": "boolean"
+            },
+            "forecastType": {
+              "type": "string"
+            },
+            "forecastSubType": {
+              "type": "string"
+            },
+            "phase": {
+              "type": "string",
+              "enum": ["oil", "gas", "water"]
+            },
+            "typeCurve": {},
+            "forecast": {
+              "bsonType": "objectId"
+            },
+            "P_dict": {
+              "type": "object"
+            },
+            "well": {
+              "bsonType": "objectId"
+            }
+          }
+        },
+        {
+          "type": "object"
+        }
+      ]
+    },
+    "gas": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "object",
+          "required": [
+            "ratio",
+            "data_freq",
+            "forecasted",
+            "forecastType",
+            "forecastSubType",
+            "phase",
+            "forecast",
+            "P_dict",
+            "well"
+          ],
+          "properties": {
+            "ratio": {
+              "type": "object",
+              "required": ["segments", "basePhase", "x"],
+              "properties": {
+                "segments": {
+                  "type": "array"
+                },
+                "basePhase": {},
+                "x": {},
+                "eur": {},
+                "rur": {},
+                "diagnostics": {
+                  "type": "object"
+                }
+              }
+            },
+            "data_freq": {
+              "type": "string",
+              "enum": ["monthly", "daily"]
+            },
+            "forecasted": {
+              "type": "boolean"
+            },
+            "forecastType": {
+              "type": "string"
+            },
+            "forecastSubType": {
+              "type": "string"
+            },
+            "phase": {
+              "type": "string",
+              "enum": ["oil", "gas", "water"]
+            },
+            "typeCurve": {},
+            "forecast": {
+              "bsonType": "objectId"
+            },
+            "P_dict": {
+              "type": "object"
+            },
+            "well": {
+              "bsonType": "objectId"
+            }
+          }
+        },
+        {
+          "type": "object"
+        }
+      ]
+    },
+    "water": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "object",
+          "required": [
+            "ratio",
+            "data_freq",
+            "forecasted",
+            "forecastType",
+            "forecastSubType",
+            "phase",
+            "forecast",
+            "P_dict",
+            "well"
+          ],
+          "properties": {
+            "ratio": {
+              "type": "object",
+              "required": ["segments", "basePhase", "x"],
+              "properties": {
+                "segments": {
+                  "type": "array"
+                },
+                "basePhase": {},
+                "x": {},
+                "eur": {},
+                "rur": {},
+                "diagnostics": {
+                  "type": "object"
+                }
+              }
+            },
+            "data_freq": {
+              "type": "string",
+              "enum": ["monthly", "daily"]
+            },
+            "forecasted": {
+              "type": "boolean"
+            },
+            "forecastType": {
+              "type": "string"
+            },
+            "forecastSubType": {
+              "type": "string"
+            },
+            "phase": {
+              "type": "string",
+              "enum": ["oil", "gas", "water"]
+            },
+            "typeCurve": {},
+            "forecast": {
+              "bsonType": "objectId"
+            },
+            "P_dict": {
+              "type": "object"
+            },
+            "well": {
+              "bsonType": "objectId"
+            }
+          }
+        },
+        {
+          "type": "object"
+        }
+      ]
+    }
+  }
+}

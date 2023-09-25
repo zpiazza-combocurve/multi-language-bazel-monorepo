@@ -1,0 +1,86 @@
+[
+   {
+     "_id": "642ca974670d176d856d4ac2",
+     "phase": "oil",
+     "typeCurve": "642ca950bb0681001299c4ee",
+     "well": "5e272d39b78910dd2a1bd928",
+     "multipliers": {
+       "eur": 1,
+       "qPeak": 1
+     },
+     "nominalMultipliers": {
+       "eur": 0.9999999991469107,
+       "qPeak": 1.0000000080795521
+     }
+   }, 
+   {
+     "_id": "642ca974670d176d856d4ac5",
+     "phase": "oil",
+     "typeCurve": "642ca950bb0681001299c4ee",
+     "well": "5e272d39b78910dd2a1bd929",
+     "multipliers": {
+       "eur": 1.0033632552715548,
+       "qPeak": 1.4753831862517417
+     },
+     "nominalMultipliers": {
+       "eur": 1.1443639111885409,
+       "qPeak": 0.3960681746405238
+     }
+   },
+   {
+     "_id": "642ca974670d176d856d4ac8",
+     "phase": "oil",
+     "typeCurve": "642ca950bb0681001299c4ee",
+     "well": "5eadcef80bdf06ec9437d9da",
+     "multipliers": {
+       "eur": 0.996659216543587,
+       "qPeak": 0.7563095238095239
+     },
+     "nominalMultipliers": {
+       "eur": 0.8010629040374481,
+       "qPeak": 4.068690871490124
+     }
+   },
+   {
+     "_id": "642ca974670d176d856d4ace",
+     "phase": "gas",
+     "typeCurve": "642ca950bb0681001299c4ee",
+     "well": "5e272d39b78910dd2a1bd928",
+     "multipliers": {
+       "eur": 1,
+       "qPeak": null
+     },
+     "nominalMultipliers": {
+       "eur": 1,
+       "qPeak": null
+     }
+   },
+   {
+     "_id": "642ca974670d176d856d4ad3",
+     "phase": "gas",
+     "typeCurve": "642ca950bb0681001299c4ee",
+     "well": "5e272d39b78910dd2a1bd929",
+     "multipliers": {
+       "eur": 0.5888896210441171,
+       "qPeak": null
+     },
+     "nominalMultipliers": {
+       "eur": 0.5888896210441171,
+       "qPeak": null
+     }
+   },
+   {
+     "_id": "642ca974670d176d856d4ad6",
+     "phase": "gas",
+     "typeCurve": "642ca950bb0681001299c4ee",
+     "well": "5eadcef80bdf06ec9437d9da",
+     "multipliers": {
+       "eur": 3.3124768343418025,
+       "qPeak": null
+     },
+     "nominalMultipliers": {
+       "eur": 3.3124768343418025,
+       "qPeak": null
+     }
+   }
+]

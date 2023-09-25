@@ -1,0 +1,68 @@
+{
+  "description": "econ well input schema",
+  "type": "object",
+  "required": [
+    "assignment_id",
+    "production_data",
+    "forecast_data",
+    "p_series",
+    "well",
+    "incremental_index",
+    "combo_name",
+    "assumptions",
+    "forecast_name",
+    "oil_tc_risking",
+    "gas_tc_risking",
+    "water_tc_risking",
+    "apply_normalization",
+    "network",
+    "ghg",
+    "schedule",
+    "columns_fields"
+  ],
+  "properties": {
+    "assignment_id": {
+      "bsonType": "objectId"
+    },
+    "production_data": {
+      "$ref": "schema_production_data.json"
+    },
+    "forecast_data": {
+      "$ref": "schema_forecast_data.json"
+    },
+    "p_series": {
+      "type": "string",
+      "enum": ["P10", "P50", "P90", "best"]
+    },
+    "well": {
+      "$ref": "schema_well.json"
+    },
+    "incremental_index": {
+      "type": "integer"
+    },
+    "combo_name": {
+      "oneOf": [{ "type": "null" }, { "type": "string" }]
+    },
+    "assumptions": {
+      "$ref": "schema_assumptions.json"
+    },
+    "forecast_name": {
+      "oneOf": [{ "type": "null" }, { "type": "string" }]
+    },
+    "oil_tc_risking": {},
+    "gas_tc_risking": {},
+    "water_tc_risking": {},
+    "apply_normalization": {},
+    "network": {},
+    "ghg": {},
+    "schedule": {
+      "type": "object"
+    },
+    "columns_fields": {
+      "$ref": "schema_column_fields.json"
+    },
+    "columns": {
+      "$ref": "schema_columns.json"
+    }
+  }
+}

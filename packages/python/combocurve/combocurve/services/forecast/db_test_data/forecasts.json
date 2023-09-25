@@ -1,0 +1,153 @@
+[
+  {
+    "_id": "63c734fcdc737200134cdadd",
+    "comparisonIds": {
+      "diagnostics": {
+        "ids": []
+      },
+      "manual": {
+        "ids": []
+      },
+      "view": {
+        "ids": []
+      }
+    },
+    "qFinalDict": {
+      "oil": null,
+      "gas": null,
+      "water": null,
+      "oil/gas": null,
+      "oil/water": null,
+      "gas/oil": null,
+      "gas/water": null,
+      "water/oil": null,
+      "water/gas": null
+    },
+    "copiedFrom": null,
+    "diagDate": "2023-01-18T22:52:51.846+0000",
+    "forecasted": false,
+    "imported": false,
+    "running": false,
+    "prodPref": "monthly_preference",
+    "type": "deterministic",
+    "wells": ["5e61a37ebc3de5d21ee175ae", "5e61a382bc3de5d21ee18a07"],
+    "isForecastLibrary": false,
+    "tags": [],
+    "name": "proximity wells",
+    "project": "63c734e1dc737200134cd902",
+    "user": "5ef0d82065ff5f0012ef6d08",
+    "createdAt": "2023-01-17T23:53:32.783+0000",
+    "updatedAt": "2023-01-17T23:53:32.783+0000",
+    "__v": 0
+  },
+  {
+    "_id": "63c734eadc737200134cd954",
+    "comparisonIds": {
+      "diagnostics": {
+        "ids": []
+      },
+      "manual": {
+        "ids": []
+      },
+      "view": {
+        "ids": []
+      }
+    },
+    "qFinalDict": {
+      "oil": null,
+      "gas": null,
+      "water": null,
+      "oil/gas": null,
+      "oil/water": null,
+      "gas/oil": null,
+      "gas/water": null,
+      "water/oil": null,
+      "water/gas": null
+    },
+    "copiedFrom": null,
+    "diagDate": null,
+    "forecasted": false,
+    "imported": false,
+    "running": false,
+    "prodPref": "monthly_preference",
+    "type": "deterministic",
+    "wells": [
+      "5e61a37ebc3de5d21ee175ae",
+      "5e61a382bc3de5d21ee18a07",
+      "5e7271c3f4321168a1e9d830",
+      "5e7271c5f4321168a1e9ddde",
+      "5ea75f6fa89f032e0f9b0613",
+      "5ea75f71a89f032e0f9b1301",
+      "5ea76886a89f032e0fa0e5c7",
+      "5ea7688fa89f032e0fa10502",
+      "5ea76921a89f032e0fa2f253",
+      "5eab478e394ebe4976c828fd",
+      "5eab478e394ebe4976c82910",
+      "5eab47d8394ebe4976c82c11",
+      "5eab47d8394ebe4976c82c12",
+      "5ed67b56c3629ac71ded82cb",
+      "5f329b7883ac87c2407f2168",
+      "5f329bab83ac87c2407f7e22",
+      "5f329cb483ac87c240819d4b",
+      "5faad45307b5d658e827ce6a",
+      "5faad48a07b5d658e8280aca",
+      "6147535c7909b29a139d72c8",
+      "6351560a0c83328b4ab9e29b"
+    ],
+    "isForecastLibrary": false,
+    "tags": [],
+    "name": "all wells",
+    "project": "63c734e1dc737200134cd902",
+    "user": "5ef0d82065ff5f0012ef6d08",
+    "createdAt": "2023-01-17T23:53:14.500+0000",
+    "updatedAt": "2023-01-17T23:57:52.237+0000",
+    "__v": 0,
+    "runDate": "2023-01-17T23:58:12.907+0000"
+  },
+  {
+    "_id": "642ca8c0bb0681001299c1a7",
+    "comparisonIds": {
+      "diagnostics": {
+        "ids": []
+      },
+      "manual": {
+        "ids": []
+      },
+      "view": {
+        "ids": []
+      }
+    },
+    "qFinalDict": {
+      "oil": null,
+      "gas": null,
+      "water": null,
+      "oil/gas": null,
+      "oil/water": null,
+      "gas/oil": null,
+      "gas/water": null,
+      "water/oil": null,
+      "water/gas": null
+    },
+    "copiedFrom": null,
+    "diagDate": null,
+    "forecasted": true,
+    "imported": false,
+    "running": false,
+    "prodPref": "monthly_preference",
+    "type": "deterministic",
+    "wells": [
+      "5e272d39b78910dd2a1bd928",
+      "5e272d39b78910dd2a1bd929",
+      "5eadcef80bdf06ec9437d9da"
+    ],
+    "isForecastLibrary": false,
+    "tags": [],
+    "name": "template forecast",
+    "project": "642ca88cbb0681001299bfd2",
+    "user": "5ef0d82065ff5f0012ef6d08",
+    "createdAt": "2023-04-04T22:46:24.673+0000",
+    "updatedAt": "2023-04-04T22:48:19.257+0000",
+    "__v": 0,
+    "runDate": "2023-04-04T22:48:19.257+0000"
+  }
+]

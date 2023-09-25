@@ -1,0 +1,29 @@
+[tool.poetry]
+name = "combocurve"
+version = "0.1.0"
+description = ""
+authors = ["Maxum Smith <m.smith@combocurve.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+poethepoet = "^0.13.1"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+pytest-watch = "^4.2.0"
+pytest-testmon = "^1.3.3"
+pytest-cov = "^3.0.0"
+
+[tool.poe.tasks]
+test = "pytest"
+test-cov = "pytest --cov=."
+test-cov-html = "pytest --cov=. --cov-report html"
+test-cov-ci = "pytest --junitxml=pytest.xml --cov-report=term-missing:skip-covered --cov=."
+test-unit = "pytest -m unittest"
+test-unit-watch = "ptw --runner \"poetry run poe test-unit\""
+test-integ = "pytest -m integtest"
+test-integ-watch = "ptw --runner \"poetry run poe test-integ\""
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

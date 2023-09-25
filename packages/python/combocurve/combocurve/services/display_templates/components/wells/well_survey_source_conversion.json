@@ -1,0 +1,88 @@
+{
+  "title": "Well Survey Source Conversion",
+  "key": "well_survey_source_conversion",
+  "component": "wells",
+  "fields": {
+    "chosenID": {
+      "inpt": ["chosenID"],
+      "other": ["API 14"],
+      "internal": ["API 14"],
+      "di": ["API/UWI"],
+      "ihs": ["API", "UWI"],
+      "aries": ["PROPNUM"],
+      "phdwin": ["Unique Id"]
+    },
+    "measuredDepth": {
+      "inpt": ["Measured Depth"],
+      "other": [null],
+      "internal": [null],
+      "di": [null],
+      "ihs": ["MeasuredDepth"],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "trueVerticalDepth": {
+      "inpt": ["True Vertical Depth"],
+      "other": [null],
+      "internal": [null],
+      "di": [null],
+      "ihs": ["TvDepth"],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "azimuth": {
+      "inpt": ["Azimuth"],
+      "other": [null],
+      "internal": [null],
+      "di": [null],
+      "ihs": ["DeviationAzimuth"],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "inclination": {
+      "inpt": ["Inclination"],
+      "other": [null],
+      "internal": [null],
+      "di": [null],
+      "ihs": ["DeviationAngle"],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "deviationNS": {
+      "inpt": ["Deviation NS"],
+      "other": [null],
+      "internal": [null],
+      "di": [null],
+      "ihs": ["Y-offset"],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "deviationEW": {
+      "inpt": ["Deviation EW"],
+      "other": [null],
+      "internal": [null],
+      "di": [null],
+      "ihs": ["X-offset"],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "latitude": {
+      "inpt": ["Latitude"],
+      "other": [null],
+      "internal": [null],
+      "di": [null],
+      "ihs": [null],
+      "aries": [null],
+      "phdwin": [null]
+    },
+    "longitude": {
+      "inpt": ["Longitude"],
+      "other": [null],
+      "internal": [null],
+      "di": [null],
+      "ihs": [null],
+      "aries": [null],
+      "phdwin": [null]
+    }
+  }
+}

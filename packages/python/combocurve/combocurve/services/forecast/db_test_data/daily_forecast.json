@@ -1,0 +1,155 @@
+[
+  {
+    "_id": "6317a38c10de0b00143d1d5f",
+    "lastAutomaticRun": { "date": null, "source": null, "success": false },
+    "warning": { "status": false, "message": "" },
+    "ratio": {
+      "segments": [],
+      "basePhase": null,
+      "diagnostics": {},
+      "x": null,
+      "eur": null,
+      "rur": null
+    },
+    "data_freq": "daily",
+    "diagDate": null,
+    "forecasted": true,
+    "forecastType": "rate",
+    "forecastSubType": "automatic",
+    "phase": "oil",
+    "runDate": null,
+    "typeCurve": null,
+    "status": "in_progress",
+    "reviewedAt": null,
+    "reviewedBy": null,
+    "forecastedAt": "2022-10-19 21:44:59.694000",
+    "forecastedBy": "611beca03556540015af8562",
+    "forecast": "6317a37f10de0b00143c9e1b",
+    "P_dict": {
+      "best": {
+        "diagnostics": {},
+        "eur": 2102767.0847944096,
+        "rur": 1933523.0847944096,
+        "segments": [
+          {
+            "name": "arps_modified",
+            "q_start": 1349.0,
+            "q_end": 4.951534312121127,
+            "slope": -1.0,
+            "D_eff": 0.4338888888888889,
+            "D": 0.0024599158375124635,
+            "b": 1.5,
+            "target_D_eff_sw": 0.08,
+            "realized_D_eff_sw": 0.07999999999999996,
+            "sw_idx": 46113.29626221192,
+            "q_sw": 276.5148639336206,
+            "D_exp_eff": 0.07999999999999996,
+            "D_exp": 0.0002282864036661219,
+            "start_idx": 43464.0,
+            "end_idx": 63734.0
+          }
+        ]
+      }
+    },
+    "p_extra": {},
+    "project": "6317a34710de0b00143c9de0",
+    "well": "5faad48707b5d658e828052d",
+    "__v": 0,
+    "createdAt": "2022-09-06 19:46:21.554000",
+    "updatedAt": "2022-10-19 21:44:59.694000",
+    "diagnostics": {}
+  },
+  {
+    "_id": "6317a38c10de0b00143d1d60",
+    "lastAutomaticRun": { "date": null, "source": null, "success": false },
+    "warning": { "status": false, "message": "" },
+    "ratio": {
+      "segments": [],
+      "basePhase": null,
+      "diagnostics": {},
+      "x": null,
+      "eur": null,
+      "rur": null
+    },
+    "data_freq": "daily",
+    "diagDate": null,
+    "forecasted": true,
+    "forecastType": "rate",
+    "forecastSubType": "automatic",
+    "phase": "gas",
+    "runDate": null,
+    "typeCurve": null,
+    "status": "in_progress",
+    "reviewedAt": null,
+    "reviewedBy": null,
+    "forecastedAt": "2022-10-19 21:44:59.978000",
+    "forecastedBy": "611beca03556540015af8562",
+    "forecast": "6317a37f10de0b00143c9e1b",
+    "P_dict": {
+      "best": {
+        "diagnostics": {},
+        "eur": 50162906.30934358,
+        "rur": 48797433.30934358,
+        "segments": [
+          {
+            "name": "arps_modified",
+            "q_start": 22269.0,
+            "q_end": 126.81491751904454,
+            "slope": -1.0,
+            "D_eff": 0.2721111111111111,
+            "D": 0.0011039215326584765,
+            "b": 1.4473684210526314,
+            "target_D_eff_sw": 0.08,
+            "realized_D_eff_sw": 0.07999999999999996,
+            "sw_idx": 45864.633335488696,
+            "q_sw": 7495.530081846607,
+            "D_exp_eff": 0.07999999999999996,
+            "D_exp": 0.00022828640366612195,
+            "start_idx": 43464.0,
+            "end_idx": 63734.0
+          }
+        ]
+      }
+    },
+    "p_extra": {},
+    "project": "6317a34710de0b00143c9de0",
+    "well": "5faad48707b5d658e828052d",
+    "__v": 0,
+    "createdAt": "2022-09-06 19:46:21.554000",
+    "updatedAt": "2022-10-19 21:44:59.978000",
+    "diagnostics": {}
+  },
+  {
+    "_id": "6317a38c10de0b00143d1d61",
+    "lastAutomaticRun": { "date": null, "source": null, "success": false },
+    "warning": { "status": false, "message": "" },
+    "ratio": {
+      "segments": [],
+      "basePhase": null,
+      "diagnostics": {},
+      "x": null
+    },
+    "data_freq": "monthly",
+    "diagDate": null,
+    "forecasted": false,
+    "forecastType": "not_forecasted",
+    "forecastSubType": null,
+    "phase": "water",
+    "runDate": null,
+    "typeCurve": null,
+    "status": "in_progress",
+    "reviewedAt": null,
+    "reviewedBy": null,
+    "forecastedAt": null,
+    "forecastedBy": null,
+    "forecast": "6317a37f10de0b00143c9e1b",
+    "P_dict": {},
+    "p_extra": {},
+    "project": "6317a34710de0b00143c9de0",
+    "well": "5faad48707b5d658e828052d",
+    "__v": 0,
+    "createdAt": "2022-09-06 19:46:21.554000",
+    "updatedAt": "2022-10-19 21:44:54.403000",
+    "diagnostics": {}
+  }
+]
