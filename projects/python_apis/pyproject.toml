@@ -1,0 +1,87 @@
+[tool.poetry]
+name = "python-apis"
+version = "0.32.0"
+description = ""
+authors = ["ComboCurve <support@combocurve.com>"]
+classifiers = [
+    "Private :: Do not Upload"
+]
+
+# tasks in poethepoet package are similar to npm scripts. poetry run poe <taskname>
+
+[tool.poetry.group.dev.dependencies]
+pytest-mock-resources = "^2.6.11"
+python-on-whales = "^0.60.1"
+
+[tool.poe.tasks]
+dev = {cmd = "python -m debugpy --listen 0.0.0.0:5678 -m api.server --wait-for-client --multiprocess -m flask run -h 0.0.0.0", envfile = ".env"}
+format = "yapf --diff"
+jupyter = "jupyter notebook"
+lint = "flake8"
+start = "gunicorn -b :$PORT api.server:app"
+test = "pytest"
+test-unit = 'pytest -m unittest --disable-warnings'
+test-integ = 'pytest -m integtest'
+test-bench = 'pytest -m benchmark --benchmark-json benchmark-output.json'
+
+[tool.poetry.dependencies]
+python = "~3.9"
+dnspython = "^1.16"
+Flask = "^2.0"
+Flask-Cors = "^3.0"
+gevent = "^21.12"
+google-cloud-bigquery = {extras = ["bqstorage", "pandas"], version = "^3.4.1"}
+google-cloud-logging = "^2.6"
+google-cloud-storage = "^1.42"
+google-resumable-media = "^1.3"
+greenlet = "==1.1.2"
+mongoengine = "*"
+gunicorn = {extras = ["gevent"], version = "^20.0"}
+joblib = "^1.2.0"
+kubernetes = "^25.3.0"
+pandas = "1.3.5"
+pusher = "^3.0"
+polars = "^0.15.18"
+pyarrow = "^10.0.0"
+pymongo = "^3.11"
+pypdf2 = "^1.26"
+pyproj = "~3.2.1"
+python-dateutil = "^2.8"
+python-pptx = "~0.6"
+reportlab = "^3.5"
+requests = "^2.22"
+scipy = "1.10.0"
+seaborn = "~0.11"
+svglib = "^1.1"
+xlrd = "^1.2"
+poethepoet = "^0.13.1"
+numpy = "1.24.2"
+pydantic = "^1.10.2"
+mongomock = "^4.1"
+redis = "^4.3.4"
+jsonschema = "^4.17.3"
+grpc-interceptor = "^0.15.1"
+launchdarkly-server-sdk = "^8.1.4"
+google-cloud-secret-manager = "^2.16.2"
+fastapi = "^0.103.0"
+combocurve = { path = "../../combocurve/", develop = true }
+
+[tool.poetry.dev-dependencies]
+flake8 = "5.0.4"
+yapf = "==0.31"
+pre-commit = "^1.16"
+python-dotenv = {extras = ["cli"], version = "*"}
+flake8-print = "*"
+hypothesis = "^4.17"
+pytest = "^7.1.2"
+pytest-flask = "^1.2.0"
+deepdiff = "^5.8.1"
+pytest-benchmark = "4.0.0"
+pytest-cov = "^4.0.0"
+pytest-mock = "^3.10.0"
+ortools = "9.4.1874"
+babel = "*"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

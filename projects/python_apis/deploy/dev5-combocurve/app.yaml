@@ -1,0 +1,39 @@
+# See https://cloud.google.com/appengine/docs/flexible/python/configuring-your-app-with-app-yaml
+# and https://cloud.google.com/appengine/docs/flexible/python/reference/app-yaml for more info
+
+runtime: custom
+service: python-apis
+env: flex
+
+inbound_services:
+  - warmup
+
+env_variables:
+  PYTHONOPTIMIZE: "1"
+  GCP_PRIMARY_PROJECT_ID: dev5-combocurve
+  GCP_REGIONAL_PROJECT_ID: dev5-combocurve
+  REGION: "us-central1"
+  JOBS_API_CLOUD_RUN_URL: "https://jobs-api-6zshrilu4q-uc.a.run.app"
+  ECON_CSV_EXPORT_CLOUD_RUN_URL: "https://econ-export-6zshrilu4q-uc.a.run.app/csv_export"
+
+handlers:
+  - url: /.*
+    script: auto
+    secure: always
+    redirect_http_response_code: 301
+
+automatic_scaling:
+  min_num_instances: 1
+  max_num_instances: 4
+  cool_down_period_sec: 180
+  cpu_utilization:
+    target_utilization: 0.6
+
+resources:
+  cpu: 2
+  memory_gb: 6.0
+  disk_size_gb: 10
+  volumes:
+    - name: ramdisk1
+      volume_type: tmpfs
+      size_gb: 1

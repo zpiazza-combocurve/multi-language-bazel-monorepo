@@ -1,0 +1,8 @@
+__pycache__/
+
+.vscode
+
+.gcloudignore
+.python-version
+.style.yapf
+*.md

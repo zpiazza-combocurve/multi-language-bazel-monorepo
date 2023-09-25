@@ -1,0 +1,18 @@
+version: "3.9"
+
+services:
+  python-apis:
+    container_name: python-apis
+    build:
+      context: .
+      dockerfile: ./Dockerfile.debug
+    ports:
+      - 5000:5000
+      - 5678:5678
+    volumes:
+      - .:/app/
+      - ./combocurve:/app/combocurve
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    environment:
+      - ECON_CSV_EXPORT_CLOUD_RUN_URL=http://host.docker.internal:5003/econ_export/csv_export
