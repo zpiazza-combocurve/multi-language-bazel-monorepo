@@ -1,0 +1,62 @@
+{
+	"run_id": {
+		"type": "STRING",
+		"mode": "REQUIRED"
+	},
+	"run_at": {
+		"type": "DATETIME",
+		"mode": "REQUIRED"
+	},
+	"combo_name": {
+		"type": "STRING"
+	},
+	"well_id": {
+		"type": "STRING",
+		"mode": "REQUIRED"
+	},
+	"incremental_index": {
+		"type": "INTEGER"
+	},
+	"row_id": {
+		"type": "STRING"
+	},
+	"inserted_at": {
+		"type": "DATETIME"
+	},
+	"node_id": {
+		"type": "STRING",
+		"mode": "NULLABLE"
+	},
+	"node_type": {
+		"type": "STRING",
+		"mode": "NULLABLE"
+	},
+	"emission_type": {
+		"type": "STRING",
+		"mode": "NULLABLE"
+	},
+	"product_type": {
+		"type": "STRING",
+		"mode": "NULLABLE"
+	},
+	"product": {
+		"type": "STRING",
+		"mode": "NULLABLE"
+	},
+	"date": {
+		"type": "DATE",
+		"mode": "NULLABLE"
+	},
+	"value": {
+		"type": "NUMERIC",
+		"mode": "NULLABLE"
+	},
+	"unit": {
+		"type": "STRING",
+		"mode": "NULLABLE"
+	},
+	"scope": {
+		"type": "STRING",
+		"mode": "NULLABLE"
+	}
+}

@@ -1,0 +1,62 @@
+[
+	{
+		"_id": "5fb32fe8ed079500120914a3",
+		"configuration": {
+			"selectedHeaders": ["type_curve_area", "perf_lateral_length", "first_prod_date"],
+			"selectedAssumptions": ["capex", "pricing_differentials", "ownership_reversion", "expenses"]
+		},
+		"name": "foo",
+		"project": "5fb2dc91c5515e791da7ef61",
+		"rules": [
+			{
+				"capex": "5fb2dc8fc5515e791da76ba3",
+				"pricing_differentials": "5e27984b9489150012928060",
+				"filter": {
+					"conditions": [
+						{
+							"operator": "less_than_equal",
+							"key": "perf_lateral_length",
+							"value": "1000"
+						}
+					]
+				}
+			},
+			{
+				"pricing_differentials": "5e27984b9489150012928060",
+				"ownership_reversion": "5fb2dc8fc5515e791da76ba1",
+				"expenses": "5fb2dc8fc5515e791da76ba5",
+				"filter": {
+					"conditions": [
+						{
+							"operator": "less_than_equal",
+							"key": "perf_lateral_length",
+							"value": "5000"
+						},
+						{
+							"operator": "greater_than_equal",
+							"key": "perf_lateral_length",
+							"value": "2000"
+						}
+					]
+				}
+			},
+			{
+				"capex": "5fb2dc8fc5515e791da76ba3",
+				"ownership_reversion": "5fb2dc8fc5515e791da76ba1",
+				"expenses": "5fb2dc8fc5515e791da76ba5",
+				"filter": {
+					"conditions": [
+						{
+							"operator": "less_than_equal",
+							"key": "perf_lateral_length",
+							"value": "10000"
+						}
+					]
+				}
+			}
+		],
+		"createdBy": "5f3bf00416fda7001249751c",
+		"createdAt": "2020-11-17T02:05:28.724Z",
+		"updatedAt": "2020-11-17T02:18:32.739Z"
+	}
+]

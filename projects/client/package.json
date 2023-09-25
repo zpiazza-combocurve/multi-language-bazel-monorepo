@@ -5,7 +5,7 @@
 	"description": "ComboCurve front-end",
 	"license": "UNLICENSED",
 	"scripts": {
-		"build": "NODE_OPTIONS='--max-old-space-size=4096 --openssl-legacy-provider' webpack --env production",
+		"build": "vite build --config vite.config.ts",
 		"build-styleguide": "NODE_OPTIONS='--openssl-legacy-provider' build-storybook",
 		"build:vite": "NODE_OPTIONS='--max-old-space-size=32768' vite build",
 		"bundle-visualizer": "NODE_OPTIONS='--max-old-space-size=32768' vite-bundle-visualizer",
@@ -251,7 +251,8 @@
 		"fsevents": "1.2.13"
 	},
 	"volta": {
-		"extends": "../../package.json"
+		"extends": "../../package.json",
+		"node": "20.6.1"
 	},
 	"msw": {
 		"workerDirectory": "public"

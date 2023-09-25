@@ -1,0 +1,111 @@
+<html>
+	<head>
+	</head>
+	<body>
+
+		<script type="module">
+			var PLOTS = 20; 
+			// while in this demo only first 20 plots will be toggled, increase this to see that the operation runs just once, so even
+			// if lots of plots are drawn, the repaint stays fast
+
+			var cdata = {
+				title : {text : 'line'},
+				scaleX : {
+					zooming : true
+				},
+				scaleY : {
+					zooming : true
+				},
+				type : 'fastline',
+				legend : {},
+				plot : {
+					hoverState : {
+						lineWidth : 2,
+						lineColor : '#00ff00'
+					},
+					selectedState : {
+						lineWidth : 4,
+						lineColor : '#ff0000'
+					}
+				},
+				series : []
+			};
+
+			for (var i = 0; i < PLOTS; i++) {
+				var plot = {
+					id : 'p' + i,
+					text : 'Plot ' + i,
+					showInLegend : i < 10,
+					values : []
+				};
+				for (var v = 0; v < 10; v++) {
+					plot.values.push([20*Math.random(), 20*Math.random()]);
+				}
+				cdata.series.push(plot);
+			}
+
+			import zingchart from './../../build/es6/zingchart-es6.min.js';
+			import * as ip_fastline from './../../build/es6/_modules-es6/zingchart-insidepetroleum-fastline.min.js';
+			import * as selection_tool from './../../build/es6/modules-es6/zingchart-selection-tool.min.js';
+			//import * as ip_fastline from './../../src/zingchart-fastline.js';
+
+			zingchart.render({
+				id : 'zc',
+				width : 600,
+				height : 400,
+				data : cdata,
+				output : 'canvas',
+				modules : 'fastline,selection-tool'
+			});
+
+            window.b1 = function() {
+				if (document.getElementById("chkUseIds").checked) {
+					zingchart.plugins.fastline.togglePlot({
+						id:'zc', 
+						plotid:['p0','p1','p2','p3','p4','p5','p6','p7','p8','p9', 'p10','p11','p12','p13','p14','p15','p16','p17','p18','p19']
+					});
+				} else {
+					zingchart.plugins.fastline.togglePlot({
+						id:'zc', 
+						plotindex:[0,1,2,3,4,5,6,7,8,9, 10,11,12,13,14,15,16,17,18,19]
+					});
+				}
+            }
+            window.b2 = function() {
+				if (document.getElementById("chkUseIds").checked) {
+					zingchart.plugins.fastline.togglePlot({
+						id:'zc', 
+						plotid:['p0','p1','p2','p3','p4','p5','p6','p7','p8','p9']
+					});
+				} else {
+    				zingchart.plugins.fastline.togglePlot({
+						id:'zc', 
+						plotindex:[0,1,2,3,4,5,6,7,8,9]
+					});
+				}
+            }
+            window.b3 = function() {
+				if (document.getElementById("chkUseIds").checked) {
+					zingchart.plugins.fastline.togglePlot({
+						id:'zc', 
+						plotid:['p10','p11','p12','p13','p14','p15','p16','p17','p18','p19']
+					});
+				} else {
+				    zingchart.plugins.fastline.togglePlot({
+						id:'zc', 
+						plotindex:[10,11,12,13,14,15,16,17,18,19]
+					});
+				}
+            }
+		</script>
+
+		<div id="zc"></div>
+
+		<input type="checkbox" id="chkUseIds"> <label for="chkUseIds">Use ids</label>
+		<br><br>
+        <button onclick="b1()">Mixed (both On and Off Legend)</button>
+		<button onclick="b2()">On Legend</button>
+		<button onclick="b3()">Off Legend</button>
+
+	</body>
+</html>

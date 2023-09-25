@@ -1,0 +1,117 @@
+{
+	"run_at": {
+		"type": "DATETIME",
+		"mode": "REQUIRED"
+	},
+	"run_id": {
+		"type": "STRING",
+		"mode": "REQUIRED"
+	},
+	"project_id": {
+		"type": "STRING",
+		"mode": "REQUIRED"
+	},
+	"project_name": {
+		"type": "STRING",
+		"mode": "REQUIRED"
+	},
+	"scenario_id": {
+		"type": "STRING",
+		"mode": "REQUIRED"
+	},
+	"scenario_name": {
+		"type": "STRING",
+		"mode": "REQUIRED"
+	},
+	"user_id": {
+		"type": "STRING",
+		"mode": "REQUIRED"
+	},
+	"user_name": {
+		"type": "STRING",
+		"mode": "REQUIRED"
+	},
+	"rollup_type": {
+		"type": "STRING",
+		"mode": "REQUIRED"
+	},
+	"group_key": {
+		"type": "STRING",
+		"mode": "REQUIRED"
+	},
+	"date": {
+		"type": "DATE"
+	},
+	"gross_well_count": {
+		"type": "INTEGER"
+	},
+	"gross_oil_well_head_volume": {
+		"type": "NUMERIC"
+	},
+	"gross_gas_well_head_volume": {
+		"type": "NUMERIC"
+	},
+	"gross_water_well_head_volume": {
+		"type": "NUMERIC"
+	},
+	"gross_boe_well_head_volume": {
+		"type": "NUMERIC"
+	},
+	"gross_mcfe_well_head_volume": {
+		"type": "NUMERIC"
+	},
+	"gross_oil_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"gross_gas_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"gross_ngl_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"gross_drip_condensate_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"gross_boe_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"gross_mcfe_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"wi_oil_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"wi_gas_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"wi_ngl_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"wi_drip_condensate_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"wi_boe_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"wi_mcfe_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"net_oil_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"net_gas_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"net_ngl_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"net_drip_condensate_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"net_boe_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"net_mcfe_sales_volume": {
+		"type": "NUMERIC"
+	}
+}

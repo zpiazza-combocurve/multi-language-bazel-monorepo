@@ -1,0 +1,45 @@
+{
+	"run_id": {
+		"mode": "REQUIRED",
+		"type": "STRING"
+	},
+	"run_date": {
+		"mode": "REQUIRED",
+		"type": "DATE"
+	},
+	"project_id": {
+		"mode": "REQUIRED",
+		"type": "STRING"
+	},
+	"project_name": {
+		"mode": "REQUIRED",
+		"type": "STRING"
+	},
+	"scenario_id": {
+		"mode": "REQUIRED",
+		"type": "STRING"
+	},
+	"scenario_name": {
+		"mode": "REQUIRED",
+		"type": "STRING"
+	},
+	"user_id": {
+		"mode": "REQUIRED",
+		"type": "STRING"
+	},
+	"user_name": {
+		"mode": "REQUIRED",
+		"type": "STRING"
+	},
+	"general_options_name": {
+		"type": "STRING"
+	},
+	"schema_version": {
+		"mode": "REQUIRED",
+		"type": "INTEGER"
+	},
+	"created_at": {
+		"mode": "REQUIRED",
+		"type": "TIMESTAMP"
+	}
+}

@@ -1,0 +1,23 @@
+{
+	"compilerOptions": {
+		// https://github.com/microsoft/TypeScript/wiki/Node-Target-Mapping
+		"lib": ["ES2022"],
+		"target": "ES2022",
+
+		"allowJs": true,
+		"checkJs": false,
+
+		"module": "Node16",
+		"moduleResolution": "Node16",
+
+		"customConditions": ["development"],
+
+		"strict": true,
+		"noImplicitAny": false,
+
+		"esModuleInterop": true,
+		"resolveJsonModule": true,
+		"skipLibCheck": true,
+		"forceConsistentCasingInFileNames": true
+	}
+}

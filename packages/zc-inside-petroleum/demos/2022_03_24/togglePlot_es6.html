@@ -1,0 +1,93 @@
+<html>
+	<head>
+	</head>
+	<body>
+
+		<script type="module">
+
+            var cdata = {
+                type : 'fastline',
+                legend : {},
+                series : [
+                    {
+                        text : 'AAA',
+                        id : 'aaa',
+                        showInLegend : true,
+                        values : [[0,20], [10,20], [20,20]]
+                    },
+                    {
+                        text : 'BBB',
+                        id : 'bbb',
+                        showInLegend : true,
+                        values : [[0,15], [10,15], [20,15]]
+                    },
+                    {
+                        text : 'CCC',
+                        id : 'ccc',
+                        //showInLegend : true,
+                        values : [[0,10], [10,10], [20,10]]
+                    },
+                    {
+                        text : 'DDD',
+                        id : 'ddd',                        
+                        //showInLegend : true,
+                        values : [[0,5], [10,5], [20,5]]
+                    },
+                    {
+                        text : 'EEE',
+                        id : 'eee',                        
+                        showInLegend : true,
+                        values : [[0,3], [10,3], [20,3]]
+                    },
+                    {
+                        text : 'FFF',
+                        id : 'fff',
+                        showInLegend : true,
+                        values : [[0,1], [10,1], [20,1]]
+                    }
+                ]
+            };
+
+
+			import zingchart from './../../build/es6/zingchart-es6.min.js';
+			import * as ip_fastline from './../../build/es6/_modules-es6/zingchart-insidepetroleum-fastline.min.js';
+			//import * as ip_fastline from './../../src/zingchart-fastline.js';
+
+			zingchart.render({
+				id : 'zc',
+				width : 600,
+				height : 400,
+				data : cdata,
+				output : 'canvas',
+				modules : 'fastline'
+			});
+
+            window.b1 = function() {
+                zingchart.plugins.fastline.togglePlot({
+                    id : 'zc',
+                    plotindex : 1
+                });
+            }
+            window.b2 = function() {
+                zingchart.plugins.fastline.togglePlot({
+                    id : 'zc',
+                    plotindex : 2
+                });
+            }
+            window.b3 = function() {
+                zingchart.plugins.fastline.togglePlot({
+                    id : 'zc',
+                    plotid : 'fff'
+                });
+            }
+			
+		</script>
+
+		<div id="zc"></div>
+
+        <button id="b1" onclick="b1()">togglePlot (index)</button>
+        <button id="b2" onclick="b2()">togglePlot (index, not in legend)</button>
+        <button id="b3" onclick="b3()">togglePlot (id)</button>
+
+	</body>
+</html>

@@ -1,0 +1,27 @@
+{
+	"name": "@combocurve/dal-data-generator",
+	"version": "0.0.1",
+	"license": "UNLICENSED",
+	"exports": {
+		"development": "./src/index.ts",
+		"types": "./src/index.ts",
+		"default": "./dist/index.js"
+	},
+	"scripts": {
+		"build": "yarn build:proto && yarn build:tsc",
+		"build:proto": "yarn protoset && yarn gen",
+		"build:tsc": "yarn g:tsc -p tsconfig.build.json",
+		"gen": "buf generate ./protoset.bin",
+		"lint:typescript": "yarn g:lint:typescript",
+		"protoset": "buf build ../../proto -o ./protoset.bin"
+	},
+	"dependencies": {
+		"@faker-js/faker": "7.6.0"
+	},
+	"devDependencies": {
+		"@combocurve/tsconfig": "workspace:*"
+	},
+	"volta": {
+		"extends": "../../package.json"
+	}
+}

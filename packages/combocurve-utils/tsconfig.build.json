@@ -1,0 +1,8 @@
+{
+	"include": ["./src/**/*", "./schemas/**/*"],
+	"exclude": ["./src/**/*.test.js", "./src/**/*.test.ts"],
+	"extends": "./tsconfig.json",
+	"compilerOptions": {
+		"rootDir": "./src"
+	}
+}

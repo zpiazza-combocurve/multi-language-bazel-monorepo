@@ -1,0 +1,17 @@
+{
+	"name": "@combocurve/dal-auth",
+	"private": true,
+	"license": "UNLICENSED",
+	"exports": {
+		"development": "./src/index.ts",
+		"types": "./src/index.ts",
+		"default": "./dist/index.js"
+	},
+	"scripts": {
+		"build": "yarn g:tsc -p tsconfig.build.json",
+		"lint:typescript": "yarn g:lint:typescript"
+	},
+	"dependencies": {
+		"google-auth-library": "8.9.0"
+	}
+}

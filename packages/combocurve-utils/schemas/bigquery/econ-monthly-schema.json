@@ -1,0 +1,853 @@
+{
+	"ad_valorem_tax": {
+		"type": "NUMERIC"
+	},
+	"after_income_tax_cash_flow": {
+		"type": "NUMERIC"
+	},
+	"api14": {
+		"type": "STRING"
+	},
+	"basin": {
+		"type": "STRING"
+	},
+	"before_income_tax_cash_flow": {
+		"type": "NUMERIC"
+	},
+	"capex_qualifier": {
+		"type": "STRING",
+		"mode": "REQUIRED"
+	},
+	"chosen_id": {
+		"type": "STRING"
+	},
+	"combo_name": {
+		"type": "STRING",
+		"mode": "REQUIRED"
+	},
+	"combo_well_id": {
+		"type": "STRING",
+		"mode": "REQUIRED"
+	},
+	"county": {
+		"type": "STRING"
+	},
+	"created_at": {
+		"type": "TIMESTAMP",
+		"mode": "REQUIRED"
+	},
+	"current_operator": {
+		"type": "STRING"
+	},
+	"current_operator_alias": {
+		"type": "STRING"
+	},
+	"date": {
+		"type": "DATE"
+	},
+	"dates_qualifier": {
+		"type": "STRING",
+		"mode": "REQUIRED"
+	},
+	"depreciation": {
+		"type": "NUMERIC"
+	},
+	"drip_condensate_gathering_expense": {
+		"type": "NUMERIC"
+	},
+	"drip_condensate_marketing_expense": {
+		"type": "NUMERIC"
+	},
+	"drip_condensate_other_expense": {
+		"type": "NUMERIC"
+	},
+	"drip_condensate_price": {
+		"type": "NUMERIC"
+	},
+	"drip_condensate_processing_expense": {
+		"type": "NUMERIC"
+	},
+	"drip_condensate_revenue": {
+		"type": "NUMERIC"
+	},
+	"drip_condensate_severance_tax": {
+		"type": "NUMERIC"
+	},
+	"drip_condensate_transportation_expense": {
+		"type": "NUMERIC"
+	},
+	"error": {
+		"type": "STRING"
+	},
+	"expenses_qualifier": {
+		"type": "STRING",
+		"mode": "REQUIRED"
+	},
+	"federal_income_tax": {
+		"type": "NUMERIC"
+	},
+	"first_discount_cash_flow": {
+		"type": "NUMERIC"
+	},
+	"first_prod_date_monthly_calc": {
+		"type": "DATE"
+	},
+	"forecast_p_series_qualifier": {
+		"type": "STRING",
+		"mode": "REQUIRED"
+	},
+	"forecast_qualifier": {
+		"type": "STRING",
+		"mode": "REQUIRED"
+	},
+	"gas_gathering_expense": {
+		"type": "NUMERIC"
+	},
+	"gas_marketing_expense": {
+		"type": "NUMERIC"
+	},
+	"gas_other_expense": {
+		"type": "NUMERIC"
+	},
+	"gas_price": {
+		"type": "NUMERIC"
+	},
+	"gas_processing_expense": {
+		"type": "NUMERIC"
+	},
+	"gas_revenue": {
+		"type": "NUMERIC"
+	},
+	"gas_severance_tax": {
+		"type": "NUMERIC"
+	},
+	"gas_transportation_expense": {
+		"type": "NUMERIC"
+	},
+	"general_options_name": {
+		"type": "STRING",
+		"mode": "REQUIRED"
+	},
+	"gross_boe_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"gross_boe_well_head_volume": {
+		"type": "NUMERIC"
+	},
+	"gross_drip_condensate_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"gross_gas_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"gross_gas_well_head_volume": {
+		"type": "NUMERIC"
+	},
+	"gross_ngl_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"gross_oil_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"gross_oil_well_head_volume": {
+		"type": "NUMERIC"
+	},
+	"gross_water_well_head_volume": {
+		"type": "NUMERIC"
+	},
+	"hole_direction": {
+		"type": "STRING"
+	},
+	"hz_well_spacing_same_zone": {
+		"type": "NUMERIC"
+	},
+	"inpt_id": {
+		"type": "STRING"
+	},
+	"intangible_abandonment": {
+		"type": "NUMERIC"
+	},
+	"intangible_appraisal": {
+		"type": "NUMERIC"
+	},
+	"intangible_artificial_lift": {
+		"type": "NUMERIC"
+	},
+	"intangible_completion": {
+		"type": "NUMERIC"
+	},
+	"intangible_development": {
+		"type": "NUMERIC"
+	},
+	"intangible_drilling": {
+		"type": "NUMERIC"
+	},
+	"intangible_exploration": {
+		"type": "NUMERIC"
+	},
+	"intangible_facilities": {
+		"type": "NUMERIC"
+	},
+	"intangible_leasehold": {
+		"type": "NUMERIC"
+	},
+	"intangible_legal": {
+		"type": "NUMERIC"
+	},
+	"intangible_other_investment": {
+		"type": "NUMERIC"
+	},
+	"intangible_pad": {
+		"type": "NUMERIC"
+	},
+	"intangible_pipelines": {
+		"type": "NUMERIC"
+	},
+	"intangible_salvage": {
+		"type": "NUMERIC"
+	},
+	"intangible_waterline": {
+		"type": "NUMERIC"
+	},
+	"intangible_workover": {
+		"type": "NUMERIC"
+	},
+	"landing_zone": {
+		"type": "STRING"
+	},
+	"monthly_well_cost": {
+		"type": "NUMERIC"
+	},
+	"net_boe_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"net_drip_condensate_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"net_gas_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"net_ngl_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"net_oil_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"net_profit": {
+		"type": "NUMERIC"
+	},
+	"ngl_gathering_expense": {
+		"type": "NUMERIC"
+	},
+	"ngl_marketing_expense": {
+		"type": "NUMERIC"
+	},
+	"ngl_other_expense": {
+		"type": "NUMERIC"
+	},
+	"ngl_price": {
+		"type": "NUMERIC"
+	},
+	"ngl_processing_expense": {
+		"type": "NUMERIC"
+	},
+	"ngl_revenue": {
+		"type": "NUMERIC"
+	},
+	"ngl_severance_tax": {
+		"type": "NUMERIC"
+	},
+	"ngl_transportation_expense": {
+		"type": "NUMERIC"
+	},
+	"nri_drip_condensate": {
+		"type": "NUMERIC"
+	},
+	"nri_gas": {
+		"type": "NUMERIC"
+	},
+	"nri_ngl": {
+		"type": "NUMERIC"
+	},
+	"nri_oil": {
+		"type": "NUMERIC"
+	},
+	"oil_gathering_expense": {
+		"type": "NUMERIC"
+	},
+	"oil_marketing_expense": {
+		"type": "NUMERIC"
+	},
+	"oil_other_expense": {
+		"type": "NUMERIC"
+	},
+	"oil_price": {
+		"type": "NUMERIC"
+	},
+	"oil_processing_expense": {
+		"type": "NUMERIC"
+	},
+	"oil_revenue": {
+		"type": "NUMERIC"
+	},
+	"oil_severance_tax": {
+		"type": "NUMERIC"
+	},
+	"oil_transportation_expense": {
+		"type": "NUMERIC"
+	},
+	"other_monthly_cost_1": {
+		"type": "NUMERIC"
+	},
+	"other_monthly_cost_2": {
+		"type": "NUMERIC"
+	},
+	"other_monthly_cost_3": {
+		"type": "NUMERIC"
+	},
+	"other_monthly_cost_4": {
+		"type": "NUMERIC"
+	},
+	"other_monthly_cost_5": {
+		"type": "NUMERIC"
+	},
+	"other_monthly_cost_6": {
+		"type": "NUMERIC"
+	},
+	"other_monthly_cost_7": {
+		"type": "NUMERIC"
+	},
+	"other_monthly_cost_8": {
+		"type": "NUMERIC"
+	},
+	"ownership_reversion_qualifier": {
+		"type": "STRING",
+		"mode": "REQUIRED"
+	},
+	"perf_lateral_length": {
+		"type": "NUMERIC"
+	},
+	"pricing_differentials_qualifier": {
+		"type": "STRING",
+		"mode": "REQUIRED"
+	},
+	"pricing_qualifier": {
+		"type": "STRING",
+		"mode": "REQUIRED"
+	},
+	"differentials_qualifier": {
+		"type": "STRING",
+		"mode": "REQUIRED"
+	},
+	"prms_reserves_category": {
+		"type": "STRING"
+	},
+	"prms_reserves_sub_category": {
+		"type": "STRING"
+	},
+	"prms_resources_class": {
+		"type": "STRING"
+	},
+	"production_taxes_qualifier": {
+		"type": "STRING",
+		"mode": "REQUIRED"
+	},
+	"production_vs_fit_qualifier": {
+		"type": "STRING",
+		"mode": "REQUIRED"
+	},
+	"project_id": {
+		"type": "STRING",
+		"mode": "REQUIRED"
+	},
+	"project_name": {
+		"type": "STRING",
+		"mode": "REQUIRED"
+	},
+	"reserves_category_qualifier": {
+		"type": "STRING",
+		"mode": "REQUIRED"
+	},
+	"risking_qualifier": {
+		"type": "STRING",
+		"mode": "REQUIRED"
+	},
+	"run_date": {
+		"type": "DATE",
+		"mode": "REQUIRED"
+	},
+	"run_id": {
+		"type": "STRING",
+		"mode": "REQUIRED"
+	},
+	"scenario_id": {
+		"type": "STRING",
+		"mode": "REQUIRED"
+	},
+	"scenario_name": {
+		"type": "STRING",
+		"mode": "REQUIRED"
+	},
+	"schedule_qualifier": {
+		"type": "STRING",
+		"mode": "REQUIRED"
+	},
+	"schema_version": {
+		"type": "INT64",
+		"mode": "REQUIRED"
+	},
+	"second_discount_cash_flow": {
+		"type": "NUMERIC"
+	},
+	"stage_spacing": {
+		"type": "NUMERIC"
+	},
+	"state": {
+		"type": "STRING"
+	},
+	"state_income_tax": {
+		"type": "NUMERIC"
+	},
+	"status": {
+		"type": "STRING"
+	},
+	"stream_properties_qualifier": {
+		"type": "STRING",
+		"mode": "REQUIRED"
+	},
+	"surface_latitude": {
+		"type": "NUMERIC"
+	},
+	"surface_longitude": {
+		"type": "NUMERIC"
+	},
+	"tangible_abandonment": {
+		"type": "NUMERIC"
+	},
+	"tangible_appraisal": {
+		"type": "NUMERIC"
+	},
+	"tangible_artificial_lift": {
+		"type": "NUMERIC"
+	},
+	"tangible_completion": {
+		"type": "NUMERIC"
+	},
+	"tangible_development": {
+		"type": "NUMERIC"
+	},
+	"tangible_drilling": {
+		"type": "NUMERIC"
+	},
+	"tangible_exploration": {
+		"type": "NUMERIC"
+	},
+	"tangible_facilities": {
+		"type": "NUMERIC"
+	},
+	"tangible_leasehold": {
+		"type": "NUMERIC"
+	},
+	"tangible_legal": {
+		"type": "NUMERIC"
+	},
+	"tangible_other_investment": {
+		"type": "NUMERIC"
+	},
+	"tangible_pad": {
+		"type": "NUMERIC"
+	},
+	"tangible_pipelines": {
+		"type": "NUMERIC"
+	},
+	"tangible_salvage": {
+		"type": "NUMERIC"
+	},
+	"tangible_waterline": {
+		"type": "NUMERIC"
+	},
+	"tangible_workover": {
+		"type": "NUMERIC"
+	},
+	"target_formation": {
+		"type": "STRING"
+	},
+	"taxable_income": {
+		"type": "NUMERIC"
+	},
+	"toe_latitude": {
+		"type": "NUMERIC"
+	},
+	"toe_longitude": {
+		"type": "NUMERIC"
+	},
+	"total_abandonment": {
+		"type": "NUMERIC"
+	},
+	"total_appraisal": {
+		"type": "NUMERIC"
+	},
+	"total_artificial_lift": {
+		"type": "NUMERIC"
+	},
+	"total_capex": {
+		"type": "NUMERIC"
+	},
+	"total_completion": {
+		"type": "NUMERIC"
+	},
+	"total_development": {
+		"type": "NUMERIC"
+	},
+	"total_drilling": {
+		"type": "NUMERIC"
+	},
+	"total_drip_condensate_variable_expense": {
+		"type": "NUMERIC"
+	},
+	"total_expense": {
+		"type": "NUMERIC"
+	},
+	"total_exploration": {
+		"type": "NUMERIC"
+	},
+	"total_facilities": {
+		"type": "NUMERIC"
+	},
+	"total_fixed_expense": {
+		"type": "NUMERIC"
+	},
+	"total_fluid_per_perforated_interval": {
+		"type": "NUMERIC"
+	},
+	"total_gas_variable_expense": {
+		"type": "NUMERIC"
+	},
+	"total_intangible_capex": {
+		"type": "NUMERIC"
+	},
+	"total_leasehold": {
+		"type": "NUMERIC"
+	},
+	"total_legal": {
+		"type": "NUMERIC"
+	},
+	"total_ngl_variable_expense": {
+		"type": "NUMERIC"
+	},
+	"total_oil_variable_expense": {
+		"type": "NUMERIC"
+	},
+	"total_other_investment": {
+		"type": "NUMERIC"
+	},
+	"total_pad": {
+		"type": "NUMERIC"
+	},
+	"total_pipelines": {
+		"type": "NUMERIC"
+	},
+	"total_production_tax": {
+		"type": "NUMERIC"
+	},
+	"total_proppant_per_perforated_interval": {
+		"type": "NUMERIC"
+	},
+	"total_revenue": {
+		"type": "NUMERIC"
+	},
+	"total_salvage": {
+		"type": "NUMERIC"
+	},
+	"total_severance_tax": {
+		"type": "NUMERIC"
+	},
+	"total_stage_count": {
+		"type": "NUMERIC"
+	},
+	"total_tangible_capex": {
+		"type": "NUMERIC"
+	},
+	"total_variable_expense": {
+		"type": "NUMERIC"
+	},
+	"total_waterline": {
+		"type": "NUMERIC"
+	},
+	"total_workover": {
+		"type": "NUMERIC"
+	},
+	"true_vertical_depth": {
+		"type": "NUMERIC"
+	},
+	"type_curve_area": {
+		"type": "STRING"
+	},
+	"user_id": {
+		"type": "STRING",
+		"mode": "REQUIRED"
+	},
+	"user_name": {
+		"type": "STRING",
+		"mode": "REQUIRED"
+	},
+	"vt_well_spacing_same_zone": {
+		"type": "NUMERIC"
+	},
+	"warning": {
+		"type": "STRING"
+	},
+	"water_disposal": {
+		"type": "NUMERIC"
+	},
+	"well_id": {
+		"type": "STRING",
+		"mode": "REQUIRED"
+	},
+	"well_index": {
+		"type": "NUMERIC"
+	},
+	"well_name": {
+		"type": "STRING"
+	},
+	"well_number": {
+		"type": "STRING"
+	},
+	"well_type": {
+		"type": "STRING"
+	},
+	"wi_boe_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"wi_drip_condensate": {
+		"type": "NUMERIC"
+	},
+	"wi_drip_condensate_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"wi_gas": {
+		"type": "NUMERIC"
+	},
+	"wi_gas_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"wi_ngl": {
+		"type": "NUMERIC"
+	},
+	"wi_ngl_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"wi_oil": {
+		"type": "NUMERIC"
+	},
+	"wi_oil_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"gross_well_count": {
+		"type": "NUMERIC"
+	},
+	"wi_well_count": {
+		"type": "NUMERIC"
+	},
+	"nri_well_count": {
+		"type": "NUMERIC"
+	},
+	"field": {
+		"type": "STRING"
+	},
+	"play": {
+		"type": "STRING"
+	},
+	"oil_start_using_forecast_date": {
+		"type": "DATE"
+	},
+	"gas_start_using_forecast_date": {
+		"type": "DATE"
+	},
+	"water_start_using_forecast_date": {
+		"type": "DATE"
+	},
+	"oil_gatherer": {
+		"type": "STRING"
+	},
+	"gas_gatherer": {
+		"type": "STRING"
+	},
+	"ngl_gatherer": {
+		"type": "STRING"
+	},
+	"pad_name": {
+		"type": "STRING"
+	},
+	"reversion_date": {
+		"type": "STRING"
+	},
+	"gor": {
+		"type": "NUMERIC"
+	},
+	"wor": {
+		"type": "NUMERIC"
+	},
+	"water_cut": {
+		"type": "NUMERIC"
+	},
+	"econ_first_production_date": {
+		"type": "DATE"
+	},
+	"incremental_name": {
+		"type": "STRING"
+	},
+	"incremental_index": {
+		"type": "INTEGER"
+	},
+	"combo_well_incremental_id": {
+		"type": "STRING"
+	},
+	"first_discounted_capex": {
+		"type": "NUMERIC"
+	},
+	"second_discounted_capex": {
+		"type": "NUMERIC"
+	},
+	"net_income": {
+		"type": "NUMERIC"
+	},
+	"first_discount_net_income": {
+		"type": "NUMERIC"
+	},
+	"second_discount_net_income": {
+		"type": "NUMERIC"
+	},
+	"input_oil_price": {
+		"type": "NUMERIC"
+	},
+	"input_gas_price": {
+		"type": "NUMERIC"
+	},
+	"input_ngl_price": {
+		"type": "NUMERIC"
+	},
+	"input_drip_condensate_price": {
+		"type": "NUMERIC"
+	},
+	"oil_differentials_1": {
+		"type": "NUMERIC"
+	},
+	"gas_differentials_1": {
+		"type": "NUMERIC"
+	},
+	"ngl_differentials_1": {
+		"type": "NUMERIC"
+	},
+	"drip_condensate_differentials_1": {
+		"type": "NUMERIC"
+	},
+	"oil_differentials_2": {
+		"type": "NUMERIC"
+	},
+	"gas_differentials_2": {
+		"type": "NUMERIC"
+	},
+	"ngl_differentials_2": {
+		"type": "NUMERIC"
+	},
+	"drip_condensate_differentials_2": {
+		"type": "NUMERIC"
+	},
+	"oil_differentials_3": {
+		"type": "NUMERIC"
+	},
+	"gas_differentials_3": {
+		"type": "NUMERIC"
+	},
+	"ngl_differentials_3": {
+		"type": "NUMERIC"
+	},
+	"drip_condensate_differentials_3": {
+		"type": "NUMERIC"
+	},
+	"ngl_yield": {
+		"type": "NUMERIC"
+	},
+	"drip_condensate_yield": {
+		"type": "NUMERIC"
+	},
+	"oil_shrinkage": {
+		"type": "NUMERIC"
+	},
+	"gas_shrinkage": {
+		"type": "NUMERIC"
+	},
+	"oil_loss": {
+		"type": "NUMERIC"
+	},
+	"gas_loss": {
+		"type": "NUMERIC"
+	},
+	"gas_flare": {
+		"type": "NUMERIC"
+	},
+	"gross_mcfe_well_head_volume": {
+		"type": "NUMERIC"
+	},
+	"gross_mcfe_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"wi_mcfe_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"net_mcfe_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"lease_nri": {
+		"type": "NUMERIC"
+	},
+	"total_gross_capex": {
+		"type": "NUMERIC"
+	},
+	"oil_risk": {
+		"type": "NUMERIC"
+	},
+	"gas_risk": {
+		"type": "NUMERIC"
+	},
+	"ngl_risk": {
+		"type": "NUMERIC"
+	},
+	"drip_condensate_risk": {
+		"type": "NUMERIC"
+	},
+	"water_risk": {
+		"type": "NUMERIC"
+	},
+	"pre_risk_oil_volume": {
+		"type": "NUMERIC"
+	},
+	"pre_risk_gas_volume": {
+		"type": "NUMERIC"
+	},
+	"pre_risk_water_volume": {
+		"type": "NUMERIC"
+	},
+	"pre_risk_ngl_volume": {
+		"type": "NUMERIC"
+	},
+	"pre_risk_drip_condensate_volume": {
+		"type": "NUMERIC"
+	},
+	"unshrunk_oil_volume": {
+		"type": "NUMERIC"
+	},
+	"unshrunk_gas_volume": {
+		"type": "NUMERIC"
+	},
+	"pre_flare_gas_volume": {
+		"type": "NUMERIC"
+	},
+	"pre_yield_gas_volume_drip_condensate": {
+		"type": "NUMERIC"
+	},
+	"pre_yield_gas_volume_ngl": {
+		"type": "NUMERIC"
+	}
+}

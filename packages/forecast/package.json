@@ -1,0 +1,43 @@
+{
+	"name": "@combocurve/forecast",
+	"version": "0.1.0",
+	"private": true,
+	"license": "UNLICENSED",
+	"exports": {
+		".": {
+			"types": "./src/index.ts",
+			"development": "./src/index.ts",
+			"default": "./dist/src/index.js"
+		},
+		"./models": {
+			"types": "./src/models/index.ts",
+			"development": "./src/models/index.ts",
+			"default": "./dist/src/models/index.js"
+		},
+		"./helpers": {
+			"types": "./src/helpers/index.ts",
+			"development": "./src/helpers/index.ts",
+			"default": "./dist/src/helpers/index.js"
+		}
+	},
+	"scripts": {
+		"prebuild": "yarn g:rimraf dist",
+		"build": "yarn g:tsc -p tsconfig.build.json",
+		"lint:typescript": "yarn g:lint:typescript"
+	},
+	"dependencies": {
+		"@combocurve/shared": "workspace:*",
+		"combocurve-utils": "workspace:*"
+	},
+	"devDependencies": {
+		"@combocurve/tsconfig": "workspace:*",
+		"@types/express-serve-static-core": "4.17.35",
+		"mongodb-memory-server-global-4.2": "7.6.3"
+	},
+	"peerDependencies": {
+		"mongoose": "5.13.15"
+	},
+	"volta": {
+		"extends": "../../package.json"
+	}
+}

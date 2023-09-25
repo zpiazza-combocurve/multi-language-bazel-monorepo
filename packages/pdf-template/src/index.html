@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+	<div class="page">
+		<header>
+			<div class="flex-row flex-ai-center">
+				<img class="logo" src="https://combocurve.com/wp-content/uploads/2023/03/CC_monogram_hires.png"/>
+				<span class="title">RESERVES AND ECONOMICS</span>
+			</div>
+		</header>
+		<hr />
+		<section class="header-data">
+			<div class="flex-row">
+				<div class="column w40">
+					<p>REPORT DETAILS</p>
+					<hr />
+					<ul class="list">
+						{% for detail in report_details %}
+						<li>{{ detail[0] }} : {{ detail[1] }}</li>
+						{% endfor %}
+					</ul>
+				</div>
+				<div class="column w40">
+					<p>HEADER DATA</p>
+					<hr />
+					<ul class="list">
+						{% for header in headers %}
+						<li>{{ header[0] }} : {{ header[1] }}</li>
+						{% endfor %}
+					</ul>
+				</div>
+				<div class="column w20 skeleton"></div>
+			</div>
+		</section>
+		<section class="time-series-metrics">
+			<table>
+				<thead>
+				<tr>
+					<th class="date-header">
+						<span>DATE</span>
+						<span class="date-label">MM - YYYY</span>
+					</th>
+					{% for header in column_labels[:11] %}
+					<th>{{ header }}</th>
+					{% endfor %}
+				</tr>
+				</thead>
+				<tbody>
+				{% for row in columns.top_base %}
+				<tr>
+					<td class="align-left">{{ dates[loop.index0] }}</td>
+					{% for cell in row %}
+					<td class="align-right">{{ cell }}</td>
+					{% endfor %}
+				</tr>
+				{% endfor %}
+				<tr>
+					<td class="align-left">SUBTOTAL</td>
+					{% for num in columns.top_total[0] %}
+					<td class="align-right">{{ num }}</td>
+					{% endfor %}
+				</tr>
+				<tr>
+					<td class="align-left">AFTER</td>
+					{% for num in columns.top_total[1] %}
+					<td class="align-right">{{ num }}</td>
+					{% endfor %}
+				</tr>
+				<tr>
+					<td class="align-left">TOTAL</td>
+					{% for num in columns.top_total[2] %}
+					<td class="align-right">{{ num }}</td>
+					{% endfor %}
+				</tr>
+				</tbody>
+			</table>
+			<hr class="dotted" />
+			<table>
+				<thead>
+				<tr>
+					<th>
+						<span>DATE</span>
+						<span class="date-label">MM - YYYY</span>
+					</th>
+					{% for header in column_labels[11:] %}
+					<th>{{ header }}</th>
+					{% endfor %}
+				</tr>
+				</thead>
+				<tbody>
+				{% for row in columns.bot_base %}
+				<tr>
+					<td class="align-left">{{ dates[loop.index0] }}</td>
+					{% for cell in row %}
+					<td class="align-right">{{ cell }}</td>
+					{% endfor %}
+				</tr>
+				{% endfor %}
+				<tr>
+					<td class="align-left">SUBTOTAL</td>
+					{% for num in columns.bot_total[0] %}
+					<td class="align-right">{{ num }}</td>
+					{% endfor %}
+				</tr>
+				<tr>
+					<td class="align-left">AFTER</td>
+					{% for num in columns.bot_total[1] %}
+					<td class="align-right">{{ num }}</td>
+					{% endfor %}
+				</tr>
+				<tr>
+					<td class="align-left">TOTAL</td>
+					{% for num in columns.bot_total[2] %}
+					<td class="align-right">{{ num }}</td>
+					{% endfor %}
+				</tr>
+				</tbody>
+			</table>
+		</section>
+		<section class="metrics-and-discounts">
+			<div class="flex-row">
+				<div class="column w40">
+					<p>METRICS</p>
+					<hr />
+					<ul class="list">
+						{% for metric in metrics %}
+						<li>{{ metric[0] }}: {{ metric[1] }}</li>
+						{% endfor %}
+					</ul>
+				</div>
+				<div class="column w40">
+					<div class="flex-row">
+						<div class="column" style="width:30%;padding:0%">
+							<p>DISC CASHFLOWS</p>
+							<hr />
+						</div>
+						<div class="column" style="width:35%;padding:0%">
+							<p style="text-align:right">Disc. Rate %</p>
+							<hr />
+							<ul style="list-style-type: none;padding-left: 0;">
+								{% for discount in discounts %}
+								<li style='text-align: right'>{{ discount[0] }}</li>
+								{% endfor %}
+							</ul>
+						</div>
+						<div class="column" style="width:35%;padding:0%">
+							<p style="text-align:right">Disc. Cashflow $</p>
+							<hr />
+							<ul style="list-style-type: none;padding-left: 0;">
+								{% for discount in discounts %}
+								<li style='text-align: right'>{{ discount[1] }}</li>
+								{% endfor %}
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="column w20 skeleton"></div>
+			</div>
+		</section>
+		<hr />
+		<footer>
+			<div class="flex-row flex-ai-center">
+				<img class="logo" src="https://combocurve.com/wp-content/uploads/2023/03/CC_monogram_hires.png"/>
+				<span class="title">RESERVES AND ECONOMICS</span>
+			</div>
+		</footer>
+	</div>
+	<div class="pagebreak"></div>
+</body>
+</html>

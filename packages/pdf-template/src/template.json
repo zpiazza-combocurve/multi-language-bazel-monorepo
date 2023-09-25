@@ -1,0 +1,522 @@
+{
+	"report_details": [
+		["Project Name", "Test New General Options"],
+		["Scenario Name", "Ehsan test scenario"]
+	],
+	"column_labels": [
+		"Gross Well Count",
+		"Gross Oil Well Head Volume (MBBL)",
+		"Gross Gas Well Head Volume (MMCF)",
+		"Gross BOE Well Head Volume (MBBL)",
+		"Net Oil Well Head Volume (MBBL)",
+		"Net Gas Well Head Volume (MMCF)",
+		"Net NGL Sales Volume (MBBL)",
+		"Net Oil Revenue (M$)",
+		"Net Gas Revenue (M$)",
+		"Net NGL Revenue (M$)",
+		"Total Net Revenue (M$)",
+		"Realized Oil Price ($/BBL)",
+		"Realized Gas Price ($/MCF)",
+		"Total Severance Tax (M$)",
+		"Ad Valorem Tax (M$)",
+		"Total Expense (M$)",
+		"NPI Cash Flow (M$)",
+		"Net Operating Income (M$)",
+		"Total Net Investment (M$)",
+		"Before Income Tax Cash Flow (M$)",
+		"10% Discount Cash Flow (M$)"
+	],
+	"rows": [
+		1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 105.0, 13.8705, 0.000586774, 0.0, 0.0, 0.0, -0.000586774,
+		0.0, -0.000586774, -0.000584177
+	],
+	"columns": {
+		"top_base": [
+			["1.0", "0.0", "0.0", "0.0", "0.0", "0.0", "0.0", "0.0", "0.0", "0.0", "0.0"],
+			["1.0", "0.0", "0.0", "0.0", "0.0", "0.0", "0.0", "0.0", "0.0", "0.0", "0.0"],
+			["1.0", "0.0", "0.0", "0.0", "0.0", "0.0", "0.0", "0.0", "0.0", "0.0", "0.0"],
+			["1.0", "0.0", "0.0", "0.0", "0.0", "0.0", "0.0", "0.0", "0.0", "0.0", "0.0"],
+			["1.0", "0.0", "0.0", "0.0", "0.0", "0.0", "0.0", "0.0", "0.0", "0.0", "0.0"],
+			["1.0", "0.0", "0.0", "0.0", "0.0", "0.0", "0.0", "0.0", "0.0", "0.0", "0.0"],
+			["1.0", "0.0", "0.0", "0.0", "0.0", "0.0", "0.0", "0.0", "0.0", "0.0", "0.0"],
+			["1.0", "0.0", "0.0", "0.0", "0.0", "0.0", "0.0", "0.0", "0.0", "0.0", "0.0"],
+			["1.0", "0.0", "0.0", "0.0", "0.0", "0.0", "0.0", "0.0", "0.0", "0.0", "0.0"],
+			["1.0", "0.0", "0.0", "0.0", "0.0", "0.0", "0.0", "0.0", "0.0", "0.0", "0.0"],
+			["1.0", "0.0", "0.0", "0.0", "0.0", "0.0", "0.0", "0.0", "0.0", "0.0", "0.0"],
+			["1.0", "0.0", "0.0", "0.0", "0.0", "0.0", "0.0", "0.0", "0.0", "0.0", "0.0"],
+			["1.0", "0.0", "0.0", "0.0", "0.0", "0.0", "0.0", "0.0", "0.0", "0.0", "0.0"],
+			["1.0", "0.0", "0.0", "0.0", "0.0", "0.0", "0.0", "0.0", "0.0", "0.0", "0.0"],
+			["1.0", "0.0", "0.0", "0.0", "0.0", "0.0", "0.0", "0.0", "0.0", "0.0", "0.0"]
+		],
+		"bot_base": [
+			["105.0", "13.8705", "0.0006", "0.0", "0.0", "0.0", "-0.0006", "0.0", "-0.0006", "-0.0006"],
+			["105.1714", "13.8705", "0.0011", "0.0", "0.0", "0.0", "-0.0011", "0.0", "-0.0011", "-0.0011"],
+			["105.3435", "13.8705", "0.0011", "0.0", "0.0", "0.0", "-0.0011", "0.0", "-0.0011", "-0.001"],
+			["105.5162", "13.8705", "0.0011", "0.0", "0.0", "0.0", "-0.0011", "0.0", "-0.0011", "-0.001"],
+			["105.6896", "13.8705", "0.0011", "0.0", "0.0", "0.0", "-0.0011", "0.0", "-0.0011", "-0.001"],
+			["105.8636", "13.8705", "0.0011", "0.0", "0.0", "0.0", "-0.0011", "0.0", "-0.0011", "-0.001"],
+			["106.0383", "13.8705", "0.0011", "0.0", "0.0", "0.0", "-0.0011", "0.0", "-0.0011", "-0.001"],
+			["106.2137", "13.8705", "0.0011", "0.0", "0.0", "0.0", "-0.0011", "0.0", "-0.0011", "-0.001"],
+			["106.3896", "13.8705", "0.0011", "0.0", "0.0", "0.0", "-0.0011", "0.0", "-0.0011", "-0.001"],
+			["106.5663", "13.8705", "0.0011", "0.0", "0.0", "0.0", "-0.0011", "0.0", "-0.0011", "-0.001"],
+			["106.7435", "13.8705", "0.0011", "0.0", "0.0", "0.0", "-0.0011", "0.0", "-0.0011", "-0.001"],
+			["106.9214", "13.8705", "0.0011", "0.0", "0.0", "0.0", "-0.0011", "0.0", "-0.0011", "-0.001"],
+			["107.1", "13.965", "0.0011", "0.0", "0.0", "0.0", "-0.0011", "0.0", "-0.0011", "-0.001"],
+			["107.2792", "13.965", "0.0011", "0.0", "0.0", "0.0", "-0.0011", "0.0", "-0.0011", "-0.001"],
+			["107.459", "13.965", "0.0011", "0.0", "0.0", "0.0", "-0.0011", "0.0", "-0.0011", "-0.001"]
+		],
+		"top_total": [
+			["15.0", "0.0", "0.0", "0.0", "0.0", "0.0", "0.0", "0.0", "0.0", "0.0", "0.0"],
+			["586.0", "16.5722", "0.0", "16.5722", "16.5722", "0.0", "0.0", "4992.5641", "0.0", "0.0", "4992.5641"],
+			["601.0", "16.5722", "0.0", "16.5722", "16.5722", "0.0", "0.0", "4992.5641", "0.0", "0.0", "4992.5641"]
+		],
+		"bot_total": [
+			["1593.2955", "208.341", "0.0157", "0.0", "0.0", "0.0", "-0.0157", "0.0", "-0.0157", "-0.0147"],
+			["247087.6246", "8274.3675", "54.2626", "0.0", "0.0", "0.0", "4938.3015", "0.0", "4938.3015", "1027.1777"],
+			["248680.9201", "8482.7085", "54.2783", "0.0", "0.0", "0.0", "4938.2858", "0.0", "4938.2858", "1027.163"]
+		]
+	},
+	"discounts": [
+		[0, 4938.2858],
+		[2, 3230.2272],
+		[5, 1936.1644],
+		[8, 1291.7797],
+		[10, 1027.163],
+		[12, 835.9138],
+		[15, 633.6542],
+		[20, 423.4502],
+		[25, 297.1248],
+		[30, 215.6062],
+		[40, 121.7991],
+		[50, 73.5718],
+		[60, 46.6721],
+		[70, 30.7659],
+		[80, 20.9265],
+		[100, 10.4376]
+	],
+	"dates": [
+		"10-2013",
+		"11-2013",
+		"12-2013",
+		"01-2014",
+		"02-2014",
+		"03-2014",
+		"04-2014",
+		"05-2014",
+		"06-2014",
+		"07-2014",
+		"08-2014",
+		"09-2014",
+		"10-2014",
+		"11-2014",
+		"12-2014",
+		"SUBTOTAL",
+		"AFTER",
+		"TOTAL"
+	],
+	"metrics": [
+		["Econ Well Life (years)", 50.08],
+		["First Discount Rate (%)", 10.0],
+		["Payout Duration (months)", 66.0],
+		["10% Discount Payout Duration (months)", 66.0],
+		["Undiscounted ROI (ratio)", null],
+		["10% Discount ROI w/ Discounted CAPEX (ratio)", null],
+		["IRR (%)", 573.7917470741672],
+		["Original WI Oil (%)", 100.0]
+	],
+	"headers": [
+		["Well Name", "REID, V. E."],
+		["Econ Group", ""],
+		["API 14", "42401825940000"],
+		["INPT ID", "INPT.z6aXHyBLJN"],
+		["Incremental Index", 0]
+	],
+	"selected_params": {
+		"watermark": "",
+		"reportDetails": [
+			{
+				"key": "project_name",
+				"label": "Project Name",
+				"selected": true,
+				"keyType": "reportDetails",
+				"withCircle": false
+			},
+			{
+				"key": "scenario_name",
+				"label": "Scenario Name",
+				"selected": true,
+				"keyType": "reportDetails",
+				"withCircle": false
+			},
+			{
+				"key": "combo_name",
+				"label": "Combo Name",
+				"selected": true,
+				"keyType": "reportDetails",
+				"withCircle": false
+			}
+		],
+		"headerData": [
+			{
+				"key": "well_name",
+				"label": "Well Name",
+				"selected": true,
+				"keyType": "headerData",
+				"withCircle": false
+			},
+			{
+				"key": "econ_group",
+				"label": "Econ Group",
+				"selected": true,
+				"keyType": "headerData",
+				"withCircle": false
+			},
+			{
+				"key": "api14",
+				"label": "API 14",
+				"selected": true,
+				"keyType": "headerData",
+				"withCircle": false
+			},
+			{
+				"key": "inptID",
+				"label": "INPT ID",
+				"selected": true,
+				"keyType": "headerData",
+				"withCircle": false
+			},
+			{
+				"key": "incremental_index",
+				"label": "Incremental Index",
+				"selected": true,
+				"keyType": "headerData",
+				"withCircle": false
+			}
+		],
+		"metrics": [
+			{
+				"key": "well_life",
+				"label": "Econ Well Life",
+				"selected": true,
+				"keyType": "metrics",
+				"withCircle": false
+			},
+			{
+				"key": "first_discount_rate",
+				"label": "First Discount Rate",
+				"selected": true,
+				"keyType": "metrics",
+				"withCircle": false
+			},
+			{
+				"key": "payout_duration",
+				"label": "Payout Duration",
+				"selected": true,
+				"keyType": "metrics",
+				"withCircle": false
+			},
+			{
+				"key": "first_discount_payout_duration",
+				"label": "First Discount Payout Duration",
+				"selected": true,
+				"keyType": "metrics",
+				"withCircle": false
+			},
+			{
+				"key": "undiscounted_roi",
+				"label": "Undiscounted ROI",
+				"selected": true,
+				"keyType": "metrics",
+				"withCircle": false
+			},
+			{
+				"key": "first_discount_roi",
+				"label": "First Discount ROI (Discounted CAPEX)",
+				"selected": true,
+				"keyType": "metrics",
+				"withCircle": false
+			},
+			{
+				"key": "irr",
+				"label": "IRR",
+				"selected": true,
+				"keyType": "metrics",
+				"withCircle": false
+			},
+			{
+				"key": "original_wi_oil",
+				"label": "Original WI Oil",
+				"selected": true,
+				"keyType": "metrics",
+				"withCircle": false
+			}
+		],
+		"discCashflow": [
+			{
+				"key": "discount_table_cash_flow_1",
+				"label": "Discount Table Cum CF 1",
+				"selected": true,
+				"keyType": "discCashflow",
+				"withCircle": false
+			},
+			{
+				"key": "discount_table_cash_flow_2",
+				"label": "Discount Table Cum CF 2",
+				"selected": true,
+				"keyType": "discCashflow",
+				"withCircle": false
+			},
+			{
+				"key": "discount_table_cash_flow_3",
+				"label": "Discount Table Cum CF 3",
+				"selected": true,
+				"keyType": "discCashflow",
+				"withCircle": false
+			},
+			{
+				"key": "discount_table_cash_flow_4",
+				"label": "Discount Table Cum CF 4",
+				"selected": true,
+				"keyType": "discCashflow",
+				"withCircle": false
+			},
+			{
+				"key": "discount_table_cash_flow_5",
+				"label": "Discount Table Cum CF 5",
+				"selected": true,
+				"keyType": "discCashflow",
+				"withCircle": false
+			},
+			{
+				"key": "discount_table_cash_flow_6",
+				"label": "Discount Table Cum CF 6",
+				"selected": true,
+				"keyType": "discCashflow",
+				"withCircle": false
+			},
+			{
+				"key": "discount_table_cash_flow_7",
+				"label": "Discount Table Cum CF 7",
+				"selected": true,
+				"keyType": "discCashflow",
+				"withCircle": false
+			},
+			{
+				"key": "discount_table_cash_flow_8",
+				"label": "Discount Table Cum CF 8",
+				"selected": true,
+				"keyType": "discCashflow",
+				"withCircle": false
+			},
+			{
+				"key": "discount_table_cash_flow_9",
+				"label": "Discount Table Cum CF 9",
+				"selected": true,
+				"keyType": "discCashflow",
+				"withCircle": false
+			},
+			{
+				"key": "discount_table_cash_flow_10",
+				"label": "Discount Table Cum CF 10",
+				"selected": true,
+				"keyType": "discCashflow",
+				"withCircle": false
+			},
+			{
+				"key": "discount_table_cash_flow_11",
+				"label": "Discount Table Cum CF 11",
+				"selected": true,
+				"keyType": "discCashflow",
+				"withCircle": false
+			},
+			{
+				"key": "discount_table_cash_flow_12",
+				"label": "Discount Table Cum CF 12",
+				"selected": true,
+				"keyType": "discCashflow",
+				"withCircle": false
+			},
+			{
+				"key": "discount_table_cash_flow_13",
+				"label": "Discount Table Cum CF 13",
+				"selected": true,
+				"keyType": "discCashflow",
+				"withCircle": false
+			},
+			{
+				"key": "discount_table_cash_flow_14",
+				"label": "Discount Table Cum CF 14",
+				"selected": true,
+				"keyType": "discCashflow",
+				"withCircle": false
+			},
+			{
+				"key": "discount_table_cash_flow_15",
+				"label": "Discount Table Cum CF 15",
+				"selected": true,
+				"keyType": "discCashflow",
+				"withCircle": false
+			},
+			{
+				"key": "discount_table_cash_flow_16",
+				"label": "Discount Table Cum CF 16",
+				"selected": true,
+				"keyType": "discCashflow",
+				"withCircle": false
+			}
+		],
+		"timeSeriesMetrics": [
+			{
+				"key": "gross_well_count",
+				"label": "Gross Well Count",
+				"selected": true,
+				"keyType": "timeSeriesMetrics",
+				"withCircle": false
+			},
+			{
+				"key": "gross_oil_well_head_volume",
+				"label": "Gross Oil Well Head Volume",
+				"selected": true,
+				"keyType": "timeSeriesMetrics",
+				"withCircle": false
+			},
+			{
+				"key": "gross_gas_well_head_volume",
+				"label": "Gross Gas Well Head Volume",
+				"selected": true,
+				"keyType": "timeSeriesMetrics",
+				"withCircle": false
+			},
+			{
+				"key": "gross_boe_well_head_volume",
+				"label": "Gross BOE Well Head Volume",
+				"selected": true,
+				"keyType": "timeSeriesMetrics",
+				"withCircle": false
+			},
+			{
+				"key": "net_oil_well_head_volume",
+				"label": "Net Oil Well Head Volume",
+				"selected": true,
+				"keyType": "timeSeriesMetrics",
+				"withCircle": false
+			},
+			{
+				"key": "net_gas_well_head_volume",
+				"label": "Net Gas Well Head Volume",
+				"selected": true,
+				"keyType": "timeSeriesMetrics",
+				"withCircle": false
+			},
+			{
+				"key": "net_ngl_sales_volume",
+				"label": "Net NGL Sales Volume",
+				"selected": true,
+				"keyType": "timeSeriesMetrics",
+				"withCircle": false
+			},
+			{
+				"key": "oil_revenue",
+				"label": "Net Oil Revenue",
+				"selected": true,
+				"keyType": "timeSeriesMetrics",
+				"withCircle": false
+			},
+			{
+				"key": "gas_revenue",
+				"label": "Net Gas Revenue",
+				"selected": true,
+				"keyType": "timeSeriesMetrics",
+				"withCircle": false
+			},
+			{
+				"key": "ngl_revenue",
+				"label": "Net NGL Revenue",
+				"selected": true,
+				"keyType": "timeSeriesMetrics",
+				"withCircle": false
+			},
+			{
+				"key": "total_revenue",
+				"label": "Total Net Revenue",
+				"selected": true,
+				"keyType": "timeSeriesMetrics",
+				"withCircle": false
+			},
+			{
+				"key": "oil_price",
+				"label": "Realized Oil Price",
+				"selected": true,
+				"keyType": "timeSeriesMetrics",
+				"withCircle": false
+			},
+			{
+				"key": "gas_price",
+				"label": "Realized Gas Price",
+				"selected": true,
+				"keyType": "timeSeriesMetrics",
+				"withCircle": false
+			},
+			{
+				"key": "total_severance_tax",
+				"label": "Total Severance Tax",
+				"selected": true,
+				"keyType": "timeSeriesMetrics",
+				"withCircle": false
+			},
+			{
+				"key": "ad_valorem_tax",
+				"label": "Ad Valorem Tax",
+				"selected": true,
+				"keyType": "timeSeriesMetrics",
+				"withCircle": false
+			},
+			{
+				"key": "total_expense",
+				"label": "Total Expense",
+				"selected": true,
+				"keyType": "timeSeriesMetrics",
+				"withCircle": false
+			},
+			{
+				"key": "net_profit",
+				"label": "NPI Cash Flow",
+				"selected": true,
+				"keyType": "timeSeriesMetrics",
+				"withCircle": false
+			},
+			{
+				"key": "net_income",
+				"label": "Net Operating Income",
+				"selected": true,
+				"keyType": "timeSeriesMetrics",
+				"withCircle": false
+			},
+			{
+				"key": "total_capex",
+				"label": "Total Net Investment",
+				"selected": true,
+				"keyType": "timeSeriesMetrics",
+				"withCircle": false
+			},
+			{
+				"key": "before_income_tax_cash_flow",
+				"label": "Before Income Tax Cash Flow",
+				"selected": true,
+				"keyType": "timeSeriesMetrics",
+				"withCircle": false
+			},
+			{
+				"key": "first_discount_cash_flow",
+				"label": "First Discount Cash Flow",
+				"selected": true,
+				"keyType": "timeSeriesMetrics",
+				"withCircle": false
+			}
+		],
+		"cashFlowReport": {
+			"hybridOptions": { "yearType": "fiscal", "months": 1 },
+			"type": "monthly"
+		}
+	}
+}

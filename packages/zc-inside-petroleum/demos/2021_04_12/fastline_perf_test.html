@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<title>ZingChart</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+<script src="../../build/es5/zingchart.min.js"></script>
+<script src="../../build/es5/_modules/zingchart-insidepetroleum-fastline.min.js"></script>
+
+<style>
+body { margin:0;padding:0; }
+*, input, button, select, textarea, label {
+	font-family: 'Lucida Sans Unicode',Monaco,Tahoma,Verdana,Arial;
+}
+</style>
+</head>
+
+<body>
+
+<table>
+    <tr><td colspan="3"><div id="zcfl"></div></td></tr>
+    <tr><td><div id="zc0"></div></td><td><div id="zc1"></div></td><td><div id="zc2"></div></td></tr>
+    <tr><td><div id="zc3"></div></td><td><div id="zc4"></div></td><td><div id="zc5"></div></td></tr>
+    <tr><td><div id="zc6"></div></td><td><div id="zc7"></div></td><td><div id="zc8"></div></td></tr>
+</table>
+
+<script type="text/javascript" charset="utf-8">
+window.onload = function() {
+
+if (1) {
+    zingchart.DEV.SKIPPROGRESS = 1;
+    zingchart.DEV.SORTTOKENS = 0;
+    zingchart.DEV.PLOTSTATS = 0;
+    zingchart.DEV.RESOURCES = 0;
+    zingchart.DEV.COPYDATA = 0;
+    zingchart.DEV.KEEPSOURCE = 0;
+    zingchart.SYNTAX = 'dashed';
+}
+
+var rcolor = function(iSeed) {
+	var iNumber = Math.round(Math.abs(Math.pow(10, 16) * Math.cos(iSeed)));
+	return '#' + iNumber.toString(16).substring(2, 8);
+}
+
+var seriesData = function(plots, nodes) {
+    var series = [];
+    var bts = (new Date()).getTime();
+    for (var p = 0; p < plots; p++) {
+        var ts = bts;
+        var v = [], bv = 400 + 200 * Math.random();
+        for (var n = 0; n < nodes; n++) {
+            v.push([ts, bv]);
+            var tsdiff = 1000 * 60 * 30;//Math.round(20 + 40 * Math.random());
+            ts += tsdiff;
+            bv += -15 + 30 * Math.random();
+        }
+        var plot = {
+            text : 'Plot ' + p,
+            'line-color' : rcolor(p),
+            values : v,
+            'show-in-legend' : (p < 8)
+        };
+        series.push(plot);
+    }
+    return series;
+}
+
+var cdata = {
+    type : 'fastline',
+    _async : true,
+    'scale-x' : {
+        transform : {
+            type : 'date'
+        },
+        zooming : true
+    },
+    'scale-y' : {
+        'auto-fit' : true,
+        'min-value' : 'auto',
+        zooming : true
+    },
+    'crosshair-x' : {},
+    'crosshair-y' : {},
+    plotarea : {
+    },
+    legend : {
+        layout : 'x1'
+    },
+    labels : [
+        {
+            type : 'label',
+            id : 'zoomout',
+            x : 700,
+            y : 10,
+            width : 30,
+            height : 30,
+            'font-size' : 23,
+            'border-radius' : 17,
+            text : '-',
+            'background-color' : '#ff9900'
+        }
+    ],
+    series : seriesData(200, 500)
+};
+
+zingchart.render({
+    id : 'zcfl',
+    width : 900,
+	height : 400,
+	output : 'canvas',
+	data : cdata,
+    modules : 'fastline'
+});
+
+zingchart.bind('zcfl', 'label_click', function() {
+    zingchart.exec('zcfl', 'viewall');
+});
+
+for (var c = 0; c < 9; c++) {
+    var cdata = {
+        type : 'line',
+        _async : true,
+        'scale-x' : {
+            transform : {
+                type : 'date'
+            },
+            zooming : true
+        },
+        'scale-y' : {
+            'min-value' : 'auto',
+            zooming : true
+        },
+        legend : {
+        },
+        plot : {
+            marker : {
+                size : 2
+            },
+            'max-nodes' : 99999,
+            'max-trackers' : 99999
+        },
+        series : seriesData(5, 100)
+    };
+    zingchart.render({
+        id : 'zc' + c,
+        width : 300,
+        height : 300,
+    	output : 'canvas',
+    	data : cdata
+    });
+}
+
+
+
+}
+</script>
+
+</body>
+</html>

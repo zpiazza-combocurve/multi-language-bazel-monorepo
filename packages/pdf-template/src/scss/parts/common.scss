@@ -1,0 +1,60 @@
+@import "variables";
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.flex-row {
+  display: flex;
+  gap: 1rem;
+}
+
+.flex-ai-center {
+  align-items: center;
+}
+
+.w40 {
+  width: 40%;
+}
+
+.w20 {
+  width: 20%;
+}
+
+.skeleton {
+    background-color: $color-skeleton;
+}
+
+.dotted {
+  border-top: 3px dotted $color-dotted-hr;
+}
+
+.align-left {
+  text-align: left;
+}
+
+.align-right {
+  text-align: right;
+}
+
+header, section {
+  margin-bottom: 1rem;
+}
+
+.list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.logo {
+  width: 2rem;
+  vertical-align:middle;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-left: 1px solid $color-black;
+  padding-left: 1rem;
+}

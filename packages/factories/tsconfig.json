@@ -1,0 +1,10 @@
+{
+	"compilerOptions": {
+		"lib": ["DOM", "esnext"],
+		"paths": {
+			"@/inpt-shared/*": ["../../internal-api/src/inpt-shared/*"]
+		}
+	},
+	"extends": "@combocurve/tsconfig/package",
+	"exclude": ["./dist/**/*"]
+}

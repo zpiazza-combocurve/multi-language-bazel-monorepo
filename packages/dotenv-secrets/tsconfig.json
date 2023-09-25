@@ -1,0 +1,7 @@
+{
+	"extends": "@combocurve/tsconfig/package",
+	"compilerOptions": {
+		"module": "node16"
+	},
+	"exclude": ["./dist/**/*"]
+}

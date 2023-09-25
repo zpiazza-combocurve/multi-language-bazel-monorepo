@@ -1,0 +1,543 @@
+{
+	"well_id": {
+		"mode": "REQUIRED",
+		"type": "STRING"
+	},
+	"run_id": {
+		"mode": "REQUIRED",
+		"type": "STRING"
+	},
+	"run_date": {
+		"mode": "REQUIRED",
+		"type": "DATE"
+	},
+	"created_at": {
+		"mode": "REQUIRED",
+		"type": "TIMESTAMP"
+	},
+	"econ_group": {
+		"type": "STRING"
+	},
+	"prms_resources_class": {
+		"type": "STRING"
+	},
+	"prms_reserves_category": {
+		"type": "STRING"
+	},
+	"prms_reserves_sub_category": {
+		"type": "STRING"
+	},
+	"api14": {
+		"type": "STRING"
+	},
+	"basin": {
+		"type": "STRING"
+	},
+	"chosen_id": {
+		"type": "STRING"
+	},
+	"county": {
+		"type": "STRING"
+	},
+	"current_operator": {
+		"type": "STRING"
+	},
+	"current_operator_alias": {
+		"type": "STRING"
+	},
+	"first_prod_date_monthly_calc": {
+		"type": "DATE"
+	},
+	"hole_direction": {
+		"type": "STRING"
+	},
+	"hz_well_spacing_same_zone": {
+		"type": "NUMERIC"
+	},
+	"inpt_id": {
+		"type": "STRING"
+	},
+	"landing_zone": {
+		"type": "STRING"
+	},
+	"perf_lateral_length": {
+		"type": "NUMERIC"
+	},
+	"stage_spacing": {
+		"type": "NUMERIC"
+	},
+	"state": {
+		"type": "STRING"
+	},
+	"status": {
+		"type": "STRING"
+	},
+	"surface_latitude": {
+		"type": "NUMERIC"
+	},
+	"surface_longitude": {
+		"type": "NUMERIC"
+	},
+	"target_formation": {
+		"type": "STRING"
+	},
+	"toe_latitude": {
+		"type": "NUMERIC"
+	},
+	"toe_longitude": {
+		"type": "NUMERIC"
+	},
+	"total_fluid_per_perforated_interval": {
+		"type": "NUMERIC"
+	},
+	"total_proppant_per_perforated_interval": {
+		"type": "NUMERIC"
+	},
+	"total_stage_count": {
+		"type": "NUMERIC"
+	},
+	"true_vertical_depth": {
+		"type": "NUMERIC"
+	},
+	"type_curve_area": {
+		"type": "STRING"
+	},
+	"vt_well_spacing_same_zone": {
+		"type": "NUMERIC"
+	},
+	"well_name": {
+		"type": "STRING"
+	},
+	"well_number": {
+		"type": "STRING"
+	},
+	"well_type": {
+		"type": "STRING"
+	},
+	"field": {
+		"type": "STRING"
+	},
+	"play": {
+		"type": "STRING"
+	},
+	"oil_gatherer": {
+		"type": "STRING"
+	},
+	"gas_gatherer": {
+		"type": "STRING"
+	},
+	"ngl_gatherer": {
+		"type": "STRING"
+	},
+	"pad_name": {
+		"type": "STRING"
+	},
+	"acre_spacing": {
+		"type": "NUMERIC"
+	},
+	"allocation_type": {
+		"type": "STRING"
+	},
+	"api10": {
+		"type": "STRING"
+	},
+	"aries_id": {
+		"type": "STRING"
+	},
+	"azimuth": {
+		"type": "NUMERIC"
+	},
+	"completion_design": {
+		"type": "STRING"
+	},
+	"completion_end_date": {
+		"type": "DATE"
+	},
+	"completion_start_date": {
+		"type": "DATE"
+	},
+	"country": {
+		"type": "STRING"
+	},
+	"cum_boe": {
+		"type": "NUMERIC"
+	},
+	"cum_boe_per_perforated_interval": {
+		"type": "NUMERIC"
+	},
+	"cum_gas": {
+		"type": "NUMERIC"
+	},
+	"cum_gas_per_perforated_interval": {
+		"type": "NUMERIC"
+	},
+	"cum_gor": {
+		"type": "NUMERIC"
+	},
+	"cum_mmcfge": {
+		"type": "NUMERIC"
+	},
+	"cum_mmcfge_per_perforated_interval": {
+		"type": "NUMERIC"
+	},
+	"cum_oil": {
+		"type": "NUMERIC"
+	},
+	"cum_oil_per_perforated_interval": {
+		"type": "NUMERIC"
+	},
+	"cum_water": {
+		"type": "NUMERIC"
+	},
+	"cum_water_per_perforated_interval": {
+		"type": "NUMERIC"
+	},
+	"current_operator_ticker": {
+		"type": "STRING"
+	},
+	"drainage_area": {
+		"type": "NUMERIC"
+	},
+	"drill_end_date": {
+		"type": "DATE"
+	},
+	"drill_start_date": {
+		"type": "DATE"
+	},
+	"first_6_boe": {
+		"type": "NUMERIC"
+	},
+	"first_6_boe_per_perforated_interval": {
+		"type": "NUMERIC"
+	},
+	"first_6_gas": {
+		"type": "NUMERIC"
+	},
+	"first_6_gas_per_perforated_interval": {
+		"type": "NUMERIC"
+	},
+	"first_6_gor": {
+		"type": "NUMERIC"
+	},
+	"first_6_mmcfge": {
+		"type": "NUMERIC"
+	},
+	"first_6_mmcfge_per_perforated_interval": {
+		"type": "NUMERIC"
+	},
+	"first_6_oil": {
+		"type": "NUMERIC"
+	},
+	"first_6_oil_per_perforated_interval": {
+		"type": "NUMERIC"
+	},
+	"first_6_water": {
+		"type": "NUMERIC"
+	},
+	"first_6_water_per_perforated_interval": {
+		"type": "NUMERIC"
+	},
+	"first_cluster_count": {
+		"type": "NUMERIC"
+	},
+	"first_fluid_per_perforated_interval": {
+		"type": "NUMERIC"
+	},
+	"first_fluid_volume": {
+		"type": "NUMERIC"
+	},
+	"first_prod_date": {
+		"type": "DATE"
+	},
+	"first_prod_date_daily_calc": {
+		"type": "DATE"
+	},
+	"first_prop_weight": {
+		"type": "NUMERIC"
+	},
+	"first_proppant_per_fluid": {
+		"type": "NUMERIC"
+	},
+	"first_proppant_per_perforated_interval": {
+		"type": "NUMERIC"
+	},
+	"first_stage_count": {
+		"type": "NUMERIC"
+	},
+	"first_treatment_type": {
+		"type": "STRING"
+	},
+	"fluid_type": {
+		"type": "STRING"
+	},
+	"footage_in_landing_zone": {
+		"type": "NUMERIC"
+	},
+	"formation_thickness_mean": {
+		"type": "NUMERIC"
+	},
+	"generic": {
+		"type": "BOOLEAN"
+	},
+	"gross_perforated_interval": {
+		"type": "NUMERIC"
+	},
+	"has_daily": {
+		"type": "BOOLEAN"
+	},
+	"has_monthly": {
+		"type": "BOOLEAN"
+	},
+	"heel_latitude": {
+		"type": "NUMERIC"
+	},
+	"heel_longitude": {
+		"type": "NUMERIC"
+	},
+	"horizontal_spacing": {
+		"type": "NUMERIC"
+	},
+	"hz_well_spacing_any_zone": {
+		"type": "NUMERIC"
+	},
+	"last_prod_date_daily": {
+		"type": "DATE"
+	},
+	"last_prod_date_monthly": {
+		"type": "DATE"
+	},
+	"lateral_length": {
+		"type": "NUMERIC"
+	},
+	"lease_name": {
+		"type": "STRING"
+	},
+	"measured_depth": {
+		"type": "NUMERIC"
+	},
+	"months_produced": {
+		"type": "NUMERIC"
+	},
+	"num_treatment_records": {
+		"type": "NUMERIC"
+	},
+	"oil_specific_gravity": {
+		"type": "NUMERIC"
+	},
+	"parent_child_any_zone": {
+		"type": "STRING"
+	},
+	"parent_child_same_zone": {
+		"type": "STRING"
+	},
+	"percent_in_zone": {
+		"type": "NUMERIC"
+	},
+	"permit_date": {
+		"type": "DATE"
+	},
+	"previous_operator": {
+		"type": "STRING"
+	},
+	"previous_operator_alias": {
+		"type": "STRING"
+	},
+	"previous_operator_ticker": {
+		"type": "STRING"
+	},
+	"primary_product": {
+		"type": "STRING"
+	},
+	"production_method": {
+		"type": "STRING"
+	},
+	"proppant_mesh_size": {
+		"type": "STRING"
+	},
+	"proppant_type": {
+		"type": "STRING"
+	},
+	"refrac_fluid_per_perforated_interval": {
+		"type": "NUMERIC"
+	},
+	"refrac_fluid_volume": {
+		"type": "NUMERIC"
+	},
+	"refrac_prop_weight": {
+		"type": "NUMERIC"
+	},
+	"refrac_proppant_per_fluid": {
+		"type": "NUMERIC"
+	},
+	"refrac_proppant_per_perforated_interval": {
+		"type": "NUMERIC"
+	},
+	"refrac_stage_count": {
+		"type": "NUMERIC"
+	},
+	"refrac_treatment_type": {
+		"type": "STRING"
+	},
+	"section": {
+		"type": "STRING"
+	},
+	"spud_date": {
+		"type": "DATE"
+	},
+	"subplay": {
+		"type": "STRING"
+	},
+	"thickness": {
+		"type": "NUMERIC"
+	},
+	"total_additive_volume": {
+		"type": "NUMERIC"
+	},
+	"total_cluster_count": {
+		"type": "NUMERIC"
+	},
+	"total_fluid_volume": {
+		"type": "NUMERIC"
+	},
+	"total_prop_weight": {
+		"type": "NUMERIC"
+	},
+	"total_proppant_per_fluid": {
+		"type": "NUMERIC"
+	},
+	"township": {
+		"type": "STRING"
+	},
+	"vertical_spacing": {
+		"type": "NUMERIC"
+	},
+	"vt_well_spacing_any_zone": {
+		"type": "NUMERIC"
+	},
+	"abstract": {
+		"type": "STRING"
+	},
+	"api12": {
+		"type": "STRING"
+	},
+	"block": {
+		"type": "STRING"
+	},
+	"chosen_key_id": {
+		"type": "STRING"
+	},
+	"current_operator_code": {
+		"type": "STRING"
+	},
+	"data_source": {
+		"type": "STRING"
+	},
+	"district": {
+		"type": "STRING"
+	},
+	"elevation_type": {
+		"type": "STRING"
+	},
+	"first_frac_vendor": {
+		"type": "STRING"
+	},
+	"flow_path": {
+		"type": "STRING"
+	},
+	"most_recent_import_type": {
+		"type": "STRING"
+	},
+	"lease_number": {
+		"type": "STRING"
+	},
+	"phdwin_id": {
+		"type": "STRING"
+	},
+	"previous_operator_code": {
+		"type": "STRING"
+	},
+	"range": {
+		"type": "STRING"
+	},
+	"recovery_method": {
+		"type": "STRING"
+	},
+	"refrac_frac_vendor": {
+		"type": "STRING"
+	},
+	"rig": {
+		"type": "STRING"
+	},
+	"survey": {
+		"type": "STRING"
+	},
+	"toe_in_landing_zone": {
+		"type": "STRING"
+	},
+	"toe_up": {
+		"type": "STRING"
+	},
+	"most_recent_import_desc": {
+		"type": "STRING"
+	},
+	"custom_string_0": {
+		"type": "STRING"
+	},
+	"custom_string_1": {
+		"type": "STRING"
+	},
+	"custom_string_2": {
+		"type": "STRING"
+	},
+	"custom_string_3": {
+		"type": "STRING"
+	},
+	"custom_string_4": {
+		"type": "STRING"
+	},
+	"custom_string_5": {
+		"type": "STRING"
+	},
+	"custom_string_6": {
+		"type": "STRING"
+	},
+	"custom_string_7": {
+		"type": "STRING"
+	},
+	"custom_string_8": {
+		"type": "STRING"
+	},
+	"custom_string_9": {
+		"type": "STRING"
+	},
+	"custom_string_10": {
+		"type": "STRING"
+	},
+	"custom_string_11": {
+		"type": "STRING"
+	},
+	"custom_string_12": {
+		"type": "STRING"
+	},
+	"custom_string_13": {
+		"type": "STRING"
+	},
+	"custom_string_14": {
+		"type": "STRING"
+	},
+	"custom_string_15": {
+		"type": "STRING"
+	},
+	"custom_string_16": {
+		"type": "STRING"
+	},
+	"custom_string_17": {
+		"type": "STRING"
+	},
+	"custom_string_18": {
+		"type": "STRING"
+	},
+	"custom_string_19": {
+		"type": "STRING"
+	}
+}

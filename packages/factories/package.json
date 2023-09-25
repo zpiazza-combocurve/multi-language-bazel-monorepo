@@ -1,0 +1,26 @@
+{
+	"name": "@combocurve/factories",
+	"private": true,
+	"license": "UNLICENSED",
+	"exports": {
+		"development": "./src/index.ts",
+		"types": "./src/index.ts",
+		"default": "./dist/packages/factories/src/index.js"
+	},
+	"scripts": {
+		"build": "yarn g:tsc -p tsconfig.build.json",
+		"lint:typescript": "yarn g:lint:typescript",
+		"test": "yarn g:test"
+	},
+	"dependencies": {
+		"@faker-js/faker": "7.6.0",
+		"fishery": "2.2.2",
+		"mongoose": "5.13.20"
+	},
+	"devDependencies": {
+		"@combocurve/tsconfig": "workspace:*"
+	},
+	"volta": {
+		"extends": "../../package.json"
+	}
+}

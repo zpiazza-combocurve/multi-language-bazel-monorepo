@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<title>ZingChart</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+<script src="../../build/es5/zingchart.min.js"></script>
+<script src="../../build/es5/_modules/zingchart-insidepetroleum-fastline.min.js"></script>
+
+<style>
+body { margin:0;padding:0; }
+*, input, button, select, textarea, label {
+	font-family: 'Lucida Sans Unicode',Monaco,Tahoma,Verdana,Arial;
+}
+</style>
+</head>
+
+<body>
+
+<div id="zc1"></div>
+<div id="zc2"></div>
+
+<script type="text/javascript" charset="utf-8">
+window.onload = function() {
+
+var roundTo = function(v, d) {
+    return parseFloat(v.toFixed(d));
+}
+
+var decimals = 6;
+var data = [];
+for (var i = 0; i < 500; i++) {
+    data.push([i, roundTo(2 + 2.4 * Math.random(), decimals)]);
+}
+
+var histogram = function(data, binNo) {
+    var fKey;
+    var minKey = Number.MAX_VALUE, maxKey = -Number.MAX_VALUE;
+    for (var i = 0; i < data.length; i++) {
+        if (data[i] !== null) {
+            key = data[i].length ? data[i][1] : data[i];
+            minKey = Math.min(minKey, key);
+            maxKey = Math.max(maxKey, key);
+        }
+    }
+    var binSize = roundTo((maxKey - minKey) / binNo, decimals);
+    var bins = [], binIndex;
+    for (var i = 0; i < data.length; i++) {
+        if (data[i] !== null) {
+            key = data[i].length ? data[i][1] : data[i];
+            binIndex = Math.min(binNo - 1, Math.floor((key - minKey) / binSize));
+            bins[binIndex] = bins[binIndex] || 0;
+            bins[binIndex]++;
+        }
+    }
+    var values = [], dataBin = [], binInfo = [];
+    for (var i = 0; i < bins.length; i++) {
+        values.push([roundTo(minKey + (i + 0.5) * binSize, decimals), bins[i]]);
+        dataBin.push(roundTo(minKey + i * binSize, decimals) + "->" + roundTo(minKey + (i + 1) * binSize, decimals));
+        binInfo.push([roundTo(minKey + i * binSize, decimals), roundTo(minKey + (i + 1) * binSize, decimals)]);
+    } 
+    return {
+        minKey : minKey,
+        maxKey : maxKey,
+        binSize : binSize,
+        values : values,
+        dataBin : dataBin,
+        binInfo : binInfo
+    };
+}
+
+var info = histogram(data, 20);
+
+var cdata1 = {
+    "type":"mixed",
+    "title":{
+		"text":"Data + Histogram",
+        "fontSize":10,
+        "adjustLayout":true
+	},
+	"plotarea":{
+        "margin":"dynamic"
+	},
+	"scaleX":{
+        "offset":20,
+        "maxValue":data.length,
+        "maxItems":15,
+        "item":{"fontSize":10}
+	},
+    "scaleX2":{
+        "offset":20,
+        "ranged":false,
+        "minValue":info.minKey,
+        "maxValue":info.maxKey,
+        "step":0.1,
+        "item":{"fontSize":10}
+    },
+	"scaleY":{
+        "offsetEnd":20,
+        "guide":{
+            "visible":false
+        },
+        "item":{"fontSize":10}
+	},
+    "scaleY2":{
+        "offsetEnd":20,
+        "guide":{
+            "visible":false
+        },
+        "item":{"fontSize":10}
+	},
+	"series":[
+		{
+            "type":"vbar",
+            "border":"1px solid #ffffff",
+            "barWidth":info.binSize,
+            "keyWidth":true,
+			"values":info.values,
+            "scales":"scale-x-2,scale-y-2",
+            "hoverState":{
+                "visible":false  
+            },
+            "tooltip":{
+                "text":"Bin %data-bin<br>Items: %node-value"
+            },
+            "selectionMode":"multiple",
+            "selectedState":{
+                "backgroundColor":"#ff9900"
+            },
+            "dataBin":info.dataBin
+		},
+        {
+            "type":"scatter",
+            "values":data,
+            "scales":"scale-x,scale-y",
+            "maxTrackers":0,
+            "marker":{
+                "alpha":0.25,
+                "size":1,
+                "borderWidth":0,
+                "backgroundColor":"#333333"
+            },
+            "hoverMarker":{
+                "size":3,
+                "backgroundColor":"#ff9900"
+            }
+        }
+	]
+};
+
+zingchart.render({
+    id : "zc1",
+	width : "100%",
+	height : 320,
+	output : "svg",
+	data : cdata1
+});
+
+
+var selection = [];
+zingchart.bind("zc1", "node_click", function(p) {
+    selection = zingchart.exec(p.id, "getselection");
+    // get only the selection from first plot (vbar)
+    selection = selection[0];
+    
+    cdata2["scaleY"]["markers"] = [];
+    for (var i = 0; i < selection.length; i++) {
+        var marker = {
+            type : 'area',
+            range : info.binInfo[selection[i]],
+            backgroundColor : '#ff9900',
+            alpha : 0.2,
+        };
+        cdata2["scaleY"]["markers"].push(marker);
+    }
+    
+    zingchart.exec("zc2", "setdata", { data : cdata2 });
+});
+
+window.markerJsRule = function(p) {
+    for (var i = 0; i < selection.length; i++) {
+        if (p.value > info.binInfo[selection[i]][0] && p.value <= info.binInfo[selection[i]][1]) {
+            return {
+                type : 'triangle',
+                size : 2,
+                backgroundColor : '#990000'
+            }
+        }
+    }
+}
+
+var cdata2 = {
+    "type":"scatter",
+    "title":{
+    	"text":"Data only",
+        "fontSize":10,
+        "adjustLayout":true
+	},
+	"plotarea":{
+        "margin":"dynamic"
+	},
+	"scaleX":{
+        "offset":20,
+        "maxValue":data.length,
+        "maxItems":15,
+        "item":{"fontSize":10}
+	},
+	"scaleY":{
+        "minValue":"auto",
+        "offsetEnd":20,
+        "guide":{
+            "visible":false
+        },
+        "item":{"fontSize":10},
+        "markers":[]
+	},
+	"series":[
+        {
+            "type":"scatter",
+            "values":data,
+            "scales":"scale-x,scale-y",
+            "maxTrackers":0,
+            "marker":{
+                "size":1,
+                "borderWidth":0,
+                "backgroundColor":"#333333",
+                "jsRule":"markerJsRule()"
+            },
+            "hoverMarker":{
+                "size":3,
+                "backgroundColor":"#ff9900"
+            }
+        }
+	]
+};
+
+zingchart.render({
+    id : "zc2",
+	width : "100%",
+	height : 240,
+	output : "svg",
+	data : cdata2
+});
+
+}
+</script>
+
+</body>
+</html>

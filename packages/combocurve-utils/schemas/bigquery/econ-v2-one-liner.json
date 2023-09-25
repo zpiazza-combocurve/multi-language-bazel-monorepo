@@ -1,0 +1,2612 @@
+{
+	"created_at": {
+		"mode": "REQUIRED",
+		"type": "TIMESTAMP"
+	},
+	"abandonment_date": {
+		"type": "DATE"
+	},
+	"ad_valorem_tax": {
+		"type": "NUMERIC"
+	},
+	"after_income_tax_cash_flow": {
+		"type": "NUMERIC"
+	},
+	"as_of_date": {
+		"type": "DATE"
+	},
+	"before_income_tax_cash_flow": {
+		"type": "NUMERIC"
+	},
+	"capex_qualifier": {
+		"mode": "REQUIRED",
+		"type": "STRING"
+	},
+	"combo_name": {
+		"mode": "REQUIRED",
+		"type": "STRING"
+	},
+	"combo_well_id": {
+		"mode": "REQUIRED",
+		"type": "STRING"
+	},
+	"consecutive_negative_cash_flow_month_count": {
+		"type": "NUMERIC"
+	},
+	"consecutive_negative_cash_flow_months": {
+		"type": "STRING"
+	},
+	"dates_qualifier": {
+		"mode": "REQUIRED",
+		"type": "STRING"
+	},
+	"depreciation": {
+		"type": "NUMERIC"
+	},
+	"tangible_depreciation": {
+		"type": "NUMERIC"
+	},
+	"intangible_depreciation": {
+		"type": "NUMERIC"
+	},
+	"depletion": {
+		"type": "NUMERIC"
+	},
+	"tangible_depletion": {
+		"type": "NUMERIC"
+	},
+	"intangible_depletion": {
+		"type": "NUMERIC"
+	},
+	"percentage_depletion": {
+		"type": "NUMERIC"
+	},
+	"total_deductions": {
+		"type": "NUMERIC"
+	},
+	"discount_date": {
+		"type": "DATE"
+	},
+	"discount_table_cash_flow_1": {
+		"type": "NUMERIC"
+	},
+	"discount_table_cash_flow_10": {
+		"type": "NUMERIC"
+	},
+	"discount_table_cash_flow_11": {
+		"type": "NUMERIC"
+	},
+	"discount_table_cash_flow_12": {
+		"type": "NUMERIC"
+	},
+	"discount_table_cash_flow_13": {
+		"type": "NUMERIC"
+	},
+	"discount_table_cash_flow_14": {
+		"type": "NUMERIC"
+	},
+	"discount_table_cash_flow_15": {
+		"type": "NUMERIC"
+	},
+	"discount_table_cash_flow_16": {
+		"type": "NUMERIC"
+	},
+	"discount_table_cash_flow_2": {
+		"type": "NUMERIC"
+	},
+	"discount_table_cash_flow_3": {
+		"type": "NUMERIC"
+	},
+	"discount_table_cash_flow_4": {
+		"type": "NUMERIC"
+	},
+	"discount_table_cash_flow_5": {
+		"type": "NUMERIC"
+	},
+	"discount_table_cash_flow_6": {
+		"type": "NUMERIC"
+	},
+	"discount_table_cash_flow_7": {
+		"type": "NUMERIC"
+	},
+	"discount_table_cash_flow_8": {
+		"type": "NUMERIC"
+	},
+	"discount_table_cash_flow_9": {
+		"type": "NUMERIC"
+	},
+	"afit_discount_table_cash_flow_1": {
+		"type": "NUMERIC"
+	},
+	"afit_discount_table_cash_flow_10": {
+		"type": "NUMERIC"
+	},
+	"afit_discount_table_cash_flow_11": {
+		"type": "NUMERIC"
+	},
+	"afit_discount_table_cash_flow_12": {
+		"type": "NUMERIC"
+	},
+	"afit_discount_table_cash_flow_13": {
+		"type": "NUMERIC"
+	},
+	"afit_discount_table_cash_flow_14": {
+		"type": "NUMERIC"
+	},
+	"afit_discount_table_cash_flow_15": {
+		"type": "NUMERIC"
+	},
+	"afit_discount_table_cash_flow_16": {
+		"type": "NUMERIC"
+	},
+	"afit_discount_table_cash_flow_2": {
+		"type": "NUMERIC"
+	},
+	"afit_discount_table_cash_flow_3": {
+		"type": "NUMERIC"
+	},
+	"afit_discount_table_cash_flow_4": {
+		"type": "NUMERIC"
+	},
+	"afit_discount_table_cash_flow_5": {
+		"type": "NUMERIC"
+	},
+	"afit_discount_table_cash_flow_6": {
+		"type": "NUMERIC"
+	},
+	"afit_discount_table_cash_flow_7": {
+		"type": "NUMERIC"
+	},
+	"afit_discount_table_cash_flow_8": {
+		"type": "NUMERIC"
+	},
+	"afit_discount_table_cash_flow_9": {
+		"type": "NUMERIC"
+	},
+	"drip_condensate_gathering_expense": {
+		"type": "NUMERIC"
+	},
+	"drip_condensate_marketing_expense": {
+		"type": "NUMERIC"
+	},
+	"drip_condensate_other_expense": {
+		"type": "NUMERIC"
+	},
+	"drip_condensate_price": {
+		"type": "NUMERIC"
+	},
+	"drip_condensate_processing_expense": {
+		"type": "NUMERIC"
+	},
+	"drip_condensate_revenue": {
+		"type": "NUMERIC"
+	},
+	"drip_condensate_severance_tax": {
+		"type": "NUMERIC"
+	},
+	"drip_condensate_shrunk_eur": {
+		"type": "NUMERIC"
+	},
+	"drip_condensate_transportation_expense": {
+		"type": "NUMERIC"
+	},
+	"drip_condensate_yield": {
+		"type": "NUMERIC"
+	},
+	"error": {
+		"type": "STRING"
+	},
+	"expenses_qualifier": {
+		"mode": "REQUIRED",
+		"type": "STRING"
+	},
+	"federal_income_tax": {
+		"type": "NUMERIC"
+	},
+	"first_consecutive_negative_cash_flow_month": {
+		"type": "STRING"
+	},
+	"first_discount_cash_flow": {
+		"type": "NUMERIC"
+	},
+	"afit_first_discount_cash_flow": {
+		"type": "NUMERIC"
+	},
+	"first_discount_roi": {
+		"type": "FLOAT"
+	},
+	"forecast_p_series_qualifier": {
+		"mode": "REQUIRED",
+		"type": "STRING"
+	},
+	"forecast_qualifier": {
+		"mode": "REQUIRED",
+		"type": "STRING"
+	},
+	"gas_assigned_p_series_first_segment_b": {
+		"type": "NUMERIC"
+	},
+	"gas_assigned_p_series_first_segment_d1_nominal": {
+		"type": "NUMERIC"
+	},
+	"gas_assigned_p_series_first_segment_di_eff_sec": {
+		"type": "NUMERIC"
+	},
+	"gas_assigned_p_series_first_segment_end_date": {
+		"type": "DATE"
+	},
+	"gas_assigned_p_series_first_segment_q_end": {
+		"type": "NUMERIC"
+	},
+	"gas_assigned_p_series_first_segment_q_start": {
+		"type": "NUMERIC"
+	},
+	"gas_assigned_p_series_first_segment_realized_d_sw_eff_sec": {
+		"type": "NUMERIC"
+	},
+	"gas_assigned_p_series_first_segment_segment_type": {
+		"type": "STRING"
+	},
+	"gas_assigned_p_series_first_segment_start_date": {
+		"type": "DATE"
+	},
+	"gas_assigned_p_series_first_segment_sw_date": {
+		"type": "DATE"
+	},
+	"gas_assigned_p_series_last_segment_b": {
+		"type": "NUMERIC"
+	},
+	"gas_assigned_p_series_last_segment_d1_nominal": {
+		"type": "NUMERIC"
+	},
+	"gas_assigned_p_series_last_segment_di_eff_sec": {
+		"type": "NUMERIC"
+	},
+	"gas_assigned_p_series_last_segment_end_date": {
+		"type": "DATE"
+	},
+	"gas_assigned_p_series_last_segment_q_end": {
+		"type": "NUMERIC"
+	},
+	"gas_assigned_p_series_last_segment_q_start": {
+		"type": "NUMERIC"
+	},
+	"gas_assigned_p_series_last_segment_realized_d_sw_eff_sec": {
+		"type": "NUMERIC"
+	},
+	"gas_assigned_p_series_last_segment_segment_type": {
+		"type": "STRING"
+	},
+	"gas_assigned_p_series_last_segment_start_date": {
+		"type": "DATE"
+	},
+	"gas_assigned_p_series_last_segment_sw_date": {
+		"type": "DATE"
+	},
+	"gas_best_fit_first_segment_b": {
+		"type": "NUMERIC"
+	},
+	"gas_best_fit_first_segment_d1_nominal": {
+		"type": "NUMERIC"
+	},
+	"gas_best_fit_first_segment_di_eff_sec": {
+		"type": "NUMERIC"
+	},
+	"gas_best_fit_first_segment_end_date": {
+		"type": "DATE"
+	},
+	"gas_best_fit_first_segment_q_end": {
+		"type": "NUMERIC"
+	},
+	"gas_best_fit_first_segment_q_start": {
+		"type": "NUMERIC"
+	},
+	"gas_best_fit_first_segment_realized_d_sw_eff_sec": {
+		"type": "NUMERIC"
+	},
+	"gas_best_fit_first_segment_segment_type": {
+		"type": "STRING"
+	},
+	"gas_best_fit_first_segment_start_date": {
+		"type": "DATE"
+	},
+	"gas_best_fit_first_segment_sw_date": {
+		"type": "DATE"
+	},
+	"gas_best_fit_last_segment_b": {
+		"type": "NUMERIC"
+	},
+	"gas_best_fit_last_segment_d1_nominal": {
+		"type": "NUMERIC"
+	},
+	"gas_best_fit_last_segment_di_eff_sec": {
+		"type": "NUMERIC"
+	},
+	"gas_best_fit_last_segment_end_date": {
+		"type": "DATE"
+	},
+	"gas_best_fit_last_segment_q_end": {
+		"type": "NUMERIC"
+	},
+	"gas_best_fit_last_segment_q_start": {
+		"type": "NUMERIC"
+	},
+	"gas_best_fit_last_segment_realized_d_sw_eff_sec": {
+		"type": "NUMERIC"
+	},
+	"gas_best_fit_last_segment_segment_type": {
+		"type": "STRING"
+	},
+	"gas_best_fit_last_segment_start_date": {
+		"type": "DATE"
+	},
+	"gas_best_fit_last_segment_sw_date": {
+		"type": "DATE"
+	},
+	"gas_breakeven": {
+		"type": "NUMERIC"
+	},
+	"gas_flare": {
+		"type": "NUMERIC"
+	},
+	"gas_gathering_expense": {
+		"type": "NUMERIC"
+	},
+	"gas_loss": {
+		"type": "NUMERIC"
+	},
+	"gas_marketing_expense": {
+		"type": "NUMERIC"
+	},
+	"gas_other_expense": {
+		"type": "NUMERIC"
+	},
+	"gas_p10_first_segment_b": {
+		"type": "NUMERIC"
+	},
+	"gas_p10_first_segment_d1_nominal": {
+		"type": "NUMERIC"
+	},
+	"gas_p10_first_segment_di_eff_sec": {
+		"type": "NUMERIC"
+	},
+	"gas_p10_first_segment_end_date": {
+		"type": "DATE"
+	},
+	"gas_p10_first_segment_q_end": {
+		"type": "NUMERIC"
+	},
+	"gas_p10_first_segment_q_start": {
+		"type": "NUMERIC"
+	},
+	"gas_p10_first_segment_realized_d_sw_eff_sec": {
+		"type": "NUMERIC"
+	},
+	"gas_p10_first_segment_segment_type": {
+		"type": "STRING"
+	},
+	"gas_p10_first_segment_start_date": {
+		"type": "DATE"
+	},
+	"gas_p10_first_segment_sw_date": {
+		"type": "DATE"
+	},
+	"gas_p10_last_segment_b": {
+		"type": "NUMERIC"
+	},
+	"gas_p10_last_segment_d1_nominal": {
+		"type": "NUMERIC"
+	},
+	"gas_p10_last_segment_di_eff_sec": {
+		"type": "NUMERIC"
+	},
+	"gas_p10_last_segment_end_date": {
+		"type": "DATE"
+	},
+	"gas_p10_last_segment_q_end": {
+		"type": "NUMERIC"
+	},
+	"gas_p10_last_segment_q_start": {
+		"type": "NUMERIC"
+	},
+	"gas_p10_last_segment_realized_d_sw_eff_sec": {
+		"type": "NUMERIC"
+	},
+	"gas_p10_last_segment_segment_type": {
+		"type": "STRING"
+	},
+	"gas_p10_last_segment_start_date": {
+		"type": "DATE"
+	},
+	"gas_p10_last_segment_sw_date": {
+		"type": "DATE"
+	},
+	"gas_p50_first_segment_b": {
+		"type": "NUMERIC"
+	},
+	"gas_p50_first_segment_d1_nominal": {
+		"type": "NUMERIC"
+	},
+	"gas_p50_first_segment_di_eff_sec": {
+		"type": "NUMERIC"
+	},
+	"gas_p50_first_segment_end_date": {
+		"type": "DATE"
+	},
+	"gas_p50_first_segment_q_end": {
+		"type": "NUMERIC"
+	},
+	"gas_p50_first_segment_q_start": {
+		"type": "NUMERIC"
+	},
+	"gas_p50_first_segment_realized_d_sw_eff_sec": {
+		"type": "NUMERIC"
+	},
+	"gas_p50_first_segment_segment_type": {
+		"type": "STRING"
+	},
+	"gas_p50_first_segment_start_date": {
+		"type": "DATE"
+	},
+	"gas_p50_first_segment_sw_date": {
+		"type": "DATE"
+	},
+	"gas_p50_last_segment_b": {
+		"type": "NUMERIC"
+	},
+	"gas_p50_last_segment_d1_nominal": {
+		"type": "NUMERIC"
+	},
+	"gas_p50_last_segment_di_eff_sec": {
+		"type": "NUMERIC"
+	},
+	"gas_p50_last_segment_end_date": {
+		"type": "DATE"
+	},
+	"gas_p50_last_segment_q_end": {
+		"type": "NUMERIC"
+	},
+	"gas_p50_last_segment_q_start": {
+		"type": "NUMERIC"
+	},
+	"gas_p50_last_segment_realized_d_sw_eff_sec": {
+		"type": "NUMERIC"
+	},
+	"gas_p50_last_segment_segment_type": {
+		"type": "STRING"
+	},
+	"gas_p50_last_segment_start_date": {
+		"type": "DATE"
+	},
+	"gas_p50_last_segment_sw_date": {
+		"type": "DATE"
+	},
+	"gas_p90_first_segment_b": {
+		"type": "NUMERIC"
+	},
+	"gas_p90_first_segment_d1_nominal": {
+		"type": "NUMERIC"
+	},
+	"gas_p90_first_segment_di_eff_sec": {
+		"type": "NUMERIC"
+	},
+	"gas_p90_first_segment_end_date": {
+		"type": "DATE"
+	},
+	"gas_p90_first_segment_q_end": {
+		"type": "NUMERIC"
+	},
+	"gas_p90_first_segment_q_start": {
+		"type": "NUMERIC"
+	},
+	"gas_p90_first_segment_realized_d_sw_eff_sec": {
+		"type": "NUMERIC"
+	},
+	"gas_p90_first_segment_segment_type": {
+		"type": "STRING"
+	},
+	"gas_p90_first_segment_start_date": {
+		"type": "DATE"
+	},
+	"gas_p90_first_segment_sw_date": {
+		"type": "DATE"
+	},
+	"gas_p90_last_segment_b": {
+		"type": "NUMERIC"
+	},
+	"gas_p90_last_segment_d1_nominal": {
+		"type": "NUMERIC"
+	},
+	"gas_p90_last_segment_di_eff_sec": {
+		"type": "NUMERIC"
+	},
+	"gas_p90_last_segment_end_date": {
+		"type": "DATE"
+	},
+	"gas_p90_last_segment_q_end": {
+		"type": "NUMERIC"
+	},
+	"gas_p90_last_segment_q_start": {
+		"type": "NUMERIC"
+	},
+	"gas_p90_last_segment_realized_d_sw_eff_sec": {
+		"type": "NUMERIC"
+	},
+	"gas_p90_last_segment_segment_type": {
+		"type": "STRING"
+	},
+	"gas_p90_last_segment_start_date": {
+		"type": "DATE"
+	},
+	"gas_p90_last_segment_sw_date": {
+		"type": "DATE"
+	},
+	"gas_price": {
+		"type": "NUMERIC"
+	},
+	"gas_processing_expense": {
+		"type": "NUMERIC"
+	},
+	"gas_revenue": {
+		"type": "NUMERIC"
+	},
+	"gas_severance_tax": {
+		"type": "NUMERIC"
+	},
+	"gas_shrinkage": {
+		"type": "NUMERIC"
+	},
+	"gas_shrunk_eur": {
+		"type": "NUMERIC"
+	},
+	"gas_transportation_expense": {
+		"type": "NUMERIC"
+	},
+	"gas_well_head_eur": {
+		"type": "NUMERIC"
+	},
+	"gross_boe_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"gross_boe_well_head_volume": {
+		"type": "NUMERIC"
+	},
+	"gross_drip_condensate_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"gross_gas_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"gross_gas_well_head_volume": {
+		"type": "NUMERIC"
+	},
+	"gross_ngl_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"gross_oil_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"gross_oil_well_head_volume": {
+		"type": "NUMERIC"
+	},
+	"gross_water_well_head_volume": {
+		"type": "NUMERIC"
+	},
+	"intangible_abandonment": {
+		"type": "NUMERIC"
+	},
+	"intangible_appraisal": {
+		"type": "NUMERIC"
+	},
+	"intangible_artificial_lift": {
+		"type": "NUMERIC"
+	},
+	"intangible_completion": {
+		"type": "NUMERIC"
+	},
+	"intangible_development": {
+		"type": "NUMERIC"
+	},
+	"intangible_drilling": {
+		"type": "NUMERIC"
+	},
+	"intangible_exploration": {
+		"type": "NUMERIC"
+	},
+	"intangible_facilities": {
+		"type": "NUMERIC"
+	},
+	"intangible_leasehold": {
+		"type": "NUMERIC"
+	},
+	"intangible_legal": {
+		"type": "NUMERIC"
+	},
+	"intangible_other_investment": {
+		"type": "NUMERIC"
+	},
+	"intangible_pad": {
+		"type": "NUMERIC"
+	},
+	"intangible_pipelines": {
+		"type": "NUMERIC"
+	},
+	"intangible_salvage": {
+		"type": "NUMERIC"
+	},
+	"intangible_waterline": {
+		"type": "NUMERIC"
+	},
+	"intangible_workover": {
+		"type": "NUMERIC"
+	},
+	"irr": {
+		"type": "FLOAT"
+	},
+	"last_consecutive_negative_cash_flow_month": {
+		"type": "STRING"
+	},
+	"monthly_well_cost": {
+		"type": "NUMERIC"
+	},
+	"net_boe_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"net_drip_condensate_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"net_gas_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"net_ngl_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"net_oil_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"net_profit": {
+		"type": "NUMERIC"
+	},
+	"ngl_gathering_expense": {
+		"type": "NUMERIC"
+	},
+	"ngl_marketing_expense": {
+		"type": "NUMERIC"
+	},
+	"ngl_other_expense": {
+		"type": "NUMERIC"
+	},
+	"ngl_price": {
+		"type": "NUMERIC"
+	},
+	"ngl_processing_expense": {
+		"type": "NUMERIC"
+	},
+	"ngl_revenue": {
+		"type": "NUMERIC"
+	},
+	"ngl_severance_tax": {
+		"type": "NUMERIC"
+	},
+	"ngl_shrunk_eur": {
+		"type": "NUMERIC"
+	},
+	"ngl_transportation_expense": {
+		"type": "NUMERIC"
+	},
+	"ngl_yield": {
+		"type": "NUMERIC"
+	},
+	"nri_drip_condensate": {
+		"type": "NUMERIC"
+	},
+	"nri_gas": {
+		"type": "NUMERIC"
+	},
+	"nri_ngl": {
+		"type": "NUMERIC"
+	},
+	"nri_oil": {
+		"type": "NUMERIC"
+	},
+	"oil_assigned_p_series_first_segment_b": {
+		"type": "NUMERIC"
+	},
+	"oil_assigned_p_series_first_segment_d1_nominal": {
+		"type": "NUMERIC"
+	},
+	"oil_assigned_p_series_first_segment_di_eff_sec": {
+		"type": "NUMERIC"
+	},
+	"oil_assigned_p_series_first_segment_end_date": {
+		"type": "DATE"
+	},
+	"oil_assigned_p_series_first_segment_q_end": {
+		"type": "NUMERIC"
+	},
+	"oil_assigned_p_series_first_segment_q_start": {
+		"type": "NUMERIC"
+	},
+	"oil_assigned_p_series_first_segment_realized_d_sw_eff_sec": {
+		"type": "NUMERIC"
+	},
+	"oil_assigned_p_series_first_segment_segment_type": {
+		"type": "STRING"
+	},
+	"oil_assigned_p_series_first_segment_start_date": {
+		"type": "DATE"
+	},
+	"oil_assigned_p_series_first_segment_sw_date": {
+		"type": "DATE"
+	},
+	"oil_assigned_p_series_last_segment_b": {
+		"type": "NUMERIC"
+	},
+	"oil_assigned_p_series_last_segment_d1_nominal": {
+		"type": "NUMERIC"
+	},
+	"oil_assigned_p_series_last_segment_di_eff_sec": {
+		"type": "NUMERIC"
+	},
+	"oil_assigned_p_series_last_segment_end_date": {
+		"type": "DATE"
+	},
+	"oil_assigned_p_series_last_segment_q_end": {
+		"type": "NUMERIC"
+	},
+	"oil_assigned_p_series_last_segment_q_start": {
+		"type": "NUMERIC"
+	},
+	"oil_assigned_p_series_last_segment_realized_d_sw_eff_sec": {
+		"type": "NUMERIC"
+	},
+	"oil_assigned_p_series_last_segment_segment_type": {
+		"type": "STRING"
+	},
+	"oil_assigned_p_series_last_segment_start_date": {
+		"type": "DATE"
+	},
+	"oil_assigned_p_series_last_segment_sw_date": {
+		"type": "DATE"
+	},
+	"oil_best_fit_first_segment_b": {
+		"type": "NUMERIC"
+	},
+	"oil_best_fit_first_segment_d1_nominal": {
+		"type": "NUMERIC"
+	},
+	"oil_best_fit_first_segment_di_eff_sec": {
+		"type": "NUMERIC"
+	},
+	"oil_best_fit_first_segment_end_date": {
+		"type": "DATE"
+	},
+	"oil_best_fit_first_segment_q_end": {
+		"type": "NUMERIC"
+	},
+	"oil_best_fit_first_segment_q_start": {
+		"type": "NUMERIC"
+	},
+	"oil_best_fit_first_segment_realized_d_sw_eff_sec": {
+		"type": "NUMERIC"
+	},
+	"oil_best_fit_first_segment_segment_type": {
+		"type": "STRING"
+	},
+	"oil_best_fit_first_segment_start_date": {
+		"type": "DATE"
+	},
+	"oil_best_fit_first_segment_sw_date": {
+		"type": "DATE"
+	},
+	"oil_best_fit_last_segment_b": {
+		"type": "NUMERIC"
+	},
+	"oil_best_fit_last_segment_d1_nominal": {
+		"type": "NUMERIC"
+	},
+	"oil_best_fit_last_segment_di_eff_sec": {
+		"type": "NUMERIC"
+	},
+	"oil_best_fit_last_segment_end_date": {
+		"type": "DATE"
+	},
+	"oil_best_fit_last_segment_q_end": {
+		"type": "NUMERIC"
+	},
+	"oil_best_fit_last_segment_q_start": {
+		"type": "NUMERIC"
+	},
+	"oil_best_fit_last_segment_realized_d_sw_eff_sec": {
+		"type": "NUMERIC"
+	},
+	"oil_best_fit_last_segment_segment_type": {
+		"type": "STRING"
+	},
+	"oil_best_fit_last_segment_start_date": {
+		"type": "DATE"
+	},
+	"oil_best_fit_last_segment_sw_date": {
+		"type": "DATE"
+	},
+	"oil_breakeven": {
+		"type": "NUMERIC"
+	},
+	"oil_gathering_expense": {
+		"type": "NUMERIC"
+	},
+	"oil_loss": {
+		"type": "NUMERIC"
+	},
+	"oil_marketing_expense": {
+		"type": "NUMERIC"
+	},
+	"oil_other_expense": {
+		"type": "NUMERIC"
+	},
+	"oil_p10_first_segment_b": {
+		"type": "NUMERIC"
+	},
+	"oil_p10_first_segment_d1_nominal": {
+		"type": "NUMERIC"
+	},
+	"oil_p10_first_segment_di_eff_sec": {
+		"type": "NUMERIC"
+	},
+	"oil_p10_first_segment_end_date": {
+		"type": "DATE"
+	},
+	"oil_p10_first_segment_q_end": {
+		"type": "NUMERIC"
+	},
+	"oil_p10_first_segment_q_start": {
+		"type": "NUMERIC"
+	},
+	"oil_p10_first_segment_realized_d_sw_eff_sec": {
+		"type": "NUMERIC"
+	},
+	"oil_p10_first_segment_segment_type": {
+		"type": "STRING"
+	},
+	"oil_p10_first_segment_start_date": {
+		"type": "DATE"
+	},
+	"oil_p10_first_segment_sw_date": {
+		"type": "DATE"
+	},
+	"oil_p10_last_segment_b": {
+		"type": "NUMERIC"
+	},
+	"oil_p10_last_segment_d1_nominal": {
+		"type": "NUMERIC"
+	},
+	"oil_p10_last_segment_di_eff_sec": {
+		"type": "NUMERIC"
+	},
+	"oil_p10_last_segment_end_date": {
+		"type": "DATE"
+	},
+	"oil_p10_last_segment_q_end": {
+		"type": "NUMERIC"
+	},
+	"oil_p10_last_segment_q_start": {
+		"type": "NUMERIC"
+	},
+	"oil_p10_last_segment_realized_d_sw_eff_sec": {
+		"type": "NUMERIC"
+	},
+	"oil_p10_last_segment_segment_type": {
+		"type": "STRING"
+	},
+	"oil_p10_last_segment_start_date": {
+		"type": "DATE"
+	},
+	"oil_p10_last_segment_sw_date": {
+		"type": "DATE"
+	},
+	"oil_p50_first_segment_b": {
+		"type": "NUMERIC"
+	},
+	"oil_p50_first_segment_d1_nominal": {
+		"type": "NUMERIC"
+	},
+	"oil_p50_first_segment_di_eff_sec": {
+		"type": "NUMERIC"
+	},
+	"oil_p50_first_segment_end_date": {
+		"type": "DATE"
+	},
+	"oil_p50_first_segment_q_end": {
+		"type": "NUMERIC"
+	},
+	"oil_p50_first_segment_q_start": {
+		"type": "NUMERIC"
+	},
+	"oil_p50_first_segment_realized_d_sw_eff_sec": {
+		"type": "NUMERIC"
+	},
+	"oil_p50_first_segment_segment_type": {
+		"type": "STRING"
+	},
+	"oil_p50_first_segment_start_date": {
+		"type": "DATE"
+	},
+	"oil_p50_first_segment_sw_date": {
+		"type": "DATE"
+	},
+	"oil_p50_last_segment_b": {
+		"type": "NUMERIC"
+	},
+	"oil_p50_last_segment_d1_nominal": {
+		"type": "NUMERIC"
+	},
+	"oil_p50_last_segment_di_eff_sec": {
+		"type": "NUMERIC"
+	},
+	"oil_p50_last_segment_end_date": {
+		"type": "DATE"
+	},
+	"oil_p50_last_segment_q_end": {
+		"type": "NUMERIC"
+	},
+	"oil_p50_last_segment_q_start": {
+		"type": "NUMERIC"
+	},
+	"oil_p50_last_segment_realized_d_sw_eff_sec": {
+		"type": "NUMERIC"
+	},
+	"oil_p50_last_segment_segment_type": {
+		"type": "STRING"
+	},
+	"oil_p50_last_segment_start_date": {
+		"type": "DATE"
+	},
+	"oil_p50_last_segment_sw_date": {
+		"type": "DATE"
+	},
+	"oil_p90_first_segment_b": {
+		"type": "NUMERIC"
+	},
+	"oil_p90_first_segment_d1_nominal": {
+		"type": "NUMERIC"
+	},
+	"oil_p90_first_segment_di_eff_sec": {
+		"type": "NUMERIC"
+	},
+	"oil_p90_first_segment_end_date": {
+		"type": "DATE"
+	},
+	"oil_p90_first_segment_q_end": {
+		"type": "NUMERIC"
+	},
+	"oil_p90_first_segment_q_start": {
+		"type": "NUMERIC"
+	},
+	"oil_p90_first_segment_realized_d_sw_eff_sec": {
+		"type": "NUMERIC"
+	},
+	"oil_p90_first_segment_segment_type": {
+		"type": "STRING"
+	},
+	"oil_p90_first_segment_start_date": {
+		"type": "DATE"
+	},
+	"oil_p90_first_segment_sw_date": {
+		"type": "DATE"
+	},
+	"oil_p90_last_segment_b": {
+		"type": "NUMERIC"
+	},
+	"oil_p90_last_segment_d1_nominal": {
+		"type": "NUMERIC"
+	},
+	"oil_p90_last_segment_di_eff_sec": {
+		"type": "NUMERIC"
+	},
+	"oil_p90_last_segment_end_date": {
+		"type": "DATE"
+	},
+	"oil_p90_last_segment_q_end": {
+		"type": "NUMERIC"
+	},
+	"oil_p90_last_segment_q_start": {
+		"type": "NUMERIC"
+	},
+	"oil_p90_last_segment_realized_d_sw_eff_sec": {
+		"type": "NUMERIC"
+	},
+	"oil_p90_last_segment_segment_type": {
+		"type": "STRING"
+	},
+	"oil_p90_last_segment_start_date": {
+		"type": "DATE"
+	},
+	"oil_p90_last_segment_sw_date": {
+		"type": "DATE"
+	},
+	"oil_price": {
+		"type": "NUMERIC"
+	},
+	"oil_processing_expense": {
+		"type": "NUMERIC"
+	},
+	"oil_revenue": {
+		"type": "NUMERIC"
+	},
+	"oil_severance_tax": {
+		"type": "NUMERIC"
+	},
+	"oil_shrinkage": {
+		"type": "NUMERIC"
+	},
+	"oil_shrunk_eur": {
+		"type": "NUMERIC"
+	},
+	"oil_transportation_expense": {
+		"type": "NUMERIC"
+	},
+	"oil_well_head_eur": {
+		"type": "NUMERIC"
+	},
+	"original_nri_drip_condensate": {
+		"type": "NUMERIC"
+	},
+	"original_nri_gas": {
+		"type": "NUMERIC"
+	},
+	"original_nri_ngl": {
+		"type": "NUMERIC"
+	},
+	"original_nri_oil": {
+		"type": "NUMERIC"
+	},
+	"original_wi_drip_condensate": {
+		"type": "NUMERIC"
+	},
+	"original_wi_gas": {
+		"type": "NUMERIC"
+	},
+	"original_wi_ngl": {
+		"type": "NUMERIC"
+	},
+	"original_wi_oil": {
+		"type": "NUMERIC"
+	},
+	"other_monthly_cost_1": {
+		"type": "NUMERIC"
+	},
+	"other_monthly_cost_2": {
+		"type": "NUMERIC"
+	},
+	"other_monthly_cost_3": {
+		"type": "NUMERIC"
+	},
+	"other_monthly_cost_4": {
+		"type": "NUMERIC"
+	},
+	"other_monthly_cost_5": {
+		"type": "NUMERIC"
+	},
+	"other_monthly_cost_6": {
+		"type": "NUMERIC"
+	},
+	"other_monthly_cost_7": {
+		"type": "NUMERIC"
+	},
+	"other_monthly_cost_8": {
+		"type": "NUMERIC"
+	},
+	"ownership_reversion_qualifier": {
+		"mode": "REQUIRED",
+		"type": "STRING"
+	},
+	"econ_prms_reserves_category": {
+		"type": "STRING"
+	},
+	"econ_prms_reserves_sub_category": {
+		"type": "STRING"
+	},
+	"econ_prms_resources_class": {
+		"type": "STRING"
+	},
+	"production_taxes_qualifier": {
+		"mode": "REQUIRED",
+		"type": "STRING"
+	},
+	"production_vs_fit_qualifier": {
+		"mode": "REQUIRED",
+		"type": "STRING"
+	},
+	"reserves_category_qualifier": {
+		"mode": "REQUIRED",
+		"type": "STRING"
+	},
+	"risking_qualifier": {
+		"mode": "REQUIRED",
+		"type": "STRING"
+	},
+	"run_date": {
+		"mode": "REQUIRED",
+		"type": "DATE"
+	},
+	"run_id": {
+		"mode": "REQUIRED",
+		"type": "STRING"
+	},
+	"schedule_qualifier": {
+		"mode": "REQUIRED",
+		"type": "STRING"
+	},
+	"second_discount_cash_flow": {
+		"type": "NUMERIC"
+	},
+	"afit_second_discount_cash_flow": {
+		"type": "NUMERIC"
+	},
+	"second_discount_roi": {
+		"type": "FLOAT"
+	},
+	"shrunk_gas_btu": {
+		"type": "NUMERIC"
+	},
+	"state_income_tax": {
+		"type": "NUMERIC"
+	},
+	"stream_properties_qualifier": {
+		"mode": "REQUIRED",
+		"type": "STRING"
+	},
+	"tangible_abandonment": {
+		"type": "NUMERIC"
+	},
+	"tangible_appraisal": {
+		"type": "NUMERIC"
+	},
+	"tangible_artificial_lift": {
+		"type": "NUMERIC"
+	},
+	"tangible_completion": {
+		"type": "NUMERIC"
+	},
+	"tangible_development": {
+		"type": "NUMERIC"
+	},
+	"tangible_drilling": {
+		"type": "NUMERIC"
+	},
+	"tangible_exploration": {
+		"type": "NUMERIC"
+	},
+	"tangible_facilities": {
+		"type": "NUMERIC"
+	},
+	"tangible_leasehold": {
+		"type": "NUMERIC"
+	},
+	"tangible_legal": {
+		"type": "NUMERIC"
+	},
+	"tangible_other_investment": {
+		"type": "NUMERIC"
+	},
+	"tangible_pad": {
+		"type": "NUMERIC"
+	},
+	"tangible_pipelines": {
+		"type": "NUMERIC"
+	},
+	"tangible_salvage": {
+		"type": "NUMERIC"
+	},
+	"tangible_waterline": {
+		"type": "NUMERIC"
+	},
+	"tangible_workover": {
+		"type": "NUMERIC"
+	},
+	"taxable_income": {
+		"type": "NUMERIC"
+	},
+	"total_abandonment": {
+		"type": "NUMERIC"
+	},
+	"total_appraisal": {
+		"type": "NUMERIC"
+	},
+	"total_artificial_lift": {
+		"type": "NUMERIC"
+	},
+	"total_capex": {
+		"type": "NUMERIC"
+	},
+	"total_completion": {
+		"type": "NUMERIC"
+	},
+	"total_development": {
+		"type": "NUMERIC"
+	},
+	"total_drilling": {
+		"type": "NUMERIC"
+	},
+	"total_drip_condensate_variable_expense": {
+		"type": "NUMERIC"
+	},
+	"total_expense": {
+		"type": "NUMERIC"
+	},
+	"total_exploration": {
+		"type": "NUMERIC"
+	},
+	"total_facilities": {
+		"type": "NUMERIC"
+	},
+	"total_fixed_expense": {
+		"type": "NUMERIC"
+	},
+	"total_gas_variable_expense": {
+		"type": "NUMERIC"
+	},
+	"total_intangible_capex": {
+		"type": "NUMERIC"
+	},
+	"total_leasehold": {
+		"type": "NUMERIC"
+	},
+	"total_legal": {
+		"type": "NUMERIC"
+	},
+	"total_negative_cash_flow_month_count": {
+		"type": "NUMERIC"
+	},
+	"total_ngl_variable_expense": {
+		"type": "NUMERIC"
+	},
+	"total_oil_variable_expense": {
+		"type": "NUMERIC"
+	},
+	"total_other_investment": {
+		"type": "NUMERIC"
+	},
+	"total_pad": {
+		"type": "NUMERIC"
+	},
+	"total_pipelines": {
+		"type": "NUMERIC"
+	},
+	"total_production_tax": {
+		"type": "NUMERIC"
+	},
+	"total_revenue": {
+		"type": "NUMERIC"
+	},
+	"total_salvage": {
+		"type": "NUMERIC"
+	},
+	"total_severance_tax": {
+		"type": "NUMERIC"
+	},
+	"total_tangible_capex": {
+		"type": "NUMERIC"
+	},
+	"total_variable_expense": {
+		"type": "NUMERIC"
+	},
+	"total_waterline": {
+		"type": "NUMERIC"
+	},
+	"total_workover": {
+		"type": "NUMERIC"
+	},
+	"undiscounted_payout": {
+		"type": "STRING"
+	},
+	"undiscounted_roi": {
+		"type": "FLOAT"
+	},
+	"unshrunk_gas_btu": {
+		"type": "NUMERIC"
+	},
+	"warning": {
+		"type": "STRING"
+	},
+	"water_assigned_p_series_first_segment_b": {
+		"type": "NUMERIC"
+	},
+	"water_assigned_p_series_first_segment_d1_nominal": {
+		"type": "NUMERIC"
+	},
+	"water_assigned_p_series_first_segment_di_eff_sec": {
+		"type": "NUMERIC"
+	},
+	"water_assigned_p_series_first_segment_end_date": {
+		"type": "DATE"
+	},
+	"water_assigned_p_series_first_segment_q_end": {
+		"type": "NUMERIC"
+	},
+	"water_assigned_p_series_first_segment_q_start": {
+		"type": "NUMERIC"
+	},
+	"water_assigned_p_series_first_segment_realized_d_sw_eff_sec": {
+		"type": "NUMERIC"
+	},
+	"water_assigned_p_series_first_segment_segment_type": {
+		"type": "STRING"
+	},
+	"water_assigned_p_series_first_segment_start_date": {
+		"type": "DATE"
+	},
+	"water_assigned_p_series_first_segment_sw_date": {
+		"type": "DATE"
+	},
+	"water_assigned_p_series_last_segment_b": {
+		"type": "NUMERIC"
+	},
+	"water_assigned_p_series_last_segment_d1_nominal": {
+		"type": "NUMERIC"
+	},
+	"water_assigned_p_series_last_segment_di_eff_sec": {
+		"type": "NUMERIC"
+	},
+	"water_assigned_p_series_last_segment_end_date": {
+		"type": "DATE"
+	},
+	"water_assigned_p_series_last_segment_q_end": {
+		"type": "NUMERIC"
+	},
+	"water_assigned_p_series_last_segment_q_start": {
+		"type": "NUMERIC"
+	},
+	"water_assigned_p_series_last_segment_realized_d_sw_eff_sec": {
+		"type": "NUMERIC"
+	},
+	"water_assigned_p_series_last_segment_segment_type": {
+		"type": "STRING"
+	},
+	"water_assigned_p_series_last_segment_start_date": {
+		"type": "DATE"
+	},
+	"water_assigned_p_series_last_segment_sw_date": {
+		"type": "DATE"
+	},
+	"water_best_fit_first_segment_b": {
+		"type": "NUMERIC"
+	},
+	"water_best_fit_first_segment_d1_nominal": {
+		"type": "NUMERIC"
+	},
+	"water_best_fit_first_segment_di_eff_sec": {
+		"type": "NUMERIC"
+	},
+	"water_best_fit_first_segment_end_date": {
+		"type": "DATE"
+	},
+	"water_best_fit_first_segment_q_end": {
+		"type": "NUMERIC"
+	},
+	"water_best_fit_first_segment_q_start": {
+		"type": "NUMERIC"
+	},
+	"water_best_fit_first_segment_realized_d_sw_eff_sec": {
+		"type": "NUMERIC"
+	},
+	"water_best_fit_first_segment_segment_type": {
+		"type": "STRING"
+	},
+	"water_best_fit_first_segment_start_date": {
+		"type": "DATE"
+	},
+	"water_best_fit_first_segment_sw_date": {
+		"type": "DATE"
+	},
+	"water_best_fit_last_segment_b": {
+		"type": "NUMERIC"
+	},
+	"water_best_fit_last_segment_d1_nominal": {
+		"type": "NUMERIC"
+	},
+	"water_best_fit_last_segment_di_eff_sec": {
+		"type": "NUMERIC"
+	},
+	"water_best_fit_last_segment_end_date": {
+		"type": "DATE"
+	},
+	"water_best_fit_last_segment_q_end": {
+		"type": "NUMERIC"
+	},
+	"water_best_fit_last_segment_q_start": {
+		"type": "NUMERIC"
+	},
+	"water_best_fit_last_segment_realized_d_sw_eff_sec": {
+		"type": "NUMERIC"
+	},
+	"water_best_fit_last_segment_segment_type": {
+		"type": "STRING"
+	},
+	"water_best_fit_last_segment_start_date": {
+		"type": "DATE"
+	},
+	"water_best_fit_last_segment_sw_date": {
+		"type": "DATE"
+	},
+	"water_disposal": {
+		"type": "NUMERIC"
+	},
+	"water_p10_first_segment_b": {
+		"type": "NUMERIC"
+	},
+	"water_p10_first_segment_d1_nominal": {
+		"type": "NUMERIC"
+	},
+	"water_p10_first_segment_di_eff_sec": {
+		"type": "NUMERIC"
+	},
+	"water_p10_first_segment_end_date": {
+		"type": "DATE"
+	},
+	"water_p10_first_segment_q_end": {
+		"type": "NUMERIC"
+	},
+	"water_p10_first_segment_q_start": {
+		"type": "NUMERIC"
+	},
+	"water_p10_first_segment_realized_d_sw_eff_sec": {
+		"type": "NUMERIC"
+	},
+	"water_p10_first_segment_segment_type": {
+		"type": "STRING"
+	},
+	"water_p10_first_segment_start_date": {
+		"type": "DATE"
+	},
+	"water_p10_first_segment_sw_date": {
+		"type": "DATE"
+	},
+	"water_p10_last_segment_b": {
+		"type": "NUMERIC"
+	},
+	"water_p10_last_segment_d1_nominal": {
+		"type": "NUMERIC"
+	},
+	"water_p10_last_segment_di_eff_sec": {
+		"type": "NUMERIC"
+	},
+	"water_p10_last_segment_end_date": {
+		"type": "DATE"
+	},
+	"water_p10_last_segment_q_end": {
+		"type": "NUMERIC"
+	},
+	"water_p10_last_segment_q_start": {
+		"type": "NUMERIC"
+	},
+	"water_p10_last_segment_realized_d_sw_eff_sec": {
+		"type": "NUMERIC"
+	},
+	"water_p10_last_segment_segment_type": {
+		"type": "STRING"
+	},
+	"water_p10_last_segment_start_date": {
+		"type": "DATE"
+	},
+	"water_p10_last_segment_sw_date": {
+		"type": "DATE"
+	},
+	"water_p50_first_segment_b": {
+		"type": "NUMERIC"
+	},
+	"water_p50_first_segment_d1_nominal": {
+		"type": "NUMERIC"
+	},
+	"water_p50_first_segment_di_eff_sec": {
+		"type": "NUMERIC"
+	},
+	"water_p50_first_segment_end_date": {
+		"type": "DATE"
+	},
+	"water_p50_first_segment_q_end": {
+		"type": "NUMERIC"
+	},
+	"water_p50_first_segment_q_start": {
+		"type": "NUMERIC"
+	},
+	"water_p50_first_segment_realized_d_sw_eff_sec": {
+		"type": "NUMERIC"
+	},
+	"water_p50_first_segment_segment_type": {
+		"type": "STRING"
+	},
+	"water_p50_first_segment_start_date": {
+		"type": "DATE"
+	},
+	"water_p50_first_segment_sw_date": {
+		"type": "DATE"
+	},
+	"water_p50_last_segment_b": {
+		"type": "NUMERIC"
+	},
+	"water_p50_last_segment_d1_nominal": {
+		"type": "NUMERIC"
+	},
+	"water_p50_last_segment_di_eff_sec": {
+		"type": "NUMERIC"
+	},
+	"water_p50_last_segment_end_date": {
+		"type": "DATE"
+	},
+	"water_p50_last_segment_q_end": {
+		"type": "NUMERIC"
+	},
+	"water_p50_last_segment_q_start": {
+		"type": "NUMERIC"
+	},
+	"water_p50_last_segment_realized_d_sw_eff_sec": {
+		"type": "NUMERIC"
+	},
+	"water_p50_last_segment_segment_type": {
+		"type": "STRING"
+	},
+	"water_p50_last_segment_start_date": {
+		"type": "DATE"
+	},
+	"water_p50_last_segment_sw_date": {
+		"type": "DATE"
+	},
+	"water_p90_first_segment_b": {
+		"type": "NUMERIC"
+	},
+	"water_p90_first_segment_d1_nominal": {
+		"type": "NUMERIC"
+	},
+	"water_p90_first_segment_di_eff_sec": {
+		"type": "NUMERIC"
+	},
+	"water_p90_first_segment_end_date": {
+		"type": "DATE"
+	},
+	"water_p90_first_segment_q_end": {
+		"type": "NUMERIC"
+	},
+	"water_p90_first_segment_q_start": {
+		"type": "NUMERIC"
+	},
+	"water_p90_first_segment_realized_d_sw_eff_sec": {
+		"type": "NUMERIC"
+	},
+	"water_p90_first_segment_segment_type": {
+		"type": "STRING"
+	},
+	"water_p90_first_segment_start_date": {
+		"type": "DATE"
+	},
+	"water_p90_first_segment_sw_date": {
+		"type": "DATE"
+	},
+	"water_p90_last_segment_b": {
+		"type": "NUMERIC"
+	},
+	"water_p90_last_segment_d1_nominal": {
+		"type": "NUMERIC"
+	},
+	"water_p90_last_segment_di_eff_sec": {
+		"type": "NUMERIC"
+	},
+	"water_p90_last_segment_end_date": {
+		"type": "DATE"
+	},
+	"water_p90_last_segment_q_end": {
+		"type": "NUMERIC"
+	},
+	"water_p90_last_segment_q_start": {
+		"type": "NUMERIC"
+	},
+	"water_p90_last_segment_realized_d_sw_eff_sec": {
+		"type": "NUMERIC"
+	},
+	"water_p90_last_segment_segment_type": {
+		"type": "STRING"
+	},
+	"water_p90_last_segment_start_date": {
+		"type": "DATE"
+	},
+	"water_p90_last_segment_sw_date": {
+		"type": "DATE"
+	},
+	"water_well_head_eur": {
+		"type": "NUMERIC"
+	},
+	"well_id": {
+		"mode": "REQUIRED",
+		"type": "STRING"
+	},
+	"well_index": {
+		"type": "NUMERIC"
+	},
+	"well_life": {
+		"type": "NUMERIC"
+	},
+	"wi_boe_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"wi_drip_condensate": {
+		"type": "NUMERIC"
+	},
+	"wi_drip_condensate_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"wi_gas": {
+		"type": "NUMERIC"
+	},
+	"wi_gas_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"wi_ngl": {
+		"type": "NUMERIC"
+	},
+	"wi_ngl_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"wi_oil": {
+		"type": "NUMERIC"
+	},
+	"wi_oil_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"payout_duration": {
+		"type": "FLOAT"
+	},
+	"econ_first_production_date": {
+		"type": "DATE"
+	},
+	"oil_start_using_forecast_date": {
+		"type": "DATE"
+	},
+	"gas_start_using_forecast_date": {
+		"type": "DATE"
+	},
+	"water_start_using_forecast_date": {
+		"type": "DATE"
+	},
+	"reversion_date": {
+		"type": "STRING"
+	},
+	"gor": {
+		"type": "NUMERIC"
+	},
+	"wor": {
+		"type": "NUMERIC"
+	},
+	"water_cut": {
+		"type": "NUMERIC"
+	},
+	"pricing_qualifier": {
+		"type": "STRING"
+	},
+	"differentials_qualifier": {
+		"type": "STRING"
+	},
+	"incremental_name": {
+		"type": "STRING"
+	},
+	"incremental_index": {
+		"type": "INTEGER"
+	},
+	"combo_well_incremental_id": {
+		"type": "STRING"
+	},
+	"first_discounted_capex": {
+		"type": "NUMERIC"
+	},
+	"second_discounted_capex": {
+		"type": "NUMERIC"
+	},
+	"net_income": {
+		"type": "NUMERIC"
+	},
+	"first_discount_net_income": {
+		"type": "NUMERIC"
+	},
+	"second_discount_net_income": {
+		"type": "NUMERIC"
+	},
+	"input_oil_price": {
+		"type": "NUMERIC"
+	},
+	"input_gas_price": {
+		"type": "NUMERIC"
+	},
+	"input_ngl_price": {
+		"type": "NUMERIC"
+	},
+	"input_drip_condensate_price": {
+		"type": "NUMERIC"
+	},
+	"oil_differentials_1": {
+		"type": "NUMERIC"
+	},
+	"gas_differentials_1": {
+		"type": "NUMERIC"
+	},
+	"ngl_differentials_1": {
+		"type": "NUMERIC"
+	},
+	"drip_condensate_differentials_1": {
+		"type": "NUMERIC"
+	},
+	"oil_differentials_2": {
+		"type": "NUMERIC"
+	},
+	"gas_differentials_2": {
+		"type": "NUMERIC"
+	},
+	"ngl_differentials_2": {
+		"type": "NUMERIC"
+	},
+	"drip_condensate_differentials_2": {
+		"type": "NUMERIC"
+	},
+	"oil_differentials_3": {
+		"type": "NUMERIC"
+	},
+	"gas_differentials_3": {
+		"type": "NUMERIC"
+	},
+	"ngl_differentials_3": {
+		"type": "NUMERIC"
+	},
+	"drip_condensate_differentials_3": {
+		"type": "NUMERIC"
+	},
+	"gross_mcfe_well_head_volume": {
+		"type": "NUMERIC"
+	},
+	"gross_mcfe_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"wi_mcfe_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"net_mcfe_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"lease_nri": {
+		"type": "NUMERIC"
+	},
+	"forecast_name": {
+		"type": "STRING"
+	},
+	"oil_risk": {
+		"type": "NUMERIC"
+	},
+	"gas_risk": {
+		"type": "NUMERIC"
+	},
+	"ngl_risk": {
+		"type": "NUMERIC"
+	},
+	"drip_condensate_risk": {
+		"type": "NUMERIC"
+	},
+	"water_risk": {
+		"type": "NUMERIC"
+	},
+	"first_discount_roi_undiscounted_capex": {
+		"type": "NUMERIC"
+	},
+	"second_discount_roi_undiscounted_capex": {
+		"type": "NUMERIC"
+	},
+	"oil_well_head_eur_over_pll": {
+		"type": "NUMERIC"
+	},
+	"gas_well_head_eur_over_pll": {
+		"type": "NUMERIC"
+	},
+	"water_well_head_eur_over_pll": {
+		"type": "NUMERIC"
+	},
+	"oil_shrunk_eur_over_pll": {
+		"type": "NUMERIC"
+	},
+	"gas_shrunk_eur_over_pll": {
+		"type": "NUMERIC"
+	},
+	"ngl_shrunk_eur_over_pll": {
+		"type": "NUMERIC"
+	},
+	"drip_condensate_shrunk_eur_over_pll": {
+		"type": "NUMERIC"
+	},
+	"first_discount_payout": {
+		"type": "STRING"
+	},
+	"first_discount_payout_duration": {
+		"type": "NUMERIC"
+	},
+	"second_discount_payout": {
+		"type": "STRING"
+	},
+	"second_discount_payout_duration": {
+		"type": "NUMERIC"
+	},
+	"one_month_gross_oil_well_head_volume": {
+		"type": "NUMERIC"
+	},
+	"three_month_gross_oil_well_head_volume": {
+		"type": "NUMERIC"
+	},
+	"six_month_gross_oil_well_head_volume": {
+		"type": "NUMERIC"
+	},
+	"one_year_gross_oil_well_head_volume": {
+		"type": "NUMERIC"
+	},
+	"two_year_gross_oil_well_head_volume": {
+		"type": "NUMERIC"
+	},
+	"three_year_gross_oil_well_head_volume": {
+		"type": "NUMERIC"
+	},
+	"five_year_gross_oil_well_head_volume": {
+		"type": "NUMERIC"
+	},
+	"ten_year_gross_oil_well_head_volume": {
+		"type": "NUMERIC"
+	},
+	"one_month_gross_oil_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"three_month_gross_oil_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"six_month_gross_oil_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"one_year_gross_oil_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"two_year_gross_oil_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"three_year_gross_oil_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"five_year_gross_oil_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"ten_year_gross_oil_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"one_month_net_oil_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"three_month_net_oil_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"six_month_net_oil_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"one_year_net_oil_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"two_year_net_oil_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"three_year_net_oil_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"five_year_net_oil_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"ten_year_net_oil_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"one_month_wi_oil_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"three_month_wi_oil_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"six_month_wi_oil_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"one_year_wi_oil_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"two_year_wi_oil_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"three_year_wi_oil_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"five_year_wi_oil_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"ten_year_wi_oil_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"one_month_gross_gas_well_head_volume": {
+		"type": "NUMERIC"
+	},
+	"three_month_gross_gas_well_head_volume": {
+		"type": "NUMERIC"
+	},
+	"six_month_gross_gas_well_head_volume": {
+		"type": "NUMERIC"
+	},
+	"one_year_gross_gas_well_head_volume": {
+		"type": "NUMERIC"
+	},
+	"two_year_gross_gas_well_head_volume": {
+		"type": "NUMERIC"
+	},
+	"three_year_gross_gas_well_head_volume": {
+		"type": "NUMERIC"
+	},
+	"five_year_gross_gas_well_head_volume": {
+		"type": "NUMERIC"
+	},
+	"ten_year_gross_gas_well_head_volume": {
+		"type": "NUMERIC"
+	},
+	"one_month_gross_gas_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"three_month_gross_gas_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"six_month_gross_gas_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"one_year_gross_gas_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"two_year_gross_gas_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"three_year_gross_gas_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"five_year_gross_gas_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"ten_year_gross_gas_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"one_month_net_gas_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"three_month_net_gas_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"six_month_net_gas_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"one_year_net_gas_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"two_year_net_gas_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"three_year_net_gas_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"five_year_net_gas_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"ten_year_net_gas_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"one_month_wi_gas_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"three_month_wi_gas_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"six_month_wi_gas_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"one_year_wi_gas_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"two_year_wi_gas_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"three_year_wi_gas_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"five_year_wi_gas_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"ten_year_wi_gas_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"one_month_gross_boe_well_head_volume": {
+		"type": "NUMERIC"
+	},
+	"three_month_gross_boe_well_head_volume": {
+		"type": "NUMERIC"
+	},
+	"six_month_gross_boe_well_head_volume": {
+		"type": "NUMERIC"
+	},
+	"one_year_gross_boe_well_head_volume": {
+		"type": "NUMERIC"
+	},
+	"two_year_gross_boe_well_head_volume": {
+		"type": "NUMERIC"
+	},
+	"three_year_gross_boe_well_head_volume": {
+		"type": "NUMERIC"
+	},
+	"five_year_gross_boe_well_head_volume": {
+		"type": "NUMERIC"
+	},
+	"ten_year_gross_boe_well_head_volume": {
+		"type": "NUMERIC"
+	},
+	"one_month_gross_boe_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"three_month_gross_boe_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"six_month_gross_boe_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"one_year_gross_boe_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"two_year_gross_boe_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"three_year_gross_boe_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"five_year_gross_boe_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"ten_year_gross_boe_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"one_month_net_boe_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"three_month_net_boe_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"six_month_net_boe_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"one_year_net_boe_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"two_year_net_boe_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"three_year_net_boe_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"five_year_net_boe_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"ten_year_net_boe_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"one_month_wi_boe_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"three_month_wi_boe_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"six_month_wi_boe_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"one_year_wi_boe_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"two_year_wi_boe_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"three_year_wi_boe_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"five_year_wi_boe_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"ten_year_wi_boe_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"one_month_gross_ngl_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"three_month_gross_ngl_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"six_month_gross_ngl_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"one_year_gross_ngl_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"two_year_gross_ngl_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"three_year_gross_ngl_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"five_year_gross_ngl_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"ten_year_gross_ngl_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"one_month_net_ngl_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"three_month_net_ngl_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"six_month_net_ngl_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"one_year_net_ngl_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"two_year_net_ngl_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"three_year_net_ngl_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"five_year_net_ngl_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"ten_year_net_ngl_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"one_month_wi_ngl_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"three_month_wi_ngl_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"six_month_wi_ngl_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"one_year_wi_ngl_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"two_year_wi_ngl_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"three_year_wi_ngl_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"five_year_wi_ngl_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"ten_year_wi_ngl_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"one_month_gross_water_well_head_volume": {
+		"type": "NUMERIC"
+	},
+	"three_month_gross_water_well_head_volume": {
+		"type": "NUMERIC"
+	},
+	"six_month_gross_water_well_head_volume": {
+		"type": "NUMERIC"
+	},
+	"one_year_gross_water_well_head_volume": {
+		"type": "NUMERIC"
+	},
+	"two_year_gross_water_well_head_volume": {
+		"type": "NUMERIC"
+	},
+	"three_year_gross_water_well_head_volume": {
+		"type": "NUMERIC"
+	},
+	"five_year_gross_water_well_head_volume": {
+		"type": "NUMERIC"
+	},
+	"ten_year_gross_water_well_head_volume": {
+		"type": "NUMERIC"
+	},
+	"one_month_gross_drip_condensate_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"three_month_gross_drip_condensate_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"six_month_gross_drip_condensate_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"one_year_gross_drip_condensate_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"two_year_gross_drip_condensate_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"three_year_gross_drip_condensate_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"five_year_gross_drip_condensate_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"ten_year_gross_drip_condensate_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"one_month_net_drip_condensate_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"three_month_net_drip_condensate_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"six_month_net_drip_condensate_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"one_year_net_drip_condensate_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"two_year_net_drip_condensate_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"three_year_net_drip_condensate_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"five_year_net_drip_condensate_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"ten_year_net_drip_condensate_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"one_month_wi_drip_condensate_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"three_month_wi_drip_condensate_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"six_month_wi_drip_condensate_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"one_year_wi_drip_condensate_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"two_year_wi_drip_condensate_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"three_year_wi_drip_condensate_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"five_year_wi_drip_condensate_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"ten_year_wi_drip_condensate_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"oil_production_as_of_date": {
+		"type": "NUMERIC"
+	},
+	"gas_production_as_of_date": {
+		"type": "NUMERIC"
+	},
+	"water_production_as_of_date": {
+		"type": "NUMERIC"
+	},
+	"last_one_month_oil_average": {
+		"type": "NUMERIC"
+	},
+	"last_three_month_oil_average": {
+		"type": "NUMERIC"
+	},
+	"last_one_month_gas_average": {
+		"type": "NUMERIC"
+	},
+	"last_three_month_gas_average": {
+		"type": "NUMERIC"
+	},
+	"last_one_month_boe_average": {
+		"type": "NUMERIC"
+	},
+	"last_three_month_boe_average": {
+		"type": "NUMERIC"
+	},
+	"last_one_month_mcfe_average": {
+		"type": "NUMERIC"
+	},
+	"last_three_month_mcfe_average": {
+		"type": "NUMERIC"
+	},
+	"last_one_month_water_average": {
+		"type": "NUMERIC"
+	},
+	"last_three_month_water_average": {
+		"type": "NUMERIC"
+	},
+	"oil_boe_conversion": {
+		"type": "NUMERIC"
+	},
+	"wet_gas_boe_conversion": {
+		"type": "NUMERIC"
+	},
+	"dry_gas_boe_conversion": {
+		"type": "NUMERIC"
+	},
+	"ngl_boe_conversion": {
+		"type": "NUMERIC"
+	},
+	"drip_condensate_boe_conversion": {
+		"type": "NUMERIC"
+	},
+	"oil_tc_risk": {
+		"type": "NUMERIC"
+	},
+	"gas_tc_risk": {
+		"type": "NUMERIC"
+	},
+	"water_tc_risk": {
+		"type": "NUMERIC"
+	},
+	"pre_risk_oil_volume": {
+		"type": "NUMERIC"
+	},
+	"pre_risk_gas_volume": {
+		"type": "NUMERIC"
+	},
+	"pre_risk_water_volume": {
+		"type": "NUMERIC"
+	},
+	"pre_risk_ngl_volume": {
+		"type": "NUMERIC"
+	},
+	"pre_risk_drip_condensate_volume": {
+		"type": "NUMERIC"
+	},
+	"unshrunk_oil_volume": {
+		"type": "NUMERIC"
+	},
+	"unshrunk_gas_volume": {
+		"type": "NUMERIC"
+	},
+	"pre_flare_gas_volume": {
+		"type": "NUMERIC"
+	},
+	"apply_normalization": {
+		"type": "STRING"
+	},
+	"total_gross_capex": {
+		"type": "NUMERIC"
+	},
+	"pre_yield_gas_volume_drip_condensate": {
+		"type": "NUMERIC"
+	},
+	"pre_yield_gas_volume_ngl": {
+		"type": "NUMERIC"
+	},
+	"bfit_first_reversion_amount": {
+		"type": "NUMERIC"
+	},
+	"oil_differentials_input": {
+		"type": "NUMERIC"
+	},
+	"gas_differentials_input": {
+		"type": "NUMERIC"
+	},
+	"ngl_differentials_input": {
+		"type": "NUMERIC"
+	},
+	"drip_condensate_differentials_input": {
+		"type": "NUMERIC"
+	},
+	"net_oil_well_head_volume": {
+		"type": "NUMERIC"
+	},
+	"net_gas_well_head_volume": {
+		"type": "NUMERIC"
+	},
+	"net_water_well_head_volume": {
+		"type": "NUMERIC"
+	},
+	"first_reversion_nri_drip_condensate": {
+		"type": "NUMERIC"
+	},
+	"first_reversion_nri_gas": {
+		"type": "NUMERIC"
+	},
+	"first_reversion_nri_ngl": {
+		"type": "NUMERIC"
+	},
+	"first_reversion_nri_oil": {
+		"type": "NUMERIC"
+	},
+	"total_oil_variable_expense_input": {
+		"type": "NUMERIC"
+	},
+	"total_gas_variable_expense_input": {
+		"type": "NUMERIC"
+	},
+	"total_water_variable_expense_input": {
+		"type": "NUMERIC"
+	},
+	"total_ngl_variable_expense_input": {
+		"type": "NUMERIC"
+	},
+	"total_drip_condensate_variable_expense_input": {
+		"type": "NUMERIC"
+	},
+	"first_discount_rate": {
+		"type": "NUMERIC"
+	},
+	"second_discount_rate": {
+		"type": "NUMERIC"
+	},
+	"discount_table_rate_1": {
+		"type": "NUMERIC"
+	},
+	"discount_table_rate_2": {
+		"type": "NUMERIC"
+	},
+	"one_year_capital_efficiency_attribute": {
+		"type": "NUMERIC"
+	},
+	"three_years_capital_efficiency_attribute": {
+		"type": "NUMERIC"
+	},
+	"well_life_capital_efficiency_attribute": {
+		"type": "NUMERIC"
+	},
+	"first_reversion_wi_drip_condensate": {
+		"type": "NUMERIC"
+	},
+	"first_reversion_wi_gas": {
+		"type": "NUMERIC"
+	},
+	"first_reversion_wi_ngl": {
+		"type": "NUMERIC"
+	},
+	"first_reversion_wi_oil": {
+		"type": "NUMERIC"
+	},
+	"wi_water_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"net_water_sales_volume": {
+		"type": "NUMERIC"
+	},
+	"original_lease_nri": {
+		"type": "NUMERIC"
+	},
+	"ownership_reversion_model_name": {
+		"type": "STRING"
+	},
+	"differentials_model_name": {
+		"type": "STRING"
+	},
+	"production_taxes_model_name": {
+		"type": "STRING"
+	},
+	"capex_model_name": {
+		"type": "STRING"
+	},
+	"capex_description": {
+		"type": "STRING"
+	},
+	"expenses_model_name": {
+		"type": "STRING"
+	},
+	"expenses_description": {
+		"type": "STRING"
+	},
+	"stream_properties_model_name": {
+		"type": "STRING"
+	},
+	"dates_model_name": {
+		"type": "STRING"
+	},
+	"pricing_model_name": {
+		"type": "STRING"
+	},
+	"risking_model_name": {
+		"type": "STRING"
+	},
+	"afit_irr": {
+		"type": "NUMERIC"
+	},
+	"afit_undiscounted_roi": {
+		"type": "NUMERIC"
+	},
+	"afit_first_discount_roi": {
+		"type": "NUMERIC"
+	},
+	"afit_second_discount_roi": {
+		"type": "NUMERIC"
+	},
+	"afit_first_discount_roi_undiscounted_capex": {
+		"type": "NUMERIC"
+	},
+	"afit_second_discount_roi_undiscounted_capex": {
+		"type": "NUMERIC"
+	},
+	"afit_first_discount_payout": {
+		"type": "string"
+	},
+	"afit_first_discount_payout_duration": {
+		"type": "NUMERIC"
+	},
+	"afit_second_discount_payout": {
+		"type": "string"
+	},
+	"afit_second_discount_payout_duration": {
+		"type": "NUMERIC"
+	},
+	"afit_undiscounted_payout": {
+		"type": "string"
+	},
+	"afit_payout_duration": {
+		"type": "NUMERIC"
+	},
+	"gross_co2e_mass_emission": {
+		"type": "NUMERIC"
+	},
+	"wi_co2e_mass_emission": {
+		"type": "NUMERIC"
+	},
+	"nri_co2e_mass_emission": {
+		"type": "NUMERIC"
+	},
+	"gross_co2_mass_emission": {
+		"type": "NUMERIC"
+	},
+	"wi_co2_mass_emission": {
+		"type": "NUMERIC"
+	},
+	"nri_co2_mass_emission": {
+		"type": "NUMERIC"
+	},
+	"gross_ch4_mass_emission": {
+		"type": "NUMERIC"
+	},
+	"wi_ch4_mass_emission": {
+		"type": "NUMERIC"
+	},
+	"nri_ch4_mass_emission": {
+		"type": "NUMERIC"
+	},
+	"gross_n2o_mass_emission": {
+		"type": "NUMERIC"
+	},
+	"wi_n2o_mass_emission": {
+		"type": "NUMERIC"
+	},
+	"nri_n2o_mass_emission": {
+		"type": "NUMERIC"
+	},
+	"co2e_expense": {
+		"type": "NUMERIC"
+	},
+	"co2_expense": {
+		"type": "NUMERIC"
+	},
+	"ch4_expense": {
+		"type": "NUMERIC"
+	},
+	"n2o_expense": {
+		"type": "NUMERIC"
+	},
+	"total_carbon_expense": {
+		"type": "NUMERIC"
+	},
+	"tax_credit": {
+		"type": "NUMERIC"
+	},
+	"gross_well_count": {
+		"type": "NUMERIC"
+	},
+	"wi_well_count": {
+		"type": "NUMERIC"
+	},
+	"nri_well_count": {
+		"type": "NUMERIC"
+	}
+}

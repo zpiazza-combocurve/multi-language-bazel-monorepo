@@ -1,0 +1,41 @@
+{
+	"name": "@combocurve/powerbi",
+	"version": "0.1.0",
+	"private": true,
+	"description": "",
+	"license": "UNLICENSED",
+	"exports": {
+		"./auth/*": {
+			"types": "./src/auth/*.ts",
+			"development": "./src/auth/*.ts",
+			"default": "./dist/auth/*.js"
+		},
+		"./client/*": {
+			"types": "./src/client/*.ts",
+			"development": "./src/client/*.ts",
+			"default": "./dist/client/*.js"
+		}
+	},
+	"scripts": {
+		"prebuild": "yarn g:rimraf dist",
+		"build": "yarn g:tsc -p tsconfig.build.json",
+		"lint:typescript": "yarn g:lint:typescript",
+		"test": "yarn g:test",
+		"test:ci": "yarn g:test:ci",
+		"test:watch": "npm run test -- --watch"
+	},
+	"dependencies": {
+		"adal-node": "0.2.3",
+		"exponential-backoff": "3.1.1",
+		"form-data": "4.0.0",
+		"node-fetch": "2.6.12"
+	},
+	"devDependencies": {
+		"@combocurve/tsconfig": "workspace:*",
+		"@types/lodash": "4.14.195",
+		"@types/node-fetch": "2.6.4"
+	},
+	"volta": {
+		"extends": "../../package.json"
+	}
+}

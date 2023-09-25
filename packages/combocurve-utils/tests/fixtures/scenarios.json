@@ -1,0 +1,139 @@
+[
+	{
+		"_id": "5e27305e4f59a9ec64eb576a",
+		"history": {
+			"nameChange": [],
+			"scenarioDeleted": [],
+			"permChange": []
+		},
+		"wells": [],
+		"name": "S1",
+		"project": "5e27302d4f59a9ec64eb5769",
+		"createdBy": "5d4303aeefe8a100089a7992",
+		"createdAt": "2020-01-21T17:09:50.686Z",
+		"updatedAt": "2020-01-21T17:09:50.686Z",
+		"columns": {
+			"forecast": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"forecast_p_series": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"schedule": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"capex": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"dates": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"depreciation": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"escalation": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"expenses": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"ownership_reversion": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"pricing_differentials": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"production_taxes": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"production_vs_fit": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"reserves_category": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"risking": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"stream_properties": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			}
+		},
+		"schemaVersion": 2
+	}
+]

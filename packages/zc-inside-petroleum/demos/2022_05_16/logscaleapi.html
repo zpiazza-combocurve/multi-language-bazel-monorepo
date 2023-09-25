@@ -1,0 +1,104 @@
+<html>
+	<head>
+	</head>
+	<body>
+
+		<script type="module">
+
+            var cdata = function() {
+                return {
+                    "type":"line",
+                    "scaleX":{
+						"progression":"log",
+						"minValue":0.005,
+						"maxValue":500
+                    },
+                    "scaleY":{
+						"progression":"log",
+						"minValue":0.002,
+						"maxValue":200
+                    },
+                    "series":[
+						{
+							"values":[[0.01,0.01], [100, 100]]
+						}
+                    ]
+                };
+            }
+
+			import zingchart from './../../build/es6/zingchart-es6.min.js';
+			import * as selection_tool from './../../build/es6/modules-es6/zingchart-selection-tool.min.js';
+
+			zingchart.render({
+				id : 'zc',
+				width : 1000,
+				height : 600,
+				data : cdata(),
+				modules : 'selection-tool'
+			});
+
+			zingchart.bind('zc', 'zingchart.plugins.selection-tool.mouseup', function(info) {
+				let id = info.id;
+				let poly = info.poly;
+				
+				let minX = Number.MAX_VALUE;
+				let maxX = -Number.MAX_VALUE;
+				let minY = Number.MAX_VALUE;
+				let maxY = -Number.MAX_VALUE;
+				for (let i = 0; i < poly.length; i++) {
+					minX = Math.min(minX, poly[i][0]);
+					maxX = Math.max(maxX, poly[i][0]);
+					minY = Math.min(minY, poly[i][1]);
+					maxY = Math.max(maxY, poly[i][1]);
+				}
+				const minInfo = zingchart.exec(id, 'getxyinfo', {
+					x: minX,
+					y: minY,
+				});
+				const maxInfo = zingchart.exec(id, 'getxyinfo', {
+					x: maxX,
+					y: maxY,
+				});
+				
+				var reduceInfoK = function(ret, curValue) {
+					if (curValue.infotype === 'key-scale' && curValue.plotidx === 0) {
+						return curValue.scalenumvalue;
+					}
+					return ret;
+				};
+				var reduceInfoV = function(ret, curValue) {
+					if (curValue.infotype === 'value-scale' && curValue.plotidx === 0) {
+						return curValue.scalevalue;
+					}
+					return ret;
+				};
+
+				minX = minInfo.reduce(reduceInfoK, null);
+				minY = minInfo.reduce(reduceInfoV, null);
+				maxX = maxInfo.reduce(reduceInfoK, null);
+				maxY = maxInfo.reduce(reduceInfoV, null);
+					
+				zingchart.exec('zc', 'addplot', {
+					data : {
+						type : 'line',
+						line : '2px solid #ff0000',
+						values : [
+							[minX,minY],
+							[minX,maxY],
+							[maxX,maxY],
+							[maxX,minY],
+							[minX,minY]
+						]
+					}
+				});
+
+			});
+
+		</script>
+
+		<p>Use selection tool to highlight a zone on the chart</p>
+
+		<div id="zc"></div>
+
+	</body>
+</html>

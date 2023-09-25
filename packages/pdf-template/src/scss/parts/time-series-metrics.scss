@@ -1,0 +1,29 @@
+.time-series-metrics {
+  table {
+    width: 100%;
+    border-spacing: 15px 0;
+  }
+
+  th {
+    text-align: left;
+    border-bottom: 1px solid black;
+    border-collapse: separate;
+    font-weight: normal;
+    font-size: 1rem;
+
+    span {
+      display: block;
+      &:first-child {
+        margin-bottom: 1rem;
+      }
+    }
+
+    .date-label {
+      font-size: .9rem;
+    }
+  }
+
+  td {
+    border: none;
+  }
+}

@@ -1,0 +1,116 @@
+[
+	{
+		"_id": "5e41b49612f61e0012dfa852",
+		"fits": {
+			"oil": "5e714980a99769fb384d68b5",
+			"gas": null,
+			"water": null
+		},
+		"headers": {
+			"first_prod_date": "2020-04-12T00:00:00.000Z",
+			"perf_lateral_length": 10000,
+			"true_vertical_depth": 1000,
+			"total_prop_weight": 1000
+		},
+		"assumptions": {
+			"capex": "5e3c90be9284cd0013f8b830",
+			"risking": "5ede60b914e0660012252eac",
+			"expenses": "5e3856877bd8bc001232c7a2",
+			"escalation": null,
+			"depreciation": null,
+			"general_options": "5e9369a77b5573001268a6fc",
+			"production_taxes": "5e3856977bd8bc001232c7a3",
+			"production_vs_fit": null,
+			"stream_properties": "5e3856717bd8bc001232c7a1",
+			"ownership_reversion": "5e9369c57b5573001268a701",
+			"pricing_differentials": "5e27984b9489150012928060",
+			"dates": "5e9369bb7b5573001268a700"
+		},
+		"fitted": false,
+		"normalizations": ["5e44285f44399831aefd1d6d"],
+		"wells": ["5e3854413fba1ea7a0424ff7"],
+		"wellsAdded": false,
+		"wellsRemoved": false,
+		"copiedFrom": null,
+		"pSeries": {
+			"percentile": "P50"
+		},
+		"createdBy": "5bd22c63cc534716dc3929cc",
+		"forecast": "5e3854cc7bd8bc00123259b5",
+		"name": "TC-6",
+		"project": "5e38535a7bd8bc00123259b4",
+		"createdAt": "2020-02-10T19:52:54.159Z",
+		"updatedAt": "2020-06-08T16:00:58.701Z",
+		"activeUmbrellas": {
+			"pSeries": "5ede5fad14e0660012252eaa",
+			"assumptions": {
+				"capex": "5ede5fb914e0660012252eab"
+			}
+		},
+		"tcType": "rate",
+		"basePhase": null,
+		"phaseType": {
+			"oil": "rate",
+			"gas": "rate",
+			"water": "rate"
+		},
+		"forecastSeries": "P50"
+	},
+	{
+		"_id": "5e471774f41ba0814821e3bd",
+		"fits": {
+			"oil": "5e714980a99769fb384d68b5",
+			"gas": null,
+			"water": null
+		},
+		"headers": {
+			"first_prod_date": "2020-04-12T00:00:00.000Z",
+			"perf_lateral_length": 10000,
+			"true_vertical_depth": 1000,
+			"total_prop_weight": 1000
+		},
+		"assumptions": {
+			"capex": "5e3c90be9284cd0013f8b830",
+			"risking": "5ede60b914e0660012252eac",
+			"expenses": "5e3856877bd8bc001232c7a2",
+			"escalation": null,
+			"depreciation": null,
+			"general_options": "5e9369a77b5573001268a6fc",
+			"production_taxes": "5e3856977bd8bc001232c7a3",
+			"production_vs_fit": null,
+			"stream_properties": "5e3856717bd8bc001232c7a1",
+			"ownership_reversion": "5e9369c57b5573001268a701",
+			"pricing_differentials": null,
+			"dates": "5e9369bb7b5573001268a700"
+		},
+		"fitted": false,
+		"normalizations": ["5e44285f44399831aefd1d6d"],
+		"wells": ["5e3854413fba1ea7a0424ff7"],
+		"wellsAdded": false,
+		"wellsRemoved": false,
+		"copiedFrom": null,
+		"pSeries": {
+			"percentile": "P50"
+		},
+		"createdBy": "5bd22c63cc534716dc3929cc",
+		"forecast": "5e3854cc7bd8bc00123259b5",
+		"name": "TC-6",
+		"project": "5e38535a7bd8bc00123259b4",
+		"createdAt": "2020-02-10T19:52:54.159Z",
+		"updatedAt": "2020-06-08T16:00:58.701Z",
+		"activeUmbrellas": {
+			"pSeries": "5ede5fad14e0660012252eaa",
+			"assumptions": {
+				"capex": "5ede5fb914e0660012252eab"
+			}
+		},
+		"tcType": "rate",
+		"basePhase": null,
+		"phaseType": {
+			"oil": "rate",
+			"gas": "rate",
+			"water": "rate"
+		},
+		"forecastSeries": "P50"
+	}
+]

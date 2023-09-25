@@ -1,0 +1,79 @@
+<html>
+	<head>
+	</head>
+	<body>
+
+		<script type="module">
+
+            var cdata = function(type) {
+                return {
+                    "type":type,
+					"title":{
+						"text":"Type=" + type
+					},
+                    "scaleX":{
+						"zooming":true
+                    },
+                    "scaleY":{
+						"zooming":true
+                    },
+					"plot":{
+						"lineWidth":15,
+						"hoverState":{
+							"visible":false
+						}
+					},
+					"labels":[
+						{
+							"id":"l1",
+							"x":195,
+							"y":90,
+							"placement":"top",
+							"text":"[+]",
+							"backgroundColor":"#ffff00",
+							"fontSize":11,
+							"borderRadius":9,
+							"tooltip":{
+								"text":"My Label"
+							}
+						}
+					],
+                    "series":[
+						{
+							"values":[ 51,53,47,60,48,52,75,52,55,47,60,48 ]
+						}
+                    ]
+                };
+            }
+
+			import zingchart from './../../build/es6/zingchart-es6.min.js';
+			import * as ip_fastline from './../../build/es6/_modules-es6/zingchart-insidepetroleum-fastline.min.js';
+			//import * as ip_fastline from './../../src/zingchart-fastline.js';
+
+			zingchart.render({
+				id : 'zc',
+				width : 400,
+				height : 400,
+				data : cdata('fastline'),
+				output : 'canvas',
+				modules : 'fastline'
+			});
+
+			zingchart.render({
+				id : 'zc2',
+				width : 400,
+				height : 400,
+				data : cdata('line')
+			});
+
+			zingchart.bind(null, 'label_click', function(p) {
+				console.log('Label clicked!');
+			});
+
+		</script>
+
+		<div id="zc" style="float:left;margin:20px;"></div>
+		<div id="zc2" style="float:left;margin:20px;"></div>
+
+	</body>
+</html>

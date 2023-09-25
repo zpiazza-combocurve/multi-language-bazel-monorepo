@@ -1,0 +1,23 @@
+{
+  "name": "zc-inside-petroleum",
+  "version": "2.9.4-20210412",
+  "description": "ZingChart private repo (ZC Lib, FastLine, Demos) for Inside Petroleum ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zingsoftinc/zc-inside-petroleum.git"
+  },
+  "keywords": [
+    "zingchart",
+    "fastline"
+  ],
+  "author": "ZingSoft Inc.",
+  "license": "ZingSoft",
+  "bugs": {
+    "url": "https://github.com/zingsoftinc/zc-inside-petroleum/issues"
+  },
+  "homepage": "https://github.com/zingsoftinc/zc-inside-petroleum#readme"
+}

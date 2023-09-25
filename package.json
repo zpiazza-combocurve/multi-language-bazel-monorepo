@@ -1,52 +1,107 @@
 {
-  "name": "multi-language-bazel-monorepo",
-  "version": "0.3.1",
-  "private": true,
-  "devDependencies": {
-    "@bazel/jasmine": "5.3.0",
-    "@semantic-release/git": "^10.0.1",
-    "jasmine": "4.0.2",
-    "jasmine-core": "4.0.1",
-    "jest": "^27.5.1",
-    "jest-cli": "^29.6.1",
-    "jest-junit": "^16.0.0",
-    "semantic-release": "^22.0.0"
-  },
-  "scripts": {
-    "preinstall": "npx only-allow pnpm",
-    "build": "bazel build //...",
-    "test": "bazel test //...",
-    "semantic-release": "semantic-release"
-  },
-  "dependencies": {
-    "@bazel/typescript": "5.7.0",
-    "@testing-library/jest-dom": "^6.1.3",
-    "@testing-library/react": "^14.0.0",
-    "@types/react": "^18.0.22",
-    "@types/react-dom": "^18.0.7",
-    "@vitejs/plugin-react": "^4.0.4",
-    "crypto-js": "^4.1.1",
-    "esbuild": "0.19.3",
-    "express": "4.17.3",
-    "jest-styled-components": "^7.1.1",
-    "mermaid": "^10.4.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-scripts": "5.0.1",
-    "semantic-release": "^22.0.0",
-    "typescript": "4.8.4",
-    "uuid": "^9.0.1",
-    "vite": "^4.4.9",
-    "vite-tsconfig-paths": "^4.2.1",
-    "vitest": "^0.34.5",
-    "web-vitals": "^2.1.4"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/zpiazza-combocurve/multi-language-bazel-monorepo.git"
-  },
-  "volta": {
-    "node": "20.6.1",
-    "pnpm": "8.7.6"
-  }
+	"name": "main-combocurve",
+	"version": "1.0.0",
+	"private": true,
+	"description": "ComboCurve client and Node.js APIs",
+	"license": "UNLICENSED",
+	"scripts": {
+		"ci:eslint": "eslint --quiet .",
+		"ci:prettier": "prettier --check .",
+		"dev": "./pwd.mjs pnpm dotenv -c development -- pnpm turbo run dev --no-daemon --filter='combocurve-internal-api' --filter='combocurve-client' --filter='@combocurve/dal'",
+		"dev:api": "pnpm dev:ws combocurve-internal-api",
+		"dev:cf": "pnpm dev:ws cloud-functions-dev-server",
+		"dev:client": "pnpm dev:ws combocurve-client",
+		"dev:cr:copy": "pnpm dev:ws cloud-run-copy",
+		"dev:cr:forecast": "pnpm dev:ws forecast-service",
+		"dev:cr:powerbi": "pnpm dev:ws powerbi",
+		"dev:cr:project-transfer": "pnpm dev:ws project-transfer",
+		"dev:cr:well": "pnpm dev:ws well_service",
+		"dev:dal": "pnpm dev:ws @combocurve/dal",
+		"dev:ws": "./pwd.mjs pnpm dotenv -c development -- turbo run dev --no-daemon --filter",
+		"g:babel": "cd $INIT_CWD && babel",
+		"g:dev:babel": "cd $INIT_CWD && NODE_OPTIONS=\"${NODE_OPTIONS:-} --conditions=development\" dotenv -c development -- babel-watch",
+		"g:dev:ts": "cd $INIT_CWD && NODE_OPTIONS=\"${NODE_OPTIONS:-} --conditions=development\" dotenv -c development -- ts-node-dev --transpile-only",
+		"g:lint:typescript": "cd $INIT_CWD && tsc --noEmit",
+		"g:prettier": "prettier --write .",
+		"g:rimraf": "cd $INIT_CWD && rimraf",
+		"g:test": "cd $INIT_CWD && dotenv -c test -- jest --passWithNoTests",
+		"g:test:ci": "cd $INIT_CWD && dotenv -c test -- jest --ci --reporters=default --reporters=jest-junit --passWithNoTests --maxWorkers 4 --collect-coverage --coverageReporters json-summary --coverageDirectory $JEST_COVERAGE_DIRECTORY",
+		"g:ts-node": "cd $INIT_CWD && ts-node",
+		"g:tsc": "cd $INIT_CWD && tsc",
+		"g:turbo:dev": "cd $INIT_CWD && turbo run dev --no-daemon",
+		"g:turbo:lint": "cd $INIT_CWD && turbo run lint:typescript --no-daemon",
+		"g:turbo:test": "cd $INIT_CWD && turbo run test --no-daemon",
+		"postinstall": "husky install",
+		"lint": "pnpm turbo run lint:typescript --filter='!zc-inside-petroleum' --filter='!passwordless-mongostore'",
+		"sync": "git submodule update --init && pnpm install",
+		"syncpack:fix": "pnpm syncpack fix-mismatches || true && pnpm syncpack prompt || true && pnpm syncpack set-semver-ranges",
+		"syncpack:lint": "syncpack list-mismatches",
+		"test": "pnpm turbo run test --filter='!zc-inside-petroleum' --filter='!passwordless-mongostore' --filter='!combocurve-cli'",
+		"update-deps": "ncu -i --target=minor --format=group -ws --root"
+	},
+	"lint-staged": {
+		"**/*": [
+			"prettier --check --ignore-unknown"
+		],
+		"proto/**/*.proto": [
+			"bash -c 'buf format -w proto/'"
+		],
+		"**/*.{js,ts,tsx}": [
+			"eslint --quiet"
+		]
+	},
+	"resolutions": {
+		"@mui/styled-engine": "npm:@mui/styled-engine-sc@^5.12.0",
+		"@types/react": "17.0.0",
+		"pdfmake@0.2.5": "patch:pdfmake@npm%3A0.2.5#./.pnpm/patches/pdfmake-npm-0.2.5-7672c264cd.patch",
+		"react": "17.0.2",
+		"react-dom": "17.0.2",
+		"react-js-cron-mui@1.0.0": "patch:react-js-cron-mui@npm%3A1.0.0#./.pnpm/patches/react-js-cron-mui-npm-1.0.0-343e30915d.patch",
+		"typescript": "5.2.2"
+	},
+	"devDependencies": {
+		"@babel/cli": "7.22.9",
+		"@babel/core": "7.22.9",
+		"@babel/preset-env": "7.22.9",
+		"@babel/preset-typescript": "7.22.5",
+		"@babel/register": "7.22.5",
+		"@bufbuild/buf": "1.15.0-1",
+		"@combocurve/eslint-config": "workspace:*",
+		"@combocurve/prettier-config": "workspace:*",
+		"@jest/globals": "28.1.3",
+		"@jest/types": "28.1.3",
+		"@types/jest": "28.1.8",
+		"babel-jest": "28.1.3",
+		"babel-plugin-tsconfig-paths-module-resolver": "1.0.4",
+		"babel-watch": "7.8.1",
+		"copyfiles": "2.4.1",
+		"dotenv": "10.0.0",
+		"dotenv-cli": "7.2.1",
+		"eslint": "8.45.0",
+		"husky": "8.0.3",
+		"jest": "28.1.3",
+		"jest-diff": "28.1.3",
+		"jest-junit": "14.0.1",
+		"jest-watch-typeahead": "2.2.2",
+		"lint-staged": "13.2.3",
+		"npm-check-updates": "16.10.16",
+		"plop": "3.1.2",
+		"prettier": "2.8.7",
+		"rimraf": "5.0.1",
+		"syncpack": "10.7.3",
+		"ts-jest": "28.0.8",
+		"ts-node": "10.9.1",
+		"ts-node-dev": "2.0.0",
+		"tsconfig-paths": "4.2.0",
+		"turbo": "1.9.3",
+		"typescript": "5.2.2"
+	},
+	"packageManager": "pnpm@8.7.6",
+	"engines": {
+		"node": "20.6.1"
+	},
+	"volta": {
+		"node": "20.6.1",
+		"pnpm": "8.7.6"
+	}
 }

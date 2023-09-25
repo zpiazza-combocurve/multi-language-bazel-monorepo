@@ -1,0 +1,12 @@
+{
+	"name": "@combocurve/tsconfig",
+	"private": true,
+	"license": "UNLICENSED",
+	"exports": {
+		".": "./tsconfig.base.json",
+		"./package": "./tsconfig.package.json"
+	},
+	"volta": {
+		"extends": "../../package.json"
+	}
+}

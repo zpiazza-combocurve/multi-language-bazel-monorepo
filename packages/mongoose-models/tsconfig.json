@@ -1,0 +1,4 @@
+{
+	"extends": "../../packages/tsconfig/tsconfig.package.json",
+	"exclude": ["./dist/**/*"]
+}

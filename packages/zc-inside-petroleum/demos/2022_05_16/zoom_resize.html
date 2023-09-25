@@ -1,0 +1,58 @@
+<html>
+	<head>
+	</head>
+	<body>
+
+		<script type="module">
+
+            var cdata = function() {
+                return {
+                    "type":"fastline",
+                    "scaleX":{
+						"zooming":true
+                    },
+                    "scaleY":{
+						"zooming":true
+                    },
+                    "series":[
+						{
+							"values":[ 51,53,47,60,48,52,75,52,55,47,60,48 ]
+						}
+                    ]
+                };
+            }
+
+			import zingchart from './../../build/es6/zingchart-es6.min.js';
+			//import * as ip_fastline from './../../build/es6/_modules-es6/zingchart-insidepetroleum-fastline.min.js';
+			import * as ip_fastline from './../../src/zingchart-fastline.js';
+
+			zingchart.render({
+				id : 'zc',
+				width : 500,
+				height : 500,
+				data : cdata(),
+				output : 'canvas',
+				modules : 'fastline'
+			});
+
+			window.b1 = function() {
+				console.log('zoomin');
+				zingchart.exec('zc', 'zoomin', {});
+			}
+			window.b2 = function() {
+				zingchart.exec('zc', 'zoomout', {});
+			}
+			window.b3 = function() {
+				zingchart.exec('zc', 'resize', {width : 800, height : 400});
+			}
+
+		</script>
+
+		<button onclick="b1()">Step 1 - Zoom In</button>
+		<button onclick="b2()">Step 2 - Zoom Out</button>
+		<button onclick="b3()">Step 3 - Resize</button>
+
+		<div id="zc"></div>
+
+	</body>
+</html>

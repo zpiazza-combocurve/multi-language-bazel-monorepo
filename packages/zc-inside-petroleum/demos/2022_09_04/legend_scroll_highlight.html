@@ -1,0 +1,111 @@
+<html>
+	<head>
+	</head>
+	<body>
+
+		<script type="module">
+
+			import zingchart from './../../build/es6/zingchart-es6.min.js';
+			import * as ip_fastline from './../../build/es6/_modules-es6/zingchart-insidepetroleum-fastline.min.js';
+			//import * as ip_fastline from './../../src/zingchart-fastline.js';
+
+			window.resetScroll = function() {
+				zingchart.exec('zc1', 'legendscroll', {plotindex:0});
+				zingchart.exec('zc2', 'legendscroll', {plotindex:0});
+			}
+
+			var cdata = {
+				"title":{
+					"adjustLayout":true,
+					"text":"Average Metric"
+				},
+				"plotarea":{
+					"adjustLayout":true
+				},
+				"scaleX":{
+
+				},
+				"scaleY":{
+					"minValue":0
+				},
+				"plot":{
+					"lineWidth":3,
+					"marker":{
+						"type":"none"
+					},
+					"hoverState":{
+						"lineColor":"#ff0000"
+					},
+					"selectedState":{
+						"lineWidth":5,
+						"lineColor":"#ff00ff"
+					}
+				},
+				"tooltip":{
+					"text":"%plot-text -> %node-value"
+				},
+				"legend":{
+					"header":{
+						"text":"Header"
+					},
+					"draggable":true,
+					"minimize":true,
+					"margin":"auto 10 auto auto",
+					"adjustLayout":true,
+					"highlightPlot": true,
+					"max-items":4,
+					"layout":"x1",
+					"overflow":"scroll"
+				},
+				"series":[]
+			};
+			for (var i = 0; i < 15; i++) {
+				var v = [];
+				for (var j = 0; j < 12; j++) {
+					v.push(Math.round(i * 10 + 1 + 8 * Math.random()));
+				}
+				var vis = (i % 2 === 0);
+				vis = Math.random() > 0.45;
+				cdata['series'].push({
+					text : 'Series ' + String.fromCharCode(65 + i),
+					showInLegend : vis,
+					legendMarker : {
+						visible : vis
+					},
+					legendItem : {
+						visible : vis
+					},
+					values : v
+				});
+			}
+
+			var cdata1 = JSON.parse(JSON.stringify(cdata));
+			cdata1["type"] = "fastline";
+			zingchart.render({
+				id : "zc1",
+				width : 600,
+				height : 300,
+				output : "canvas",
+				data : cdata1,
+				modules : "fastline"
+			});
+				
+			var cdata2 = JSON.parse(JSON.stringify(cdata));
+			cdata2["type"] = "line";
+			zingchart.render({
+				id : "zc2",
+				width : 600,
+				height : 300,
+				output : "canvas",
+				data : cdata2
+			});
+			
+		</script>
+
+		<button onclick="resetScroll()">Reset Scroll</button>
+
+		<div id="zc1"></div>
+		<div id="zc2"></div>
+
+	</body>
+</html>

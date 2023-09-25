@@ -1,0 +1,30 @@
+{
+	"name": "@combocurve/well",
+	"version": "0.1.0",
+	"private": true,
+	"description": "",
+	"license": "UNLICENSED",
+	"exports": {
+		".": {
+			"types": "./src/index.ts",
+			"development": "./src/index.ts",
+			"default": "./dist/src/index.js"
+		}
+	},
+	"scripts": {
+		"prebuild": "yarn g:rimraf dist",
+		"build": "yarn g:tsc -p tsconfig.build.json",
+		"lint:typescript": "yarn g:lint:typescript"
+	},
+	"dependencies": {
+		"@combocurve/shared": "workspace:*",
+		"combocurve-utils": "workspace:*",
+		"lodash": "4.17.21"
+	},
+	"devDependencies": {
+		"@combocurve/tsconfig": "workspace:*"
+	},
+	"volta": {
+		"extends": "../../package.json"
+	}
+}

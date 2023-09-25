@@ -1,0 +1,23 @@
+export function convertIdxToMilli(idx: any): number;
+export function convertMilliToIdx(milli: any): number;
+export function convertIdxToDate(idx: any): Date;
+export function convertDateToIdx(date: any): number;
+export function convertDateToIdxFloor(date: any): number;
+export function convertDateToMilli(date: any): number;
+export const Q_FINAL_DECIMAL: 3;
+export const LARGE_NUMBER: 1230000000000000;
+export function dateTimeToDateStr(date: any): string;
+export function daysToMS(days: any): number;
+export function msToDays(ms: any): number;
+export function isDate(obj: any): boolean;
+export function isNumber(val: any): boolean;
+export function isNumberAndNotZero(val: any): boolean;
+export function isInt(val: any): boolean;
+export function fixedFloat(val: any, placesPastDecimal?: number): number | null;
+export function fixedFloatWithFlexibleDecimal(val: any, placesPastDecimal?: number, percentageThreshold?: number): number | null;
+export function fixedFloatWithMinimum(val: any, placesPastDecimal?: number): number | null;
+export function floorFloat(val: any, placesPastDecimal?: number): number;
+export function ceilFloat(val: any, placesPastDecimal?: number): number;
+export function myBisect(f: any, a: any, b: any, tol?: number): any;
+export function roundToDigit(num: any, digit: any, direction?: null): number;
+//# sourceMappingURL=math.d.ts.map

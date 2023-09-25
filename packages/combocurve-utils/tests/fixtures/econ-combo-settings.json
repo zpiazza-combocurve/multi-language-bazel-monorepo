@@ -1,0 +1,814 @@
+[
+	{
+		"_id": "5fca4a0ed12962b544fcb6bf",
+		"name": "Default",
+		"combos": [
+			{
+				"name": "Default 1",
+				"qualifiers": {
+					"reserves_category": {
+						"key": "default",
+						"name": "Default"
+					},
+					"dates": {
+						"key": "default",
+						"name": "Default"
+					},
+					"ownership_reversion": {
+						"key": "default",
+						"name": "Default"
+					},
+					"forecast": {
+						"key": "default",
+						"name": "Default"
+					},
+					"forecast_p_series": {
+						"key": "default",
+						"name": "Default"
+					},
+					"schedule": {
+						"key": "default",
+						"name": "Default"
+					},
+					"capex": {
+						"key": "default",
+						"name": "Default"
+					},
+					"pricing_differentials": {
+						"key": "default",
+						"name": "Default"
+					},
+					"stream_properties": {
+						"key": "default",
+						"name": "Default"
+					},
+					"expenses": {
+						"key": "default",
+						"name": "Default"
+					},
+					"production_taxes": {
+						"key": "default",
+						"name": "Default"
+					},
+					"production_vs_fit": {
+						"key": "default",
+						"name": "Default"
+					},
+					"risking": {
+						"key": "default",
+						"name": "Default"
+					}
+				},
+				"selected": true
+			},
+			{
+				"name": "Default 2",
+				"qualifiers": {
+					"reserves_category": {
+						"key": "default",
+						"name": "Default"
+					},
+					"dates": {
+						"key": "default",
+						"name": "Default"
+					},
+					"ownership_reversion": {
+						"key": "default",
+						"name": "Default"
+					},
+					"forecast": {
+						"key": "default",
+						"name": "Default"
+					},
+					"forecast_p_series": {
+						"key": "default",
+						"name": "Default"
+					},
+					"schedule": {
+						"key": "default",
+						"name": "Default"
+					},
+					"capex": {
+						"key": "default",
+						"name": "Default"
+					},
+					"pricing_differentials": {
+						"key": "default",
+						"name": "Default"
+					},
+					"stream_properties": {
+						"key": "default",
+						"name": "Default"
+					},
+					"expenses": {
+						"key": "default",
+						"name": "Default"
+					},
+					"production_taxes": {
+						"key": "default",
+						"name": "Default"
+					},
+					"production_vs_fit": {
+						"key": "default",
+						"name": "Default"
+					},
+					"risking": {
+						"key": "default",
+						"name": "Default"
+					}
+				},
+				"selected": false
+			},
+			{
+				"name": "Default 3",
+				"qualifiers": {
+					"reserves_category": {
+						"key": "default",
+						"name": "Default"
+					},
+					"dates": {
+						"key": "default",
+						"name": "Default"
+					},
+					"ownership_reversion": {
+						"key": "default",
+						"name": "Default"
+					},
+					"forecast": {
+						"key": "default",
+						"name": "Default"
+					},
+					"forecast_p_series": {
+						"key": "default",
+						"name": "Default"
+					},
+					"schedule": {
+						"key": "default",
+						"name": "Default"
+					},
+					"capex": {
+						"key": "default",
+						"name": "Default"
+					},
+					"pricing_differentials": {
+						"key": "default",
+						"name": "Default"
+					},
+					"stream_properties": {
+						"key": "default",
+						"name": "Default"
+					},
+					"expenses": {
+						"key": "default",
+						"name": "Default"
+					},
+					"production_taxes": {
+						"key": "default",
+						"name": "Default"
+					},
+					"production_vs_fit": {
+						"key": "default",
+						"name": "Default"
+					},
+					"risking": {
+						"key": "default",
+						"name": "Default"
+					}
+				},
+				"selected": false
+			},
+			{
+				"name": "Default 4",
+				"qualifiers": {
+					"reserves_category": {
+						"key": "default",
+						"name": "Default"
+					},
+					"dates": {
+						"key": "default",
+						"name": "Default"
+					},
+					"ownership_reversion": {
+						"key": "default",
+						"name": "Default"
+					},
+					"forecast": {
+						"key": "default",
+						"name": "Default"
+					},
+					"forecast_p_series": {
+						"key": "default",
+						"name": "Default"
+					},
+					"schedule": {
+						"key": "default",
+						"name": "Default"
+					},
+					"capex": {
+						"key": "default",
+						"name": "Default"
+					},
+					"pricing_differentials": {
+						"key": "default",
+						"name": "Default"
+					},
+					"stream_properties": {
+						"key": "default",
+						"name": "Default"
+					},
+					"expenses": {
+						"key": "default",
+						"name": "Default"
+					},
+					"production_taxes": {
+						"key": "default",
+						"name": "Default"
+					},
+					"production_vs_fit": {
+						"key": "default",
+						"name": "Default"
+					},
+					"risking": {
+						"key": "default",
+						"name": "Default"
+					}
+				},
+				"selected": false
+			}
+		],
+		"project": "5fbc74d22526b200125f8b82",
+		"scenario": "5fbd8b48423c120012db23de",
+		"createdBy": "5dc05a46d736590007729002",
+		"createdAt": "2020-12-04T14:39:10.607Z",
+		"updatedAt": "2020-12-04T14:39:10.607Z"
+	},
+	{
+		"_id": "60663c947c7e750012a4ca82",
+		"name": "Tornado",
+		"combos": [
+			{
+				"name": "Base",
+				"qualifiers": {
+					"reserves_category": {
+						"key": "default",
+						"name": "RESCAT_Q4_2020"
+					},
+					"dates": {
+						"key": "default",
+						"name": "Q4_2020"
+					},
+					"ownership_reversion": {
+						"key": "default",
+						"name": "WI_NRI_Q4_2020"
+					},
+					"forecast": {
+						"key": "default",
+						"name": "Fcst_Q4_2020"
+					},
+					"forecast_p_series": {
+						"key": "default",
+						"name": "Default"
+					},
+					"schedule": {
+						"key": "default",
+						"name": "Sched_1_Rig"
+					},
+					"capex": {
+						"key": "qualifier4",
+						"name": "Base Case"
+					},
+					"pricing": {
+						"key": "default",
+						"name": "Base"
+					},
+					"differentials": {
+						"key": "default",
+						"name": "50_Oil_Flat"
+					},
+					"stream_properties": {
+						"key": "default",
+						"name": "Default"
+					},
+					"expenses": {
+						"key": "qualifier4",
+						"name": "Base"
+					},
+					"production_taxes": {
+						"key": "default",
+						"name": "Default"
+					},
+					"production_vs_fit": {
+						"key": "default",
+						"name": "Default"
+					},
+					"risking": {
+						"key": "default",
+						"name": "Default"
+					}
+				},
+				"selected": true
+			},
+			{
+				"name": "High Price",
+				"qualifiers": {
+					"reserves_category": {
+						"key": "default",
+						"name": "RESCAT_Q4_2020"
+					},
+					"dates": {
+						"key": "default",
+						"name": "Q4_2020"
+					},
+					"ownership_reversion": {
+						"key": "default",
+						"name": "WI_NRI_Q4_2020"
+					},
+					"forecast": {
+						"key": "default",
+						"name": "Fcst_Q4_2020"
+					},
+					"forecast_p_series": {
+						"key": "default",
+						"name": "Default"
+					},
+					"schedule": {
+						"key": "default",
+						"name": "Sched_1_Rig"
+					},
+					"capex": {
+						"key": "qualifier4",
+						"name": "Base Case"
+					},
+					"pricing": {
+						"key": "qualifier1",
+						"name": "High Price"
+					},
+					"differentials": {
+						"key": "default",
+						"name": "50_Oil_Flat"
+					},
+					"stream_properties": {
+						"key": "default",
+						"name": "Default"
+					},
+					"expenses": {
+						"key": "qualifier4",
+						"name": "Base"
+					},
+					"production_taxes": {
+						"key": "default",
+						"name": "Default"
+					},
+					"production_vs_fit": {
+						"key": "default",
+						"name": "Default"
+					},
+					"risking": {
+						"key": "default",
+						"name": "Default"
+					}
+				},
+				"selected": true
+			},
+			{
+				"name": "Low Price",
+				"qualifiers": {
+					"reserves_category": {
+						"key": "default",
+						"name": "RESCAT_Q4_2020"
+					},
+					"dates": {
+						"key": "default",
+						"name": "Q4_2020"
+					},
+					"ownership_reversion": {
+						"key": "default",
+						"name": "WI_NRI_Q4_2020"
+					},
+					"forecast": {
+						"key": "default",
+						"name": "Fcst_Q4_2020"
+					},
+					"forecast_p_series": {
+						"key": "default",
+						"name": "Default"
+					},
+					"schedule": {
+						"key": "default",
+						"name": "Sched_1_Rig"
+					},
+					"capex": {
+						"key": "qualifier4",
+						"name": "Base Case"
+					},
+					"pricing": {
+						"key": "qualifier2",
+						"name": "Low Price"
+					},
+					"differentials": {
+						"key": "default",
+						"name": "50_Oil_Flat"
+					},
+					"stream_properties": {
+						"key": "default",
+						"name": "Default"
+					},
+					"expenses": {
+						"key": "qualifier4",
+						"name": "Base"
+					},
+					"production_taxes": {
+						"key": "default",
+						"name": "Default"
+					},
+					"production_vs_fit": {
+						"key": "default",
+						"name": "Default"
+					},
+					"risking": {
+						"key": "default",
+						"name": "Default"
+					}
+				},
+				"selected": true
+			},
+			{
+				"name": "High CAPEX",
+				"qualifiers": {
+					"reserves_category": {
+						"key": "default",
+						"name": "RESCAT_Q4_2020"
+					},
+					"dates": {
+						"key": "default",
+						"name": "Q4_2020"
+					},
+					"ownership_reversion": {
+						"key": "default",
+						"name": "WI_NRI_Q4_2020"
+					},
+					"forecast": {
+						"key": "default",
+						"name": "Fcst_Q4_2020"
+					},
+					"forecast_p_series": {
+						"key": "default",
+						"name": "Default"
+					},
+					"schedule": {
+						"key": "default",
+						"name": "Sched_1_Rig"
+					},
+					"capex": {
+						"key": "qualifier3",
+						"name": "High CAPEX"
+					},
+					"pricing": {
+						"key": "default",
+						"name": "Base"
+					},
+					"differentials": {
+						"key": "default",
+						"name": "50_Oil_Flat"
+					},
+					"stream_properties": {
+						"key": "default",
+						"name": "Default"
+					},
+					"expenses": {
+						"key": "qualifier4",
+						"name": "Base"
+					},
+					"production_taxes": {
+						"key": "default",
+						"name": "Default"
+					},
+					"production_vs_fit": {
+						"key": "default",
+						"name": "Default"
+					},
+					"risking": {
+						"key": "default",
+						"name": "Default"
+					}
+				},
+				"selected": true
+			},
+			{
+				"name": "Low CAPEX",
+				"qualifiers": {
+					"reserves_category": {
+						"key": "default",
+						"name": "RESCAT_Q4_2020"
+					},
+					"dates": {
+						"key": "default",
+						"name": "Q4_2020"
+					},
+					"ownership_reversion": {
+						"key": "default",
+						"name": "WI_NRI_Q4_2020"
+					},
+					"forecast": {
+						"key": "default",
+						"name": "Fcst_Q4_2020"
+					},
+					"forecast_p_series": {
+						"key": "default",
+						"name": "Default"
+					},
+					"schedule": {
+						"key": "default",
+						"name": "Sched_1_Rig"
+					},
+					"capex": {
+						"key": "qualifier5",
+						"name": "Low CAPEX"
+					},
+					"pricing": {
+						"key": "default",
+						"name": "Base"
+					},
+					"differentials": {
+						"key": "default",
+						"name": "50_Oil_Flat"
+					},
+					"stream_properties": {
+						"key": "default",
+						"name": "Default"
+					},
+					"expenses": {
+						"key": "qualifier4",
+						"name": "Base"
+					},
+					"production_taxes": {
+						"key": "default",
+						"name": "Default"
+					},
+					"production_vs_fit": {
+						"key": "default",
+						"name": "Default"
+					},
+					"risking": {
+						"key": "default",
+						"name": "Default"
+					}
+				},
+				"selected": true
+			},
+			{
+				"name": "High Expenses",
+				"qualifiers": {
+					"reserves_category": {
+						"key": "default",
+						"name": "RESCAT_Q4_2020"
+					},
+					"dates": {
+						"key": "default",
+						"name": "Q4_2020"
+					},
+					"ownership_reversion": {
+						"key": "default",
+						"name": "WI_NRI_Q4_2020"
+					},
+					"forecast": {
+						"key": "default",
+						"name": "Fcst_Q4_2020"
+					},
+					"forecast_p_series": {
+						"key": "default",
+						"name": "Default"
+					},
+					"schedule": {
+						"key": "default",
+						"name": "Sched_1_Rig"
+					},
+					"capex": {
+						"key": "qualifier4",
+						"name": "Base Case"
+					},
+					"pricing": {
+						"key": "default",
+						"name": "Base"
+					},
+					"differentials": {
+						"key": "default",
+						"name": "50_Oil_Flat"
+					},
+					"stream_properties": {
+						"key": "default",
+						"name": "Default"
+					},
+					"expenses": {
+						"key": "qualifier2",
+						"name": "Higher Expenses"
+					},
+					"production_taxes": {
+						"key": "default",
+						"name": "Default"
+					},
+					"production_vs_fit": {
+						"key": "default",
+						"name": "Default"
+					},
+					"risking": {
+						"key": "default",
+						"name": "Default"
+					}
+				},
+				"selected": true
+			},
+			{
+				"name": "Low Expenses",
+				"qualifiers": {
+					"reserves_category": {
+						"key": "default",
+						"name": "RESCAT_Q4_2020"
+					},
+					"dates": {
+						"key": "default",
+						"name": "Q4_2020"
+					},
+					"ownership_reversion": {
+						"key": "default",
+						"name": "WI_NRI_Q4_2020"
+					},
+					"forecast": {
+						"key": "default",
+						"name": "Fcst_Q4_2020"
+					},
+					"forecast_p_series": {
+						"key": "default",
+						"name": "Default"
+					},
+					"schedule": {
+						"key": "default",
+						"name": "Sched_1_Rig"
+					},
+					"capex": {
+						"key": "qualifier4",
+						"name": "Base Case"
+					},
+					"pricing": {
+						"key": "default",
+						"name": "Base"
+					},
+					"differentials": {
+						"key": "default",
+						"name": "50_Oil_Flat"
+					},
+					"stream_properties": {
+						"key": "default",
+						"name": "Default"
+					},
+					"expenses": {
+						"key": "qualifier3",
+						"name": "Low Expense"
+					},
+					"production_taxes": {
+						"key": "default",
+						"name": "Default"
+					},
+					"production_vs_fit": {
+						"key": "default",
+						"name": "Default"
+					},
+					"risking": {
+						"key": "default",
+						"name": "Default"
+					}
+				},
+				"selected": true
+			},
+			{
+				"name": "Low Estimate",
+				"qualifiers": {
+					"reserves_category": {
+						"key": "default",
+						"name": "RESCAT_Q4_2020"
+					},
+					"dates": {
+						"key": "default",
+						"name": "Q4_2020"
+					},
+					"ownership_reversion": {
+						"key": "default",
+						"name": "WI_NRI_Q4_2020"
+					},
+					"forecast": {
+						"key": "default",
+						"name": "Fcst_Q4_2020"
+					},
+					"forecast_p_series": {
+						"key": "qualifier2",
+						"name": "P90"
+					},
+					"schedule": {
+						"key": "default",
+						"name": "Sched_1_Rig"
+					},
+					"capex": {
+						"key": "qualifier4",
+						"name": "Base Case"
+					},
+					"pricing": {
+						"key": "default",
+						"name": "Base"
+					},
+					"differentials": {
+						"key": "default",
+						"name": "50_Oil_Flat"
+					},
+					"stream_properties": {
+						"key": "default",
+						"name": "Default"
+					},
+					"expenses": {
+						"key": "qualifier4",
+						"name": "Base"
+					},
+					"production_taxes": {
+						"key": "default",
+						"name": "Default"
+					},
+					"production_vs_fit": {
+						"key": "default",
+						"name": "Default"
+					},
+					"risking": {
+						"key": "default",
+						"name": "Default"
+					}
+				},
+				"selected": true
+			},
+			{
+				"name": "High Estimate",
+				"qualifiers": {
+					"reserves_category": {
+						"key": "default",
+						"name": "RESCAT_Q4_2020"
+					},
+					"dates": {
+						"key": "default",
+						"name": "Q4_2020"
+					},
+					"ownership_reversion": {
+						"key": "default",
+						"name": "WI_NRI_Q4_2020"
+					},
+					"forecast": {
+						"key": "default",
+						"name": "Fcst_Q4_2020"
+					},
+					"forecast_p_series": {
+						"key": "qualifier1",
+						"name": "P10"
+					},
+					"schedule": {
+						"key": "default",
+						"name": "Sched_1_Rig"
+					},
+					"capex": {
+						"key": "qualifier4",
+						"name": "Base Case"
+					},
+					"pricing": {
+						"key": "default",
+						"name": "Base"
+					},
+					"differentials": {
+						"key": "default",
+						"name": "50_Oil_Flat"
+					},
+					"stream_properties": {
+						"key": "default",
+						"name": "Default"
+					},
+					"expenses": {
+						"key": "qualifier4",
+						"name": "Base"
+					},
+					"production_taxes": {
+						"key": "default",
+						"name": "Default"
+					},
+					"production_vs_fit": {
+						"key": "default",
+						"name": "Default"
+					},
+					"risking": {
+						"key": "default",
+						"name": "Default"
+					}
+				},
+				"selected": true
+			}
+		],
+		"project": "5fb6a526d5c918dbd88d533f",
+		"scenario": "60663434c7bb330012eb3f9a",
+		"createdBy": "5f1771ca07c43800127c6291",
+		"createdAt": "2021-04-01T21:35:16.643Z",
+		"updatedAt": "2021-04-09T17:24:37.151Z"
+	}
+]

@@ -1,0 +1,409 @@
+<html>
+	<head>
+	</head>
+	<body>
+
+		<script type="module">
+			import zingchart from './../../build/es6/zingchart-es6.min.js';
+			import * as selection_tool from './../../build/es6/modules-es6/zingchart-selection-tool.min.js';
+			//import * as ip_fastline from './../../build/es6/_modules-es6/zingchart-insidepetroleum-fastline.min.js';
+			//import * as ip_fastline from './../../src/zingchart-fastline.js';
+
+var cdata = {
+"graphset":[
+	{
+		"plot":{
+			"marker":{
+				"size":3,
+				"borderColor":"transparent",
+				"type":"circle",
+				"alpha":0.8
+				},
+			"selectedState":{
+				"lineColor":"rgba(153,102,255,1)",
+				"lineWidth":1
+				},
+			"selectedMarker":{
+				"backgroundColor":"rgba(153,102,255,1)"
+				},
+			"dataAppendSelection":true,
+			"selectionMode":"multiple",
+			"tooltip":{
+				"visible":false,
+				"borderColor":"transparent",
+				"borderRadius":5,
+				"borderWidth":0,
+				"font-size":15,
+				"shadow":false,
+				"thousandsSeparator":","
+				}
+			},
+		"noData":{
+			"text":"No Data"
+			},
+		"backgroundColor":"transparent",
+		"gui":{
+			"contextMenu":{
+				"position":"left",
+				"button":{
+					"visible":false
+					},
+				"gear":{
+					"backgroundColor":"#a5a5a5"
+					}
+				},
+			"behaviors":[
+				{
+					"id":"DownloadCSV",
+					"enabled":"none"
+					},
+				{
+					"id":"DownloadSVG",
+					"enabled":"none"
+					},
+				{
+					"id":"DownloadXLS",
+					"text":"Download XLS",
+					"enabled":"all",
+					"custom-function":"export2excel()"
+					},
+				{
+					"id":"HideGuide",
+					"enabled":"none"
+					},
+				{
+					"id":"LinScale",
+					"enabled":"none"
+					},
+				{
+					"id":"LogScale",
+					"enabled":"none"
+					},
+				{
+					"id":"Print",
+					"enabled":"none"
+					},
+				{
+					"id":"Reload",
+					"enabled":"none"
+					},
+				{
+					"id":"SaveAsImagePNG",
+					"enabled":"none"
+					},
+				{
+					"id":"ViewAll",
+					"enabled":"none"
+					},
+				{
+					"id":"ViewDataTable",
+					"enabled":"none"
+					},
+				{
+					"id":"ViewSource",
+					"enabled":"all"
+					},
+				{
+					"id":"ZoomIn",
+					"enabled":"none"
+					},
+				{
+					"id":"ZoomOut",
+					"enabled":"none"
+					}
+			]
+			},
+		"crosshairX":{
+			"exact":true,
+			"lineColor":"#8c8c8c",
+			"plotLabel":{
+				"visible":false
+				},
+			"scaleLabel":{
+				"alpha":0.6,
+				"backgroundColor":"#8c8c8c",
+				"borderColor":"transparent",
+				"borderRadius":"5px",
+				"fontColor":"#ffffff",
+				"fontWeight":"bold",
+				"textAlpha":1
+				}
+			},
+		"crosshairY":{
+			"exact":true,
+			"lineColor":"#8c8c8c",
+			"plotLabel":{
+				"visible":false
+				},
+			"scaleLabel":{
+				"alpha":0.6,
+				"backgroundColor":"#8c8c8c",
+				"borderColor":"transparent",
+				"borderRadius":"5px",
+				"fontColor":"#ffffff",
+				"fontWeight":"bold",
+				"textAlpha":1
+				}
+			},
+		"plotarea":{
+			"marginLeft":"dynamic",
+			"adjustLayout":true
+			},
+		"zoomSnap":true,
+		"zoom":{
+			"backgroundColor":"#000000",
+			"borderColor":"transparent",
+			"borderWidth":1,
+			"shared":true
+			},
+		"legend":{
+			"alpha":0,
+			"borderColor":"transparent",
+			"borderWidth":1,
+			"draggable":true,
+			"dragHandler":"icon",
+			"highlightPlot":true,
+			"minimize":true,
+			"icon":{
+				"lineColor":"#a5a5a5"
+				},
+			"item":{
+				"fontColor":"#a5a5a5"
+				},
+			"header":{
+				"backgroundColor":"transparent",
+				"bold":false,
+				"borderBottom":"1px solid #8c8c8c",
+				"fontColor":"#a5a5a5",
+				"text":"Legend"
+				},
+			"marker":{
+				"borderColor":"transparent",
+				"borderRadius":"3px",
+				"type":"inherit"
+				},
+			"visible":true
+			},
+		"scaleX":{
+			"guide":{
+				"alpha":0.3,
+				"lineColor":"#8c8c8c"
+				},
+			"item":{
+				"maxChars":10
+				},
+			"label":{
+				"fontColor":"#8c8c8c",
+				"fontFamily":"K2D",
+				"font-size":14,
+				"fontStyle":"normal",
+				"fontWeight":"normal",
+				"text":"Percentile"
+				},
+			"maxItems":10,
+			"thousandsSeparator":",",
+			"zooming":true
+			},
+		"scaleY":{
+			"logBase":10,
+			"minorTicks":10,
+			"thousandsSeparator":",",
+			"zooming":true,
+			"label":{
+				"fontColor":"#8c8c8c",
+				"fontFamily":"K2D",
+				"font-size":14,
+				"fontStyle":"normal",
+				"fontWeight":"normal",
+				"text":"EUR (MBBL)"
+				},
+			"guide":{
+				"alpha":0.3,
+				"lineColor":"#8c8c8c"
+				},
+			"progression":"log",
+			"offsetEnd":24
+			},
+		"selectionTool":{
+			"-free-form-type":"poly",
+			"mask":{
+				"alpha":0.3,
+				"backgroundColor":"rgb(153,102,255)",
+				"borderColor":"rgb(153,102,255)",
+				"borderWidth":2
+				}
+			},
+		"cc-zoomout-plugin":true,
+		"type":"mixed",
+		"series":[
+			{
+				"id":"wells",
+				"type":"scatter",
+				"text":"Distribution",
+				"values":[[0,162.42235000000002],
+				[1.7241379310344827,162.08817000000002],
+				[3.4482758620689653,158.65523],
+				[5.172413793103448,154.80532000000002],
+				[6.896551724137931,147.96655],
+				[8.620689655172415,146.79611000000003],
+				[10.344827586206897,145.42776000000003],
+				[12.068965517241379,144.50382979000003],
+				[13.793103448275861,141.09222000000003],
+				[15.517241379310345,135.05425],
+				[17.24137931034483,131.60532],
+				[18.96551724137931,131.14418],
+				[20.689655172413794,126.63998000000001],
+				[22.413793103448278,121.77736],
+				[24.137931034482758,119.35156],
+				[25.862068965517242,115.77194000000001],
+				[27.586206896551722,115.69998000000001],
+				[29.310344827586203,115.12831],
+				[31.03448275862069,114.91754999999999],
+				[32.758620689655174,109.82836318910002],
+				[34.48275862068966,109.16077],
+				[36.206896551724135,108.65446000000001],
+				[37.93103448275862,105.58107999999999],
+				[39.6551724137931,101.98723],
+				[41.37931034482759,99.87246],
+				[43.103448275862064,99.16093000000001],
+				[44.827586206896555,97.24826],
+				[46.55172413793103,96.04583000000001],
+				[48.275862068965516,95.07429],
+				[50,94.57387],
+				[51.724137931034484,93.5038071877],
+				[53.44827586206896,91.93516000000001],
+				[55.172413793103445,91.87604],
+				[56.896551724137936,87.8239],
+				[58.620689655172406,86.53921000000001],
+				[60.3448275862069,83.19213000000002],
+				[62.06896551724138,82.14553],
+				[63.793103448275865,81.70425],
+				[65.51724137931035,80.72611],
+				[67.24137931034483,80.10904000000001],
+				[68.96551724137932,79.69004],
+				[70.6896551724138,79.46985],
+				[72.41379310344827,78.97905],
+				[74.13793103448276,78.54430999999998],
+				[75.86206896551724,71.54439],
+				[77.58620689655173,70.74765000000001],
+				[79.3103448275862,69.17763000000001],
+				[81.03448275862068,67.54846000000002],
+				[82.75862068965517,63.66818],
+				[84.48275862068965,62.181000000000004],
+				[86.20689655172413,61.37303],
+				[87.93103448275862,58.912],
+				[89.65517241379311,55.43706000000001],
+				[91.37931034482759,53.18453999999999],
+				[93.10344827586206,52.52782],
+				[94.82758620689656,46.99151],
+				[96.55172413793103,46.58332],
+				[98.27586206896551,26.557830000000006],
+				[100,21.25732]],
+				"lineColor":"rgba(60,168,73,1)",
+				"marker":{
+					"backgroundColor":"rgba(60,168,73,1)"
+					},
+				"tooltip":{
+					"backgroundColor":"#00bfa5",
+					"color":"#FFFFFF",
+					"fontSize":"9",
+					"padding":"5px",
+					"text":"%data-header-info",
+					"textAlign":"left",
+					"visible":true
+					},
+				"dataHeaderInfo":["BURCH KEELY UNIT 936H (UBB) | 0936H | 4620 FT","BURCH KEELY UNIT 939H (UBB) | 0939H | 4620 FT","BURCH KEELY UNIT 952H (UBB) | 0952H | 4620 FT","BURCH KEELY UNIT 938H (UBB) | 0938H | 4620 FT","BURCH KEELY UNIT 933H (UBB) | 0933H | 4620 FT","DODD FEDERAL UNIT 921H (UBB) | 0921H | 4620 FT","BURCH KEELY UNIT 965H (UBB) | 0965H | 4620 FT","TITAN 3-17-8MXH | 3-17-8MXH","BURCH KEELY UNIT 937H (UBB) | 0937H | 4620 FT","BURCH KEELY UNIT 935H (UBB) | 0935H | 4620 FT","BURCH KEELY UNIT 954H (UBB) | 0954H | 4620 FT","BURCH KEELY UNIT 934H (UBB) | 0934H | 4620 FT","BURCH KEELY UNIT 941H (UBB) | 0941H | 4620 FT","DODD FEDERAL UNIT 922H (UBB) | 0922H | 4620 FT","BURCH KEELY UNIT 956H (UBB) | 0956H | 4620 FT","BURCH KEELY UNIT 930H (UBB) | 0930H | 4620 FT","BURCH KEELY UNIT 962H (UBB) | 0962H | 4620 FT","BURCH KEELY UNIT 950H (UBB) | 0950H | 4620 FT","BURCH KEELY UNIT 932H (UBB) | 0932H | 4620 FT","TITAN 2-17-8MXH | 2-17-8MXH","BURCH KEELY UNIT 945H (UBB) | 0945H | 4620 FT","BURCH KEELY UNIT 948H (UBB) | 0948H | 4620 FT","BURCH KEELY UNIT 964H (UBB) | 0964H | 4620 FT","BURCH KEELY UNIT 944H (UBB) | 0944H | 4620 FT","BURCH KEELY UNIT 942H (UBB) | 0942H | 4620 FT","BURCH KEELY UNIT 943H (UBB) | 0943H | 4620 FT","SPITFIRE 0817 1H | 1H","DODD FEDERAL UNIT 926H (UBB) | 0926H | 4620 FT","BURCH KEELY UNIT 955H (UBB) | 0955H | 4620 FT","BURCH KEELY UNIT 963H (UBB) | 0963H | 4620 FT","TITAN 1-17-8MXH | 1-17-8MXH","DODD FEDERAL UNIT 923H (UBB) | 0923H | 4620 FT","DODD FEDERAL UNIT 918H (UBB) | 0918H | 4620 FT","BURCH KEELY UNIT 967H (UBB) | 0967H | 4620 FT","SKELLY UNIT 422H (UBB) (1.25M) | 0422H | 5720 FT","BURCH KEELY UNIT 946H (UBB) | 0946H | 4620 FT","DODD FEDERAL UNIT 930H (UBB) | 0930H | 4620 FT","DODD FEDERAL UNIT 924H (UBB) | 0924H | 4620 FT","DODD FEDERAL UNIT 908H (UBB) | 0908H | 4620 FT","DODD FEDERAL UNIT 909H (PDK) | 0909H | 4620 FT","DODD FEDERAL UNIT 919H (UBB) | 0919H | 4620 FT","DODD FEDERAL UNIT 917H (UBB) | 0917H | 4620 FT","BURCH KEELY UNIT 931H (UBB) | 0931H | 4620 FT","BURCH KEELY UNIT 958H (UBB) | 0958H | 4620 FT","DODD FEDERAL UNIT 920H (UBB) | 0920H | 4620 FT","DODD FEDERAL UNIT 902H (UBB) (.75M) | 0902H | 2800 FT","DODD FEDERAL UNIT 901H (PDK) (.75M) | 0901H | 2880 FT","DODD FEDERAL UNIT 911H (UBB) | 0911H | 4620 FT","DODD FEDERAL UNIT 910H (UBB) | 0910H | 4620 FT","NITA FAY 31-30-9-6 2MXH | 2MXH","BURCH KEELY UNIT 947H (UBB) | 0947H | 4620 FT","NITA FAY 31-30-9-6 1WXH | 1WXH","DODD FEDERAL UNIT 913H (UBB) | 0913H | 4620 FT","DODD FEDERAL UNIT 916H (UBB) | 0916H | 4620 FT","BURCH KEELY UNIT 960H (UBB) | 0960H | 4620 FT","DODD FEDERAL UNIT 925H (UBB) | 0925H | 4620 FT","BURCH KEELY UNIT 966H (UBB) | 0966H | 4620 FT","DODD FEDERAL UNIT 983H_PDK | 0983H | 8050 FT","DODD FEDERAL UNIT 980H_PDK | 0980H | 8050 FT"]
+				},
+			{
+				"text":"P10",
+				"type":"line",
+				"values":[[0,145.70143000000004],
+				[100,145.70143000000004]],
+				"lineColor":"rgba(153,102,255,1)",
+				"legendMarker":{
+					"type":"line",
+					"lineColor":"rgba(153,102,255,1)"
+					},
+				"marker":{
+					"visible":false
+					},
+				"dataIgnoreSelection":true
+				},
+			{
+				"text":"P50",
+				"type":"line",
+				"values":[[0,94.57387],
+				[100,94.57387]],
+				"lineColor":"rgba(255,159,64,1)",
+				"legendMarker":{
+					"type":"line",
+					"lineColor":"rgba(255,159,64,1)"
+					},
+				"marker":{
+					"visible":false
+					},
+				"dataIgnoreSelection":true
+				},
+			{
+				"text":"P90",
+				"type":"line",
+				"values":[[0,54.98655600000001],
+				[100,54.98655600000001]],
+				"lineColor":"rgba(255,99,132,1)",
+				"legendMarker":{
+					"type":"line",
+					"lineColor":"rgba(255,99,132,1)"
+					},
+				"marker":{
+					"visible":false
+					},
+				"dataIgnoreSelection":true
+				}
+		]
+		}
+]
+};
+
+zingchart.render({
+	id : "zc1",
+	width : "100%",
+	height : 220,
+	//data : JSON.parse(JSON.stringify(cdata)),
+	data : cdata,
+	modules : 'selection-tool'
+});
+zingchart.render({
+	id : "zc2",
+	width : "100%",
+	height : 220,
+	//data : JSON.parse(JSON.stringify(cdata)),
+	data : cdata,
+	modules : 'selection-tool'
+});
+zingchart.render({
+	id : "zc3",
+	width : "100%",
+	height : 220,
+	//data : JSON.parse(JSON.stringify(cdata)),
+	data : cdata,
+	modules : 'selection-tool'
+});
+zingchart.render({
+	id : "zc4",
+	width : "100%",
+	height : 220,
+	//data : JSON.parse(JSON.stringify(cdata)),
+	data : cdata,
+	modules : 'selection-tool'
+});
+
+		</script>
+
+		<p style="padding:50px;background-color:#eeeeee"> Empty area </p>
+		<div id="zc1"></div>
+		<div id="zc2"></div>
+		<div id="zc3"></div>
+		<div id="zc4"></div>
+
+	</body>
+</html>

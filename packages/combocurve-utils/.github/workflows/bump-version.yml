@@ -1,0 +1,42 @@
+name: Bump Version
+
+# Controls when the workflow will run
+on:
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version Type'
+        required: true
+        default: 'patch'
+        type: choice
+        options:
+          - patch
+          - minor
+          - major
+
+jobs:
+  bump:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3.5.0
+        with:
+          node-version-file: 'package.json'
+      - name: Setup git
+        run: |
+          git config --global user.name 'Github Actions'
+          git config --global user.email '<>'
+      - name: Bump Version
+        run: |
+          VERSION=$(npm version ${{ inputs.VERSION }})
+          echo "new_version=$VERSION" >> $GITHUB_ENV
+      - name: Push
+        run: |
+          git push --follow-tags
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          name: ${{ env.new_version }}
+          tag_name: ${{ env.new_version }}

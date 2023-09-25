@@ -1,0 +1,41 @@
+{
+	"name": "@combocurve/pdf-template",
+	"description": "This is the html template that we're using for generating custom PDF",
+	"license": "UNLICENSED",
+	"private": true,
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"build": "gulp build --prod",
+		"dev": "gulp dev",
+		"start": "gulp dev"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.22.10",
+		"@babel/preset-env": "^7.22.10",
+		"@babel/register": "^7.22.5",
+		"babel-loader": "^9.1.3",
+		"browser-sync": "^2.29.3",
+		"del": "^7.0.0",
+		"gulp": "^4.0.2",
+		"gulp-clean-css": "^4.3.0",
+		"gulp-data": "^1.3.1",
+		"gulp-htmlmin": "^5.0.1",
+		"gulp-if": "^3.0.0",
+		"gulp-inline-css": "^4.0.0",
+		"gulp-rename": "^2.0.0",
+		"gulp-replace": "^1.1.4",
+		"gulp-sass": "^5.1.0",
+		"gulp-sourcemaps": "^3.0.0",
+		"node-sass": "^9.0.0",
+		"nunjucks": "^3.2.4",
+		"plugin-error": "^1.0.1",
+		"prettier": "^3.0.2",
+		"rimraf": "^5.0.1",
+		"through2": "^3.0.2",
+		"vinyl-named": "^1.1.0",
+		"yargs": "^17.7.2"
+	},
+	"volta": {
+		"extends": "../../package.json"
+	}
+}

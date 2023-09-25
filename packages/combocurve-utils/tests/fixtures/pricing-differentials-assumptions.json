@@ -1,0 +1,414 @@
+[
+	{
+		"_id": "5f2c8e40c7002d044b7391b4",
+		"originalId": "5e27984b9489150012928060",
+		"copiedFrom": null,
+		"typeCurve": null,
+		"unique": false,
+		"name": "Pricing Model",
+		"options": {
+			"price_model": {
+				"phase": {
+					"label": "Oil",
+					"value": "oil"
+				},
+				"oil": {
+					"subItems": {
+						"cap": "",
+						"escalation_model": {
+							"label": "None",
+							"value": "none"
+						},
+						"row_view": {
+							"headers": {
+								"price": "$/BBL",
+								"criteria": {
+									"label": "Flat",
+									"value": "entire_well_life"
+								}
+							},
+							"rows": [
+								{
+									"price": 50,
+									"criteria": "Flat"
+								}
+							]
+						}
+					}
+				},
+				"gas": {
+					"subItems": {
+						"cap": "",
+						"escalation_model": {
+							"label": "None",
+							"value": "none"
+						},
+						"row_view": {
+							"headers": {
+								"price": {
+									"label": "$/MMBTU",
+									"value": "dollar_per_mmbtu"
+								},
+								"criteria": {
+									"label": "Flat",
+									"value": "entire_well_life"
+								}
+							},
+							"rows": [
+								{
+									"price": 2,
+									"criteria": "Flat"
+								}
+							]
+						}
+					}
+				},
+				"ngl": {
+					"subItems": {
+						"cap": "",
+						"escalation_model": {
+							"label": "None",
+							"value": "none"
+						},
+						"row_view": {
+							"headers": {
+								"price": {
+									"label": "% of Oil Price",
+									"value": "pct_of_oil_price"
+								},
+								"criteria": {
+									"label": "Flat",
+									"value": "entire_well_life"
+								}
+							},
+							"rows": [
+								{
+									"price": 100,
+									"criteria": "Flat"
+								}
+							]
+						}
+					}
+				},
+				"drip_condensate": {
+					"subItems": {
+						"cap": "",
+						"escalation_model": {
+							"label": "None",
+							"value": "none"
+						},
+						"row_view": {
+							"headers": {
+								"price": {
+									"label": "$/BBL",
+									"value": "dollar_per_bbl"
+								},
+								"criteria": {
+									"label": "Flat",
+									"value": "entire_well_life"
+								}
+							},
+							"rows": [
+								{
+									"price": 0,
+									"criteria": "Flat"
+								}
+							]
+						}
+					}
+				}
+			},
+			"breakeven": {
+				"npv_discount": 0,
+				"based_on_price_ratio": {
+					"label": "No",
+					"value": "no"
+				},
+				"price_ratio": ""
+			},
+			"shutIn": {
+				"row_view": {
+					"headers": {
+						"phase": "Phase",
+						"criteria": {
+							"required": true,
+							"label": "Dates",
+							"value": "dates",
+							"fieldType": "date-range-two",
+							"valType": "datetime"
+						},
+						"unit": "Unit",
+						"multiplier": "Multiplier",
+						"fixed_expense": "Fixed Expense",
+						"capex": "CAPEX"
+					},
+					"rows": []
+				}
+			}
+		},
+		"project": "5e276a66876cd70012ddf3f5",
+		"assumptionKey": "pricing",
+		"assumptionName": "Pricing",
+		"econ_function": {
+			"price_model": {
+				"oil": {
+					"cap": "",
+					"escalation_model": "none",
+					"rows": [
+						{
+							"price": 50,
+							"entire_well_life": "Flat"
+						}
+					]
+				},
+				"gas": {
+					"cap": "",
+					"escalation_model": "none",
+					"rows": [
+						{
+							"dollar_per_mmbtu": 2,
+							"entire_well_life": "Flat"
+						}
+					]
+				},
+				"ngl": {
+					"cap": "",
+					"escalation_model": "none",
+					"rows": [
+						{
+							"pct_of_oil_price": 100,
+							"entire_well_life": "Flat"
+						}
+					]
+				},
+				"drip_condensate": {
+					"cap": "",
+					"escalation_model": "none",
+					"rows": [
+						{
+							"dollar_per_bbl": 0,
+							"entire_well_life": "Flat"
+						}
+					]
+				}
+			},
+			"breakeven": {
+				"npv_discount": 0,
+				"based_on_price_ratio": "no",
+				"price_ratio": ""
+			},
+			"shutIn": {
+				"rows": []
+			}
+		},
+		"createdBy": "5c51c5893e0f9b04e0bbdada",
+		"createdAt": "2020-01-22T00:33:15.835Z",
+		"updatedAt": "2020-01-22T00:33:15.835Z"
+	},
+	{
+		"_id": "5f3b0b9b552cd446ead2437d",
+		"copiedFrom": null,
+		"originalId": "5e27984b9489150012928060",
+		"typeCurve": null,
+		"unique": false,
+		"name": "Differentials Model",
+		"options": {
+			"price_model": {
+				"phase": {
+					"label": "Oil",
+					"value": "oil"
+				},
+				"oil": {
+					"subItems": {
+						"cap": "",
+						"escalation_model": {
+							"label": "None",
+							"value": "none"
+						},
+						"row_view": {
+							"headers": {
+								"price": "$/BBL",
+								"criteria": {
+									"label": "Flat",
+									"value": "entire_well_life"
+								}
+							},
+							"rows": [
+								{
+									"price": 50,
+									"criteria": "Flat"
+								}
+							]
+						}
+					}
+				},
+				"gas": {
+					"subItems": {
+						"cap": "",
+						"escalation_model": {
+							"label": "None",
+							"value": "none"
+						},
+						"row_view": {
+							"headers": {
+								"price": {
+									"label": "$/MMBTU",
+									"value": "dollar_per_mmbtu"
+								},
+								"criteria": {
+									"label": "Flat",
+									"value": "entire_well_life"
+								}
+							},
+							"rows": [
+								{
+									"price": 2,
+									"criteria": "Flat"
+								}
+							]
+						}
+					}
+				},
+				"ngl": {
+					"subItems": {
+						"cap": "",
+						"escalation_model": {
+							"label": "None",
+							"value": "none"
+						},
+						"row_view": {
+							"headers": {
+								"price": {
+									"label": "% of Oil Price",
+									"value": "pct_of_oil_price"
+								},
+								"criteria": {
+									"label": "Flat",
+									"value": "entire_well_life"
+								}
+							},
+							"rows": [
+								{
+									"price": 100,
+									"criteria": "Flat"
+								}
+							]
+						}
+					}
+				},
+				"drip_condensate": {
+					"subItems": {
+						"cap": "",
+						"escalation_model": {
+							"label": "None",
+							"value": "none"
+						},
+						"row_view": {
+							"headers": {
+								"price": {
+									"label": "$/BBL",
+									"value": "dollar_per_bbl"
+								},
+								"criteria": {
+									"label": "Flat",
+									"value": "entire_well_life"
+								}
+							},
+							"rows": [
+								{
+									"price": 0,
+									"criteria": "Flat"
+								}
+							]
+						}
+					}
+				}
+			},
+			"breakeven": {
+				"npv_discount": 0,
+				"based_on_price_ratio": {
+					"label": "No",
+					"value": "no"
+				},
+				"price_ratio": ""
+			},
+			"shutIn": {
+				"row_view": {
+					"headers": {
+						"phase": "Phase",
+						"criteria": {
+							"required": true,
+							"label": "Dates",
+							"value": "dates",
+							"fieldType": "date-range-two",
+							"valType": "datetime"
+						},
+						"unit": "Unit",
+						"multiplier": "Multiplier",
+						"fixed_expense": "Fixed Expense",
+						"capex": "CAPEX"
+					},
+					"rows": []
+				}
+			}
+		},
+		"project": "5e276a66876cd70012ddf3f5",
+		"assumptionKey": "differentials",
+		"assumptionName": "Differentials",
+		"econ_function": {
+			"price_model": {
+				"oil": {
+					"cap": "",
+					"escalation_model": "none",
+					"rows": [
+						{
+							"price": 50,
+							"entire_well_life": "Flat"
+						}
+					]
+				},
+				"gas": {
+					"cap": "",
+					"escalation_model": "none",
+					"rows": [
+						{
+							"dollar_per_mmbtu": 2,
+							"entire_well_life": "Flat"
+						}
+					]
+				},
+				"ngl": {
+					"cap": "",
+					"escalation_model": "none",
+					"rows": [
+						{
+							"pct_of_oil_price": 100,
+							"entire_well_life": "Flat"
+						}
+					]
+				},
+				"drip_condensate": {
+					"cap": "",
+					"escalation_model": "none",
+					"rows": [
+						{
+							"dollar_per_bbl": 0,
+							"entire_well_life": "Flat"
+						}
+					]
+				}
+			},
+			"breakeven": {
+				"npv_discount": 0,
+				"based_on_price_ratio": "no",
+				"price_ratio": ""
+			},
+			"shutIn": {
+				"rows": []
+			}
+		},
+		"createdBy": "5c51c5893e0f9b04e0bbdada",
+		"createdAt": "2020-01-22T00:33:15.835Z",
+		"updatedAt": "2020-01-22T00:33:15.835Z"
+	}
+]

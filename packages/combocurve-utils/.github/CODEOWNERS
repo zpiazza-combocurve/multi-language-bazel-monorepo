@@ -1,0 +1,14 @@
+/schemas/bigquery @maikelrobier @dereklokey
+
+/src/cloud-function-utils @Adam-Edry @maikelrobier
+/src/collections @maikelrobier
+/src/errors @maikelrobier
+/src/google @Adam-Edry
+/src/migrations @luisenrike @maikelrobier @dereklokey
+/src/mongo @Adam-Edry @maikelrobier @dereklokey
+/src/services @luisenrike
+/src/zoho @Adam-Edry
+
+/tests @luisenrike
+
+/package.json @Adam-Edry @luisenrike

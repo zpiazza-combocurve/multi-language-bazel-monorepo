@@ -1,0 +1,24 @@
+{
+	"name": "@combocurve/prettier-config",
+	"private": true,
+	"license": "UNLICENSED",
+	"type": "commonjs",
+	"exports": {
+		".": "./index.js",
+		"./single-quotes": "./single-quotes.js"
+	},
+	"files": [
+		"./*.js"
+	],
+	"dependencies": {
+		"@ianvs/prettier-plugin-sort-imports": "3.7.2",
+		"prettier-plugin-jsdoc": "0.4.2",
+		"prettier-plugin-packagejson": "2.4.5"
+	},
+	"peerDependencies": {
+		"prettier": ">=2.0.0"
+	},
+	"volta": {
+		"extends": "../../package.json"
+	}
+}

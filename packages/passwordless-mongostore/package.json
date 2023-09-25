@@ -1,0 +1,45 @@
+{
+  "name": "passwordless-mongostore",
+  "version": "0.1.5",
+  "description": "MongoDB TokenStore for Passwordless",
+  "main": "index.js",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "passwordless-tokenstore": "^0.0.10"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chance": "^1.0.18",
+    "grunt": "^1.0.3",
+    "grunt-mocha-test": "^0.13.3",
+    "mocha": "^5.2.0",
+    "mongodb": "^3.6.6",
+    "passwordless-tokenstore-test": "^0.1.4",
+    "uuid": "^3.3.2"
+  },
+  "author": "Florian Heinemann <florian.heinemann@gmail.com> (http://twitter.com/thesumofall)",
+  "license": "MIT",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/florianheinemann/passwordless-mongostore.git"
+  },
+  "bugs": {
+    "url": "https://github.com/florianheinemann/passwordless-mongostore/issues"
+  },
+  "homepage": "https://github.com/florianheinemann/passwordless-mongostore",
+  "keywords": [
+    "passwordless",
+    "mongo",
+    "mongodb",
+    "nopassword",
+    "no-password",
+    "password-less",
+    "tokenstore"
+  ]
+}

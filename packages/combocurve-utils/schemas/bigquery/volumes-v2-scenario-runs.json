@@ -1,0 +1,50 @@
+{
+	"run_at": {
+		"type": "DATETIME",
+		"mode": "REQUIRED"
+	},
+	"run_id": {
+		"type": "STRING",
+		"mode": "REQUIRED"
+	},
+	"project_id": {
+		"type": "STRING",
+		"mode": "REQUIRED"
+	},
+	"project_name": {
+		"type": "STRING",
+		"mode": "REQUIRED"
+	},
+	"scenario_id": {
+		"type": "STRING",
+		"mode": "REQUIRED"
+	},
+	"scenario_name": {
+		"type": "STRING",
+		"mode": "REQUIRED"
+	},
+	"user_id": {
+		"type": "STRING",
+		"mode": "REQUIRED"
+	},
+	"user_name": {
+		"type": "STRING",
+		"mode": "REQUIRED"
+	},
+	"resolution": {
+		"type": "STRING",
+		"mode": "REQUIRED"
+	},
+	"stitch": {
+		"type": "BOOLEAN",
+		"mode": "REQUIRED"
+	},
+	"only_production": {
+		"type": "BOOLEAN",
+		"mode": "REQUIRED"
+	},
+	"only_forecast": {
+		"type": "BOOLEAN",
+		"mode": "REQUIRED"
+	}
+}

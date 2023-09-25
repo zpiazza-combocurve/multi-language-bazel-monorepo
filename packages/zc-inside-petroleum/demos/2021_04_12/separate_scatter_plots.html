@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<title>ZingChart</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+<script src="../../build/es5/zingchart.min.js"></script>
+
+<style>
+body { margin:0;padding:0; }
+*, input, button, select, textarea, label {
+	font-family: 'Lucida Sans Unicode',Monaco,Tahoma,Verdana,Arial;
+}
+</style>
+</head>
+
+<body>
+
+<div id="zc"></div>
+
+<script type="text/javascript" charset="utf-8">
+window.onload = function() {
+
+var ts = (new Date()).getTime();
+var plots = 5;
+var nodes = 1000;
+var useRules = false;
+
+var lineData = function(ts) {
+    var values = [];
+    var val = 30 + 30 * Math.random();
+    for (var i = 0; i < nodes; i++) {
+        values.push([ts, val]);
+        val += -2 + 4 * Math.random();
+        ts += Math.round(1000 + 9000 * Math.random());
+    }
+    return values;
+}
+
+var markerData = function(ts) {
+    var values = [];
+    var val = 30 + 30 * Math.random();
+    for (var i = 0; i < nodes / 100; i++) {
+        values.push([ts, val]);
+        val += -20 + 40 * Math.random();
+        ts += 100 * Math.round(1000 + 9000 * Math.random());
+    }
+    return values;
+}
+
+window.lineMarkerJsRule = function(p) {
+    if (p.nodeindex % 100 === 99) {
+        return {
+            'visible' : true,
+            'type' : 'circle',
+            'size' : 6,
+            'border-width' : 1,
+            'border-color' : '#000000',
+            'background-color' : '#00ffff'
+        };
+    }
+    return {};
+}
+
+window.markerJsRule = function(p) {
+    if (p.nodeindex % 5 === 4) {
+        return {
+            'type' : 'circle',
+            'size' : 6,
+            'border-width' : 1,
+            'border-color' : '#000000',
+            'background-color' : '#00ffff'
+        };
+    }
+    return {};
+}
+
+var cdata = {
+    'type' : 'mixed',
+    'scale-x' : {
+        'transform' : {
+            'type' : 'date'
+        }
+    },
+    'legend' : {
+        
+    },
+    'plot' : {
+        'exact' : true,
+        'line-width' : 1,
+        'max-trackers' : 999999,
+        'max-nodes' : 999999
+    },
+    'series' : [
+        
+    ]
+};
+
+for (var i = 0; i < plots; i++) {
+    var item = {
+        'type' : 'line',
+        'values' : lineData(ts),
+        'mode' : (useRules ? 'normal' : 'fast'),
+        'marker' : {
+          'visible':false
+        }
+    };
+    if (useRules) {
+        item['marker']['js-rule'] = 'lineMarkerJsRule()';
+    }
+    cdata['series'].push(item);
+}
+if (!useRules) {
+    for (var i = 0; i < plots; i++) {
+        cdata['series'].push({
+            'id' : 'scatter' + i,
+            'type' : 'scatter',
+            'values' : markerData(ts),
+            'mode' : 'fast',
+            'marker' : {
+                'type' : 'square',
+                'size' : 4,
+                'background-color' : '#ff0000',
+                'js-rule' : 'markerJsRule()'
+            },
+            'legend-item' : {
+                'visible' : false     
+            },
+            'legend-marker' : {
+                'visible' : false     
+            }
+        });
+    }
+}
+
+console.time('zc');
+zingchart.render({
+  id : 'zc',
+	width : 1000,
+	height : 400,
+	output : 'svg',
+	data : cdata,
+    events : {
+        load : function() {
+            console.timeEnd('zc');    
+        }
+    }
+});
+
+zingchart.bind('zc', 'legend_item_click', function(p) {
+    // toggle plots by plotindex or plotid
+    zingchart.exec(p.id, 'toggleplot', {
+        plotid : 'scatter' + p.plotindex,
+        //update : false
+    });
+    // if you want to toggle multiple plots, use update : false on all except the last one
+    /*
+    zingchart.exec(p.id, 'toggleplot', {
+        plotindex : 6,
+        update : false
+    });
+    zingchart.exec(p.id, 'toggleplot', {
+        plotindex : 7,
+        update : false
+    });
+    zingchart.exec(p.id, 'toggleplot', {
+        plotindex : 8,
+        update : false
+    });
+    zingchart.exec(p.id, 'toggleplot', {
+        plotindex : 9
+    });
+    */
+});
+
+
+}
+</script>
+
+</body>
+</html>

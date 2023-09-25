@@ -1,0 +1,247 @@
+[
+	{
+		"_id": "5e274b0c4b97ed0013323c32",
+		"forecast_p_series": {
+			"default": {
+				"model": "P50"
+			}
+		},
+		"well": "5e272d38b78910dd2a1bd6b5",
+		"scenario": "5e274b004b97ed0013323bd3",
+		"project": "5e272bed4b97ed00132f2271",
+		"createdAt": "2020-01-21T19:03:41.972Z",
+		"updatedAt": "2020-02-18T21:39:01.271Z",
+		"general_options": "5e27985c9489150012928062",
+		"capex": {
+			"20200330t195858m130xi78t": "5e2798aa9489150012928070",
+			"default": {
+				"model": "5e2798aa9489150012928070"
+			}
+		},
+		"ownership_reversion": {
+			"default": {
+				"model": "5e2798f29489150012928075"
+			}
+		},
+		"expenses": {
+			"default": {
+				"model": "5e2798d19489150012928073"
+			}
+		},
+		"production_taxes": {
+			"default": {
+				"model": "5e2798dd9489150012928074"
+			}
+		},
+		"dates": {
+			"default": {
+				"model": "5e4c5973d0ead300125a3f82"
+			}
+		},
+		"depreciation": {
+			"default": null
+		},
+		"escalation": {
+			"default": null
+		},
+		"forecast": {
+			"default": {
+				"model": null
+			}
+		},
+		"pricing_differentials": {
+			"default": {
+				"model": "5e27984b9489150012928060",
+				"lookup": "5e274b0c4b97ed0013323c23"
+			}
+		},
+		"production_vs_fit": {
+			"default": {
+				"model": null
+			}
+		},
+		"reserves_category": {
+			"default": {
+				"model": null
+			}
+		},
+		"risking": {
+			"default": {
+				"model": null
+			}
+		},
+		"schedule": {
+			"default": {
+				"model": null
+			}
+		},
+		"schemaVersion": 3,
+		"stream_properties": {
+			"default": {
+				"model": null
+			}
+		}
+	},
+	{
+		"_id": "5e274b0c4b97ed0013323c26",
+		"forecast_p_series": {
+			"default": {
+				"model": "P50"
+			}
+		},
+		"well": "5e272d38b78910dd2a1bd6b5",
+		"scenario": "5e274b004b97ed0013323bd3",
+		"project": "5e272bed4b97ed00132f2271",
+		"createdAt": "2020-01-21T19:03:41.972Z",
+		"updatedAt": "2020-02-18T21:39:01.271Z",
+		"general_options": "5e27985c9489150012928062",
+		"capex": {
+			"20200330t195858m130xi78t": "5e2798aa9489150012928070",
+			"default": {
+				"model": "5e2798aa9489150012928070"
+			}
+		},
+		"ownership_reversion": {
+			"default": {
+				"model": "5e2798f29489150012928075"
+			}
+		},
+		"expenses": {
+			"default": {
+				"model": "5e2798d19489150012928073"
+			}
+		},
+		"production_taxes": {
+			"default": {
+				"model": "5e2798dd9489150012928074"
+			}
+		},
+		"dates": {
+			"default": {
+				"model": "5e4c5973d0ead300125a3f82"
+			}
+		},
+		"depreciation": {
+			"default": null
+		},
+		"escalation": {
+			"default": null
+		},
+		"forecast": {
+			"default": {
+				"model": null
+			}
+		},
+		"pricing_differentials": {
+			"default": {
+				"model": null
+			}
+		},
+		"production_vs_fit": {
+			"default": {
+				"model": null
+			}
+		},
+		"reserves_category": {
+			"default": {
+				"model": null
+			}
+		},
+		"risking": {
+			"default": {
+				"model": null
+			}
+		},
+		"schedule": {
+			"default": {
+				"model": null
+			}
+		},
+		"schemaVersion": 3,
+		"stream_properties": {
+			"default": {
+				"model": null
+			}
+		}
+	},
+	{
+		"_id": "602d8166e149671da338cd21",
+		"forecast_p_series": {
+			"default": {
+				"model": "P50"
+			}
+		},
+		"well": "5e272d38b78910dd2a1bd6b5",
+		"scenario": "5e274b004b97ed0013323bd3",
+		"project": "5e272bed4b97ed00132f2271",
+		"createdAt": "2020-01-21T19:03:41.972Z",
+		"updatedAt": "2020-02-18T21:39:01.271Z",
+		"general_options": "5e27985c9489150012928062",
+		"capex": {
+			"20200330t195858m130xi78t": "5e2798aa9489150012928070",
+			"default": {
+				"model": "5e2798aa9489150012928070"
+			}
+		},
+		"ownership_reversion": {
+			"default": {
+				"model": "5e2798f29489150012928075"
+			}
+		},
+		"expenses": {
+			"default": {
+				"model": "5e2798d19489150012928073"
+			}
+		},
+		"production_taxes": {
+			"default": {
+				"model": "5e2798dd9489150012928074"
+			}
+		},
+		"dates": {
+			"default": {
+				"model": "5e4c5973d0ead300125a3f82"
+			}
+		},
+		"depreciation": {
+			"default": null
+		},
+		"escalation": {
+			"default": null
+		},
+		"forecast": {
+			"default": {
+				"model": null
+			}
+		},
+		"pricing_differentials": {
+			"default": null
+		},
+		"production_vs_fit": {
+			"default": {
+				"model": null
+			}
+		},
+		"reserves_category": {
+			"default": {
+				"model": null
+			}
+		},
+		"risking": {
+			"default": {
+				"model": null
+			}
+		},
+		"schedule": {
+			"default": {
+				"model": null
+			}
+		},
+		"schemaVersion": 3,
+		"stream_properties": {
+			"default": {
+				"model": null
+			}
+		}
+	}
+]

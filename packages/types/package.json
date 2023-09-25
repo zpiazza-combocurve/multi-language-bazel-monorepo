@@ -1,0 +1,40 @@
+{
+	"name": "@combocurve/types",
+	"private": true,
+	"license": "UNLICENSED",
+	"exports": {
+		"./helpers": {
+			"development": "./src/helpers.ts",
+			"types": "./src/helpers.ts",
+			"default": "./dist/helpers.js"
+		},
+		"./client": {
+			"development": "./src/client.ts",
+			"types": "./src/client.ts",
+			"default": "./dist/client.js"
+		},
+		"./client/*": {
+			"development": "./src/client/*.ts",
+			"types": "./src/client/*.ts",
+			"default": "./dist/client/*.js"
+		},
+		"./server": {
+			"development": "./src/server.ts",
+			"types": "./src/server.ts",
+			"default": "./dist/server.js"
+		}
+	},
+	"files": [
+		"dist"
+	],
+	"scripts": {
+		"build": "yarn g:tsc -p tsconfig.build.json",
+		"lint:typescript": "yarn g:lint:typescript"
+	},
+	"devDependencies": {
+		"@types/mongodb": "3"
+	},
+	"volta": {
+		"extends": "../../package.json"
+	}
+}

@@ -1,0 +1,108 @@
+{
+	"name": "@combocurve/shared",
+	"version": "1.0.0",
+	"private": true,
+	"description": "",
+	"license": "UNLICENSED",
+	"exports": {
+		"./middleware": {
+			"types": "./src/middleware/index.ts",
+			"development": "./src/middleware/index.ts",
+			"default": "./dist/src/middleware/index.js"
+		},
+		"./middleware/*": {
+			"types": "./src/middleware/*.ts",
+			"development": "./src/middleware/*.ts",
+			"default": "./dist/src/middleware/*.js"
+		},
+		"./services": {
+			"types": "./src/services/index.ts",
+			"development": "./src/services/index.ts",
+			"default": "./dist/src/services/index.js"
+		},
+		"./services/*": {
+			"types": "./src/services/*.ts",
+			"development": "./src/services/*.ts",
+			"default": "./dist/src/services/*.js"
+		},
+		"./helpers": {
+			"types": "./src/helpers/index.ts",
+			"development": "./src/helpers/index.ts",
+			"default": "./dist/src/helpers/index.js"
+		},
+		"./helpers/*": {
+			"types": "./src/helpers/*.ts",
+			"development": "./src/helpers/*.ts",
+			"default": "./dist/src/helpers/*.js"
+		},
+		"./entities": {
+			"types": "./src/entities/index.ts",
+			"development": "./src/entities/index.ts",
+			"default": "./dist/src/entities/index.js"
+		},
+		"./entities/*": {
+			"types": "./src/entities/*.ts",
+			"development": "./src/entities/*.ts",
+			"default": "./dist/src/entities/*.js"
+		},
+		"./tests": {
+			"types": "./tests/index.ts",
+			"development": "./tests/index.ts",
+			"default": "./dist/tests/index.js"
+		},
+		"./tests/*": {
+			"types": "./tests/*.ts",
+			"development": "./tests/*.ts",
+			"default": "./dist/tests/*.js"
+		},
+		".": {
+			"types": "./src/index.ts",
+			"development": "./src/index.ts",
+			"default": "./dist/src/index.js"
+		},
+		"./*": {
+			"types": "./src/*.ts",
+			"development": "./src/*.ts",
+			"default": "./dist/src/*.js"
+		}
+	},
+	"scripts": {
+		"prebuild": "yarn g:rimraf dist",
+		"build": "yarn g:tsc -p tsconfig.build.json",
+		"lint:typescript": "yarn g:lint:typescript",
+		"test": "yarn g:test",
+		"test:ci": "yarn g:test:ci"
+	},
+	"dependencies": {
+		"@combocurve/dal-client": "workspace:*",
+		"@combocurve/mongoose-models": "workspace:*",
+		"@combocurve/types": "workspace:*",
+		"@google-cloud/logging-winston": "5.3.0",
+		"combocurve-utils": "workspace:*",
+		"fast-safe-stringify": "2.1.1",
+		"launchdarkly-node-server-sdk": "7.0.2",
+		"short-unique-id": "4.4.4",
+		"triple-beam": "1.4.1",
+		"winston": "3.10.0"
+	},
+	"devDependencies": {
+		"@combocurve/tsconfig": "workspace:*",
+		"@google-cloud/bigquery": "5.12.0",
+		"@types/express": "4.17.17",
+		"@types/lodash": "4.14.195",
+		"@types/node": "16.18.39",
+		"express": "4.18.2",
+		"mock-express-request": "0.2.2",
+		"mock-express-response": "0.3.0",
+		"mongodb-memory-server-global-4.2": "7.6.3",
+		"mongoose": "5.13.20",
+		"uuid": "8.3.2"
+	},
+	"peerDependencies": {
+		"@google-cloud/bigquery": "5.12.0",
+		"express": "4.18.2"
+	},
+	"volta": {
+		"extends": "../../package.json"
+	}
+}
