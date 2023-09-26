@@ -1,0 +1,11 @@
+py_library(
+  name = "combocurve",
+  srcs = glob(
+      ["combocurve/**/*.py"]
+  ),
+  data = [],
+  imports = ["."],
+  visibility = ["//visibility:public"],
+  deps = [
+  ]
+)

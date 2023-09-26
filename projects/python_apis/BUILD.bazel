@@ -1,7 +1,20 @@
-load("@rules_python//python:defs.bzl", "py_binary", "py_test")
+load("@pip//:requirements.bzl", "requirement")
 
 py_test(
-  name = "test",
-  srcs = ["test.py"],
-  deps = [":main"],
+    name = "forecast_api",
+    srcs = ["tests/test_forecast_api.py"],
+    main = "tests/test_forecast_api.py",
+    deps = [
+      requirement("pytest"),
+      requirement("numpy"),
+      requirement("pymongo"),
+      requirement("mongoengine"),
+      requirement("python-dateutil"),
+      requirement("pytz"),
+      requirement("xlrd"),
+      requirement("scipy"),
+      requirement("pandas"),
+      requirement("pydantic"),
+      "//packages/python/combocurve:combocurve"
+    ]
 )
