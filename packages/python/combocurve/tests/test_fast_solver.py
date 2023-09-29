@@ -5,8 +5,7 @@ from combocurve.science.scheduling.csp_solver import OrtoolsScheduler
 from combocurve.science.scheduling.csp_solver_fixtures import (ScheduleTest1, ScheduleTest2, ScheduleTest3,
                                                                ScheduleTest4, ScheduleTest5, ScheduleTest6,
                                                                ScheduleTest7, ScheduleTest8, ScheduleTest9)
-from combocurve.science.scheduling.csp_solver_test import NoopNotificationCallback
-
+from .test_csp_solver import NoopNotificationCallback
 noop_callback = NoopNotificationCallback()
 
 

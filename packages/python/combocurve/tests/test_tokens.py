@@ -1,8 +1,7 @@
 import pytest
 from combocurve.science.network_module.parser.tokens import (TokenType, Token, NumberToken, StreamToken,
                                                              FunctionHandleToken)
-from combocurve.science.network_module.parser.test_shared_data import stream_inputs, functions
-
+from .test_data.test_shared_data import stream_inputs, functions
 
 @pytest.mark.unittest
 def test_valid_token_initialization():

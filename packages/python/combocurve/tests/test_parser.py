@@ -2,7 +2,7 @@ import pytest
 import numpy as np
 import datetime
 
-from combocurve.science.network_module.parser.test_shared_data import stream_inputs, functions
+from .test_data.test_shared_data import stream_inputs, functions
 from combocurve.science.network_module.parser.lexer import Lexer
 from combocurve.science.network_module.parser.parser import Parser
 

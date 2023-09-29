@@ -1,11 +1,62 @@
+load("@pip//:requirements.bzl", "requirement")
+load("//tools/pytest:defs.bzl", "pytest_test")
+
+filegroup(
+    name = "misc_files",
+    srcs = glob([
+        "combocurve/**/*.pickle",
+        "combocurve/**/*.json",
+        "combocurve/**/*.csv",
+    ]),
+)
+
 py_library(
   name = "combocurve",
   srcs = glob(
       ["combocurve/**/*.py"]
   ),
-  data = [],
+  data = [
+    ":misc_files"
+  ],
   imports = ["."],
   visibility = ["//visibility:public"],
   deps = [
   ]
+)
+
+pytest_test(
+    name = "combocurve_tests",
+    srcs = glob(
+      ["tests/**/*.py"]
+    ),
+    data = [
+      ":misc_files",
+    ],
+    deps = [
+      ":combocurve",
+      requirement("numpy"),
+      requirement("pandas"),
+      requirement("python-dateutil"),
+      requirement("pymongo"),
+      requirement("xlrd"),
+      requirement("pydantic"),
+      requirement("flask"),
+      requirement("polars"),
+      requirement("requests"),
+      requirement("mongomock"),
+      requirement("launchdarkly-server-sdk"),
+      requirement("scipy"),
+      requirement("mongoengine"),
+      requirement("google-cloud-secret-manager"),
+      requirement("babel"),
+      requirement("pusher"),
+      requirement("pyproj"),
+      requirement("deepdiff"),
+      requirement("grpc-interceptor"),
+      requirement("pytest-mock-resources"),
+      requirement("pyarrow"),
+      requirement("ortools"),
+      requirement("python-on-whales"),
+      requirement("pytest-mock")
+    ]
 )

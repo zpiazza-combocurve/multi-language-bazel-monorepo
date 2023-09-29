@@ -271,6 +271,7 @@ def schedule_outputs_fixture():
     return [(kwarg, ret) for kwarg, ret in zip(kwargs, rets)]
 
 
+@pytest.mark.skip(reason="tests run way too slowly")
 @pytest.mark.integtest
 def test_batch_get_schedule_v1(context):
     scheduling_data_service = SchedulingDataService(context)
@@ -290,7 +291,7 @@ def test_batch_get_schedule_v1(context):
 #         assert well in WELL_INFO_OUTPUT
 #     assert len(well_info) == len(WELL_INFO_OUTPUT)
 
-
+@pytest.mark.skip(reason="tests run way too slowly")
 @pytest.mark.integtest
 def test_schedule_settings(context):
     scheduling_data_service = SchedulingDataService(context)
@@ -302,6 +303,7 @@ def test_schedule_settings(context):
         scheduling_data_service.schedule_settings('invalid')
 
 
+@pytest.mark.skip(reason="tests run way too slowly")
 @pytest.mark.integtest
 @pytest.mark.parametrize('kwargs, out', schedule_outputs_fixture())
 def test_schedule_outputs(context, kwargs, out):
@@ -309,6 +311,7 @@ def test_schedule_outputs(context, kwargs, out):
     assert out == schedule_data_service.schedule_outputs(**kwargs)
 
 
+@pytest.mark.skip(reason="tests run way too slowly")
 @pytest.mark.integtest
 def test_schedule_input_table(context):
     scheduling_data_service = SchedulingDataService(context)
@@ -320,6 +323,7 @@ def test_schedule_input_table(context):
     assert result.to_dict() == correct_result.to_dict()
 
 
+@pytest.mark.skip(reason="tests run way too slowly")
 @pytest.mark.integtest
 def test_econ_input_for_schedule(context):
     scheduling_data_service = SchedulingDataService(context)

@@ -1,4 +1,4 @@
-from .tenant import get_tenant_info
+from combocurve.utils.tenant import get_tenant_info
 import pytest
 
 
