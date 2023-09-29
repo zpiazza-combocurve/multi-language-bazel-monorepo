@@ -1,0 +1,34 @@
+# See https://cloud.google.com/appengine/docs/flexible/python/configuring-your-app-with-app-yaml
+# and https://cloud.google.com/appengine/docs/flexible/python/reference/app-yaml for more info
+
+runtime: custom
+env: flex
+service: flex-cc
+
+env_variables:
+  GCP_PRIMARY_PROJECT_ID: dev9-combocurve
+  GCP_REGIONAL_PROJECT_ID: dev9-combocurve
+  REGION: "us-central1"
+  COPY_CLOUD_RUN_URL: "https://copy-zt4iogrqua-uc.a.run.app"
+
+handlers:
+  - url: /.*
+    script: auto
+    secure: always
+    redirect_http_response_code: 301
+
+automatic_scaling:
+  min_num_instances: 1
+  max_num_instances: 4
+  cool_down_period_sec: 180
+  cpu_utilization:
+    target_utilization: 0.6
+
+resources:
+  cpu: 1
+  memory_gb: 6.0
+  disk_size_gb: 15
+  volumes:
+    - name: ramdisk1
+      volume_type: tmpfs
+      size_gb: 1
