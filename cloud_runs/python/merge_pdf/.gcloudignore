@@ -1,0 +1,17 @@
+# Ignore all files and then explicitly include python files and requirements
+# Makes sure only needed files are uploaded
+
+# Ignore everything
+*
+# Add current directory back, gcloud won't work without this!
+!.
+
+!/app.py
+!/poetry.lock
+!/pyproject.toml
+!/combocurve
+!/combocurve/**/*
+
+!/cloud_runs
+!/cloud_runs/merge_pdf
+!/cloud_runs/merge_pdf/*.py

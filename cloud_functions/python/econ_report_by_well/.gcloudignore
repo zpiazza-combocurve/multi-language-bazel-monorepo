@@ -1,0 +1,44 @@
+# Ignore all files and then explicitly include python files and requirements
+# Makes sure only needed files are uploaded
+
+# Ignore everything
+*
+# Add current directory back, gcloud won't work without this!
+!.
+
+# Include python files
+!/models
+!/models/*.py
+
+!/cloud
+!/cloud/*.py
+
+!/cloud_functions
+!/cloud_functions/*.py
+!/cloud_functions/econ_report_by_well
+!/cloud_functions/econ_report_by_well/*.py
+
+!/shared
+!/shared/*.py
+!/shared/econ_report
+!/shared/econ_report/*.py
+
+!/assets
+!/assets/fonts
+!/assets/fonts/*
+
+!/services
+!/services/file_service.py
+!/services/storage_service.py
+!/services/notification_service.py
+
+!/main.py
+!/config.py
+!/exceptions.py
+
+!/combocurve
+!/combocurve/**/*
+
+# Include the requirements file and this ignore file
+!/requirements.txt
+!/.gcloudignore

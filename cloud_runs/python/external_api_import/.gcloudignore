@@ -1,0 +1,16 @@
+# Ignore all files and then explicitly include python files and requirements
+# Makes sure only needed files are uploaded
+
+# Ignore everything
+*
+# Add current directory back, gcloud won't work without this!
+!.
+
+!/app.py
+!/requirements.txt
+!/combocurve
+!/combocurve/**/*
+
+!/cloud_runs
+!/cloud_runs/external_api_import
+!/cloud_runs/external_api_import/*.py

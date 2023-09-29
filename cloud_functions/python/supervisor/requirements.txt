@@ -1,0 +1,3 @@
+-r combocurve/core-requirements.txt
+google-cloud-core==1.4.4
+numpy==1.24.2

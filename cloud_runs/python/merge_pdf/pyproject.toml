@@ -1,0 +1,31 @@
+[tool.poetry]
+name = "merge_pdf"
+version = "0.1.0"
+description = ""
+authors = ["Maikel Ruiz <m.ruiz@combocurve.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+Babel = "2.8.0"
+dnspython = "1.16.0"
+Flask = "2.1.2"
+greenlet = "^1.1"
+gevent = "^21.12"
+google-cloud-logging = "2.6"
+google-cloud-storage = "1.32.0"
+google-cloud-scheduler = "2.5.0"
+gunicorn = {version = "20.0.4", extras = ["gevent"]}
+mongoengine = "0.20.0"
+pandas = "1.1.5"
+pusher = "3.0"
+pymongo = "3.11"
+PyPDF2 = "1.26.0"
+numpy = "^1.22.4"
+google-cloud-secret-manager = "^2.16.2"
+launchdarkly-server-sdk = "^8.1.4"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
