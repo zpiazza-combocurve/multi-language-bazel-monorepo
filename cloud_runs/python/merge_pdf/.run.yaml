@@ -1,4 +1,0 @@
---timeout: 1800
---memory: 4Gi
---cpu: 1
---concurrency: 1

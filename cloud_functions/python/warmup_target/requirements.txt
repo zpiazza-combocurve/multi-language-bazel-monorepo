@@ -1,2 +1,0 @@
--r combocurve/core-requirements.txt
-google-cloud-core==1.4.4

@@ -1,4 +1,0 @@
---timeout: 1800
---memory: 8Gi
---cpu: 2
---min-instances: 1
