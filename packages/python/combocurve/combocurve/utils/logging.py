@@ -3,7 +3,7 @@ import queue
 import logging
 import atexit
 import os
-from collections import Mapping
+from collections.abc import Mapping
 from enum import Enum
 
 from flask import request

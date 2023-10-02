@@ -1,12 +1,15 @@
 load("@pip//:requirements.bzl", "requirement")
 load("//tools/pytest:defs.bzl", "pytest_test")
 
+package(default_visibility = ["//visibility:public"])
+
 filegroup(
     name = "misc_files",
     srcs = glob([
         "combocurve/**/*.pickle",
         "combocurve/**/*.json",
         "combocurve/**/*.csv",
+        "combocurve/**/*.ttf",
     ]),
 )
 

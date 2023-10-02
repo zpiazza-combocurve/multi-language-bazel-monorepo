@@ -1,20 +1,60 @@
 load("@pip//:requirements.bzl", "requirement")
+load("//tools/pytest:defs.bzl", "pytest_test")
 
-py_test(
-    name = "forecast_api",
-    srcs = ["tests/test_forecast_api.py"],
-    main = "tests/test_forecast_api.py",
+py_library(
+  name = "python_apis",
+  srcs = glob(
+      ["api/**/*.py"]
+  ),
+  imports = ["."],
+  visibility = ["//visibility:public"],
+  deps = [
+  ]
+)
+
+pytest_test(
+    name = "python_apis_tests",
+    srcs = glob(
+      ["tests/**/*.py"]
+    ),
+    data = [
+      "pytest.ini",
+      # "//fonts:Roboto-Regular.ttf"
+    ],
     deps = [
-      requirement("pytest"),
-      requirement("numpy"),
+      ":python_apis",
+      "//packages/python/combocurve:combocurve",
+      requirement("flask"),
+      requirement("flask-cors"),
+      requirement("pytest-flask"),
+      requirement("google-api-core"),
+      requirement("google-cloud-appengine-logging"),
+      requirement("google-cloud-audit-log"),
+      requirement("google-cloud-bigquery"),
+      requirement("google-cloud-logging"),
+      requirement("google-cloud-secret-manager"),
+      requirement("google-cloud-storage"),
+      requirement("google-cloud-tasks"),
       requirement("pymongo"),
-      requirement("mongoengine"),
-      requirement("python-dateutil"),
-      requirement("pytz"),
-      requirement("xlrd"),
-      requirement("scipy"),
+      requirement("numpy"),
+      requirement("mongomock"),
       requirement("pandas"),
       requirement("pydantic"),
-      "//packages/python/combocurve:combocurve"
+      requirement("scipy"),
+      requirement("pusher"),
+      requirement("polars"),
+      requirement("pyproj"),
+      requirement("launchdarkly-server-sdk"),
+      requirement("xlrd"),
+      requirement("joblib"),
+      requirement("grpc-interceptor"),
+      requirement("jsonschema"),
+      requirement("redis"),
+      requirement("matplotlib"),
+      requirement("reportlab"),
+      requirement("svglib"),
+      requirement("PyPDF2"),
+      requirement("python-pptx"),
+      requirement("seaborn"),
     ]
 )

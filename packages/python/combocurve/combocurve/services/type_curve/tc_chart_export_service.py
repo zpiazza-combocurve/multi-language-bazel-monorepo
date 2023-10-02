@@ -149,7 +149,8 @@ BASE_PHASE_UNITS = {'oil': 'bbl', 'gas': 'mcf', 'water': 'bbl'}
 ASPECT = ASPECTS[1]
 HEIGHT = DESIRED_WIDTH / ASPECT
 plt.rcParams["figure.figsize"] = (ASPECT * HEIGHT, HEIGHT)
-font_path = 'C:/Users/ZacharyPiazza/code/python-combocurve/fonts/Roboto-Regular.ttf'
+# TODO: FIX THIS
+font_path = '/mnt/c/Users/ZacharyPiazza/code/multi-language-bazel-monorepo/fonts/Roboto-Regular.ttf'
 font_manager.fontManager.addfont(font_path)
 prop = font_manager.FontProperties(fname=font_path)
 matplotlib.rcParams['font.family'] = prop.get_name()
