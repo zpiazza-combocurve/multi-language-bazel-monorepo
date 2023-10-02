@@ -19,10 +19,11 @@ pytest_test(
       ["tests/**/*.py"]
     ),
     data = [
-      ":misc_files",
+      "pytest.ini",
     ],
     deps = [
-      ":combocurve",
+      ":flex_cc",
+      "//packages/python/combocurve:combocurve",
       requirement("numpy"),
       requirement("pandas"),
       requirement("python-dateutil"),

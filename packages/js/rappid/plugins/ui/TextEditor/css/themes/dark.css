@@ -1,0 +1,15 @@
+.joint-text-editor.joint-theme-dark .caret {
+    background-color: #595A5A;
+}
+
+.joint-text-editor.joint-theme-dark .caret.placeholder:before {
+    background-color: #595A5A;
+}
+.joint-text-editor.joint-theme-dark .caret.placeholder:after {
+    font-style: italic;
+    color: #D3D3D3;
+}
+
+.joint-text-editor.joint-theme-dark .char-selection-box {
+    background-color: #D3D3D3;
+}

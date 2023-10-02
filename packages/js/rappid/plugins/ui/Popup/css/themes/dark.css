@@ -1,0 +1,10 @@
+.joint-popup.joint-theme-dark {
+   background-color: #8b9094;
+   border: 2px solid #5e6366;
+   border-radius: 10px;
+   padding: 10px;
+   --arrow-mask-width: 6px;
+   --arrow-width: 8px;
+   --arrow-mask-color: #8b9094;
+   --arrow-color: #5e6366;
+}

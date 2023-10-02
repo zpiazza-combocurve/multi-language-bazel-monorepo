@@ -1,0 +1,144 @@
+.joint-popup {
+   position: absolute;
+   z-index: 1000;
+}
+
+.joint-popup .popup-arrow,
+.joint-popup .popup-arrow-mask {
+   border: solid transparent;
+   position: absolute;
+}
+
+.joint-popup .popup-arrow-mask {
+   border-width: var(--arrow-mask-width);
+   /* fix for edge rendering glitches https://bugs.chromium.org/p/chromium/issues/detail?id=600120 */
+   transform: scale(1.05);
+}
+
+.joint-popup .popup-arrow {
+   border-width: var(--arrow-width);
+}
+
+.joint-popup.top .popup-arrow-mask,
+.joint-popup.top-left .popup-arrow-mask,
+.joint-popup.top-right .popup-arrow-mask  {
+   border-bottom-color: var(--arrow-mask-color);
+}
+
+.joint-popup.bottom .popup-arrow-mask,
+.joint-popup.bottom-left .popup-arrow-mask,
+.joint-popup.bottom-right .popup-arrow-mask {
+   border-top-color: var(--arrow-mask-color);
+}
+
+.joint-popup.left .popup-arrow-mask {
+   border-right-color: var(--arrow-mask-color);
+}
+
+.joint-popup.right .popup-arrow-mask {
+   border-left-color: var(--arrow-mask-color);
+}
+
+.joint-popup.top .popup-arrow,
+.joint-popup.top-left .popup-arrow,
+.joint-popup.top-right .popup-arrow {
+   border-bottom-color: var(--arrow-color);
+}
+
+.joint-popup.bottom .popup-arrow,
+.joint-popup.bottom-left .popup-arrow,
+.joint-popup.bottom-right .popup-arrow {
+   border-top-color: var(--arrow-color);
+}
+
+.joint-popup.left .popup-arrow {
+   border-right-color: var(--arrow-color);
+}
+
+.joint-popup.right .popup-arrow {
+   border-left-color: var(--arrow-color);
+}
+
+.joint-popup.top .popup-arrow-mask,
+.joint-popup.top .popup-arrow {
+   bottom: 100%;
+   left: 50%;
+}
+
+.joint-popup.top-left .popup-arrow-mask,
+.joint-popup.top-left .popup-arrow {
+   bottom: 100%;
+   left: 15px;
+}
+
+.joint-popup.top-right .popup-arrow-mask,
+.joint-popup.top-right .popup-arrow {
+   bottom: 100%;
+   left: calc(100% - 15px);
+}
+
+.joint-popup.bottom .popup-arrow-mask,
+.joint-popup.bottom .popup-arrow {
+   top: 100%;
+   left: 50%;
+}
+
+.joint-popup.bottom-left .popup-arrow-mask,
+.joint-popup.bottom-left .popup-arrow {
+   top: 100%;
+   left: 15px;
+}
+
+.joint-popup.bottom-right .popup-arrow-mask,
+.joint-popup.bottom-right .popup-arrow {
+   top: 100%;
+   left: calc(100% - 15px);
+}
+
+.joint-popup.bottom .popup-arrow-mask {
+   margin-left: calc(-1 * var(--arrow-mask-width));
+}
+
+.joint-popup.bottom .popup-arrow {
+   margin-left: calc(-1 * var(--arrow-width));
+}
+
+.joint-popup.bottom .popup-arrow-mask,
+.joint-popup.bottom-right .popup-arrow-mask,
+.joint-popup.bottom-left .popup-arrow-mask,
+.joint-popup.top .popup-arrow-mask,
+.joint-popup.top-right .popup-arrow-mask,
+.joint-popup.top-left .popup-arrow-mask {
+   margin-left: calc(-1 * var(--arrow-mask-width));
+}
+
+.joint-popup.bottom .popup-arrow,
+.joint-popup.bottom-right .popup-arrow,
+.joint-popup.bottom-left .popup-arrow,
+.joint-popup.top .popup-arrow,
+.joint-popup.top-right .popup-arrow,
+.joint-popup.top-left .popup-arrow {
+   margin-left: calc(-1 * var(--arrow-width));
+}
+
+.joint-popup.left .popup-arrow-mask,
+.joint-popup.left .popup-arrow {
+   right: 100%;
+   top: 50%;
+}
+
+.joint-popup.right .popup-arrow-mask,
+.joint-popup.right .popup-arrow {
+   left: 100%;
+   top: 50%;
+}
+
+.joint-popup.left .popup-arrow,
+.joint-popup.right .popup-arrow {
+   margin-top: calc(-1 * var(--arrow-width));
+}
+
+.joint-popup.left .popup-arrow-mask,
+.joint-popup.right .popup-arrow-mask {
+   margin-top: calc(-1 * var(--arrow-mask-width));
+}

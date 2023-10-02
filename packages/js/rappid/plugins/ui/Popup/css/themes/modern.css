@@ -1,0 +1,10 @@
+.joint-popup.joint-theme-modern {
+   background-color: #fff;
+   border: 2px solid #31d0c6;
+   border-radius: 10px;
+   padding: 10px;
+   --arrow-mask-width: 6px;
+   --arrow-width: 8px;
+   --arrow-mask-color: #fff;
+   --arrow-color: #31d0c6;
+}

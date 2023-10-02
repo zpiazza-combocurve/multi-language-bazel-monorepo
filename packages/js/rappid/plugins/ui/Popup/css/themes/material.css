@@ -1,0 +1,11 @@
+.joint-popup.joint-theme-material {
+    background-color: #ecf0f8;
+    border: 2px solid #d0d8e8;
+    border-radius: 10px;
+    padding: 10px;
+    font-family: lato-light, Arial, sans-serif;
+    --arrow-mask-width: 6px;
+    --arrow-width: 8px;
+    --arrow-mask-color: #ecf0f8;
+    --arrow-color: #d0d8e8;
+}

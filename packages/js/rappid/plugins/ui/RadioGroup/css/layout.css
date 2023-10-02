@@ -1,0 +1,50 @@
+.joint-radio-group {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.joint-radio-group label {
+    display: flex;
+    cursor: pointer;
+    font-weight: 500;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 0.375em;
+}
+
+.joint-radio-group label:after {
+    content: none;
+}
+
+.joint-radio-group input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.joint-radio-group input:checked + span:before {
+    box-shadow: inset 0 0 0 0.4375em var(--checked-color);
+}
+
+.joint-radio-group input:hover:not(:checked) + span:before {
+    box-shadow: inset 0 0 0 0.2em var(--checked-color);
+}
+
+.joint-radio-group span {
+    display: flex;
+    align-items: center;
+}
+
+.joint-radio-group span:before {
+    display: flex;
+    flex-shrink: 0;
+    content: "";
+    background-color: #fff;
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 50%;
+    margin-right: 0.375em;
+    transition: 0.25s ease;
+    box-shadow: inset 0 0 0 0.125em var(--checked-color);
+}

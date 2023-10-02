@@ -31,13 +31,13 @@
 		"g:turbo:dev": "cd $INIT_CWD && turbo run dev --no-daemon",
 		"g:turbo:lint": "cd $INIT_CWD && turbo run lint:typescript --no-daemon",
 		"g:turbo:test": "cd $INIT_CWD && turbo run test --no-daemon",
-		"postinstall": "husky install",
 		"lint": "pnpm turbo run lint:typescript --filter='!zc-inside-petroleum' --filter='!passwordless-mongostore'",
 		"sync": "git submodule update --init && pnpm install",
 		"syncpack:fix": "pnpm syncpack fix-mismatches || true && pnpm syncpack prompt || true && pnpm syncpack set-semver-ranges",
 		"syncpack:lint": "syncpack list-mismatches",
 		"test": "pnpm turbo run test --filter='!zc-inside-petroleum' --filter='!passwordless-mongostore' --filter='!combocurve-cli'",
-		"update-deps": "ncu -i --target=minor --format=group -ws --root"
+		"update-deps": "ncu -i --target=minor --format=group -ws --root",
+		"postinstall": "husky install"
 	},
 	"lint-staged": {
 		"**/*": [
@@ -53,10 +53,8 @@
 	"resolutions": {
 		"@mui/styled-engine": "npm:@mui/styled-engine-sc@^5.12.0",
 		"@types/react": "17.0.0",
-		"pdfmake@0.2.5": "patch:pdfmake@npm%3A0.2.5#./.pnpm/patches/pdfmake-npm-0.2.5-7672c264cd.patch",
 		"react": "17.0.2",
 		"react-dom": "17.0.2",
-		"react-js-cron-mui@1.0.0": "patch:react-js-cron-mui@npm%3A1.0.0#./.pnpm/patches/react-js-cron-mui-npm-1.0.0-343e30915d.patch",
 		"typescript": "5.2.2"
 	},
 	"devDependencies": {

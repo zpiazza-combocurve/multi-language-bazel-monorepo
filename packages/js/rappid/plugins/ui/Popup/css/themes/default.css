@@ -1,0 +1,9 @@
+.joint-popup.joint-theme-default {
+   border: 1px solid lightgrey;
+   background-color: white;
+   padding: 10px;
+   --arrow-mask-width: 7px;
+   --arrow-width: 8px;
+   --arrow-mask-color: white;
+   --arrow-color: lightgrey;
+}

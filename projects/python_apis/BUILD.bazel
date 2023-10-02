@@ -19,7 +19,6 @@ pytest_test(
     ),
     data = [
       "pytest.ini",
-      # "//fonts:Roboto-Regular.ttf"
     ],
     deps = [
       ":python_apis",
