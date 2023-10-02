@@ -1,0 +1,140 @@
+AriesForecast:
+  type: object
+  properties:
+    forecast:
+      type: array
+      items:
+        type: object
+        properties:
+          PROPNUM:
+            type: string
+            maxLength: 16384
+            description: Propnum
+          WELL NAME:
+            type: string
+            maxLength: 16384
+            description: Well Name
+          WELL NUMBER:
+            type: string
+            maxLength: 16384
+            description: Well Number
+          INPT ID:
+            type: string
+            maxLength: 16384
+            description: Inpt ID
+          API10:
+            type: string
+            maxLength: 16384
+            description: Api10
+          API12:
+            type: string
+            maxLength: 16384
+            description: Api12
+          API14:
+            type: string
+            maxLength: 16384
+            description: Api14
+          CHOSEN ID:
+            type: string
+            maxLength: 16384
+            description: Chosen ID
+          ARIES ID:
+            type: string
+            maxLength: 16384
+            description: Aries ID
+          PHDWIN ID:
+            type: string
+            maxLength: 16384
+            description: Phdwin ID
+          SECTION:
+            type: integer
+            description: Section
+          SEQUENCE:
+            type: integer
+            description: Sequence
+          QUALIFIER:
+            type: string
+            maxLength: 16384
+            description: Qualifier
+          KEYWORD:
+            type: string
+            maxLength: 16384
+            description: Keyword
+          EXPRESSION:
+            type: string
+            maxLength: 16384
+            description: Expression
+    well:
+      type: string
+      description: Well ID
+  example:
+    well: 602d31de4477b92029913e56
+    forecast:
+      PROPNUM: 1PDPOIL020
+      WELL NAME: 1PDPOIL235
+      WELL NUMBER: 1H
+      INPT ID: DTHrr7FMza
+      API10: '1234567890'
+      API12: '12345678901'
+      API14: '12345678901214'
+      CHOSEN ID: 1PDPOIL235
+      ARIES ID: 1PDPOIL235
+      PHDWIN ID: 9E5F5CC579867509254700023
+      SECTION: 4
+      SEQUENCE: 10
+      QUALIFIER: CC_QUAL
+      KEYWORD: CUMS
+      EXPRESSION: 0 0 0 0 0 0
+AriesForecastList:
+  type: array
+  items:
+    $ref: '#/definitions/AriesForecast'
+  maxItems: 1000
+  example:
+    - well: 602d31de4477b92029913e56
+      forecast:
+        - PROPNUM: 1PDPOIL020
+          WELL NAME: 1PDPOIL235
+          WELL NUMBER: 1H
+          INPT ID: DTHrr7FMza
+          API10: '1234567890'
+          API12: '12345678901'
+          API14: '12345678901214'
+          CHOSEN ID: 1PDPOIL235
+          ARIES ID: 1PDPOIL235
+          PHDWIN ID: 9E5F5CC579867509254700023
+          SECTION: 4
+          SEQUENCE: 10
+          QUALIFIER: CC_QUAL
+          KEYWORD: CUMS
+          EXPRESSION: 0 0 0 0 0 0
+        - PROPNUM: 1PDPOIL020
+          WELL NAME: 1PDPOIL236
+          WELL NUMBER: 2H
+          INPT ID: KMLrr7FMqq
+          API10: '1234567890'
+          API12: '12345678901'
+          API14: '12345678901214'
+          CHOSEN ID: 1PDPOIL236
+          ARIES ID: 1PDPOIL236
+          PHDWIN ID: 9E5F5CC579867509254700023
+          SECTION: 5
+          SEQUENCE: 20
+          QUALIFIER: CC_QUAL
+          KEYWORD: CUMS
+          EXPRESSION: 0 0 0 0 0 0
+        - PROPNUM: 1PDPOIL020
+          WELL NAME: 1PDPOIL237
+          WELL NUMBER: 3H
+          INPT ID: LGHrr9FMhg
+          API10: '1234567890'
+          API12: '12345678901'
+          API14: '12345678901214'
+          CHOSEN ID: 1PDPOIL237
+          ARIES ID: 1PDPOIL237
+          PHDWIN ID: 9E5F5CC579867509254700023
+          SECTION: 6
+          SEQUENCE: 30
+          QUALIFIER: CC_QUAL
+          KEYWORD: CUMS
+          EXPRESSION: 0 0 0 0 0 0

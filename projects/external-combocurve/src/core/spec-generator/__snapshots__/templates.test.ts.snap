@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`templates should generate definitions 1`] = `
+"
+PricingModelOil:
+  type: 'object'
+  properties:
+    cap:
+      type: 'number'
+    escalationModel:
+      type: 'string'
+    rows:
+      type: 'array'
+      items:
+        $ref: '#/definitions/PricingModelOilRow'
+PricingModelOilRow:
+  type: 'object'
+  properties:
+    price:
+      type: 'number'
+    dates:
+      $ref: '#/definitions/DateCriteria'
+    offsetToAsOf:
+      $ref: '#/definitions/OffsetCriteria'
+    entireWellLife:
+      type: 'string'
+"
+`;
+
+exports[`templates should generate paths 1`] = `
+"
+/v1/projects/{projectId}/econ-models/pricing:
+  post:
+    operationId: post-v1-pricing
+    consumes:
+      - application/json
+    produces:
+      - application/json
+    parameters:
+      - name: projectId
+        in: path
+        required: true
+        type: string
+      - name: pricing
+        in: body
+        schema:
+          $ref: '#/definitions/PricingInputList'
+    responses:
+      '207':
+        description: Multi-Status
+        schema:
+          $ref: #/definitions/PricingMultiStatusResponse
+"
+`;

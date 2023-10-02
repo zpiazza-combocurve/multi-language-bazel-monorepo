@@ -1,0 +1,175 @@
+[
+	{
+		"_id": "5f971a8f6749f60012dcb93a",
+		"phaseType": {
+			"oil": "rate",
+			"gas": "rate",
+			"water": "rate"
+		},
+		"fits": {
+			"oil": "5f971bb2e1ee918fd37fb9d5",
+			"gas": "5f9ac41788f08493650e70be",
+			"water": "5ffe44a775d95f2bbdd349c0"
+		},
+		"headers": {
+			"first_prod_date": null,
+			"perf_lateral_length": null,
+			"true_vertical_depth": null,
+			"total_prop_weight": null
+		},
+		"assumptions": {
+			"capex": null,
+			"dates": null,
+			"risking": null,
+			"expenses": null,
+			"escalation": null,
+			"depreciation": null,
+			"general_options": "5fd15bd5dc0bcb0012d8a936",
+			"production_taxes": null,
+			"production_vs_fit": null,
+			"stream_properties": null,
+			"ownership_reversion": null,
+			"differentials": null,
+			"pricing": null
+		},
+		"basePhase": "oil",
+		"fitted": false,
+		"forecastSeries": "best",
+		"normalizations": ["5f971b706749f60012dcb985", "5f971b7b6749f60012dcb987", "5fa34508ef377a0012b9d17a"],
+		"visibility": "project",
+		"wells": [
+			"5e272d38b78910dd2a1bd691",
+			"5e272d38b78910dd2a1bd692",
+			"5e272d38b78910dd2a1bd6ae",
+			"5e6f9e10ce8c14e6f180f705",
+			"5e6f9e10ce8c14e6f180f702",
+			"5e272d38b78910dd2a1bd693"
+		],
+		"wellsAdded": false,
+		"wellsRemoved": false,
+		"copiedFrom": null,
+		"pSeries": {
+			"percentile": "P50"
+		},
+		"createdBy": "5bd22c63cc534716dc3929cc",
+		"forecast": "5f85c4df8420070012ca8d75",
+		"name": "TC1",
+		"project": "5e272bed4b97ed00132f2271",
+		"tcType": "ratio",
+		"createdAt": "2020-10-26T18:50:55.679Z",
+		"updatedAt": "2021-01-13T01:02:36.687Z",
+		"activeUmbrellas": {}
+	},
+	{
+		"_id": "5fa34686c008ab84da790257",
+		"phaseType": {
+			"oil": "rate",
+			"gas": "ratio",
+			"water": "ratio"
+		},
+		"fits": {
+			"oil": "5fa34686c008ab356c790258",
+			"gas": "5fa34686c008ab1c2b790259",
+			"water": null
+		},
+		"headers": {
+			"first_prod_date": null,
+			"perf_lateral_length": null,
+			"true_vertical_depth": null,
+			"total_prop_weight": null
+		},
+		"assumptions": {
+			"capex": null,
+			"dates": null,
+			"risking": null,
+			"expenses": null,
+			"escalation": null,
+			"depreciation": null,
+			"general_options": null,
+			"production_taxes": null,
+			"production_vs_fit": null,
+			"stream_properties": null,
+			"ownership_reversion": null,
+			"differentials": null,
+			"pricing": null
+		},
+		"basePhase": "oil",
+		"fitted": false,
+		"forecastSeries": "best",
+		"normalizations": ["5fa34686c008ab196679025c", "5fa34686c008ab4f3979025d", "5fa34686c008abb1af79025e"],
+		"visibility": "project",
+		"wells": [
+			"5e272d38b78910dd2a1bd691",
+			"5e272d38b78910dd2a1bd692",
+			"5e272d38b78910dd2a1bd6ae",
+			"5e6f9e10ce8c14e6f180f705"
+		],
+		"wellsAdded": false,
+		"wellsRemoved": false,
+		"copiedFrom": "5f971a8f6749f60012dcb93a",
+		"pSeries": {
+			"percentile": "P50"
+		},
+		"createdBy": "5bd22c63cc534716dc3929cc",
+		"forecast": "5f85c4df8420070012ca8d75",
+		"name": "TC1 - Copy",
+		"project": "5e272bed4b97ed00132f2271",
+		"tcType": "ratio",
+		"createdAt": "2020-11-05T00:25:42.842Z",
+		"updatedAt": "2020-11-05T00:26:49.920Z"
+	},
+	{
+		"_id": "5fad8299266cda3264a7f698",
+		"phaseType": {
+			"oil": "rate",
+			"gas": "rate",
+			"water": "rate"
+		},
+		"fits": {
+			"oil": "60dcfd8a579666ea048e9236",
+			"gas": "60dc8729579666ea04822dc3",
+			"water": null
+		},
+		"headers": {
+			"first_prod_date": null,
+			"perf_lateral_length": null,
+			"true_vertical_depth": null,
+			"total_prop_weight": null
+		},
+		"assumptions": {
+			"capex": null,
+			"dates": null,
+			"risking": null,
+			"expenses": null,
+			"escalation": null,
+			"depreciation": null,
+			"general_options": null,
+			"production_taxes": null,
+			"production_vs_fit": null,
+			"stream_properties": null,
+			"ownership_reversion": null,
+			"differentials": null,
+			"pricing": null
+		},
+		"basePhase": null,
+		"fitted": false,
+		"forecastSeries": "best",
+		"normalizations": ["60181e73e32cbf0012bba1dd", "60522c759c94af0012ef0b74"],
+		"visibility": "project",
+		"wells": ["5e272d38b78910dd2a1bd691", "5e272d38b78910dd2a1bd692"],
+		"wellsAdded": false,
+		"wellsRemoved": true,
+		"copiedFrom": null,
+		"pSeries": {
+			"percentile": "P50"
+		},
+		"createdBy": "5bd23756c8e7ab7654ade04c",
+		"forecast": "5f85a47a0640840012c47398",
+		"name": "boom",
+		"project": "5e272bed4b97ed00132f2271",
+		"tcType": "rate",
+		"createdAt": "2020-11-12T18:44:41.358Z",
+		"updatedAt": "2021-06-30T23:26:02.896Z",
+		"resolutionPreference": "forecast"
+	}
+]

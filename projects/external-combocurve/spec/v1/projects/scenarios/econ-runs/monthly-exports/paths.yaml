@@ -1,0 +1,244 @@
+/v1/projects/{projectId}/scenarios/{scenarioId}/econ-runs/{econRunId}/monthly-exports:
+  head:
+    operationId: head-v1-monthly-exports
+    description: >-
+      Returns metadata about the existing econ monthly documents scoped to
+      projectId project, scenarioId scenario and econRunId econ run.
+    parameters:
+      - in: path
+        name: projectId
+        required: true
+        type: string
+        description: ''
+      - in: path
+        name: scenarioId
+        required: true
+        type: string
+        description: ''
+      - in: path
+        name: econRunId
+        required: true
+        type: string
+        description: ''
+      - $ref: '#/parameters/skipParam'
+      - $ref: '#/parameters/takeParamBQ'
+      - name: comboName
+        in: query
+        description: filter by comboName
+        type: string
+      - name: date
+        in: query
+        description: filter by date
+        format: date
+        type: string
+        x-allow-parameter-operator: true
+      - name: well
+        in: query
+        description: filter by well
+        type: string
+    responses:
+      '200':
+        description: OK
+        headers:
+          Link:
+            type: string
+            description: >-
+              Indicates a typed relationship with another resource, where the
+              relation type is defined by RFC 5988. We include the relationships
+              next, prev, first and last, which can be used to move between
+              pages of the list of results.
+          X-Query-Count:
+            type: integer
+            description: >-
+              The number of records in this resource. When filters are provided
+              only matching records are counted.
+      '400':
+        description: Bad Request. There is something wrong with the request data.
+    tags:
+      - ComboCurveV1
+    x-client-generation:
+      x-count-method:
+        name: MonthlyExportsCount
+  post:
+    produces:
+      - application/json
+    operationId: post-v1-monthly-exports
+    description: >-
+      Create an monthly export of econ monthly documents scoped to projectId
+      project, scenarioId scenario and econRunId econ run. Response id should be
+      used to get the results.
+    parameters:
+      - in: path
+        name: projectId
+        required: true
+        type: string
+        description: ''
+      - in: path
+        name: scenarioId
+        required: true
+        type: string
+        description: ''
+      - in: path
+        name: econRunId
+        required: true
+        type: string
+        description: ''
+      - name: comboName
+        in: query
+        description: filter by comboName
+        type: string
+      - name: date
+        in: query
+        description: filter by date
+        format: date
+        type: string
+      - name: well
+        in: query
+        description: filter by well
+        type: string
+    responses:
+      '200':
+        description: OK
+        schema:
+          $ref: '#/definitions/MonthlyExportJob'
+      '400':
+        description: Bad Request. There is something wrong with the request data.
+        schema:
+          $ref: '#/definitions/Error'
+    tags:
+      - ComboCurveV1
+    consumes:
+      - application/json
+    x-google-quota:
+      metricCosts:
+        write-request-rate: 1
+/v1/projects/{projectId}/scenarios/{scenarioId}/econ-runs/{econRunId}/monthly-exports/head:
+  get:
+    x-no-client: true
+    x-no-doc: true
+    operationId: get-head-v1-monthly-exports
+    description: >-
+      Returns metadata about the existing econ monthly documents scoped to
+      projectId project, scenarioId scenario and econRunId econ run.
+    parameters:
+      - in: path
+        name: projectId
+        required: true
+        type: string
+        description: ''
+      - in: path
+        name: scenarioId
+        required: true
+        type: string
+        description: ''
+      - in: path
+        name: econRunId
+        required: true
+        type: string
+        description: ''
+      - $ref: '#/parameters/skipParam'
+      - $ref: '#/parameters/takeParamBQ'
+      - name: comboName
+        in: query
+        description: filter by comboName
+        type: string
+      - name: date
+        in: query
+        description: filter by date
+        format: date
+        type: string
+      - name: well
+        in: query
+        description: filter by well
+        type: string
+    responses:
+      '200':
+        description: OK
+        headers:
+          Link:
+            type: string
+            description: >-
+              Indicates a typed relationship with another resource, where the
+              relation type is defined by RFC 5988. We include the relationships
+              next, prev, first and last, which can be used to move between
+              pages of the list of results.
+          X-Query-Count:
+            type: integer
+            description: >-
+              The number of records in this resource. When filters are provided
+              only matching records are counted.
+      '400':
+        description: Bad Request. There is something wrong with the request data.
+    tags:
+      - ComboCurveV1
+/v1/projects/{projectId}/scenarios/{scenarioId}/econ-runs/{econRunId}/monthly-exports/{id}:
+  get:
+    produces:
+      - application/json
+    operationId: get-v1-monthly-export-by-id
+    description: >-
+      Returns the econ monthly documents that matches the given monthly export
+      id scoped to projectId project, scenarioId scenario and econRunId econ
+      run, monthly export must be created before.
+    parameters:
+      - in: path
+        name: projectId
+        required: true
+        type: string
+        description: ''
+      - in: path
+        name: scenarioId
+        required: true
+        type: string
+        description: ''
+      - in: path
+        name: econRunId
+        required: true
+        type: string
+        description: ''
+      - in: path
+        name: id
+        required: true
+        type: string
+        description: ''
+      - $ref: '#/parameters/skipParam'
+      - $ref: '#/parameters/takeParamBQ'
+      - in: query
+        name: concurrency
+        description: maximum number of concurrent requests to make to the underlying datastore
+        type: integer
+        format: int32
+        default: 0
+        minimum: 1
+        maximum: 10         
+    responses:
+      '200':
+        description: OK
+        schema:
+          $ref: '#/definitions/MonthlyExport'
+        headers:
+          Link:
+            type: string
+            description: >-
+              Indicates a typed relationship with another resource, where the
+              relation type is defined by RFC 5988. We include the relationships
+              next, prev, first and last, which can be used to move between
+              pages of the list of results.
+      '400':
+        description: Bad Request. There is something wrong with the request data.
+        schema:
+          $ref: '#/definitions/Error'
+      '404':
+        description: Not Found
+        schema:
+          $ref: '#/definitions/Error'
+    tags:
+      - ComboCurveV1
+    x-google-quota:
+      metricCosts:
+        read-request-rate: 1
+    x-client-generation:
+      x-get-all-skip-take-method:
+        name: GetAllMonthlyExportResults
+        baseReturnType: MonthlyExportResults
+        signatureOnly: true

@@ -1,0 +1,6 @@
+# This overrides our url routing for the entire GCP project.
+# Only used here as all our other traffic goes to default service.
+# If more rules are added in the future, will need a more robust solution.
+dispatch:
+  - url: "dev1-api.combocurve.com/*"
+    service: external-api

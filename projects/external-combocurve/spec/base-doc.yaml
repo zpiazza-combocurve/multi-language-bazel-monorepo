@@ -1,0 +1,17 @@
+# base spec for documentation generation
+host: api.combocurve.com
+
+securityDefinitions:
+  # security definition with generic values
+  service-account-key:
+    authorizationUrl: ''
+    flow: implicit
+    type: oauth2
+    x-google-issuer: service-account-key@beta-combocurve.iam.gserviceaccount.com
+    x-google-jwks_uri: >-
+      https://www.googleapis.com/robot/v1/metadata/x509/service-account-key@beta-combocurve.iam.gserviceaccount.com
+    x-google-audiences: https://api.combocurve.com
+
+security:
+  - api-key: []
+    service-account-key: []

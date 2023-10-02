@@ -1,0 +1,2749 @@
+RowsBaseExpensesFieldsPerBbl:
+  type: object
+  properties:
+    dollarPerBbl:
+      type: "number"
+    pctOfOilRev:
+      type: "number"
+    pctOfGasRev:
+      type: "number"
+    pctOfNglRev:
+      type: "number"
+    pctOfDripCondensateRev:
+      type: "number"
+    pctOfTotalRev:
+      type: "number"
+    dates:
+      $ref: '#/definitions/StartEndDatesCriteria'
+    offsetToAsOf:
+      $ref: '#/definitions/StartEndPeriodCriteria'
+    entireWellLife:
+      $ref: '#/definitions/EntireWellLifeCriteria'
+    offsetToFpd:
+      $ref: '#/definitions/StartEndPeriodCriteria'
+    offsetToDiscountDate:
+      $ref: '#/definitions/StartEndPeriodCriteria'
+    offsetToFirstSegment:
+      $ref: '#/definitions/StartEndPeriodCriteria'
+    offsetToEndHistory:
+      $ref: '#/definitions/StartEndPeriodCriteria'
+    oilRate:
+      $ref: '#/definitions/StartEndRateCriteria'
+    gasRate:
+      $ref: '#/definitions/StartEndRateCriteria'
+    waterRate:
+      $ref: '#/definitions/StartEndRateCriteria'
+    totalFluidRate:
+      $ref: '#/definitions/StartEndRateCriteria'
+
+RowsBaseExpensesFieldsShrinkageDollarPerMcfAndMmbtu:
+  type: object
+  properties:
+    dollarPerMmbtu:
+      type: "number"
+    dollarPerMcf:
+      type: "number"
+    pctOfOilRev:
+      type: "number"
+    pctOfGasRev:
+      type: "number"
+    pctOfNglRev:
+      type: "number"
+    pctOfDripCondensateRev:
+      type: "number"
+    pctOfTotalRev:
+      type: "number"
+    dates:
+      $ref: '#/definitions/StartEndDatesCriteria'
+    offsetToAsOf:
+      $ref: '#/definitions/StartEndPeriodCriteria'
+    entireWellLife:
+      $ref: '#/definitions/EntireWellLifeCriteria'
+    offsetToFpd:
+      $ref: '#/definitions/StartEndPeriodCriteria'
+    offsetToDiscountDate:
+      $ref: '#/definitions/StartEndPeriodCriteria'
+    offsetToFirstSegment:
+      $ref: '#/definitions/StartEndPeriodCriteria'
+    offsetToEndHistory:
+      $ref: '#/definitions/StartEndPeriodCriteria'
+    oilRate:
+      $ref: '#/definitions/StartEndRateCriteria'
+    gasRate:
+      $ref: '#/definitions/StartEndRateCriteria'
+    waterRate:
+      $ref: '#/definitions/StartEndRateCriteria'
+    totalFluidRate:
+      $ref: '#/definitions/StartEndRateCriteria'
+
+BaseExpensesFieldsShrinkageDollarPerBbl:
+  type: object
+  properties:
+    shrinkageCondition:
+      type: string
+      enum:
+        - shrunk
+        - unshrunk
+    description:
+      type: string
+    escalationModel:
+      type: string
+    affectEconLimit:
+      type: boolean
+    deductBeforeSeveranceTax:
+      type: boolean
+    deductBeforeAdValTax:
+      type: boolean
+    cap:
+      type: number
+    dealTerms:
+      type: number
+    calculation:
+      type: string
+      enum:
+        - wi
+        - nri
+        - lease_nri
+        - one_minus_wi
+        - one_minus_nri
+        - wi_minus_one
+        - nri_minus_one
+        - one_minus_lease_nri
+        - lease_nri_minus_one
+        - 100_pct_wi
+    rateType:
+      type: string
+      enum:
+        - gross_well_head
+        - gross_sales
+        - net_sales
+    rowsCalculationMethod:
+      type: string
+      enum:
+        - monotonic
+        - non_monotonic
+    rows:
+      type: "array"
+      items:
+        $ref: '#/definitions/RowsBaseExpensesFieldsPerBbl'
+  required:
+    - shrinkageCondition
+    - escalationModel
+    - affectEconLimit
+    - deductBeforeSeveranceTax
+    - deductBeforeAdValTax
+    - dealTerms
+    - calculation
+    - rateType
+    - rowsCalculationMethod
+
+BaseExpensesFieldsShrinkageDollarPerMcfAndMmbtu:
+  type: object
+  properties:
+    shrinkageCondition:
+      type: string
+      enum:
+        - shrunk
+        - unshrunk
+    description:
+      type: string
+    escalationModel:
+      type: string
+    affectEconLimit:
+      type: boolean
+    deductBeforeSeveranceTax:
+      type: boolean
+    deductBeforeAdValTax:
+      type: boolean
+    cap:
+      type: number
+    dealTerms:
+      type: number
+    calculation:
+      type: string
+      enum:
+        - wi
+        - nri
+        - lease_nri
+        - one_minus_wi
+        - one_minus_nri
+        - wi_minus_one
+        - nri_minus_one
+        - one_minus_lease_nri
+        - lease_nri_minus_one
+        - 100_pct_wi
+    rateType:
+      type: string
+      enum:
+        - gross_well_head
+        - gross_sales
+        - net_sales
+    rowsCalculationMethod:
+      type: string
+      enum:
+        - monotonic
+        - non_monotonic
+    rows:
+      type: "array"
+      items:
+        $ref: '#/definitions/RowsBaseExpensesFieldsShrinkageDollarPerMcfAndMmbtu'
+  required:
+    - shrinkageCondition
+    - escalationModel
+    - affectEconLimit
+    - deductBeforeSeveranceTax
+    - deductBeforeAdValTax
+    - dealTerms
+    - calculation
+    - rateType
+    - rowsCalculationMethod
+
+BaseExpensesFieldsDollarPerBbl:
+  type: object
+  properties:
+    description:
+      type: string
+    escalationModel:
+      type: string
+    affectEconLimit:
+      type: boolean
+    deductBeforeSeveranceTax:
+      type: boolean
+    deductBeforeAdValTax:
+      type: boolean
+    cap:
+      type: number
+    dealTerms:
+      type: number
+    calculation:
+      type: string
+      enum:
+        - wi
+        - nri
+        - lease_nri
+        - one_minus_wi
+        - one_minus_nri
+        - wi_minus_one
+        - nri_minus_one
+        - one_minus_lease_nri
+        - lease_nri_minus_one
+        - 100_pct_wi
+    rateType:
+      type: string
+      enum:
+        - gross_well_head
+        - gross_sales
+        - net_sales
+    rowsCalculationMethod:
+      type: string
+      enum:
+        - monotonic
+        - non_monotonic
+    rows:
+      type: 'array'
+      items:
+        $ref: '#/definitions/RowsBaseExpensesFieldsPerBbl'
+  required:
+    - escalationModel
+    - affectEconLimit
+    - deductBeforeSeveranceTax
+    - deductBeforeAdValTax
+    - dealTerms
+    - calculation
+    - rateType
+    - rowsCalculationMethod
+
+VariableExpensesOilPhaseFields:
+  type: object
+  properties:
+    gathering:
+      $ref: '#/definitions/BaseExpensesFieldsShrinkageDollarPerBbl'
+    marketing:
+      $ref: '#/definitions/BaseExpensesFieldsShrinkageDollarPerBbl'
+    transportation:
+      $ref: '#/definitions/BaseExpensesFieldsShrinkageDollarPerBbl'
+    processing:
+      $ref: '#/definitions/BaseExpensesFieldsShrinkageDollarPerBbl'
+    other:
+      $ref: '#/definitions/BaseExpensesFieldsShrinkageDollarPerBbl'
+  required:
+    - gathering
+    - marketing
+    - transportation
+    - processing
+    - other
+VariableExpensesGasPhaseFields:
+  type: object
+  properties:
+    gathering:
+      $ref: '#/definitions/BaseExpensesFieldsShrinkageDollarPerMcfAndMmbtu'
+    marketing:
+      $ref: '#/definitions/BaseExpensesFieldsShrinkageDollarPerMcfAndMmbtu'
+    transportation:
+      $ref: '#/definitions/BaseExpensesFieldsShrinkageDollarPerMcfAndMmbtu'
+    processing:
+      $ref: '#/definitions/BaseExpensesFieldsShrinkageDollarPerMcfAndMmbtu'
+    other:
+      $ref: '#/definitions/BaseExpensesFieldsShrinkageDollarPerMcfAndMmbtu'
+  required:
+    - gathering
+    - marketing
+    - transportation
+    - processing
+    - other
+VariableExpensesNglDripCondensateFields:
+  type: object
+  properties:
+    gathering:
+      $ref: '#/definitions/BaseExpensesFieldsDollarPerBbl'
+    marketing:
+      $ref: '#/definitions/BaseExpensesFieldsDollarPerBbl'
+    transportation:
+      $ref: '#/definitions/BaseExpensesFieldsDollarPerBbl'
+    processing:
+      $ref: '#/definitions/BaseExpensesFieldsDollarPerBbl'
+    other:
+      $ref: '#/definitions/BaseExpensesFieldsDollarPerBbl'
+  required:
+    - gathering
+    - marketing
+    - transportation
+    - processing
+    - other
+VariableExpenses:
+  type: object
+  properties:
+    oil:
+      $ref: '#/definitions/VariableExpensesOilPhaseFields'
+    gas:
+      $ref: '#/definitions/VariableExpensesGasPhaseFields'
+    ngl:
+      $ref: '#/definitions/VariableExpensesNglDripCondensateFields'
+    dripCondensate:
+      $ref: '#/definitions/VariableExpensesNglDripCondensateFields'
+  required:
+    - oil
+    - gas
+    - ngl
+    - dripCondensate
+
+
+RowsFixedExpensesFields:
+  type: object
+  properties:
+    fixedExpense:
+      type: "number"
+    fixedExpensePerWell:
+      type: "number"
+    dates:
+      $ref: '#/definitions/StartEndDatesCriteria'
+    offsetToAsOf:
+      $ref: '#/definitions/StartEndPeriodCriteria'
+    entireWellLife:
+      $ref: '#/definitions/EntireWellLifeCriteria'
+    offsetToFpd:
+      $ref: '#/definitions/StartEndPeriodCriteria'
+    offsetToDiscountDate:
+      $ref: '#/definitions/StartEndPeriodCriteria'
+    offsetToFirstSegment:
+      $ref: '#/definitions/StartEndPeriodCriteria'
+    offsetToEndHistory:
+      $ref: '#/definitions/StartEndPeriodCriteria'
+    oilRate:
+      $ref: '#/definitions/StartEndRateCriteria'
+    gasRate:
+      $ref: '#/definitions/StartEndRateCriteria'
+    waterRate:
+      $ref: '#/definitions/StartEndRateCriteria'
+    totalFluidRate:
+      $ref: '#/definitions/StartEndRateCriteria'
+FixedExpensesFields:
+  type: object
+  properties:
+    stopAtEconLimit:
+      type: boolean
+    expenseBeforeFpd:
+      type: boolean
+    description:
+      type: string
+    escalationModel:
+      type: string
+    affectEconLimit:
+      type: boolean
+    deductBeforeSeveranceTax:
+      type: boolean
+    deductBeforeAdValTax:
+      type: boolean
+    cap:
+      type: number
+    dealTerms:
+      type: number
+    calculation:
+      type: string
+      enum:
+        - wi
+        - nri
+        - lease_nri
+        - one_minus_wi
+        - one_minus_nri
+        - wi_minus_one
+        - nri_minus_one
+        - one_minus_lease_nri
+        - lease_nri_minus_one
+        - 100_pct_wi
+    rateType:
+      type: string
+      enum:
+        - gross_well_head
+        - gross_sales
+        - net_sales
+    rowsCalculationMethod:
+      type: string
+      enum:
+        - monotonic
+        - non_monotonic
+    rows:
+      type: "array"
+      items:
+        $ref: '#/definitions/RowsFixedExpensesFields'
+  required:
+    - stopAtEconLimit
+    - expenseBeforeFpd
+    - escalationModel
+    - affectEconLimit
+    - deductBeforeSeveranceTax
+    - deductBeforeAdValTax
+    - dealTerms
+    - calculation
+    - rateType
+    - rowsCalculationMethod
+FixedExpenses:
+  type: object
+  properties:
+    monthlyWellCost:
+      $ref: '#/definitions/FixedExpensesFields'
+    otherMonthlyCost1:
+      $ref: '#/definitions/FixedExpensesFields'
+    otherMonthlyCost2:
+      $ref: '#/definitions/FixedExpensesFields'
+    otherMonthlyCost3:
+      $ref: '#/definitions/FixedExpensesFields'
+    otherMonthlyCost4:
+      $ref: '#/definitions/FixedExpensesFields'
+    otherMonthlyCost5:
+      $ref: '#/definitions/FixedExpensesFields'
+    otherMonthlyCost6:
+      $ref: '#/definitions/FixedExpensesFields'
+    otherMonthlyCost7:
+      $ref: '#/definitions/FixedExpensesFields'
+    otherMonthlyCost8:
+      $ref: '#/definitions/FixedExpensesFields'
+  required:
+    - monthlyWellCost
+    - otherMonthlyCost1
+    - otherMonthlyCost2
+    - otherMonthlyCost3
+    - otherMonthlyCost4
+    - otherMonthlyCost5
+    - otherMonthlyCost6
+    - otherMonthlyCost7
+    - otherMonthlyCost8
+
+WaterDisposal:
+  $ref: "#/definitions/BaseExpensesFieldsDollarPerBbl"
+
+RowsCarbonExpensesFields:
+  type: object
+  properties:
+    carbonExpense:
+      type: "number"
+    dates:
+      $ref: '#/definitions/StartEndDatesCriteria'
+    offsetToAsOf:
+      $ref: '#/definitions/StartEndPeriodCriteria'
+    entireWellLife:
+      $ref: '#/definitions/EntireWellLifeCriteria'
+    offsetToFpd:
+      $ref: '#/definitions/StartEndPeriodCriteria'
+    offsetToDiscountDate:
+      $ref: '#/definitions/StartEndPeriodCriteria'
+    offsetToFirstSegment:
+      $ref: '#/definitions/StartEndPeriodCriteria'
+    offsetToEndHistory:
+      $ref: '#/definitions/StartEndPeriodCriteria'
+    oilRate:
+      $ref: '#/definitions/StartEndRateCriteria'
+    gasRate:
+      $ref: '#/definitions/StartEndRateCriteria'
+    waterRate:
+      $ref: '#/definitions/StartEndRateCriteria'
+    totalFluidRate:
+      $ref: '#/definitions/StartEndRateCriteria'
+
+CarbonExpensesFields:
+  type: object
+  properties:
+    description:
+      type: string
+    escalationModel:
+      type: string
+    affectEconLimit:
+      type: boolean
+    deductBeforeSeveranceTax:
+      type: boolean
+    deductBeforeAdValTax:
+      type: boolean
+    cap:
+      type: number
+    dealTerms:
+      type: number
+    calculation:
+      type: string
+      enum:
+        - wi
+        - nri
+        - lease_nri
+        - one_minus_wi
+        - one_minus_nri
+        - wi_minus_one
+        - nri_minus_one
+        - one_minus_lease_nri
+        - lease_nri_minus_one
+        - 100_pct_wi
+    rateType:
+      type: string
+      enum:
+        - gross_well_head
+        - gross_sales
+        - net_sales
+    rowsCalculationMethod:
+      type: string
+      enum:
+        - monotonic
+        - non_monotonic
+    rows:
+      type: "array"
+      items:
+        $ref: '#/definitions/RowsCarbonExpensesFields'
+  required:
+    - escalationModel
+    - affectEconLimit
+    - deductBeforeSeveranceTax
+    - deductBeforeAdValTax
+    - dealTerms
+    - calculation
+    - rateType
+    - rowsCalculationMethod
+
+CarbonExpenses:
+  type: object
+  properties:
+    category:
+      type: string
+      enum:
+        - "co2e"
+        - "co2"
+        - "ch4"
+        - "n2o"
+    ch4:
+      $ref: "#/definitions/CarbonExpensesFields"
+    co2:
+      $ref: "#/definitions/CarbonExpensesFields"
+    co2E:
+      $ref: "#/definitions/CarbonExpensesFields"
+    n2O:
+      $ref: "#/definitions/CarbonExpensesFields"
+  required:
+    - category
+    - ch4
+    - co2
+    - co2E
+    - n2O
+
+Expenses:
+  type: object
+  properties:
+    id:
+      type: string
+      description: ID
+    copiedFrom:
+      type: string
+      description: Copied From
+    name:
+      type: string
+      description: Name
+    scenario:
+      type: string
+      description: Scenario ID
+    tags:
+      type: array
+      items:
+        type: string
+        description: Tag ID
+    unique:
+      type: boolean
+      description: Unique
+    well:
+      type: string
+      description: Well ID
+    createdAt:
+      type: string
+      format: date
+      description: Creation Date
+    updatedAt:
+      type: string
+      format: date
+      description: Updated At
+    createdBy:
+      type: string
+      description: Created By
+    lastUpdatedBy:
+      type: string
+      description: Last Updated By
+    variableExpenses:
+      $ref: '#/definitions/VariableExpenses'
+    fixedExpenses:
+      $ref: '#/definitions/FixedExpenses'
+    waterDisposal:
+      $ref: '#/definitions/WaterDisposal'
+    carbonExpenses:
+      $ref: '#/definitions/CarbonExpenses'
+  required:
+    - name
+    - unique
+  example:
+    id: 5e272d39b78910dd2a1bd8fe
+    copiedFrom: 63b856e816f758cc5b0f1106
+    name: Test
+    scenario: 63b8571d70ed63f50bd6d63f
+    tags:
+      - 63b85737ff846cee7b1f6fdc
+    unique: true
+    well: 63b85759e1d7eb4e31579f51
+    createdAt: '2020-01-21T16:58:08.986Z'
+    updatedAt: '2020-01-21T17:58:08.986Z'
+    createdBy: 63b857cb68f3b96efc700998
+    lastUpdatedBy: 63b857cb68f3b96efc700998
+    variableExpenses:
+      oil:
+        gathering:
+          shrinkageCondition: unshrunk
+          description: test
+          escalationModel: none
+          calculation: wi
+          affectEconLimit: true
+          deductBeforeSeveranceTax: false
+          deductBeforeAdValTax: false
+          cap: ''
+          dealTerms: 23
+          rateType: gross_well_head
+          rowsCalculationMethod: non_monotonic
+          rows:
+          - pctOfTotalRev: 100
+            gasRate: 1
+        marketing:
+          shrinkageCondition: unshrunk
+          description: ''
+          escalationModel: none
+          calculation: wi
+          affectEconLimit: true
+          deductBeforeSeveranceTax: false
+          deductBeforeAdValTax: false
+          cap: ''
+          dealTerms: 1
+          rateType: gross_well_head
+          rowsCalculationMethod: non_monotonic
+          rows:
+          - dollarPerBbl: 0
+            entireWellLife: Flat
+        transportation:
+          shrinkageCondition: unshrunk
+          description: ''
+          escalationModel: none
+          calculation: wi
+          affectEconLimit: true
+          deductBeforeSeveranceTax: false
+          deductBeforeAdValTax: false
+          cap: ''
+          dealTerms: 1
+          rateType: gross_well_head
+          rowsCalculationMethod: non_monotonic
+          rows:
+          - dollarPerBbl: 0
+            entireWellLife: Flat
+        processing:
+          shrinkageCondition: unshrunk
+          description: ''
+          escalationModel: none
+          calculation: wi
+          affectEconLimit: true
+          deductBeforeSeveranceTax: false
+          deductBeforeAdValTax: false
+          cap: ''
+          dealTerms: 1
+          rateType: gross_well_head
+          rowsCalculationMethod: non_monotonic
+          rows:
+          - dollarPerBbl: 0
+            entireWellLife: Flat
+        other:
+          shrinkageCondition: unshrunk
+          description: ''
+          escalationModel: none
+          calculation: wi
+          affectEconLimit: true
+          deductBeforeSeveranceTax: false
+          deductBeforeAdValTax: false
+          cap: ''
+          dealTerms: 1
+          rateType: gross_well_head
+          rowsCalculationMethod: non_monotonic
+          rows:
+          - dollarPerBbl: 0
+            entireWellLife: Flat
+      gas:
+        gathering:
+          shrinkageCondition: unshrunk
+          description: ''
+          escalationModel: none
+          calculation: wi
+          affectEconLimit: true
+          deductBeforeSeveranceTax: false
+          deductBeforeAdValTax: false
+          cap: ''
+          dealTerms: 1
+          rateType: gross_well_head
+          rowsCalculationMethod: non_monotonic
+          rows:
+          - dollarPerMcf: 0
+            entireWellLife: Flat
+        marketing:
+          shrinkageCondition: unshrunk
+          description: ''
+          escalationModel: none
+          calculation: wi
+          affectEconLimit: true
+          deductBeforeSeveranceTax: false
+          deductBeforeAdValTax: false
+          cap: ''
+          dealTerms: 1
+          rateType: gross_well_head
+          rowsCalculationMethod: non_monotonic
+          rows:
+          - dollarPerMcf: 0
+            entireWellLife: Flat
+        transportation:
+          shrinkageCondition: unshrunk
+          description: ''
+          escalationModel: none
+          calculation: wi
+          affectEconLimit: true
+          deductBeforeSeveranceTax: false
+          deductBeforeAdValTax: false
+          cap: ''
+          dealTerms: 1
+          rateType: gross_well_head
+          rowsCalculationMethod: non_monotonic
+          rows:
+          - dollarPerMcf: 0
+            entireWellLife: Flat
+        processing:
+          shrinkageCondition: unshrunk
+          description: ''
+          escalationModel: none
+          calculation: wi
+          affectEconLimit: true
+          deductBeforeSeveranceTax: false
+          deductBeforeAdValTax: false
+          cap: ''
+          dealTerms: 1
+          rateType: gross_well_head
+          rowsCalculationMethod: non_monotonic
+          rows:
+          - dollarPerMcf: 0
+            entireWellLife: Flat
+        other:
+          shrinkageCondition: unshrunk
+          description: ''
+          escalationModel: none
+          calculation: wi
+          affectEconLimit: true
+          deductBeforeSeveranceTax: false
+          deductBeforeAdValTax: false
+          cap: ''
+          dealTerms: 1
+          rateType: gross_well_head
+          rowsCalculationMethod: non_monotonic
+          rows:
+          - dollarPerMcf: 0
+            entireWellLife: Flat
+      ngl:
+        gathering:
+          description: lol
+          escalationModel: 642f2f56670d176d8558ef7b
+          calculation: wi
+          affectEconLimit: true
+          deductBeforeSeveranceTax: true
+          deductBeforeAdValTax: true
+          cap: ''
+          dealTerms: 32
+          rateType: gross_well_head
+          rowsCalculationMethod: non_monotonic
+          rows:
+          - pctOfOilRev: 23
+            totalFluidRate: 23
+          - pctOfOilRev: 23
+            totalFluidRate: 25
+        marketing:
+          description: ''
+          escalationModel: none
+          calculation: wi
+          affectEconLimit: true
+          deductBeforeSeveranceTax: false
+          deductBeforeAdValTax: false
+          cap: ''
+          dealTerms: 1
+          rateType: gross_well_head
+          rowsCalculationMethod: non_monotonic
+          rows:
+          - dollarPerBbl: 0
+            entireWellLife: Flat
+        transportation:
+          description: ''
+          escalationModel: none
+          calculation: wi
+          affectEconLimit: true
+          deductBeforeSeveranceTax: false
+          deductBeforeAdValTax: false
+          cap: ''
+          dealTerms: 1
+          rateType: gross_well_head
+          rowsCalculationMethod: non_monotonic
+          rows:
+          - dollarPerBbl: 0
+            entireWellLife: Flat
+        processing:
+          description: ''
+          escalationModel: none
+          calculation: wi
+          affectEconLimit: true
+          deductBeforeSeveranceTax: false
+          deductBeforeAdValTax: false
+          cap: ''
+          dealTerms: 1
+          rateType: gross_well_head
+          rowsCalculationMethod: non_monotonic
+          rows:
+          - dollarPerBbl: 0
+            entireWellLife: Flat
+        other:
+          description: ''
+          escalationModel: none
+          calculation: wi
+          affectEconLimit: true
+          deductBeforeSeveranceTax: false
+          deductBeforeAdValTax: false
+          cap: ''
+          dealTerms: 1
+          rateType: gross_well_head
+          rowsCalculationMethod: non_monotonic
+          rows:
+          - dollarPerBbl: 0
+            entireWellLife: Flat
+      dripCondensate:
+        gathering:
+          description: ''
+          escalationModel: none
+          calculation: wi
+          affectEconLimit: true
+          deductBeforeSeveranceTax: false
+          deductBeforeAdValTax: false
+          cap: ''
+          dealTerms: 1
+          rateType: gross_well_head
+          rowsCalculationMethod: non_monotonic
+          rows:
+          - dollarPerBbl: 0
+            entireWellLife: Flat
+        marketing:
+          description: ''
+          escalationModel: none
+          calculation: wi
+          affectEconLimit: true
+          deductBeforeSeveranceTax: false
+          deductBeforeAdValTax: false
+          cap: ''
+          dealTerms: 1
+          rateType: gross_well_head
+          rowsCalculationMethod: non_monotonic
+          rows:
+          - dollarPerBbl: 0
+            entireWellLife: Flat
+        transportation:
+          description: ''
+          escalationModel: none
+          calculation: wi
+          affectEconLimit: true
+          deductBeforeSeveranceTax: false
+          deductBeforeAdValTax: false
+          cap: 233
+          dealTerms: 1
+          rateType: gross_well_head
+          rowsCalculationMethod: non_monotonic
+          rows:
+          - dollarPerBbl: 0
+            entireWellLife: Flat
+        processing:
+          description: ''
+          escalationModel: none
+          calculation: wi
+          affectEconLimit: true
+          deductBeforeSeveranceTax: false
+          deductBeforeAdValTax: false
+          cap: ''
+          dealTerms: 1
+          rateType: gross_well_head
+          rowsCalculationMethod: non_monotonic
+          rows:
+          - dollarPerBbl: 0
+            entireWellLife: Flat
+        other:
+          description: ''
+          escalationModel: none
+          calculation: wi
+          affectEconLimit: true
+          deductBeforeSeveranceTax: false
+          deductBeforeAdValTax: false
+          cap: ''
+          dealTerms: 1
+          rateType: gross_well_head
+          rowsCalculationMethod: non_monotonic
+          rows:
+          - dollarPerBbl: 0
+            entireWellLife: Flat
+    fixedExpenses:
+      monthlyWellCost:
+        stopAtEconLimit: true
+        expenseBeforeFpd: false
+        description: ''
+        escalationModel: none
+        calculation: wi
+        affectEconLimit: true
+        deductBeforeSeveranceTax: false
+        deductBeforeAdValTax: false
+        cap: 34
+        dealTerms: 1
+        rateType: gross_well_head
+        rowsCalculationMethod: non_monotonic
+        rows:
+        - entireWellLife: Flat
+          fixedExpense: 2
+      otherMonthlyCost1:
+        stopAtEconLimit: true
+        expenseBeforeFpd: false
+        description: ''
+        escalationModel: none
+        calculation: wi
+        affectEconLimit: true
+        deductBeforeSeveranceTax: false
+        deductBeforeAdValTax: false
+        cap: ''
+        dealTerms: 1
+        rateType: gross_well_head
+        rowsCalculationMethod: non_monotonic
+        rows:
+        - entireWellLife: Flat
+          fixedExpensePerWell: 2
+      otherMonthlyCost2:
+        stopAtEconLimit: true
+        expenseBeforeFpd: false
+        description: ''
+        escalationModel: none
+        calculation: wi
+        affectEconLimit: true
+        deductBeforeSeveranceTax: false
+        deductBeforeAdValTax: false
+        cap: ''
+        dealTerms: 1
+        rateType: gross_well_head
+        rowsCalculationMethod: non_monotonic
+        rows:
+        - entireWellLife: Flat
+          fixedExpense: 0
+      otherMonthlyCost3:
+        stopAtEconLimit: true
+        expenseBeforeFpd: false
+        description: ''
+        escalationModel: none
+        calculation: wi
+        affectEconLimit: true
+        deductBeforeSeveranceTax: false
+        deductBeforeAdValTax: false
+        cap: ''
+        dealTerms: 1
+        rateType: gross_well_head
+        rowsCalculationMethod: non_monotonic
+        rows:
+        - entireWellLife: Flat
+          fixedExpense: 0
+      otherMonthlyCost4:
+        stopAtEconLimit: true
+        expenseBeforeFpd: false
+        description: ''
+        escalationModel: none
+        calculation: wi
+        affectEconLimit: true
+        deductBeforeSeveranceTax: false
+        deductBeforeAdValTax: false
+        cap: ''
+        dealTerms: 1
+        rateType: gross_well_head
+        rowsCalculationMethod: non_monotonic
+        rows:
+        - entireWellLife: Flat
+          fixedExpense: 0
+      otherMonthlyCost5:
+        stopAtEconLimit: true
+        expenseBeforeFpd: false
+        description: ''
+        escalationModel: none
+        calculation: wi
+        affectEconLimit: true
+        deductBeforeSeveranceTax: false
+        deductBeforeAdValTax: false
+        cap: ''
+        dealTerms: 1
+        rateType: gross_well_head
+        rowsCalculationMethod: non_monotonic
+        rows:
+        - entireWellLife: Flat
+          fixedExpense: 0
+      otherMonthlyCost6:
+        stopAtEconLimit: true
+        expenseBeforeFpd: false
+        description: ''
+        escalationModel: none
+        calculation: wi
+        affectEconLimit: true
+        deductBeforeSeveranceTax: false
+        deductBeforeAdValTax: false
+        cap: ''
+        dealTerms: 1
+        rateType: gross_well_head
+        rowsCalculationMethod: non_monotonic
+        rows:
+        - entireWellLife: Flat
+          fixedExpense: 0
+      otherMonthlyCost7:
+        stopAtEconLimit: true
+        expenseBeforeFpd: false
+        description: ''
+        escalationModel: none
+        calculation: wi
+        affectEconLimit: true
+        deductBeforeSeveranceTax: false
+        deductBeforeAdValTax: false
+        cap: ''
+        dealTerms: 1
+        rateType: gross_well_head
+        rowsCalculationMethod: non_monotonic
+        rows:
+        - entireWellLife: Flat
+          fixedExpense: 0
+      otherMonthlyCost8:
+        stopAtEconLimit: true
+        expenseBeforeFpd: false
+        description: ''
+        escalationModel: none
+        calculation: wi
+        affectEconLimit: true
+        deductBeforeSeveranceTax: false
+        deductBeforeAdValTax: false
+        cap: ''
+        dealTerms: 1
+        rateType: gross_well_head
+        rowsCalculationMethod: non_monotonic
+        rows:
+        - entireWellLife: Flat
+          fixedExpense: 0
+    waterDisposal:
+      description: ''
+      escalationModel: none
+      calculation: wi
+      affectEconLimit: true
+      deductBeforeSeveranceTax: false
+      deductBeforeAdValTax: false
+      cap: ''
+      dealTerms: 1
+      rateType: gross_well_head
+      rowsCalculationMethod: monotonic
+      rows:
+      - dollarPerBbl: 0
+        entireWellLife: Flat
+    carbonExpenses:
+      category: n2o
+      ch4:
+        description: ''
+        escalationModel: none
+        calculation: wi
+        affectEconLimit: true
+        deductBeforeSeveranceTax: false
+        deductBeforeAdValTax: false
+        cap: ''
+        dealTerms: 1
+        rateType: gross_well_head
+        rowsCalculationMethod: non_monotonic
+        rows:
+        - entireWellLife: Flat
+          carbonExpense: 1
+      co2:
+        description: ''
+        escalationModel: none
+        calculation: wi
+        affectEconLimit: true
+        deductBeforeSeveranceTax: false
+        deductBeforeAdValTax: false
+        cap: ''
+        dealTerms: 1
+        rateType: gross_well_head
+        rowsCalculationMethod: non_monotonic
+        rows:
+        - entireWellLife: Flat
+          carbonExpense: 2
+      co2E:
+        description: ''
+        escalationModel: none
+        calculation: wi
+        affectEconLimit: true
+        deductBeforeSeveranceTax: false
+        deductBeforeAdValTax: false
+        cap: ''
+        dealTerms: 1
+        rateType: gross_well_head
+        rowsCalculationMethod: non_monotonic
+        rows:
+        - entireWellLife: Flat
+          carbonExpense: 3
+      n2O:
+        description: ''
+        escalationModel: none
+        calculation: wi
+        affectEconLimit: true
+        deductBeforeSeveranceTax: false
+        deductBeforeAdValTax: false
+        cap: ''
+        dealTerms: 1
+        rateType: gross_well_head
+        rowsCalculationMethod: non_monotonic
+        rows:
+        - offsetToAsOf: 4
+          carbonExpense: 4
+        - offsetToAsOf: 6
+          carbonExpense: 25
+
+ExpensesList:
+  type: array
+  items:
+    $ref: '#/definitions/Expenses'
+  maxItems: 200
+  example:
+    - id: 5e272d39b78910dd2a1bd8fe
+      copiedFrom: 63b856e816f758cc5b0f1106
+      name: Test
+      scenario: 63b8571d70ed63f50bd6d63f
+      tags:
+        - 63b85737ff846cee7b1f6fdc
+      unique: true
+      well: 63b85759e1d7eb4e31579f51
+      createdAt: '2020-01-21T16:58:08.986Z'
+      updatedAt: '2020-01-21T17:58:08.986Z'
+      createdBy: 63b857cb68f3b96efc700998
+      lastUpdatedBy: 63b857cb68f3b96efc700998
+      variableExpenses:
+        oil:
+          gathering:
+            shrinkageCondition: unshrunk
+            description: test
+            escalationModel: none
+            calculation: wi
+            affectEconLimit: true
+            deductBeforeSeveranceTax: false
+            deductBeforeAdValTax: false
+            cap: ''
+            dealTerms: 23
+            rateType: gross_well_head
+            rowsCalculationMethod: non_monotonic
+            rows:
+            - pctOfTotalRev: 100
+              gasRate: 1
+          marketing:
+            shrinkageCondition: unshrunk
+            description: ''
+            escalationModel: none
+            calculation: wi
+            affectEconLimit: true
+            deductBeforeSeveranceTax: false
+            deductBeforeAdValTax: false
+            cap: ''
+            dealTerms: 1
+            rateType: gross_well_head
+            rowsCalculationMethod: non_monotonic
+            rows:
+            - dollarPerBbl: 0
+              entireWellLife: Flat
+          transportation:
+            shrinkageCondition: unshrunk
+            description: ''
+            escalationModel: none
+            calculation: wi
+            affectEconLimit: true
+            deductBeforeSeveranceTax: false
+            deductBeforeAdValTax: false
+            cap: ''
+            dealTerms: 1
+            rateType: gross_well_head
+            rowsCalculationMethod: non_monotonic
+            rows:
+            - dollarPerBbl: 0
+              entireWellLife: Flat
+          processing:
+            shrinkageCondition: unshrunk
+            description: ''
+            escalationModel: none
+            calculation: wi
+            affectEconLimit: true
+            deductBeforeSeveranceTax: false
+            deductBeforeAdValTax: false
+            cap: ''
+            dealTerms: 1
+            rateType: gross_well_head
+            rowsCalculationMethod: non_monotonic
+            rows:
+            - dollarPerBbl: 0
+              entireWellLife: Flat
+          other:
+            shrinkageCondition: unshrunk
+            description: ''
+            escalationModel: none
+            calculation: wi
+            affectEconLimit: true
+            deductBeforeSeveranceTax: false
+            deductBeforeAdValTax: false
+            cap: ''
+            dealTerms: 1
+            rateType: gross_well_head
+            rowsCalculationMethod: non_monotonic
+            rows:
+            - dollarPerBbl: 0
+              entireWellLife: Flat
+        gas:
+          gathering:
+            shrinkageCondition: unshrunk
+            description: ''
+            escalationModel: none
+            calculation: wi
+            affectEconLimit: true
+            deductBeforeSeveranceTax: false
+            deductBeforeAdValTax: false
+            cap: ''
+            dealTerms: 1
+            rateType: gross_well_head
+            rowsCalculationMethod: non_monotonic
+            rows:
+            - dollarPerMcf: 0
+              entireWellLife: Flat
+          marketing:
+            shrinkageCondition: unshrunk
+            description: ''
+            escalationModel: none
+            calculation: wi
+            affectEconLimit: true
+            deductBeforeSeveranceTax: false
+            deductBeforeAdValTax: false
+            cap: ''
+            dealTerms: 1
+            rateType: gross_well_head
+            rowsCalculationMethod: non_monotonic
+            rows:
+            - dollarPerMcf: 0
+              entireWellLife: Flat
+          transportation:
+            shrinkageCondition: unshrunk
+            description: ''
+            escalationModel: none
+            calculation: wi
+            affectEconLimit: true
+            deductBeforeSeveranceTax: false
+            deductBeforeAdValTax: false
+            cap: ''
+            dealTerms: 1
+            rateType: gross_well_head
+            rowsCalculationMethod: non_monotonic
+            rows:
+            - dollarPerMcf: 0
+              entireWellLife: Flat
+          processing:
+            shrinkageCondition: unshrunk
+            description: ''
+            escalationModel: none
+            calculation: wi
+            affectEconLimit: true
+            deductBeforeSeveranceTax: false
+            deductBeforeAdValTax: false
+            cap: ''
+            dealTerms: 1
+            rateType: gross_well_head
+            rowsCalculationMethod: non_monotonic
+            rows:
+            - dollarPerMcf: 0
+              entireWellLife: Flat
+          other:
+            shrinkageCondition: unshrunk
+            description: ''
+            escalationModel: none
+            calculation: wi
+            affectEconLimit: true
+            deductBeforeSeveranceTax: false
+            deductBeforeAdValTax: false
+            cap: ''
+            dealTerms: 1
+            rateType: gross_well_head
+            rowsCalculationMethod: non_monotonic
+            rows:
+            - dollarPerMcf: 0
+              entireWellLife: Flat
+        ngl:
+          gathering:
+            description: lol
+            escalationModel: 642f2f56670d176d8558ef7b
+            calculation: wi
+            affectEconLimit: true
+            deductBeforeSeveranceTax: true
+            deductBeforeAdValTax: true
+            cap: ''
+            dealTerms: 32
+            rateType: gross_well_head
+            rowsCalculationMethod: non_monotonic
+            rows:
+            - pctOfOilRev: 23
+              totalFluidRate: 23
+            - pctOfOilRev: 23
+              totalFluidRate: 25
+          marketing:
+            description: ''
+            escalationModel: none
+            calculation: wi
+            affectEconLimit: true
+            deductBeforeSeveranceTax: false
+            deductBeforeAdValTax: false
+            cap: ''
+            dealTerms: 1
+            rateType: gross_well_head
+            rowsCalculationMethod: non_monotonic
+            rows:
+            - dollarPerBbl: 0
+              entireWellLife: Flat
+          transportation:
+            description: ''
+            escalationModel: none
+            calculation: wi
+            affectEconLimit: true
+            deductBeforeSeveranceTax: false
+            deductBeforeAdValTax: false
+            cap: ''
+            dealTerms: 1
+            rateType: gross_well_head
+            rowsCalculationMethod: non_monotonic
+            rows:
+            - dollarPerBbl: 0
+              entireWellLife: Flat
+          processing:
+            description: ''
+            escalationModel: none
+            calculation: wi
+            affectEconLimit: true
+            deductBeforeSeveranceTax: false
+            deductBeforeAdValTax: false
+            cap: ''
+            dealTerms: 1
+            rateType: gross_well_head
+            rowsCalculationMethod: non_monotonic
+            rows:
+            - dollarPerBbl: 0
+              entireWellLife: Flat
+          other:
+            description: ''
+            escalationModel: none
+            calculation: wi
+            affectEconLimit: true
+            deductBeforeSeveranceTax: false
+            deductBeforeAdValTax: false
+            cap: ''
+            dealTerms: 1
+            rateType: gross_well_head
+            rowsCalculationMethod: non_monotonic
+            rows:
+            - dollarPerBbl: 0
+              entireWellLife: Flat
+        dripCondensate:
+          gathering:
+            description: ''
+            escalationModel: none
+            calculation: wi
+            affectEconLimit: true
+            deductBeforeSeveranceTax: false
+            deductBeforeAdValTax: false
+            cap: ''
+            dealTerms: 1
+            rateType: gross_well_head
+            rowsCalculationMethod: non_monotonic
+            rows:
+            - dollarPerBbl: 0
+              entireWellLife: Flat
+          marketing:
+            description: ''
+            escalationModel: none
+            calculation: wi
+            affectEconLimit: true
+            deductBeforeSeveranceTax: false
+            deductBeforeAdValTax: false
+            cap: ''
+            dealTerms: 1
+            rateType: gross_well_head
+            rowsCalculationMethod: non_monotonic
+            rows:
+            - dollarPerBbl: 0
+              entireWellLife: Flat
+          transportation:
+            description: ''
+            escalationModel: none
+            calculation: wi
+            affectEconLimit: true
+            deductBeforeSeveranceTax: false
+            deductBeforeAdValTax: false
+            cap: 233
+            dealTerms: 1
+            rateType: gross_well_head
+            rowsCalculationMethod: non_monotonic
+            rows:
+            - dollarPerBbl: 0
+              entireWellLife: Flat
+          processing:
+            description: ''
+            escalationModel: none
+            calculation: wi
+            affectEconLimit: true
+            deductBeforeSeveranceTax: false
+            deductBeforeAdValTax: false
+            cap: ''
+            dealTerms: 1
+            rateType: gross_well_head
+            rowsCalculationMethod: non_monotonic
+            rows:
+            - dollarPerBbl: 0
+              entireWellLife: Flat
+          other:
+            description: ''
+            escalationModel: none
+            calculation: wi
+            affectEconLimit: true
+            deductBeforeSeveranceTax: false
+            deductBeforeAdValTax: false
+            cap: ''
+            dealTerms: 1
+            rateType: gross_well_head
+            rowsCalculationMethod: non_monotonic
+            rows:
+            - dollarPerBbl: 0
+              entireWellLife: Flat
+      fixedExpenses:
+        monthlyWellCost:
+          stopAtEconLimit: true
+          expenseBeforeFpd: false
+          description: ''
+          escalationModel: none
+          calculation: wi
+          affectEconLimit: true
+          deductBeforeSeveranceTax: false
+          deductBeforeAdValTax: false
+          cap: 34
+          dealTerms: 1
+          rateType: gross_well_head
+          rowsCalculationMethod: non_monotonic
+          rows:
+          - entireWellLife: Flat
+            fixedExpense: 2
+        otherMonthlyCost1:
+          stopAtEconLimit: true
+          expenseBeforeFpd: false
+          description: ''
+          escalationModel: none
+          calculation: wi
+          affectEconLimit: true
+          deductBeforeSeveranceTax: false
+          deductBeforeAdValTax: false
+          cap: ''
+          dealTerms: 1
+          rateType: gross_well_head
+          rowsCalculationMethod: non_monotonic
+          rows:
+          - entireWellLife: Flat
+            fixedExpensePerWell: 2
+        otherMonthlyCost2:
+          stopAtEconLimit: true
+          expenseBeforeFpd: false
+          description: ''
+          escalationModel: none
+          calculation: wi
+          affectEconLimit: true
+          deductBeforeSeveranceTax: false
+          deductBeforeAdValTax: false
+          cap: ''
+          dealTerms: 1
+          rateType: gross_well_head
+          rowsCalculationMethod: non_monotonic
+          rows:
+          - entireWellLife: Flat
+            fixedExpense: 0
+        otherMonthlyCost3:
+          stopAtEconLimit: true
+          expenseBeforeFpd: false
+          description: ''
+          escalationModel: none
+          calculation: wi
+          affectEconLimit: true
+          deductBeforeSeveranceTax: false
+          deductBeforeAdValTax: false
+          cap: ''
+          dealTerms: 1
+          rateType: gross_well_head
+          rowsCalculationMethod: non_monotonic
+          rows:
+          - entireWellLife: Flat
+            fixedExpense: 0
+        otherMonthlyCost4:
+          stopAtEconLimit: true
+          expenseBeforeFpd: false
+          description: ''
+          escalationModel: none
+          calculation: wi
+          affectEconLimit: true
+          deductBeforeSeveranceTax: false
+          deductBeforeAdValTax: false
+          cap: ''
+          dealTerms: 1
+          rateType: gross_well_head
+          rowsCalculationMethod: non_monotonic
+          rows:
+          - entireWellLife: Flat
+            fixedExpense: 0
+        otherMonthlyCost5:
+          stopAtEconLimit: true
+          expenseBeforeFpd: false
+          description: ''
+          escalationModel: none
+          calculation: wi
+          affectEconLimit: true
+          deductBeforeSeveranceTax: false
+          deductBeforeAdValTax: false
+          cap: ''
+          dealTerms: 1
+          rateType: gross_well_head
+          rowsCalculationMethod: non_monotonic
+          rows:
+          - entireWellLife: Flat
+            fixedExpense: 0
+        otherMonthlyCost6:
+          stopAtEconLimit: true
+          expenseBeforeFpd: false
+          description: ''
+          escalationModel: none
+          calculation: wi
+          affectEconLimit: true
+          deductBeforeSeveranceTax: false
+          deductBeforeAdValTax: false
+          cap: ''
+          dealTerms: 1
+          rateType: gross_well_head
+          rowsCalculationMethod: non_monotonic
+          rows:
+          - entireWellLife: Flat
+            fixedExpense: 0
+        otherMonthlyCost7:
+          stopAtEconLimit: true
+          expenseBeforeFpd: false
+          description: ''
+          escalationModel: none
+          calculation: wi
+          affectEconLimit: true
+          deductBeforeSeveranceTax: false
+          deductBeforeAdValTax: false
+          cap: ''
+          dealTerms: 1
+          rateType: gross_well_head
+          rowsCalculationMethod: non_monotonic
+          rows:
+          - entireWellLife: Flat
+            fixedExpense: 0
+        otherMonthlyCost8:
+          stopAtEconLimit: true
+          expenseBeforeFpd: false
+          description: ''
+          escalationModel: none
+          calculation: wi
+          affectEconLimit: true
+          deductBeforeSeveranceTax: false
+          deductBeforeAdValTax: false
+          cap: ''
+          dealTerms: 1
+          rateType: gross_well_head
+          rowsCalculationMethod: non_monotonic
+          rows:
+          - entireWellLife: Flat
+            fixedExpense: 0
+      waterDisposal:
+        description: ''
+        escalationModel: none
+        calculation: wi
+        affectEconLimit: true
+        deductBeforeSeveranceTax: false
+        deductBeforeAdValTax: false
+        cap: ''
+        dealTerms: 1
+        rateType: gross_well_head
+        rowsCalculationMethod: monotonic
+        rows:
+        - dollarPerBbl: 0
+          entireWellLife: Flat
+      carbonExpenses:
+        category: n2o
+        ch4:
+          description: ''
+          escalationModel: none
+          calculation: wi
+          affectEconLimit: true
+          deductBeforeSeveranceTax: false
+          deductBeforeAdValTax: false
+          cap: ''
+          dealTerms: 1
+          rateType: gross_well_head
+          rowsCalculationMethod: non_monotonic
+          rows:
+          - entireWellLife: Flat
+            carbonExpense: 1
+        co2:
+          description: ''
+          escalationModel: none
+          calculation: wi
+          affectEconLimit: true
+          deductBeforeSeveranceTax: false
+          deductBeforeAdValTax: false
+          cap: ''
+          dealTerms: 1
+          rateType: gross_well_head
+          rowsCalculationMethod: non_monotonic
+          rows:
+          - entireWellLife: Flat
+            carbonExpense: 2
+        co2E:
+          description: ''
+          escalationModel: none
+          calculation: wi
+          affectEconLimit: true
+          deductBeforeSeveranceTax: false
+          deductBeforeAdValTax: false
+          cap: ''
+          dealTerms: 1
+          rateType: gross_well_head
+          rowsCalculationMethod: non_monotonic
+          rows:
+          - entireWellLife: Flat
+            carbonExpense: 3
+        n2O:
+          description: ''
+          escalationModel: none
+          calculation: wi
+          affectEconLimit: true
+          deductBeforeSeveranceTax: false
+          deductBeforeAdValTax: false
+          cap: ''
+          dealTerms: 1
+          rateType: gross_well_head
+          rowsCalculationMethod: non_monotonic
+          rows:
+          - offsetToAsOf: 4
+            carbonExpense: 4
+          - offsetToAsOf: 6
+            carbonExpense: 25
+
+ExpensesInput:
+  type: object
+  properties:
+    name:
+      type: string
+      description: Name
+    scenario:
+      type: string
+      description: Scenario ID
+    unique:
+      type: boolean
+      description: Unique
+    well:
+      type: string
+      description: Well ID
+    variableExpenses:
+      $ref: '#/definitions/VariableExpenses'
+    fixedExpenses:
+      $ref: '#/definitions/FixedExpenses'
+    waterDisposal:
+      $ref: '#/definitions/WaterDisposal'
+    carbonExpenses:
+      $ref: '#/definitions/CarbonExpenses'
+  required:
+    - name
+    - unique
+  example:
+    name: Test
+    unique: false
+    variableExpenses:
+      oil:
+        gathering:
+          shrinkageCondition: unshrunk
+          description: test
+          escalationModel: none
+          calculation: wi
+          affectEconLimit: true
+          deductBeforeSeveranceTax: false
+          deductBeforeAdValTax: false
+          cap: ''
+          dealTerms: 23
+          rateType: gross_well_head
+          rowsCalculationMethod: non_monotonic
+          rows:
+          - pctOfTotalRev: 100
+            gasRate: 1
+        marketing:
+          shrinkageCondition: unshrunk
+          description: ''
+          escalationModel: none
+          calculation: wi
+          affectEconLimit: true
+          deductBeforeSeveranceTax: false
+          deductBeforeAdValTax: false
+          cap: ''
+          dealTerms: 1
+          rateType: gross_well_head
+          rowsCalculationMethod: non_monotonic
+          rows:
+          - dollarPerBbl: 0
+            entireWellLife: Flat
+        transportation:
+          shrinkageCondition: unshrunk
+          description: ''
+          escalationModel: none
+          calculation: wi
+          affectEconLimit: true
+          deductBeforeSeveranceTax: false
+          deductBeforeAdValTax: false
+          cap: ''
+          dealTerms: 1
+          rateType: gross_well_head
+          rowsCalculationMethod: non_monotonic
+          rows:
+          - dollarPerBbl: 0
+            entireWellLife: Flat
+        processing:
+          shrinkageCondition: unshrunk
+          description: ''
+          escalationModel: none
+          calculation: wi
+          affectEconLimit: true
+          deductBeforeSeveranceTax: false
+          deductBeforeAdValTax: false
+          cap: ''
+          dealTerms: 1
+          rateType: gross_well_head
+          rowsCalculationMethod: non_monotonic
+          rows:
+          - dollarPerBbl: 0
+            entireWellLife: Flat
+        other:
+          shrinkageCondition: unshrunk
+          description: ''
+          escalationModel: none
+          calculation: wi
+          affectEconLimit: true
+          deductBeforeSeveranceTax: false
+          deductBeforeAdValTax: false
+          cap: ''
+          dealTerms: 1
+          rateType: gross_well_head
+          rowsCalculationMethod: non_monotonic
+          rows:
+          - dollarPerBbl: 0
+            entireWellLife: Flat
+      gas:
+        gathering:
+          shrinkageCondition: unshrunk
+          description: ''
+          escalationModel: none
+          calculation: wi
+          affectEconLimit: true
+          deductBeforeSeveranceTax: false
+          deductBeforeAdValTax: false
+          cap: ''
+          dealTerms: 1
+          rateType: gross_well_head
+          rowsCalculationMethod: non_monotonic
+          rows:
+          - dollarPerMcf: 0
+            entireWellLife: Flat
+        marketing:
+          shrinkageCondition: unshrunk
+          description: ''
+          escalationModel: none
+          calculation: wi
+          affectEconLimit: true
+          deductBeforeSeveranceTax: false
+          deductBeforeAdValTax: false
+          cap: ''
+          dealTerms: 1
+          rateType: gross_well_head
+          rowsCalculationMethod: non_monotonic
+          rows:
+          - dollarPerMcf: 0
+            entireWellLife: Flat
+        transportation:
+          shrinkageCondition: unshrunk
+          description: ''
+          escalationModel: none
+          calculation: wi
+          affectEconLimit: true
+          deductBeforeSeveranceTax: false
+          deductBeforeAdValTax: false
+          cap: ''
+          dealTerms: 1
+          rateType: gross_well_head
+          rowsCalculationMethod: non_monotonic
+          rows:
+          - dollarPerMcf: 0
+            entireWellLife: Flat
+        processing:
+          shrinkageCondition: unshrunk
+          description: ''
+          escalationModel: none
+          calculation: wi
+          affectEconLimit: true
+          deductBeforeSeveranceTax: false
+          deductBeforeAdValTax: false
+          cap: ''
+          dealTerms: 1
+          rateType: gross_well_head
+          rowsCalculationMethod: non_monotonic
+          rows:
+          - dollarPerMcf: 0
+            entireWellLife: Flat
+        other:
+          shrinkageCondition: unshrunk
+          description: ''
+          escalationModel: none
+          calculation: wi
+          affectEconLimit: true
+          deductBeforeSeveranceTax: false
+          deductBeforeAdValTax: false
+          cap: ''
+          dealTerms: 1
+          rateType: gross_well_head
+          rowsCalculationMethod: non_monotonic
+          rows:
+          - dollarPerMcf: 0
+            entireWellLife: Flat
+      ngl:
+        gathering:
+          description: lol
+          escalationModel: 642f2f56670d176d8558ef7b
+          calculation: wi
+          affectEconLimit: true
+          deductBeforeSeveranceTax: true
+          deductBeforeAdValTax: true
+          cap: ''
+          dealTerms: 32
+          rateType: gross_well_head
+          rowsCalculationMethod: non_monotonic
+          rows:
+          - pctOfOilRev: 23
+            totalFluidRate: 23
+          - pctOfOilRev: 23
+            totalFluidRate: 25
+        marketing:
+          description: ''
+          escalationModel: none
+          calculation: wi
+          affectEconLimit: true
+          deductBeforeSeveranceTax: false
+          deductBeforeAdValTax: false
+          cap: ''
+          dealTerms: 1
+          rateType: gross_well_head
+          rowsCalculationMethod: non_monotonic
+          rows:
+          - dollarPerBbl: 0
+            entireWellLife: Flat
+        transportation:
+          description: ''
+          escalationModel: none
+          calculation: wi
+          affectEconLimit: true
+          deductBeforeSeveranceTax: false
+          deductBeforeAdValTax: false
+          cap: ''
+          dealTerms: 1
+          rateType: gross_well_head
+          rowsCalculationMethod: non_monotonic
+          rows:
+          - dollarPerBbl: 0
+            entireWellLife: Flat
+        processing:
+          description: ''
+          escalationModel: none
+          calculation: wi
+          affectEconLimit: true
+          deductBeforeSeveranceTax: false
+          deductBeforeAdValTax: false
+          cap: ''
+          dealTerms: 1
+          rateType: gross_well_head
+          rowsCalculationMethod: non_monotonic
+          rows:
+          - dollarPerBbl: 0
+            entireWellLife: Flat
+        other:
+          description: ''
+          escalationModel: none
+          calculation: wi
+          affectEconLimit: true
+          deductBeforeSeveranceTax: false
+          deductBeforeAdValTax: false
+          cap: ''
+          dealTerms: 1
+          rateType: gross_well_head
+          rowsCalculationMethod: non_monotonic
+          rows:
+          - dollarPerBbl: 0
+            entireWellLife: Flat
+      dripCondensate:
+        gathering:
+          description: ''
+          escalationModel: none
+          calculation: wi
+          affectEconLimit: true
+          deductBeforeSeveranceTax: false
+          deductBeforeAdValTax: false
+          cap: ''
+          dealTerms: 1
+          rateType: gross_well_head
+          rowsCalculationMethod: non_monotonic
+          rows:
+          - dollarPerBbl: 0
+            entireWellLife: Flat
+        marketing:
+          description: ''
+          escalationModel: none
+          calculation: wi
+          affectEconLimit: true
+          deductBeforeSeveranceTax: false
+          deductBeforeAdValTax: false
+          cap: ''
+          dealTerms: 1
+          rateType: gross_well_head
+          rowsCalculationMethod: non_monotonic
+          rows:
+          - dollarPerBbl: 0
+            entireWellLife: Flat
+        transportation:
+          description: ''
+          escalationModel: none
+          calculation: wi
+          affectEconLimit: true
+          deductBeforeSeveranceTax: false
+          deductBeforeAdValTax: false
+          cap: 233
+          dealTerms: 1
+          rateType: gross_well_head
+          rowsCalculationMethod: non_monotonic
+          rows:
+          - dollarPerBbl: 0
+            entireWellLife: Flat
+        processing:
+          description: ''
+          escalationModel: none
+          calculation: wi
+          affectEconLimit: true
+          deductBeforeSeveranceTax: false
+          deductBeforeAdValTax: false
+          cap: ''
+          dealTerms: 1
+          rateType: gross_well_head
+          rowsCalculationMethod: non_monotonic
+          rows:
+          - dollarPerBbl: 0
+            entireWellLife: Flat
+        other:
+          description: ''
+          escalationModel: none
+          calculation: wi
+          affectEconLimit: true
+          deductBeforeSeveranceTax: false
+          deductBeforeAdValTax: false
+          cap: ''
+          dealTerms: 1
+          rateType: gross_well_head
+          rowsCalculationMethod: non_monotonic
+          rows:
+          - dollarPerBbl: 0
+            entireWellLife: Flat
+    fixedExpenses:
+      monthlyWellCost:
+        stopAtEconLimit: true
+        expenseBeforeFpd: false
+        description: ''
+        escalationModel: none
+        calculation: wi
+        affectEconLimit: true
+        deductBeforeSeveranceTax: false
+        deductBeforeAdValTax: false
+        cap: 34
+        dealTerms: 1
+        rateType: gross_well_head
+        rowsCalculationMethod: non_monotonic
+        rows:
+        - entireWellLife: Flat
+          fixedExpense: 2
+      otherMonthlyCost1:
+        stopAtEconLimit: true
+        expenseBeforeFpd: false
+        description: ''
+        escalationModel: none
+        calculation: wi
+        affectEconLimit: true
+        deductBeforeSeveranceTax: false
+        deductBeforeAdValTax: false
+        cap: ''
+        dealTerms: 1
+        rateType: gross_well_head
+        rowsCalculationMethod: non_monotonic
+        rows:
+        - entireWellLife: Flat
+          fixedExpensePerWell: 2
+      otherMonthlyCost2:
+        stopAtEconLimit: true
+        expenseBeforeFpd: false
+        description: ''
+        escalationModel: none
+        calculation: wi
+        affectEconLimit: true
+        deductBeforeSeveranceTax: false
+        deductBeforeAdValTax: false
+        cap: ''
+        dealTerms: 1
+        rateType: gross_well_head
+        rowsCalculationMethod: non_monotonic
+        rows:
+        - entireWellLife: Flat
+          fixedExpense: 0
+      otherMonthlyCost3:
+        stopAtEconLimit: true
+        expenseBeforeFpd: false
+        description: ''
+        escalationModel: none
+        calculation: wi
+        affectEconLimit: true
+        deductBeforeSeveranceTax: false
+        deductBeforeAdValTax: false
+        cap: ''
+        dealTerms: 1
+        rateType: gross_well_head
+        rowsCalculationMethod: non_monotonic
+        rows:
+        - entireWellLife: Flat
+          fixedExpense: 0
+      otherMonthlyCost4:
+        stopAtEconLimit: true
+        expenseBeforeFpd: false
+        description: ''
+        escalationModel: none
+        calculation: wi
+        affectEconLimit: true
+        deductBeforeSeveranceTax: false
+        deductBeforeAdValTax: false
+        cap: ''
+        dealTerms: 1
+        rateType: gross_well_head
+        rowsCalculationMethod: non_monotonic
+        rows:
+        - entireWellLife: Flat
+          fixedExpense: 0
+      otherMonthlyCost5:
+        stopAtEconLimit: true
+        expenseBeforeFpd: false
+        description: ''
+        escalationModel: none
+        calculation: wi
+        affectEconLimit: true
+        deductBeforeSeveranceTax: false
+        deductBeforeAdValTax: false
+        cap: ''
+        dealTerms: 1
+        rateType: gross_well_head
+        rowsCalculationMethod: non_monotonic
+        rows:
+        - entireWellLife: Flat
+          fixedExpense: 0
+      otherMonthlyCost6:
+        stopAtEconLimit: true
+        expenseBeforeFpd: false
+        description: ''
+        escalationModel: none
+        calculation: wi
+        affectEconLimit: true
+        deductBeforeSeveranceTax: false
+        deductBeforeAdValTax: false
+        cap: ''
+        dealTerms: 1
+        rateType: gross_well_head
+        rowsCalculationMethod: non_monotonic
+        rows:
+        - entireWellLife: Flat
+          fixedExpense: 0
+      otherMonthlyCost7:
+        stopAtEconLimit: true
+        expenseBeforeFpd: false
+        description: ''
+        escalationModel: none
+        calculation: wi
+        affectEconLimit: true
+        deductBeforeSeveranceTax: false
+        deductBeforeAdValTax: false
+        cap: ''
+        dealTerms: 1
+        rateType: gross_well_head
+        rowsCalculationMethod: non_monotonic
+        rows:
+        - entireWellLife: Flat
+          fixedExpense: 0
+      otherMonthlyCost8:
+        stopAtEconLimit: true
+        expenseBeforeFpd: false
+        description: ''
+        escalationModel: none
+        calculation: wi
+        affectEconLimit: true
+        deductBeforeSeveranceTax: false
+        deductBeforeAdValTax: false
+        cap: ''
+        dealTerms: 1
+        rateType: gross_well_head
+        rowsCalculationMethod: non_monotonic
+        rows:
+        - entireWellLife: Flat
+          fixedExpense: 0
+    waterDisposal:
+      description: ''
+      escalationModel: none
+      calculation: wi
+      affectEconLimit: true
+      deductBeforeSeveranceTax: false
+      deductBeforeAdValTax: false
+      cap: ''
+      dealTerms: 1
+      rateType: gross_well_head
+      rowsCalculationMethod: monotonic
+      rows:
+      - dollarPerBbl: 0
+        entireWellLife: Flat
+    carbonExpenses:
+      category: n2o
+      ch4:
+        description: ''
+        escalationModel: none
+        calculation: wi
+        affectEconLimit: true
+        deductBeforeSeveranceTax: false
+        deductBeforeAdValTax: false
+        cap: ''
+        dealTerms: 1
+        rateType: gross_well_head
+        rowsCalculationMethod: non_monotonic
+        rows:
+        - entireWellLife: Flat
+          carbonExpense: 1
+      co2:
+        description: ''
+        escalationModel: none
+        calculation: wi
+        affectEconLimit: true
+        deductBeforeSeveranceTax: false
+        deductBeforeAdValTax: false
+        cap: ''
+        dealTerms: 1
+        rateType: gross_well_head
+        rowsCalculationMethod: non_monotonic
+        rows:
+        - entireWellLife: Flat
+          carbonExpense: 2
+      co2E:
+        description: ''
+        escalationModel: none
+        calculation: wi
+        affectEconLimit: true
+        deductBeforeSeveranceTax: false
+        deductBeforeAdValTax: false
+        cap: ''
+        dealTerms: 1
+        rateType: gross_well_head
+        rowsCalculationMethod: non_monotonic
+        rows:
+        - entireWellLife: Flat
+          carbonExpense: 3
+      n2O:
+        description: ''
+        escalationModel: none
+        calculation: wi
+        affectEconLimit: true
+        deductBeforeSeveranceTax: false
+        deductBeforeAdValTax: false
+        cap: ''
+        dealTerms: 1
+        rateType: gross_well_head
+        rowsCalculationMethod: non_monotonic
+        rows:
+        - offsetToAsOf: 4
+          carbonExpense: 4
+        - offsetToAsOf: 6
+          carbonExpense: 25
+
+ExpensesInputList:
+  type: array
+  items:
+    $ref: '#/definitions/ExpensesInput'
+  maxItems: 500
+  example:
+    - name: Test
+      unique: false
+      variableExpenses:
+        oil:
+          gathering:
+            shrinkageCondition: unshrunk
+            description: test
+            escalationModel: none
+            calculation: wi
+            affectEconLimit: true
+            deductBeforeSeveranceTax: false
+            deductBeforeAdValTax: false
+            cap: ''
+            dealTerms: 23
+            rateType: gross_well_head
+            rowsCalculationMethod: non_monotonic
+            rows:
+            - pctOfTotalRev: 100
+              gasRate: 1
+          marketing:
+            shrinkageCondition: unshrunk
+            description: ''
+            escalationModel: none
+            calculation: wi
+            affectEconLimit: true
+            deductBeforeSeveranceTax: false
+            deductBeforeAdValTax: false
+            cap: ''
+            dealTerms: 1
+            rateType: gross_well_head
+            rowsCalculationMethod: non_monotonic
+            rows:
+            - dollarPerBbl: 0
+              entireWellLife: Flat
+          transportation:
+            shrinkageCondition: unshrunk
+            description: ''
+            escalationModel: none
+            calculation: wi
+            affectEconLimit: true
+            deductBeforeSeveranceTax: false
+            deductBeforeAdValTax: false
+            cap: ''
+            dealTerms: 1
+            rateType: gross_well_head
+            rowsCalculationMethod: non_monotonic
+            rows:
+            - dollarPerBbl: 0
+              entireWellLife: Flat
+          processing:
+            shrinkageCondition: unshrunk
+            description: ''
+            escalationModel: none
+            calculation: wi
+            affectEconLimit: true
+            deductBeforeSeveranceTax: false
+            deductBeforeAdValTax: false
+            cap: ''
+            dealTerms: 1
+            rateType: gross_well_head
+            rowsCalculationMethod: non_monotonic
+            rows:
+            - dollarPerBbl: 0
+              entireWellLife: Flat
+          other:
+            shrinkageCondition: unshrunk
+            description: ''
+            escalationModel: none
+            calculation: wi
+            affectEconLimit: true
+            deductBeforeSeveranceTax: false
+            deductBeforeAdValTax: false
+            cap: ''
+            dealTerms: 1
+            rateType: gross_well_head
+            rowsCalculationMethod: non_monotonic
+            rows:
+            - dollarPerBbl: 0
+              entireWellLife: Flat
+        gas:
+          gathering:
+            shrinkageCondition: unshrunk
+            description: ''
+            escalationModel: none
+            calculation: wi
+            affectEconLimit: true
+            deductBeforeSeveranceTax: false
+            deductBeforeAdValTax: false
+            cap: ''
+            dealTerms: 1
+            rateType: gross_well_head
+            rowsCalculationMethod: non_monotonic
+            rows:
+            - dollarPerMcf: 0
+              entireWellLife: Flat
+          marketing:
+            shrinkageCondition: unshrunk
+            description: ''
+            escalationModel: none
+            calculation: wi
+            affectEconLimit: true
+            deductBeforeSeveranceTax: false
+            deductBeforeAdValTax: false
+            cap: ''
+            dealTerms: 1
+            rateType: gross_well_head
+            rowsCalculationMethod: non_monotonic
+            rows:
+            - dollarPerMcf: 0
+              entireWellLife: Flat
+          transportation:
+            shrinkageCondition: unshrunk
+            description: ''
+            escalationModel: none
+            calculation: wi
+            affectEconLimit: true
+            deductBeforeSeveranceTax: false
+            deductBeforeAdValTax: false
+            cap: ''
+            dealTerms: 1
+            rateType: gross_well_head
+            rowsCalculationMethod: non_monotonic
+            rows:
+            - dollarPerMcf: 0
+              entireWellLife: Flat
+          processing:
+            shrinkageCondition: unshrunk
+            description: ''
+            escalationModel: none
+            calculation: wi
+            affectEconLimit: true
+            deductBeforeSeveranceTax: false
+            deductBeforeAdValTax: false
+            cap: ''
+            dealTerms: 1
+            rateType: gross_well_head
+            rowsCalculationMethod: non_monotonic
+            rows:
+            - dollarPerMcf: 0
+              entireWellLife: Flat
+          other:
+            shrinkageCondition: unshrunk
+            description: ''
+            escalationModel: none
+            calculation: wi
+            affectEconLimit: true
+            deductBeforeSeveranceTax: false
+            deductBeforeAdValTax: false
+            cap: ''
+            dealTerms: 1
+            rateType: gross_well_head
+            rowsCalculationMethod: non_monotonic
+            rows:
+            - dollarPerMcf: 0
+              entireWellLife: Flat
+        ngl:
+          gathering:
+            description: lol
+            escalationModel: 642f2f56670d176d8558ef7b
+            calculation: wi
+            affectEconLimit: true
+            deductBeforeSeveranceTax: true
+            deductBeforeAdValTax: true
+            cap: ''
+            dealTerms: 32
+            rateType: gross_well_head
+            rowsCalculationMethod: non_monotonic
+            rows:
+            - pctOfOilRev: 23
+              totalFluidRate: 23
+            - pctOfOilRev: 23
+              totalFluidRate: 25
+          marketing:
+            description: ''
+            escalationModel: none
+            calculation: wi
+            affectEconLimit: true
+            deductBeforeSeveranceTax: false
+            deductBeforeAdValTax: false
+            cap: ''
+            dealTerms: 1
+            rateType: gross_well_head
+            rowsCalculationMethod: non_monotonic
+            rows:
+            - dollarPerBbl: 0
+              entireWellLife: Flat
+          transportation:
+            description: ''
+            escalationModel: none
+            calculation: wi
+            affectEconLimit: true
+            deductBeforeSeveranceTax: false
+            deductBeforeAdValTax: false
+            cap: ''
+            dealTerms: 1
+            rateType: gross_well_head
+            rowsCalculationMethod: non_monotonic
+            rows:
+            - dollarPerBbl: 0
+              entireWellLife: Flat
+          processing:
+            description: ''
+            escalationModel: none
+            calculation: wi
+            affectEconLimit: true
+            deductBeforeSeveranceTax: false
+            deductBeforeAdValTax: false
+            cap: ''
+            dealTerms: 1
+            rateType: gross_well_head
+            rowsCalculationMethod: non_monotonic
+            rows:
+            - dollarPerBbl: 0
+              entireWellLife: Flat
+          other:
+            description: ''
+            escalationModel: none
+            calculation: wi
+            affectEconLimit: true
+            deductBeforeSeveranceTax: false
+            deductBeforeAdValTax: false
+            cap: ''
+            dealTerms: 1
+            rateType: gross_well_head
+            rowsCalculationMethod: non_monotonic
+            rows:
+            - dollarPerBbl: 0
+              entireWellLife: Flat
+        dripCondensate:
+          gathering:
+            description: ''
+            escalationModel: none
+            calculation: wi
+            affectEconLimit: true
+            deductBeforeSeveranceTax: false
+            deductBeforeAdValTax: false
+            cap: ''
+            dealTerms: 1
+            rateType: gross_well_head
+            rowsCalculationMethod: non_monotonic
+            rows:
+            - dollarPerBbl: 0
+              entireWellLife: Flat
+          marketing:
+            description: ''
+            escalationModel: none
+            calculation: wi
+            affectEconLimit: true
+            deductBeforeSeveranceTax: false
+            deductBeforeAdValTax: false
+            cap: ''
+            dealTerms: 1
+            rateType: gross_well_head
+            rowsCalculationMethod: non_monotonic
+            rows:
+            - dollarPerBbl: 0
+              entireWellLife: Flat
+          transportation:
+            description: ''
+            escalationModel: none
+            calculation: wi
+            affectEconLimit: true
+            deductBeforeSeveranceTax: false
+            deductBeforeAdValTax: false
+            cap: 233
+            dealTerms: 1
+            rateType: gross_well_head
+            rowsCalculationMethod: non_monotonic
+            rows:
+            - dollarPerBbl: 0
+              entireWellLife: Flat
+          processing:
+            description: ''
+            escalationModel: none
+            calculation: wi
+            affectEconLimit: true
+            deductBeforeSeveranceTax: false
+            deductBeforeAdValTax: false
+            cap: ''
+            dealTerms: 1
+            rateType: gross_well_head
+            rowsCalculationMethod: non_monotonic
+            rows:
+            - dollarPerBbl: 0
+              entireWellLife: Flat
+          other:
+            description: ''
+            escalationModel: none
+            calculation: wi
+            affectEconLimit: true
+            deductBeforeSeveranceTax: false
+            deductBeforeAdValTax: false
+            cap: ''
+            dealTerms: 1
+            rateType: gross_well_head
+            rowsCalculationMethod: non_monotonic
+            rows:
+            - dollarPerBbl: 0
+              entireWellLife: Flat
+      fixedExpenses:
+        monthlyWellCost:
+          stopAtEconLimit: true
+          expenseBeforeFpd: false
+          description: ''
+          escalationModel: none
+          calculation: wi
+          affectEconLimit: true
+          deductBeforeSeveranceTax: false
+          deductBeforeAdValTax: false
+          cap: 34
+          dealTerms: 1
+          rateType: gross_well_head
+          rowsCalculationMethod: non_monotonic
+          rows:
+          - entireWellLife: Flat
+            fixedExpense: 2
+        otherMonthlyCost1:
+          stopAtEconLimit: true
+          expenseBeforeFpd: false
+          description: ''
+          escalationModel: none
+          calculation: wi
+          affectEconLimit: true
+          deductBeforeSeveranceTax: false
+          deductBeforeAdValTax: false
+          cap: ''
+          dealTerms: 1
+          rateType: gross_well_head
+          rowsCalculationMethod: non_monotonic
+          rows:
+          - entireWellLife: Flat
+            fixedExpensePerWell: 2
+        otherMonthlyCost2:
+          stopAtEconLimit: true
+          expenseBeforeFpd: false
+          description: ''
+          escalationModel: none
+          calculation: wi
+          affectEconLimit: true
+          deductBeforeSeveranceTax: false
+          deductBeforeAdValTax: false
+          cap: ''
+          dealTerms: 1
+          rateType: gross_well_head
+          rowsCalculationMethod: non_monotonic
+          rows:
+          - entireWellLife: Flat
+            fixedExpense: 0
+        otherMonthlyCost3:
+          stopAtEconLimit: true
+          expenseBeforeFpd: false
+          description: ''
+          escalationModel: none
+          calculation: wi
+          affectEconLimit: true
+          deductBeforeSeveranceTax: false
+          deductBeforeAdValTax: false
+          cap: ''
+          dealTerms: 1
+          rateType: gross_well_head
+          rowsCalculationMethod: non_monotonic
+          rows:
+          - entireWellLife: Flat
+            fixedExpense: 0
+        otherMonthlyCost4:
+          stopAtEconLimit: true
+          expenseBeforeFpd: false
+          description: ''
+          escalationModel: none
+          calculation: wi
+          affectEconLimit: true
+          deductBeforeSeveranceTax: false
+          deductBeforeAdValTax: false
+          cap: ''
+          dealTerms: 1
+          rateType: gross_well_head
+          rowsCalculationMethod: non_monotonic
+          rows:
+          - entireWellLife: Flat
+            fixedExpense: 0
+        otherMonthlyCost5:
+          stopAtEconLimit: true
+          expenseBeforeFpd: false
+          description: ''
+          escalationModel: none
+          calculation: wi
+          affectEconLimit: true
+          deductBeforeSeveranceTax: false
+          deductBeforeAdValTax: false
+          cap: ''
+          dealTerms: 1
+          rateType: gross_well_head
+          rowsCalculationMethod: non_monotonic
+          rows:
+          - entireWellLife: Flat
+            fixedExpense: 0
+        otherMonthlyCost6:
+          stopAtEconLimit: true
+          expenseBeforeFpd: false
+          description: ''
+          escalationModel: none
+          calculation: wi
+          affectEconLimit: true
+          deductBeforeSeveranceTax: false
+          deductBeforeAdValTax: false
+          cap: ''
+          dealTerms: 1
+          rateType: gross_well_head
+          rowsCalculationMethod: non_monotonic
+          rows:
+          - entireWellLife: Flat
+            fixedExpense: 0
+        otherMonthlyCost7:
+          stopAtEconLimit: true
+          expenseBeforeFpd: false
+          description: ''
+          escalationModel: none
+          calculation: wi
+          affectEconLimit: true
+          deductBeforeSeveranceTax: false
+          deductBeforeAdValTax: false
+          cap: ''
+          dealTerms: 1
+          rateType: gross_well_head
+          rowsCalculationMethod: non_monotonic
+          rows:
+          - entireWellLife: Flat
+            fixedExpense: 0
+        otherMonthlyCost8:
+          stopAtEconLimit: true
+          expenseBeforeFpd: false
+          description: ''
+          escalationModel: none
+          calculation: wi
+          affectEconLimit: true
+          deductBeforeSeveranceTax: false
+          deductBeforeAdValTax: false
+          cap: ''
+          dealTerms: 1
+          rateType: gross_well_head
+          rowsCalculationMethod: non_monotonic
+          rows:
+          - entireWellLife: Flat
+            fixedExpense: 0
+      waterDisposal:
+        description: ''
+        escalationModel: none
+        calculation: wi
+        affectEconLimit: true
+        deductBeforeSeveranceTax: false
+        deductBeforeAdValTax: false
+        cap: ''
+        dealTerms: 1
+        rateType: gross_well_head
+        rowsCalculationMethod: monotonic
+        rows:
+        - dollarPerBbl: 0
+          entireWellLife: Flat
+      carbonExpenses:
+      category: n2o
+      ch4:
+        description: ''
+        escalationModel: none
+        calculation: wi
+        affectEconLimit: true
+        deductBeforeSeveranceTax: false
+        deductBeforeAdValTax: false
+        cap: ''
+        dealTerms: 1
+        rateType: gross_well_head
+        rowsCalculationMethod: non_monotonic
+        rows:
+        - entireWellLife: Flat
+          carbonExpense: 1
+      co2:
+        description: ''
+        escalationModel: none
+        calculation: wi
+        affectEconLimit: true
+        deductBeforeSeveranceTax: false
+        deductBeforeAdValTax: false
+        cap: ''
+        dealTerms: 1
+        rateType: gross_well_head
+        rowsCalculationMethod: non_monotonic
+        rows:
+        - entireWellLife: Flat
+          carbonExpense: 2
+      co2E:
+        description: ''
+        escalationModel: none
+        calculation: wi
+        affectEconLimit: true
+        deductBeforeSeveranceTax: false
+        deductBeforeAdValTax: false
+        cap: ''
+        dealTerms: 1
+        rateType: gross_well_head
+        rowsCalculationMethod: non_monotonic
+        rows:
+        - entireWellLife: Flat
+          carbonExpense: 3
+      n2O:
+        description: ''
+        escalationModel: none
+        calculation: wi
+        affectEconLimit: true
+        deductBeforeSeveranceTax: false
+        deductBeforeAdValTax: false
+        cap: ''
+        dealTerms: 1
+        rateType: gross_well_head
+        rowsCalculationMethod: non_monotonic
+        rows:
+        - offsetToAsOf: 4
+          carbonExpense: 4
+        - offsetToAsOf: 6
+          carbonExpense: 25
+

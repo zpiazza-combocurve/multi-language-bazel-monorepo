@@ -1,0 +1,4 @@
+#!include:.gcloudignore
+
+!/integration/
+!/.gcloudignore.integration

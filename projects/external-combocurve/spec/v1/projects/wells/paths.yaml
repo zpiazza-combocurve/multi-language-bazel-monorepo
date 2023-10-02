@@ -1,0 +1,553 @@
+/v1/projects/{projectId}/wells:
+  head:
+    operationId: head-v1-project-wells
+    description: >-
+      Returns metadata about the existing well documents scoped to projectId
+      project.
+    parameters:
+      - in: path
+        name: projectId
+        required: true
+        type: string
+        description: ''
+      - $ref: '#/parameters/skipParam'
+      - $ref: '#/parameters/takeParam'
+      - name: api10
+        in: query
+        description: filter by api10
+        type: string
+        x-allow-multiple: true
+      - name: api12
+        in: query
+        description: filter by api12
+        type: string
+        x-allow-multiple: true
+      - name: county
+        in: query
+        description: filter by county
+        type: string
+        x-allow-multiple: true
+      - name: state
+        in: query
+        description: filter by state
+        type: string
+        x-allow-multiple: true
+      - name: wellName
+        in: query
+        description: filter by wellName
+        type: string
+        x-allow-multiple: true
+      - name: chosenID
+        in: query
+        description: filter by chosenID
+        type: string
+        x-allow-multiple: true
+      - name: inptID
+        in: query
+        description: filter by inptID
+        type: string
+      - name: api14
+        in: query
+        description: filter by api14
+        type: string
+        x-allow-multiple: true
+      - name: createdAt
+        in: query
+        description: filter by createdAt
+        format: date
+        type: string
+        x-allow-parameter-operator: true
+      - name: updatedAt
+        in: query
+        description: filter by updatedAt
+        format: date
+        type: string
+        x-allow-parameter-operator: true
+      - name: dataSource
+        in: query
+        description: filter by dataSource
+        type: string
+      - name: currentOperator
+        in: query
+        description: filter by dataSource
+        type: string
+    responses:
+      '200':
+        description: OK
+        headers:
+          Link:
+            type: string
+            description: >-
+              Indicates a typed relationship with another resource, where the
+              relation type is defined by RFC 5988. We include the relationships
+              next, prev, first and last, which can be used to move between
+              pages of the list of results.
+          X-Query-Count:
+            type: integer
+            description: >-
+              The number of records in this resource. When filters are provided
+              only matching records are counted.
+      '400':
+        description: Bad Request. There is something wrong with the request data.
+    tags:
+      - ComboCurveV1
+    x-client-generation:
+      x-count-method:
+        name: ProjectWellsCount
+  get:
+    produces:
+      - application/json
+    operationId: get-v1-project-wells
+    description: Returns a list of well documents scoped to projectId project.
+    parameters:
+      - in: path
+        name: projectId
+        required: true
+        type: string
+        description: ''
+      - $ref: '#/parameters/skipParam'
+      - $ref: '#/parameters/takeParam'
+      - $ref: '#/parameters/sortParam'
+      - $ref: '#/parameters/cursorParam'
+      - name: api10
+        in: query
+        description: filter by api10
+        type: string
+        x-allow-multiple: true
+      - name: api12
+        in: query
+        description: filter by api12
+        type: string
+        x-allow-multiple: true
+      - name: county
+        in: query
+        description: filter by county
+        type: string
+        x-allow-multiple: true
+      - name: state
+        in: query
+        description: filter by state
+        type: string
+        x-allow-multiple: true
+      - name: wellName
+        in: query
+        description: filter by wellName
+        type: string
+        x-allow-multiple: true
+      - name: chosenID
+        in: query
+        description: filter by chosenID
+        type: string
+        x-allow-multiple: true
+      - name: inptID
+        in: query
+        description: filter by inptID
+        type: string
+      - name: api14
+        in: query
+        description: filter by api14
+        type: string
+        x-allow-multiple: true
+      - name: createdAt
+        in: query
+        description: filter by createdAt
+        format: date
+        type: string
+        x-allow-parameter-operator: true
+      - name: updatedAt
+        in: query
+        description: filter by updatedAt
+        format: date
+        type: string
+        x-allow-parameter-operator: true
+      - name: dataSource
+        in: query
+        description: filter by dataSource
+        type: string
+      - name: currentOperator
+        in: query
+        description: filter by dataSource
+        type: string
+    responses:
+      '200':
+        description: OK
+        schema:
+          $ref: '#/definitions/WellList'
+        headers:
+          Link:
+            type: string
+            description: >-
+              Indicates a typed relationship with another resource, where the
+              relation type is defined by RFC 5988. We include the relationships
+              next, prev, first and last, which can be used to move between
+              pages of the list of results.
+      '400':
+        description: Bad Request. There is something wrong with the request data.
+        schema:
+          $ref: '#/definitions/Error'
+    tags:
+      - ComboCurveV1
+    x-google-quota:
+      metricCosts:
+        read-request-rate: 1
+    x-client-generation:
+      x-get-all-skip-take-method:
+        name: GetAllProjectWells
+        baseReturnType: Well
+      x-get-all-cursor-method:
+        name: GetAllProjectWellsV2
+        baseReturnType: Well
+  patch:
+    x-google-quota:
+      metricCosts:
+        write-request-rate: 1
+    consumes:
+      - application/json
+    produces:
+      - application/json
+    operationId: patch-v1-project-wells
+    description: Updates a list of well documents in the specified project's scope.
+    parameters:
+      - in: path
+        name: projectId
+        required: true
+        type: string
+        description: ''
+      - in: body
+        name: well
+        description: Well documents to update. See WellPatchInputList.
+        schema:
+          $ref: '#/definitions/WellPatchInputList'
+    responses:
+      '207':
+        description: Multi-Status
+        schema:
+          $ref: '#/definitions/WellMultiStatusResponse'
+      '400':
+        description: Bad Request. There is something wrong with the request data.
+        schema:
+          $ref: '#/definitions/Error'
+    x-is-patch: true    
+    tags:
+      - ComboCurveV1
+  post:
+    consumes:
+      - application/json
+    produces:
+      - application/json
+    x-google-quota:
+      metricCosts:
+        write-request-rate: 1
+    operationId: post-v1-projects-wells
+    description: Inserts a list of well documents into the specified project's scope.
+    parameters:
+      - in: path
+        name: projectId
+        required: true
+        type: string
+        description: ''
+      - in: body
+        name: well
+        description: Well documents to insert. See WellInputList.
+        schema:
+          $ref: '#/definitions/WellInputList'
+    responses:
+      '207':
+        description: Multi-Status
+        schema:
+          $ref: '#/definitions/WellMultiStatusResponse'
+      '400':
+        description: Bad Request. There is something wrong with the request data.
+        schema:
+          $ref: '#/definitions/Error'
+    tags:
+      - ComboCurveV1
+  put:
+    consumes:
+      - application/json
+    produces:
+      - application/json
+    x-google-quota:
+      metricCosts:
+        write-request-rate: 1
+    operationId: put-v1-projects-wells
+    description: Replaces a list of well documents in the specified project's scope.
+    parameters:
+      - in: path
+        name: projectId
+        required: true
+        type: string
+        description: ''
+      - in: body
+        name: well
+        description: Well documents to replace. See WellInputList.
+        schema:
+          $ref: '#/definitions/WellInputList'
+    responses:
+      '207':
+        description: Multi-Status
+        schema:
+          $ref: '#/definitions/WellMultiStatusResponse'
+      '400':
+        description: Bad Request. There is something wrong with the request data.
+        schema:
+          $ref: '#/definitions/Error'
+    tags:
+      - ComboCurveV1
+  delete:
+    operationId: delete-v1-project-wells
+    description: >-
+      Delete the wells documents that match the given filters scoped to
+      projectId project.
+    parameters:
+      - in: path
+        name: projectId
+        required: true
+        type: string
+        description: ''
+      - name: chosenID
+        in: query
+        description: filter by chosenID
+        type: string
+        x-allow-multiple: true
+      - name: dataSource
+        in: query
+        description: filter by dataSource
+        type: string
+      - name: id
+        in: query
+        description: filter by id
+        type: string
+        x-allow-multiple: true
+    responses:
+      '204':
+        description: OK
+        headers:
+          X-Delete-Count:
+            type: integer
+            description: >-
+              The number of records that match the given filters and were
+              deleted.
+      '400':
+        description: Bad Request. There is something wrong with the request data.
+    tags:
+      - ComboCurveV1
+/v1/projects/{projectId}/wells/head:
+  get:
+    x-no-client: true
+    x-no-doc: true
+    operationId: get-head-v1-project-wells
+    description: >-
+      Returns metadata about the existing well documents scoped to projectId
+      project.
+    parameters:
+      - in: path
+        name: projectId
+        required: true
+        type: string
+        description: ''
+      - $ref: '#/parameters/skipParam'
+      - $ref: '#/parameters/takeParam'
+      - name: api10
+        in: query
+        description: filter by api10
+        type: string
+      - name: api12
+        in: query
+        description: filter by api12
+        type: string
+      - name: county
+        in: query
+        description: filter by county
+        type: string
+      - name: state
+        in: query
+        description: filter by state
+        type: string
+      - name: wellName
+        in: query
+        description: filter by wellName
+        type: string
+      - name: chosenID
+        in: query
+        description: filter by chosenID
+        type: string
+      - name: inptID
+        in: query
+        description: filter by inptID
+        type: string
+      - name: api14
+        in: query
+        description: filter by api14
+        type: string
+      - name: createdAt
+        in: query
+        description: filter by createdAt
+        format: date
+        type: string
+      - name: updatedAt
+        in: query
+        description: filter by updatedAt
+        format: date
+        type: string
+    responses:
+      '200':
+        description: OK
+        headers:
+          Link:
+            type: string
+            description: >-
+              Indicates a typed relationship with another resource, where the
+              relation type is defined by RFC 5988. We include the relationships
+              next, prev, first and last, which can be used to move between
+              pages of the list of results.
+          X-Query-Count:
+            type: integer
+            description: >-
+              The number of records in this resource. When filters are provided
+              only matching records are counted.
+      '400':
+        description: Bad Request. There is something wrong with the request data.
+    tags:
+      - ComboCurveV1
+/v1/projects/{projectId}/wells/{id}:
+  get:
+    produces:
+      - application/json
+    operationId: get-v1-project-well-by-id
+    description: >-
+      Returns the well document that matches the given id scoped to projectId
+      project.
+    parameters:
+      - in: path
+        name: projectId
+        required: true
+        type: string
+        description: ''
+      - in: path
+        name: id
+        required: true
+        type: string
+        description: ''
+    responses:
+      '200':
+        description: OK
+        schema:
+          $ref: '#/definitions/Well'
+      '400':
+        description: Bad Request. There is something wrong with the request data.
+        schema:
+          $ref: '#/definitions/Error'
+      '404':
+        description: Not Found
+        schema:
+          $ref: '#/definitions/Error'
+    tags:
+      - ComboCurveV1
+    x-google-quota:
+      metricCosts:
+        read-request-rate: 1
+  patch:
+    x-google-quota:
+      metricCosts:
+        write-request-rate: 1
+    consumes:
+      - application/json
+    produces:
+      - application/json
+    operationId: patch-v1-project-well-by-id
+    description: Updates the well document that matches the given id in the specified project's scope.
+    parameters:
+      - in: path
+        name: projectId
+        required: true
+        type: string
+        description: ''
+      - in: path
+        name: id
+        required: true
+        type: string
+        description: ''
+      - in: body
+        name: well
+        schema:
+          $ref: '#/definitions/WellPatchInput'
+    responses:
+      '200':
+        description: OK
+        schema:
+          $ref: '#/definitions/Well'
+      '400':
+        description: Bad Request. There is something wrong with the request data.
+        schema:
+          $ref: '#/definitions/Error'
+    x-is-patch: true
+    tags:
+      - ComboCurveV1
+  put:
+    consumes:
+      - application/json
+    produces:
+      - application/json
+    x-google-quota:
+      metricCosts:
+        write-request-rate: 1
+    operationId: put-v1-projects-wells-by-id
+    description: >-
+      Replaces the well document that matches the given id in the specified
+      project's scope.
+    parameters:
+      - in: path
+        name: projectId
+        required: true
+        type: string
+        description: ''
+      - in: path
+        name: id
+        required: true
+        type: string
+        description: ''
+      - in: body
+        name: well
+        schema:
+          $ref: '#/definitions/WellInput'
+    responses:
+      '200':
+        description: OK
+        schema:
+          $ref: '#/definitions/Well'
+      '400':
+        description: Bad Request. There is something wrong with the request data.
+        schema:
+          $ref: '#/definitions/Error'
+    tags:
+      - ComboCurveV1
+  delete:
+    operationId: delete-v1-project-well-by-id
+    description: >-
+      Delete the well document that matches the given id scoped to projectId
+      project.
+    parameters:
+      - in: path
+        name: projectId
+        required: true
+        type: string
+        description: ''
+      - in: path
+        name: id
+        required: true
+        type: string
+        description: ''
+    responses:
+      '204':
+        description: OK
+        headers:
+          X-Delete-Count:
+            type: integer
+            description: >-
+              The number of records that match the given filters and were
+              deleted.
+      '400':
+        description: Bad Request. There is something wrong with the request data.
+    tags:
+      - ComboCurveV1

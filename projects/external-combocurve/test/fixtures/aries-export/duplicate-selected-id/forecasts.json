@@ -1,0 +1,44 @@
+[
+	{
+		"_id": "63c71b71dc737200134c804c",
+		"comparisonIds": {
+			"diagnostics": {
+				"ids": []
+			},
+			"manual": {
+				"ids": []
+			},
+			"view": {
+				"ids": []
+			}
+		},
+		"qFinalDict": {
+			"oil": null,
+			"gas": null,
+			"water": null,
+			"oil/gas": null,
+			"oil/water": null,
+			"gas/oil": null,
+			"gas/water": null,
+			"water/oil": null,
+			"water/gas": null
+		},
+		"copiedFrom": null,
+		"diagDate": null,
+		"forecasted": true,
+		"imported": false,
+		"running": false,
+		"prodPref": "monthly_preference",
+		"type": "deterministic",
+		"wells": ["62fc044e65e00505b9f5430e", "62fc044e65e00505def54310", "62fc044e65e00508ddf54378"],
+		"isForecastLibrary": false,
+		"tags": [],
+		"name": "d_3well",
+		"project": "62fc0449133c6c001360278f",
+		"user": "62e3f5701ce8310012967e10",
+		"createdAt": "2023-01-17T22:04:33.389+0000",
+		"updatedAt": "2023-01-17T22:10:33.543+0000",
+		"__v": 0,
+		"runDate": "2023-01-17T22:10:33.543+0000"
+	}
+]

@@ -1,0 +1,81 @@
+{
+	"name": "default2",
+	"unique": false,
+	"adValoremTax": {
+		"deductSeveranceTax": true,
+		"shrinkageCondition": "shrunk",
+		"calculation": "one_minus_lease_nri",
+		"rateType": "gross_well_head",
+		"rowsCalculationMethod": "non_monotonic",
+		"escalationModel": {
+			"escalationModel1": "none",
+			"escalationModel2": "62fbcecfcab9dfc5b88427cd"
+		},
+		"rows": [
+			{
+				"pctOfRevenue": 0,
+				"dollarPerBoe": 100,
+				"waterRate": 35
+			}
+		]
+	},
+	"severanceTax": {
+		"state": "alabama",
+		"shrinkageCondition": "shrunk",
+		"calculation": "nri",
+		"rateType": "gross_well_head",
+		"rowsCalculationMethod": "non_monotonic",
+		"oil": {
+			"escalationModel": {
+				"escalationModel1": "62fbcecfcab9dfc5b88427c4",
+				"escalationModel2": "62fbcecfcab9dfc5b88427c4"
+			},
+			"rows": [
+				{
+					"dollarPerBbl": 0,
+					"entireWellLife": "Flat",
+					"pctOfRevenue": 10
+				}
+			]
+		},
+		"gas": {
+			"escalationModel": {
+				"escalationModel1": "62fbcecfcab9dfc5b88427cf",
+				"escalationModel2": "62fbcecfcab9dfc5b88427c4"
+			},
+			"rows": [
+				{
+					"dollarPerMcf": 0,
+					"entireWellLife": "Flat",
+					"pctOfRevenue": 10
+				}
+			]
+		},
+		"ngl": {
+			"escalationModel": {
+				"escalationModel1": "62fbcecfcab9dfc5b88427c4",
+				"escalationModel2": "62fbcecfcab9dfc5b88427cd"
+			},
+			"rows": [
+				{
+					"dollarPerBbl": 0,
+					"entireWellLife": "Flat",
+					"pctOfRevenue": 10
+				}
+			]
+		},
+		"dripCondensate": {
+			"escalationModel": {
+				"escalationModel1": "642f2f56670d176d8558ef7b",
+				"escalationModel2": "642f2f56670d176d8558ef7b"
+			},
+			"rows": [
+				{
+					"dollarPerBbl": 0,
+					"entireWellLife": "Flat",
+					"pctOfRevenue": 10
+				}
+			]
+		}
+	}
+}

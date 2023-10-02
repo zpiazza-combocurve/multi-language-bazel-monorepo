@@ -1,0 +1,228 @@
+{
+	"name": "emissions-integration-test",
+	"unique": false,
+	"emissions": {
+		"rows": [
+			{
+				"selected": true,
+				"category": "associated_gas",
+				"co2e": 0,
+				"co2": 0,
+				"ch4": 0,
+				"n2o": 0,
+				"unit": "mt_per_mmcf",
+				"escalationModel": "none"
+			},
+			{
+				"selected": true,
+				"category": "acid_gas_removal_units",
+				"co2e": 0,
+				"co2": 0,
+				"ch4": 0,
+				"n2o": 0,
+				"unit": "mt_per_mmcf",
+				"escalationModel": "none"
+			},
+			{
+				"selected": true,
+				"category": "centrifugal_compressor",
+				"co2e": 0,
+				"co2": 0,
+				"ch4": 0,
+				"n2o": 0,
+				"unit": "mt_per_well_per_year",
+				"escalationModel": "none"
+			},
+			{
+				"selected": true,
+				"category": "eor_hydrocarbon_liquids",
+				"co2e": 0,
+				"co2": 0,
+				"ch4": 0,
+				"n2o": 0,
+				"unit": "mt_per_mbbl",
+				"escalationModel": "none"
+			},
+			{
+				"selected": true,
+				"category": "eor_injection_pumps",
+				"co2e": 0,
+				"co2": 0,
+				"ch4": 0,
+				"n2o": 0,
+				"unit": "mt_per_mbbl",
+				"escalationModel": "none"
+			},
+			{
+				"selected": true,
+				"category": "liquids_unloading",
+				"co2e": 0,
+				"co2": 0,
+				"ch4": 0,
+				"n2o": 0,
+				"unit": "mt_per_mmcf",
+				"escalationModel": "none"
+			},
+			{
+				"selected": true,
+				"category": "pneumatic_device",
+				"co2e": 0,
+				"co2": 0,
+				"ch4": 0,
+				"n2o": 0,
+				"unit": "mt_per_well_per_year",
+				"escalationModel": "none"
+			},
+			{
+				"selected": true,
+				"category": "dehydrators",
+				"co2e": 0,
+				"co2": 0,
+				"ch4": 0,
+				"n2o": 0,
+				"unit": "mt_per_mmcf",
+				"escalationModel": "none"
+			},
+			{
+				"selected": true,
+				"category": "equipment_leaks",
+				"co2e": 0,
+				"co2": 0,
+				"ch4": 0,
+				"n2o": 0,
+				"unit": "mt_per_well_per_year",
+				"escalationModel": "none"
+			},
+			{
+				"selected": true,
+				"category": "atmospheric_tank",
+				"co2e": 0,
+				"co2": 0,
+				"ch4": 0,
+				"n2o": 0,
+				"unit": "mt_per_mbbl",
+				"escalationModel": "none"
+			},
+			{
+				"selected": true,
+				"category": "reciprocating_compressor",
+				"co2e": 0,
+				"co2": 0,
+				"ch4": 0,
+				"n2o": 0,
+				"unit": "mt_per_well_per_year",
+				"escalationModel": "none"
+			},
+			{
+				"selected": true,
+				"category": "completions_with_fracturing",
+				"co2e": 0,
+				"co2": 0,
+				"ch4": 0,
+				"n2o": 0,
+				"unit": "mt_per_new_well",
+				"escalationModel": "none"
+			},
+			{
+				"selected": true,
+				"category": "completions_without_fracturing",
+				"co2e": 0,
+				"co2": 0,
+				"ch4": 0,
+				"n2o": 0,
+				"unit": "mt_per_new_well",
+				"escalationModel": "none"
+			},
+			{
+				"selected": true,
+				"category": "drilling",
+				"co2e": 0,
+				"co2": 0,
+				"ch4": 0,
+				"n2o": 0,
+				"unit": "mt_per_new_well",
+				"escalationModel": "none"
+			},
+			{
+				"selected": true,
+				"category": "completion",
+				"co2e": 0,
+				"co2": 0,
+				"ch4": 0,
+				"n2o": 0,
+				"unit": "mt_per_new_well",
+				"escalationModel": "none"
+			},
+			{
+				"selected": true,
+				"category": "combustion",
+				"co2e": 0,
+				"co2": 0,
+				"ch4": 0,
+				"n2o": 0,
+				"unit": "mt_per_well_per_year",
+				"escalationModel": "none"
+			},
+			{
+				"selected": true,
+				"category": "pneumatic_pump",
+				"co2e": 0,
+				"co2": 0,
+				"ch4": 0,
+				"n2o": 0,
+				"unit": "mt_per_well_per_year",
+				"escalationModel": "none"
+			},
+			{
+				"selected": true,
+				"category": "well_testing",
+				"co2e": 0,
+				"co2": 0,
+				"ch4": 0,
+				"n2o": 0,
+				"unit": "mt_per_well_per_year",
+				"escalationModel": "none"
+			},
+			{
+				"selected": true,
+				"category": "blowdown_vent_stacks",
+				"co2e": 0,
+				"co2": 0,
+				"ch4": 0,
+				"n2o": 0,
+				"unit": "mt_per_well_per_year",
+				"escalationModel": "none"
+			},
+			{
+				"selected": true,
+				"category": "flare",
+				"co2e": 0,
+				"co2": 0,
+				"ch4": 0,
+				"n2o": 0,
+				"unit": "mt_per_mmcf",
+				"escalationModel": "none"
+			},
+			{
+				"selected": true,
+				"category": "scope2",
+				"co2e": 0,
+				"co2": 0,
+				"ch4": 0,
+				"n2o": 0,
+				"unit": "mt_per_well_per_year",
+				"escalationModel": "none"
+			},
+			{
+				"selected": true,
+				"category": "scope3",
+				"co2e": 0,
+				"co2": 0,
+				"ch4": 0,
+				"n2o": 0,
+				"unit": "mt_per_well_per_year",
+				"escalationModel": "none"
+			}
+		]
+	}
+}

@@ -1,0 +1,379 @@
+{
+	"$id": "http://combocurve.com/schemas/stream-properties.json",
+	"$ref": "base-econ-model.json",
+	"properties": {
+		"yields": {
+			"type": "object",
+			"properties": {
+				"rowsCalculationMethod": {
+					"$ref": "#/definitions/RowsCalculationMethod"
+				},
+				"ngl": {
+					"type": "object",
+					"allOf": [
+						{
+							"$ref": "#/definitions/RowsOneCriteriaRequiredDefinition"
+						}
+					],
+					"properties": {
+						"rows": {
+							"$ref": "#/definitions/YieldsRows"
+						}
+					},
+					"required": ["rows"]
+				},
+				"dripCondensate": {
+					"type": "object",
+					"allOf": [
+						{
+							"$ref": "#/definitions/RowsOneCriteriaRequiredDefinition"
+						}
+					],
+					"properties": {
+						"rows": {
+							"$ref": "#/definitions/YieldsRows"
+						}
+					},
+					"required": ["rows"]
+				}
+			},
+			"required": ["rowsCalculationMethod", "ngl", "dripCondensate"]
+		},
+		"shrinkage": {
+			"type": "object",
+			"properties": {
+				"rowsCalculationMethod": {
+					"$ref": "#/definitions/RowsCalculationMethod"
+				},
+				"oil": {
+					"type": "object",
+					"allOf": [
+						{
+							"$ref": "#/definitions/RowsOneCriteriaRequiredDefinition"
+						}
+					],
+					"properties": {
+						"rows": {
+							"$ref": "#/definitions/ShrinkageRows"
+						}
+					},
+					"required": ["rows"]
+				},
+				"gas": {
+					"type": "object",
+					"allOf": [
+						{
+							"$ref": "#/definitions/RowsOneCriteriaRequiredDefinition"
+						}
+					],
+					"properties": {
+						"rows": {
+							"$ref": "#/definitions/ShrinkageRows"
+						}
+					},
+					"required": ["rows"]
+				}
+			},
+			"required": ["rowsCalculationMethod", "oil", "gas"]
+		},
+		"lossFlare": {
+			"type": "object",
+			"properties": {
+				"rowsCalculationMethod": {
+					"$ref": "#/definitions/RowsCalculationMethod"
+				},
+				"oilLoss": {
+					"type": "object",
+					"allOf": [
+						{
+							"$ref": "#/definitions/RowsOneCriteriaRequiredDefinition"
+						}
+					],
+					"properties": {
+						"rows": {
+							"$ref": "#/definitions/LossFlareRows"
+						}
+					},
+					"required": ["rows"]
+				},
+				"gasLoss": {
+					"type": "object",
+					"allOf": [
+						{
+							"$ref": "#/definitions/RowsOneCriteriaRequiredDefinition"
+						}
+					],
+					"properties": {
+						"rows": {
+							"$ref": "#/definitions/LossFlareRows"
+						}
+					},
+					"required": ["rows"]
+				},
+				"gasFlare": {
+					"type": "object",
+					"allOf": [
+						{
+							"$ref": "#/definitions/RowsOneCriteriaRequiredDefinition"
+						}
+					],
+					"properties": {
+						"rows": {
+							"$ref": "#/definitions/LossFlareRows"
+						}
+					},
+					"required": ["rows"]
+				}
+			},
+			"required": ["rowsCalculationMethod", "oilLoss", "gasLoss", "gasFlare"]
+		},
+		"btuContent": {
+			"type": "object",
+			"properties": {
+				"unshrunkGas": {
+					"type": "number",
+					"minimum": 100,
+					"maximum": 2000
+				},
+				"shrunkGas": {
+					"type": "number",
+					"minimum": 100,
+					"maximum": 2000
+				}
+			},
+			"required": ["unshrunkGas", "shrunkGas"]
+		}
+	},
+	"required": ["yields", "shrinkage", "lossFlare", "btuContent"],
+	"definitions": {
+		"YieldsRows": {
+			"type": "array",
+			"maxItems": 100,
+			"minItems": 1,
+			"items": {
+				"type": "object",
+				"properties": {
+					"yield": {
+						"$ref": "#/definitions/Yield"
+					},
+					"shrunkGas": {
+						"$ref": "#/definitions/ShrunkGas"
+					},
+					"unshrunkGas": {
+						"$ref": "#/definitions/UnshrunkGas"
+					},
+					"entireWellLife": {
+						"$ref": "criteria.json#/definitions/EntireWellLife"
+					},
+					"offsetToFpd": {
+						"$ref": "criteria.json#/definitions/OffsetToFpd"
+					},
+					"offsetToAsOf": {
+						"$ref": "criteria.json#/definitions/OffsetToAsOf"
+					},
+					"offsetToFirstSegment": {
+						"$ref": "criteria.json#/definitions/OffsetToFirstSegment"
+					},
+					"offsetToEndHistory": {
+						"$ref": "criteria.json#/definitions/OffsetToEndHistory"
+					},
+					"dates": {
+						"$ref": "criteria.json#/definitions/Dates"
+					},
+					"oilRate": {
+						"$ref": "criteria.json#/definitions/OilRate"
+					},
+					"gasRate": {
+						"$ref": "criteria.json#/definitions/GasRate"
+					},
+					"waterRate": {
+						"$ref": "criteria.json#/definitions/WaterRate"
+					},
+					"additionalProperties": false
+				},
+				"allOf": [
+					{
+						"errorMessage": "The `yield` property is required.",
+						"required": ["yield"]
+					},
+					{
+						"errorMessage": "Exactly one of the following properties is required: `shrunkGas` or `unshrunkGas`",
+						"oneRequired": ["shrunkGas", "unshrunkGas"]
+					}
+				],
+				"additionalProperties": false
+			}
+		},
+		"ShrinkageRows": {
+			"type": "array",
+			"maxItems": 100,
+			"minItems": 1,
+			"items": {
+				"type": "object",
+				"properties": {
+					"pctRemaining": {
+						"$ref": "#/definitions/ShrinkagePctRemaining"
+					},
+					"entireWellLife": {
+						"$ref": "criteria.json#/definitions/EntireWellLife"
+					},
+					"offsetToFpd": {
+						"$ref": "criteria.json#/definitions/OffsetToFpd"
+					},
+					"offsetToAsOf": {
+						"$ref": "criteria.json#/definitions/OffsetToAsOf"
+					},
+					"offsetToFirstSegment": {
+						"$ref": "criteria.json#/definitions/OffsetToFirstSegment"
+					},
+					"offsetToEndHistory": {
+						"$ref": "criteria.json#/definitions/OffsetToEndHistory"
+					},
+					"dates": {
+						"$ref": "criteria.json#/definitions/Dates"
+					},
+					"oilRate": {
+						"$ref": "criteria.json#/definitions/OilRate"
+					},
+					"gasRate": {
+						"$ref": "criteria.json#/definitions/GasRate"
+					},
+					"waterRate": {
+						"$ref": "criteria.json#/definitions/WaterRate"
+					},
+					"additionalProperties": false
+				},
+				"allOf": [
+					{
+						"errorMessage": "The `pctRemaining` property is required.",
+						"required": ["pctRemaining"]
+					}
+				],
+				"additionalProperties": false
+			}
+		},
+		"LossFlareRows": {
+			"type": "array",
+			"maxItems": 100,
+			"minItems": 1,
+			"items": {
+				"type": "object",
+				"properties": {
+					"pctRemaining": {
+						"$ref": "#/definitions/LossFlarePctRemaining"
+					},
+					"entireWellLife": {
+						"$ref": "criteria.json#/definitions/EntireWellLife"
+					},
+					"offsetToFpd": {
+						"$ref": "criteria.json#/definitions/OffsetToFpd"
+					},
+					"offsetToAsOf": {
+						"$ref": "criteria.json#/definitions/OffsetToAsOf"
+					},
+					"offsetToFirstSegment": {
+						"$ref": "criteria.json#/definitions/OffsetToFirstSegment"
+					},
+					"offsetToEndHistory": {
+						"$ref": "criteria.json#/definitions/OffsetToEndHistory"
+					},
+					"dates": {
+						"$ref": "criteria.json#/definitions/Dates"
+					},
+					"oilRate": {
+						"$ref": "criteria.json#/definitions/OilRate"
+					},
+					"gasRate": {
+						"$ref": "criteria.json#/definitions/GasRate"
+					},
+					"waterRate": {
+						"$ref": "criteria.json#/definitions/WaterRate"
+					},
+					"additionalProperties": false
+				},
+				"allOf": [
+					{
+						"errorMessage": "The `pctRemaining` property is required.",
+						"required": ["pctRemaining"]
+					}
+				],
+				"additionalProperties": false
+			}
+		},
+		"Yield": {
+			"type": "number",
+			"minimum": 0,
+			"maximum": 1000000,
+			"minimumDecimalPrecision": 0.000001
+		},
+		"ShrunkGas": {
+			"type": "string",
+			"enum": ["Shrunk Gas"]
+		},
+		"UnshrunkGas": {
+			"type": "string",
+			"enum": ["Unshrunk Gas"]
+		},
+		"RowsCalculationMethod": {
+			"type": "string",
+			"enum": ["monotonic", "non_monotonic"]
+		},
+		"ShrinkagePctRemaining": {
+			"type": "number",
+			"minimum": 0,
+			"maximum": 200,
+			"minimumDecimalPrecision": 0.000001
+		},
+		"LossFlarePctRemaining": {
+			"type": "number",
+			"minimum": 0,
+			"maximum": 100,
+			"minimumDecimalPrecision": 0.000001
+		},
+		"RowsOneCriteriaRequiredDefinition": {
+			"if": {
+				"oneOf": [
+					{
+						"$ref": "rows-validation-defs.json#/definitions/EntireWellLifeArray"
+					},
+					{
+						"$ref": "rows-validation-defs.json#/definitions/OffsetToAsOfArray"
+					},
+					{
+						"$ref": "rows-validation-defs.json#/definitions/OffsetToFpdArray"
+					},
+					{
+						"$ref": "rows-validation-defs.json#/definitions/OffsetToFirstSegmentArray"
+					},
+					{
+						"$ref": "rows-validation-defs.json#/definitions/OffsetToEndHistoryArray"
+					},
+					{
+						"$ref": "rows-validation-defs.json#/definitions/DatesArray"
+					},
+					{
+						"$ref": "rows-validation-defs.json#/definitions/OilRateArray"
+					},
+					{
+						"$ref": "rows-validation-defs.json#/definitions/GasRateArray"
+					},
+					{
+						"$ref": "rows-validation-defs.json#/definitions/WaterRateArray"
+					},
+					{
+						"$ref": "rows-validation-defs.json#/definitions/EmptyRowsArray"
+					}
+				]
+			},
+			"else": {
+				"if": {
+					"type": "object"
+				},
+				"then": {
+					"errorMessage": "All rows must contain exactly one of the following properties: `entireWellLife`, `offsetToAsOf`, `offsetToFpd`, `dates`, `offsetToEndHistory`, `offsetToFirstSegment`, `gasRate`, `oilRate`, or `waterRate`",
+					"const": null
+				}
+			}
+		}
+	}
+}

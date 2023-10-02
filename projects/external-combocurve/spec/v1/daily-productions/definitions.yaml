@@ -1,0 +1,323 @@
+DailyProduction:
+  type: object
+  required:
+    - date
+  properties:
+    bottomHolePressure:
+      type: number
+      description: Bottom Hole Pressure (PSI)
+    casingHeadPressure:
+      type: number
+      description: Casing Head Pressure (PSI)
+    choke:
+      type: number
+      description: Choke (in)
+    co2Injection:
+      type: number
+    createdAt:
+      type: string
+      format: date
+      description: Project Creation Date
+    customNumber0:
+      type: number
+    customNumber1:
+      type: number
+    customNumber2:
+      type: number
+    customNumber3:
+      type: number
+    customNumber4:
+      type: number
+    date:
+      type: string
+      format: date
+      description: Date
+    flowlinePressure:
+      type: number
+      description: Flowline Pressure (PSI)
+    gas:
+      type: number
+      description: Gas (MCF/D)
+    gasInjection:
+      type: number
+    gasLiftInjectionPressure:
+      type: number
+      description: "Gas\_Lift\_Injection\_Pressure (PSI)"
+    hoursOn:
+      type: number
+      description: Hours On
+    ngl:
+      type: number
+    oil:
+      type: number
+      description: Oil (BBL/D)
+    operationalTag:
+      type: string
+      maxLength: 16384
+      description: Operational Tag
+    steamInjection:
+      type: number
+    tubingHeadPressure:
+      type: number
+      description: Tubing Head Pressure (PSI)
+    updatedAt:
+      type: string
+      format: date
+      description: Updated At
+    vesselSeparatorPressure:
+      type: number
+      description: Vessel Separator Pressure (PSI)
+    water:
+      type: number
+      description: Water (BBL/D)
+    waterInjection:
+      type: number
+    well:
+      type: string
+      description: Well
+  example:
+    bottomHolePressure: 10000
+    casingHeadPressure: 100.4
+    choke: 13
+    co2Injection: 123
+    createdAt: '2020-01-21T16:58:08.986Z'
+    customNumber0: 123
+    customNumber1: 123
+    customNumber2: 123
+    customNumber3: 123
+    customNumber4: 123
+    date: '2010-10-27T00:00:00.000Z'
+    flowlinePressure: 457
+    gas: 1.0596808195
+    gasInjection: 123
+    gasLiftInjectionPressure: 635
+    hoursOn: 24
+    ngl: 123
+    oil: 4.8788599968
+    operationalTag: Start of production
+    steamInjection: 123
+    tubingHeadPressure: 2211.3
+    updatedAt: '2020-01-21T17:58:08.986Z'
+    vesselSeparatorPressure: 48.46
+    water: 95.5182647705
+    waterInjection: 123
+    well: 5e286e0d8f3df51d7ae744a3
+DailyProductionList:
+  type: array
+  items:
+    $ref: '#/definitions/DailyProduction'
+  maxItems: 20000
+  example:
+    - bottomHolePressure: 10000
+      casingHeadPressure: 100.4
+      choke: 13
+      co2Injection: 123
+      createdAt: '2020-01-21T16:58:08.986Z'
+      customNumber0: 123
+      customNumber1: 123
+      customNumber2: 123
+      customNumber3: 123
+      customNumber4: 123
+      date: '2010-10-27T00:00:00.000Z'
+      flowlinePressure: 457
+      gas: 1.0596808195
+      gasInjection: 123
+      gasLiftInjectionPressure: 635
+      hoursOn: 24
+      ngl: 123
+      oil: 4.8788599968
+      operationalTag: Start of production
+      steamInjection: 123
+      tubingHeadPressure: 2211.3
+      updatedAt: '2020-01-21T17:58:08.986Z'
+      vesselSeparatorPressure: 48.46
+      water: 95.5182647705
+      waterInjection: 123
+      well: 5e286e0d8f3df51d7ae744a3
+    - bottomHolePressure: 10000
+      casingHeadPressure: 100.4
+      choke: 13
+      co2Injection: 123
+      createdAt: '2020-01-21T16:58:08.986Z'
+      customNumber0: 123
+      customNumber1: 123
+      customNumber2: 123
+      customNumber3: 123
+      customNumber4: 123
+      date: '2010-10-27T00:00:00.000Z'
+      flowlinePressure: 457
+      gas: 1.0596808195
+      gasInjection: 123
+      gasLiftInjectionPressure: 635
+      hoursOn: 24
+      ngl: 123
+      oil: 4.8788599968
+      operationalTag: Start of production
+      steamInjection: 123
+      tubingHeadPressure: 2211.3
+      updatedAt: '2020-01-21T17:58:08.986Z'
+      vesselSeparatorPressure: 48.46
+      water: 95.5182647705
+      waterInjection: 123
+      well: 5c306e0d8f3df51d7ae867r6
+DailyProductionInput:
+  type: object
+  required:
+    - date
+  properties:
+    bottomHolePressure:
+      type: number
+      description: Bottom Hole Pressure (PSI)
+    casingHeadPressure:
+      type: number
+      description: Casing Head Pressure (PSI)
+    choke:
+      type: number
+      description: Choke (in)
+    chosenID:
+      type: string
+      maxLength: 16384
+      description: Chosen ID
+    co2Injection:
+      type: number
+    customNumber0:
+      type: number
+    customNumber1:
+      type: number
+    customNumber2:
+      type: number
+    customNumber3:
+      type: number
+    customNumber4:
+      type: number
+    dataSource:
+      type: string
+      description: Data Source
+    date:
+      type: string
+      format: date
+      description: Date
+    flowlinePressure:
+      type: number
+      description: Flowline Pressure (PSI)
+    gas:
+      type: number
+      description: Gas (MCF/D)
+    gasInjection:
+      type: number
+    gasLiftInjectionPressure:
+      type: number
+      description: "Gas\_Lift\_Injection\_Pressure (PSI)"
+    hoursOn:
+      type: number
+      description: Hours On
+    ngl:
+      type: number
+    oil:
+      type: number
+      description: Oil (BBL/D)
+    operationalTag:
+      type: string
+      maxLength: 16384
+      description: Operational Tag
+    steamInjection:
+      type: number
+    tubingHeadPressure:
+      type: number
+      description: Tubing Head Pressure (PSI)
+    vesselSeparatorPressure:
+      type: number
+      description: Vessel Separator Pressure (PSI)
+    water:
+      type: number
+      description: Water (BBL/D)
+    waterInjection:
+      type: number
+    well:
+      type: string
+      description: Well
+  example:
+    bottomHolePressure: 10000
+    casingHeadPressure: 100.4
+    choke: 13
+    chosenID: 28058901650448
+    co2Injection: 123
+    customNumber0: 123
+    customNumber1: 123
+    customNumber2: 123
+    customNumber3: 123
+    customNumber4: 123
+    dataSource: internal
+    date: '2010-10-27T00:00:00.000Z'
+    flowlinePressure: 457
+    gas: 1.0596808195
+    gasInjection: 123
+    gasLiftInjectionPressure: 635
+    hoursOn: 24
+    ngl: 123
+    oil: 4.8788599968
+    operationalTag: Start of production
+    steamInjection: 123
+    tubingHeadPressure: 2211.3
+    vesselSeparatorPressure: 48.46
+    water: 95.5182647705
+    waterInjection: 123
+    well: 5e286e0d8f3df51d7ae744a3
+DailyProductionInputList:
+  type: array
+  items:
+    $ref: '#/definitions/DailyProductionInput'
+  maxItems: 20000
+  example:
+    - bottomHolePressure: 10000
+      casingHeadPressure: 100.4
+      choke: 13
+      chosenID: 28058901650448
+      co2Injection: 123
+      customNumber0: 123
+      customNumber1: 123
+      customNumber2: 123
+      customNumber3: 123
+      customNumber4: 123
+      dataSource: internal
+      date: '2010-10-27T00:00:00.000Z'
+      flowlinePressure: 457
+      gas: 1.0596808195
+      gasInjection: 123
+      gasLiftInjectionPressure: 635
+      hoursOn: 24
+      ngl: 123
+      oil: 4.8788599968
+      operationalTag: Start of production
+      steamInjection: 123
+      tubingHeadPressure: 2211.3
+      vesselSeparatorPressure: 48.46
+      water: 95.5182647705
+      waterInjection: 123
+      well: 5e286e0d8f3df51d7ae744a3
+    - bottomHolePressure: 10000
+      casingHeadPressure: 100.4
+      choke: 13
+      chosenID: 64458901659657
+      co2Injection: 123
+      customNumber0: 123
+      customNumber1: 123
+      customNumber2: 123
+      customNumber3: 123
+      customNumber4: 123
+      dataSource: internal
+      date: '2010-10-28T00:00:00.000Z'
+      flowlinePressure: 457
+      gas: 1.0596808195
+      gasInjection: 123
+      gasLiftInjectionPressure: 635
+      hoursOn: 24
+      ngl: 123
+      oil: 4.8788599968
+      operationalTag: Start of production
+      steamInjection: 123
+      tubingHeadPressure: 2211.3
+      vesselSeparatorPressure: 48.46
+      water: 95.5182647705
+      waterInjection: 123
+      well: 5c306e0d8f3df51d7ae867r6

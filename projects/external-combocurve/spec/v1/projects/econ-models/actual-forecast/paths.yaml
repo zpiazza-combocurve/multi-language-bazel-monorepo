@@ -1,0 +1,302 @@
+/v1/projects/{projectId}/econ-models/actual-forecast:
+  head:
+    operationId: head-v1-actual-forecast
+    description: Returns metadata about the existing actual or forecast documents.
+    parameters:
+      - $ref: '#/parameters/skipParam'
+      - $ref: '#/parameters/takeParam'
+      - in: path
+        name: projectId
+        required: true
+        type: string
+      - name: createdAt
+        in: query
+        description: "filter by createdAt - Operator values are [lt] = less than, [le] = less than or equal, [gt] = greater than, [ge] = greater than or equal, no operator = equal. Example createdAt[gt]=2018-01-01T00:00:00Z"
+        format: date
+        type: string
+        x-allow-parameter-operator: true
+      - name: name
+        in: query
+        description: filter by name
+        type: string
+      - name: well
+        in: query
+        description: filter by well
+        type: string
+      - name: unique
+        in: query
+        description: filter by unique
+        type: boolean
+      - name: updatedAt
+        in: query
+        description: "filter by updatedAt - Operator values are [lt] = less than, [le] = less than or equal, [gt] = greater than, [ge] = greater than or equal, no operator = equal. Example updatedAt[gt]=2018-01-01T00:00:00Z"
+        format: date
+        type: string
+        x-allow-parameter-operator: true
+    responses:
+      '200':
+        description: OK
+        headers:
+          Link:
+            type: string
+            description: >-
+              Indicates a typed relationship with another resource, where the
+              relation type is defined by RFC 5988. We include the relationships
+              next, prev, first and last, which can be used to move between
+              pages of the list of results.
+          X-Query-Count:
+            type: integer
+            description: >-
+              The number of records in this resource. When filters are provided
+              only matching records are counted.
+      '400':
+        description: Bad Request. There is something wrong with the request data.
+    tags:
+      - ComboCurveV1
+    x-client-generation:
+      x-count-method:
+        name: ActualForecastCount
+  get:
+    x-google-quota:
+      metricCosts:
+        read-request-rate: 1
+    produces:
+      - application/json
+    operationId: get-v1-actual-forecast
+    description: Returns a list of actual of forecast documents.
+    parameters:
+      - $ref: '#/parameters/skipParam'
+      - $ref: '#/parameters/takeParam'
+      - $ref: '#/parameters/sortParam'
+      - $ref: '#/parameters/cursorParam'
+      - in: path
+        name: projectId
+        required: true
+        type: string
+      - name: createdAt
+        in: query
+        description: "filter by createdAt - Operator values are [lt] = less than, [le] = less than or equal, [gt] = greater than, [ge] = greater than or equal, no operator = equal. Example createdAt[gt]=2018-01-01T00:00:00Z"
+        format: date
+        type: string
+        x-allow-parameter-operator: true
+      - name: name
+        in: query
+        description: filter by name
+        type: string
+      - name: well
+        in: query
+        description: filter by well
+        type: string
+      - name: unique
+        in: query
+        description: filter by unique
+        type: boolean
+      - name: updatedAt
+        in: query
+        description: "filter by updatedAt - Operator values are [lt] = less than, [le] = less than or equal, [gt] = greater than, [ge] = greater than or equal, no operator = equal. Example updatedAt[gt]=2018-01-01T00:00:00Z"
+        format: date
+        type: string
+        x-allow-parameter-operator: true
+    responses:
+      '200':
+        description: OK
+        schema:
+          $ref: '#/definitions/ActualForecastResponseList'
+        headers:
+          Link:
+            type: string
+            description: >-
+              Indicates a typed relationship with another resource, where the
+              relation type is defined by RFC 5988. We include the relationships
+              next, prev, first and last, which can be used to move between
+              pages of the list of results.
+      '400':
+        description: Bad Request. There is something wrong with the request data.
+        schema:
+          $ref: '#/definitions/Error'
+    tags:
+      - ComboCurveV1
+    x-client-generation:
+      x-get-all-skip-take-method:
+        name: GetAllActualForecast
+        baseReturnType: ActualForecastResponse
+      x-get-all-cursor-method:
+        name: GetAllActualForecastV2
+        baseReturnType: ActualForecastResponse
+  post:
+    x-google-quota:
+      metricCosts:
+        write-request-rate: 1
+    consumes:
+      - application/json
+    produces:
+      - application/json
+    operationId: post-v1-actual-forecast
+    description: Inserts a list of actual or forecast documents.
+    parameters:
+      - in: path
+        name: projectId
+        required: true
+        type: string
+      - in: body
+        name: actualForecast
+        description: >-
+          Actual Forecast Model document(s) to insert. See
+          ActualForecastInputList.
+        schema:
+          $ref: '#/definitions/ActualForecastInputList'
+    responses:
+      '207':
+        description: Multi-Status
+        schema:
+          $ref: '#/definitions/ActualForecastMultiStatusResponse'
+    tags:
+      - ComboCurveV1
+  put:
+    x-google-quota:
+      metricCosts:
+        write-request-rate: 1
+    consumes:
+      - application/json
+    produces:
+      - application/json
+    operationId: put-v1-actual-forecast
+    description: Replace or create a list of actual or forecast documents.
+    parameters:
+      - in: path
+        name: projectId
+        required: true
+        type: string
+      - in: body
+        name: actualforecast
+        description: >-
+          Actual Forecast Model document(s) to replace/create. See
+          ActualForecastInputList.
+        schema:
+          $ref: '#/definitions/ActualForecastInputList'
+    responses:
+      '207':
+        description: Multi-Status
+        schema:
+          $ref: '#/definitions/ActualForecastMultiStatusResponse'
+    tags:
+      - ComboCurveV1
+/v1/projects/{projectId}/econ-models/actual-forecast/head:
+  get:
+    x-no-client: true
+    x-no-doc: true
+    operationId: get-head-v1-actual-forecast
+    description: Returns metadata about the existing actual-forecast documents.
+    parameters:
+      - $ref: '#/parameters/skipParam'
+      - $ref: '#/parameters/takeParam'
+      - in: path
+        name: projectId
+        required: true
+        type: string
+      - name: createdAt
+        in: query
+        description: "filter by createdAt - Operator values are [lt] = less than, [le] = less than or equal, [gt] = greater than, [ge] = greater than or equal, no operator = equal. Example createdAt[gt]=2018-01-01T00:00:00Z"
+        format: date
+        type: string
+        x-allow-parameter-operator: true
+      - name: name
+        in: query
+        description: filter by name
+        type: string
+      - name: well
+        in: query
+        description: filter by well
+        type: string
+      - name: unique
+        in: query
+        description: filter by unique
+        type: boolean
+      - name: updatedAt
+        in: query
+        description: "filter by updatedAt - Operator values are [lt] = less than, [le] = less than or equal, [gt] = greater than, [ge] = greater than or equal, no operator = equal. Example updatedAt[gt]=2018-01-01T00:00:00Z"
+        format: date
+        type: string
+        x-allow-parameter-operator: true
+    responses:
+      '200':
+        description: OK
+        headers:
+          Link:
+            type: string
+            description: >-
+              Indicates a typed relationship with another resource, where the
+              relation type is defined by RFC 5988. We include the relationships
+              next, prev, first and last, which can be used to move between
+              pages of the list of results.
+          X-Query-Count:
+            type: integer
+            description: >-
+              The number of records in this resource. When filters are provided
+              only matching records are counted.
+      '400':
+        description: Bad Request. There is something wrong with the request data.
+    tags:
+      - ComboCurveV1
+/v1/projects/{projectId}/econ-models/actual-forecast/{id}:
+  get:
+    produces:
+      - application/json
+    operationId: get-v1-actual-forecast-by-id
+    description: Returns the actual forecast document that matches the given id.
+    parameters:
+      - in: path
+        name: projectId
+        required: true
+        type: string
+      - in: path
+        name: id
+        required: true
+        type: string
+    responses:
+      '200':
+        description: OK
+        schema:
+          $ref: '#/definitions/ActualForecastResponse'
+      '400':
+        description: Bad Request. There is something wrong with the request data.
+        schema:
+          $ref: '#/definitions/Error'
+      '404':
+        description: Not Found
+        schema:
+          $ref: '#/definitions/Error'
+    tags:
+      - ComboCurveV1
+    x-google-quota:
+      metricCosts:
+        read-request-rate: 1
+  delete:
+    operationId: delete-v1-actual-forecast-by-id
+    description: >-
+      Delete the assumptions document that matches the given id scoped to projectId
+      project.
+    parameters:
+      - in: path
+        name: projectId
+        required: true
+        type: string
+        description: ''
+      - in: path
+        name: id
+        required: true
+        type: string
+        description: ''
+    responses:
+      '204':
+        description: OK
+        headers:
+          X-Delete-Count:
+            type: integer
+            description: >-
+              The number of records that match the given filters and were
+              deleted.
+      '400':
+        description: Bad Request. There is something wrong with the request data.
+    tags:
+      - ComboCurveV1

@@ -1,0 +1,58 @@
+{
+	"$id": "http://combocurve.com/schemas/base-econ-model.json",
+	"type": "object",
+	"required": ["name", "unique"],
+	"errorMessage": {
+		"properties": {
+			"id": "`${/id}` is not a valid ObjectId",
+			"scenario": "`${/scenario}` is not a valid ObjectId",
+			"well": "`${/well}` is not a valid ObjectId"
+		}
+	},
+	"properties": {
+		"id": {
+			"type": "string",
+			"regexp": "/^[a-f\\d]{24}$/i"
+		},
+		"name": {
+			"type": "string",
+			"description": "Name"
+		},
+		"unique": {
+			"type": "boolean",
+			"description": "Unique"
+		},
+		"scenario": {
+			"type": "string",
+			"description": "Scenario ID",
+			"regexp": "/^[a-f\\d]{24}$/i"
+		},
+		"well": {
+			"type": "string",
+			"description": "Well ID",
+			"regexp": "/^[a-f\\d]{24}$/i"
+		}
+	},
+	"allOf": [
+		{
+			"if": {
+				"properties": {
+					"unique": {
+						"const": true
+					}
+				},
+				"required": ["unique"]
+			},
+			"then": {
+				"required": ["well", "scenario"]
+			},
+			"else": {
+				"errorMessage": "The following fields cannot be present when econ-model is not unique: `well`, `scenario`",
+				"if": {
+					"prohibited": ["well", "scenario"]
+				},
+				"else": false
+			}
+		}
+	]
+}

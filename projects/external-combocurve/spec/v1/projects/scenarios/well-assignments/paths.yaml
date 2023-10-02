@@ -1,0 +1,124 @@
+/v1/projects/{projectId}/scenarios/{scenarioId}/well-assignments/:
+  get:
+    operationId: get-v1-scenariowellsread
+    parameters:
+      - name: scenarioId
+        in: params
+        required: true
+        type: string
+        example: 5e276e31876cd70012ddf3f6
+      - name: projectId
+        in: params
+        required: true
+        type: string
+        example: 5e276e31876cd70012ddf3f6
+    responses:
+      '200':
+        description: OK Response
+        schema:
+          $ref: #/definitions/ScenarioWellsReadOKResponse
+      '404':
+        description: NotFound Response
+  post:
+    operationId: post-v1-scenariowellsupsert
+    consumes:
+      - application/json
+    produces:
+      - application/json
+    parameters:
+      - name: scenarioId
+        in: params
+        required: true
+        type: string
+        example: 5e276e31876cd70012ddf3f6
+      - name: projectId
+        in: params
+        required: true
+        type: string
+        example: 5e276e31876cd70012ddf3f6
+      - name: wells
+        in: body
+        required: true
+        type: array
+        minItems: 1
+        maxItems: 25000
+        items:
+          type: string
+          example: 5e276e31876cd70012ddf3f6
+    responses:
+      '207':
+        description: MultiStatus Response
+        schema:
+          $ref: #/definitions/ScenarioWellsUpsertMultiStatusResponse
+      '400':
+        description: BadRequest Response
+        schema:
+          $ref: #/definitions/ScenarioWellsUpsertBadRequestResponse
+      '404':
+        description: NotFound Response
+  put:
+    operationId: put-v1-scenariowellsupsert
+    consumes:
+      - application/json
+    produces:
+      - application/json
+    parameters:
+      - name: scenarioId
+        in: params
+        required: true
+        type: string
+        example: 5e276e31876cd70012ddf3f6
+      - name: projectId
+        in: params
+        required: true
+        type: string
+        example: 5e276e31876cd70012ddf3f6
+      - name: wells
+        in: body
+        required: true
+        type: array
+        minItems: 1
+        maxItems: 25000
+        items:
+          type: string
+          example: 5e276e31876cd70012ddf3f6
+    responses:
+      '207':
+        description: MultiStatus Response
+        schema:
+          $ref: #/definitions/ScenarioWellsUpsertMultiStatusResponse
+      '400':
+        description: BadRequest Response
+        schema:
+          $ref: #/definitions/ScenarioWellsUpsertBadRequestResponse
+      '404':
+        description: NotFound Response
+  delete:
+    operationId: delete-v1-scenariowellsdelete
+    parameters:
+      - name: scenarioId
+        in: params
+        required: true
+        type: string
+        example: 5e276e31876cd70012ddf3f6
+      - name: projectId
+        in: params
+        required: true
+        type: string
+        example: 5e276e31876cd70012ddf3f6
+      - name: wells
+        in: query
+        required: true
+        type: array
+        maxItems: 2500
+        items:
+          type: string
+          example: 5e276e31876cd70012ddf3f6
+    responses:
+      '204':
+        description: NoContent Response
+        headers:
+          x-delete-count:
+            type: number
+      '404':
+        description: NotFound Response

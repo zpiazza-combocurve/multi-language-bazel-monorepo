@@ -1,0 +1,113 @@
+{
+	"$id": "http://combocurve.com/schemas/escalations.json",
+	"type": "object",
+	"$ref": "base-econ-model.json",
+	"unevaluatedProperties": false,
+	"properties": {
+		"escalation": {
+			"type": "object",
+			"unevaluatedProperties": false,
+			"properties": {
+				"rows": {
+					"if": {
+						"oneOf": [
+							{
+								"$ref": "#/definitions/PctPerYearArray"
+							},
+							{
+								"$ref": "#/definitions/DollarPerYearArray"
+							},
+							{
+								"type": "array",
+								"maxItems": 0
+							}
+						]
+					},
+					"else": {
+						"errorMessage": "All rows must contain exactly one of the following properties: `pctPerYear` or `dollarPerYear`",
+						"const": null
+					},
+					"type": "array",
+					"minItems": 1,
+					"maxItems": 100,
+					"items": {
+						"type": "object",
+						"unevaluatedProperties": false,
+						"properties": {
+							"pctPerYear": {
+								"$ref": "#/definitions/PctPerYear"
+							},
+							"dollarPerYear": {
+								"$ref": "#/definitions/DollarPerYear"
+							},
+							"monthPeriod": {
+								"$ref": "criteria.json#/definitions/MonthPeriod"
+							},
+							"dates": {
+								"$ref": "criteria.json#/definitions/Dates"
+							},
+							"entireWellLife": {
+								"$ref": "criteria.json#/definitions/EntireWellLife"
+							}
+						},
+						"allOf": [
+							{
+								"errorMessage": "Exactly one of the following properties is required: `entireWellLife`, `monthPeriod`, or `dates`",
+								"oneRequired": ["monthPeriod", "entireWellLife", "dates"]
+							}
+						]
+					}
+				},
+				"escalationFrequency": {
+					"type": "string",
+					"enum": ["monthly", "yearly", "constant"]
+				},
+				"calculationMethod": {
+					"type": "string",
+					"enum": ["simple", "compound"]
+				}
+			},
+			"required": ["rows", "escalationFrequency", "calculationMethod"]
+		}
+	},
+	"definitions": {
+		"PctPerYear": {
+			"type": "number",
+			"minimum": -10000,
+			"maximum": 10000,
+			"minimumDecimalPrecision": 0.000001
+		},
+		"DollarPerYear": {
+			"type": "number",
+			"minimum": -100000000,
+			"maximum": 100000000,
+			"minimumDecimalPrecision": 0.000001
+		},
+		"PctPerYearArray": {
+			"type": "array",
+			"minItems": 1,
+			"maxItems": 100,
+			"unevaluatedItems": false,
+			"items": {
+				"type": "object",
+				"properties": {
+					"pctPerYear": {}
+				},
+				"required": ["pctPerYear"]
+			}
+		},
+		"DollarPerYearArray": {
+			"type": "array",
+			"minItems": 1,
+			"maxItems": 100,
+			"unevaluatedItems": false,
+			"items": {
+				"type": "object",
+				"properties": {
+					"dollarPerYear": {}
+				},
+				"required": ["dollarPerYear"]
+			}
+		}
+	}
+}

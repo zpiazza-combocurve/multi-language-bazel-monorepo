@@ -1,0 +1,18 @@
+# Delete all the stopped versions except the last 10
+
+substitutions:
+  _SERVICE_NAME: external-api
+
+steps:
+- name: 'gcr.io/cloud-builders/gcloud'
+  entrypoint: 'bash'
+  args:
+  - ./apps/delete_old_versions.sh
+  env:
+  - 'SERVICE=$_SERVICE_NAME'
+  - 'PROJECT=$PROJECT_ID'
+
+tags:
+  - "app-engine"
+  - "delete-old"
+  - "$_SERVICE_NAME"

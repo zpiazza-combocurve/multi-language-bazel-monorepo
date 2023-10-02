@@ -1,0 +1,78 @@
+EconRun:
+  type: object
+  properties:
+    id:
+      type: string
+      description: ID
+    project:
+      type: string
+      description: Project ID
+    runDate:
+      type: string
+      format: date
+      description: Run Date
+    scenario:
+      type: string
+      description: Scenario ID
+    status:
+      type: string
+      description: Status
+    tags:
+      type: array
+      items:
+        type: object
+        properties:
+          name:
+            type: string
+            maxLength: 16384
+            description: Name
+          description:
+            type: string
+            maxLength: 16384
+            description: Description
+    outputParams:
+      type: object
+      properties:
+        prodAnalyticsType:
+          type: string
+          enum:
+          - calendar
+          - daysOn
+          description: Production Analytics Type
+  example:
+    id: 5e5981b9e23dae0012624d72
+    runDate: '2020-06-08T19:14:22.012Z'
+    status: complete
+    tags:
+      - name: Test tag
+        description: Test tag description
+    project: 622d373726543548d040cb86
+    scenario: 622d373724539878d040cb85
+    outputParams:
+      prodAnalyticsType: calendar
+EconRunList:
+  type: array
+  items:
+    $ref: '#/definitions/EconRun'
+  maxItems: 200
+  example:
+    - id: 5e5981b9e23dae0012624d72
+      runDate: '2020-06-08T19:14:22.012Z'
+      status: complete
+      tags:
+        - name: Test tag
+          description: Test tag description
+      project: 622d373726543548d040cb86
+      scenario: 622d373724539878d040cb85
+      outputParams:
+        prodAnalyticsType: calendar
+    - id: 5e9999e23dae0012243e99
+      runDate: '2020-06-08T19:14:22.012Z'
+      status: complete
+      tags:
+        - name: Test tag
+          description: Test tag description
+      project: 62b1c13e2750130012ee4515
+      scenario: 62befdc048cddf001246d674
+      outputParams:
+        prodAnalyticsType: calendar        

@@ -1,0 +1,588 @@
+{
+	"$id": "http://combocurve.com/schemas/production-taxes.json",
+	"$ref": "base-econ-model.json",
+	"type": "object",
+	"unevaluatedProperties": false,
+	"allOf": [
+		{
+			"if": {
+				"type": "object",
+				"properties": {
+					"adValoremTax": {
+						"type": "object",
+						"properties": {
+							"rows": {
+								"$ref": "#/definitions/GasOrWaterOrOilRateRowField"
+							}
+						},
+						"required": ["rows"]
+					}
+				},
+				"required": ["adValoremTax"]
+			},
+			"then": {
+				"properties": {
+					"adValoremTax": {
+						"$ref": "#/definitions/MultipleRateTypeRowCalculationMethodFields"
+					}
+				}
+			},
+			"else": {
+				"properties": {
+					"adValoremTax": {
+						"$ref": "#/definitions/SingleRateTypeRowCalculationMethodFields"
+					}
+				}
+			}
+		},
+		{
+			"if": {
+				"anyOf": [
+					{
+						"type": "object",
+						"properties": {
+							"severanceTax": {
+								"type": "object",
+								"properties": {
+									"oil": {
+										"$ref": "#/definitions/PhaseRowCondition"
+									}
+								},
+								"required": ["oil"]
+							}
+						},
+						"required": ["severanceTax"]
+					},
+					{
+						"type": "object",
+						"properties": {
+							"severanceTax": {
+								"type": "object",
+								"properties": {
+									"gas": {
+										"$ref": "#/definitions/PhaseRowCondition"
+									}
+								},
+								"required": ["gas"]
+							}
+						},
+						"required": ["severanceTax"]
+					},
+					{
+						"type": "object",
+						"properties": {
+							"severanceTax": {
+								"type": "object",
+								"properties": {
+									"ngl": {
+										"$ref": "#/definitions/PhaseRowCondition"
+									}
+								},
+								"required": ["ngl"]
+							}
+						},
+						"required": ["severanceTax"]
+					},
+					{
+						"type": "object",
+						"properties": {
+							"severanceTax": {
+								"type": "object",
+								"properties": {
+									"dripCondensate": {
+										"$ref": "#/definitions/PhaseRowCondition"
+									}
+								},
+								"required": ["dripCondensate"]
+							}
+						},
+						"required": ["severanceTax"]
+					}
+				]
+			},
+			"then": {
+				"properties": {
+					"severanceTax": {
+						"$ref": "#/definitions/MultipleRateTypeRowCalculationMethodFields"
+					}
+				}
+			},
+			"else": {
+				"properties": {
+					"severanceTax": {
+						"$ref": "#/definitions/SingleRateTypeRowCalculationMethodFields"
+					}
+				}
+			}
+		}
+	],
+	"properties": {
+		"adValoremTax": {
+			"type": "object",
+			"allOf": [
+				{
+					"$ref": "#/definitions/RowsOneCriteriaRequiredDefinition"
+				}
+			],
+			"unevaluatedProperties": false,
+			"properties": {
+				"deductSeveranceTax": {
+					"type": "boolean"
+				},
+				"shrinkageCondition": {
+					"$ref": "#/definitions/ShrinkageCondition"
+				},
+				"calculation": {
+					"$ref": "#/definitions/Calculation"
+				},
+				"rateType": {
+					"$ref": "#/definitions/RateType"
+				},
+				"rowsCalculationMethod": {
+					"$ref": "#/definitions/RowsCalculationMethod"
+				},
+				"escalationModel": {
+					"$ref": "#/definitions/EscalationModelObject"
+				},
+				"rows": {
+					"$ref": "#/definitions/AdValoremRowFields"
+				}
+			},
+			"additionalProperties": false,
+			"required": [
+				"rows",
+				"deductSeveranceTax",
+				"shrinkageCondition",
+				"calculation",
+				"rateType",
+				"rowsCalculationMethod",
+				"escalationModel"
+			]
+		},
+		"severanceTax": {
+			"type": "object",
+			"unevaluatedProperties": false,
+			"properties": {
+				"state": {
+					"$ref": "criteria.json#/definitions/States"
+				},
+				"shrinkageCondition": {
+					"$ref": "#/definitions/ShrinkageCondition"
+				},
+				"calculation": {
+					"$ref": "#/definitions/Calculation"
+				},
+				"rateType": {
+					"$ref": "#/definitions/RateType"
+				},
+				"rowsCalculationMethod": {
+					"$ref": "#/definitions/RowsCalculationMethod"
+				},
+				"oil": {
+					"$ref": "#/definitions/PhaseValidation"
+				},
+				"gas": {
+					"type": "object",
+					"allOf": [
+						{
+							"$ref": "#/definitions/RowsOneCriteriaRequiredDefinition"
+						}
+					],
+					"properties": {
+						"escalationModel": {
+							"$ref": "#/definitions/EscalationModelObject"
+						},
+						"rows": {
+							"type": "array",
+							"maxItems": 100,
+							"minItems": 1,
+							"items": {
+								"type": "object",
+								"unevaluatedProperties": false,
+								"maxProperties": 3,
+								"properties": {
+									"dollarPerMcf": {
+										"$ref": "#/definitions/DollarPerMcf"
+									},
+									"dollarPerMonth": {
+										"$ref": "#/definitions/DollarPerMonth"
+									},
+									"pctOfRevenue": {
+										"$ref": "#/definitions/PctOfRevenue"
+									},
+									"entireWellLife": {
+										"$ref": "criteria.json#/definitions/EntireWellLife"
+									},
+									"offsetToAsOf": {
+										"$ref": "criteria.json#/definitions/OffsetToAsOf"
+									},
+									"offsetToFpd": {
+										"$ref": "criteria.json#/definitions/OffsetToFpd"
+									},
+									"offsetToDiscountDate": {
+										"$ref": "criteria.json#/definitions/OffsetToDiscountDate"
+									},
+									"offsetToFirstSegment": {
+										"$ref": "criteria.json#/definitions/OffsetToFirstSegment"
+									},
+									"offsetToEndHistory": {
+										"$ref": "criteria.json#/definitions/OffsetToEndHistory"
+									},
+									"dates": {
+										"$ref": "criteria.json#/definitions/Dates"
+									},
+									"oilRate": {
+										"$ref": "criteria.json#/definitions/OilRate"
+									},
+									"gasRate": {
+										"$ref": "criteria.json#/definitions/GasRate"
+									},
+									"waterRate": {
+										"$ref": "criteria.json#/definitions/WaterRate"
+									}
+								},
+								"allOf": [
+									{
+										"errorMessage": "Exactly at least one of the following properties is required: dollarPerMonth, pctOfRevenue or dollarPerMcf`",
+										"anyRequired": ["dollarPerMonth", "pctOfRevenue", "dollarPerMcf"]
+									}
+								]
+							}
+						}
+					},
+					"required": ["rows", "escalationModel"],
+					"additionalProperties": false
+				},
+				"ngl": {
+					"$ref": "#/definitions/PhaseValidation"
+				},
+				"dripCondensate": {
+					"$ref": "#/definitions/PhaseValidation"
+				}
+			},
+			"required": [
+				"state",
+				"rowsCalculationMethod",
+				"rateType",
+				"calculation",
+				"shrinkageCondition",
+				"oil",
+				"gas",
+				"ngl",
+				"dripCondensate"
+			]
+		}
+	},
+	"required": ["adValoremTax", "severanceTax"],
+	"definitions": {
+		"EscalationModelObject": {
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"escalationModel1": {
+					"$ref": "rows-validation-defs.json#/definitions/EscalationModel"
+				},
+				"escalationModel2": {
+					"$ref": "rows-validation-defs.json#/definitions/EscalationModel"
+				}
+			},
+			"required": ["escalationModel1", "escalationModel2"]
+		},
+		"ShrinkageCondition": {
+			"type": "string",
+			"enum": ["unshrunk", "shrunk"]
+		},
+		"Calculation": {
+			"$ref": "rows-validation-defs.json#/definitions/Calculation"
+		},
+		"RateType": {
+			"type": "string"
+		},
+		"RowsCalculationMethod": {
+			"type": "string"
+		},
+		"PctOfRevenue": {
+			"type": "number",
+			"maximum": 100,
+			"minimum": 0
+		},
+		"DollarPerMonth": {
+			"type": "number",
+			"maximum": 1000000,
+			"minimum": 0
+		},
+		"DollarPerBoe": {
+			"type": "number",
+			"maximum": 100,
+			"minimum": 0
+		},
+		"DollarPerBbl": {
+			"type": "number",
+			"minimum": 0,
+			"maximum": 100,
+			"minimumDecimalPrecision": 0.000001
+		},
+		"DollarPerMcf": {
+			"type": "number",
+			"minimum": 0,
+			"maximum": 100,
+			"minimumDecimalPrecision": 0.000001
+		},
+		"PhaseValidation": {
+			"type": "object",
+			"allOf": [
+				{
+					"$ref": "#/definitions/RowsOneCriteriaRequiredDefinition"
+				}
+			],
+			"properties": {
+				"escalationModel": {
+					"$ref": "#/definitions/EscalationModelObject"
+				},
+				"rows": {
+					"$ref": "#/definitions/PhaseValidationRowFields"
+				}
+			},
+			"required": ["rows", "escalationModel"],
+			"additionalProperties": false,
+			"unevaluatedProperties": false
+		},
+		"PhaseValidationRowFields": {
+			"type": "array",
+			"maxItems": 100,
+			"minItems": 1,
+			"unevaluatedItems": false,
+			"items": {
+				"type": "object",
+				"unevaluatedProperties": false,
+				"maxProperties": 3,
+				"properties": {
+					"dollarPerBbl": {
+						"$ref": "#/definitions/DollarPerBbl"
+					},
+					"dollarPerMonth": {
+						"$ref": "#/definitions/DollarPerMonth"
+					},
+					"pctOfRevenue": {
+						"$ref": "#/definitions/PctOfRevenue"
+					},
+					"entireWellLife": {
+						"$ref": "criteria.json#/definitions/EntireWellLife"
+					},
+					"offsetToAsOf": {
+						"$ref": "criteria.json#/definitions/OffsetToAsOf"
+					},
+					"offsetToFpd": {
+						"$ref": "criteria.json#/definitions/OffsetToFpd"
+					},
+					"offsetToDiscountDate": {
+						"$ref": "criteria.json#/definitions/OffsetToDiscountDate"
+					},
+					"offsetToFirstSegment": {
+						"$ref": "criteria.json#/definitions/OffsetToFirstSegment"
+					},
+					"offsetToEndHistory": {
+						"$ref": "criteria.json#/definitions/OffsetToEndHistory"
+					},
+					"dates": {
+						"$ref": "criteria.json#/definitions/Dates"
+					},
+					"oilRate": {
+						"$ref": "criteria.json#/definitions/OilRate"
+					},
+					"gasRate": {
+						"$ref": "criteria.json#/definitions/GasRate"
+					},
+					"waterRate": {
+						"$ref": "criteria.json#/definitions/WaterRate"
+					}
+				},
+				"allOf": [
+					{
+						"errorMessage": "Exactly at least one of the following properties is required: dollarPerMonth, pctOfRevenue or dollarPerBbl`",
+						"anyRequired": ["dollarPerMonth", "pctOfRevenue", "dollarPerBbl"]
+					}
+				]
+			}
+		},
+		"AdValoremRowFields": {
+			"type": "array",
+			"maxItems": 100,
+			"minItems": 1,
+			"unevaluatedItems": false,
+			"items": {
+				"type": "object",
+				"maxProperties": 3,
+				"unevaluatedProperties": false,
+				"properties": {
+					"dollarPerBoe": {
+						"$ref": "#/definitions/DollarPerBoe"
+					},
+					"dollarPerMonth": {
+						"$ref": "#/definitions/DollarPerMonth"
+					},
+					"pctOfRevenue": {
+						"$ref": "#/definitions/PctOfRevenue"
+					},
+					"entireWellLife": {
+						"$ref": "criteria.json#/definitions/EntireWellLife"
+					},
+					"offsetToAsOf": {
+						"$ref": "criteria.json#/definitions/OffsetToAsOf"
+					},
+					"offsetToFpd": {
+						"$ref": "criteria.json#/definitions/OffsetToFpd"
+					},
+					"offsetToDiscountDate": {
+						"$ref": "criteria.json#/definitions/OffsetToDiscountDate"
+					},
+					"offsetToFirstSegment": {
+						"$ref": "criteria.json#/definitions/OffsetToFirstSegment"
+					},
+					"offsetToEndHistory": {
+						"$ref": "criteria.json#/definitions/OffsetToEndHistory"
+					},
+					"dates": {
+						"$ref": "criteria.json#/definitions/Dates"
+					},
+					"oilRate": {
+						"$ref": "criteria.json#/definitions/OilRate"
+					},
+					"gasRate": {
+						"$ref": "criteria.json#/definitions/GasRate"
+					},
+					"waterRate": {
+						"$ref": "criteria.json#/definitions/WaterRate"
+					}
+				},
+				"allOf": [
+					{
+						"errorMessage": "Exactly at least one of the following properties is required: dollarPerMonth, pctOfRevenue or dollarPerBoe`",
+						"anyRequired": ["dollarPerMonth", "pctOfRevenue", "dollarPerBoe"]
+					}
+				]
+			}
+		},
+		"RowsOneCriteriaRequiredDefinition": {
+			"if": {
+				"oneOf": [
+					{
+						"$ref": "rows-validation-defs.json#/definitions/EntireWellLifeArray"
+					},
+					{
+						"$ref": "rows-validation-defs.json#/definitions/OffsetToAsOfArray"
+					},
+					{
+						"$ref": "rows-validation-defs.json#/definitions/OffsetToFpdArray"
+					},
+					{
+						"$ref": "rows-validation-defs.json#/definitions/OffsetToDiscountDateArray"
+					},
+					{
+						"$ref": "rows-validation-defs.json#/definitions/OffsetToFirstSegmentArray"
+					},
+					{
+						"$ref": "rows-validation-defs.json#/definitions/OffsetToEndHistoryArray"
+					},
+					{
+						"$ref": "rows-validation-defs.json#/definitions/DatesArray"
+					},
+					{
+						"$ref": "rows-validation-defs.json#/definitions/OilRateArray"
+					},
+					{
+						"$ref": "rows-validation-defs.json#/definitions/GasRateArray"
+					},
+					{
+						"$ref": "rows-validation-defs.json#/definitions/WaterRateArray"
+					},
+					{
+						"$ref": "rows-validation-defs.json#/definitions/EmptyRowsArray"
+					}
+				]
+			},
+			"else": {
+				"if": {
+					"type": "object"
+				},
+				"then": {
+					"errorMessage": "All rows must contain exactly one of the following properties: `entireWellLife`, `offsetToAsOf`, `dates`, `offsetToEndHistory`, `offsetToFirstSegment`, `offsetToDiscountDate`, `gasRate`, `oilRate`, or `waterRate`",
+					"const": null
+				}
+			}
+		},
+		"PhaseRowCondition": {
+			"type": "object",
+			"properties": {
+				"rows": {
+					"$ref": "#/definitions/GasOrWaterOrOilRateRowField"
+				}
+			},
+			"required": ["rows"]
+		},
+		"MultipleRateTypeRowCalculationMethodFields": {
+			"type": "object",
+			"properties": {
+				"rateType": {
+					"type": "string",
+					"enum": ["gross_well_head", "gross_sales", "net_sales"]
+				},
+				"rowsCalculationMethod": {
+					"type": "string",
+					"enum": ["monotonic", "non_monotonic"]
+				}
+			},
+			"required": ["rateType", "rowsCalculationMethod"]
+		},
+		"SingleRateTypeRowCalculationMethodFields": {
+			"type": "object",
+			"properties": {
+				"rateType": {
+					"errorMessage": "`rateType` must be `gross_well_head` if either `waterRate`, `oilRate` or `gasRate` are not specified in the `rows` array",
+					"type": "string",
+					"const": "gross_well_head"
+				},
+				"rowsCalculationMethod": {
+					"errorMessage": "`rowsCalculationMethod` must be `non_monotonic` if either `waterRate`, `oilRate` or `gasRate` are not specified in the `rows` array",
+					"type": "string",
+					"const": "non_monotonic"
+				}
+			},
+			"required": ["rateType", "rowsCalculationMethod"]
+		},
+		"GasOrWaterOrOilRateRowField": {
+			"type": "array",
+			"unevaluatedItems": false,
+			"minItems": 1,
+			"contains": {
+				"type": "object",
+				"properties": {
+					"gasRate": {
+						"type": "number"
+					},
+					"oilRate": {
+						"type": "number"
+					},
+					"waterRate": {
+						"type": "number"
+					}
+				},
+				"oneRequired": ["gasRate", "oilRate", "waterRate"]
+			},
+			"items": {
+				"type": "object",
+				"properties": {
+					"waterRate": {
+						"type": "number"
+					},
+					"oilRate": {
+						"type": "number"
+					},
+					"gasRate": {
+						"type": "number"
+					}
+				}
+			}
+		}
+	}
+}

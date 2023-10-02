@@ -1,0 +1,127 @@
+/v1/projects/{projectId}/scenarios/{scenarioId}/qualifiers/:
+  get:
+    operationId: get-v1-qualifiersread
+    parameters:
+      - name: scenarioId
+        in: params
+        required: true
+        type: string
+        example: 5e276e31876cd70012ddf3f6
+      - name: projectId
+        in: params
+        required: true
+        type: string
+        example: 5e276e31876cd70012ddf3f6
+      - name: econName
+        in: query
+        type: array
+        items:
+          type: string
+          example: some_string
+    responses:
+      '200':
+        description: OK Response
+        schema:
+          $ref: #/definitions/QualifiersReadOKResponse
+      '404':
+        description: NotFound Response
+  post:
+    operationId: post-v1-qualifiersupsert
+    consumes:
+      - application/json
+    produces:
+      - application/json
+    parameters:
+      - name: payload
+        in: body
+        required: true
+        type: array
+        items:
+          $ref: #/definitions/QualifierUpsertPayload
+      - name: scenarioId
+        in: params
+        required: true
+        type: string
+        example: 5e276e31876cd70012ddf3f6
+      - name: projectId
+        in: params
+        required: true
+        type: string
+        example: 5e276e31876cd70012ddf3f6
+    responses:
+      '207':
+        description: MultiStatus Response
+        schema:
+          $ref: #/definitions/QualifiersUpsertMultiStatusResponse
+      '404':
+        description: NotFound Response
+  put:
+    operationId: put-v1-qualifiersupsert
+    consumes:
+      - application/json
+    produces:
+      - application/json
+    parameters:
+      - name: payload
+        in: body
+        required: true
+        type: array
+        items:
+          $ref: #/definitions/QualifierUpsertPayload
+      - name: scenarioId
+        in: params
+        required: true
+        type: string
+        example: 5e276e31876cd70012ddf3f6
+      - name: projectId
+        in: params
+        required: true
+        type: string
+        example: 5e276e31876cd70012ddf3f6
+    responses:
+      '207':
+        description: MultiStatus Response
+        schema:
+          $ref: #/definitions/QualifiersUpsertMultiStatusResponse
+      '404':
+        description: NotFound Response
+  delete:
+    operationId: delete-v1-qualifiersdelete
+    parameters:
+      - name: scenarioId
+        in: params
+        required: true
+        type: string
+        example: 5e276e31876cd70012ddf3f6
+      - name: projectId
+        in: params
+        required: true
+        type: string
+        example: 5e276e31876cd70012ddf3f6
+      - name: econNames
+        in: query
+        required: true
+        type: array
+        maxItems: 20
+        items:
+          type: string
+          example: some_string
+      - name: qualifierNames
+        in: query
+        required: true
+        type: array
+        items:
+          type: string
+          example: some_string
+    responses:
+      '204':
+        description: NoContent Response
+        headers:
+          x-delete-count:
+            type: number
+      '400':
+        description: BadRequest Response
+        schema:
+          $ref: #/definitions/QualifiersDeleteBadRequestResponse
+      '404':
+        description: NotFound Response

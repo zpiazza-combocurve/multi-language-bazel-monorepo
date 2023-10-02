@@ -1,0 +1,185 @@
+/v1/projects/{projectId}/forecasts/{forecastId}/aries:
+  head:
+    operationId: head-v1-aries-forecast
+    description: >-
+      Returns metadata about the aries forecast documents scoped to projectId
+      project and forecastId forecast.
+    parameters:
+      - in: path
+        name: projectId
+        required: true
+        type: string
+        description: ''
+      - in: path
+        name: forecastId
+        required: true
+        type: string
+        description: ''
+      - $ref: '#/parameters/skipParam'
+      - $ref: '#/parameters/takeParam'
+      - name: well
+        in: query
+        description: filter by well
+        type: string
+    responses:
+      '200':
+        description: OK
+      '400':
+        description: Bad Request. There is something wrong with the request data.
+    tags:
+      - ComboCurveV1
+  get:
+    produces:
+      - application/json
+    operationId: get-v1-aries-forecast
+    description: >-
+      Returns a list of aries forecast scoped to projectId project and
+      forecastId forecast.
+    parameters:
+      - in: path
+        name: projectId
+        required: true
+        type: string
+        description: ''
+      - in: path
+        name: forecastId
+        required: true
+        type: string
+        description: ''
+      - $ref: '#/parameters/skipParam'
+      - $ref: '#/parameters/takeParam'
+      - $ref: '#/parameters/sortParam'
+      - $ref: '#/parameters/cursorParam'
+      - name: well
+        in: query
+        description: filter by well
+        type: string
+      - name: pSeries
+        in: query
+        description: filter by pSeries
+        type: string
+        enum:
+          - P10
+          - P50
+          - P90
+          - best
+        default: best
+      - name: startDate
+        in: query
+        description: filter by startDate, can be used for incremental pull
+        format: date
+        type: string
+      - name: selectedIdKey
+        in: query
+        description: filter by selectedIdKey
+        type: string
+        enum:
+          - api10
+          - api12
+          - api14
+          - aries_id
+          - chosenID
+          - phdwin_id
+          - well_name
+          - well_name_well_number
+        default: chosenID
+      - name: endingCondition
+        in: query
+        description: filter by endingCondition
+        type: string
+        enum:
+          - absolute_date
+          - ending_rate
+          - months
+          - years
+        default: years
+      - name: forecastUnit
+        in: query
+        description: filter by forecastUnit
+        type: string
+        enum:
+          - per_day
+          - per_month
+        default: per_day
+      - name: toLife
+        in: query
+        description: filter by toLife
+        type: string
+        enum:
+          - 'yes'
+          - 'no'
+        default: 'no'
+      - name: dataResolution
+        in: query
+        description: filter by dataResolution
+        type: string
+        enum:
+          - 'daily'
+          - 'monthly'
+          - 'same_as_forecast'
+        default: 'same_as_forecast' 
+      - name: includeZeroForecast
+        in: query
+        description: filter by includeZeroForecast
+        type: boolean
+      - name: forecastStartToLatestProd
+        in: query
+        description: filter by forecastStartToLatestProd
+        type: boolean
+      - name: forecastHistoryMatch
+        in: query
+        description: filter by forecastHistoryMatch
+        type: boolean
+    responses:
+      '200':
+        description: OK
+        schema:
+          $ref: '#/definitions/AriesForecastList'
+      '400':
+        description: Bad Request. There is something wrong with the request data.
+        schema:
+          $ref: '#/definitions/Error'
+    tags:
+      - ComboCurveV1
+    x-client-generation:
+      x-get-all-skip-take-method:
+        name: GetAllAriesForecast
+        baseReturnType: AriesForecast
+      x-get-all-cursor-method:
+        name: GetAllAriesForecastV2
+        baseReturnType: AriesForecast
+    x-google-quota:
+      metricCosts:
+        read-request-rate: 1
+/v1/projects/{projectId}/forecasts/{forecastId}/aries/head:
+  get:
+    x-no-client: true
+    x-no-doc: true
+    operationId: get-head-v1-aries-forecast
+    description: >-
+      Returns metadata about the aries forecast documents scoped to projectId
+      project and forecastId forecast.
+    parameters:
+      - in: path
+        name: projectId
+        required: true
+        type: string
+        description: ''
+      - in: path
+        name: forecastId
+        required: true
+        type: string
+        description: ''
+      - $ref: '#/parameters/skipParam'
+      - $ref: '#/parameters/takeParam'
+      - name: well
+        in: query
+        description: filter by well
+        type: string
+    responses:
+      '200':
+        description: OK
+      '400':
+        description: Bad Request. There is something wrong with the request data.
+    tags:
+      - ComboCurveV1

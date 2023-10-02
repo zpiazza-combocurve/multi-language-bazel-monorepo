@@ -1,0 +1,135 @@
+[
+	{
+		"_id": "5f24af6537794900129b17b0",
+		"lastAutomaticRun": {
+			"source": "auto",
+			"success": true,
+			"date": "2020-08-01T00:09:18.360Z"
+		},
+		"warning": {
+			"status": false,
+			"message": ""
+		},
+		"ratio": {
+			"segments": [
+				{
+					"start_idx": 43113,
+					"end_idx": 64495,
+					"name": "exp_inc",
+					"slope": 1,
+					"D_eff": -0.6315336263040969,
+					"D": -0.001340233942522614,
+					"sw_idx": 45667.00515381281,
+					"q_start": 0.7213411871318532,
+					"q_end": 2012178574936.3965
+				}
+			],
+			"basePhase": "oil",
+			"x": "time",
+			"diagnostics": null,
+			"eur": 350360.97710140725
+		},
+		"data_freq": "monthly",
+		"diagDate": null,
+		"forecasted": true,
+		"forecastType": "ratio",
+		"forecastSubType": null,
+		"phase": "gas",
+		"runDate": "2020-08-01T00:09:18.360Z",
+		"status": "in_progress",
+		"forecast": "5f24af657bc6030012064ed7",
+		"P_dict": {
+			"best": {
+				"segments": [
+					{
+						"start_idx": 43233,
+						"end_idx": 64495,
+						"name": "arps_modified",
+						"q_start": 221.01026694045174,
+						"q_end": 0.5278839515249709,
+						"slope": -1,
+						"D_eff": 0.40663841715670446,
+						"D": 0.0021681345654973754,
+						"b": 1.5,
+						"target_D_eff_sw": 0.08,
+						"realized_D_eff_sw": 0.08000000000000007,
+						"sw_idx": 45667.00515381281,
+						"q_sw": 51.40078685512502,
+						"D_exp_eff": 0.0849900512240106,
+						"D_exp": 0.00024317683993566811
+					}
+				],
+				"diagnostics": {},
+				"eur": 350360.97710140725
+			}
+		},
+		"p_extra": {},
+		"project": "5e272bed4b97ed00132f2271",
+		"well": "5ed67b2ec3629ac71ded298b",
+		"__v": 0,
+		"createdAt": "2020-07-31T23:55:19.267Z",
+		"updatedAt": "2020-07-31T23:55:19.267Z",
+		"model_name": "arps_modified_wp",
+		"diagnostics": null
+	},
+	{
+		"_id": "5f24af6537794900129b17af",
+		"lastAutomaticRun": {
+			"date": "2020-07-31T23:57:20.352Z",
+			"source": "auto",
+			"success": true
+		},
+		"warning": {
+			"status": false,
+			"message": ""
+		},
+		"ratio": {
+			"basePhase": null,
+			"x": null,
+			"segments": [],
+			"diagnostics": null,
+			"eur": 350360.97710140725
+		},
+		"data_freq": "monthly",
+		"diagDate": null,
+		"forecasted": true,
+		"forecastType": "rate",
+		"forecastSubType": "manual",
+		"phase": "oil",
+		"runDate": "2020-07-31T23:57:20.352Z",
+		"status": "in_progress",
+		"forecast": "5f24af657bc6030012064ed7",
+		"P_dict": {
+			"best": {
+				"segments": [
+					{
+						"start_idx": 41350,
+						"end_idx": 42169,
+						"name": "arps_modified",
+						"q_start": 423.3332616779596,
+						"q_end": 92.20980498278352,
+						"slope": -1,
+						"D_eff": 0.5717582558912915,
+						"D": 0.003009175917809707,
+						"b": 0.5871650672699218,
+						"target_D_eff_sw": 0.08,
+						"realized_D_eff_sw": 0.07999999999999996,
+						"sw_idx": 48063.25597852572,
+						"q_sw": 5.463201538458306,
+						"D_exp_eff": 0.0819068854264493,
+						"D_exp": 0.0002339670404057274
+					}
+				],
+				"diagnostics": []
+			}
+		},
+		"p_extra": {},
+		"project": "5e272bed4b97ed00132f2271",
+		"well": "5ed67b2ec3629ac71ded298b",
+		"__v": 0,
+		"createdAt": "2020-07-31T23:55:19.266Z",
+		"updatedAt": "2020-08-18T20:37:48.652Z",
+		"model_name": "arps_modified_wp",
+		"diagnostics": null
+	}
+]

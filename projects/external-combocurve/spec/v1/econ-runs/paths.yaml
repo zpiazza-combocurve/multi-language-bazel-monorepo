@@ -1,0 +1,181 @@
+/v1/econ-runs:
+  head:
+    operationId: head-v1-root-econ-runs
+    description: Returns metadata about the existing econ run documents.
+    parameters:
+      - in: query
+        name: project
+        type: string
+        description: filter by project id
+      - in: query
+        name: scenario
+        type: string
+        description: filter by scenario id
+      - $ref: '#/parameters/skipParam'
+      - $ref: '#/parameters/takeParam'
+      - name: runDate
+        in: query
+        description: filter by runDate, can be used for incremental pull
+        format: date
+        type: string
+        x-allow-parameter-operator: true
+      - name: tags
+        in: query
+        description: filter by tag name
+        type: string
+    responses:
+      '200':
+        description: OK
+        headers:
+          Link:
+            type: string
+            description: >-
+              Indicates a typed relationship with another resource, where the
+              relation type is defined by RFC 5988. We include the relationships
+              next, prev, first and last, which can be used to move between
+              pages of the list of results.
+          X-Query-Count:
+            type: integer
+            description: >-
+              The number of records in this resource. When filters are provided
+              only matching records are counted.
+      '400':
+        description: Bad Request. There is something wrong with the request data.
+    tags:
+      - ComboCurveV1
+    x-client-generation:
+      x-count-method:
+        name: RootEconRunsCount
+  get:
+    produces:
+      - application/json
+    operationId: get-v1-root-econ-runs
+    description: Returns a list of econ run documents.
+    parameters:
+      - in: query
+        name: project
+        type: string
+        description: filter by project id
+      - in: query
+        name: scenario
+        type: string
+        description: filter by scenario id
+      - $ref: '#/parameters/skipParam'
+      - $ref: '#/parameters/takeParam'
+      - $ref: '#/parameters/sortParam'
+      - $ref: '#/parameters/cursorParam'
+      - name: runDate
+        in: query
+        description: filter by runDate
+        format: date
+        type: string
+        x-allow-parameter-operator: true
+      - name: tags
+        in: query
+        description: filter by tag name
+        type: string
+    responses:
+      '200':
+        description: OK
+        schema:
+          $ref: '#/definitions/EconRunList'
+        headers:
+          Link:
+            type: string
+            description: >-
+              Indicates a typed relationship with another resource, where the
+              relation type is defined by RFC 5988. We include the relationships
+              next, prev, first and last, which can be used to move between
+              pages of the list of results.
+      '400':
+        description: Bad Request. There is something wrong with the request data.
+        schema:
+          $ref: '#/definitions/Error'
+    tags:
+      - ComboCurveV1
+    x-google-quota:
+      metricCosts:
+        read-request-rate: 1
+    x-client-generation:
+      x-get-all-skip-take-method:
+        name: GetAllRootEconRuns
+        baseReturnType: EconRun
+      x-get-all-cursor-method:
+        name: GetAllRootEconRunsV2
+        baseReturnType: EconRun
+/v1/econ-runs/head:
+  get:
+    x-no-client: true
+    x-no-doc: true
+    operationId: get-head-v1-root-econ-runs
+    description: Returns metadata about the existing econ run documents.
+    parameters:
+      - in: query
+        name: project
+        type: string
+        description: filter by project id
+      - in: query
+        name: scenario
+        type: string
+        description: filter by scenario id
+      - $ref: '#/parameters/skipParam'
+      - $ref: '#/parameters/takeParam'
+      - name: runDate
+        in: query
+        description: filter by runDate
+        format: date
+        type: string
+      - name: tags
+        in: query
+        description: filter by tag name
+        type: string
+    responses:
+      '200':
+        description: OK
+        headers:
+          Link:
+            type: string
+            description: >-
+              Indicates a typed relationship with another resource, where the
+              relation type is defined by RFC 5988. We include the relationships
+              next, prev, first and last, which can be used to move between
+              pages of the list of results.
+          X-Query-Count:
+            type: integer
+            description: >-
+              The number of records in this resource. When filters are provided
+              only matching records are counted.
+      '400':
+        description: Bad Request. There is something wrong with the request data.
+    tags:
+      - ComboCurveV1
+/v1/econ-runs/{id}:
+  get:
+    produces:
+      - application/json
+    operationId: get-v1-root-econ-run-by-id
+    description: Returns the econ run document that matches the given id.
+    parameters:
+      - in: path
+        name: id
+        required: true
+        type: string
+        description: ID
+    responses:
+      '200':
+        description: OK
+        schema:
+          $ref: '#/definitions/EconRun'
+      '400':
+        description: Bad Request. There is something wrong with the request data.
+        schema:
+          $ref: '#/definitions/Error'
+      '404':
+        description: Not Found
+        schema:
+          $ref: '#/definitions/Error'
+    tags:
+      - ComboCurveV1
+    x-google-quota:
+      metricCosts:
+        read-request-rate: 1

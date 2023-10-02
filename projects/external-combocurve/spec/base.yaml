@@ -1,0 +1,1517 @@
+# https://swagger.io/specification/v2/
+swagger: '2.0'
+info:
+  title: ComboCurve REST API
+  version: 1.0.0
+schemes:
+  - https
+host:
+
+# Docs on security: https://cloud.google.com/endpoints/docs/openapi/service-account-authentication#configure_auth
+securityDefinitions:
+  api-key:
+    # docs: https://cloud.google.com/endpoints/docs/openapi/restricting-api-access-with-api-keys
+    # docs: https://swagger.io/docs/specification/2-0/authentication/api-keys/
+    type: apiKey
+    name: x-api-key
+    in: header
+security:
+tags:
+  - name: ComboCurveV1
+
+parameters:
+  skipParam:
+    name: skip
+    in: query
+    description: number of items to skip
+    type: integer
+    format: int32
+    default: 0
+  takeParam:
+    name: take
+    in: query
+    description: max records to return
+    type: integer
+    format: int32
+    default: 25
+    minimum: 1
+    maximum: 200
+  takeParamBQ:
+    name: take
+    in: query
+    description: max records to return
+    type: integer
+    format: int32
+    default: 100
+    minimum: 1
+    maximum: 2000
+  cursorParam:
+    name: cursor
+    in: query
+    description: used in pagination to get the next page
+    type: string
+  sortParam:
+    name: sort
+    in: query
+    description: >-
+      field to sort by, including + or - at the beginning for ascending or
+      descending order, respectively
+    type: string
+
+definitions:
+  EntireWellLifeCriteria:
+    type: string
+    enum: 
+      - Flat
+  StartEndDatesCriteria:
+    type: string
+    format: date
+    description: Start date
+  StartEndPeriodCriteria:
+    type: number
+    description: Interval 
+  StartEndRateCriteria:
+    type: "number"
+  SeasonalCriteria:
+    type: string
+    enum:
+      - Jan
+      - Feb    
+      - Mar
+      - Apr
+      - May
+      - Jun
+      - Jul
+      - Aug
+      - Sep
+      - Oct
+      - Nov
+      - Dec
+  Error:
+    type: object
+    properties:
+      name:
+        type: string
+        description: The kind of error.
+      message:
+        type: string
+        description: A human-readable description of the problem.
+      details:
+        type: object
+        properties:
+          location:
+            type: string
+            description: The location in the request data that contains the invalid value.
+    example:
+      name: ValidationError
+      message: The field 'id' is required.
+      details:
+        location: In body of request at position [0]
+  
+  ErrorEntry:
+    required:
+      - name
+      - message
+    type: object
+    properties:
+      name:
+        type: string
+      message:
+        type: string
+      location:
+        type: string
+    example:
+      name: ValidationError
+      message: The field 'id' is required.
+      location: In body of request at position [0]
+  CompanyWellStatus:
+    type: object
+    required:
+    - status
+    - code
+    properties:
+      status:
+        type: string
+      code:
+        type: integer
+      id:
+        type: string
+      chosenID:
+        type: string
+      dataSource:
+        type: string
+      errors:
+        type: array
+        items:
+          $ref: '#/definitions/ErrorEntry'
+    example:
+      status: Success
+      code: 200
+      id: 62b1c13e2750169012ee4515
+      chosenID: abc1234567890
+      dataSource: di
+
+  CompanyWellMultiStatusResponse:
+    type: object
+    properties:
+      generalErrors:
+        type: array
+        items:
+          $ref: '#/definitions/ErrorEntry'
+      results:
+        type: array
+        items:
+          $ref: '#/definitions/CompanyWellStatus'
+      failedCount:
+        type: integer
+      successCount:
+        type: integer
+    example:
+      generalErrors:
+        - name: ValidationError
+          message: The field 'id' is required.
+          location: In body of request at position [0]
+        - name: ValidationError
+          message: The field 'dataSource' is required.
+          location: In body of request at position [2]          
+      results:
+        - status: Success
+          code: 200
+          id: 62b1c13e2750169012ee4515
+          chosenID: abc1234567890
+          dataSource: di
+        - status: Success
+          code: 200
+          id: 62b1c13e4857169000ee4613
+          chosenID: 1234567891
+          dataSource: internal
+      failedCount: 2
+      successCount: 2
+
+  WellStatus:
+    type: object
+    required:
+    - status
+    - code
+    properties:
+      status:
+        type: string
+      code:
+        type: integer
+      id:
+        type: string
+      chosenID:
+        type: string
+      dataSource:
+        type: string
+      createdAt:
+        type: string
+        format: date
+      updatedAt:
+        type: string
+        format: date
+      errors:      
+        type: array
+        items:
+          $ref: '#/definitions/ErrorEntry'
+    example:
+      status: Success
+      code: 200
+      id: 62b1c13e2750169012ee4515
+      chosenID: abc1234567890
+      dataSource: di
+      createdAt: '2023-01-01T00:00:00.000Z'
+      updatedAt: '2023-01-01T00:00:00.000Z'
+
+  WellMultiStatusResponse:
+    type: object
+    properties:
+      generalErrors:
+        type: array
+        items:
+          $ref: '#/definitions/ErrorEntry'
+      results:
+        type: array
+        items:
+          $ref: '#/definitions/WellStatus'
+      failedCount:
+        type: integer
+      successCount:
+        type: integer
+    example:
+      generalErrors:
+        - name: ValidationError
+          message: The field 'id' is required.
+          location: In body of request at position [0]
+        - name: ValidationError
+          message: The field 'dataSource' is required.
+          location: In body of request at position [2]          
+      results:
+        - status: Success
+          code: 200
+          id: 62b1c13e2750169012ee4515
+          chosenID: abc1234567890
+          dataSource: di
+          createdAt: '2023-01-01T00:00:00.000Z'
+          updatedAt: '2023-01-01T00:00:00.000Z'
+        - status: Success
+          code: 200
+          id: 62b1c13e4857169000ee4613
+          chosenID: 1234567891
+          dataSource: internal
+          createdAt: '2023-01-01T00:00:00.000Z'
+          updatedAt: '2023-01-01T00:00:00.000Z'
+      failedCount: 2
+      successCount: 2
+
+  WellIdentifierStatus:
+    type: object
+    required:
+    - status
+    - code
+    properties:
+      status:
+        type: string
+      code:
+        type: integer
+      wellId:
+        type: string
+      errors:      
+        type: array
+        items:
+          $ref: '#/definitions/ErrorEntry'
+    example:
+      status: Success
+      code: 200
+      wellId: 62b1c13e2750169012ee4515
+      createdAt: '2023-01-01T00:00:00.000Z'
+      updatedAt: '2023-01-01T00:00:00.000Z'
+
+  WellIdentifierMultiStatusResponse:
+    type: object
+    properties:
+      generalErrors:
+        type: array
+        items:
+          $ref: '#/definitions/ErrorEntry'
+      results:
+        type: array
+        items:
+          $ref: '#/definitions/WellIdentifierStatus'
+      failedCount:
+        type: integer
+      successCount:
+        type: integer
+    example:
+      generalErrors:
+        - name: ValidationError
+          message: The field 'id' is required.
+          location: In body of request at position [0]
+        - name: ValidationError
+          message: The field 'dataSource' is required.
+          location: In body of request at position [2]          
+      results:
+        - status: Success
+          code: 200
+          id: 62b1c13e2750169012ee4515
+        - status: Success
+          code: 200
+          id: 62b1c13e4857169000ee4613
+      failedCount: 2
+      successCount: 2
+
+  ProductionStatus:
+    type: object
+    required:
+    - status
+    - code
+    properties:
+      status:
+        type: string
+      code:
+        type: integer
+      well:
+        type: string
+      date:
+        type: string
+        format: date
+      errors:
+        type: array
+        items:
+          $ref: '#/definitions/ErrorEntry'
+    example:
+      status: Success
+      code: 200
+      well: 62b1c13e2750169012ee4515
+      date: '2023-01-01T00:00:00.000Z'
+
+  ProductionMultiStatusResponse:
+    type: object
+    properties:
+      generalErrors:
+        type: array
+        items:
+          $ref: '#/definitions/ErrorEntry'
+      results:
+        type: array
+        items:
+          $ref: '#/definitions/ProductionStatus'
+      failedCount:
+        type: integer
+      successCount:
+        type: integer
+    example:
+      generalErrors:
+        - name: ValidationError
+          message: The field 'well' is required.
+          location: In body of request at position [0]
+        - name: ValidationError
+          message: The field 'date' is required.
+          location: In body of request at position [2]
+      results:
+        - status: Success
+          code: 200
+          well: 62b1c13e2750169012ee4515
+          date: '2023-01-01T00:00:00.000Z'
+        - status: Success
+          code: 200
+          well: 62b1c13e4857169000ee4613
+          date: '2023-01-01T00:00:00.000Z'
+      failedCount: 2
+      successCount: 2
+
+  OwnershipQualifierStatus:
+    type: object
+    required:
+    - status
+    - code
+    properties:
+      status:
+        type: string
+      code:
+        type: integer
+      well:
+        type: string
+      qualifierKey:
+        type: string
+      errors:
+        type: array
+        items:
+          $ref: '#/definitions/ErrorEntry'
+    example:
+      status: Success
+      code: 200
+      well: 5e272d38b78910dd2a1bd6b2
+      qualifierKey: q4 2021-10-28
+
+  OwnershipQualifierMultiStatusResponse:
+    type: object
+    properties:
+      generalErrors:
+        type: array
+        items:
+          $ref: '#/definitions/ErrorEntry'
+      results:
+        type: array
+        items:
+          $ref: '#/definitions/OwnershipQualifierStatus'
+      failedCount:
+        type: integer
+      successCount:
+        type: integer
+    example:
+      generalErrors:
+        - name: ValidationError
+          message: The field 'well' is required.
+          location: In body of request at position [0]
+        - name: ValidationError
+          message: The field 'qualifierKey' is required.
+          location: In body of request at position [2]
+      results:
+        - status: Success
+          code: 200
+          well: 5e272d38b78910dd2a1bd6b2
+          qualifierKey: q3 2021-10-28
+        - status: Success
+          code: 200
+          well: 5e272d38b78910dd2a1bd6b3
+          qualifierKey: q4 2021-10-28
+      failedCount: 2
+      successCount: 2
+
+  ProjectStatus:
+    type: object
+    required:
+    - status
+    - code
+    properties:
+      status:
+        type: string
+      code:
+        type: integer
+      name:
+        type: string
+      id:
+        type: string
+      errors:
+        type: array
+        items:
+          $ref: '#/definitions/ErrorEntry'
+    example:
+      status: Success
+      code: 200
+      name: Acme Royalties 2021-10-28
+      id: 61698aa08eca904d9cc5b622
+
+  ProjectMultiStatusResponse:
+    type: object
+    properties:
+      generalErrors:
+        type: array
+        items:
+          $ref: '#/definitions/ErrorEntry'
+      results:
+        type: array
+        items:
+          $ref: '#/definitions/ProjectStatus'
+      failedCount:
+        type: integer
+      successCount:
+        type: integer
+    example:
+      generalErrors:
+        - name: ValidationError
+          message: The field 'id' is required.
+          location: In body of request at position [0]
+        - name: ValidationError
+          message: The field 'dataSource' is required.
+          location: In body of request at position [2]          
+      results:
+        - status: Success
+          code: 200
+          name: Acme Royalties 2021-10-28
+          id: 61698aa08eca904d9cc5b622
+        - status: Success
+          code: 200
+          name: Acme Royalties 2021-10-28
+          id: 61698aa08eca904d9cc5b623
+      failedCount: 2
+      successCount: 2
+
+  ForecastParametersSuccessResponse:
+    type: object
+    properties:
+      status:
+        type: string
+      segmentCount:
+        type: integer
+      id:
+        type: string
+    example:
+      status: 'success'
+      segmentCount: 8,
+      id: '62b1c13e2750169012ee4515'
+
+  ForecastParametersErrorResponse:
+    type: object
+    properties:
+      status:
+        type: string
+      errors:
+        type: array
+        items:
+          $ref: '#/definitions/ErrorEntry'
+      errorCount:
+        type: integer
+    example:
+      status: 'error'
+      errors:
+        - name: ValidationError
+          message: The field 'id' is required.
+          location: In body of request at position [0]
+        - name: ValidationError
+          message: The field 'name' is required.
+          location: In body of request at position [0]
+      errorCount: 2
+
+
+  PricingStatus:
+    type: object
+    required:
+    - status
+    - code
+    properties:
+      status:
+        type: string
+      code:
+        type: integer
+      name:
+        type: string
+      errors:
+        type: array
+        items:
+          $ref: '#/definitions/ErrorEntry'
+    example:
+      status: Success
+      code: 200
+      name: test
+
+  PricingMultiStatusResponse:
+    type: object
+    properties:
+      generalErrors:
+        type: array
+        items:
+          $ref: '#/definitions/ErrorEntry'
+      results:
+        type: array
+        items:
+          $ref: '#/definitions/PricingStatus'
+      failedCount:
+        type: integer
+      successCount:
+        type: integer
+    example:
+      generalErrors:
+        - name: ValidationError
+          message: The field 'name' is required.
+          location: In body of request at position [0]
+        - name: ValidationError
+          message: The field 'unique' is required.
+          location: In body of request at position [2]
+      results:
+        - status: Success
+          code: 200
+          name: test
+        - status: Success
+          code: 200
+          name: test1
+      failedCount: 2
+      successCount: 2
+
+  ReservesCategoryStatus:
+    type: object
+    required:
+    - status
+    - code
+    properties:
+      status:
+        type: string
+      code:
+        type: integer
+      name:
+        type: string
+      errors:
+        type: array
+        items:
+          $ref: '#/definitions/ErrorEntry'
+    example:
+      status: Success
+      code: 200
+      name: test
+
+  ReservesCategoryMultiStatusResponse:
+    type: object
+    properties:
+      generalErrors:
+        type: array
+        items:
+          $ref: '#/definitions/ErrorEntry'
+      results:
+        type: array
+        items:
+          $ref: '#/definitions/ReservesCategoryStatus'
+      failedCount:
+        type: integer
+      successCount:
+        type: integer
+    example:
+      generalErrors:
+        - name: ValidationError
+          message: The field 'name' is required.
+          location: In body of request at position [0]
+        - name: ValidationError
+          message: The field 'unique' is required.
+          location: In body of request at position [2]
+      results:
+        - status: Success
+          code: 200
+          name: test
+        - status: Success
+          code: 200
+          name: test1
+      failedCount: 2
+      successCount: 2
+
+  OwnershipReversionStatus:
+    type: object
+    required:
+    - status
+    - code
+    properties:
+      status:
+        type: string
+      code:
+        type: integer
+      name:
+        type: string
+      errors:
+        type: array
+        items:
+          $ref: '#/definitions/ErrorEntry'
+    example:
+      status: Success
+      code: 200
+      name: test
+
+  OwnershipReversionMultiStatusResponse:
+    type: object
+    properties:
+      generalErrors:
+        type: array
+        items:
+          $ref: '#/definitions/ErrorEntry'
+      results:
+        type: array
+        items:
+          $ref: '#/definitions/OwnershipReversionStatus'
+      failedCount:
+        type: integer
+      successCount:
+        type: integer
+    example:
+      generalErrors:
+        - name: ValidationError
+          message: The field 'name' is required.
+          location: In body of request at position [0]
+        - name: ValidationError
+          message: The field 'unique' is required.
+          location: In body of request at position [2]
+      results:
+        - status: Success
+          code: 200
+          name: test
+        - status: Success
+          code: 200
+          name: test1
+      failedCount: 2
+      successCount: 2
+
+  EscalationsStatus:
+    type: object
+    required:
+    - status
+    - code
+    properties:
+      status:
+        type: string
+      code:
+        type: integer
+      name:
+        type: string
+      errors:
+        type: array
+        items:
+          $ref: '#/definitions/ErrorEntry'
+    example:
+      status: Success
+      code: 200
+      name: test
+
+  EscalationsMultiStatusResponse:
+    type: object
+    properties:
+      generalErrors:
+        type: array
+        items:
+          $ref: '#/definitions/ErrorEntry'
+      results:
+        type: array
+        items:
+          $ref: '#/definitions/EscalationsStatus'
+      failedCount:
+        type: integer
+      successCount:
+        type: integer
+    example:
+      generalErrors:
+        - name: ValidationError
+          message: The field 'name' is required.
+          location: In body of request at position [0]
+        - name: ValidationError
+          message: The field 'unique' is required.
+          location: In body of request at position [2]
+      results:
+        - status: Success
+          code: 200
+          name: test
+        - status: Success
+          code: 200
+          name: test1
+      failedCount: 2
+      successCount: 2
+
+  EmissionsStatus:
+    type: object
+    required:
+    - status
+    - code
+    properties:
+      status:
+        type: string
+      code:
+        type: integer
+      name:
+        type: string
+      errors:
+        type: array
+        items:
+          $ref: '#/definitions/ErrorEntry'
+    example:
+      status: Success
+      code: 200
+      name: test
+
+  EmissionsMultiStatusResponse:
+    type: object
+    properties:
+      generalErrors:
+        type: array
+        items:
+          $ref: '#/definitions/ErrorEntry'
+      results:
+        type: array
+        items:
+          $ref: '#/definitions/EmissionsStatus'
+      failedCount:
+        type: integer
+      successCount:
+        type: integer
+    example:
+      generalErrors:
+        - name: ValidationError
+          message: The field 'name' is required.
+          location: In body of request at position [0]
+        - name: ValidationError
+          message: The field 'unique' is required.
+          location: In body of request at position [2]
+      results:
+        - status: Success
+          code: 200
+          name: test
+        - status: Success
+          code: 200
+          name: test1
+      failedCount: 2
+      successCount: 2
+
+  DifferentialsStatus:
+    type: object
+    required:
+    - status
+    - code
+    properties:
+      status:
+        type: string
+      code:
+        type: integer
+      name:
+        type: string
+      errors:
+        type: array
+        items:
+          $ref: '#/definitions/ErrorEntry'
+    example:
+      status: Success
+      code: 200
+      name: test
+
+  FluidModelStatus:
+    type: object
+    required:
+    - status
+    - code
+    properties:
+      status:
+        type: string
+      code:
+        type: integer
+      name:
+        type: string
+      errors:
+        type: array
+        items:
+          $ref: '#/definitions/ErrorEntry'
+    example:
+      status: Success
+      code: 200
+      name: test
+
+  FluidModelMultiStatusResponse:
+    type: object
+    properties:
+      generalErrors:
+        type: array
+        items:
+          $ref: '#/definitions/ErrorEntry'
+      results:
+        type: array
+        items:
+          $ref: '#/definitions/FluidModelStatus'
+      failedCount:
+        type: integer
+      successCount:
+        type: integer
+    example:
+      generalErrors:
+        - name: ValidationError
+          message: The field 'name' is required.
+          location: In body of request at position [0]
+        - name: ValidationError
+          message: The field 'unique' is required.
+          location: In body of request at position [2]
+      results:
+        - status: Success
+          code: 200
+          name: test
+        - status: Success
+          code: 200
+          name: test1
+      failedCount: 2
+      successCount: 2
+
+  DifferentialsMultiStatusResponse:
+    type: object
+    properties:
+      generalErrors:
+        type: array
+        items:
+          $ref: '#/definitions/ErrorEntry'
+      results:
+        type: array
+        items:
+          $ref: '#/definitions/DifferentialsStatus'
+      failedCount:
+        type: integer
+      successCount:
+        type: integer
+    example:
+      generalErrors:
+        - name: ValidationError
+          message: The field 'name' is required.
+          location: In body of request at position [0]
+        - name: ValidationError
+          message: The field 'unique' is required.
+          location: In body of request at position [2]
+      results:
+        - status: Success
+          code: 200
+          name: test
+        - status: Success
+          code: 200
+          name: test1
+      failedCount: 2
+      successCount: 2
+
+  RiskingsStatus:
+    type: object
+    required:
+    - status
+    - code
+    properties:
+      status:
+        type: string
+      code:
+        type: integer
+      name:
+        type: string
+      errors:
+        type: array
+        items:
+          $ref: '#/definitions/ErrorEntry'
+    example:
+      status: Success
+      code: 200
+      name: test
+
+  RiskingsMultiStatusResponse:
+    type: object
+    properties:
+      generalErrors:
+        type: array
+        items:
+          $ref: '#/definitions/ErrorEntry'
+      results:
+        type: array
+        items:
+          $ref: '#/definitions/RiskingsStatus'
+      failedCount:
+        type: integer
+      successCount:
+        type: integer
+    example:
+      generalErrors:
+        - name: ValidationError
+          message: The field 'name' is required.
+          location: In body of request at position [0]
+        - name: ValidationError
+          message: The field 'unique' is required.
+          location: In body of request at position [2]
+      results:
+        - status: Success
+          code: 200
+          name: test
+        - status: Success
+          code: 200
+          name: test1
+      failedCount: 2
+      successCount: 2
+
+  ProductionTaxesStatus:
+    type: object
+    required:
+    - status
+    - code
+    properties:
+      status:
+        type: string
+      code:
+        type: integer
+      name:
+        type: string
+      errors:
+        type: array
+        items:
+          $ref: '#/definitions/ErrorEntry'
+    example:
+      status: Success
+      code: 200
+      name: test
+
+  ProductionTaxesMultiStatusResponse:
+    type: object
+    properties:
+      generalErrors:
+        type: array
+        items:
+          $ref: '#/definitions/ErrorEntry'
+      results:
+        type: array
+        items:
+          $ref: '#/definitions/ProductionTaxesStatus'
+      failedCount:
+        type: integer
+      successCount:
+        type: integer
+    example:
+      generalErrors:
+        - name: ValidationError
+          message: The field 'name' is required.
+          location: In body of request at position [0]
+        - name: ValidationError
+          message: The field 'unique' is required.
+          location: In body of request at position [2]
+      results:
+        - status: Success
+          code: 200
+          name: test
+        - status: Success
+          code: 200
+          name: test1
+      failedCount: 2
+      successCount: 2
+
+  StreamPropertiesStatus:
+    type: object
+    required:
+    - status
+    - code
+    properties:
+      status:
+        type: string
+      code:
+        type: integer
+      name:
+        type: string
+      errors:
+        type: array
+        items:
+          $ref: '#/definitions/ErrorEntry'
+    example:
+      status: Success
+      code: 200
+      name: test
+
+  StreamPropertiesMultiStatusResponse:
+    type: object
+    properties:
+      generalErrors:
+        type: array
+        items:
+          $ref: '#/definitions/ErrorEntry'
+      results:
+        type: array
+        items:
+          $ref: '#/definitions/StreamPropertiesStatus'
+      failedCount:
+        type: integer
+      successCount:
+        type: integer
+    example:
+      generalErrors:
+        - name: ValidationError
+          message: The field 'name' is required.
+          location: In body of request at position [0]
+        - name: ValidationError
+          message: The field 'unique' is required.
+          location: In body of request at position [2]
+      results:
+        - status: Success
+          code: 200
+          name: test
+        - status: Success
+          code: 200
+          name: test1
+      failedCount: 2
+      successCount: 2
+
+  ExpensesStatus:
+    type: object
+    required:
+    - status
+    - code
+    properties:
+      status:
+        type: string
+      code:
+        type: integer
+      name:
+        type: string
+      errors:
+        type: array
+        items:
+          $ref: '#/definitions/ErrorEntry'
+    example:
+      status: Success
+      code: 200
+      name: test
+
+  ExpensesMultiStatusResponse:
+    type: object
+    properties:
+      generalErrors:
+        type: array
+        items:
+          $ref: '#/definitions/ErrorEntry'
+      results:
+        type: array
+        items:
+          $ref: '#/definitions/ExpensesStatus'
+      failedCount:
+        type: integer
+      successCount:
+        type: integer
+    example:
+      generalErrors:
+        - name: ValidationError
+          message: The field 'name' is required.
+          location: In body of request at position [0]
+        - name: ValidationError
+          message: The field 'unique' is required.
+          location: In body of request at position [2]
+      results:
+        - status: Success
+          code: 200
+          name: test
+        - status: Success
+          code: 200
+          name: test1
+      failedCount: 2
+      successCount: 2
+
+  CapexStatus:
+    type: object
+    required:
+    - status
+    - code
+    properties:
+      status:
+        type: string
+      code:
+        type: integer
+      name:
+        type: string
+      errors:
+        type: array
+        items:
+          $ref: '#/definitions/ErrorEntry'
+    example:
+      status: Success
+      code: 200
+      name: test
+
+  CapexMultiStatusResponse:
+    type: object
+    properties:
+      generalErrors:
+        type: array
+        items:
+          $ref: '#/definitions/ErrorEntry'
+      results:
+        type: array
+        items:
+          $ref: '#/definitions/CapexStatus'
+      failedCount:
+        type: integer
+      successCount:
+        type: integer
+    example:
+      generalErrors:
+        - name: ValidationError
+          message: The field 'name' is required.
+          location: In body of request at position [0]
+        - name: ValidationError
+          message: The field 'unique' is required.
+          location: In body of request at position [2]
+      results:
+        - status: Success
+          code: 200
+          name: test
+        - status: Success
+          code: 200
+          name: test1
+      failedCount: 2
+      successCount: 2
+
+  ActualForecastStatus:
+    type: object
+    required:
+    - status
+    - code
+    properties:
+      status:
+        type: string
+      code:
+        type: integer
+      name:
+        type: string
+      errors:
+        type: array
+        items:
+          $ref: '#/definitions/ErrorEntry'
+    example:
+      status: Success
+      code: 200
+      name: test
+
+  ActualForecastMultiStatusResponse:
+    type: object
+    properties:
+      generalErrors:
+        type: array
+        items:
+          $ref: '#/definitions/ErrorEntry'
+      results:
+        type: array
+        items:
+          $ref: '#/definitions/ActualForecastStatus'
+      failedCount:
+        type: integer
+      successCount:
+        type: integer
+    example:
+      generalErrors:
+        - name: ValidationError
+          message: The field 'name' is required.
+          location: In body of request at position [0]
+        - name: ValidationError
+          message: The field 'unique' is required.
+          location: In body of request at position [2]
+      results:
+        - status: Success
+          code: 200
+        - status: Success
+          code: 200
+      failedCount: 2
+      successCount: 2
+
+  DateSettingsStatus:
+    type: object
+    required:
+    - status
+    - code
+    properties:
+      status:
+        type: string
+      code:
+        type: integer
+      name:
+        type: string
+      errors:
+        type: array
+        items:
+          $ref: '#/definitions/ErrorEntry'
+    example:
+      status: Success
+      code: 200
+      name: test
+
+  DateSettingsMultiStatusResponse:
+    type: object
+    properties:
+      generalErrors:
+        type: array
+        items:
+          $ref: '#/definitions/ErrorEntry'
+      results:
+        type: array
+        items:
+          $ref: '#/definitions/DateSettingsStatus'
+      failedCount:
+        type: integer
+      successCount:
+        type: integer
+    example:
+      generalErrors:
+        - name: ValidationError
+          message: The field 'name' is required.
+          location: In body of request at position [0]
+        - name: ValidationError
+          message: The field 'unique' is required.
+          location: In body of request at position [2]
+      results:
+        - status: Success
+          code: 200
+          name: test
+        - status: Success
+          code: 200
+          name: test1
+      failedCount: 2
+      successCount: 2
+
+  DepreciationStatus:
+    type: object
+    required:
+    - status
+    - code
+    properties:
+      status:
+        type: string
+      code:
+        type: integer
+      name:
+        type: string
+      errors:
+        type: array
+        items:
+          $ref: '#/definitions/ErrorEntry'
+    example:
+      status: Success
+      code: 200
+      name: test
+
+  DepreciationMultiStatusResponse:
+    type: object
+    properties:
+      generalErrors:
+        type: array
+        items:
+          $ref: '#/definitions/ErrorEntry'
+      results:
+        type: array
+        items:
+          $ref: '#/definitions/DepreciationStatus'
+      failedCount:
+        type: integer
+      successCount:
+        type: integer
+    example:
+        generalErrors:
+          - name: ValidationError
+            message: The field 'name' is required.
+            location: In body of request at position [0]
+          - name: ValidationError
+            message: The field 'unique' is required.
+            location: In body of request at position [2]
+        results:
+          - status: Success
+            code: 200
+            name: test
+          - status: Success
+            code: 200
+            name: test1
+        failedCount: 2
+        successCount: 2
+
+  GeneralOptionsStatus:
+    type: object
+    required:
+    - status
+    - code
+    properties:
+      status:
+        type: string
+      code:
+        type: integer
+      name:
+        type: string
+      errors:
+        type: array
+        items:
+          $ref: '#/definitions/ErrorEntry'
+    example:
+      status: Success
+      code: 200
+      name: test
+
+  GeneralOptionsMultiStatusResponse:
+    type: object
+    properties:
+      generalErrors:
+        type: array
+        items:
+          $ref: '#/definitions/ErrorEntry'
+      results:
+        type: array
+        items:
+          $ref: '#/definitions/GeneralOptionsStatus'
+      failedCount:
+        type: integer
+      successCount:
+        type: integer
+    example:
+        generalErrors:
+          - name: ValidationError
+            message: The field 'name' is required.
+            location: In body of request at position [0]
+          - name: ValidationError
+            message: The field 'unique' is required.
+            location: In body of request at position [2]
+        results:
+          - status: Success
+            code: 200
+            name: test
+          - status: Success
+            code: 200
+            name: test1
+        failedCount: 2
+        successCount: 2
+
+x-google-management:
+  metrics:
+    - name: 'read-request-rate'
+      displayName: 'Read Request Rate'
+      valueType: INT64
+      metricKind: DELTA
+    - name: 'write-request-rate'
+      displayName: 'Write Request Rate'
+      valueType: INT64
+      metricKind: DELTA
+  quota:
+    limits:
+      - name: 'read-request-rate-limit'
+        metric: 'read-request-rate'
+        unit: '1/min/{project}'
+        values:
+          # NOTE: the documentation must be updated after changing this value
+          STANDARD: 800
+      - name: 'write-request-rate-limit'
+        metric: 'write-request-rate'
+        unit: '1/min/{project}'
+        values:
+          # NOTE: the documentation must be updated after changing this value
+          STANDARD: 200
+
+responses:
+  CompanyWellMultiStatusResponse:
+    description: Multi-Status response for a company well request
+    schema:
+      $ref: '#/definitions/CompanyWellMultiStatusResponse'
+  WellMultiStatusResponse:
+    description: Multi-Status response for a well request
+    schema:
+      $ref: '#/definitions/WellMultiStatusResponse'
+  ProductionMultiStatusResponse:
+    description: Multi-Status response for a production request
+    schema:
+      $ref: '#/definitions/ProductionMultiStatusResponse'
+  OwnershipQualifierMultiStatusResponse:
+    description: Multi-Status response for an ownership qualifier request
+    schema:
+      $ref: '#/definitions/OwnershipQualifierMultiStatusResponse'
+  ProjectMultiStatusResponse:
+    description: Multi-Status response for a project request
+    schema:
+      $ref: '#/definitions/ProjectMultiStatusResponse'
+  ForecastParametersSuccessResponse:
+    description: Response for a successful forecast parameters request
+    schema:
+      $ref: '#/definitions/ForecastParametersSuccessResponse'
+  ForecastParametersErrorResponse:
+    description: Response for a failed forecast parameters request
+    schema:
+      $ref: '#/definitions/ForecastParametersErrorResponse'
+  ReservesCategoryMultiStatusResponse:
+    description: Multi-Status response for a reserves category request
+    schema:
+      $ref: '#/definitions/ReservesCategoryMultiStatusResponse'
+  OwnershipReversionMultiStatusResponse:
+    description: Multi-Status response for an ownership reversions request
+    schema:
+      $ref: '#/definitions/OwnershipReversionMultiStatusResponse'
+  EscalationsMultiStatusResponse:
+    description: Multi-Status response for an escalation model request
+    schema:
+      $ref: '#/definitions/EscalationsMultiStatusResponse'
+  EmissionsMultiStatusResponse:
+    description: Multi-Status response for an emission model request
+    schema:
+      $ref: '#/definitions/EmissionsMultiStatusResponse'      
+  DifferentialsMultiStatusResponse:
+    description: Multi-Status response for differentials model request
+    schema:
+      $ref: '#/definitions/DifferentialsMultiStatusResponse'
+  RiskingsMultiStatusResponse:
+    description: Multi-Status response for riskings model request
+    schema:
+      $ref: '#/definitions/RiskingsMultiStatusResponse'
+  PricingMultiStatusResponse:
+    description: Multi-Status response for a pricing model request
+    schema:
+      $ref: '#/definitions/PricingMultiStatusResponse'
+  ProductionTaxesMultiStatusResponse:
+    description: Multi-Status response for a production-taxes model request
+    schema:
+      $ref: '#/definitions/ProductionTaxesMultiStatusResponse'
+  StreamPropertiesMultiStatusResponse:
+    description: Multi-Status response for a stream-properties model request
+    schema:
+      $ref: '#/definitions/StreamPropertiesMultiStatusResponse'
+  ExpensesMultiStatusResponse:
+    description: Multi-Status response for an expenses model request
+    schema:
+      $ref: '#/definitions/ExpensesMultiStatusResponse'
+  FluidModelMultiStatusResponse:
+    description: Multi-Status response for an fluid model request
+    schema:
+      $ref: '#/definitions/FluidModelMultiStatusResponse'
+  CapexMultiStatusResponse:
+    description: Multi-Status response for a capex model request
+    schema:
+      $ref: '#/definitions/CapexMultiStatusResponse'
+  ActualForecastMultiStatusResponse:
+    description: Multi-Status response for a actual-forecast model request
+    schema:
+      $ref: '#/definitions/ActualForecastMultiStatusResponse'
+  DateSettingsMultiStatusResponse:
+    description: Multi-Status response for a date-settings model request
+    schema:
+      $ref: '#/definitions/DateSettingsMultiStatusResponse'
+  DepreciationMultiStatusResponse:
+    description: Multi-Status response for a depreciation model request
+    schema:
+      $ref: '#/definitions/DepreciationMultiStatusResponse'
+  GeneralOptionsMultiStatusResponse:
+    description: Multi-Status response for a general-options model request
+    schema:
+      $ref: '#/definitions/GeneralOptionsMultiStatusResponse'

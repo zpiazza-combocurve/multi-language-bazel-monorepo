@@ -1,0 +1,12 @@
+{
+	"name": "Actual Or Forecast Test",
+	"unique": false,
+	"actualOrForecast": {
+		"ignoreHistoryProd": false,
+		"replaceActualWithForecast": {
+			"oil": { "never": true },
+			"gas": { "never": true },
+			"water": { "never": true }
+		}
+	}
+}

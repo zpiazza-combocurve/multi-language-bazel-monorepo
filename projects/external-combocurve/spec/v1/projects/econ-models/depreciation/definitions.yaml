@@ -1,0 +1,296 @@
+BonusDepreciationObject:
+  type: object
+  required:
+    - tangibleBonusDepreciation
+    - intangibleBonusDepreciation
+  properties:
+    tangibleBonusDepreciation:
+      type: number
+    intangibleBonusDepreciation:
+      type: number
+
+
+DepreciationObject:
+  type: object
+  properties:
+    year:
+      type: number
+    tanFactor:
+      type: number
+    tanCumulative:
+      type: number
+    intanFactor:
+      type: number
+    intanCumulative:
+      type: number
+
+InputDepreciationObject:
+  type: object
+  required:
+    - intanFactor
+    - tanFactor
+  properties:
+    intanFactor:
+      type: number
+    tanFactor:
+      type: number
+
+DepreciationModel:
+  type: object
+  required:
+    - modelType
+  properties:
+    modelType:
+      type: string
+      enum:
+        - depletion
+        - depreciation
+    prebuilt:
+      type: string
+    taxCredit:
+      type: number
+    tangibleImmediateDepletion:
+      type: number
+    intangibleImmediateDepletion:
+      type: number
+    tangibleDepletionModel:
+      type: string
+      enum: 
+       - unit_of_production_major
+       - unit_of_production_BOE
+       - ecl
+       - fpd
+       - never
+    intangibleDepletionModel:
+      type: string
+      enum: 
+       - unit_of_production_major
+       - unit_of_production_BOE
+       - ecl
+       - fpd
+       - never
+    tcjaBonus:
+      type: boolean
+    bonusDepreciation:
+      type: array
+      maxItems: 1
+      minItems: 1
+      items:
+        $ref: '#/definitions/BonusDepreciationObject'
+    depreciation:
+      type: array
+      maxItems: 1
+      minItems: 100
+      items:
+        $ref: '#/definitions/DepreciationObject'
+
+InputDepreciationModel:
+  type: object
+  required:
+    - modelType
+  properties:
+    modelType:
+      type: string
+      enum:
+        - depletion
+        - depreciation
+    taxCredit:
+      type: number
+    tangibleImmediateDepletion:
+      type: number
+    intangibleImmediateDepletion:
+      type: number
+    tangibleDepletionModel:
+      type: string
+      enum: 
+       - unit_of_production_major
+       - unit_of_production_BOE
+       - ecl
+       - fpd
+       - never
+    intangibleDepletionModel:
+      type: string
+      enum: 
+       - unit_of_production_major
+       - unit_of_production_BOE
+       - ecl
+       - fpd
+       - never
+    tcjaBonus:
+      type: boolean
+    bonusDepreciation:
+      type: array
+      maxItems: 1
+      minItems: 1
+      items:
+        $ref: '#/definitions/BonusDepreciationObject'
+    depreciation:
+      type: array
+      maxItems: 1
+      minItems: 100
+      items:
+        $ref: '#/definitions/InputDepreciationObject'
+
+Depreciation:
+  type: object
+  required:
+    - name
+    - unique
+  properties:
+    id:
+      type: string
+      description: ID
+    copiedFrom:
+      type: string
+      description: Copied From
+    name:
+      type: string
+      description: Name
+    scenario:
+      type: string
+      description: Scenario ID
+    tags:
+      type: array
+      items:
+        type: string
+        description: Tag ID
+    unique:
+      type: boolean
+      description: Unique
+    well:
+      type: string
+      description: Well ID
+    createdAt:
+      type: string
+      format: date
+      description: Creation Date
+    updatedAt:
+      type: string
+      format: date
+      description: Updated At
+    createdBy:
+      type: string
+      description: Created By
+    lastUpdatedBy:
+      type: string
+      description: Last Updated By
+    depreciation:
+      $ref: '#/definitions/DepreciationModel'
+  example:
+    id: 649a0a00c7852a5f3ad12f64
+    copiedFrom:
+    name: rest-api-test
+    tags: []
+    unique: false
+    createdBy: 6234d6677118ecb7e6fd699a
+    lastUpdatedBy: 6234d6677118ecb7e6fd699a
+    createdAt: '2023-06-26T23:38:24.574Z'
+    updatedAt: '2023-06-26T23:38:24.574Z'
+    depreciation:
+      modelType: depletion
+      prebuilt: custom
+      taxCredit: 0
+      tangibleImmediateDepletion: 45
+      intangibleImmediateDepletion: 98
+      tangibleDepletionModel: unit_of_production_major
+      intangibleDepletionModel: fpd
+      tcjaBonus: false
+      bonusDepreciation:
+      - tangibleBonusDepreciation: 0
+        intangibleBonusDepreciation: 0
+      depreciation:
+      - year: 1
+        tanFactor: 0
+        tanCumulative: 0
+        intanFactor: 0
+        intanCumulative: 0
+
+
+DepreciationInput:
+  type: object
+  required:
+    - name
+    - unique
+  properties:
+    name:
+      type: string
+      description: Name
+    scenario:
+      type: string
+      description: Scenario ID
+    unique:
+      type: boolean
+      description: Unique
+    well:
+      type: string
+      description: Well ID
+    depreciation:
+      $ref: '#/definitions/InputDepreciationModel'
+  example:
+    name: rest-api-test
+    unique: false
+    depreciation:
+      modelType: depreciation
+      taxCredit: 0
+      tcjaBonus: false
+      bonusDepreciation:
+      - tangibleBonusDepreciation: 0
+        intangibleBonusDepreciation: 0
+      depreciation:
+      - tanFactor: 0
+        intanFactor: 0
+
+DepreciationInputList:
+  type: array
+  items:
+    $ref: '#/definitions/DepreciationInput'
+  maxItems: 200
+  minItems: 1
+  example:
+    - name: rest-api-test
+      unique: false
+      depreciation:
+        modelType: depreciation
+        taxCredit: 0
+        tcjaBonus: false
+        bonusDepreciation:
+        - tangibleBonusDepreciation: 0
+          intangibleBonusDepreciation: 0
+        depreciation:
+        - tanFactor: 0
+          intanFactor: 0
+
+
+DepreciationList:
+  type: array
+  items:
+    $ref: '#/definitions/Depreciation'
+  maxItems: 200
+  example:
+    - id: 649a0a00c7852a5f3ad12f64
+      copiedFrom:
+      name: rest-api-test
+      tags: []
+      unique: false
+      createdBy: 6234d6677118ecb7e6fd699a
+      lastUpdatedBy: 6234d6677118ecb7e6fd699a
+      createdAt: '2023-06-26T23:38:24.574Z'
+      updatedAt: '2023-06-26T23:38:24.574Z'
+      depreciation:
+        modelType: depletion
+        prebuilt: custom
+        taxCredit: 0
+        tangibleImmediateDepletion: 45
+        intangibleImmediateDepletion: 98
+        tangibleDepletionModel: unit_of_production_major
+        intangibleDepletionModel: fpd
+        tcjaBonus: false
+        bonusDepreciation:
+        - tangibleBonusDepreciation: 0
+          intangibleBonusDepreciation: 0
+        depreciation:
+        - year: 1
+          tanFactor: 0
+          tanCumulative: 0
+          intanFactor: 0
+          intanCumulative: 0

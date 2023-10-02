@@ -1,0 +1,147 @@
+{
+	"$id": "http://combocurve.com/schemas/emissions.json",
+	"type": "object",
+	"$ref": "base-econ-model.json",
+	"unevaluatedProperties": false,
+	"properties": {
+		"emissions": {
+			"type": "object",
+			"unevaluatedProperties": false,
+			"properties": {
+				"rows": {
+					"type": "array",
+					"maxItems": 1000,
+					"minItems": 0,
+					"items": {
+						"$ref": "#/definitions/EmissionRow"
+					}
+				}
+			},
+			"required": [
+				"rows"
+			]
+		}
+	},
+	"required": [
+		"emissions"
+	],
+	"definitions": {
+		"EmissionRow": {
+			"type": "object",
+			"unevaluatedProperties": false,
+			"properties": {
+				"selected": {
+					"type": "boolean"
+				},
+				"category": {
+					"$ref": "#/definitions/EmissionCategory"
+				},
+				"co2e": {
+					"$ref": "#/definitions/EmissionProduct"
+				},
+				"co2": {
+					"$ref": "#/definitions/EmissionProduct"
+				},
+				"ch4": {
+					"$ref": "#/definitions/EmissionProduct"
+				},
+				"n2o": {
+					"$ref": "#/definitions/EmissionProduct"
+				},
+				"unit": {
+					"$ref": "#/definitions/EmissionUnit"
+				},
+				"escalationModel": {
+					"$ref": "rows-validation-defs.json#/definitions/EscalationModel"
+				}
+			},
+			"required": [
+				"category",
+				"co2e",
+				"co2",
+				"ch4",
+				"n2o",
+				"unit"
+			],
+			"if": {
+				"type": "object",
+				"properties": {
+					"co2e": {
+						"type": "number",
+						"exclusiveMinimum": 0
+					}
+				},
+				"required": [
+					"co2"
+				]
+			},
+			"then":{
+				"type": "object",
+				"properties": {
+					"co2": {
+						"errorMessage": "co2 must be zero if co2e is specified",
+						"type": "number",
+						"const": 0
+					},
+					"ch4": {
+						"errorMessage": "ch4 must be zero if co2e is specified",
+						"type": "number",
+						"const": 0
+					},
+					"n2o": {
+						"errorMessage": "n2o must be zero if co2e is specified",
+						"type": "number",
+						"const": 0
+					}
+				},
+				"required": [
+					"co2",
+					"ch4",
+					"n2o"
+				]
+			}
+		},
+		"EmissionProduct": {
+			"type": "number",
+			"minimum": -1e10,
+			"maximum": 1e10
+		},
+		"EmissionCategory": {
+			"type": "string",
+			"enum": [
+				"associated_gas",
+				"acid_gas_removal_units",
+				"centrifugal_compressor",
+				"eor_hydrocarbon_liquids",
+				"eor_injection_pumps",
+				"liquids_unloading",
+				"pneumatic_device",
+				"dehydrators",
+				"equipment_leaks",
+				"atmospheric_tank",
+				"reciprocating_compressor",
+				"completions_with_fracturing",
+				"completions_without_fracturing",
+				"drilling",
+				"completion",
+				"combustion",
+				"pneumatic_pump",
+				"well_testing",
+				"blowdown_vent_stacks",
+				"flare",
+				"scope2",
+				"scope3"
+			]
+		},
+		"EmissionUnit": {
+			"type": "string",
+			"enum": [
+				"mt_per_mbbl",
+				"mt_per_mmcf",
+				"mt_per_mboe",
+				"mt_per_well_per_year",
+				"mt_per_new_well"
+			]
+		}
+	}
+}

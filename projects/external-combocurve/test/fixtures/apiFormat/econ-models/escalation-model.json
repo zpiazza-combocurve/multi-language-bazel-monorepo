@@ -1,0 +1,14 @@
+{
+	"name": "test",
+	"unique": false,
+	"escalation": {
+		"rows": [
+			{
+				"pct_per_year": 200,
+				"entire_well_life": "Flat"
+			}
+		],
+		"escalationFrequency": "constant",
+		"calculationMethod": "simple"
+	}
+}

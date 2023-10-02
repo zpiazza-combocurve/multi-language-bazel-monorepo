@@ -1,0 +1,176 @@
+{
+	"name": "Differentials Test",
+	"unique": false,
+	"differentials": {
+		"firstDifferential": {
+			"oil": {
+				"escalationModel": "none",
+				"rows": [
+					{
+						"entireWellLife": "Flat",
+						"pctOfBasePrice": 100
+					}
+				]
+			},
+			"gas": {
+				"escalationModel": "64120643b301cfee75cc1a21",
+				"rows": [
+					{
+						"dollarPerMcf": 0,
+						"entireWellLife": "Flat"
+					}
+				]
+			},
+			"ngl": {
+				"escalationModel": "none",
+				"rows": [
+					{
+						"dollarPerGal": 0,
+						"entireWellLife": "Flat"
+					}
+				]
+			},
+			"dripCondensate": {
+				"escalationModel": "none",
+				"rows": [
+					{
+						"offsetToAsOf": 2,
+						"pctOfBasePrice": 100
+					},
+					{
+						"offsetToAsOf": 3,
+						"pctOfBasePrice": 50
+					},
+					{
+						"offsetToAsOf": 4,
+						"pctOfBasePrice": 0.000001
+					}
+				]
+			}
+		},
+		"secondDifferential": {
+			"oil": {
+				"escalationModel": "none",
+				"rows": [
+					{
+						"dollarPerBbl": 200,
+						"entireWellLife": "Flat"
+					}
+				]
+			},
+			"gas": {
+				"escalationModel": "none",
+				"rows": [
+					{
+						"offsetToAsOf": 2,
+						"pctOfBasePrice": 100
+					},
+					{
+						"offsetToAsOf": 1,
+						"pctOfBasePrice": 100
+					},
+					{
+						"offsetToAsOf": 10,
+						"pctOfBasePrice": 100
+					}
+				]
+			},
+			"ngl": {
+				"escalationModel": "none",
+				"rows": [
+					{
+						"dollarPerBbl": 0,
+						"offsetToAsOf": 1
+					},
+					{
+						"dollarPerBbl": 0,
+						"offsetToAsOf": 2
+					},
+					{
+						"dollarPerBbl": 0,
+						"offsetToAsOf": 3
+					}
+				]
+			},
+			"dripCondensate": {
+				"escalationModel": "6418ab17b301cfee750745eb",
+				"rows": [
+					{
+						"dates": "2020-02-01",
+						"pctOfBasePrice": 1000000
+					},
+					{
+						"dates": "2021-02-01",
+						"pctOfBasePrice": 0.123456789
+					},
+					{
+						"dates": "2022-10-01",
+						"pctOfBasePrice": 0.000001
+					}
+				]
+			}
+		},
+		"thirdDifferential": {
+			"oil": {
+				"escalationModel": "none",
+				"rows": [
+					{
+						"dollarPerBbl": 200,
+						"entireWellLife": "Flat"
+					}
+				]
+			},
+			"gas": {
+				"escalationModel": "none",
+				"rows": [
+					{
+						"offsetToAsOf": 2,
+						"pctOfBasePrice": 100
+					},
+					{
+						"offsetToAsOf": 1,
+						"pctOfBasePrice": 100
+					},
+					{
+						"offsetToAsOf": 10,
+						"pctOfBasePrice": 100
+					}
+				]
+			},
+			"ngl": {
+				"escalationModel": "none",
+				"rows": [
+					{
+						"dollarPerBbl": 0,
+						"offsetToAsOf": 1
+					},
+					{
+						"dollarPerBbl": 0,
+						"offsetToAsOf": 2
+					},
+					{
+						"dollarPerBbl": 0,
+						"offsetToAsOf": 3
+					}
+				]
+			},
+			"dripCondensate": {
+				"escalationModel": "6418ab17b301cfee750745eb",
+				"rows": [
+					{
+						"dates": "2020-02-01",
+						"pctOfBasePrice": 1000000
+					},
+					{
+						"dates": "2021-02-01",
+						"pctOfBasePrice": 0.123456789
+					},
+					{
+						"dates": "2022-10-01",
+						"pctOfBasePrice": 0.000001
+					}
+				]
+			}
+		}
+	}
+}

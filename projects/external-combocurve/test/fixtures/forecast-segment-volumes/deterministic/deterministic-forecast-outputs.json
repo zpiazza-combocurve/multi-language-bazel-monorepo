@@ -1,0 +1,709 @@
+[
+	{
+		"lastAutomaticRun": { "date": null, "source": null, "success": false },
+		"warning": { "status": true, "message": "Automatic forecast failed." },
+		"ratio": { "segments": [], "basePhase": null, "x": null, "eur": null, "rur": null, "diagnostics": {} },
+		"data_freq": "monthly",
+		"diagDate": null,
+		"forecasted": true,
+		"forecastType": "rate",
+		"forecastSubType": "automatic",
+		"phase": "oil",
+		"runDate": null,
+		"typeCurve": null,
+		"status": "in_progress",
+		"reviewedAt": null,
+		"reviewedBy": null,
+		"forecastedAt": "2023-01-17T22:09:14.166Z",
+		"forecastedBy": "62e3f5701ce8310012967e10",
+		"_id": "63c71baa59908b00136bc2d5",
+		"forecast": "63c71b71dc737200134c804c",
+		"P_dict": {
+			"best": {
+				"diagnostics": {},
+				"eur": 3241264.937056844,
+				"rur": 3142919.588034816,
+				"segments": [
+					{
+						"name": "arps_modified",
+						"q_start": 1154.1350023043285,
+						"q_end": 4.749894667219016,
+						"slope": -1,
+						"D_eff": 0.262,
+						"D": 0.0010447028766054972,
+						"b": 1.4473684210526314,
+						"target_D_eff_sw": 0.08,
+						"realized_D_eff_sw": 0.07999999999999985,
+						"sw_idx": 46755.156207155305,
+						"q_sw": 403.554647178344,
+						"D_exp_eff": 0.07999999999999985,
+						"D_exp": 0.00022828640366612162,
+						"start_idx": 44390,
+						"end_idx": 66214
+					}
+				]
+			}
+		},
+		"p_extra": {},
+		"project": "62fc0449133c6c001360278f",
+		"well": "62fc044e65e00505b9f5430e",
+		"__v": 0,
+		"createdAt": "2023-01-17T22:05:30.365Z",
+		"updatedAt": "2023-01-17T22:10:32.630Z"
+	},
+	{
+		"lastAutomaticRun": { "date": null, "source": null, "success": false },
+		"warning": { "status": true, "message": "Automatic forecast failed." },
+		"ratio": { "segments": [], "basePhase": null, "x": null, "eur": null, "rur": null, "diagnostics": {} },
+		"data_freq": "monthly",
+		"diagDate": null,
+		"forecasted": true,
+		"forecastType": "rate",
+		"forecastSubType": "automatic",
+		"phase": "gas",
+		"runDate": null,
+		"typeCurve": null,
+		"status": "in_progress",
+		"reviewedAt": null,
+		"reviewedBy": null,
+		"forecastedAt": "2023-01-17T22:09:14.275Z",
+		"forecastedBy": "62e3f5701ce8310012967e10",
+		"_id": "63c71baa59908b00136bc2d6",
+		"forecast": "63c71b71dc737200134c804c",
+		"P_dict": {
+			"best": {
+				"diagnostics": {},
+				"eur": 1201028.5710120623,
+				"rur": 1131765.0549238257,
+				"segments": [
+					{
+						"name": "arps_modified",
+						"q_start": 753.1851391069231,
+						"q_end": 1.3925921174323124,
+						"slope": -1,
+						"D_eff": 0.4237777777777778,
+						"D": 0.001997669334389485,
+						"b": 0.9736842105263157,
+						"target_D_eff_sw": 0.08,
+						"realized_D_eff_sw": 0.07999999999999996,
+						"sw_idx": 48405.7406152545,
+						"q_sw": 81.170374430758,
+						"D_exp_eff": 0.07999999999999996,
+						"D_exp": 0.000228286403666122,
+						"start_idx": 44421,
+						"end_idx": 66214
+					}
+				]
+			}
+		},
+		"p_extra": {},
+		"project": "62fc0449133c6c001360278f",
+		"well": "62fc044e65e00505b9f5430e",
+		"__v": 0,
+		"createdAt": "2023-01-17T22:05:30.366Z",
+		"updatedAt": "2023-01-17T22:10:32.730Z"
+	},
+	{
+		"lastAutomaticRun": { "date": null, "source": null, "success": false },
+		"warning": { "status": false, "message": "" },
+		"ratio": { "segments": [], "basePhase": null, "x": null, "eur": null, "rur": null, "diagnostics": {} },
+		"data_freq": "monthly",
+		"diagDate": null,
+		"forecasted": true,
+		"forecastType": "rate",
+		"forecastSubType": "automatic",
+		"phase": "water",
+		"runDate": null,
+		"typeCurve": null,
+		"status": "in_progress",
+		"reviewedAt": null,
+		"reviewedBy": null,
+		"forecastedAt": "2023-01-17T22:10:32.831Z",
+		"forecastedBy": "62e3f5701ce8310012967e10",
+		"_id": "63c71baa59908b00136bc2d7",
+		"forecast": "63c71b71dc737200134c804c",
+		"P_dict": {
+			"best": {
+				"diagnostics": {},
+				"eur": 867387.685381656,
+				"rur": 547315.5620311801,
+				"segments": [
+					{
+						"name": "empty",
+						"start_idx": 44358,
+						"end_idx": 44359
+					},
+					{
+						"name": "arps_modified",
+						"q_start": 3221.796175524008,
+						"q_end": 0.4165320901331953,
+						"slope": -1,
+						"D_eff": 0.8876143638960398,
+						"D": 0.017222490568375524,
+						"b": 0.8416226267838489,
+						"target_D_eff_sw": 0.08,
+						"realized_D_eff_sw": 0.07999999999999996,
+						"sw_idx": 49495.79200147162,
+						"q_sw": 18.92999699581517,
+						"D_exp_eff": 0.07999999999999996,
+						"D_exp": 0.000228286403666122,
+						"start_idx": 44360,
+						"end_idx": 66214
+					}
+				]
+			}
+		},
+		"p_extra": {},
+		"project": "62fc0449133c6c001360278f",
+		"well": "62fc044e65e00505b9f5430e",
+		"__v": 0,
+		"createdAt": "2023-01-17T22:05:30.366Z",
+		"updatedAt": "2023-01-17T22:10:32.831Z"
+	},
+	{
+		"lastAutomaticRun": { "date": null, "source": null, "success": false },
+		"warning": { "status": true, "message": "Automatic forecast failed." },
+		"ratio": { "segments": [], "basePhase": null, "x": null, "eur": null, "rur": null, "diagnostics": {} },
+		"data_freq": "monthly",
+		"diagDate": null,
+		"forecasted": true,
+		"forecastType": "rate",
+		"forecastSubType": "automatic",
+		"phase": "oil",
+		"runDate": null,
+		"typeCurve": null,
+		"status": "in_progress",
+		"reviewedAt": null,
+		"reviewedBy": null,
+		"forecastedAt": "2023-01-17T22:09:13.828Z",
+		"forecastedBy": "62e3f5701ce8310012967e10",
+		"_id": "63c71baa59908b00136bc2d8",
+		"forecast": "63c71b71dc737200134c804c",
+		"P_dict": {
+			"best": {
+				"diagnostics": {},
+				"eur": 3393005.7893332625,
+				"rur": 3300204.6531440774,
+				"segments": [
+					{
+						"name": "arps_modified",
+						"q_start": 1051.7265692738067,
+						"q_end": 4.978172640256372,
+						"slope": -1,
+						"D_eff": 0.19122222222222218,
+						"D": 0.0006529665179717787,
+						"b": 1.0789473684210527,
+						"target_D_eff_sw": 0.08,
+						"realized_D_eff_sw": 0.07999999999999996,
+						"sw_idx": 47061.5275702969,
+						"q_sw": 397.08903632137884,
+						"D_exp_eff": 0.07999999999999996,
+						"D_exp": 0.00022828640366612198,
+						"start_idx": 44421,
+						"end_idx": 66244
+					}
+				]
+			}
+		},
+		"p_extra": {},
+		"project": "62fc0449133c6c001360278f",
+		"well": "62fc044e65e00505def54310",
+		"__v": 0,
+		"createdAt": "2023-01-17T22:05:30.366Z",
+		"updatedAt": "2023-01-17T22:10:32.965Z"
+	},
+	{
+		"lastAutomaticRun": { "date": null, "source": null, "success": false },
+		"warning": { "status": true, "message": "Automatic forecast failed." },
+		"ratio": { "segments": [], "basePhase": null, "x": null, "eur": null, "rur": null, "diagnostics": {} },
+		"data_freq": "monthly",
+		"diagDate": null,
+		"forecasted": true,
+		"forecastType": "rate",
+		"forecastSubType": "automatic",
+		"phase": "gas",
+		"runDate": null,
+		"typeCurve": null,
+		"status": "in_progress",
+		"reviewedAt": null,
+		"reviewedBy": null,
+		"forecastedAt": "2023-01-17T22:09:13.931Z",
+		"forecastedBy": "62e3f5701ce8310012967e10",
+		"_id": "63c71baa59908b00136bc2d9",
+		"forecast": "63c71b71dc737200134c804c",
+		"P_dict": {
+			"best": {
+				"diagnostics": {},
+				"eur": 819579.407330695,
+				"rur": 767118.9761496596,
+				"segments": [
+					{
+						"name": "arps_modified",
+						"q_start": 650.7338795832559,
+						"q_end": 0.8585208801789684,
+						"slope": -1,
+						"D_eff": 0.5147777777777779,
+						"D": 0.0028738834316870787,
+						"b": 0.9736842105263157,
+						"target_D_eff_sw": 0.08,
+						"realized_D_eff_sw": 0.07999999999999996,
+						"sw_idx": 48593.487658428574,
+						"q_sw": 48.270842724734834,
+						"D_exp_eff": 0.07999999999999996,
+						"D_exp": 0.00022828640366612195,
+						"start_idx": 44452,
+						"end_idx": 66244
+					}
+				]
+			}
+		},
+		"p_extra": {},
+		"project": "62fc0449133c6c001360278f",
+		"well": "62fc044e65e00505def54310",
+		"__v": 0,
+		"createdAt": "2023-01-17T22:05:30.366Z",
+		"updatedAt": "2023-01-17T22:10:33.051Z"
+	},
+	{
+		"lastAutomaticRun": { "date": null, "source": null, "success": false },
+		"warning": { "status": false, "message": "" },
+		"ratio": { "segments": [], "basePhase": null, "x": null, "eur": null, "rur": null, "diagnostics": {} },
+		"data_freq": "monthly",
+		"diagDate": null,
+		"forecasted": true,
+		"forecastType": "rate",
+		"forecastSubType": "automatic",
+		"phase": "water",
+		"runDate": null,
+		"typeCurve": null,
+		"status": "in_progress",
+		"reviewedAt": null,
+		"reviewedBy": null,
+		"forecastedAt": "2023-01-17T22:10:33.157Z",
+		"forecastedBy": "62e3f5701ce8310012967e10",
+		"_id": "63c71baa59908b00136bc2da",
+		"forecast": "63c71b71dc737200134c804c",
+		"P_dict": {
+			"best": {
+				"diagnostics": {},
+				"eur": 1270748.322345796,
+				"rur": 1009422.726312677,
+				"segments": [
+					{
+						"name": "arps_modified",
+						"q_start": 2697.526005264887,
+						"q_end": 0.9405091404506621,
+						"slope": -1,
+						"D_eff": 0.7847150485159393,
+						"D": 0.009240590484349902,
+						"b": 0.9190250179302101,
+						"target_D_eff_sw": 0.08,
+						"realized_D_eff_sw": 0.07999999999999996,
+						"sw_idx": 49008.67015635412,
+						"q_sw": 48.098815663646846,
+						"D_exp_eff": 0.07999999999999996,
+						"D_exp": 0.0002282864036661218,
+						"start_idx": 44360,
+						"end_idx": 66244
+					}
+				]
+			}
+		},
+		"p_extra": {},
+		"project": "62fc0449133c6c001360278f",
+		"well": "62fc044e65e00505def54310",
+		"__v": 0,
+		"createdAt": "2023-01-17T22:05:30.366Z",
+		"updatedAt": "2023-01-17T22:10:33.157Z"
+	},
+	{
+		"lastAutomaticRun": { "date": null, "source": null, "success": false },
+		"warning": { "status": false, "message": "" },
+		"ratio": { "segments": [], "basePhase": null, "x": null, "eur": null, "rur": null, "diagnostics": {} },
+		"data_freq": "monthly",
+		"diagDate": null,
+		"forecasted": true,
+		"forecastType": "rate",
+		"forecastSubType": "automatic",
+		"phase": "oil",
+		"runDate": null,
+		"typeCurve": null,
+		"status": "in_progress",
+		"reviewedAt": null,
+		"reviewedBy": null,
+		"forecastedAt": "2023-01-17T22:10:33.269Z",
+		"forecastedBy": "62e3f5701ce8310012967e10",
+		"_id": "63c71c4e59908b00136bc2e7",
+		"forecast": "63c71b71dc737200134c804c",
+		"P_dict": {
+			"best": {
+				"diagnostics": {},
+				"eur": 341865.2592575477,
+				"rur": 157960.82961465666,
+				"segments": [
+					{
+						"name": "arps_modified",
+						"q_start": 182.8710789650924,
+						"q_end": 0.2842891920075727,
+						"slope": -1,
+						"D_eff": 0.5014341005923435,
+						"D": 0.0027519758470377375,
+						"b": 0.9984781942201123,
+						"target_D_eff_sw": 0.08,
+						"realized_D_eff_sw": 0.07999999999999996,
+						"sw_idx": 47774.20962778563,
+						"q_sw": 15.112371657538677,
+						"D_exp_eff": 0.07999999999999996,
+						"D_exp": 0.00022828640366612192,
+						"start_idx": 43751,
+						"end_idx": 65179
+					}
+				]
+			}
+		},
+		"p_extra": {},
+		"project": "62fc0449133c6c001360278f",
+		"well": "62fc044e65e00508ddf54378",
+		"__v": 0,
+		"createdAt": "2023-01-17T22:08:14.912Z",
+		"updatedAt": "2023-01-17T22:10:33.269Z"
+	},
+	{
+		"lastAutomaticRun": { "date": null, "source": null, "success": false },
+		"warning": { "status": false, "message": "" },
+		"ratio": { "segments": [], "basePhase": null, "x": null, "eur": null, "rur": null, "diagnostics": {} },
+		"data_freq": "monthly",
+		"diagDate": null,
+		"forecasted": true,
+		"forecastType": "rate",
+		"forecastSubType": "automatic",
+		"phase": "gas",
+		"runDate": null,
+		"typeCurve": null,
+		"status": "in_progress",
+		"reviewedAt": null,
+		"reviewedBy": null,
+		"forecastedAt": "2023-01-17T22:10:33.393Z",
+		"forecastedBy": "62e3f5701ce8310012967e10",
+		"_id": "63c71c4e59908b00136bc2e8",
+		"forecast": "63c71b71dc737200134c804c",
+		"P_dict": {
+			"best": {
+				"diagnostics": {},
+				"eur": 252881.21902196703,
+				"rur": 51321.422806896095,
+				"segments": [
+					{
+						"name": "arps_modified",
+						"q_start": 734.1614084599589,
+						"q_end": 0.10000886162628571,
+						"slope": -1,
+						"D_eff": 0.9395127662363205,
+						"D": 0.043197879116447145,
+						"b": 1.0078928954643729,
+						"target_D_eff_sw": 0.08,
+						"realized_D_eff_sw": 0.07999999999999996,
+						"sw_idx": 48197.19059025852,
+						"q_sw": 4.042410536900728,
+						"D_exp_eff": 0.07999999999999996,
+						"D_exp": 0.00022828640366612192,
+						"start_idx": 43874,
+						"end_idx": 64402
+					}
+				]
+			}
+		},
+		"p_extra": {},
+		"project": "62fc0449133c6c001360278f",
+		"well": "62fc044e65e00508ddf54378",
+		"__v": 0,
+		"createdAt": "2023-01-17T22:08:14.912Z",
+		"updatedAt": "2023-01-17T22:10:33.393Z"
+	},
+	{
+		"lastAutomaticRun": { "date": null, "source": null, "success": false },
+		"warning": { "status": false, "message": "" },
+		"ratio": { "segments": [], "basePhase": null, "x": null, "eur": null, "rur": null, "diagnostics": {} },
+		"data_freq": "monthly",
+		"diagDate": null,
+		"forecasted": true,
+		"forecastType": "rate",
+		"forecastSubType": "automatic",
+		"phase": "water",
+		"runDate": null,
+		"typeCurve": null,
+		"status": "in_progress",
+		"reviewedAt": null,
+		"reviewedBy": null,
+		"forecastedAt": "2023-01-17T22:10:33.525Z",
+		"forecastedBy": "62e3f5701ce8310012967e10",
+		"_id": "63c71c4e59908b00136bc2e9",
+		"forecast": "63c71b71dc737200134c804c",
+		"P_dict": {
+			"best": {
+				"diagnostics": {},
+				"eur": 1039556.7844763811,
+				"rur": 295085.18892689317,
+				"segments": [
+					{
+						"name": "arps_modified",
+						"q_start": 856.7348202053388,
+						"q_end": 0.531746486420514,
+						"slope": -1,
+						"D_eff": 0.7656733591919738,
+						"D": 0.010015467683026151,
+						"b": 1.1247826060627961,
+						"target_D_eff_sw": 0.08,
+						"realized_D_eff_sw": 0.07999999999999996,
+						"sw_idx": 47556.728130208,
+						"q_sw": 29.705631394576066,
+						"D_exp_eff": 0.07999999999999996,
+						"D_exp": 0.00022828640366612192,
+						"start_idx": 43751,
+						"end_idx": 65179
+					}
+				]
+			}
+		},
+		"p_extra": {},
+		"project": "62fc0449133c6c001360278f",
+		"well": "62fc044e65e00508ddf54378",
+		"__v": 0,
+		"createdAt": "2023-01-17T22:08:14.912Z",
+		"updatedAt": "2023-01-17T22:10:33.525Z"
+	},
+	{
+		"description": "this wells oil segment ends before the 5 year cutoff (2024-11-19)",
+		"_id": "63bdce17dc401f001261492d",
+		"lastAutomaticRun": {
+			"date": null,
+			"source": null,
+			"success": false
+		},
+		"warning": {
+			"status": false,
+			"message": ""
+		},
+		"ratio": {
+			"segments": [],
+			"basePhase": null,
+			"x": null,
+			"eur": null,
+			"rur": null,
+			"diagnostics": {}
+		},
+		"data_freq": "monthly",
+		"diagDate": null,
+		"forecasted": true,
+		"forecastType": "rate",
+		"forecastSubType": "automatic",
+		"phase": "water",
+		"runDate": null,
+		"typeCurve": null,
+		"status": "in_progress",
+		"reviewedAt": null,
+		"reviewedBy": null,
+		"forecastedAt": "2023-01-10T20:44:04.413+0000",
+		"forecastedBy": "635ff3378491a600124582bb",
+		"forecast": "63bdce14dc401f00126131a7",
+		"P_dict": {
+			"best": {
+				"diagnostics": {},
+				"eur": 151065.750944901,
+				"rur": 544.7509449009958,
+				"segments": [
+					{
+						"name": "arps",
+						"slope": -1,
+						"b": 2,
+						"D_eff": 0.7261071815873505,
+						"D": 0.016879209795547738,
+						"q_start": 14.751540041067761,
+						"q_end": 14.508677676728784,
+						"start_idx": 43874,
+						"end_idx": 43875
+					},
+					{
+						"name": "arps_modified",
+						"q_start": 14.269813683261466,
+						"q_end": 0.10003756110448869,
+						"slope": -1,
+						"D_eff": 0.8965584842180251,
+						"D": 0.016085265539465505,
+						"b": 0.7380964135936776,
+						"target_D_eff_sw": 0.08,
+						"realized_D_eff_sw": 0.07999999999999996,
+						"sw_idx": 49726.58210519457,
+						"q_sw": 0.044745622164521104,
+						"D_exp_eff": 0.07999999999999996,
+						"D_exp": 0.00022828640366612179,
+						"start_idx": 43876,
+						"end_idx": 47069
+					}
+				]
+			}
+		},
+		"p_extra": {},
+		"project": "63bdcdf1dc401f0012613185",
+		"well": "63bdcdf5678265c42faad728",
+		"__v": 0,
+		"createdAt": "2023-01-10T20:44:04.413+0000",
+		"updatedAt": "2023-01-10T20:44:04.413+0000"
+	},
+	{
+		"description": "this wells oil segment ends before the 5 year cutoff (2024-11-19)",
+		"_id": "63bdce17dc401f001261492b",
+		"lastAutomaticRun": {
+			"date": null,
+			"source": null,
+			"success": false
+		},
+		"warning": {
+			"status": false,
+			"message": ""
+		},
+		"ratio": {
+			"segments": [],
+			"basePhase": null,
+			"x": null,
+			"eur": null,
+			"rur": null,
+			"diagnostics": {}
+		},
+		"data_freq": "monthly",
+		"diagDate": null,
+		"forecasted": true,
+		"forecastType": "rate",
+		"forecastSubType": "automatic",
+		"phase": "oil",
+		"runDate": null,
+		"typeCurve": null,
+		"status": "in_progress",
+		"reviewedAt": null,
+		"reviewedBy": null,
+		"forecastedAt": "2023-01-10T20:44:04.413+0000",
+		"forecastedBy": "635ff3378491a600124582bb",
+		"forecast": "63bdce14dc401f00126131a7",
+		"P_dict": {
+			"best": {
+				"diagnostics": {},
+				"eur": 25353.172118828017,
+				"rur": 137.17211882801712,
+				"segments": [
+					{
+						"name": "arps",
+						"slope": -1,
+						"b": 2,
+						"D_eff": 0.7285109874102245,
+						"D": 0.01720378401565081,
+						"q_start": 3.4168377823408624,
+						"q_end": 3.3595299417499906,
+						"start_idx": 43934,
+						"end_idx": 43935
+					},
+					{
+						"name": "arps_modified",
+						"q_start": 3.303183278950515,
+						"q_end": 0.10003580296149296,
+						"slope": -1,
+						"D_eff": 0.8658652285696264,
+						"D": 0.01632343056397614,
+						"b": 0.9394224210931504,
+						"target_D_eff_sw": 0.08,
+						"realized_D_eff_sw": 0.07999999999999996,
+						"sw_idx": 48533.71944664869,
+						"q_sw": 0.035077355624805975,
+						"D_exp_eff": 0.07999999999999996,
+						"D_exp": 0.00022828640366612203,
+						"start_idx": 43936,
+						"end_idx": 45613
+					}
+				]
+			}
+		},
+		"p_extra": {},
+		"project": "63bdcdf1dc401f0012613185",
+		"well": "63bdcdf5678265c42faad728",
+		"__v": 0,
+		"createdAt": "2023-01-10T20:44:04.413+0000",
+		"updatedAt": "2023-01-10T20:44:04.413+0000"
+	},
+	{
+		"description": "this wells oil segment ends before the 5 year cutoff (2024-11-19)",
+		"_id": "63bdce17dc401f001261492c",
+		"lastAutomaticRun": {
+			"date": null,
+			"source": null,
+			"success": false
+		},
+		"warning": {
+			"status": false,
+			"message": ""
+		},
+		"ratio": {
+			"segments": [],
+			"basePhase": null,
+			"x": null,
+			"eur": null,
+			"rur": null,
+			"diagnostics": {}
+		},
+		"data_freq": "monthly",
+		"diagDate": null,
+		"forecasted": true,
+		"forecastType": "rate",
+		"forecastSubType": "automatic",
+		"phase": "gas",
+		"runDate": null,
+		"typeCurve": null,
+		"status": "in_progress",
+		"reviewedAt": null,
+		"reviewedBy": null,
+		"forecastedAt": "2023-01-10T20:44:04.413+0000",
+		"forecastedBy": "635ff3378491a600124582bb",
+		"forecast": "63bdce14dc401f00126131a7",
+		"P_dict": {
+			"best": {
+				"diagnostics": {},
+				"eur": 81794.91159949961,
+				"rur": 867.91159949961,
+				"segments": [
+					{
+						"name": "arps",
+						"slope": -1,
+						"b": 2,
+						"D_eff": 0.6926999024270977,
+						"D": 0.013127281656436503,
+						"q_start": 27.860369609856264,
+						"q_end": 27.501686244290152,
+						"start_idx": 43934,
+						"end_idx": 43935
+					},
+					{
+						"name": "arps_modified",
+						"q_start": 27.14762068381907,
+						"q_end": 0.10002547332681508,
+						"slope": -1,
+						"D_eff": 0.8934859277399676,
+						"D": 0.012696165189211807,
+						"b": 0.5867070332862373,
+						"target_D_eff_sw": 0.08,
+						"realized_D_eff_sw": 0.07999999999999996,
+						"sw_idx": 51267.93601188092,
+						"q_sw": 0.028785678341584343,
+						"D_exp_eff": 0.07999999999999996,
+						"D_exp": 0.00022828640366612187,
+						"start_idx": 43936,
+						"end_idx": 47397
+					}
+				]
+			}
+		},
+		"p_extra": {},
+		"project": "63bdcdf1dc401f0012613185",
+		"well": "63bdcdf5678265c42faad728",
+		"__v": 0,
+		"createdAt": "2023-01-10T20:44:04.413+0000",
+		"updatedAt": "2023-01-10T20:44:04.413+0000"
+	}
+]

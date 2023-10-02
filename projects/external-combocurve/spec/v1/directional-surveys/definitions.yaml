@@ -1,0 +1,403 @@
+DirectionalSurveyInsertRequest:
+  type: object
+  required:
+    - chosenID
+    - dataSource
+    - spatialDataType
+    - measuredDepth
+    - trueVerticalDepth
+    - azimuth
+    - inclination
+    - deviationEW
+    - deviationNS
+    - latitude
+    - longitude
+  properties:
+    chosenID:
+      type: string
+    dataSource:
+      type: string
+    spatialDataType:
+      type: string
+      enum:
+        - 'NAD27'
+        - 'NAD83'
+        - 'WGS84'
+    measuredDepth:
+      type: array
+      items:
+        type: number
+    trueVerticalDepth:
+      type: array
+      items:
+        type: number
+    azimuth:
+      type: array
+      items:
+        type: number
+    inclination:
+      type: array
+      items:
+        type: number
+    deviationEW:
+      type: array
+      items:
+        type: number
+    deviationNS:
+      type: array
+      items:
+        type: number
+    latitude:
+      type: array
+      items:
+        type: number
+    longitude:
+      type: array
+      items:
+        type: number
+    projectID:
+      type: string
+  example:
+    chosenID: '123_my_chosen'
+    dataSource: 'IHS'
+    spatialDataType: 'NAD27'
+    measuredDepth:
+      - 0
+      - 10
+    trueVerticalDepth:
+      - 0
+      - 10
+    azimuth:
+      - 0
+      - 10
+    inclination:
+      - 0
+      - 10
+    deviationEW:
+      - 0
+      - 10
+    deviationNS:
+      - 0
+      - 10
+    latitude:
+      - 0
+      - 10
+    longitude:
+      - 0
+      - 10
+DirectionalSurveyUpdateRequest:
+  type: object
+  properties:
+    spatialDataType:
+      type: string
+      enum:
+        - 'NAD27'
+        - 'NAD83'
+        - 'WGS84'
+    dataSource:
+      type: string
+    update:
+      type: object
+      required:
+        - measuredDepth
+        - trueVerticalDepth
+        - latitude
+        - longitude
+        - azimuth
+        - inclination
+        - deviationEW
+        - deviationNS
+      properties:
+        measuredDepth:
+          type: array
+          items:
+            type: number
+        trueVerticalDepth:
+          type: array
+          items:
+            type: number
+        azimuth:
+          type: array
+          items:
+            type: number
+        inclination:
+          type: array
+          items:
+            type: number
+        deviationEW:
+          type: array
+          items:
+            type: number
+        deviationNS:
+          type: array
+          items:
+            type: number
+        latitude:
+          type: array
+          items:
+            type: number
+        longitude:
+          type: array
+          items:
+            type: number
+    add:
+      type: object
+      required:
+        - measuredDepth
+        - trueVerticalDepth
+        - azimuth
+        - inclination
+        - deviationEW
+        - deviationNS
+        - latitude
+        - longitude
+      properties:
+        measuredDepth:
+          type: array
+          items:
+            type: number
+        trueVerticalDepth:
+          type: array
+          items:
+            type: number
+        azimuth:
+          type: array
+          items:
+            type: number
+        inclination:
+          type: array
+          items:
+            type: number
+        deviationEW:
+          type: array
+          items:
+            type: number
+        deviationNS:
+          type: array
+          items:
+            type: number
+        latitude:
+          type: array
+          items:
+            type: number
+        longitude:
+          type: array
+          items:
+            type: number
+    remove:
+      type: array
+      items:
+        type: number
+  example:
+    spatialDataType: 'NAD27'
+    update:
+      measuredDepth:
+        - 0
+        - 10
+      trueVerticalDepth:
+        - 0
+        - 10
+      azimuth:
+        - 0
+        - 10
+      inclination:
+        - 0
+        - 10
+      deviationEW:
+        - 0
+        - 10
+      deviationNS:
+        - 0
+        - 10
+      latitude:
+        - 0
+        - 10
+      longitude:
+        - 0
+        - 10
+    add:
+      measuredDepth:
+        - 0
+        - 10
+      trueVerticalDepth:
+        - 0
+        - 10
+      azimuth:
+        - 0
+        - 10
+      inclination:
+        - 0
+        - 10
+      deviationEW:
+        - 0
+        - 10
+      deviationNS:
+        - 0
+        - 10
+      latitude:
+        - 0
+        - 10
+      longitude:
+        - 0
+        - 10
+    remove:
+      - 1
+      - 2
+DirectionalSurveyResponse:
+  type: object
+  properties:
+    id:
+      type: string
+    well:
+      type: string
+    project:
+      type: string
+    measuredDepth:
+      type: array
+      items:
+        type: number
+    trueVerticalDepth:
+      type: array
+      items:
+        type: number
+    azimuth:
+      type: array
+      items:
+        type: number
+    inclination:
+      type: array
+      items:
+        type: number
+    deviationNS:
+      type: array
+      items:
+        type: number
+    deviationEW:
+      type: array
+      items:
+        type: number
+    latitude:
+      type: array
+      items:
+        type: number
+    longitude:
+      type: array
+      items:
+        type: number
+    createdAt:
+      type: string
+      format: date-time
+    updatedAt:
+      type: string
+      format: date-time
+  required:
+    - id
+    - well
+    - measuredDepth
+    - trueVerticalDepth
+    - azimuth
+    - inclination
+    - deviationNS
+    - deviationEW
+    - latitude
+    - longitude
+  example:
+    id: '64a5d81cdf46498bc8941a00'
+    well: '64a5d81cdf46498bc8941a00'
+    project: '64a5d81cdf46498bc8941a00'
+    dataSource: 'IHS'
+    spatialDataType: 'NAD27'
+    measuredDepth:
+      - 0
+      - 10
+    trueVerticalDepth:
+      - 0
+      - 10
+    azimuth:
+      - 0
+      - 10
+    inclination:
+      - 0
+      - 10
+    deviationEW:
+      - 0
+      - 10
+    deviationNS:
+      - 0
+      - 10
+    latitude:
+      - 0
+      - 10
+    longitude:
+      - 0
+      - 10
+    createdAt: '2019-01-01T00:00:00.000Z'
+    updatedAt: '2019-01-01T00:00:00.000Z'
+DirectionalSurveyResponseList:
+  type: array
+  items:
+    $ref: '#/definitions/DirectionalSurveyResponse'
+  maxItems: 1000
+  example:
+    - id: '64a5d81cdf46498bc8941a00'
+      well: '64a5d81cdf46498bc8941a00'
+      project: '64a5d81cdf46498bc8941a00'
+      dataSource: 'IHS'
+      spatialDataType: 'NAD27'
+      measuredDepth:
+        - 0
+        - 10
+      trueVerticalDepth:
+        - 0
+        - 10
+      azimuth:
+        - 0
+        - 10
+      inclination:
+        - 0
+        - 10
+      deviationEW:
+        - 0
+        - 10
+      deviationNS:
+        - 0
+        - 10
+      latitude:
+        - 0
+        - 10
+      longitude:
+        - 0
+        - 10
+      createdAt: '2019-01-01T00:00:00.000Z'
+      updatedAt: '2019-01-01T00:00:00.000Z'
+DirectionalSurveyCreatedResponse:
+  type: object
+  properties:
+    status:
+      type: string
+    code:
+      type: number
+    chosenID:
+      type: string
+    errors:
+      type: array
+      items:
+        type: object
+        properties:
+          name:
+            type: string
+          message:
+            type: string
+          location:
+            type: string
+          chosenID:
+            type: string
+  example:
+    status: 'success'
+    code: 201
+    chosenID: '64a5d81cdf46498bc8941a00'
+    errors:
+      - name: 'RequestStructureError'
+        message: 'The request body is not valid.'
+        location: 'body'
+        chosenID: '64a5d81cdf46498bc8941a00'

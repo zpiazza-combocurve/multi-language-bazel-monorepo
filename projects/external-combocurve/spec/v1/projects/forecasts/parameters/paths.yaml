@@ -1,0 +1,154 @@
+/v1/projects/{projectId}/forecasts/{forecastId}/parameters/{wellId}/{phase}/{series}:
+  post:
+    consumes:
+      - application/json
+    produces:
+      - application/json
+    operationId: post-v1-projects-forecast-segment-parameters
+    description: Inserts a list of segments in a forecast for a defined well, phase, and series.
+    parameters:
+      - name: projectId
+        in: path
+        required: true
+        type: string
+        description: The project's id.
+      - name: forecastId
+        in: path
+        required: true
+        type: string
+        description: The forecast's id.
+      - name: wellId
+        in: path
+        required: true
+        type: string
+        description: The specified well's id.
+      - name: phase
+        in: path
+        required: true
+        type: string
+        description: The phase of the forecast. oil | gas | water
+      - name: series
+        in: path
+        required: true
+        type: string
+        description: The series of the forecast. p10 | p50 | p90 | best. Currently only best is supported.
+      - name: forecast-segments
+        in: body
+        description: Forecast segments to insert. See SegmentInputArray.
+        schema:
+          $ref: '#/definitions/ForecastSegmentInputList'
+    responses:
+      '201':
+        description: Created
+        schema:
+          $ref: '#/definitions/ForecastParametersSuccessResponse'
+      '400':
+        description: Bad Request. There is something wrong with the request data.
+        schema:
+          $ref: '#/definitions/ForecastParametersErrorResponse'
+      '404':
+        description: Not Found
+        schema:
+          $ref: '#/definitions/ForecastParametersErrorResponse'
+    tags:
+      - ComboCurveV1
+  put:
+    consumes:
+      - application/json
+    produces:
+      - application/json  
+    operationId: put-v1-projects-forecast-segment-parameters
+    description: Updates all segments with provided list of new segments for a defined well, phase, and series.
+    parameters:
+      - in: path
+        name: projectId
+        required: true
+        type: string
+        description: The project's id.
+      - in: path
+        name: forecastId
+        required: true
+        type: string
+        description: The forecast's id.
+      - in: path
+        name: wellId
+        required: true
+        type: string
+        description: The specified well's id.
+      - in: path
+        name: phase
+        required: true
+        type: string
+        description: oil | gas | water
+      - in: path
+        name: series
+        required: true
+        type: string
+        description: p10 | p50 | p90 | best
+      - in: body
+        name: forecast-segments
+        description: Forecast segments to update. See SegmentInputArray.
+        schema:
+          $ref: '#/definitions/ForecastSegmentInputList'
+    responses:
+      '201':
+        description: Created
+        schema:
+          $ref: '#/definitions/ForecastParametersSuccessResponse'
+      '400':
+        description: Bad Request. There is something wrong with the request data.
+        schema:
+          $ref: '#/definitions/ForecastParametersErrorResponse'
+      '404':
+        description: Not Found
+        schema:
+          $ref: '#/definitions/ForecastParametersErrorResponse'
+    tags:
+      - ComboCurveV1
+  delete:
+    operationId: delete-v1-projects-forecast-segment-parameters
+    description: Removes all of the segments for a defined well, phase, and series
+    parameters:
+      - name: projectId
+        in: path
+        required: true
+        description: The project's id.
+        type: string
+      - name: forecastId
+        in: path
+        required: true
+        description: The forecast's id.
+        type: string
+      - name: wellId
+        in: path
+        required: true
+        description: The specified well's id.
+        type: string
+      - name: phase
+        in: path
+        required: true
+        description: oil | gas | water
+        type: string
+      - name: series
+        in: path
+        required: true
+        description: p10 | p50 | p90 | best
+        type: string
+    responses:
+      '204':
+        description: OK
+        headers:
+          X-Delete-Count:
+            type: integer
+            description: >-
+              The number of records that match the given filters and were deleted.
+      '400':
+        description: Bad Request. There is something wrong with the request data.
+        schema:
+          $ref: '#/definitions/ForecastParametersErrorResponse'
+      '404':
+        description: Not Found
+        schema:
+          $ref: '#/definitions/ForecastParametersErrorResponse'
+    tags:
+      - ComboCurveV1

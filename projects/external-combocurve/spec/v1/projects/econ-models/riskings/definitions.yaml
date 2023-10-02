@@ -1,0 +1,234 @@
+ShutInOffsetToAsOfCriteria:
+  type: "object"
+  required:
+    - "start"
+    - "end"
+  properties:
+    start:
+      type: "number"
+    end:
+      type: "number"
+ShutInDateCriteria:
+  type: "object"
+  required:
+    - "startDate"
+    - "endDate"
+  properties:
+    startDate:
+      type: "string"
+      format: "date"
+      description: "Start date of shut-in period"
+    endDate:
+      type: "string"
+      format: "date"
+      description: "End date of shut-in period"
+ShutInRow:
+  type: object
+  properties:
+    phase:
+      type: string
+      enum:
+        - all
+        - oil
+        - gas
+        - water
+    offsetToAsOf:
+      $ref: '#/definitions/ShutInOffsetToAsOfCriteria'
+    dates:
+      $ref: '#/definitions/ShutInDateCriteria'
+    repeatRangeOfDates:
+      type: string
+      enum:
+        - no_repeat
+        - monthly
+        - yearly
+    totalOccurrences:
+      type: integer
+    unit:
+      type: string
+      enum:
+        - day
+        - month
+    multiplier:
+      type: number
+    scalePostShutInEndCriteria:
+      type: string
+      enum:
+        - offset_to_as_of_date
+        - dates    
+        - econ_limit
+    scalePostShutInEnd:
+      type: string
+    fixedExpense:
+      type: boolean
+    capex:
+      type: boolean
+RiskingMultiplierRow:
+  type: object
+  required:
+    - multiplier
+  properties:
+    multiplier:
+      type: number
+    entireWellLife:
+      $ref: '#/definitions/EntireWellLifeCriteria'
+    offsetToFpd:
+      $ref: '#/definitions/StartEndPeriodCriteria'
+    offsetToAsOf:
+      $ref: '#/definitions/StartEndPeriodCriteria'
+    offsetToFirstSegment:
+      $ref: '#/definitions/StartEndPeriodCriteria'
+    offsetToEndHistory:
+      $ref: '#/definitions/StartEndPeriodCriteria'
+    dates:
+      $ref: '#/definitions/StartEndDatesCriteria'
+    seasonal:
+      $ref: '#/definitions/SeasonalCriteria'
+RiskingCountPercentRow:
+  type: object
+  properties:
+    count:
+      type: integer
+    percentage:
+      type: number      
+    entireWellLife:
+      $ref: '#/definitions/EntireWellLifeCriteria'
+    offsetToFpd:
+      $ref: '#/definitions/StartEndPeriodCriteria'
+    offsetToAsOf:
+      $ref: '#/definitions/StartEndPeriodCriteria'
+    offsetToDiscountDate:
+      $ref: '#/definitions/StartEndPeriodCriteria'
+    dates:
+      $ref: '#/definitions/StartEndDatesCriteria'
+RiskingMultiplierArray:
+  type: object
+  required:
+    - rows
+  properties:
+    rows:
+      type: "array"
+      items:
+        $ref: '#/definitions/RiskingMultiplierRow' 
+RiskingCountPercentArray:
+  type: object
+  required:
+    - rows
+  properties:
+    rows:
+      type: "array"
+      items:
+        $ref: '#/definitions/RiskingCountPercentRow' 
+RiskingModel:
+  type: object
+  required:
+    - riskProd
+    - riskNglDripCondViaGasRisk
+    - oil
+    - gas
+    - ngl
+    - dripCondensate
+    - water
+  properties:
+    riskProd:
+      type: boolean
+    riskNglDripCondViaGasRisk:
+      type: boolean   
+    oil:
+      $ref: '#/definitions/RiskingMultiplierArray'
+    gas:
+      $ref: '#/definitions/RiskingMultiplierArray'
+    ngl:
+      $ref: '#/definitions/RiskingMultiplierArray'
+    dripCondensate:
+      $ref: '#/definitions/RiskingMultiplierArray'    
+    water:
+      $ref: '#/definitions/RiskingMultiplierArray'
+ShutInModel:
+  type: object
+  required:
+    - rows
+  properties:
+    rows:
+      type: "array"
+      items:
+        $ref: '#/definitions/ShutInRow' 
+Riskings:
+  type: object
+  required:
+    - name
+    - unique
+  properties:
+    id:
+      type: string
+      description: ID
+    copiedFrom:
+      type: string
+      description: Copied From
+    name:
+      type: string
+      description: Name
+    scenario:
+      type: string
+      description: Scenario ID
+    tags:
+      type: array
+      items:
+        type: string
+        description: Tag ID
+    unique:
+      type: boolean
+      description: Unique
+    well:
+      type: string
+      description: Well ID
+    createdAt:
+      type: string
+      format: date
+      description: Creation Date
+    updatedAt:
+      type: string
+      format: date
+      description: Updated At
+    createdBy:
+      type: string
+      description: Created By
+    lastUpdatedBy:
+      type: string
+      description: Last Updated By
+    risking:
+      $ref: '#/definitions/RiskingModel'
+    shutIn:
+      $ref: '#/definitions/ShutInModel'
+RiskingsList:
+  type: array
+  items:
+    $ref: '#/definitions/Riskings'
+  maxItems: 200
+RiskingsInput:
+  type: object
+  required:
+    - name
+    - unique
+  properties:
+    name:
+      type: string
+      description: Name
+    scenario:
+      type: string
+      description: Scenario ID
+    unique:
+      type: boolean
+      description: Unique
+    well:
+      type: string
+      description: Well ID
+    risking:
+      $ref: '#/definitions/RiskingModel'
+    shutIn:
+      $ref: '#/definitions/ShutInModel'    
+RiskingsInputList:
+  type: array
+  items:
+    $ref: '#/definitions/RiskingsInput'
+  maxItems: 500

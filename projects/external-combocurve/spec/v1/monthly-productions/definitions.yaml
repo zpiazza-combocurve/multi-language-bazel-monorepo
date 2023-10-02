@@ -1,0 +1,251 @@
+MonthlyProduction:
+  type: object
+  required:
+    - date
+  properties:
+    choke:
+      type: number
+      description: Choke (in)
+    co2Injection:
+      type: number
+    createdAt:
+      type: string
+      format: date
+      description: Project Creation Date
+    customNumber0:
+      type: number
+    customNumber1:
+      type: number
+    customNumber2:
+      type: number
+    customNumber3:
+      type: number
+    customNumber4:
+      type: number
+    date:
+      type: string
+      format: date
+      description: Date
+    daysOn:
+      type: number
+      description: Days On
+    gas:
+      type: number
+      description: Gas (MCF/MO)
+    gasInjection:
+      type: number
+    ngl:
+      type: number
+    oil:
+      type: number
+      description: Oil (BBL/MO)
+    operationalTag:
+      type: string
+      maxLength: 16384
+      description: Operational Tag
+    steamInjection:
+      type: number
+    updatedAt:
+      type: string
+      format: date
+      description: Updated At
+    water:
+      type: number
+      description: Water (BBL/MO)
+    waterInjection:
+      type: number
+    well:
+      type: string
+      description: Well
+  example:
+    choke: 13
+    co2Injection: 123
+    date: '2017-01-15T00:00:00.000Z'
+    createdAt: '2020-01-21T16:58:08.986Z'
+    customNumber0: 123
+    customNumber1: 123
+    customNumber2: 123
+    customNumber3: 123
+    customNumber4: 123
+    daysOn: 30
+    gas: 16925
+    gasInjection: 123
+    ngl: 123
+    oil: 1022
+    operationalTag: Start of production
+    steamInjection: 123
+    updatedAt: '2020-01-21T17:58:08.986Z'
+    water: 4631
+    waterInjection: 123
+    well: 5e286e0d8f3df51d7ae744a3
+MonthlyProductionList:
+  type: array
+  items:
+    $ref: '#/definitions/MonthlyProduction'
+  maxItems: 20000
+  example:
+    - choke: 13
+      co2Injection: 123
+      createdAt: '2020-01-21T16:58:08.986Z'
+      date: '2017-01-15T00:00:00.000Z'
+      customNumber0: 123
+      customNumber1: 123
+      customNumber2: 123
+      customNumber3: 123
+      customNumber4: 123
+      daysOn: 30
+      gas: 16925
+      gasInjection: 123
+      ngl: 123
+      oil: 1022
+      operationalTag: Start of production
+      steamInjection: 123
+      updatedAt: '2020-01-21T17:58:08.986Z'
+      water: 4631
+      waterInjection: 123
+      well: 5e286e0d8f3df51d7ae744a3
+    - choke: 13
+      co2Injection: 123
+      createdAt: '2020-01-21T16:58:08.986Z'
+      date: '2017-01-15T00:00:00.000Z'
+      customNumber0: 123
+      customNumber1: 123
+      customNumber2: 123
+      customNumber3: 123
+      customNumber4: 123
+      daysOn: 30
+      gas: 16925
+      gasInjection: 123
+      ngl: 123
+      oil: 1022
+      operationalTag: Start of production
+      steamInjection: 123
+      updatedAt: '2020-01-21T17:58:08.986Z'
+      water: 4631
+      waterInjection: 123
+      well: 5e286e0d8f3df51d7ae744a3
+MonthlyProductionInput:
+  type: object
+  required:
+    - date
+  properties:
+    choke:
+      type: number
+      description: Choke (in)
+    chosenID:
+      type: string
+      maxLength: 16384
+      description: Chosen ID
+    co2Injection:
+      type: number
+    customNumber0:
+      type: number
+    customNumber1:
+      type: number
+    customNumber2:
+      type: number
+    customNumber3:
+      type: number
+    customNumber4:
+      type: number
+    dataSource:
+      type: string
+      description: Data Source
+    date:
+      type: string
+      format: date
+      description: Date
+    daysOn:
+      type: number
+      description: Days On
+    gas:
+      type: number
+      description: Gas (MCF/MO)
+    gasInjection:
+      type: number
+    ngl:
+      type: number
+    oil:
+      type: number
+      description: Oil (BBL/MO)
+    operationalTag:
+      type: string
+      maxLength: 16384
+      description: Operational Tag
+    steamInjection:
+      type: number
+    water:
+      type: number
+      description: Water (BBL/MO)
+    waterInjection:
+      type: number
+    well:
+      type: string
+      description: Well
+  example:
+    choke: 13
+    chosenID: 28058901650448
+    co2Injection: 123
+    customNumber0: 123
+    customNumber1: 123
+    customNumber2: 123
+    customNumber3: 123
+    customNumber4: 123
+    dataSource: internal
+    date: '2017-01-15T00:00:00.000Z'
+    daysOn: 30
+    gas: 16925
+    gasInjection: 123
+    ngl: 123
+    oil: 1022
+    operationalTag: Start of production
+    steamInjection: 123
+    water: 4631
+    waterInjection: 123
+    well: 5e286e0d8f3df51d7ae744a3
+MonthlyProductionInputList:
+  type: array
+  items:
+    $ref: '#/definitions/MonthlyProductionInput'
+  maxItems: 20000
+  example:
+    - choke: 13
+      chosenID: 28058901650448
+      co2Injection: 123
+      customNumber0: 123
+      customNumber1: 123
+      customNumber2: 123
+      customNumber3: 123
+      customNumber4: 123
+      dataSource: internal
+      date: '2017-01-15T00:00:00.000Z'
+      daysOn: 30
+      gas: 16925
+      gasInjection: 123
+      ngl: 123
+      oil: 1022
+      operationalTag: Start of production
+      steamInjection: 123
+      water: 4631
+      waterInjection: 123
+      well: 5e286e0d8f3df51d7ae744a3
+    - choke: 13
+      chosenID: 28058901650555
+      co2Injection: 123
+      customNumber0: 123
+      customNumber1: 123
+      customNumber2: 123
+      customNumber3: 123
+      customNumber4: 123
+      dataSource: internal
+      date: '2020-02-15T00:00:00.000Z'
+      daysOn: 30
+      gas: 16925
+      gasInjection: 123
+      ngl: 123
+      oil: 1022
+      operationalTag: Start of production
+      steamInjection: 123
+      water: 4631
+      waterInjection: 123
+      well: 5e281e0d8f3df51d7ae845j3

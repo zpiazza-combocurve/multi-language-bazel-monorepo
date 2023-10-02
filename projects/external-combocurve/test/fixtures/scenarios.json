@@ -1,0 +1,913 @@
+[
+	{
+		"_id": "5e27305e4f59a9ec64eb576a",
+		"history": {
+			"nameChange": [],
+			"scenarioDeleted": [],
+			"permChange": []
+		},
+		"wells": [],
+		"name": "default1",
+		"project": "5e272bed4b97ed00132f2271",
+		"createdBy": "5d4303aeefe8a100089a7992",
+		"visibility": "project",
+		"createdAt": "2020-01-21T17:09:50.686Z",
+		"updatedAt": "2020-01-21T17:09:50.686Z",
+		"columns": {
+			"forecast": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"forecast_p_series": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"schedule": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"capex": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"dates": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"depreciation": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"escalation": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"expenses": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"ownership_reversion": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"pricing_differentials": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"production_taxes": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"production_vs_fit": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"reserves_category": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"risking": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"stream_properties": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			}
+		},
+		"schemaVersion": 2
+	},
+	{
+		"_id": "5e274b004b97ed0013323bd3",
+		"history": {
+			"nameChange": [],
+			"scenarioDeleted": [],
+			"permChange": []
+		},
+		"wells": [
+			"5e272d38b78910dd2a1bd686",
+			"5e272d38b78910dd2a1bd68b",
+			"5e272d38b78910dd2a1bd68c",
+			"5e272d38b78910dd2a1bd692",
+			"5e272d38b78910dd2a1bd699",
+			"5e272d38b78910dd2a1bd69f"
+		],
+		"name": "First",
+		"project": "5e272bed4b97ed00132f2271",
+		"createdBy": "5bd22c63cc534716dc3929cc",
+		"visibility": "project",
+		"createdAt": "2020-01-21T19:03:28.659Z",
+		"updatedAt": "2020-09-15T22:38:45.247Z",
+		"activeUmbrellas": {
+			"capex": "5e337c585a152e0013a03672"
+		},
+		"general_options": "5e4c5956d0ead300125a3f72",
+		"columns": {
+			"forecast": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"forecast_p_series": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"schedule": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"capex": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					},
+					"20200330t195858m130xi78t": {
+						"name": "CAPE_2020_Q1"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"dates": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"depreciation": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"escalation": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"expenses": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"ownership_reversion": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					},
+					"qualifier1": {
+						"createdAt": "2020-05-14T16:48:21.288+0000",
+						"createdBy": "5bd22c63cc534716dc3929cc",
+						"createdByName": "Armand Paradis",
+						"name": "OWNE_2020_Q2"
+					},
+					"qualifier2": {
+						"createdAt": "2020-05-14T16:48:25.668+0000",
+						"createdBy": "5bd22c63cc534716dc3929cc",
+						"createdByName": "Armand Paradis",
+						"name": "OWNE_2020_Q2_1"
+					},
+					"qualifier3": {
+						"createdAt": "2020-05-14T16:48:27.784+0000",
+						"createdBy": "5bd22c63cc534716dc3929cc",
+						"createdByName": "Armand Paradis",
+						"name": "OWNE_2020_Q2_2"
+					},
+					"qualifier4": {
+						"createdAt": "2020-05-14T16:48:31.391+0000",
+						"createdBy": "5bd22c63cc534716dc3929cc",
+						"createdByName": "Armand Paradis",
+						"name": "OWNE_2020_Q2_3"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"pricing_differentials": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"production_taxes": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"production_vs_fit": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"reserves_category": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"risking": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"stream_properties": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			}
+		},
+		"schemaVersion": 2
+	},
+	{
+		"_id": "5e276e31876cd70012ddf3f6",
+		"history": {
+			"nameChange": [],
+			"scenarioDeleted": [],
+			"permChange": []
+		},
+		"wells": [
+			"5e272d72b78910dd2a1d5c16",
+			"5e272d72b78910dd2a1d5c24",
+			"5e272d72b78910dd2a1d5c27",
+			"5e272d72b78910dd2a1d5c2c",
+			"5e272d72b78910dd2a1d5c32",
+			"5e272d72b78910dd2a1d5c33",
+			"5e272d72b78910dd2a1d5c34",
+			"5e272d72b78910dd2a1d5c48",
+			"5e272d72b78910dd2a1d5c4b",
+			"5e272d72b78910dd2a1d5c55",
+			"5e272d72b78910dd2a1d5c57"
+		],
+		"name": "JDG Baby Scenario",
+		"project": "5e272bed4b97ed00132f2271",
+		"createdBy": "5c51c5893e0f9b04e0bbdada",
+		"visibility": "project",
+		"createdAt": "2020-01-21T21:33:37.038Z",
+		"updatedAt": "2020-07-24T17:34:13.139Z",
+		"columns": {
+			"forecast": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"forecast_p_series": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"schedule": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"capex": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"dates": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"depreciation": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"escalation": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"expenses": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"ownership_reversion": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"pricing_differentials": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"production_taxes": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"production_vs_fit": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"reserves_category": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"risking": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"stream_properties": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			}
+		},
+		"schemaVersion": 2
+	},
+	{
+		"_id": "5e286e9f8f3df51d7ae744a6",
+		"perms": {
+			"teams": [],
+			"users": []
+		},
+		"history": {
+			"nameChange": [],
+			"scenarioDeleted": [],
+			"permChange": []
+		},
+		"wells": [
+			"5e286df88f3df51d7ae743f3",
+			"5e286df88f3df51d7ae743f4",
+			"5e286df88f3df51d7ae743f5",
+			"5e286df88f3df51d7ae743f6",
+			"5e286df88f3df51d7ae743f7",
+			"5e286df88f3df51d7ae743f8"
+		],
+		"name": "SPC1016",
+		"project": "5e272bed4b97ed00132f2271",
+		"createdBy": "5bef093a7db3fb0d60e8e908",
+		"createdAt": "2020-01-22T09:47:43.186Z",
+		"updatedAt": "2020-01-22T09:47:43.186Z",
+		"visibility": "project",
+		"columns": {
+			"forecast": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"forecast_p_series": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"schedule": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"capex": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"dates": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"depreciation": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"escalation": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"expenses": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"ownership_reversion": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"pricing_differentials": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"production_taxes": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"production_vs_fit": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"reserves_category": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"risking": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"stream_properties": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			}
+		},
+		"schemaVersion": 2
+	},
+	{
+		"_id": "5e2872a28f3df51d7ae787a4",
+		"perms": {
+			"teams": [],
+			"users": []
+		},
+		"history": {
+			"nameChange": [],
+			"scenarioDeleted": [],
+			"permChange": []
+		},
+		"wells": ["5e2871f98f3df51d7ae786f1", "5e2871fa8f3df51d7ae786f2", "5e2871fa8f3df51d7ae786f3"],
+		"name": "SPC1016",
+		"project": "5e272bed4b97ed00132f2271",
+		"createdBy": "5bef093a7db3fb0d60e8e908",
+		"createdAt": "2020-01-22T10:04:50.773Z",
+		"updatedAt": "2020-01-22T10:04:50.773Z",
+		"visibility": "project",
+		"columns": {
+			"forecast": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"forecast_p_series": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"schedule": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"capex": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"dates": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"depreciation": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"escalation": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"expenses": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"ownership_reversion": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"pricing_differentials": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"production_taxes": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"production_vs_fit": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"reserves_category": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"risking": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"stream_properties": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			}
+		},
+		"schemaVersion": 2
+	},
+	{
+		"_id": "5e2883bd22b38d2d06c0397a",
+		"perms": {
+			"teams": [],
+			"users": []
+		},
+		"history": {
+			"nameChange": [],
+			"scenarioDeleted": [],
+			"permChange": []
+		},
+		"wells": [
+			"5e28839622b38d2d06c038ff",
+			"5e28839722b38d2d06c03900",
+			"5e28839722b38d2d06c03901",
+			"5e28839722b38d2d06c03902",
+			"5e28839722b38d2d06c03903",
+			"5e28839722b38d2d06c03904",
+			"5e28839722b38d2d06c03905",
+			"5e28839722b38d2d06c03906",
+			"5e28839722b38d2d06c03907",
+			"5e28839722b38d2d06c03908",
+			"5e28839722b38d2d06c03909",
+			"5e28839722b38d2d06c0390a"
+		],
+		"name": "0112_vfinal",
+		"project": "5e28839622b38d2d06c038fe",
+		"createdBy": "5bef093a7db3fb0d60e8e908",
+		"createdAt": "2020-01-22T11:17:49.817Z",
+		"updatedAt": "2020-04-27T14:16:17.806Z",
+		"visibility": "project",
+		"columns": {
+			"forecast": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"forecast_p_series": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"schedule": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"capex": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"dates": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"depreciation": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"escalation": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"expenses": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"ownership_reversion": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"pricing_differentials": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"production_taxes": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"production_vs_fit": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"reserves_category": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"risking": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			},
+			"stream_properties": {
+				"qualifiers": {
+					"default": {
+						"name": "Default"
+					}
+				},
+				"activeQualifier": "default"
+			}
+		},
+		"schemaVersion": 2,
+		"general_options": "5ea6e92f29b1dc0012bf9d82"
+	}
+]

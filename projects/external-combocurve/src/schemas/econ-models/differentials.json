@@ -1,0 +1,315 @@
+{
+	"$id": "http://combocurve.com/schemas/differentials.json",
+	"$ref": "base-econ-model.json",
+	"unevaluatedProperties": false,
+	"properties": {
+		"differentials": {
+			"type": "object",
+			"unevaluatedProperties": false,
+			"properties": {
+				"firstDifferential": {
+					"$ref": "#/definitions/PhaseGroup"
+				},
+				"secondDifferential": {
+					"$ref": "#/definitions/PhaseGroup"
+				},
+				"thirdDifferential": {
+					"$ref": "#/definitions/PhaseGroup"
+				}
+			},
+			"required": ["firstDifferential", "secondDifferential", "thirdDifferential"]
+		}
+	},
+	"required": ["differentials"],
+	"definitions": {
+		"PhaseGroup": {
+			"type": "object",
+			"unevaluatedProperties": false,
+			"properties": {
+				"oil": {
+					"type": "object",
+					"unevaluatedProperties": false,
+					"properties": {
+						"escalationModel": {
+							"$ref": "rows-validation-defs.json#/definitions/EscalationModel"
+						},
+						"rows": {
+							"if": {
+								"oneOf": [
+									{
+										"$ref": "rows-validation-defs.json#/definitions/DollarPerBblArray"
+									},
+									{
+										"$ref": "rows-validation-defs.json#/definitions/PctOfBasePriceArray"
+									},
+									{
+										"type": "array",
+										"maxItems": 0
+									}
+								]
+							},
+							"else": {
+								"errorMessage": "All rows must contain exactly one of the following properties: `dollarPerBbl`, or `pctOfBasePrice`",
+								"const": null
+							},
+							"type": "array",
+							"maxItems": 100,
+							"minItems": 1,
+							"items": {
+								"type": "object",
+								"unevaluatedProperties": false,
+								"properties": {
+									"dollarPerBbl": {
+										"$ref": "#/definitions/DollarPerBbl"
+									},
+									"pctOfBasePrice": {
+										"$ref": "#/definitions/PctOfBasePrice"
+									},
+									"entireWellLife": {
+										"$ref": "criteria.json#/definitions/EntireWellLife"
+									},
+									"offsetToAsOf": {
+										"$ref": "criteria.json#/definitions/OffsetToAsOf"
+									},
+									"dates": {
+										"$ref": "criteria.json#/definitions/Dates"
+									}
+								},
+								"allOf": [
+									{
+										"errorMessage": "Exactly one of the following properties is required: `entireWellLife`, `offsetToAsOf`, or `dates`",
+										"oneRequired": ["entireWellLife", "offsetToAsOf", "dates"]
+									}
+								]
+							}
+						}
+					},
+					"required": ["rows"]
+				},
+				"gas": {
+					"type": "object",
+					"unevaluatedProperties": false,
+					"properties": {
+						"escalationModel": {
+							"$ref": "rows-validation-defs.json#/definitions/EscalationModel"
+						},
+						"rows": {
+							"if": {
+								"oneOf": [
+									{
+										"$ref": "rows-validation-defs.json#/definitions/DollarPerMmbtuArray"
+									},
+									{
+										"$ref": "rows-validation-defs.json#/definitions/DollarPerMcfArray"
+									},
+									{
+										"$ref": "rows-validation-defs.json#/definitions/PctOfBasePriceArray"
+									},
+									{
+										"type": "array",
+										"maxItems": 0
+									}
+								]
+							},
+							"else": {
+								"errorMessage": "All rows must contain exactly one of the following properties: `dollarPerMmbtu`, `dollarPerMcf`, or `pctOfBasePrice`",
+								"const": null
+							},
+							"type": "array",
+							"maxItems": 100,
+							"minItems": 1,
+							"items": {
+								"type": "object",
+								"unevaluatedProperties": false,
+								"properties": {
+									"dollarPerMmbtu": {
+										"$ref": "#/definitions/DollarPerMmbtu"
+									},
+									"dollarPerMcf": {
+										"$ref": "#/definitions/DollarPerMcf"
+									},
+									"pctOfBasePrice": {
+										"$ref": "#/definitions/PctOfBasePrice"
+									},
+									"entireWellLife": {
+										"$ref": "criteria.json#/definitions/EntireWellLife"
+									},
+									"offsetToAsOf": {
+										"$ref": "criteria.json#/definitions/OffsetToAsOf"
+									},
+									"dates": {
+										"$ref": "criteria.json#/definitions/Dates"
+									}
+								},
+								"allOf": [
+									{
+										"errorMessage": "Exactly one of the following properties is required: `entireWellLife`, `offsetToAsOf`, or `dates`",
+										"oneRequired": ["entireWellLife", "offsetToAsOf", "dates"]
+									}
+								]
+							}
+						}
+					},
+					"required": ["rows"]
+				},
+				"ngl": {
+					"type": "object",
+					"unevaluatedProperties": false,
+					"properties": {
+						"escalationModel": {
+							"$ref": "rows-validation-defs.json#/definitions/EscalationModel"
+						},
+						"rows": {
+							"if": {
+								"oneOf": [
+									{
+										"$ref": "rows-validation-defs.json#/definitions/DollarPerBblArray"
+									},
+									{
+										"$ref": "rows-validation-defs.json#/definitions/DollarPerGalArray"
+									},
+									{
+										"$ref": "rows-validation-defs.json#/definitions/PctOfBasePriceArray"
+									},
+									{
+										"type": "array",
+										"maxItems": 0
+									}
+								]
+							},
+							"else": {
+								"errorMessage": "All rows must contain exactly one of the following properties: `dollarPerBbl`, `dollarPerGal`, or `pctOfBasePrice`",
+								"const": null
+							},
+							"type": "array",
+							"maxItems": 100,
+							"minItems": 1,
+							"items": {
+								"type": "object",
+								"unevaluatedProperties": false,
+								"properties": {
+									"dollarPerBbl": {
+										"$ref": "#/definitions/DollarPerBbl"
+									},
+									"dollarPerGal": {
+										"$ref": "#/definitions/DollarPerGal"
+									},
+									"pctOfBasePrice": {
+										"$ref": "#/definitions/PctOfBasePrice"
+									},
+									"entireWellLife": {
+										"$ref": "criteria.json#/definitions/EntireWellLife"
+									},
+									"offsetToAsOf": {
+										"$ref": "criteria.json#/definitions/OffsetToAsOf"
+									},
+									"dates": {
+										"$ref": "criteria.json#/definitions/Dates"
+									}
+								},
+								"allOf": [
+									{
+										"errorMessage": "Exactly one of the following properties is required: `entireWellLife`, `offsetToAsOf`, or `dates`",
+										"oneRequired": ["entireWellLife", "offsetToAsOf", "dates"]
+									}
+								]
+							}
+						}
+					},
+					"required": ["rows"]
+				},
+				"dripCondensate": {
+					"type": "object",
+					"unevaluatedProperties": false,
+					"properties": {
+						"escalationModel": {
+							"$ref": "rows-validation-defs.json#/definitions/EscalationModel"
+						},
+						"rows": {
+							"if": {
+								"oneOf": [
+									{
+										"$ref": "rows-validation-defs.json#/definitions/DollarPerBblArray"
+									},
+									{
+										"$ref": "rows-validation-defs.json#/definitions/PctOfBasePriceArray"
+									},
+									{
+										"type": "array",
+										"maxItems": 0
+									}
+								]
+							},
+							"else": {
+								"errorMessage": "All rows must contain exactly one of the following properties: `dollarPerBbl` or `pctOfBasePrice`",
+								"const": null
+							},
+							"type": "array",
+							"maxItems": 100,
+							"minItems": 1,
+							"items": {
+								"type": "object",
+								"unevaluatedProperties": false,
+								"properties": {
+									"dollarPerBbl": {
+										"$ref": "#/definitions/DollarPerBbl"
+									},
+									"pctOfBasePrice": {
+										"$ref": "#/definitions/PctOfBasePrice"
+									},
+									"entireWellLife": {
+										"$ref": "criteria.json#/definitions/EntireWellLife"
+									},
+									"offsetToAsOf": {
+										"$ref": "criteria.json#/definitions/OffsetToAsOf"
+									},
+									"dates": {
+										"$ref": "criteria.json#/definitions/Dates"
+									}
+								},
+								"allOf": [
+									{
+										"errorMessage": "Exactly one of the following properties is required: `entireWellLife`, `offsetToAsOf`, or `dates`",
+										"oneRequired": ["entireWellLife", "offsetToAsOf", "dates"]
+									}
+								]
+							}
+						}
+					},
+					"required": ["rows"]
+				}
+			},
+			"required": ["gas", "oil", "ngl", "dripCondensate"]
+		},
+		"DollarPerBbl": {
+			"type": "number",
+			"minimum": -200,
+			"maximum": 200,
+			"minimumDecimalPrecision": 0.000001
+		},
+		"DollarPerMmbtu": {
+			"type": "number",
+			"minimum": -200,
+			"maximum": 200,
+			"minimumDecimalPrecision": 0.000001
+		},
+		"DollarPerMcf": {
+			"type": "number",
+			"minimum": -200,
+			"maximum": 200,
+			"minimumDecimalPrecision": 0.000001
+		},
+		"DollarPerGal": {
+			"type": "number",
+			"minimum": -200,
+			"maximum": 200,
+			"minimumDecimalPrecision": 0.000001
+		},
+		"PctOfBasePrice": {
+			"type": "number",
+			"minimum": 0,
+			"maximum": 1000000,
+			"minimumDecimalPrecision": 0.000001
+		}
+	}
+}

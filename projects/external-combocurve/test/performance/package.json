@@ -1,0 +1,27 @@
+{
+	"name": "external-combocurve-performance",
+	"version": "0.1.0",
+	"description": "Performance tests for the ComboCurve REST API",
+	"scripts": {
+		"performance": "dotenv -e .env -- artillery run --config artillery.yaml --output report/stats.json",
+		"performance:report": "artillery report --output report/index.html report/stats.json"
+	},
+	"author": "Inside Petroleum, Inc.",
+	"license": "ISC",
+	"dependencies": {
+		"@google-cloud/bigquery": "^6.2.0",
+		"artillery": "^1.7.9",
+		"dotenv": "^16.3.1",
+		"dotenv-cli": "^7.2.1",
+		"lodash": "^4.17.21",
+		"mongoose": "^5.13.20"
+	},
+	"engines": {
+		"node": "18.16"
+	},
+	"volta": {
+		"node": "18.16.0",
+		"npm": "8.10.0"
+	},
+	"private": true
+}

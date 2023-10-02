@@ -1,0 +1,687 @@
+Reversion:
+  type: object
+  discriminator: reversionType
+  required:
+    - reversionType 
+  properties:
+    reversionType:
+      type: string
+      description: Reversion Type
+    balance:
+      type: string
+      description: Balance
+    includeNetProfitInterest:
+      type: string
+      description: Include Net Profit Interest
+    workingInterest:
+      type: number
+      description: working Interest
+    netProfitInterest:
+      type: number
+      description: Net Profit Interest
+    netRevenueInterest:
+      type: number
+      description: Net Revenue Interest
+    leaseNetRevenueInterest:
+      type: number
+      description: Lease Net Revenue Interest
+    oilNetRevenueInterest:
+      type: number
+      description: Oil Net Revenue Interest
+    gasNetRevenueInterest:
+      type: number
+      description: Gas Net Revenue Interest
+    nglNetRevenueInterest:
+      type: number
+      description: Ngl Net Revenue Interest
+    dripCondensateNetRevenueInterest:
+      type: number
+      description: Drip Condensate Net Revenue Interest
+Irr:
+    description: Irr
+    allOf:
+      - $ref: '#/definitions/Reversion'
+      - properties:
+          reversionValue:
+            type: number
+            description: Reversion Value          
+        required:
+          - reversionValue
+PayoutWithInvestment:
+    description: Payout With Investment
+    allOf:
+      - $ref: '#/definitions/Reversion'
+      - properties:
+          reversionValue:
+            type: number
+            description: Reversion Value          
+        required:
+          - reversionValue
+PayoutWithoutInvestment:
+    description: Payout Without Investment
+    allOf:
+      - $ref: '#/definitions/Reversion'
+      - properties:
+          reversionValue:
+            type: number
+            description: Reversion Value          
+        required:
+          - reversionValue
+UndiscRoi:
+    description: Undisc Roi
+    allOf:
+      - $ref: '#/definitions/Reversion'
+      - properties:
+          reversionValue:
+            type: number
+            description: Reversion Value          
+        required:
+          - reversionValue
+AsOf:
+    description: As Of
+    allOf:
+      - $ref: '#/definitions/Reversion'
+      - properties:
+          reversionValue:
+            type: number
+            description: Reversion Value          
+        required:
+          - reversionValue
+Date:
+    description: Date
+    allOf:
+      - $ref: '#/definitions/Reversion'
+      - properties:
+          reversionValue:
+            type: string
+            format: date
+            description: Reversion Value          
+        required:
+          - reversionValue
+WhCumOil:
+    description: Well Head Cum Oil
+    allOf:
+      - $ref: '#/definitions/Reversion'
+      - properties:
+          reversionValue:
+            type: number
+            description: Reversion Value          
+        required:
+          - reversionValue
+WhCumGas:
+    description: Well Head Cum Gas
+    allOf:
+      - $ref: '#/definitions/Reversion'
+      - properties:
+          reversionValue:
+            type: number
+            description: Reversion Value          
+        required:
+          - reversionValue
+WhCumBoe:
+    description: Well Head Cum Boe
+    allOf:
+      - $ref: '#/definitions/Reversion'
+      - properties:
+          reversionValue:
+            type: number
+            description: Reversion Value          
+        required:
+          - reversionValue
+OwnershipQualifier:
+  type: object
+  required:
+    - qualifierKey
+    - ownership
+  properties:
+    chosenID:
+      type: string
+      maxLength: 16384
+      description: Chosen ID
+    dataSource:
+      type: string
+      description: Data Source 
+    qualifierKey:
+      type: string
+      description: Qualifier Key
+    ownership:
+      type: object
+      properties: 
+        name:
+          type: string
+          description: Name
+        initialOwnership:
+          type: object
+          properties:
+            workingInterest:
+              type: number
+              description: working Interest
+            netProfitInterestType:
+              type: string
+              description: Net Profit Interest Type
+            netProfitInterest:
+              type: number
+              description: Net Profit Interest
+            netRevenueInterest:
+              type: number
+              description: Net Revenue Interest
+            leaseNetRevenueInterest:
+              type: number
+              description: Lease Net Revenue Interest
+            oilNetRevenueInterest:
+              type: number
+              description: Oil Net Revenue Interest
+            gasNetRevenueInterest:
+              type: number
+              description: Gas Net Revenue Interest
+            nglNetRevenueInterest:
+              type: number
+              description: Ngl Net Revenue Interest
+            dripCondensateNetRevenueInterest:
+              type: number
+              description: Drip Condensate Net Revenue Interest
+        firstReversion:
+          $ref: '#/definitions/Reversion'
+        secondReversion:
+          $ref: '#/definitions/Reversion'
+        thirdReversion:
+          $ref: '#/definitions/Reversion'
+        fourthReversion:
+          $ref: '#/definitions/Reversion'
+        fifthReversion:
+          $ref: '#/definitions/Reversion'
+        sixthReversion:
+          $ref: '#/definitions/Reversion'
+        seventhReversion:
+          $ref: '#/definitions/Reversion'
+        eighthReversion:
+          $ref: '#/definitions/Reversion'
+        ninthReversion:
+          $ref: '#/definitions/Reversion'
+        tenthReversion:
+          $ref: '#/definitions/Reversion'
+    well:
+      type: string
+      description: Well ID
+    id:
+      type: string
+      description: Ownership Qualifier ID
+    createdAt:
+      type: string
+      format: date
+      description: Created At
+    updatedAt:
+      type: string
+      format: date
+      description: Updated At
+  example:
+    id: 5e272d39b78910dd2a1bd8fe
+    well: 5e272d38b78910dd2a1bd691
+    chosenID: '42479393790000'
+    dataSource: di
+    qualifierKey: q1
+    createdAt: '2022-08-29T19:28:38.881Z'
+    updatedAt: '2022-08-29T19:28:38.881Z'
+    ownership:
+      name: o1
+      initialOwnership:
+        workingInterest: 100
+        netProfitInterestType: expense
+        netProfitInterest: 0
+        netRevenueInterest: 100
+        leaseNetRevenueInterest: 75
+        oilNetRevenueInterest: 4
+        gasNetRevenueInterest:
+        nglNetRevenueInterest:
+        dripCondensateNetRevenueInterest:
+      firstReversion:
+        reversionType: Irr
+        reversionValue: 2
+        balance: gross
+        includeNetProfitInterest: 'yes'
+        workingInterest: 100
+        netProfitInterest: 0
+        netRevenueInterest: 100
+        leaseNetRevenueInterest: 75
+        oilNetRevenueInterest:
+        gasNetRevenueInterest:
+        nglNetRevenueInterest:
+        dripCondensateNetRevenueInterest:
+      secondReversion:
+        reversionType: PayoutWithoutInvestment
+        reversionValue: 4
+        balance: gross
+        includeNetProfitInterest: 'yes'
+        workingInterest: 100
+        netProfitInterest: 0
+        netRevenueInterest: 100
+        leaseNetRevenueInterest: 75
+        oilNetRevenueInterest: 1
+        gasNetRevenueInterest: null
+        nglNetRevenueInterest: null
+        dripCondensateNetRevenueInterest: null
+      thirdReversion:
+        reversionType: UndiscRoi
+        reversionValue: 3
+        balance: gross
+        includeNetProfitInterest: 'yes'
+        workingInterest: 100
+        netProfitInterest: 0
+        netRevenueInterest: 100      
+        leaseNetRevenueInterest: 75  
+        oilNetRevenueInterest: null
+        gasNetRevenueInterest: null
+        nglNetRevenueInterest: null
+        dripCondensateNetRevenueInterest: null
+      fourthReversion: null
+      fifthReversion: null
+      sixthReversion: null 
+      seventhReversion: null
+      eighthReversion: null
+      ninthReversion: null 
+      tenthReversion: null
+OwnershipQualifierList:
+  type: array
+  items:
+    $ref: '#/definitions/OwnershipQualifier'
+  maxItems: 200
+  example:
+    - id: 5e272d39b78910dd2a1bd8fe
+      well: 5e272d38b78910dd2a1bd691
+      chosenID: '42479393790000'
+      dataSource: di
+      qualifierKey: q1
+      createdAt: '2022-08-29T19:28:38.881Z'
+      updatedAt: '2022-08-29T19:28:38.881Z'
+      ownership:
+        name: o1
+        initialOwnership:
+          workingInterest: 100
+          netProfitInterestType: expense
+          netProfitInterest: 0
+          netRevenueInterest: 100
+          leaseNetRevenueInterest: 75
+          oilNetRevenueInterest: 4
+          gasNetRevenueInterest:
+          nglNetRevenueInterest:
+          dripCondensateNetRevenueInterest:
+        firstReversion:
+          reversionType: Irr
+          reversionValue: 2
+          balance: gross
+          includeNetProfitInterest: 'yes'
+          workingInterest: 100
+          netProfitInterest: 0
+          netRevenueInterest: 100
+          leaseNetRevenueInterest: 75
+          oilNetRevenueInterest:
+          gasNetRevenueInterest:
+          nglNetRevenueInterest:
+          dripCondensateNetRevenueInterest:
+        secondReversion:
+          reversionType: PayoutWithoutInvestment
+          reversionValue: 4
+          balance: gross
+          includeNetProfitInterest: 'yes'
+          workingInterest: 100
+          netProfitInterest: 0
+          netRevenueInterest: 100
+          leaseNetRevenueInterest: 75
+          oilNetRevenueInterest: 1
+          gasNetRevenueInterest: null
+          nglNetRevenueInterest: null
+          dripCondensateNetRevenueInterest: null
+        thirdReversion:
+          reversionType: UndiscRoi
+          reversionValue: 3
+          balance: gross
+          includeNetProfitInterest: 'yes'
+          workingInterest: 100
+          netProfitInterest: 0
+          netRevenueInterest: 100      
+          leaseNetRevenueInterest: 75  
+          oilNetRevenueInterest: null
+          gasNetRevenueInterest: null
+          nglNetRevenueInterest: null
+          dripCondensateNetRevenueInterest: null
+        fourthReversion: null
+        fifthReversion: null
+        sixthReversion: null 
+        seventhReversion: null
+        eighthReversion: null
+        ninthReversion: null 
+        tenthReversion: null
+    - id: 5e272d39b78910dd2a1bd8fe
+      well: 5e272d38b78910dd2a1bd691
+      chosenID: '42479393790000'
+      dataSource: di
+      qualifierKey: q1
+      createdAt: '2022-08-29T19:28:38.881Z'
+      updatedAt: '2022-08-29T19:28:38.881Z'
+      ownership:
+        name: o1
+        initialOwnership:
+          workingInterest: 100
+          netProfitInterestType: expense
+          netProfitInterest: 0
+          netRevenueInterest: 100
+          leaseNetRevenueInterest: 75
+          oilNetRevenueInterest: 4
+          gasNetRevenueInterest:
+          nglNetRevenueInterest:
+          dripCondensateNetRevenueInterest:
+        firstReversion:
+          reversionType: Irr
+          reversionValue: 2
+          balance: gross
+          includeNetProfitInterest: 'yes'
+          workingInterest: 100
+          netProfitInterest: 0
+          netRevenueInterest: 100
+          leaseNetRevenueInterest: 75
+          oilNetRevenueInterest:
+          gasNetRevenueInterest:
+          nglNetRevenueInterest:
+          dripCondensateNetRevenueInterest:
+        secondReversion:
+          reversionType: PayoutWithoutInvestment
+          reversionValue: 4
+          balance: gross
+          includeNetProfitInterest: 'yes'
+          workingInterest: 100
+          netProfitInterest: 0
+          netRevenueInterest: 100
+          leaseNetRevenueInterest: 75
+          oilNetRevenueInterest: 1
+          gasNetRevenueInterest: null
+          nglNetRevenueInterest: null
+          dripCondensateNetRevenueInterest: null
+        thirdReversion:
+          reversionType: UndiscRoi
+          reversionValue: 3
+          balance: gross
+          includeNetProfitInterest: 'yes'
+          workingInterest: 100
+          netProfitInterest: 0
+          netRevenueInterest: 100      
+          leaseNetRevenueInterest: 75  
+          oilNetRevenueInterest: null
+          gasNetRevenueInterest: null
+          nglNetRevenueInterest: null
+          dripCondensateNetRevenueInterest: null
+        fourthReversion: null
+        fifthReversion: null
+        sixthReversion: null 
+        seventhReversion: null
+        eighthReversion: null
+        ninthReversion: null 
+        tenthReversion: null
+OwnershipQualifierInput:
+  type: object
+  required:
+    - qualifierKey
+    - ownership
+  properties:
+    chosenID:
+      type: string
+      maxLength: 16384
+      description: Chosen ID
+    dataSource:
+      type: string
+      description: Data Source 
+    qualifierKey:
+      type: string
+      description: Qualifier Key
+    ownership:
+      type: object
+      properties: 
+        name:
+          type: string
+          description: Name
+        initialOwnership:
+          type: object
+          properties:
+            workingInterest:
+              type: number
+              description: working Interest
+            netProfitInterestType:
+              type: string
+              description: Net Profit Interest Type
+            netProfitInterest:
+              type: number
+              description: Net Profit Interest
+            netRevenueInterest:
+              type: number
+              description: Net Revenue Interest
+            leaseNetRevenueInterest:
+              type: number
+              description: Lease Net Revenue Interest
+            oilNetRevenueInterest:
+              type: number
+              description: Oil Net Revenue Interest
+            gasNetRevenueInterest:
+              type: number
+              description: Gas Net Revenue Interest
+            nglNetRevenueInterest:
+              type: number
+              description: Ngl Net Revenue Interest
+            dripCondensateNetRevenueInterest:
+              type: number
+              description: Drip Condensate Net Revenue Interest
+        firstReversion:
+          $ref: '#/definitions/Reversion'
+        secondReversion:
+          $ref: '#/definitions/Reversion'
+        thirdReversion:
+          $ref: '#/definitions/Reversion'
+        fourthReversion:
+          $ref: '#/definitions/Reversion'
+        fifthReversion:
+          $ref: '#/definitions/Reversion'
+        sixthReversion:
+          $ref: '#/definitions/Reversion'
+        seventhReversion:
+          $ref: '#/definitions/Reversion'
+        eighthReversion:
+          $ref: '#/definitions/Reversion'
+        ninthReversion:
+          $ref: '#/definitions/Reversion'
+        tenthReversion:
+          $ref: '#/definitions/Reversion'
+    well:
+      type: string
+      description: Well ID
+  example:
+    well: 5e272d38b78910dd2a1bd691
+    chosenID: '42479393790000'
+    dataSource: di
+    qualifierKey: q1
+    ownership:
+      name: o1
+      initialOwnership:
+        workingInterest: 100
+        netProfitInterestType: expense
+        netProfitInterest: 0
+        netRevenueInterest: 100
+        leaseNetRevenueInterest: 75
+        oilNetRevenueInterest: 4
+        gasNetRevenueInterest:
+        nglNetRevenueInterest:
+        dripCondensateNetRevenueInterest:
+      firstReversion:
+        reversionType: Irr
+        reversionValue: 2
+        balance: gross
+        includeNetProfitInterest: 'yes'
+        workingInterest: 100
+        netProfitInterest: 0
+        netRevenueInterest: 100
+        leaseNetRevenueInterest: 75
+        oilNetRevenueInterest:
+        gasNetRevenueInterest:
+        nglNetRevenueInterest:
+        dripCondensateNetRevenueInterest:
+      secondReversion:
+        reversionType: PayoutWithoutInvestment
+        reversionValue: 4
+        balance: gross
+        includeNetProfitInterest: 'yes'
+        workingInterest: 100
+        netRevenueInterest: 100
+        leaseNetRevenueInterest: 75
+        netProfitInterest: 0
+        oilNetRevenueInterest: 1
+        gasNetRevenueInterest: null
+        nglNetRevenueInterest: null
+        dripCondensateNetRevenueInterest: null
+      thirdReversion:
+        reversionType: UndiscRoi
+        reversionValue: 3
+        balance: gross
+        includeNetProfitInterest: 'yes'
+        workingInterest: 100
+        netRevenueInterest: 100
+        leaseNetRevenueInterest: 75
+        netProfitInterest: 0
+        oilNetRevenueInterest: null
+        gasNetRevenueInterest: null
+        nglNetRevenueInterest: null
+        dripCondensateNetRevenueInterest: null
+      fourthReversion: null
+      fifthReversion: null
+      sixthReversion: null 
+      seventhReversion: null
+      eighthReversion: null
+      ninthReversion: null 
+      tenthReversion: null
+
+OwnershipQualifierInputList:
+  type: array
+  items:
+    $ref: '#/definitions/OwnershipQualifierInput'
+  maxItems: 500
+  example:
+    - well: 5e272d38b78910dd2a1bd691
+      chosenID: '42479393790000'
+      dataSource: di
+      qualifierKey: q1
+      ownership:
+        name: o1
+        initialOwnership:
+          workingInterest: 100
+          netProfitInterestType: expense
+          netProfitInterest: 0
+          netRevenueInterest: 100
+          leaseNetRevenueInterest: 75
+          oilNetRevenueInterest: 4
+          gasNetRevenueInterest:
+          nglNetRevenueInterest:
+          dripCondensateNetRevenueInterest:
+        firstReversion:
+          reversionType: Irr
+          reversionValue: 2
+          balance: gross
+          includeNetProfitInterest: 'yes'
+          workingInterest: 100
+          netProfitInterest: 0
+          netRevenueInterest: 100
+          leaseNetRevenueInterest: 75
+          oilNetRevenueInterest:
+          gasNetRevenueInterest:
+          nglNetRevenueInterest:
+          dripCondensateNetRevenueInterest:
+        secondReversion:
+          reversionType: PayoutWithoutInvestment
+          reversionValue: 4
+          balance: gross
+          includeNetProfitInterest: 'yes'
+          workingInterest: 100
+          netRevenueInterest: 100
+          leaseNetRevenueInterest: 75
+          netProfitInterest: 0
+          oilNetRevenueInterest: 1
+          gasNetRevenueInterest: null
+          nglNetRevenueInterest: null
+          dripCondensateNetRevenueInterest: null
+        thirdReversion:
+          reversionType: UndiscRoi
+          reversionValue: 3
+          balance: gross
+          includeNetProfitInterest: 'yes'
+          workingInterest: 100
+          netRevenueInterest: 100
+          leaseNetRevenueInterest: 75
+          netProfitInterest: 0
+          oilNetRevenueInterest: null
+          gasNetRevenueInterest: null
+          nglNetRevenueInterest: null
+          dripCondensateNetRevenueInterest: null
+        fourthReversion: null
+        fifthReversion: null
+        sixthReversion: null 
+        seventhReversion: null
+        eighthReversion: null
+        ninthReversion: null 
+        tenthReversion: null
+    - well: 5e272d38b78910dd2a1bd691
+      chosenID: '42479393790000'
+      dataSource: di
+      qualifierKey: q1
+      ownership:
+        name: o1
+        initialOwnership:
+          workingInterest: 100
+          netProfitInterestType: expense
+          netProfitInterest: 0
+          netRevenueInterest: 100
+          leaseNetRevenueInterest: 75
+          oilNetRevenueInterest: 4
+          gasNetRevenueInterest:
+          nglNetRevenueInterest:
+          dripCondensateNetRevenueInterest:
+        firstReversion:
+          reversionType: Irr
+          reversionValue: 2
+          balance: gross
+          includeNetProfitInterest: 'yes'
+          workingInterest: 100
+          netProfitInterest: 0
+          netRevenueInterest: 100
+          leaseNetRevenueInterest: 75
+          oilNetRevenueInterest:
+          gasNetRevenueInterest:
+          nglNetRevenueInterest:
+          dripCondensateNetRevenueInterest:
+        secondReversion:
+          reversionType: PayoutWithoutInvestment
+          reversionValue: 4
+          balance: gross
+          includeNetProfitInterest: 'yes'
+          workingInterest: 100
+          netRevenueInterest: 100
+          leaseNetRevenueInterest: 75
+          netProfitInterest: 0
+          oilNetRevenueInterest: 1
+          gasNetRevenueInterest: null
+          nglNetRevenueInterest: null
+          dripCondensateNetRevenueInterest: null
+        thirdReversion:
+          reversionType: UndiscRoi
+          reversionValue: 3
+          balance: gross
+          includeNetProfitInterest: 'yes'
+          workingInterest: 100
+          netRevenueInterest: 100
+          leaseNetRevenueInterest: 75
+          netProfitInterest: 0
+          oilNetRevenueInterest: null
+          gasNetRevenueInterest: null
+          nglNetRevenueInterest: null
+          dripCondensateNetRevenueInterest: null
+        fourthReversion: null
+        fifthReversion: null
+        sixthReversion: null 
+        seventhReversion: null
+        eighthReversion: null
+        ninthReversion: null 
+        tenthReversion: null

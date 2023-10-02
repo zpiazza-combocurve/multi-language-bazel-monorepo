@@ -1,0 +1,117 @@
+{
+	"$id": "http://combocurve.com/schemas/depreciation.json",
+	"type": "object",
+	"$ref": "base-econ-model.json",
+	"required": ["depreciation"],
+	"unevaluatedProperties": false,
+	"properties": {
+		"depreciation": {
+			"discriminator": {
+				"propertyName": "modelType"
+			},
+			"type": "object",
+			"properties": {
+				"modelType": {
+					"type": "string",
+					"enum": ["depreciation", "depletion"]
+				}
+			},
+			"required": ["modelType"],
+			"oneOf": [
+				{
+					"type": "object",
+					"unevaluatedProperties": false,
+					"properties": {
+						"modelType": { "const": "depreciation" },
+						"taxCredit": {
+							"type": "number",
+							"minimum": -10000000000000000000,
+							"maximum": 10000000000000000000
+						},
+						"tcjaBonus": {
+							"type": "boolean"
+						},
+						"bonusDepreciation": {
+							"type": "array",
+							"unevaluatedItems": false,
+							"maxItems": 1,
+							"minItems": 1,
+							"items": {
+								"unevaluatedProperties": false,
+								"type": "object",
+								"properties": {
+									"tangibleBonusDepreciation": {
+										"type": "number",
+										"minimum": 0,
+										"maximum": 100
+									},
+									"intangibleBonusDepreciation": {
+										"type": "number",
+										"minimum": 0,
+										"maximum": 100
+									}
+								},
+								"required": ["tangibleBonusDepreciation", "intangibleBonusDepreciation"]
+							}
+						},
+						"depreciation": {
+							"type": "array",
+							"unevaluatedItems": false,
+							"maxItems": 100,
+							"minItems": 1,
+							"items": {
+								"unevaluatedProperties": false,
+								"type": "object",
+								"properties": {
+									"tanFactor": {
+										"type": "number",
+										"minimum": 0,
+										"maximum": 100
+									},
+									"intanFactor": {
+										"type": "number",
+										"minimum": 0,
+										"maximum": 100
+									}
+								},
+								"required": ["tanFactor", "intanFactor"]
+							}
+						}
+					},
+					"required": ["taxCredit", "tcjaBonus", "bonusDepreciation", "depreciation"]
+				},
+				{
+					"type": "object",
+					"unevaluatedProperties": false,
+					"properties": {
+						"modelType": { "const": "depletion" },
+						"tangibleImmediateDepletion": {
+							"type": "number",
+							"minimum": -10000000000000000000,
+							"maximum": 10000000000000000000
+						},
+						"intangibleImmediateDepletion": {
+							"type": "number",
+							"minimum": -10000000000000000000,
+							"maximum": 10000000000000000000
+						},
+						"tangibleDepletionModel": {
+							"type": "string",
+							"enum": ["unit_of_production_major", "unit_of_production_BOE", "ecl", "fpd", "never"]
+						},
+						"intangibleDepletionModel": {
+							"type": "string",
+							"enum": ["unit_of_production_major", "unit_of_production_BOE", "ecl", "fpd", "never"]
+						}
+					},
+					"required": [
+						"tangibleImmediateDepletion",
+						"intangibleImmediateDepletion",
+						"tangibleDepletionModel",
+						"intangibleDepletionModel"
+					]
+				}
+			]
+		}
+	}
+}

@@ -1,0 +1,614 @@
+{
+	"$id": "http://combocurve.com/schemas/expenses.json",
+	"$ref": "base-econ-model.json",
+	"type": "object",
+	"unevaluatedProperties": false,
+	"properties": {
+		"variableExpenses": {
+			"properties": {
+				"oil": {
+					"type": "object",
+					"unevaluatedProperties": false,
+					"properties": {
+						"gathering": {
+							"$ref": "#/definitions/PhaseExpenseFieldsShrunkAndDollarPerBbl"
+						},
+						"marketing": {
+							"$ref": "#/definitions/PhaseExpenseFieldsShrunkAndDollarPerBbl"
+						},
+						"transportation": {
+							"$ref": "#/definitions/PhaseExpenseFieldsShrunkAndDollarPerBbl"
+						},
+						"processing": {
+							"$ref": "#/definitions/PhaseExpenseFieldsShrunkAndDollarPerBbl"
+						},
+						"other": {
+							"$ref": "#/definitions/PhaseExpenseFieldsShrunkAndDollarPerBbl"
+						}
+					},
+					"required": ["gathering", "marketing", "transportation", "processing", "other"]
+				},
+				"gas": {
+					"type": "object",
+					"unevaluatedProperties": false,
+					"properties": {
+						"gathering": {
+							"$ref": "#/definitions/PhaseExpenseFieldsShrunkAndDollarPerMCFAndMmbtu"
+						},
+						"marketing": {
+							"$ref": "#/definitions/PhaseExpenseFieldsShrunkAndDollarPerMCFAndMmbtu"
+						},
+						"transportation": {
+							"$ref": "#/definitions/PhaseExpenseFieldsShrunkAndDollarPerMCFAndMmbtu"
+						},
+						"processing": {
+							"$ref": "#/definitions/PhaseExpenseFieldsShrunkAndDollarPerMCFAndMmbtu"
+						},
+						"other": {
+							"$ref": "#/definitions/PhaseExpenseFieldsShrunkAndDollarPerMCFAndMmbtu"
+						}
+					},
+					"required": ["gathering", "marketing", "transportation", "processing", "other"]
+				},
+				"ngl": {
+					"type": "object",
+					"unevaluatedProperties": false,
+					"properties": {
+						"gathering": {
+							"$ref": "#/definitions/PhaseExpenseFieldsDolalrPerBblWrapper"
+						},
+						"marketing": {
+							"$ref": "#/definitions/PhaseExpenseFieldsDolalrPerBblWrapper"
+						},
+						"transportation": {
+							"$ref": "#/definitions/PhaseExpenseFieldsDolalrPerBblWrapper"
+						},
+						"processing": {
+							"$ref": "#/definitions/PhaseExpenseFieldsDolalrPerBblWrapper"
+						},
+						"other": {
+							"$ref": "#/definitions/PhaseExpenseFieldsDolalrPerBblWrapper"
+						}
+					},
+					"required": ["gathering", "marketing", "transportation", "processing", "other"]
+				},
+				"dripCondensate": {
+					"type": "object",
+					"unevaluatedProperties": false,
+					"properties": {
+						"gathering": {
+							"$ref": "#/definitions/PhaseExpenseFieldsDolalrPerBblWrapper"
+						},
+						"marketing": {
+							"$ref": "#/definitions/PhaseExpenseFieldsDolalrPerBblWrapper"
+						},
+						"transportation": {
+							"$ref": "#/definitions/PhaseExpenseFieldsDolalrPerBblWrapper"
+						},
+						"processing": {
+							"$ref": "#/definitions/PhaseExpenseFieldsDolalrPerBblWrapper"
+						},
+						"other": {
+							"$ref": "#/definitions/PhaseExpenseFieldsDolalrPerBblWrapper"
+						}
+					},
+					"required": ["gathering", "marketing", "transportation", "processing", "other"]
+				}
+			},
+			"type": "object",
+			"required": ["oil", "gas", "ngl", "dripCondensate"]
+		},
+		"fixedExpenses": {
+			"type": "object",
+			"properties": {
+				"monthlyWellCost": {
+					"$ref": "#/definitions/FixedExpensesFields"
+				},
+				"otherMonthlyCost1": {
+					"$ref": "#/definitions/FixedExpensesFields"
+				},
+				"otherMonthlyCost2": {
+					"$ref": "#/definitions/FixedExpensesFields"
+				},
+				"otherMonthlyCost3": {
+					"$ref": "#/definitions/FixedExpensesFields"
+				},
+				"otherMonthlyCost4": {
+					"$ref": "#/definitions/FixedExpensesFields"
+				},
+				"otherMonthlyCost5": {
+					"$ref": "#/definitions/FixedExpensesFields"
+				},
+				"otherMonthlyCost6": {
+					"$ref": "#/definitions/FixedExpensesFields"
+				},
+				"otherMonthlyCost7": {
+					"$ref": "#/definitions/FixedExpensesFields"
+				},
+				"otherMonthlyCost8": {
+					"$ref": "#/definitions/FixedExpensesFields"
+				}
+			},
+			"required": [
+				"monthlyWellCost",
+				"otherMonthlyCost1",
+				"otherMonthlyCost2",
+				"otherMonthlyCost3",
+				"otherMonthlyCost4",
+				"otherMonthlyCost5",
+				"otherMonthlyCost6",
+				"otherMonthlyCost7",
+				"otherMonthlyCost8"
+			]
+		},
+		"waterDisposal": {
+			"$ref": "#/definitions/WaterDisposalFields"
+		},
+		"carbonExpenses": {
+			"type": "object",
+			"properties": {
+				"category": {
+					"type": "string",
+					"enum": ["co2e", "co2", "ch4", "n2o"]
+				},
+				"ch4": {
+					"$ref": "#/definitions/CarbonExpensesFields"
+				},
+				"co2": {
+					"$ref": "#/definitions/CarbonExpensesFields"
+				},
+				"co2E": {
+					"$ref": "#/definitions/CarbonExpensesFields"
+				},
+				"n2O": {
+					"$ref": "#/definitions/CarbonExpensesFields"
+				}
+			},
+			"required": ["category", "ch4", "co2", "co2E", "n2O"]
+		}
+	},
+	"required": ["variableExpenses", "fixedExpenses", "waterDisposal", "carbonExpenses"],
+	"definitions": {
+		"PercentageField": {
+			"type": "number",
+			"minimum": 0,
+			"maximum": 100,
+			"minimumDecimalPrecision": 0.000001
+		},
+		"BaseExpensesField": {
+			"type": "object",
+			"properties": {
+				"description": {
+					"type": "string"
+				},
+				"escalationModel": {
+					"$ref": "rows-validation-defs.json#/definitions/EscalationModel"
+				},
+				"calculation": {
+					"$ref": "rows-validation-defs.json#/definitions/Calculation"
+				},
+				"affectEconLimit": {
+					"type": "boolean"
+				},
+				"deductBeforeSeveranceTax": {
+					"type": "boolean"
+				},
+				"deductBeforeAdValTax": {
+					"type": "boolean"
+				},
+				"cap": {
+					"$ref": "rows-validation-defs.json#/definitions/Cap"
+				},
+				"dealTerms": {
+					"type": "number",
+					"minimum": 0,
+					"maximum": 1000,
+					"minimumDecimalPrecision": 0.000001
+				},
+				"rateType": {
+					"type": "string",
+					"enum": ["gross_well_head", "gross_sales", "net_sales"]
+				},
+				"rowsCalculationMethod": {
+					"type": "string",
+					"enum": ["monotonic", "non_monotonic"]
+				},
+				"rows": {
+					"type": "array",
+					"maxItems": 100,
+					"minItems": 1,
+					"items": {
+						"type": "object",
+						"maxProperties": 2,
+						"properties": {
+							"pctOfOilRev": {
+								"$ref": "#/definitions/PercentageField"
+							},
+							"pctOfGasRev": {
+								"$ref": "#/definitions/PercentageField"
+							},
+							"pctOfNglRev": {
+								"$ref": "#/definitions/PercentageField"
+							},
+							"pctOfDripCondensateRev": {
+								"$ref": "#/definitions/PercentageField"
+							},
+							"pctOfTotalRev": {
+								"$ref": "#/definitions/PercentageField"
+							},
+							"entireWellLife": {
+								"$ref": "criteria.json#/definitions/EntireWellLife"
+							},
+							"offsetToAsOf": {
+								"$ref": "criteria.json#/definitions/OffsetToAsOf"
+							},
+							"offsetToFpd": {
+								"$ref": "criteria.json#/definitions/OffsetToFpd"
+							},
+							"offsetToDiscountDate": {
+								"$ref": "criteria.json#/definitions/OffsetToDiscountDate"
+							},
+							"offsetToFirstSegment": {
+								"$ref": "criteria.json#/definitions/OffsetToFirstSegment"
+							},
+							"offsetToEndHistory": {
+								"$ref": "criteria.json#/definitions/OffsetToEndHistory"
+							},
+							"dates": {
+								"$ref": "criteria.json#/definitions/Dates"
+							},
+							"oilRate": {
+								"$ref": "criteria.json#/definitions/OilRate"
+							},
+							"gasRate": {
+								"$ref": "criteria.json#/definitions/GasRate"
+							},
+							"waterRate": {
+								"$ref": "criteria.json#/definitions/WaterRate"
+							},
+							"totalFluidRate": {
+								"$ref": "criteria.json#/definitions/TotalFluidRate"
+							}
+						}
+					}
+				}
+			},
+			"required": [
+				"escalationModel",
+				"calculation",
+				"affectEconLimit",
+				"deductBeforeSeveranceTax",
+				"deductBeforeAdValTax",
+				"dealTerms",
+				"rateType",
+				"rowsCalculationMethod",
+				"rows"
+			]
+		},
+		"PhaseExpenseFieldsShrunkAndDollarPerBbl": {
+			"type": "object",
+			"allOf": [
+				{
+					"$ref": "#/definitions/PhaseExpenseFieldsDollarPerBbl"
+				},
+				{
+					"$ref": "#/definitions/RowsOneCriteriaRequiredDefinition"
+				}
+			],
+			"properties": {
+				"shrinkageCondition": {
+					"$ref": "rows-validation-defs.json#/definitions/ShrinkageCondition"
+				}
+			},
+			"required": ["shrinkageCondition", "rows"]
+		},
+		"PhaseExpenseFieldsShrunkAndDollarPerMCFAndMmbtu": {
+			"allOf": [
+				{
+					"$ref": "#/definitions/RowsOneCriteriaRequiredDefinition"
+				},
+				{
+					"$ref": "#/definitions/BaseExpensesField"
+				}
+			],
+			"type": "object",
+			"unevaluatedProperties": false,
+			"properties": {
+				"shrinkageCondition": {
+					"$ref": "rows-validation-defs.json#/definitions/ShrinkageCondition"
+				},
+				"rows": {
+					"type": "array",
+					"$ref": "#/definitions/BaseAndGasValueArray",
+					"unevaluatedItems": false,
+					"items": {
+						"type": "object",
+						"properties": {
+							"dollarPerMmbtu": {
+								"type": "number",
+								"minimum": -100000000,
+								"maximum": 100000000,
+								"minimumDecimalPrecision": 0.000001
+							},
+							"dollarPerMcf": {
+								"type": "number",
+								"minimum": -100000000,
+								"maximum": 100000000,
+								"minimumDecimalPrecision": 0.000001
+							}
+						}
+					}
+				}
+			},
+			"required": ["shrinkageCondition", "rows"]
+		},
+		"PhaseExpenseFieldsDollarPerBbl": {
+			"type": "object",
+			"allOf": [
+				{
+					"$ref": "#/definitions/BaseExpensesField"
+				}
+			],
+			"properties": {
+				"rows": {
+					"type": "array",
+					"$ref": "#/definitions/BaseAndFluidValueArray",
+					"unevaluatedItems": false,
+					"items": {
+						"type": "object",
+						"properties": {
+							"dollarPerBbl": {
+								"type": "number",
+								"minimum": -100000000,
+								"maximum": 100000000,
+								"minimumDecimalPrecision": 0.000001
+							}
+						}
+					}
+				}
+			},
+			"required": ["rows"]
+		},
+		"FixedExpensesFields": {
+			"type": "object",
+			"allOf": [
+				{
+					"$ref": "#/definitions/BaseExpensesField"
+				},
+				{
+					"$ref": "#/definitions/RowsOneCriteriaRequiredDefinition"
+				}
+			],
+			"properties": {
+				"expenseBeforeFpd": {
+					"type": "boolean"
+				},
+				"stopAtEconLimit": {
+					"type": "boolean"
+				},
+				"rows": {
+					"type": "array",
+					"$ref": "#/definitions/FixedExpenseValueArray",
+					"unevaluatedItems": false,
+					"items": {
+						"type": "object",
+						"properties": {
+							"fixedExpense": {
+								"type": "number",
+								"minimum": -100000000,
+								"maximum": 100000000,
+								"minimumDecimalPrecision": 0.000001
+							},
+							"fixedExpensePerWell": {
+								"type": "number",
+								"minimum": -100000000,
+								"maximum": 100000000,
+								"minimumDecimalPrecision": 0.000001
+							}
+						}
+					}
+				}
+			},
+			"required": ["expenseBeforeFpd", "stopAtEconLimit", "rows"]
+		},
+		"PhaseExpenseFieldsDolalrPerBblWrapper": {
+			"type": "object",
+			"unevaluatedProperties": false,
+			"allOf": [
+				{
+					"$ref": "#/definitions/PhaseExpenseFieldsDollarPerBbl"
+				},
+				{
+					"$ref": "#/definitions/RowsOneCriteriaRequiredDefinition"
+				}
+			]
+		},
+		"WaterDisposalFields": {
+			"type": "object",
+			"unevaluatedProperties": false,
+			"allOf": [
+				{
+					"$ref": "#/definitions/PhaseExpenseFieldsDollarPerBbl"
+				},
+				{
+					"$ref": "#/definitions/RowsOneCriteriaRequiredDefinition"
+				}
+			],
+			"properties": {
+				"description": {
+					"type": "string",
+					"maxLength": 0
+				}
+			}
+		},
+		"CarbonExpensesFields": {
+			"type": "object",
+			"allOf": [
+				{
+					"$ref": "#/definitions/BaseExpensesField"
+				},
+				{
+					"$ref": "#/definitions/RowsOneCriteriaRequiredDefinition"
+				}
+			],
+			"properties": {
+				"rows": {
+					"type": "array",
+					"unevaluatedItems": false,
+					"items": {
+						"type": "object",
+						"maxProperties": 2,
+						"properties": {
+							"carbonExpense": {
+								"type": "number",
+								"minimum": -100000000,
+								"maximum": 100000000,
+								"minimumDecimalPrecision": 0.000001
+							}
+						},
+						"required": ["carbonExpense"]
+					}
+				}
+			},
+			"required": ["rows"]
+		},
+		"BaseAndFluidValueArray": {
+			"if": {
+				"oneOf": [
+					{
+						"$ref": "rows-validation-defs.json#/definitions/PctOfOilRevArray"
+					},
+					{
+						"$ref": "rows-validation-defs.json#/definitions/PctOfGasRevArray"
+					},
+					{
+						"$ref": "rows-validation-defs.json#/definitions/PctOfNglRevArray"
+					},
+					{
+						"$ref": "rows-validation-defs.json#/definitions/PctOfDripCondensateRevArray"
+					},
+					{
+						"$ref": "rows-validation-defs.json#/definitions/PctOfTotalRevArray"
+					},
+					{
+						"$ref": "rows-validation-defs.json#/definitions/DollarPerBblArray"
+					},
+					{
+						"type": "array",
+						"maxItems": 0
+					}
+				]
+			},
+			"else": {
+				"errorMessage": "All rows must contain exactly one of the following properties: `pctOfOilRev`, `pctOfGasRev`, `pctOfNglRev`, `pctOfDripCondensateRev`, `pctOfTotalRev`, `dollarPerBbl`",
+				"const": null
+			}
+		},
+		"BaseAndGasValueArray": {
+			"if": {
+				"oneOf": [
+					{
+						"$ref": "rows-validation-defs.json#/definitions/PctOfOilRevArray"
+					},
+					{
+						"$ref": "rows-validation-defs.json#/definitions/PctOfGasRevArray"
+					},
+					{
+						"$ref": "rows-validation-defs.json#/definitions/PctOfNglRevArray"
+					},
+					{
+						"$ref": "rows-validation-defs.json#/definitions/PctOfDripCondensateRevArray"
+					},
+					{
+						"$ref": "rows-validation-defs.json#/definitions/PctOfTotalRevArray"
+					},
+					{
+						"$ref": "rows-validation-defs.json#/definitions/DollarPerMmbtuArray"
+					},
+					{
+						"$ref": "rows-validation-defs.json#/definitions/DollarPerMcfArray"
+					},
+					{
+						"type": "array",
+						"maxItems": 0
+					}
+				]
+			},
+			"else": {
+				"errorMessage": "All rows must contain exactly one of the following properties: `pctOfOilRev`, `pctOfGasRev`, `pctOfNglRev`, `pctOfDripCondensateRev`, `pctOfTotalRev`, `dollarPerMmbtu`, `dollarPerMcf`",
+				"const": null
+			}
+		},
+		"FixedExpenseValueArray": {
+			"if": {
+				"oneOf": [
+					{
+						"$ref": "rows-validation-defs.json#/definitions/FixedExpenseArray"
+					},
+					{
+						"$ref": "rows-validation-defs.json#/definitions/FixedExpensePerWellArray"
+					},
+					{
+						"type": "array",
+						"maxItems": 0
+					}
+				]
+			},
+			"else": {
+				"errorMessage": "All rows must contain exactly one of the following properties: `fixedExpense` or `fixedExpensePerWell`",
+				"const": null
+			}
+		},
+		"RowsOneCriteriaRequiredDefinition": {
+			"if": {
+				"oneOf": [
+					{
+						"$ref": "rows-validation-defs.json#/definitions/EntireWellLifeArray"
+					},
+					{
+						"$ref": "rows-validation-defs.json#/definitions/OffsetToAsOfArray"
+					},
+					{
+						"$ref": "rows-validation-defs.json#/definitions/OffsetToFpdArray"
+					},
+					{
+						"$ref": "rows-validation-defs.json#/definitions/OffsetToDiscountDateArray"
+					},
+					{
+						"$ref": "rows-validation-defs.json#/definitions/OffsetToFirstSegmentArray"
+					},
+					{
+						"$ref": "rows-validation-defs.json#/definitions/OffsetToEndHistoryArray"
+					},
+					{
+						"$ref": "rows-validation-defs.json#/definitions/DatesArray"
+					},
+					{
+						"$ref": "rows-validation-defs.json#/definitions/OilRateArray"
+					},
+					{
+						"$ref": "rows-validation-defs.json#/definitions/GasRateArray"
+					},
+					{
+						"$ref": "rows-validation-defs.json#/definitions/WaterRateArray"
+					},
+					{
+						"$ref": "rows-validation-defs.json#/definitions/TotalFluidRateArray"
+					},
+					{
+						"$ref": "rows-validation-defs.json#/definitions/EmptyRowsArray"
+					}
+				]
+			},
+			"else": {
+				"if": {
+					"type": "object"
+				},
+				"then": {
+					"errorMessage": "All rows must contain exactly one of the following properties: `entireWellLife`, `offsetToAsOf`, `dates`, `offsetToEndHistory`, `offsetToFirstSegment`, `offsetToDiscountDate`, `gasRate`, `oilRate`, `waterRate` or `totalFluidRate`",
+					"const": null
+				}
+			}
+		}
+	}
+}

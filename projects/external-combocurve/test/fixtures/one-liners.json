@@ -1,0 +1,1084 @@
+[
+	{
+		"_id": "5f80f29af286b2b3a6c0b473",
+		"oneLinerData": {
+			"gross_oil_well_head_volume": {
+				"key": "gross_oil_well_head_volume",
+				"name": "Gross Oil Well Head Volume",
+				"unit": "MBBL",
+				"type": "number",
+				"value": 0,
+				"order": 1
+			},
+			"gross_gas_well_head_volume": {
+				"key": "gross_gas_well_head_volume",
+				"name": "Gross Gas Well Head Volume",
+				"unit": "MMCF",
+				"type": "number",
+				"value": 0,
+				"order": 2
+			},
+			"gross_water_well_head_volume": {
+				"key": "gross_water_well_head_volume",
+				"name": "Gross Water Well Head Volume",
+				"unit": "MBBL",
+				"type": "number",
+				"value": 0,
+				"order": 3
+			},
+			"gross_oil_sales_volume": {
+				"key": "gross_oil_sales_volume",
+				"name": "Gross Oil Sales Volume",
+				"unit": "MBBL",
+				"type": "number",
+				"value": 0,
+				"order": 4
+			},
+			"gross_gas_sales_volume": {
+				"key": "gross_gas_sales_volume",
+				"name": "Gross Gas Sales Volume",
+				"unit": "MMCF",
+				"type": "number",
+				"value": 0,
+				"order": 5
+			},
+			"gross_ngl_sales_volume": {
+				"key": "gross_ngl_sales_volume",
+				"name": "Gross NGL Sales Volume",
+				"unit": "MBBL",
+				"type": "number",
+				"value": 0,
+				"order": 6
+			},
+			"net_oil_sales_volume": {
+				"key": "net_oil_sales_volume",
+				"name": "Net Oil Sales Volume",
+				"unit": "MBBL",
+				"type": "number",
+				"value": 0,
+				"order": 7
+			},
+			"net_gas_sales_volume": {
+				"key": "net_gas_sales_volume",
+				"name": "Net Gas Sales Volume",
+				"unit": "MMCF",
+				"type": "number",
+				"value": 0,
+				"order": 8
+			},
+			"net_ngl_sales_volume": {
+				"key": "net_ngl_sales_volume",
+				"name": "Net NGL Sales Volume",
+				"unit": "MBBL",
+				"type": "number",
+				"value": 0,
+				"order": 9
+			},
+			"oil_revenue": {
+				"key": "oil_revenue",
+				"name": "Oil Revenue",
+				"unit": "M$",
+				"type": "number",
+				"value": 0,
+				"order": 10
+			},
+			"gas_revenue": {
+				"key": "gas_revenue",
+				"name": "Gas Revenue",
+				"unit": "M$",
+				"type": "number",
+				"value": 0,
+				"order": 11
+			},
+			"ngl_revenue": {
+				"key": "ngl_revenue",
+				"name": "NGL Revenue",
+				"unit": "M$",
+				"type": "number",
+				"value": 0,
+				"order": 12
+			},
+			"total_revenue": {
+				"key": "total_revenue",
+				"name": "Total Revenue",
+				"unit": "M$",
+				"type": "number",
+				"value": 0,
+				"order": 13
+			},
+			"total_variable_expense": {
+				"key": "total_variable_expense",
+				"name": "Total Variable Expense",
+				"unit": "M$",
+				"type": "number",
+				"value": 0,
+				"order": 14
+			},
+			"total_fixed_expense": {
+				"key": "total_fixed_expense",
+				"name": "Total Fixed Expense",
+				"unit": "M$",
+				"type": "number",
+				"value": 5,
+				"order": 15
+			},
+			"total_expense": {
+				"key": "total_expense",
+				"name": "Total Expense",
+				"unit": "M$",
+				"type": "number",
+				"value": 5,
+				"order": 16
+			},
+			"total_severance_tax": {
+				"key": "total_severance_tax",
+				"name": "Total Severance Tax",
+				"unit": "M$",
+				"type": "number",
+				"value": 0,
+				"order": 17
+			},
+			"ad_valorem_tax": {
+				"key": "ad_valorem_tax",
+				"name": "Ad Valorem Tax",
+				"unit": "M$",
+				"type": "number",
+				"value": 0,
+				"order": 18
+			},
+			"total_production_tax": {
+				"key": "total_production_tax",
+				"name": "Total Production Tax",
+				"unit": "M$",
+				"type": "number",
+				"value": 0,
+				"order": 19
+			},
+			"total_tangible_capex": {
+				"key": "total_tangible_capex",
+				"name": "Total Tangible CAPEX",
+				"unit": "M$",
+				"type": "number",
+				"value": 0,
+				"order": 20
+			},
+			"total_intangible_capex": {
+				"key": "total_intangible_capex",
+				"name": "Total Intangible CAPEX",
+				"unit": "M$",
+				"type": "number",
+				"value": 0,
+				"order": 21
+			},
+			"total_capex": {
+				"key": "total_capex",
+				"name": "Total CAPEX",
+				"unit": "M$",
+				"type": "number",
+				"value": 0,
+				"order": 22
+			},
+			"net_profit": {
+				"key": "net_profit",
+				"name": "Net Profit",
+				"unit": "M$",
+				"type": "number",
+				"value": 0,
+				"order": 23
+			},
+			"before_income_tax_cash_flow": {
+				"key": "before_income_tax_cash_flow",
+				"name": "Before Income Tax Cash Flow",
+				"unit": "M$",
+				"type": "number",
+				"value": -5,
+				"order": 24
+			},
+			"first_discount_cash_flow": {
+				"key": "first_discount_cash_flow",
+				"name": "10% Discount Cash Flow",
+				"unit": "M$",
+				"type": "number",
+				"value": -4.959716668700291,
+				"order": 25
+			},
+			"second_discount_cash_flow": {
+				"key": "second_discount_cash_flow",
+				"name": "15% Discount Cash Flow",
+				"unit": "M$",
+				"type": "number",
+				"value": -4.941040046513981,
+				"order": 26
+			},
+			"as_of_date": {
+				"key": "as_of_date",
+				"name": "As of Date",
+				"unit": "",
+				"type": "date",
+				"value": "03/01/2020",
+				"order": 27
+			},
+			"discount_date": {
+				"key": "discount_date",
+				"name": "Discount Date",
+				"unit": "",
+				"type": "date",
+				"value": "03/01/2020",
+				"order": 28
+			},
+			"well_life": {
+				"key": "well_life",
+				"name": "Well Life",
+				"unit": "years",
+				"type": "number",
+				"value": 0.08,
+				"order": 29
+			},
+			"abandonment_date": {
+				"key": "abandonment_date",
+				"name": "Abandonment Date",
+				"unit": "",
+				"type": "date",
+				"value": "03/31/2020",
+				"order": 30
+			},
+			"undiscounted_roi": {
+				"key": "undiscounted_roi",
+				"name": "Undiscounted ROI",
+				"unit": "%",
+				"type": "number",
+				"value": null,
+				"order": 31
+			},
+			"first_discount_roi": {
+				"key": "first_discount_roi",
+				"name": "10% Discount ROI",
+				"unit": "%",
+				"type": "number",
+				"value": null,
+				"order": 32
+			},
+			"second_discount_roi": {
+				"key": "second_discount_roi",
+				"name": "15% Discount ROI",
+				"unit": "%",
+				"type": "number",
+				"value": null,
+				"order": 33
+			},
+			"irr": {
+				"key": "irr",
+				"name": "IRR",
+				"unit": "%",
+				"type": "number",
+				"value": null,
+				"order": 34
+			},
+			"undiscounted_payout": {
+				"key": "undiscounted_payout",
+				"name": "Undiscounted Payout",
+				"unit": "",
+				"type": "string",
+				"value": null,
+				"order": 35
+			},
+			"payout_duration": {
+				"key": "payout_duration",
+				"name": "Payout Duration",
+				"unit": "months",
+				"type": "number",
+				"value": null,
+				"order": 36
+			}
+		},
+		"reservesCategory": {
+			"econ_prms_resources_class": "reserves",
+			"econ_prms_reserves_category": "proved",
+			"econ_prms_reserves_sub_category": "producing"
+		},
+		"project": "5e272bed4b97ed00132f2271",
+		"run": "5f80f287d7e63537b90aa121",
+		"scenario": "5e27305e4f59a9ec64eb576a",
+		"user": "5dc05a6ad736590007729003",
+		"well": "5e272d38b78910dd2a1bd692",
+		"group": "63e657ba5f2b0d0012a48784",
+		"comboName": "Default 1"
+	},
+	{
+		"_id": "5f80f29af286b2b3a6c0b474",
+		"error": {
+			"expected": true,
+			"name": "MissingAssumptionError",
+			"message": "Drilling cost model is used but 0 appears in True Vertical Depth or Perforacted Lateral Length.",
+			"details": null,
+			"traceback": "  File \"/user_code/services/econ/econ_service.py\", line 102, in batch_econ\n    reserves_category, warning_message) = econ_calculation(input_)\n  File \"/user_code/science/econ/econ_calculation.py\", line 217, in econ_calculation\n    other_capex = get_other_capex(capex, well_header_info, schedule)\n  File \"/user_code/science/econ/econ_calculation.py\", line 113, in get_other_capex\n    raise MissingAssumptionError(capex_model_warning, None)\n",
+			"py_exception": true
+		},
+		"oneLinerData": null,
+		"reservesCategory": {
+			"econ_prms_resources_class": "",
+			"econ_prms_reserves_category": "",
+			"econ_prms_reserves_sub_category": ""
+		},
+		"project": "5e272bed4b97ed00132f2271",
+		"run": "5f80f287d7e63537b90aa121",
+		"scenario": "5e27305e4f59a9ec64eb576a",
+		"user": "5dc05a6ad736590007729003",
+		"well": "5e272d38b78910dd2a1bd6a8",
+		"comboName": "test combo"
+	},
+	{
+		"_id": "64cc17b87bf67fafe8d3ebf7",
+		"reservesCategory": {
+			"econ_prms_resources_class": "",
+			"econ_prms_reserves_category": "",
+			"econ_prms_reserves_sub_category": ""
+		},
+		"incrementalIndex": 0,
+		"project": "5e272bed4b97ed00132f2271",
+		"run": "5f80f287d7e63537b90aa121",
+		"scenario": "5e27305e4f59a9ec64eb576a",
+		"user": "5dc05a6ad736590007729003",
+		"well": "5e272d38b78910dd2a1bd6a8",
+		"comboName": "02-test",
+		"group": null,
+		"oneLinerData": {
+			"gross_oil_well_head_volume": {
+				"key": "gross_oil_well_head_volume",
+				"name": "Gross Oil Well Head Volume",
+				"unit": "MMBBL",
+				"type": "number",
+				"value": 0.016727163464797336,
+				"order": 1
+			},
+			"gross_gas_well_head_volume": {
+				"key": "gross_gas_well_head_volume",
+				"name": "Gross Gas Well Head Volume",
+				"unit": "MCF",
+				"type": "number",
+				"value": 25956.202638832958,
+				"order": 2
+			},
+			"gross_water_well_head_volume": {
+				"key": "gross_water_well_head_volume",
+				"name": "Gross Water Well Head Volume",
+				"unit": "MMBBL",
+				"type": "number",
+				"value": 0.027611132051452884,
+				"order": 3
+			},
+			"gross_oil_sales_volume": {
+				"key": "gross_oil_sales_volume",
+				"name": "Gross Oil Sales Volume",
+				"unit": "MMBBL",
+				"type": "number",
+				"value": 0.016727163464797336,
+				"order": 4
+			},
+			"gross_gas_sales_volume": {
+				"key": "gross_gas_sales_volume",
+				"name": "Gross Gas Sales Volume",
+				"unit": "MCF",
+				"type": "number",
+				"value": 25956.202638832958,
+				"order": 5
+			},
+			"gross_ngl_sales_volume": {
+				"key": "gross_ngl_sales_volume",
+				"name": "Gross NGL Sales Volume",
+				"unit": "GAL",
+				"type": "number",
+				"value": 0,
+				"order": 6
+			},
+			"net_oil_sales_volume": {
+				"key": "net_oil_sales_volume",
+				"name": "Net Oil Sales Volume",
+				"unit": "MMBBL",
+				"type": "number",
+				"value": 0,
+				"order": 7
+			},
+			"net_gas_sales_volume": {
+				"key": "net_gas_sales_volume",
+				"name": "Net Gas Sales Volume",
+				"unit": "MCF",
+				"type": "number",
+				"value": 0,
+				"order": 8
+			},
+			"net_ngl_sales_volume": {
+				"key": "net_ngl_sales_volume",
+				"name": "Net NGL Sales Volume",
+				"unit": "GAL",
+				"type": "number",
+				"value": 0,
+				"order": 9
+			},
+			"oil_revenue": {
+				"key": "oil_revenue",
+				"name": "Net Oil Revenue",
+				"unit": "MM$",
+				"type": "number",
+				"value": 0,
+				"order": 10
+			},
+			"gas_revenue": {
+				"key": "gas_revenue",
+				"name": "Net Gas Revenue",
+				"unit": "MM$",
+				"type": "number",
+				"value": 0,
+				"order": 11
+			},
+			"ngl_revenue": {
+				"key": "ngl_revenue",
+				"name": "Net NGL Revenue",
+				"unit": "MM$",
+				"type": "number",
+				"value": 0,
+				"order": 12
+			},
+			"total_revenue": {
+				"key": "total_revenue",
+				"name": "Total Net Revenue",
+				"unit": "MM$",
+				"type": "number",
+				"value": 0,
+				"order": 13
+			},
+			"total_variable_expense": {
+				"key": "total_variable_expense",
+				"name": "Total Variable Expense",
+				"unit": "MM$",
+				"type": "number",
+				"value": 0,
+				"order": 14
+			},
+			"total_fixed_expense": {
+				"key": "total_fixed_expense",
+				"name": "Total Fixed Expense",
+				"unit": "MM$",
+				"type": "number",
+				"value": 0,
+				"order": 15
+			},
+			"total_expense": {
+				"key": "total_expense",
+				"name": "Total Expense",
+				"unit": "MM$",
+				"type": "number",
+				"value": 0,
+				"order": 16
+			},
+			"total_severance_tax": {
+				"key": "total_severance_tax",
+				"name": "Total Severance Tax",
+				"unit": "MM$",
+				"type": "number",
+				"value": 0,
+				"order": 17
+			},
+			"ad_valorem_tax": {
+				"key": "ad_valorem_tax",
+				"name": "Ad Valorem Tax",
+				"unit": "MM$",
+				"type": "number",
+				"value": 0,
+				"order": 18
+			},
+			"total_production_tax": {
+				"key": "total_production_tax",
+				"name": "Total Production Tax",
+				"unit": "MM$",
+				"type": "number",
+				"value": 0,
+				"order": 19
+			},
+			"total_tangible_capex": {
+				"key": "total_tangible_capex",
+				"name": "Total Net Tangible Investment",
+				"unit": "MM$",
+				"type": "number",
+				"value": 0,
+				"order": 20
+			},
+			"total_intangible_capex": {
+				"key": "total_intangible_capex",
+				"name": "Total Net Intangible Investment",
+				"unit": "MM$",
+				"type": "number",
+				"value": 0,
+				"order": 21
+			},
+			"total_capex": {
+				"key": "total_capex",
+				"name": "Total Net Investment",
+				"unit": "MM$",
+				"type": "number",
+				"value": 0,
+				"order": 22
+			},
+			"first_discounted_capex": {
+				"key": "first_discounted_capex",
+				"name": "10% Discount Total Net CAPEX",
+				"unit": "MM$",
+				"type": "number",
+				"value": 0,
+				"order": 23
+			},
+			"second_discounted_capex": {
+				"key": "second_discounted_capex",
+				"name": "10% Discount Total Net CAPEX",
+				"unit": "MM$",
+				"type": "number",
+				"value": 0,
+				"order": 24
+			},
+			"total_gross_capex": {
+				"key": "total_gross_capex",
+				"name": "Total Gross Investment",
+				"unit": "MM$",
+				"type": "number",
+				"value": 0,
+				"order": 25
+			},
+			"net_profit": {
+				"key": "net_profit",
+				"name": "NPI Cash Flow",
+				"unit": "MM$",
+				"type": "number",
+				"value": 0,
+				"order": 26
+			},
+			"net_income": {
+				"key": "net_income",
+				"name": "Net Operating Income",
+				"unit": "MM$",
+				"type": "number",
+				"value": 0,
+				"order": 27
+			},
+			"first_discount_net_income": {
+				"key": "first_discount_net_income",
+				"name": "10% Discount Net Operating Income",
+				"unit": "MM$",
+				"type": "number",
+				"value": 0,
+				"order": 28
+			},
+			"second_discount_net_income": {
+				"key": "second_discount_net_income",
+				"name": "10% Discount Net Operating Income",
+				"unit": "MM$",
+				"type": "number",
+				"value": 0,
+				"order": 29
+			},
+			"before_income_tax_cash_flow": {
+				"key": "before_income_tax_cash_flow",
+				"name": "Before Income Tax Cash Flow",
+				"unit": "MM$",
+				"type": "number",
+				"value": 0,
+				"order": 30
+			},
+			"first_discount_cash_flow": {
+				"key": "first_discount_cash_flow",
+				"name": "10% Discount Cash Flow",
+				"unit": "MM$",
+				"type": "number",
+				"value": 0,
+				"order": 31
+			},
+			"second_discount_cash_flow": {
+				"key": "second_discount_cash_flow",
+				"name": "10% Discount Cash Flow",
+				"unit": "MM$",
+				"type": "number",
+				"value": 0,
+				"order": 32
+			},
+			"taxable_income": {
+				"key": "taxable_income",
+				"name": "Taxable Income",
+				"unit": "MM$",
+				"type": "number",
+				"value": 0,
+				"order": 33
+			},
+			"state_income_tax": {
+				"key": "state_income_tax",
+				"name": "State Income Tax",
+				"unit": "MM$",
+				"type": "number",
+				"value": 0,
+				"order": 34
+			},
+			"federal_income_tax": {
+				"key": "federal_income_tax",
+				"name": "Federal Income Tax",
+				"unit": "MM$",
+				"type": "number",
+				"value": 0,
+				"order": 35
+			},
+			"after_income_tax_cash_flow": {
+				"key": "after_income_tax_cash_flow",
+				"name": "After Income Tax Cash Flow",
+				"unit": "MM$",
+				"type": "number",
+				"value": 0,
+				"order": 36
+			},
+			"afit_first_discount_cash_flow": {
+				"key": "afit_first_discount_cash_flow",
+				"name": "10% After Income Tax Discount Cash Flow",
+				"unit": "MM$",
+				"type": "number",
+				"value": 0,
+				"order": 37
+			},
+			"afit_second_discount_cash_flow": {
+				"key": "afit_second_discount_cash_flow",
+				"name": "10% After Income Tax Discount Cash Flow",
+				"unit": "MM$",
+				"type": "number",
+				"value": 0,
+				"order": 38
+			},
+			"afit_undiscounted_roi": {
+				"key": "afit_undiscounted_roi",
+				"name": "After Tax Income Undiscounted ROI",
+				"unit": "ratio",
+				"type": "number",
+				"value": null,
+				"order": 39
+			},
+			"afit_first_discount_roi": {
+				"key": "afit_first_discount_roi",
+				"name": "10% After Income Tax Discount ROI w/ Discounted CAPEX",
+				"unit": "ratio",
+				"type": "number",
+				"value": null,
+				"order": 40
+			},
+			"afit_second_discount_roi": {
+				"key": "afit_second_discount_roi",
+				"name": "10% After Income Tax Discount ROI w/ Discounted CAPEX",
+				"unit": "ratio",
+				"type": "number",
+				"value": null,
+				"order": 41
+			},
+			"afit_first_discount_roi_undiscounted_capex": {
+				"key": "afit_first_discount_roi_undiscounted_capex",
+				"name": "10% After Income Tax Discount ROI w/ Undiscounted CAPEX",
+				"unit": "ratio",
+				"type": "number",
+				"value": null,
+				"order": 42
+			},
+			"afit_second_discount_roi_undiscounted_capex": {
+				"key": "afit_second_discount_roi_undiscounted_capex",
+				"name": "10% After Income Tax Discount ROI w/ Undiscounted CAPEX",
+				"unit": "ratio",
+				"type": "number",
+				"value": null,
+				"order": 43
+			},
+			"afit_irr": {
+				"key": "afit_irr",
+				"name": "After Tax Income IRR",
+				"unit": "%",
+				"type": "number",
+				"value": null,
+				"order": 44
+			},
+			"afit_undiscounted_payout": {
+				"key": "afit_undiscounted_payout",
+				"name": "After Income Tax Undiscounted Payout Date",
+				"unit": "",
+				"type": "string",
+				"value": null,
+				"order": 45
+			},
+			"afit_payout_duration": {
+				"key": "afit_payout_duration",
+				"name": "After Income Tax Payout Duration",
+				"unit": "months",
+				"type": "number",
+				"value": null,
+				"order": 46
+			},
+			"afit_first_discount_payout": {
+				"key": "afit_first_discount_payout",
+				"name": "10% After Income Tax Discount Payout Date",
+				"unit": "",
+				"type": "string",
+				"value": null,
+				"order": 47
+			},
+			"afit_first_discount_payout_duration": {
+				"key": "afit_first_discount_payout_duration",
+				"name": "10% After Income Tax Discount Payout Duration",
+				"unit": "months",
+				"type": "number",
+				"value": null,
+				"order": 48
+			},
+			"afit_second_discount_payout": {
+				"key": "afit_second_discount_payout",
+				"name": "10% After Income Tax Discount Payout Date",
+				"unit": "",
+				"type": "string",
+				"value": null,
+				"order": 49
+			},
+			"afit_second_discount_payout_duration": {
+				"key": "afit_second_discount_payout_duration",
+				"name": "10% After Income Tax Discount Payout Duration",
+				"unit": "months",
+				"type": "number",
+				"value": null,
+				"order": 50
+			},
+			"econ_first_production_date": {
+				"key": "econ_first_production_date",
+				"name": "Econ First Prod Date",
+				"unit": "",
+				"type": "date",
+				"value": "06/12/2012",
+				"order": 51
+			},
+			"forecast_name": {
+				"key": "forecast_name",
+				"name": "Forecast Name",
+				"unit": "",
+				"type": "str",
+				"value": "Rollup Volumes Test",
+				"order": 52
+			},
+			"as_of_date": {
+				"key": "as_of_date",
+				"name": "As Of Date",
+				"unit": "",
+				"type": "date",
+				"value": "12/26/2020",
+				"order": 53
+			},
+			"discount_date": {
+				"key": "discount_date",
+				"name": "Discount Date",
+				"unit": "",
+				"type": "date",
+				"value": "05/01/2023",
+				"order": 54
+			},
+			"well_life": {
+				"key": "well_life",
+				"name": "Econ Well Life",
+				"unit": "years",
+				"type": "number",
+				"value": 1.58,
+				"order": 55
+			},
+			"abandonment_date": {
+				"key": "abandonment_date",
+				"name": "Abandonment Date",
+				"unit": "",
+				"type": "date",
+				"value": "06/30/2022",
+				"order": 56
+			},
+			"reversion_date": {
+				"key": "reversion_date",
+				"name": "Interest Reversion Date",
+				"unit": "",
+				"type": "str",
+				"value": "05/26/2021, 08/05/2012, 06/18/2012, 06/23/2012, 04/11/2023",
+				"order": 57
+			},
+			"oil_start_using_forecast_date": {
+				"key": "oil_start_using_forecast_date",
+				"name": "Oil Forecast Volumes Start Date",
+				"unit": "",
+				"type": "date",
+				"value": "12/26/2020",
+				"order": 58
+			},
+			"gas_start_using_forecast_date": {
+				"key": "gas_start_using_forecast_date",
+				"name": "Gas Forecast Volumes Start Date",
+				"unit": "",
+				"type": "date",
+				"value": "12/26/2020",
+				"order": 59
+			},
+			"water_start_using_forecast_date": {
+				"key": "water_start_using_forecast_date",
+				"name": "Water Forecast Volumes Start Date",
+				"unit": "",
+				"type": "date",
+				"value": "12/26/2020",
+				"order": 60
+			},
+			"oil_risk": {
+				"key": "oil_risk",
+				"name": "Oil Scenario Risk Factor",
+				"unit": "%",
+				"type": "number",
+				"value": 100,
+				"order": 61
+			},
+			"gas_risk": {
+				"key": "gas_risk",
+				"name": "Gas Scenario Risk Factor",
+				"unit": "%",
+				"type": "number",
+				"value": 100,
+				"order": 62
+			},
+			"ngl_risk": {
+				"key": "ngl_risk",
+				"name": "NGL Scenario Risk Factor",
+				"unit": "%",
+				"type": "number",
+				"value": 100,
+				"order": 63
+			},
+			"drip_condensate_risk": {
+				"key": "drip_condensate_risk",
+				"name": "Drip Condensate Scenario Risk Factor",
+				"unit": "%",
+				"type": "number",
+				"value": 100,
+				"order": 64
+			},
+			"water_risk": {
+				"key": "water_risk",
+				"name": "Water Scenario Risk Factor",
+				"unit": "%",
+				"type": "number",
+				"value": 100,
+				"order": 65
+			},
+			"oil_tc_risk": {
+				"key": "oil_tc_risk",
+				"name": "Oil Forecast Risk Factor",
+				"unit": "%",
+				"type": "number",
+				"value": null,
+				"order": 66
+			},
+			"gas_tc_risk": {
+				"key": "gas_tc_risk",
+				"name": "Gas Forecast Risk Factor",
+				"unit": "%",
+				"type": "number",
+				"value": null,
+				"order": 67
+			},
+			"water_tc_risk": {
+				"key": "water_tc_risk",
+				"name": "Water Forecast Risk Factor",
+				"unit": "%",
+				"type": "number",
+				"value": null,
+				"order": 68
+			},
+			"apply_normalization": {
+				"key": "apply_normalization",
+				"name": "TC Normalization Applied",
+				"unit": "y/n",
+				"type": "string",
+				"value": null,
+				"order": 69
+			},
+			"oil_boe_conversion": {
+				"key": "oil_boe_conversion",
+				"name": "Oil BOE Conversion",
+				"unit": "BBL/BOE",
+				"type": "number",
+				"value": 1,
+				"order": 70
+			},
+			"wet_gas_boe_conversion": {
+				"key": "wet_gas_boe_conversion",
+				"name": "Wet Gas BOE Conversion",
+				"unit": "MCF/BOE",
+				"type": "number",
+				"value": 6,
+				"order": 71
+			},
+			"dry_gas_boe_conversion": {
+				"key": "dry_gas_boe_conversion",
+				"name": "Dry Gas BOE Conversion",
+				"unit": "MCF/BOE",
+				"type": "number",
+				"value": 6,
+				"order": 72
+			},
+			"ngl_boe_conversion": {
+				"key": "ngl_boe_conversion",
+				"name": "NGL BOE Conversion",
+				"unit": "BBL/BOE",
+				"type": "number",
+				"value": 1,
+				"order": 73
+			},
+			"drip_condensate_boe_conversion": {
+				"key": "drip_condensate_boe_conversion",
+				"name": "Drip Condensate BOE Conversion",
+				"unit": "BBL/BOE",
+				"type": "number",
+				"value": 1,
+				"order": 74
+			},
+			"oil_production_as_of_date": {
+				"key": "oil_production_as_of_date",
+				"name": "Oil Production to As Of Date",
+				"unit": "MMBBL",
+				"type": "number",
+				"value": 0.22710880150449275,
+				"order": 75
+			},
+			"gas_production_as_of_date": {
+				"key": "gas_production_as_of_date",
+				"name": "Gas Production to As Of Date",
+				"unit": "MCF",
+				"type": "number",
+				"value": 230725,
+				"order": 76
+			},
+			"water_production_as_of_date": {
+				"key": "water_production_as_of_date",
+				"name": "Water Production to As Of Date",
+				"unit": "MMBBL",
+				"type": "number",
+				"value": 0.37418460005187987,
+				"order": 77
+			},
+			"undiscounted_roi": {
+				"key": "undiscounted_roi",
+				"name": "Undiscounted ROI",
+				"unit": "ratio",
+				"type": "number",
+				"value": null,
+				"order": 78
+			},
+			"first_discount_roi": {
+				"key": "first_discount_roi",
+				"name": "10% Discount ROI w/ Discounted CAPEX",
+				"unit": "ratio",
+				"type": "number",
+				"value": null,
+				"order": 79
+			},
+			"second_discount_roi": {
+				"key": "second_discount_roi",
+				"name": "10% Discount ROI w/ Discounted CAPEX",
+				"unit": "ratio",
+				"type": "number",
+				"value": null,
+				"order": 80
+			},
+			"first_discount_roi_undiscounted_capex": {
+				"key": "first_discount_roi_undiscounted_capex",
+				"name": "10% Discount ROI w/ Undiscounted CAPEX",
+				"unit": "ratio",
+				"type": "number",
+				"value": null,
+				"order": 81
+			},
+			"second_discount_roi_undiscounted_capex": {
+				"key": "second_discount_roi_undiscounted_capex",
+				"name": "10% Discount ROI w/ Undiscounted CAPEX",
+				"unit": "ratio",
+				"type": "number",
+				"value": null,
+				"order": 82
+			},
+			"irr": {
+				"key": "irr",
+				"name": "IRR",
+				"unit": "%",
+				"type": "number",
+				"value": null,
+				"order": 83
+			},
+			"undiscounted_payout": {
+				"key": "undiscounted_payout",
+				"name": "Undiscounted Payout Date",
+				"unit": "",
+				"type": "string",
+				"value": null,
+				"order": 84
+			},
+			"payout_duration": {
+				"key": "payout_duration",
+				"name": "Payout Duration",
+				"unit": "months",
+				"type": "number",
+				"value": null,
+				"order": 85
+			},
+			"first_discount_payout": {
+				"key": "first_discount_payout",
+				"name": "10% Discount Payout Date",
+				"unit": "",
+				"type": "string",
+				"value": null,
+				"order": 86
+			},
+			"first_discount_payout_duration": {
+				"key": "first_discount_payout_duration",
+				"name": "10% Discount Payout Duration",
+				"unit": "months",
+				"type": "number",
+				"value": null,
+				"order": 87
+			},
+			"second_discount_payout": {
+				"key": "second_discount_payout",
+				"name": "10% Discount Payout Date",
+				"unit": "",
+				"type": "string",
+				"value": null,
+				"order": 88
+			},
+			"second_discount_payout_duration": {
+				"key": "second_discount_payout_duration",
+				"name": "10% Discount Payout Duration",
+				"unit": "months",
+				"type": "number",
+				"value": null,
+				"order": 89
+			},
+			"gor": {
+				"key": "gor",
+				"name": "GOR",
+				"unit": "CF/BBL",
+				"type": "number",
+				"value": 1052.8611398597689,
+				"order": 90
+			},
+			"wor": {
+				"key": "wor",
+				"name": "WOR",
+				"unit": "BBL/BBL",
+				"type": "number",
+				"value": 1.6473903643587635,
+				"order": 91
+			},
+			"water_cut": {
+				"key": "water_cut",
+				"name": "Water Cut",
+				"unit": "%",
+				"type": "number",
+				"value": 62.22695324940436,
+				"order": 92
+			}
+		}
+	}
+]

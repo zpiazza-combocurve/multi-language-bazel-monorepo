@@ -1,0 +1,342 @@
+/v1/projects/{projectId}/type-curves:
+  head:
+    operationId: head-v1-type-curves
+    description: >-
+      Returns metadata about the existing type curve documents scoped to projectId
+      project.
+    parameters:
+      - in: path
+        name: projectId
+        required: true
+        type: string
+        description: ''
+      - $ref: '#/parameters/skipParam'
+      - $ref: '#/parameters/takeParam'
+      - name: name
+        in: query
+        description: filter by name
+        type: string
+      - name: createdAt
+        in: query
+        description: "filter by createdAt - Operator values are [lt] = less than, [le] = less than or equal, [gt] = greater than, [ge] = greater than or equal, no operator = equal. Example createdAt[gt]=2018-01-01T00:00:00Z"
+        format: date
+        type: string
+        x-allow-parameter-operator: true
+      - name: updatedAt
+        in: query
+        description: "filter by updatedAt - Operator values are [lt] = less than, [le] = less than or equal, [gt] = greater than, [ge] = greater than or equal, no operator = equal. Example updatedAt[gt]=2018-01-01T00:00:00Z"
+        format: date
+        type: string
+        x-allow-parameter-operator: true
+    responses:
+      '200':
+        description: OK
+        headers:
+          Link:
+            type: string
+            description: >-
+              Indicates a typed relationship with another resource, where the
+              relation type is defined by RFC 5988. We include the relationships
+              next, prev, first and last, which can be used to move between
+              pages of the list of results.
+          X-Query-Count:
+            type: integer
+            description: >-
+              The number of records in this resource. When filters are provided
+              only matching records are counted.
+      '400':
+        description: Bad Request. There is something wrong with the request data.
+    tags:
+      - ComboCurveV1
+    x-client-generation:
+      x-count-method:
+        name: TypeCurvesCount
+  get:
+    produces:
+      - application/json
+    operationId: get-v1-type-curves
+    description: Returns a list of type curve documents scoped to projectId project.
+    parameters:
+      - in: path
+        name: projectId
+        required: true
+        type: string
+        description: ''
+      - $ref: '#/parameters/skipParam'
+      - $ref: '#/parameters/takeParam'
+      - $ref: '#/parameters/sortParam'
+      - $ref: '#/parameters/cursorParam'
+      - name: name
+        in: query
+        description: filter by name
+        type: string
+      - name: createdAt
+        in: query
+        description: "filter by createdAt - Operator values are [lt] = less than, [le] = less than or equal, [gt] = greater than, [ge] = greater than or equal, no operator = equal. Example createdAt[gt]=2018-01-01T00:00:00Z"
+        format: date
+        type: string
+        x-allow-parameter-operator: true
+      - name: updatedAt
+        in: query
+        description: "filter by updatedAt - Operator values are [lt] = less than, [le] = less than or equal, [gt] = greater than, [ge] = greater than or equal, no operator = equal. Example updatedAt[gt]=2018-01-01T00:00:00Z"
+        format: date
+        type: string
+        x-allow-parameter-operator: true        
+    responses:
+      '200':
+        description: OK
+        schema:
+          $ref: '#/definitions/TypeCurveList'
+        headers:
+          Link:
+            type: string
+            description: >-
+              Indicates a typed relationship with another resource, where the
+              relation type is defined by RFC 5988. We include the relationships
+              next, prev, first and last, which can be used to move between
+              pages of the list of results.
+      '400':
+        description: Bad Request. There is something wrong with the request data.
+        schema:
+          $ref: '#/definitions/Error'
+    tags:
+      - ComboCurveV1
+    x-google-quota:
+      metricCosts:
+        read-request-rate: 1
+    x-client-generation:
+      x-get-all-skip-take-method:
+        name: GetAllTypeCurves
+        baseReturnType: TypeCurve
+      x-get-all-cursor-method:
+        name: GetAllTypeCurvesV2
+        baseReturnType: TypeCurve
+/v1/projects/{projectId}/type-curves/head:
+  get:
+    x-no-client: true
+    x-no-doc: true
+    operationId: get-head-v1-type-curve
+    description: >-
+      Returns metadata about the existing type curve documents scoped to projectId
+      project.
+    parameters:
+      - in: path
+        name: projectId
+        required: true
+        type: string
+        description: ''
+      - $ref: '#/parameters/skipParam'
+      - $ref: '#/parameters/takeParam'
+      - name: name
+        in: query
+        description: filter by name
+        type: string
+      - name: createdAt
+        in: query
+        description: "filter by createdAt - Operator values are [lt] = less than, [le] = less than or equal, [gt] = greater than, [ge] = greater than or equal, no operator = equal. Example createdAt[gt]=2018-01-01T00:00:00Z"
+        format: date
+        type: string
+        x-allow-parameter-operator: true
+      - name: updatedAt
+        in: query
+        description: "filter by updatedAt - Operator values are [lt] = less than, [le] = less than or equal, [gt] = greater than, [ge] = greater than or equal, no operator = equal. Example updatedAt[gt]=2018-01-01T00:00:00Z"
+        format: date
+        type: string
+        x-allow-parameter-operator: true        
+    responses:
+      '200':
+        description: OK
+        headers:
+          Link:
+            type: string
+            description: >-
+              Indicates a typed relationship with another resource, where the
+              relation type is defined by RFC 5988. We include the relationships
+              next, prev, first and last, which can be used to move between
+              pages of the list of results.
+          X-Query-Count:
+            type: integer
+            description: >-
+              The number of records in this resource. When filters are provided
+              only matching records are counted.
+      '400':
+        description: Bad Request. There is something wrong with the request data.
+    tags:
+      - ComboCurveV1
+    produces:
+      - application/json
+    x-google-quota:
+      metricCosts:
+        read-request-rate: 1
+/v1/projects/{projectId}/type-curves/{id}:
+  get:
+    produces:
+      - application/json
+    operationId: get-v1-type-curve-by-id
+    description: >-
+      Returns the type curve document that matches the given id scoped to
+      projectId project.
+    parameters:
+      - in: path
+        name: projectId
+        required: true
+        type: string
+        description: ''
+      - in: path
+        name: id
+        required: true
+        type: string
+        description: ''
+    responses:
+      '200':
+        description: OK
+        schema:
+          $ref: '#/definitions/TypeCurve'
+      '400':
+        description: Bad Request. There is something wrong with the request data.
+        schema:
+          $ref: '#/definitions/Error'
+      '404':
+        description: Not Found
+        schema:
+          $ref: '#/definitions/Error'
+    tags:
+      - ComboCurveV1
+    x-google-quota:
+      metricCosts:
+        read-request-rate: 1
+/v1/projects/{projectId}/type-curves/{id}/fits/daily:
+  get:
+    produces:
+      - application/json
+    operationId: get-v1-type-curve-daily-fits
+    description: >-
+      Returns the daily volume fit information for the type curve document that matches the given id scoped to
+      projectId project.
+    parameters:
+      - in: path
+        name: projectId
+        required: true
+        type: string
+        description: ''
+      - in: path
+        name: id
+        required: true
+        type: string
+        description: ''
+      - name: skip
+        in: query
+        description: skip record
+        type: integer
+      - name: take
+        in: query
+        description: take amount of record to be returned
+        type: integer
+    responses:
+      '200':
+        description: OK
+        schema:
+          $ref: '#/definitions/TypeCurveVolumeList'
+      '400':
+        description: Bad Request. There is something wrong with the request data.
+        schema:
+          $ref: '#/definitions/Error'
+      '404':
+        description: Not Found
+        schema:
+          $ref: '#/definitions/Error'
+    tags:
+      - ComboCurveV1
+    x-google-quota:
+      metricCosts:
+        read-request-rate: 1
+/v1/projects/{projectId}/type-curves/{id}/fits/monthly:
+  get:
+    produces:
+      - application/json
+    operationId: get-v1-type-curve-monthly-fits
+    description: >-
+      Returns the monthly volume fit information for the type curve document that matches the given id scoped to
+      projectId project.
+    parameters:
+      - in: path
+        name: projectId
+        required: true
+        type: string
+        description: ''
+      - in: path
+        name: id
+        required: true
+        type: string
+        description: ''
+      - name: skip
+        in: query
+        description: skip record
+        type: integer
+      - name: take
+        in: query
+        description: take amount of record to be returned
+        type: integer
+    responses:
+      '200':
+        description: OK
+        schema:
+          $ref: '#/definitions/TypeCurveVolumeList'
+      '400':
+        description: Bad Request. There is something wrong with the request data.
+        schema:
+          $ref: '#/definitions/Error'
+      '404':
+        description: Not Found
+        schema:
+          $ref: '#/definitions/Error'
+    tags:
+      - ComboCurveV1
+    x-google-quota:
+      metricCosts:
+        read-request-rate: 1
+/v1/projects/{projectId}/type-curves/{id}/representative-wells:
+  get:
+    produces:
+      - application/json
+    operationId: get-v1-type-curve-representative-wells
+    description: >-
+      Returns the well representative information for the type curve document that matches the given id scoped to
+      projectId project.
+    parameters:
+      - in: path
+        name: projectId
+        required: true
+        type: string
+        description: ''
+      - in: path
+        name: id
+        required: true
+        type: string
+        description: ''
+      - name: skip
+        in: query
+        description: skip record
+        type: integer
+      - name: take
+        in: query
+        description: take amount of record to be returned
+        type: integer
+    responses:
+      '200':
+        description: OK
+        schema:
+          $ref: '#/definitions/TypeCurveWellRepList'
+      '400':
+        description: Bad Request. There is something wrong with the request data.
+        schema:
+          $ref: '#/definitions/Error'
+      '404':
+        description: Not Found
+        schema:
+          $ref: '#/definitions/Error'
+    tags:
+      - ComboCurveV1
+    x-google-quota:
+      metricCosts:
+        read-request-rate: 1

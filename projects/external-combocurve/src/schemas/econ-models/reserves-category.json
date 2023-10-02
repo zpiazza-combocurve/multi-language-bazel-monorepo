@@ -1,0 +1,37 @@
+{
+	"$id": "http://combocurve.com/schemas/reserves-category.json",
+	"$dynamicAnchor": "econ-model",
+	"$ref": "base-econ-model.json",
+	"unevaluatedProperties": false,
+	"properties": {
+		"reservesCategory": {
+			"type": "object",
+			"unevaluatedProperties": false,
+			"properties": {
+				"prmsClass": {
+					"type": "string",
+					"enum": ["reserves", "contingent", "prospective"]
+				},
+				"prmsCategory": {
+					"type": "string",
+					"enum": ["proved", "probable", "possible", "c1", "c2", "c3"]
+				},
+				"prmsSubCategory": {
+					"type": "string",
+					"enum": [
+						"producing",
+						"non_producing",
+						"shut_in",
+						"temp_aband",
+						"p&a",
+						"behind_pipe",
+						"injection",
+						"undeveloped",
+						"need_workover"
+					]
+				}
+			},
+			"required": ["prmsClass", "prmsCategory", "prmsSubCategory"]
+		}
+	}
+}

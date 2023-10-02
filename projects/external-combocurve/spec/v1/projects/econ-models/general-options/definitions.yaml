@@ -1,0 +1,742 @@
+GeneralOptionsList:
+  type: array
+  items:
+    $ref: '#/definitions/GeneralOptions'
+  maxItems: 200
+  example: 
+  - id: 649a0a00c7852a5f3ad12f64
+    copiedFrom:
+    createdBy: 6234d6677118ecb7e6fd699a
+    lastUpdatedBy: 6234d6677118ecb7e6fd699a
+    createdAt: '2023-06-26T23:38:24.574Z'
+    updatedAt: '2023-06-26T23:38:24.574Z'
+    name: 'general_options'
+    scenario: 63b8571d70ed63f50bd6d63f
+    well: 63b85759e1d7eb4e31579f51
+    unique: true
+    tags: 
+      - 63b85737ff846cee7b1f6fdc
+    mainOptions:
+      aggregationDate: '2019-01-01'
+      reportingPeriod: 'monthly'
+      fiscal: 'calendar'
+      incomeTax: true
+      projectType: 'tertiary_recovery'
+    incomeTax:
+      fifteenDepletion: true
+      carryForward: true
+      federalIncomeTax:
+        - multiplier: 1
+          offsetToFpd: 1200
+        - multiplier: 2
+          offsetToFpd: 1200
+      stateIncomeTax:
+        - multiplier: 1
+          entire_well_life: 'flat'
+        - multiplier: 2
+          entire_well_life: 'flat'
+    discountTable:
+      discountMethod: 'yearly'
+      cashAccrualTime: 'end_of_month'
+      firstDiscount: 10
+      secondDiscount: 15
+      discounts:
+        - discountTable: 0
+        - discountTable: 2
+        - discountTable: 5
+        - discountTable: 8
+        - discountTable: 10
+        - discountTable: 12
+        - discountTable: 15
+        - discountTable: 20
+        - discountTable: 25
+        - discountTable: 30
+        - discountTable: 40
+        - discountTable: 50
+        - discountTable: 60
+        - discountTable: 70
+        - discountTable: 80
+        - discountTable: 100
+    boeConversion:
+      oil: 6
+      dryGas: 6
+      wetGas: 6
+      ngl: 6
+      dripCondensate: 6
+    reportingUnits:
+        oil: 'MBBL'
+        gas: 'MMCF'
+        ngl: 'MBBL'
+        dripCondensate: 'MBBL'
+        water: 'MBBL'
+        pressure: 'PSI'
+        cash: 'M$'
+        gor: 'CF/BBL'
+        condensateGasRatio: 'BBL/MMCF'
+        dripCondensateYield: 'BBL/MMCF'
+        nglYield: 'BBL/MMCF'
+
+GeneralOptions:
+  type: object
+  properties:
+    copiedFrom:
+      type: string
+      description: Copied From
+    createdAt:
+      type: string
+      format: date-time
+    createdBy:
+      type: string
+      description: Created By
+    id:
+      type: string
+      description: ID
+    lastUpdatedBy:
+      type: string
+      description: Last Updated By
+    name:
+      type: string
+      description: Name
+    scenario:
+      type: string
+      description: Scenario ID
+    tags:
+      type: array
+      items:
+        type: string
+        description: Tag ID
+    unique:
+      type: boolean
+      description: Unique
+    updatedAt:
+      type: string
+      format: date
+      description: Updated At
+    well:
+      type: string
+      description: Well ID
+    mainOptions:
+      type: object
+      required:
+        - aggregationDate
+        - reportingPeriod
+        - fiscal
+        - incomeTax
+        - projectType
+        - currency
+      properties:
+        aggregationDate:
+          type: string
+          format: date
+        reportingPeriod:
+          type: string
+          enum: 
+            - calendar
+            - fiscal
+        fiscal:
+          type: string
+        currency:
+          type: string
+          enum:
+            - USD
+        incomeTax:
+          type: boolean
+        projectType:
+          type: string
+          enum:
+            - primary_recovery
+            - secondary_recovery
+            - tertiary_recovery
+            - water_flood
+            - co2_flood
+            - surfactant_flood
+            - polymer_flood
+            - sagd
+            - thermal
+            - heavy_oil
+            - oil_sand
+            - deep_water
+    incomeTax:
+      type: object
+      required:
+        - federalIncomeTax
+        - stateIncomeTax
+      properties:
+        fifteenDepletion:
+          type: boolean
+        carryForward:
+          type: boolean
+        federalIncomeTax:
+          type: array
+          items:
+            type: object
+            required:
+              - multiplier
+            properties:
+              multiplier:
+                type: integer
+              offsetToFpd:
+                $ref: '#/definitions/StartEndPeriodCriteria'
+              offsetToAsOf:
+                $ref: '#/definitions/StartEndPeriodCriteria'
+              dates:
+                $ref: '#/definitions/StartEndDatesCriteria'
+              entireWellLife:
+                $ref: '#/definitions/EntireWellLifeCriteria'
+        stateIncomeTax:
+          type: array
+          items:
+            type: object
+            required:
+              - multiplier
+            properties:
+              multiplier:
+                type: integer
+              offsetToFpd:
+                $ref: '#/definitions/StartEndPeriodCriteria'
+              offsetToAsOf:
+                $ref: '#/definitions/StartEndPeriodCriteria'
+              dates:
+                $ref: '#/definitions/StartEndDatesCriteria'
+              entireWellLife:
+                $ref: '#/definitions/EntireWellLifeCriteria'
+    discountTable:
+      type: object
+      properties:
+        discountMethod:
+          type: string
+          enum: 
+            - yearly
+            - quarterly
+            - monthly
+            - daily
+        cashAccrualTime:
+          type: string
+          enum: 
+            - mid_month
+            - end_month
+        firstDiscount:
+          type: integer
+        secondDiscount:
+          type: integer
+        discounts:
+          type: array
+          items:
+            type: object
+            required:
+              - discountTable
+            properties:
+              discountTable:
+                type: integer
+    boeConversion:
+      type: object
+      properties:
+        oil:
+          type: number
+        dryGas:
+          type: number
+        wetGas:
+          type: number
+        ngl:
+          type: number
+        dripCondensate:
+          type: number
+    reportingUnits:
+      type: object
+      properties:
+        oil:
+          type: string
+          enum:
+            - BBL
+            - MBBL
+            - MMBBL
+        gas:
+          type: string
+          enum:
+            - MCF
+            - MMCF
+            - BCF
+        ngl:
+          type: string
+          enum:
+            - BBL
+            - MBBL
+            - MMBBL
+            - GAL
+            - MGAL
+            - MMGAL
+        dripCondensate:
+          type: string
+          enum: 
+              - BBL
+              - MBBL
+              - MMBBL
+        water:
+          type: string
+          enum: 
+            - BBL
+            - MBBL
+            - MMBBL
+        pressure:
+          type: string
+          enum: 
+            - PSI
+            - KPSI
+        cash:
+          type: string
+          enum: 
+            - $
+            - M$
+            - MM$
+        gor:
+          type: string
+          enum: 
+            - CF/BBL
+            - MCF/BBL
+        condensateGasRatio:
+          type: string
+          enum: 
+              - BBL/MMCF
+              - BBL/MCF
+        dripCondensateYield:
+          type: string
+          enum: 
+              - BBL/MMCF
+              - BBL/MCF
+        nglYield:
+          type: string
+          enum: 
+            - BBL/MMCF
+            - BBL/MCF
+            - GAL/MCF
+            - GAL/MMCF
+  example:
+    id: 649a0a00c7852a5f3ad12f64
+    copiedFrom:
+    createdBy: 6234d6677118ecb7e6fd699a
+    lastUpdatedBy: 6234d6677118ecb7e6fd699a
+    createdAt: '2023-06-26T23:38:24.574Z'
+    updatedAt: '2023-06-26T23:38:24.574Z'
+    name: 'general_options'
+    scenario: 63b8571d70ed63f50bd6d63f
+    well: 63b85759e1d7eb4e31579f51
+    unique: true
+    tags: 
+      - 63b85737ff846cee7b1f6fdc
+    mainOptions:
+      aggregationDate: '2019-01-01'
+      reportingPeriod: 'monthly'
+      fiscal: 'calendar'
+      incomeTax: true
+      projectType: 'tertiary_recovery'
+    incomeTax:
+      fifteenDepletion: true
+      carryForward: true
+      federalIncomeTax:
+        - multiplier: 1
+          offsetToFpd: 1200
+        - multiplier: 2
+          offsetToFpd: 1200
+      stateIncomeTax:
+        - multiplier: 1
+          entire_well_life: 'flat'
+        - multiplier: 2
+          entire_well_life: 'flat'
+    discountTable:
+      discountMethod: 'yearly'
+      cashAccrualTime: 'end_of_month'
+      firstDiscount: 10
+      secondDiscount: 15
+      discounts:
+        - discountTable: 0
+        - discountTable: 2
+        - discountTable: 5
+        - discountTable: 8
+        - discountTable: 10
+        - discountTable: 12
+        - discountTable: 15
+        - discountTable: 20
+        - discountTable: 25
+        - discountTable: 30
+        - discountTable: 40
+        - discountTable: 50
+        - discountTable: 60
+        - discountTable: 70
+        - discountTable: 80
+        - discountTable: 100
+    boeConversion:
+      oil: 6
+      dryGas: 6
+      wetGas: 6
+      ngl: 6
+      dripCondensate: 6
+    reportingUnits:
+        oil: 'MBBL'
+        gas: 'MMCF'
+        ngl: 'MBBL'
+        dripCondensate: 'MBBL'
+        water: 'MBBL'
+        pressure: 'PSI'
+        cash: 'M$'
+        gor: 'CF/BBL'
+        condensateGasRatio: 'BBL/MMCF'
+        dripCondensateYield: 'BBL/MMCF'
+        nglYield: 'BBL/MMCF'
+
+GeneralOptionsInputList:
+  type: array
+  items:
+    $ref: '#/definitions/GeneralOptionsInput'
+  maxItems: 500
+  example:
+    id: 5e272d39b78910dd2a1bd8fe 
+    copiedFrom: 63b856e816f758cc5b0f1106 
+    name: 'general_options'
+    scenario: 63b8571d70ed63f50bd6d63f
+    well: 63b85759e1d7eb4e31579f51
+    unique: true
+    tags: 
+     - 63b85737ff846cee7b1f6fdc
+    mainOptions:
+      aggregationDate: '2019-01-01'
+      reportingPeriod: 'monthly'
+      fiscal: 'calendar'
+      incomeTax: true
+      projectType: 'tertiary_recovery'
+    incomeTax:
+      fifteenDepletion: true
+      carryForward: true
+      federalIncomeTax:
+        - multiplier: 1
+          offsetToFpd: 1200
+        - multiplier: 2
+          offsetToFpd: 1200
+      stateIncomeTax:
+        - multiplier: 1
+          entire_well_life: 'flat'
+        - multiplier: 2
+          entire_well_life: 'flat'
+    discountTable:
+      discountMethod: 'yearly'
+      cashAccrualTime: 'end_of_month'
+      firstDiscount: 10
+      secondDiscount: 15
+      discounts:
+        - discountTable: 0
+        - discountTable: 2
+        - discountTable: 5
+        - discountTable: 8
+        - discountTable: 10
+        - discountTable: 12
+        - discountTable: 15
+        - discountTable: 20
+        - discountTable: 25
+        - discountTable: 30
+        - discountTable: 40
+        - discountTable: 50
+        - discountTable: 60
+        - discountTable: 70
+        - discountTable: 80
+        - discountTable: 100
+    boeConversion:
+      oil: 6
+      dryGas: 6
+      wetGas: 6
+      ngl: 6
+      dripCondensate: 6
+    reportingUnits:
+      oil: 'MBBL'
+      gas: 'MMCF'
+      ngl: 'MBBL'
+      dripCondensate: 'MBBL'
+      water: 'MBBL'
+      pressure: 'PSI'
+      cash: 'M$'
+      gor: 'CF/BBL'
+      condensateGasRatio: 'BBL/MMCF'
+      dripCondensateYield: 'BBL/MMCF'
+      nglYield: 'BBL/MMCF'
+    createdAt: '2020-01-21T16:58:08.986Z' 
+    updatedAt: '2020-01-21T17:58:08.986Z' 
+    createdBy: 63b857cb68f3b96efc700998 
+    lastUpdatedBy: 63b857cb68f3b96efc700998
+GeneralOptionsInput:
+  type: object
+  required:
+    - name
+    - unique
+  properties:
+    name:
+      type: string
+      description: Name
+    scenario:
+      type: string
+      description: Scenario ID
+    unique:
+      type: boolean
+      description: Unique
+    well:
+      type: string
+      description: Well ID
+    mainOptions:
+      type: object
+      required:
+        - aggregationDate
+        - reportingPeriod
+        - fiscal
+        - incomeTax
+        - projectType
+        - currency
+      properties:
+        aggregationDate:
+          type: string
+          format: date
+        reportingPeriod:
+          type: string
+          enum: 
+            - calendar
+            - fiscal
+        fiscal:
+          type: string
+        currency:
+          type: string
+          enum:
+            - USD
+        incomeTax:
+          type: boolean
+        projectType:
+          type: string
+          enum:
+            - primary_recovery
+            - secondary_recovery
+            - tertiary_recovery
+            - water_flood
+            - co2_flood
+            - surfactant_flood
+            - polymer_flood
+            - sagd
+            - thermal
+            - heavy_oil
+            - oil_sand
+            - deep_water
+    incomeTax:
+      type: object
+      required:
+        - federalIncomeTax
+        - stateIncomeTax
+      properties:
+        fifteenDepletion:
+          type: boolean
+        carryForward:
+          type: boolean
+        federalIncomeTax:
+          type: array
+          items:
+            type: object
+            required:
+              - multiplier
+            properties:
+              multiplier:
+                type: integer
+              offsetToFpd:
+                $ref: '#/definitions/StartEndPeriodCriteria'
+              offsetToAsOf:
+                $ref: '#/definitions/StartEndPeriodCriteria'
+              dates:
+                $ref: '#/definitions/StartEndDatesCriteria'
+              entireWellLife:
+                $ref: '#/definitions/EntireWellLifeCriteria'
+        stateIncomeTax:
+          type: array
+          items:
+            type: object
+            required:
+              - multiplier
+            properties:
+              multiplier:
+                type: integer
+              offsetToFpd:
+                $ref: '#/definitions/StartEndPeriodCriteria'
+              offsetToAsOf:
+                $ref: '#/definitions/StartEndPeriodCriteria'
+              dates:
+                $ref: '#/definitions/StartEndDatesCriteria'
+              entireWellLife:
+                $ref: '#/definitions/EntireWellLifeCriteria'
+    discountTable:
+      type: object
+      properties:
+        discountMethod:
+          type: string
+          enum: 
+            - yearly
+            - quarterly
+            - monthly
+            - daily
+        cashAccrualTime:
+          type: string
+          enum: 
+            - mid_month
+            - end_month
+        firstDiscount:
+          type: integer
+        secondDiscount:
+          type: integer
+        discounts:
+          type: array
+          items:
+            type: object
+            required:
+              - discountTable
+            properties:
+              discountTable:
+                type: integer
+    boeConversion:
+      type: object
+      properties:
+        oil:
+          type: number
+        dryGas:
+          type: number
+        wetGas:
+          type: number
+        ngl:
+          type: number
+        dripCondensate:
+          type: number
+    reportingUnits:
+      type: object
+      properties:
+        oil:
+          type: string
+          enum:
+            - BBL
+            - MBBL
+            - MMBBL
+        gas:
+          type: string
+          enum:
+            - MCF
+            - MMCF
+            - BCF
+        ngl:
+          type: string
+          enum:
+            - BBL
+            - MBBL
+            - MMBBL
+            - GAL
+            - MGAL
+            - MMGAL
+        dripCondensate:
+          type: string
+          enum: 
+              - BBL
+              - MBBL
+              - MMBBL
+        water:
+          type: string
+          enum: 
+            - BBL
+            - MBBL
+            - MMBBL
+        pressure:
+          type: string
+          enum: 
+            - PSI
+            - KPSI
+        cash:
+          type: string
+          enum: 
+            - $
+            - M$
+            - MM$
+        gor:
+          type: string
+          enum: 
+            - CF/BBL
+            - MCF/BBL
+        condensateGasRatio:
+          type: string
+          enum: 
+              - BBL/MMCF
+              - BBL/MCF
+        dripCondensateYield:
+          type: string
+          enum: 
+              - BBL/MMCF
+              - BBL/MCF
+        nglYield:
+          type: string
+          enum: 
+            - BBL/MMCF
+            - BBL/MCF
+            - GAL/MCF
+            - GAL/MMCF
+  
+  example:
+      name: 'general_options'
+      scenario: 63b8571d70ed63f50bd6d63f
+      well: 63b85759e1d7eb4e31579f51
+      unique: true
+      tags: 
+        - 63b85737ff846cee7b1f6fdc
+      mainOptions:
+        aggregationDate: '2019-01-01'
+        reportingPeriod: 'monthly'
+        fiscal: 'calendar'
+        incomeTax: true
+        projectType: 'tertiary_recovery'
+      incomeTax:
+        fifteenDepletion: true
+        carryForward: true
+        federalIncomeTax:
+          - multiplier: 1
+            offsetToFpd: 1200
+          - multiplier: 2
+            offsetToFpd: 1200
+        stateIncomeTax:
+          - multiplier: 1
+            entire_well_life: 'flat'
+          - multiplier: 2
+            entire_well_life: 'flat'
+      discountTable:
+        discountMethod: 'yearly'
+        cashAccrualTime: 'end_of_month'
+        firstDiscount: 10
+        secondDiscount: 15
+        discounts:
+          - discountTable: 0
+          - discountTable: 2
+          - discountTable: 5
+          - discountTable: 8
+          - discountTable: 10
+          - discountTable: 12
+          - discountTable: 15
+          - discountTable: 20
+          - discountTable: 25
+          - discountTable: 30
+          - discountTable: 40
+          - discountTable: 50
+          - discountTable: 60
+          - discountTable: 70
+          - discountTable: 80
+          - discountTable: 100
+      boeConversion:
+        oil: 6
+        dryGas: 6
+        wetGas: 6
+        ngl: 6
+        dripCondensate: 6
+      reportingUnits:
+        oil: 'MBBL'
+        gas: 'MMCF'
+        ngl: 'MBBL'
+        dripCondensate: 'MBBL'
+        water: 'MBBL'
+        pressure: 'PSI'
+        cash: 'M$'
+        gor: 'CF/BBL'
+        condensateGasRatio: 'BBL/MMCF'
+        dripCondensateYield: 'BBL/MMCF'
+        nglYield: 'BBL/MMCF'

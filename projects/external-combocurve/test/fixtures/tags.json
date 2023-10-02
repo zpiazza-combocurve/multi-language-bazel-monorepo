@@ -1,0 +1,42 @@
+[
+	{
+		"_id": "6143cf0eff35a50013207d51",
+		"name": "Big 1",
+		"description": "size",
+		"color": 6271955,
+		"createdBy": "5f3bf00416fda7001249751c",
+		"createdAt": "2021-09-16T23:11:10.674Z",
+		"updatedAt": "2021-10-15T16:40:51.881Z",
+		"__v": 0
+	},
+	{
+		"_id": "614e2a36bd38ffb0a8db0f1b",
+		"name": "Test",
+		"description": "test",
+		"color": 0,
+		"createdBy": "5f51a46dd1986a0012058e01",
+		"createdAt": "2021-09-24T19:42:46.584Z",
+		"updatedAt": "2021-09-24T19:42:46.584Z",
+		"__v": 0
+	},
+	{
+		"_id": "613a928f29e07d738784365a",
+		"name": "tag 2",
+		"description": "tag 2",
+		"color": 16312092,
+		"createdBy": "5f51a46dd1986a0012058e01",
+		"createdAt": "2021-09-09T23:02:39.586Z",
+		"updatedAt": "2021-09-14T15:34:04.374Z",
+		"__v": 0
+	},
+	{
+		"_id": "6126c6d21b1723d8cdf14a46",
+		"name": "tag 3",
+		"description": "dfgfghfgh",
+		"color": 23423,
+		"createdBy": "5f51a46dd1986a0012058e01",
+		"createdAt": "2021-08-25T22:40:18.804Z",
+		"updatedAt": "2021-09-09T22:49:46.651Z",
+		"__v": 0
+	}
+]

@@ -1,0 +1,41 @@
+WellComment:
+  type: object
+  properties:
+    commentedAt:
+      type: string
+      format: date
+      description: Well Comment Creation Date
+    commentedBy:
+      type: string
+      description: Commented By
+    forecast:
+      type: string
+      description: Forecast ID
+    project:
+      type: string
+      description: Project ID
+    text:
+      type: string
+      description: Text
+    well:
+      type: string
+      description: Well ID
+  example:
+    commentedAt: '2020-07-27T17:52:28.791Z'
+    commentedBy: '5f51a46dd1986a0012058e01'
+    forecast: '60a6c4a13f40ab00125086a7'
+    project: '6064c19e2c3fc60012909a50'
+    text: 'test'
+    well: '60e24fea5ea67a1bc4b857ae'
+WellCommentList:
+  type: array
+  items:
+    $ref: '#/definitions/WellComment'
+  maxItems: 200
+  example:
+    - commentedAt: '2020-07-27T17:52:28.791Z'
+      commentedBy: '5f51a46dd1986a0012058e01'
+      forecast: '60a6c4a13f40ab00125086a7'
+      project: '6064c19e2c3fc60012909a50'
+      text: 'test'
+      well: '60e24fea5ea67a1bc4b857ae'

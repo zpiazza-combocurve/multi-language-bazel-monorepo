@@ -1,0 +1,22 @@
+{
+	"name": "test",
+	"unique": false,
+	"escalation": {
+		"rows": [
+			{
+				"pctPerYear": 12,
+				"monthPeriod": 12
+			},
+			{
+				"pctPerYear": 32,
+				"monthPeriod": 24
+			},
+			{
+				"pctPerYear": 57.665,
+				"monthPeriod": 12
+			}
+		],
+		"escalationFrequency": "monthly",
+		"calculationMethod": "compound"
+	}
+}

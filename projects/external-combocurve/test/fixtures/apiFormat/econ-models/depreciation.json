@@ -1,0 +1,25 @@
+{
+	"name": "DD&A Test",
+	"unique": false,
+	"depreciation": {
+		"modelType": "depreciation",
+		"taxCredit": 30,
+		"tcjaBonus": true,
+		"bonusDepreciation": [
+			{
+				"tangibleBonusDepreciation": 0,
+				"intangibleBonusDepreciation": 4
+			}
+		],
+		"depreciation": [
+			{
+				"tanFactor": 3,
+				"intanFactor": 3
+			},
+			{
+				"tanFactor": 3,
+				"intanFactor": 3
+			}
+		]
+	}
+}

@@ -1,0 +1,1 @@
+Segment strategies and calculations were adapted from the examples in the python client: https://github.com/insidepetroleum/combocurve-client-python/blob/master/snippets/forecast_segments_to_volumes.py

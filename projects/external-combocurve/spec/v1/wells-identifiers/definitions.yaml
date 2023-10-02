@@ -1,0 +1,53 @@
+WellIdentifierPatchInput:
+  type: object
+  required:
+   - wellId
+  properties:
+    wellId:
+      type: string
+      description: Well ID
+    newInfo:
+       type: object
+       properties:
+        chosenKeyID:
+          type: string
+          description: Chosen ID Key
+          enum:
+           - inptID
+           - api10
+           - api12
+           - api14
+           - aries_id
+           - phdwin_id
+        companyScope:
+          type: boolean
+          description: Whether Well should be moved to company level
+        dataSource:
+          type: string
+          description: Data Source
+          enum:
+            - di
+            - ihs
+            - phdwin
+            - aries
+            - internal
+            - other
+  x-is-patch: true
+  example:
+    wellId: '9E5F5CC579867509254700023'
+    newInfo:
+      chosenKeyID: 'api14'
+      companyScope: 'true'
+      dataSource: 'internal'
+WellIdentifierPatchInputList:
+  type: array
+  items:
+    $ref: '#/definitions/WellIdentifierPatchInput'
+  maxItems: 200
+  x-is-patch: true
+  example:
+    - wellId: '9E5F5CC579867509254700023'
+      newInfo:
+        chosenKeyID: 'api14'
+        companyScope: 'true'
+        dataSource: 'internal'

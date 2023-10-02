@@ -1,0 +1,40 @@
+scenarios:
+    - name: 'Historical load'
+      afterScenario: "requestAssertSuccessAfterResponse"
+      flow:
+        - loop:
+            - function: 'injectWells'
+            - post:
+                url: '/v1/wells'
+                json: '{{ wells }}'
+          count: 1
+        - loop:
+          - function: 'injectDailyProductions'
+          - put:
+              url: '/v1/daily-productions'
+              json: '{{ dailyProductions }}'
+              afterResponse:
+                - "logMultiResponseAfterResponse"
+                - "requestStoreNoSuccessAfterResponse"
+          count: 274
+        - loop:
+          - function: 'injectMonthlyProductions'
+          - put:
+              url: '/v1/monthly-productions'
+              json: '{{ monthlyProductions }}'
+              afterResponse:
+                - "logMultiResponseAfterResponse"
+                - "requestStoreNoSuccessAfterResponse"
+          count: 9
+config:
+  processor: 'processor.js'
+  variables:
+    dailyRecordPerWell: 5475
+    dailyRecordCount: 20000
+    monthlyRecordPerWell: 180
+    monthlyRecordCount: 20000
+    wellsRecordCount: 1000
+  phases:
+    - duration: 1
+      arrivalCount: 1
+      name: 'Single client'

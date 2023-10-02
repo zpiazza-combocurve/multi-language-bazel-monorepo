@@ -1,0 +1,1895 @@
+[
+	{
+		"_id": "60ad509f494b590ec8c40d2c",
+		"well": "5e272d38b78910dd2a1bd691",
+		"chosenID": "42479393790000",
+		"dataSource": "di",
+		"qualifierKey": "q1",
+		"ownership": {
+			"name": "t1",
+			"assumptionKey": "ownership_reversion",
+			"assumptionName": "Ownership and Reversion",
+			"econ_function": {
+				"ownership": {
+					"initial_ownership": {
+						"working_interest": 100,
+						"original_ownership": {
+							"net_revenue_interest": 75,
+							"lease_net_revenue_interest": 75
+						},
+						"oil_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"gas_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"ngl_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"drip_condensate_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"net_profit_interest_type": "expense",
+						"net_profit_interest": 0
+					},
+					"first_reversion": {
+						"no_reversion": "",
+						"balance": "gross",
+						"include_net_profit_interest": "yes",
+						"working_interest": "",
+						"original_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"oil_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"gas_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"ngl_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"drip_condensate_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"net_profit_interest": 0
+					},
+					"second_reversion": {
+						"no_reversion": "",
+						"balance": "gross",
+						"include_net_profit_interest": "yes",
+						"working_interest": "",
+						"original_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"oil_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"gas_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"ngl_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"drip_condensate_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"net_profit_interest": 0
+					},
+					"third_reversion": {
+						"no_reversion": "",
+						"balance": "gross",
+						"include_net_profit_interest": "yes",
+						"working_interest": "",
+						"original_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"oil_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"gas_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"ngl_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"drip_condensate_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"net_profit_interest": 0
+					},
+					"fourth_reversion": {
+						"no_reversion": "",
+						"balance": "gross",
+						"include_net_profit_interest": "yes",
+						"working_interest": "",
+						"original_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"oil_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"gas_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"ngl_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"drip_condensate_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"net_profit_interest": 0
+					},
+					"fifth_reversion": {
+						"no_reversion": "",
+						"balance": "gross",
+						"include_net_profit_interest": "yes",
+						"working_interest": "",
+						"original_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"oil_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"gas_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"ngl_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"drip_condensate_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"net_profit_interest": 0
+					},
+					"sixth_reversion": {
+						"no_reversion": "",
+						"balance": "gross",
+						"include_net_profit_interest": "yes",
+						"working_interest": "",
+						"original_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"oil_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"gas_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"ngl_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"drip_condensate_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"net_profit_interest": 0
+					},
+					"seventh_reversion": {
+						"no_reversion": "",
+						"balance": "gross",
+						"include_net_profit_interest": "yes",
+						"working_interest": "",
+						"original_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"oil_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"gas_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"ngl_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"drip_condensate_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"net_profit_interest": 0
+					},
+					"eighth_reversion": {
+						"no_reversion": "",
+						"balance": "gross",
+						"include_net_profit_interest": "yes",
+						"working_interest": "",
+						"original_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"oil_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"gas_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"ngl_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"drip_condensate_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"net_profit_interest": 0
+					},
+					"ninth_reversion": {
+						"no_reversion": "",
+						"balance": "gross",
+						"include_net_profit_interest": "yes",
+						"working_interest": "",
+						"original_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"oil_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"gas_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"ngl_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"drip_condensate_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"net_profit_interest": 0
+					},
+					"tenth_reversion": {
+						"no_reversion": "",
+						"balance": "gross",
+						"include_net_profit_interest": "yes",
+						"working_interest": "",
+						"original_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"oil_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"gas_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"ngl_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"drip_condensate_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"net_profit_interest": 0
+					}
+				}
+			},
+			"options": {
+				"ownership": {
+					"segment": {
+						"label": "Initial",
+						"value": "initial_ownership"
+					},
+					"initial_ownership": {
+						"subItems": {
+							"working_interest": 100,
+							"original_ownership": {
+								"subItems": {
+									"net_revenue_interest": 75,
+									"lease_net_revenue_interest": 75
+								}
+							},
+							"phase": {
+								"label": "Oil",
+								"value": "oil_ownership"
+							},
+							"oil_ownership": {
+								"subItems": {
+									"net_revenue_interest": "",
+									"lease_net_revenue_interest": ""
+								}
+							},
+							"gas_ownership": {
+								"subItems": {
+									"net_revenue_interest": "",
+									"lease_net_revenue_interest": ""
+								}
+							},
+							"ngl_ownership": {
+								"subItems": {
+									"net_revenue_interest": "",
+									"lease_net_revenue_interest": ""
+								}
+							},
+							"drip_condensate_ownership": {
+								"subItems": {
+									"net_revenue_interest": "",
+									"lease_net_revenue_interest": ""
+								}
+							},
+							"net_profit_interest_type": {
+								"label": "Expense",
+								"value": "expense"
+							},
+							"net_profit_interest": 0
+						}
+					},
+					"first_reversion": {
+						"subItems": {
+							"criteria": {
+								"criteria": {
+									"required": false,
+									"label": "No Reversion",
+									"value": "no_reversion",
+									"fieldType": "static",
+									"staticValue": ""
+								},
+								"value": ""
+							},
+							"balance": {
+								"label": "Gross",
+								"value": "gross"
+							},
+							"include_net_profit_interest": {
+								"label": "Yes",
+								"value": "yes"
+							},
+							"working_interest": "",
+							"original_ownership": {
+								"subItems": {
+									"net_revenue_interest": "",
+									"lease_net_revenue_interest": ""
+								}
+							},
+							"phase": {
+								"label": "Oil",
+								"value": "oil_ownership"
+							},
+							"oil_ownership": {
+								"subItems": {
+									"net_revenue_interest": "",
+									"lease_net_revenue_interest": ""
+								}
+							},
+							"gas_ownership": {
+								"subItems": {
+									"net_revenue_interest": "",
+									"lease_net_revenue_interest": ""
+								}
+							},
+							"ngl_ownership": {
+								"subItems": {
+									"net_revenue_interest": "",
+									"lease_net_revenue_interest": ""
+								}
+							},
+							"drip_condensate_ownership": {
+								"subItems": {
+									"net_revenue_interest": "",
+									"lease_net_revenue_interest": ""
+								}
+							},
+							"net_profit_interest": 0
+						}
+					},
+					"second_reversion": {
+						"subItems": {
+							"criteria": {
+								"criteria": {
+									"required": false,
+									"label": "No Reversion",
+									"value": "no_reversion",
+									"fieldType": "static",
+									"staticValue": ""
+								},
+								"value": ""
+							},
+							"balance": {
+								"label": "Gross",
+								"value": "gross"
+							},
+							"include_net_profit_interest": {
+								"label": "Yes",
+								"value": "yes"
+							},
+							"working_interest": "",
+							"original_ownership": {
+								"subItems": {
+									"net_revenue_interest": "",
+									"lease_net_revenue_interest": ""
+								}
+							},
+							"phase": {
+								"label": "Oil",
+								"value": "oil_ownership"
+							},
+							"oil_ownership": {
+								"subItems": {
+									"net_revenue_interest": "",
+									"lease_net_revenue_interest": ""
+								}
+							},
+							"gas_ownership": {
+								"subItems": {
+									"net_revenue_interest": "",
+									"lease_net_revenue_interest": ""
+								}
+							},
+							"ngl_ownership": {
+								"subItems": {
+									"net_revenue_interest": "",
+									"lease_net_revenue_interest": ""
+								}
+							},
+							"drip_condensate_ownership": {
+								"subItems": {
+									"net_revenue_interest": "",
+									"lease_net_revenue_interest": ""
+								}
+							},
+							"net_profit_interest": 0
+						}
+					},
+					"third_reversion": {
+						"subItems": {
+							"criteria": {
+								"criteria": {
+									"required": false,
+									"label": "No Reversion",
+									"value": "no_reversion",
+									"fieldType": "static",
+									"staticValue": ""
+								},
+								"value": ""
+							},
+							"balance": {
+								"label": "Gross",
+								"value": "gross"
+							},
+							"include_net_profit_interest": {
+								"label": "Yes",
+								"value": "yes"
+							},
+							"working_interest": "",
+							"original_ownership": {
+								"subItems": {
+									"net_revenue_interest": "",
+									"lease_net_revenue_interest": ""
+								}
+							},
+							"phase": {
+								"label": "Oil",
+								"value": "oil_ownership"
+							},
+							"oil_ownership": {
+								"subItems": {
+									"net_revenue_interest": "",
+									"lease_net_revenue_interest": ""
+								}
+							},
+							"gas_ownership": {
+								"subItems": {
+									"net_revenue_interest": "",
+									"lease_net_revenue_interest": ""
+								}
+							},
+							"ngl_ownership": {
+								"subItems": {
+									"net_revenue_interest": "",
+									"lease_net_revenue_interest": ""
+								}
+							},
+							"drip_condensate_ownership": {
+								"subItems": {
+									"net_revenue_interest": "",
+									"lease_net_revenue_interest": ""
+								}
+							},
+							"net_profit_interest": 0
+						}
+					},
+					"fourth_reversion": {
+						"subItems": {
+							"criteria": {
+								"criteria": {
+									"required": false,
+									"label": "No Reversion",
+									"value": "no_reversion",
+									"fieldType": "static",
+									"staticValue": ""
+								},
+								"value": ""
+							},
+							"balance": {
+								"label": "Gross",
+								"value": "gross"
+							},
+							"include_net_profit_interest": {
+								"label": "Yes",
+								"value": "yes"
+							},
+							"working_interest": "",
+							"original_ownership": {
+								"subItems": {
+									"net_revenue_interest": "",
+									"lease_net_revenue_interest": ""
+								}
+							},
+							"phase": {
+								"label": "Oil",
+								"value": "oil_ownership"
+							},
+							"oil_ownership": {
+								"subItems": {
+									"net_revenue_interest": "",
+									"lease_net_revenue_interest": ""
+								}
+							},
+							"gas_ownership": {
+								"subItems": {
+									"net_revenue_interest": "",
+									"lease_net_revenue_interest": ""
+								}
+							},
+							"ngl_ownership": {
+								"subItems": {
+									"net_revenue_interest": "",
+									"lease_net_revenue_interest": ""
+								}
+							},
+							"drip_condensate_ownership": {
+								"subItems": {
+									"net_revenue_interest": "",
+									"lease_net_revenue_interest": ""
+								}
+							},
+							"net_profit_interest": 0
+						}
+					},
+					"fifth_reversion": {
+						"subItems": {
+							"criteria": {
+								"criteria": {
+									"required": false,
+									"label": "No Reversion",
+									"value": "no_reversion",
+									"fieldType": "static",
+									"staticValue": ""
+								},
+								"value": ""
+							},
+							"balance": {
+								"label": "Gross",
+								"value": "gross"
+							},
+							"include_net_profit_interest": {
+								"label": "Yes",
+								"value": "yes"
+							},
+							"working_interest": "",
+							"original_ownership": {
+								"subItems": {
+									"net_revenue_interest": "",
+									"lease_net_revenue_interest": ""
+								}
+							},
+							"phase": {
+								"label": "Oil",
+								"value": "oil_ownership"
+							},
+							"oil_ownership": {
+								"subItems": {
+									"net_revenue_interest": "",
+									"lease_net_revenue_interest": ""
+								}
+							},
+							"gas_ownership": {
+								"subItems": {
+									"net_revenue_interest": "",
+									"lease_net_revenue_interest": ""
+								}
+							},
+							"ngl_ownership": {
+								"subItems": {
+									"net_revenue_interest": "",
+									"lease_net_revenue_interest": ""
+								}
+							},
+							"drip_condensate_ownership": {
+								"subItems": {
+									"net_revenue_interest": "",
+									"lease_net_revenue_interest": ""
+								}
+							},
+							"net_profit_interest": 0
+						}
+					},
+					"sixth_reversion": {
+						"subItems": {
+							"criteria": {
+								"criteria": {
+									"required": false,
+									"label": "No Reversion",
+									"value": "no_reversion",
+									"fieldType": "static",
+									"staticValue": ""
+								},
+								"value": ""
+							},
+							"balance": {
+								"label": "Gross",
+								"value": "gross"
+							},
+							"include_net_profit_interest": {
+								"label": "Yes",
+								"value": "yes"
+							},
+							"working_interest": "",
+							"original_ownership": {
+								"subItems": {
+									"net_revenue_interest": "",
+									"lease_net_revenue_interest": ""
+								}
+							},
+							"phase": {
+								"label": "Oil",
+								"value": "oil_ownership"
+							},
+							"oil_ownership": {
+								"subItems": {
+									"net_revenue_interest": "",
+									"lease_net_revenue_interest": ""
+								}
+							},
+							"gas_ownership": {
+								"subItems": {
+									"net_revenue_interest": "",
+									"lease_net_revenue_interest": ""
+								}
+							},
+							"ngl_ownership": {
+								"subItems": {
+									"net_revenue_interest": "",
+									"lease_net_revenue_interest": ""
+								}
+							},
+							"drip_condensate_ownership": {
+								"subItems": {
+									"net_revenue_interest": "",
+									"lease_net_revenue_interest": ""
+								}
+							},
+							"net_profit_interest": 0
+						}
+					},
+					"seventh_reversion": {
+						"subItems": {
+							"criteria": {
+								"criteria": {
+									"required": false,
+									"label": "No Reversion",
+									"value": "no_reversion",
+									"fieldType": "static",
+									"staticValue": ""
+								},
+								"value": ""
+							},
+							"balance": {
+								"label": "Gross",
+								"value": "gross"
+							},
+							"include_net_profit_interest": {
+								"label": "Yes",
+								"value": "yes"
+							},
+							"working_interest": "",
+							"original_ownership": {
+								"subItems": {
+									"net_revenue_interest": "",
+									"lease_net_revenue_interest": ""
+								}
+							},
+							"phase": {
+								"label": "Oil",
+								"value": "oil_ownership"
+							},
+							"oil_ownership": {
+								"subItems": {
+									"net_revenue_interest": "",
+									"lease_net_revenue_interest": ""
+								}
+							},
+							"gas_ownership": {
+								"subItems": {
+									"net_revenue_interest": "",
+									"lease_net_revenue_interest": ""
+								}
+							},
+							"ngl_ownership": {
+								"subItems": {
+									"net_revenue_interest": "",
+									"lease_net_revenue_interest": ""
+								}
+							},
+							"drip_condensate_ownership": {
+								"subItems": {
+									"net_revenue_interest": "",
+									"lease_net_revenue_interest": ""
+								}
+							},
+							"net_profit_interest": 0
+						}
+					},
+					"eighth_reversion": {
+						"subItems": {
+							"criteria": {
+								"criteria": {
+									"required": false,
+									"label": "No Reversion",
+									"value": "no_reversion",
+									"fieldType": "static",
+									"staticValue": ""
+								},
+								"value": ""
+							},
+							"balance": {
+								"label": "Gross",
+								"value": "gross"
+							},
+							"include_net_profit_interest": {
+								"label": "Yes",
+								"value": "yes"
+							},
+							"working_interest": "",
+							"original_ownership": {
+								"subItems": {
+									"net_revenue_interest": "",
+									"lease_net_revenue_interest": ""
+								}
+							},
+							"phase": {
+								"label": "Oil",
+								"value": "oil_ownership"
+							},
+							"oil_ownership": {
+								"subItems": {
+									"net_revenue_interest": "",
+									"lease_net_revenue_interest": ""
+								}
+							},
+							"gas_ownership": {
+								"subItems": {
+									"net_revenue_interest": "",
+									"lease_net_revenue_interest": ""
+								}
+							},
+							"ngl_ownership": {
+								"subItems": {
+									"net_revenue_interest": "",
+									"lease_net_revenue_interest": ""
+								}
+							},
+							"drip_condensate_ownership": {
+								"subItems": {
+									"net_revenue_interest": "",
+									"lease_net_revenue_interest": ""
+								}
+							},
+							"net_profit_interest": 0
+						}
+					},
+					"ninth_reversion": {
+						"subItems": {
+							"criteria": {
+								"criteria": {
+									"required": false,
+									"label": "No Reversion",
+									"value": "no_reversion",
+									"fieldType": "static",
+									"staticValue": ""
+								},
+								"value": ""
+							},
+							"balance": {
+								"label": "Gross",
+								"value": "gross"
+							},
+							"include_net_profit_interest": {
+								"label": "Yes",
+								"value": "yes"
+							},
+							"working_interest": "",
+							"original_ownership": {
+								"subItems": {
+									"net_revenue_interest": "",
+									"lease_net_revenue_interest": ""
+								}
+							},
+							"phase": {
+								"label": "Oil",
+								"value": "oil_ownership"
+							},
+							"oil_ownership": {
+								"subItems": {
+									"net_revenue_interest": "",
+									"lease_net_revenue_interest": ""
+								}
+							},
+							"gas_ownership": {
+								"subItems": {
+									"net_revenue_interest": "",
+									"lease_net_revenue_interest": ""
+								}
+							},
+							"ngl_ownership": {
+								"subItems": {
+									"net_revenue_interest": "",
+									"lease_net_revenue_interest": ""
+								}
+							},
+							"drip_condensate_ownership": {
+								"subItems": {
+									"net_revenue_interest": "",
+									"lease_net_revenue_interest": ""
+								}
+							},
+							"net_profit_interest": 0
+						}
+					},
+					"tenth_reversion": {
+						"subItems": {
+							"criteria": {
+								"criteria": {
+									"required": false,
+									"label": "No Reversion",
+									"value": "no_reversion",
+									"fieldType": "static",
+									"staticValue": ""
+								},
+								"value": ""
+							},
+							"balance": {
+								"label": "Gross",
+								"value": "gross"
+							},
+							"include_net_profit_interest": {
+								"label": "Yes",
+								"value": "yes"
+							},
+							"working_interest": "",
+							"original_ownership": {
+								"subItems": {
+									"net_revenue_interest": "",
+									"lease_net_revenue_interest": ""
+								}
+							},
+							"phase": {
+								"label": "Oil",
+								"value": "oil_ownership"
+							},
+							"oil_ownership": {
+								"subItems": {
+									"net_revenue_interest": "",
+									"lease_net_revenue_interest": ""
+								}
+							},
+							"gas_ownership": {
+								"subItems": {
+									"net_revenue_interest": "",
+									"lease_net_revenue_interest": ""
+								}
+							},
+							"ngl_ownership": {
+								"subItems": {
+									"net_revenue_interest": "",
+									"lease_net_revenue_interest": ""
+								}
+							},
+							"drip_condensate_ownership": {
+								"subItems": {
+									"net_revenue_interest": "",
+									"lease_net_revenue_interest": ""
+								}
+							},
+							"net_profit_interest": 0
+						}
+					}
+				}
+			}
+		},
+		"createdAt": "2021-10-19T20:16:09.053Z",
+		"updatedAt": "2021-10-19T20:16:09.053Z"
+	},
+	{
+		"_id": "60ad4f6d79160c2f7808f2e0",
+		"well": "5e272d38b78910dd2a1bd691",
+		"chosenID": "42479393790000",
+		"dataSource": "di",
+		"qualifierKey": "q2",
+		"ownership": {
+			"name": "t2",
+			"assumptionKey": "ownership_reversion",
+			"assumptionName": "Ownership and Reversion",
+			"econ_function": {
+				"ownership": {
+					"initial_ownership": {
+						"working_interest": 100,
+						"original_ownership": {
+							"net_revenue_interest": 100,
+							"lease_net_revenue_interest": 75
+						},
+						"oil_ownership": {
+							"net_revenue_interest": 4,
+							"lease_net_revenue_interest": ""
+						},
+						"gas_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"ngl_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"drip_condensate_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"net_profit_interest_type": "expense",
+						"net_profit_interest": 0
+					},
+					"first_reversion": {
+						"irr": 2,
+						"balance": "gross",
+						"include_net_profit_interest": "yes",
+						"working_interest": 100,
+						"original_ownership": {
+							"net_revenue_interest": 100,
+							"lease_net_revenue_interest": 75
+						},
+						"oil_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"gas_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"ngl_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"drip_condensate_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"net_profit_interest": 0
+					},
+					"second_reversion": {
+						"payout_without_investment": 4,
+						"balance": "gross",
+						"include_net_profit_interest": "yes",
+						"working_interest": 100,
+						"original_ownership": {
+							"net_revenue_interest": 100,
+							"lease_net_revenue_interest": 75
+						},
+						"oil_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"gas_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"ngl_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"drip_condensate_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"net_profit_interest": 0
+					},
+					"third_reversion": {
+						"roi_undisc": 3,
+						"balance": "gross",
+						"include_net_profit_interest": "yes",
+						"working_interest": 100,
+						"original_ownership": {
+							"net_revenue_interest": 100,
+							"lease_net_revenue_interest": 75
+						},
+						"oil_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"gas_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"ngl_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"drip_condensate_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"net_profit_interest": 0
+					},
+					"fourth_reversion": {
+						"no_reversion": "",
+						"balance": "gross",
+						"include_net_profit_interest": "yes",
+						"working_interest": 100,
+						"original_ownership": {
+							"net_revenue_interest": 100,
+							"lease_net_revenue_interest": 75
+						},
+						"oil_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"gas_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"ngl_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"drip_condensate_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"net_profit_interest": 0
+					},
+					"fifth_reversion": {
+						"no_reversion": "",
+						"balance": "gross",
+						"include_net_profit_interest": "yes",
+						"working_interest": "",
+						"original_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"net_profit_interest": 0,
+						"oil_ownership": {
+							"net_revenue_interest": ""
+						},
+						"gas_ownership": {
+							"net_revenue_interest": ""
+						},
+						"ngl_ownership": {
+							"net_revenue_interest": ""
+						},
+						"drip_condensate_ownership": {
+							"net_revenue_interest": ""
+						}
+					},
+					"sixth_reversion": {
+						"no_reversion": "",
+						"balance": "gross",
+						"include_net_profit_interest": "yes",
+						"working_interest": "",
+						"original_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"oil_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"gas_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"ngl_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"drip_condensate_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"net_profit_interest": 0
+					},
+					"seventh_reversion": {
+						"no_reversion": "",
+						"balance": "gross",
+						"include_net_profit_interest": "yes",
+						"working_interest": "",
+						"original_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"oil_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"gas_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"ngl_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"drip_condensate_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"net_profit_interest": 0
+					},
+					"eighth_reversion": {
+						"no_reversion": "",
+						"balance": "gross",
+						"include_net_profit_interest": "yes",
+						"working_interest": "",
+						"original_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"oil_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"gas_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"ngl_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"drip_condensate_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"net_profit_interest": 0
+					},
+					"ninth_reversion": {
+						"no_reversion": "",
+						"balance": "gross",
+						"include_net_profit_interest": "yes",
+						"working_interest": "",
+						"original_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"oil_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"gas_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"ngl_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"drip_condensate_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"net_profit_interest": 0
+					},
+					"tenth_reversion": {
+						"no_reversion": "",
+						"balance": "gross",
+						"include_net_profit_interest": "yes",
+						"working_interest": "",
+						"original_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"oil_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"gas_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"ngl_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"drip_condensate_ownership": {
+							"net_revenue_interest": "",
+							"lease_net_revenue_interest": ""
+						},
+						"net_profit_interest": 0
+					}
+				}
+			},
+			"options": {
+				"segment": {
+					"label": "Initial",
+					"value": "initial_ownership"
+				},
+				"initial_ownership": {
+					"subItems": {
+						"working_interest": 100,
+						"original_ownership": {
+							"subItems": {
+								"net_revenue_interest": 100,
+								"lease_net_revenue_interest": 75
+							}
+						},
+						"phase": {
+							"label": "Oil",
+							"value": "oil_ownership"
+						},
+						"oil_ownership": {
+							"subItems": {
+								"net_revenue_interest": 4,
+								"lease_net_revenue_interest": ""
+							}
+						},
+						"gas_ownership": {
+							"subItems": {
+								"net_revenue_interest": "",
+								"lease_net_revenue_interest": ""
+							}
+						},
+						"ngl_ownership": {
+							"subItems": {
+								"net_revenue_interest": "",
+								"lease_net_revenue_interest": ""
+							}
+						},
+						"drip_condensate_ownership": {
+							"subItems": {
+								"net_revenue_interest": "",
+								"lease_net_revenue_interest": ""
+							}
+						},
+						"empty_header": "",
+						"net_profit_interest_type": {
+							"label": "Expense",
+							"value": "expense"
+						},
+						"net_profit_interest": 0
+					}
+				},
+				"first_reversion": {
+					"subItems": {
+						"criteria": {
+							"criteria": {
+								"required": true,
+								"label": "IRR",
+								"value": "irr",
+								"fieldType": "number",
+								"valType": "percentage",
+								"min": 0,
+								"max": 10000
+							},
+							"value": 2
+						},
+						"balance": {
+							"label": "Gross",
+							"value": "gross"
+						},
+						"include_net_profit_interest": {
+							"label": "Yes",
+							"value": "yes"
+						},
+						"working_interest": 100,
+						"original_ownership": {
+							"subItems": {
+								"net_revenue_interest": 100,
+								"lease_net_revenue_interest": 75
+							}
+						},
+						"phase": {
+							"label": "Oil",
+							"value": "oil_ownership"
+						},
+						"oil_ownership": {
+							"subItems": {
+								"net_revenue_interest": "",
+								"lease_net_revenue_interest": ""
+							}
+						},
+						"gas_ownership": {
+							"subItems": {
+								"net_revenue_interest": "",
+								"lease_net_revenue_interest": ""
+							}
+						},
+						"ngl_ownership": {
+							"subItems": {
+								"net_revenue_interest": "",
+								"lease_net_revenue_interest": ""
+							}
+						},
+						"drip_condensate_ownership": {
+							"subItems": {
+								"net_revenue_interest": "",
+								"lease_net_revenue_interest": ""
+							}
+						},
+						"empty_header": "",
+						"net_profit_interest": 0
+					}
+				},
+				"second_reversion": {
+					"subItems": {
+						"criteria": {
+							"criteria": {
+								"required": true,
+								"label": "PO",
+								"helpText": "Revenue – Expenses",
+								"value": "payout_without_investment",
+								"fieldType": "number",
+								"valType": "dollars",
+								"min": 0,
+								"max": 10000000000.0
+							},
+							"value": 4
+						},
+						"balance": {
+							"label": "Gross",
+							"value": "gross"
+						},
+						"include_net_profit_interest": {
+							"label": "Yes",
+							"value": "yes"
+						},
+						"working_interest": 100,
+						"original_ownership": {
+							"subItems": {
+								"net_revenue_interest": 100,
+								"lease_net_revenue_interest": 75
+							}
+						},
+						"phase": {
+							"label": "Oil",
+							"value": "oil_ownership"
+						},
+						"oil_ownership": {
+							"subItems": {
+								"net_revenue_interest": "",
+								"lease_net_revenue_interest": ""
+							}
+						},
+						"gas_ownership": {
+							"subItems": {
+								"net_revenue_interest": "",
+								"lease_net_revenue_interest": ""
+							}
+						},
+						"ngl_ownership": {
+							"subItems": {
+								"net_revenue_interest": "",
+								"lease_net_revenue_interest": ""
+							}
+						},
+						"drip_condensate_ownership": {
+							"subItems": {
+								"net_revenue_interest": "",
+								"lease_net_revenue_interest": ""
+							}
+						},
+						"empty_header": "",
+						"net_profit_interest": 0
+					}
+				},
+				"third_reversion": {
+					"subItems": {
+						"criteria": {
+							"criteria": {
+								"required": true,
+								"label": "Undisc ROI",
+								"helpText": "(Revenue-Expenses)/CAPEX",
+								"value": "roi_undisc",
+								"fieldType": "number",
+								"valType": "multiple",
+								"min": 0,
+								"max": 1000
+							},
+							"value": 3
+						},
+						"balance": {
+							"label": "Gross",
+							"value": "gross"
+						},
+						"include_net_profit_interest": {
+							"label": "Yes",
+							"value": "yes"
+						},
+						"working_interest": 100,
+						"original_ownership": {
+							"subItems": {
+								"net_revenue_interest": 100,
+								"lease_net_revenue_interest": 75
+							}
+						},
+						"phase": {
+							"label": "Oil",
+							"value": "oil_ownership"
+						},
+						"oil_ownership": {
+							"subItems": {
+								"net_revenue_interest": "",
+								"lease_net_revenue_interest": ""
+							}
+						},
+						"gas_ownership": {
+							"subItems": {
+								"net_revenue_interest": "",
+								"lease_net_revenue_interest": ""
+							}
+						},
+						"ngl_ownership": {
+							"subItems": {
+								"net_revenue_interest": "",
+								"lease_net_revenue_interest": ""
+							}
+						},
+						"drip_condensate_ownership": {
+							"subItems": {
+								"net_revenue_interest": "",
+								"lease_net_revenue_interest": ""
+							}
+						},
+						"empty_header": "",
+						"net_profit_interest": 0
+					}
+				},
+				"fourth_reversion": {
+					"subItems": {
+						"criteria": {
+							"criteria": {
+								"required": true,
+								"label": "Date",
+								"value": "date",
+								"fieldType": "date",
+								"valType": "datetime"
+							},
+							"value": "2021-05-19T04:00:00.000Z"
+						},
+						"balance": {
+							"label": "Gross",
+							"value": "gross"
+						},
+						"include_net_profit_interest": {
+							"label": "Yes",
+							"value": "yes"
+						},
+						"working_interest": 100,
+						"original_ownership": {
+							"subItems": {
+								"net_revenue_interest": 100,
+								"lease_net_revenue_interest": 75
+							}
+						},
+						"phase": {
+							"label": "Oil",
+							"value": "oil_ownership"
+						},
+						"oil_ownership": {
+							"subItems": {
+								"net_revenue_interest": "",
+								"lease_net_revenue_interest": ""
+							}
+						},
+						"gas_ownership": {
+							"subItems": {
+								"net_revenue_interest": "",
+								"lease_net_revenue_interest": ""
+							}
+						},
+						"ngl_ownership": {
+							"subItems": {
+								"net_revenue_interest": "",
+								"lease_net_revenue_interest": ""
+							}
+						},
+						"drip_condensate_ownership": {
+							"subItems": {
+								"net_revenue_interest": "",
+								"lease_net_revenue_interest": ""
+							}
+						},
+						"empty_header": "",
+						"net_profit_interest": 0
+					}
+				},
+				"fifth_reversion": {
+					"subItems": {
+						"criteria": {
+							"criteria": {
+								"required": false,
+								"label": "No Reversion",
+								"value": "no_reversion",
+								"fieldType": "static",
+								"staticValue": ""
+							},
+							"value": ""
+						},
+						"balance": {
+							"label": "Gross",
+							"value": "gross"
+						},
+						"include_net_profit_interest": {
+							"label": "Yes",
+							"value": "yes"
+						},
+						"working_interest": "",
+						"original_ownership": {
+							"subItems": {
+								"net_revenue_interest": "",
+								"lease_net_revenue_interest": ""
+							}
+						},
+						"net_profit_interest": 0,
+						"phase": {
+							"label": "Oil",
+							"value": "oil_ownership"
+						},
+						"oil_ownership": {
+							"subItems": {
+								"net_revenue_interest": ""
+							}
+						},
+						"gas_ownership": {
+							"subItems": {
+								"net_revenue_interest": ""
+							}
+						},
+						"ngl_ownership": {
+							"subItems": {
+								"net_revenue_interest": ""
+							}
+						},
+						"drip_condensate_ownership": {
+							"subItems": {
+								"net_revenue_interest": ""
+							}
+						}
+					}
+				},
+				"sixth_reversion": {
+					"subItems": {
+						"criteria": {
+							"criteria": {
+								"required": false,
+								"label": "No Reversion",
+								"value": "no_reversion",
+								"fieldType": "static",
+								"staticValue": ""
+							},
+							"value": ""
+						},
+						"balance": {
+							"label": "Gross",
+							"value": "gross"
+						},
+						"include_net_profit_interest": {
+							"label": "Yes",
+							"value": "yes"
+						},
+						"working_interest": "",
+						"original_ownership": {
+							"subItems": {
+								"net_revenue_interest": "",
+								"lease_net_revenue_interest": ""
+							}
+						},
+						"phase": {
+							"label": "Oil",
+							"value": "oil_ownership"
+						},
+						"oil_ownership": {
+							"subItems": {
+								"net_revenue_interest": "",
+								"lease_net_revenue_interest": ""
+							}
+						},
+						"gas_ownership": {
+							"subItems": {
+								"net_revenue_interest": "",
+								"lease_net_revenue_interest": ""
+							}
+						},
+						"ngl_ownership": {
+							"subItems": {
+								"net_revenue_interest": "",
+								"lease_net_revenue_interest": ""
+							}
+						},
+						"drip_condensate_ownership": {
+							"subItems": {
+								"net_revenue_interest": "",
+								"lease_net_revenue_interest": ""
+							}
+						},
+						"net_profit_interest": 0
+					}
+				},
+				"seventh_reversion": {
+					"subItems": {
+						"criteria": {
+							"criteria": {
+								"required": false,
+								"label": "No Reversion",
+								"value": "no_reversion",
+								"fieldType": "static",
+								"staticValue": ""
+							},
+							"value": ""
+						},
+						"balance": {
+							"label": "Gross",
+							"value": "gross"
+						},
+						"include_net_profit_interest": {
+							"label": "Yes",
+							"value": "yes"
+						},
+						"working_interest": "",
+						"original_ownership": {
+							"subItems": {
+								"net_revenue_interest": "",
+								"lease_net_revenue_interest": ""
+							}
+						},
+						"phase": {
+							"label": "Oil",
+							"value": "oil_ownership"
+						},
+						"oil_ownership": {
+							"subItems": {
+								"net_revenue_interest": "",
+								"lease_net_revenue_interest": ""
+							}
+						},
+						"gas_ownership": {
+							"subItems": {
+								"net_revenue_interest": "",
+								"lease_net_revenue_interest": ""
+							}
+						},
+						"ngl_ownership": {
+							"subItems": {
+								"net_revenue_interest": "",
+								"lease_net_revenue_interest": ""
+							}
+						},
+						"drip_condensate_ownership": {
+							"subItems": {
+								"net_revenue_interest": "",
+								"lease_net_revenue_interest": ""
+							}
+						},
+						"net_profit_interest": 0
+					}
+				},
+				"eighth_reversion": {
+					"subItems": {
+						"criteria": {
+							"criteria": {
+								"required": false,
+								"label": "No Reversion",
+								"value": "no_reversion",
+								"fieldType": "static",
+								"staticValue": ""
+							},
+							"value": ""
+						},
+						"balance": {
+							"label": "Gross",
+							"value": "gross"
+						},
+						"include_net_profit_interest": {
+							"label": "Yes",
+							"value": "yes"
+						},
+						"working_interest": "",
+						"original_ownership": {
+							"subItems": {
+								"net_revenue_interest": "",
+								"lease_net_revenue_interest": ""
+							}
+						},
+						"phase": {
+							"label": "Oil",
+							"value": "oil_ownership"
+						},
+						"oil_ownership": {
+							"subItems": {
+								"net_revenue_interest": "",
+								"lease_net_revenue_interest": ""
+							}
+						},
+						"gas_ownership": {
+							"subItems": {
+								"net_revenue_interest": "",
+								"lease_net_revenue_interest": ""
+							}
+						},
+						"ngl_ownership": {
+							"subItems": {
+								"net_revenue_interest": "",
+								"lease_net_revenue_interest": ""
+							}
+						},
+						"drip_condensate_ownership": {
+							"subItems": {
+								"net_revenue_interest": "",
+								"lease_net_revenue_interest": ""
+							}
+						},
+						"net_profit_interest": 0
+					}
+				},
+				"ninth_reversion": {
+					"subItems": {
+						"criteria": {
+							"criteria": {
+								"required": false,
+								"label": "No Reversion",
+								"value": "no_reversion",
+								"fieldType": "static",
+								"staticValue": ""
+							},
+							"value": ""
+						},
+						"balance": {
+							"label": "Gross",
+							"value": "gross"
+						},
+						"include_net_profit_interest": {
+							"label": "Yes",
+							"value": "yes"
+						},
+						"working_interest": "",
+						"original_ownership": {
+							"subItems": {
+								"net_revenue_interest": "",
+								"lease_net_revenue_interest": ""
+							}
+						},
+						"phase": {
+							"label": "Oil",
+							"value": "oil_ownership"
+						},
+						"oil_ownership": {
+							"subItems": {
+								"net_revenue_interest": "",
+								"lease_net_revenue_interest": ""
+							}
+						},
+						"gas_ownership": {
+							"subItems": {
+								"net_revenue_interest": "",
+								"lease_net_revenue_interest": ""
+							}
+						},
+						"ngl_ownership": {
+							"subItems": {
+								"net_revenue_interest": "",
+								"lease_net_revenue_interest": ""
+							}
+						},
+						"drip_condensate_ownership": {
+							"subItems": {
+								"net_revenue_interest": "",
+								"lease_net_revenue_interest": ""
+							}
+						},
+						"net_profit_interest": 0
+					}
+				},
+				"tenth_reversion": {
+					"subItems": {
+						"criteria": {
+							"criteria": {
+								"required": false,
+								"label": "No Reversion",
+								"value": "no_reversion",
+								"fieldType": "static",
+								"staticValue": ""
+							},
+							"value": ""
+						},
+						"balance": {
+							"label": "Gross",
+							"value": "gross"
+						},
+						"include_net_profit_interest": {
+							"label": "Yes",
+							"value": "yes"
+						},
+						"working_interest": "",
+						"original_ownership": {
+							"subItems": {
+								"net_revenue_interest": "",
+								"lease_net_revenue_interest": ""
+							}
+						},
+						"phase": {
+							"label": "Oil",
+							"value": "oil_ownership"
+						},
+						"oil_ownership": {
+							"subItems": {
+								"net_revenue_interest": "",
+								"lease_net_revenue_interest": ""
+							}
+						},
+						"gas_ownership": {
+							"subItems": {
+								"net_revenue_interest": "",
+								"lease_net_revenue_interest": ""
+							}
+						},
+						"ngl_ownership": {
+							"subItems": {
+								"net_revenue_interest": "",
+								"lease_net_revenue_interest": ""
+							}
+						},
+						"drip_condensate_ownership": {
+							"subItems": {
+								"net_revenue_interest": "",
+								"lease_net_revenue_interest": ""
+							}
+						},
+						"net_profit_interest": 0
+					}
+				}
+			}
+		},
+		"createdAt": "2021-10-19T20:16:09.053Z",
+		"updatedAt": "2021-10-19T20:16:09.053Z"
+	}
+]

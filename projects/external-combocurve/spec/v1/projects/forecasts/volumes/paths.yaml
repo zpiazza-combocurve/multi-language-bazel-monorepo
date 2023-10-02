@@ -1,0 +1,312 @@
+/v1/projects/{projectId}/forecasts/{forecastId}/daily-volumes:
+  head:
+    operationId: head-v1-forecast-daily-volumes
+    description: >-
+      Returns metadata about the existing forecast volumes scoped to
+      projectId project, forecastId forecast, and well.
+    parameters:
+      - in: path
+        name: projectId
+        required: true
+        type: string
+        description: ''
+      - in: path
+        name: forecastId
+        required: true
+        type: string
+        description: ''
+      - $ref: '#/parameters/skipParam'
+      - $ref: '#/parameters/takeParam'
+      - name: well
+        in: query
+        description: filter by well
+        type: string
+    responses:
+      '200':
+        description: OK
+        headers:
+          Link:
+            type: string
+            description: >-
+              Indicates a typed relationship with another resource, where the
+              relation type is defined by RFC 5988. We include the relationships
+              next, prev, first and last, which can be used to move between
+              pages of the list of results.
+          X-Query-Count:
+            type: integer
+            description: >-
+              The number of records in this resource. When filters are provided
+              only matching records are counted.
+      '400':
+        description: Bad Request. There is something wrong with the request data.
+    tags:
+      - ComboCurveV1
+    x-client-generation:
+      x-count-method:
+        name: ForecastDailyVolumesCount
+  get:
+    produces:
+      - application/json
+    operationId: get-v1-forecast-daily-volumes
+    description: >-
+      Returns a list of forecast volumes scoped to projectId project,
+      forecastId forecast, and well.
+    parameters:
+      - in: path
+        name: projectId
+        required: true
+        type: string
+        description: ''
+      - in: path
+        name: forecastId
+        required: true
+        type: string
+        description: ''
+      - $ref: '#/parameters/skipParam'
+      - $ref: '#/parameters/takeParam'
+      - $ref: '#/parameters/sortParam'
+      - $ref: '#/parameters/cursorParam'
+      - name: well
+        in: query
+        description: filter by well
+        type: string
+      - name: startDate
+        in: query
+        description: filter by startDate. Returns all records with a startDate greater than or equal to the specified value.
+        type: string
+        format: date
+      - name: endDate
+        in: query
+        description: filter by endDate. Returns all records with a endDate less than or equal to the specified value.
+        type: string
+        format: date
+    responses:
+      '200':
+        description: OK
+        schema:
+          $ref: '#/definitions/ForecastVolumesList'
+        headers:
+          Link:
+            type: string
+            description: >-
+              Indicates a typed relationship with another resource, where the
+              relation type is defined by RFC 5988. We include the relationships
+              next, prev, first and last, which can be used to move between
+              pages of the list of results.
+      '400':
+        description: Bad Request. There is something wrong with the request data.
+        schema:
+          $ref: '#/definitions/Error'
+    tags:
+      - ComboCurveV1
+    x-google-quota:
+      metricCosts:
+        read-request-rate: 1
+    x-client-generation:
+      x-get-all-skip-take-method:
+        name: GetAllForecastDailyVolumes
+        baseReturnType: ForecastVolumes
+      x-get-all-cursor-method:
+        name: GetAllForecastDailyVolumesV2
+        baseReturnType: ForecastVolumes
+/v1/projects/{projectId}/forecasts/{forecastId}/daily-volumes/head:
+  get:
+    x-no-client: true
+    x-no-doc: true
+    operationId: get-head-v1-forecast-daily-volumes
+    description: >-
+      Returns metadata about the existing forecast volumes scoped to
+      projectId project, forecastId forecast, and well.
+    parameters:
+      - in: path
+        name: projectId
+        required: true
+        type: string
+        description: ''
+      - in: path
+        name: forecastId
+        required: true
+        type: string
+        description: ''
+      - $ref: '#/parameters/skipParam'
+      - $ref: '#/parameters/takeParam'
+      - name: well
+        in: query
+        description: filter by well
+        type: string
+    responses:
+      '200':
+        description: OK
+        headers:
+          Link:
+            type: string
+            description: >-
+              Indicates a typed relationship with another resource, where the
+              relation type is defined by RFC 5988. We include the relationships
+              next, prev, first and last, which can be used to move between
+              pages of the list of results.
+          X-Query-Count:
+            type: integer
+            description: >-
+              The number of records in this resource. When filters are provided
+              only matching records are counted.
+      '400':
+        description: Bad Request. There is something wrong with the request data.
+    tags:
+      - ComboCurveV1
+/v1/projects/{projectId}/forecasts/{forecastId}/monthly-volumes:
+  head:
+    operationId: head-v1-forecast-monthly-volumes
+    description: >-
+      Returns metadata about the existing forecast volumes scoped to
+      projectId project, forecastId forecast, and well.
+    parameters:
+      - in: path
+        name: projectId
+        required: true
+        type: string
+        description: ''
+      - in: path
+        name: forecastId
+        required: true
+        type: string
+        description: ''
+      - $ref: '#/parameters/skipParam'
+      - $ref: '#/parameters/takeParam'
+      - name: well
+        in: query
+        description: filter by well
+        type: string
+    responses:
+      '200':
+        description: OK
+        headers:
+          Link:
+            type: string
+            description: >-
+              Indicates a typed relationship with another resource, where the
+              relation type is defined by RFC 5988. We include the relationships
+              next, prev, first and last, which can be used to move between
+              pages of the list of results.
+          X-Query-Count:
+            type: integer
+            description: >-
+              The number of records in this resource. When filters are provided
+              only matching records are counted.
+      '400':
+        description: Bad Request. There is something wrong with the request data.
+    tags:
+      - ComboCurveV1
+    x-client-generation:
+      x-count-method:
+        name: ForecastMonthlyVolumesCount
+  get:
+    produces:
+      - application/json
+    operationId: get-v1-forecast-monthly-volumes
+    description: >-
+      Returns a list of forecast volumes scoped to projectId project,
+      forecastId forecast, and well.
+    parameters:
+      - in: path
+        name: projectId
+        required: true
+        type: string
+        description: ''
+      - in: path
+        name: forecastId
+        required: true
+        type: string
+        description: ''
+      - $ref: '#/parameters/skipParam'
+      - $ref: '#/parameters/takeParam'
+      - $ref: '#/parameters/sortParam'
+      - $ref: '#/parameters/cursorParam'
+      - name: well
+        in: query
+        description: filter by well
+        type: string
+      - name: startDate
+        in: query
+        description: filter by startDate. Returns all records with a startDate greater than or equal to the specified value.
+        type: string
+        format: date
+      - name: endDate
+        in: query
+        description: filter by endDate. Returns all records with a endDate less than or equal to the specified value.
+        type: string
+        format: date
+    responses:
+      '200':
+        description: OK
+        schema:
+          $ref: '#/definitions/ForecastVolumesList'
+        headers:
+          Link:
+            type: string
+            description: >-
+              Indicates a typed relationship with another resource, where the
+              relation type is defined by RFC 5988. We include the relationships
+              next, prev, first and last, which can be used to move between
+              pages of the list of results.
+      '400':
+        description: Bad Request. There is something wrong with the request data.
+        schema:
+          $ref: '#/definitions/Error'
+    tags:
+      - ComboCurveV1
+    x-google-quota:
+      metricCosts:
+        read-request-rate: 1
+    x-client-generation:
+      x-get-all-skip-take-method:
+        name: GetAllForecastMonthlyVolumes
+        baseReturnType: ForecastVolumes
+      x-get-all-cursor-method:
+        name: GetAllForecastMonthlyVolumesV2
+        baseReturnType: ForecastVolumes
+/v1/projects/{projectId}/forecasts/{forecastId}/monthly-volumes/head:
+  get:
+    x-no-client: true
+    x-no-doc: true
+    operationId: get-head-v1-forecast-monthly-volumes
+    description: >-
+      Returns metadata about the existing forecast volumes scoped to
+      projectId project, forecastId forecast, and well.
+    parameters:
+      - in: path
+        name: projectId
+        required: true
+        type: string
+        description: ''
+      - in: path
+        name: forecastId
+        required: true
+        type: string
+        description: ''
+      - $ref: '#/parameters/skipParam'
+      - $ref: '#/parameters/takeParam'
+      - name: well
+        in: query
+        description: filter by well
+        type: string
+    responses:
+      '200':
+        description: OK
+        headers:
+          Link:
+            type: string
+            description: >-
+              Indicates a typed relationship with another resource, where the
+              relation type is defined by RFC 5988. We include the relationships
+              next, prev, first and last, which can be used to move between
+              pages of the list of results.
+          X-Query-Count:
+            type: integer
+            description: >-
+              The number of records in this resource. When filters are provided
+              only matching records are counted.
+      '400':
+        description: Bad Request. There is something wrong with the request data.
+    tags:
+      - ComboCurveV1

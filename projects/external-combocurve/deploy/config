@@ -1,0 +1,7 @@
+Host combocurve-utils-js.github.com
+Hostname github.com
+IdentityFile /root/.ssh/id_rsa_combocurve_utils
+
+Host external-combocurve-docs.github.com
+Hostname github.com
+IdentityFile /root/.ssh/id_rsa_external_combocurve_docs

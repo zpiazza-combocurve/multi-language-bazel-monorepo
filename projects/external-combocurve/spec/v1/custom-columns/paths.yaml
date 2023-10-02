@@ -1,0 +1,34 @@
+/v1/custom-columns/{collection}:
+  get:
+    produces:
+      - application/json
+    operationId: get-v1-custom-columns
+    description: >-
+      Returns the custom column that matches the given collection.
+    parameters:
+      - in: path
+        name: collection
+        required: true
+        type: string
+        enum:
+         - wells
+         - daily-productions
+         - monthly-productions
+    responses:
+      '200':
+        description: OK
+        schema:
+          $ref: '#/definitions/CustomColumns'
+      '400':
+        description: Bad Request. There is something wrong with the request data.
+        schema:
+          $ref: '#/definitions/Error'
+      '404':
+        description: Not Found
+        schema:
+          $ref: '#/definitions/Error'
+    tags:
+      - ComboCurveV1
+    x-google-quota:
+      metricCosts:
+        read-request-rate: 1

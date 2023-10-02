@@ -1,0 +1,141 @@
+{
+	"name": "risking-test1",
+	"risking": {
+		"riskProd": true,
+		"riskNglDripCondViaGasRisk": false,
+		"oil": {
+			"rows": [
+				{
+					"entireWellLife": "Flat",
+					"multiplier": 100
+				}
+			]
+		},
+		"gas": {
+			"rows": [
+				{
+					"dates": "2023-06-01",
+					"multiplier": 100
+				}
+			]
+		},
+		"ngl": {
+			"rows": [
+				{
+					"offsetToAsOf": 2,
+					"multiplier": 100
+				},
+				{
+					"offsetToAsOf": 2,
+					"multiplier": 100
+				},
+				{
+					"offsetToAsOf": 2,
+					"multiplier": 100
+				},
+				{
+					"offsetToAsOf": 2,
+					"multiplier": 100
+				}
+			]
+		},
+		"dripCondensate": {
+			"rows": [
+				{
+					"offsetToEndHistory": 5,
+					"multiplier": 100
+				},
+				{
+					"offsetToEndHistory": 200,
+					"multiplier": 100
+				}
+			]
+		},
+		"water": {
+			"rows": [
+				{
+					"multiplier": 99,
+					"seasonal": "Jan"
+				},
+				{
+					"multiplier": 100,
+					"seasonal": "Feb"
+				},
+				{
+					"multiplier": 100,
+					"seasonal": "Mar"
+				},
+				{
+					"multiplier": 100,
+					"seasonal": "Apr"
+				},
+				{
+					"multiplier": 100,
+					"seasonal": "May"
+				},
+				{
+					"multiplier": 100,
+					"seasonal": "Jun"
+				},
+				{
+					"multiplier": 100,
+					"seasonal": "Jul"
+				},
+				{
+					"multiplier": 100,
+					"seasonal": "Aug"
+				},
+				{
+					"multiplier": 100,
+					"seasonal": "Sep"
+				},
+				{
+					"multiplier": 100,
+					"seasonal": "Oct"
+				},
+				{
+					"multiplier": 100,
+					"seasonal": "Nov"
+				},
+				{
+					"multiplier": 98,
+					"seasonal": "Dec"
+				}
+			]
+		}
+	},
+	"shutIn": {
+		"rows": [
+			{
+				"offsetToAsOf": {
+					"start": 5.5,
+					"end": 6
+				},
+				"multiplier": 1.5,
+				"phase": "all",
+				"repeatRangeOfDates": "no_repeat",
+				"totalOccurrences": 1,
+				"unit": "day",
+				"scalePostShutInEndCriteria": "offset_to_as_of_date",
+				"scalePostShutInEnd": "2",
+				"fixedExpense": false,
+				"capex": false
+			},
+			{
+				"offsetToAsOf": {
+					"start": 1,
+					"end": 2
+				},
+				"multiplier": 1,
+				"phase": "all",
+				"repeatRangeOfDates": "no_repeat",
+				"totalOccurrences": 1,
+				"unit": "day",
+				"scalePostShutInEndCriteria": "econ_limit",
+				"scalePostShutInEnd": " ",
+				"fixedExpense": false,
+				"capex": false
+			}
+		]
+	}
+}

@@ -1,0 +1,369 @@
+CutOffMinLifeModel:
+  type: object
+  properties:
+    date:
+      type: string
+      format: date
+    asOf:
+      type: number 
+      maximum: 10000000 
+      minimum: 0   
+    endHist:
+      type: boolean
+    none:
+      type: boolean
+FPDSourceModel:
+  type: object
+  properties:
+    date:
+      type: string
+      format: date
+    wellHeader:
+      type: boolean
+    forecast:
+      type: boolean
+    notUsed:
+      type: boolean
+    productionData:
+      type: boolean
+    linkToWells:
+      type: string
+AsOfOrDiscountModel:
+ type: object
+ properties:
+    date:
+      type: string
+      format: date
+    dynamic:
+      type: string
+      enum:
+        - first_of_next_year
+        - first_of_next_month
+    fpd:
+      type: boolean
+    majorSegment:
+      type: boolean
+FpdSourceHierarchyModel:
+  type: object
+  properties:
+    firstFpdSource:
+      $ref: '#/definitions/FPDSourceModel'
+    secondFpdSource:
+      $ref: '#/definitions/FPDSourceModel'
+    thirdFpdSource:
+      $ref: '#/definitions/FPDSourceModel'
+    fourthFpdSource:
+      $ref: '#/definitions/FPDSourceModel'
+    useForecastSchedule:
+      type: boolean
+  required:
+    - firstFpdSource
+    - secondFpdSource
+    - thirdFpdSource
+    - fourthFpdSource
+    - useForecastSchedule
+
+DateSettingsModel:
+  type: object
+  properties:
+    maxWellLife:
+      type: number
+      maximum: 100
+      minimum: 0
+    asOfDate: 
+      $ref: '#/definitions/AsOfOrDiscountModel'
+    discountDate: 
+      $ref: '#/definitions/AsOfOrDiscountModel'
+    cashFlowPriorAsOfDate: 
+      type: boolean
+    productionDataResolution: 
+      type: string
+      enum:
+        - same_as_forecast
+        - monthly
+        - daily
+    fpdSourceHierarchy: 
+      $ref: '#/definitions/FpdSourceHierarchyModel'
+
+  required:
+    - maxWellLife
+    - asOfDate
+    - discountDate
+    - cashFlowPriorAsOfDate
+    - productionDataResolution
+    - fpdSourceHierarchy
+CutOffModel:
+  type: object
+  properties:
+    maxCumCashFlow:
+      type: boolean
+    firstNegativeCashFlow:
+      type: boolean
+    lastPositiveCashFlow:
+      type: boolean
+    noCutOff:
+      type: boolean
+    oilRate:
+      type: number
+      maximum: 10000000
+      minimum: 0
+    gasRate:
+      type: number 
+      maximum: 10000000
+      minimum: 0
+    waterRate:
+      type: number 
+      maximum: 10000000 
+      minimum: 0    
+    date:
+      type: string
+      format: date
+    yearsFromAsOf:
+      type: number 
+      maximum: 1000 
+      minimum: 0    
+    linkToWells:
+      type: string
+    minLife:
+      $ref: '#/definitions/CutOffMinLifeModel'
+    triggerEclCapex:
+      type: boolean
+    includeCapex:
+      type: boolean
+    discount:
+      type: number 
+      maximum: 100
+      minimum: 0    
+    econLimitDelay:
+      type: number 
+      maximum: 100
+      minimum: 0    
+    alignDependentPhases:
+      type: boolean
+    tolerateNegativeCF:
+      type: number 
+      minimum: 0    
+DateSettings:
+  type: object
+  required:
+    - name
+    - unique
+  properties:
+    id:
+      type: string
+      description: ID
+    copiedFrom:
+      type: string
+      description: Copied From
+    name:
+      type: string
+      description: Name
+    scenario:
+      type: string
+      description: Scenario ID
+    tags:
+      type: array
+      items:
+        type: string
+        description: Tag ID
+    unique:
+      type: boolean
+      description: Unique
+    well:
+      type: string
+      description: Well ID
+    createdAt:
+      type: string
+      format: date
+      description: Creation Date
+    updatedAt:
+      type: string
+      format: date
+      description: Updated At
+    createdBy:
+      type: string
+      description: Created By
+    lastUpdatedBy:
+      type: string
+      description: Last Updated By
+    dateSetting:
+      $ref: '#/definitions/DateSettingsModel'
+    cutOff:
+      $ref: '#/definitions/CutOffModel'
+  example:
+    id: 648a392e9ed2d2ad372bda84
+    copiedFrom:
+    name: default
+    tags: []
+    unique: false
+    createdBy: 6234d6677118ecb7e6fd699a
+    lastUpdatedBy: 6234d6677118ecb7e6fd699a
+    createdAt: '2023-06-19T17:24:17.132Z'
+    updatedAt: '2023-06-19T17:24:17.132Z'
+    dateSetting:
+      maxWellLife: 50
+      asOfDate:
+        fpd: true
+      discountDate:
+        majorSegment: true
+      cashFlowPriorAsOfDate: false
+      productionDataResolution: same_as_forecast
+      fpdSourceHierarchy:
+        firstFpdSource:
+          wellHeader: true
+        secondFpdSource:
+          linkToWells: INPT.gWmyAymH6i
+        thirdFpdSource:
+          linkToWells: INPT.JNE6xtYFJd
+        fourthFpdSource:
+          notUsed: true
+        useForecastSchedule: true
+    cutOff:
+      maxCumCashFlow: true
+      minLife:
+        none: true
+      triggerEclCapex: false
+      includeCapex: false
+      discount: 10
+      econLimitDelay: 0
+      alignDependentPhases: true
+      tolerateNegativeCF: 0
+
+DateSettingsList:
+  type: array
+  items:
+    $ref: '#/definitions/DateSettings'
+  maxItems: 200
+  example:
+    - id: 648a392e9ed2d2ad372bda84
+      copiedFrom:
+      name: default
+      tags: []
+      unique: false
+      createdBy: 6234d6677118ecb7e6fd699a
+      lastUpdatedBy: 6234d6677118ecb7e6fd699a
+      createdAt: '2023-06-19T17:24:17.132Z'
+      updatedAt: '2023-06-19T17:24:17.132Z'
+      dateSetting:
+        maxWellLife: 50
+        asOfDate:
+          fpd: true
+        discountDate:
+          majorSegment: true
+        cashFlowPriorAsOfDate: false
+        productionDataResolution: same_as_forecast
+        fpdSourceHierarchy:
+          firstFpdSource:
+            wellHeader: true
+          secondFpdSource:
+            linkToWells: INPT.gWmyAymH6i
+          thirdFpdSource:
+            linkToWells: INPT.JNE6xtYFJd
+          fourthFpdSource:
+            notUsed: true
+          useForecastSchedule: true
+      cutOff:
+        maxCumCashFlow: true
+        minLife:
+          none: true
+        triggerEclCapex: false
+        includeCapex: false
+        discount: 10
+        econLimitDelay: 0
+        alignDependentPhases: true
+        tolerateNegativeCF: 0
+
+DateSettingsInput:
+  type: object
+  required:
+    - name
+    - unique
+  properties:
+    name:
+      type: string
+      description: Name
+    scenario:
+      type: string
+      description: Scenario ID
+    unique:
+      type: boolean
+      description: Unique
+    well:
+      type: string
+      description: Well ID
+    dateSetting:
+      $ref: '#/definitions/DateSettingsModel'
+    cutOff:
+      $ref: '#/definitions/CutOffModel'
+  example:
+    name: Test
+    scenario: 63b8571d70ed63f50bd6d63f
+    unique: true
+    well: 63b85759e1d7eb4e31579f51
+    dateSetting:
+      maxWellLife: 50
+      asOfDate:
+        fpd: true
+      discountDate:
+        majorSegment: true
+      cashFlowPriorAsOfDate: false
+      productionDataResolution: same_as_forecast
+      fpdSourceHierarchy:
+        firstFpdSource:
+          wellHeader: true
+        secondFpdSource:
+          linkToWells: INPT.gWmyAymH6i
+        thirdFpdSource:
+          linkToWells: INPT.JNE6xtYFJd
+        fourthFpdSource:
+          notUsed: true
+        useForecastSchedule: true
+    cutOff:
+      maxCumCashFlow: true
+      minLife:
+        none: true
+      triggerEclCapex: false
+      includeCapex: false
+      discount: 10
+      econLimitDelay: 0
+      alignDependentPhases: true
+      tolerateNegativeCF: 0
+DateSettingsInputList:
+  type: array
+  items:
+    $ref: '#/definitions/DateSettingsInput'
+  maxItems: 500
+  example:
+    - name: Test
+      scenario: 63b8571d70ed63f50bd6d63f
+      unique: true
+      well: 63b85759e1d7eb4e31579f51
+      dateSetting:
+        maxWellLife: 50
+        asOfDate:
+          fpd: true
+        discountDate:
+          majorSegment: true
+        cashFlowPriorAsOfDate: false
+        productionDataResolution: same_as_forecast
+        fpdSourceHierarchy:
+          firstFpdSource:
+            wellHeader: true
+          secondFpdSource:
+            linkToWells: INPT.gWmyAymH6i
+          thirdFpdSource:
+            linkToWells: INPT.JNE6xtYFJd
+          fourthFpdSource:
+            notUsed: true
+          useForecastSchedule: true
+      cutOff:
+        maxCumCashFlow: true
+        minLife:
+          none: true
+        triggerEclCapex: false
+        includeCapex: false
+        discount: 10
+        econLimitDelay: 0
+        alignDependentPhases: true
+        tolerateNegativeCF: 0
+

@@ -1,0 +1,188 @@
+/v1/directional-surveys:
+  post:
+    consumes:
+      - application/json
+    produces:
+      - application/json
+    operationId: post-v1-directional-surveys
+    description: Insert a new directional Survey.
+    parameters:
+      - in: body
+        name: well
+        description: Directional Survey document.
+        schema:
+          $ref: '#/definitions/DirectionalSurveyInsertRequest'
+    responses:
+      '201':
+        description: Created
+        schema:
+          $ref: '#/definitions/DirectionalSurveyCreatedResponse'
+      '400':
+        description: Bad Request
+        schema:
+          $ref: '#/definitions/DirectionalSurveyCreatedResponse'
+    tags:
+      - ComboCurveV1
+  head:
+    operationId: head-v1-directional-surveys
+    description: Returns metadata about the existing directional surveys documents.
+    parameters:
+      - $ref: '#/parameters/skipParam'
+      - $ref: '#/parameters/takeParam'
+      - name: well
+        in: query
+        description: filter by well ID
+        type: string
+      - name: chosenID
+        in: query
+        description: filter by well chosenID
+        type: string
+      - name: project
+        in: query
+        description: filter by project ID
+        type: string
+    responses:
+      '200':
+        description: OK
+        headers:
+          Link:
+            type: string
+            description: >-
+              Indicates a typed relationship with another resource, where the
+              relation type is defined by RFC 5988. We include the relationships
+              next, prev, first and last, which can be used to move between
+              pages of the list of results.
+          X-Query-Count:
+            type: integer
+            description: >-
+              The number of records in this resource. When filters are provided
+              only matching records are counted.
+      '400':
+        description: Bad Request. There is something wrong with the request data.
+    tags:
+      - ComboCurveV1
+    x-client-generation:
+      x-count-method:
+        name: DirectionalSurveysCount
+  get:
+    x-google-quota:
+      metricCosts:
+        read-request-rate: 4
+    produces:
+      - application/json
+    operationId: get-v1-directional-surveys
+    description: Returns a list of directional surveys documents.
+    parameters:
+      - $ref: '#/parameters/skipParam'
+      - $ref: '#/parameters/takeParam'
+      - $ref: '#/parameters/sortParam'
+      - $ref: '#/parameters/cursorParam'
+      - name: well
+        in: query
+        description: filter by well ID
+        type: string
+      - name: chosenID
+        in: query
+        description: filter by well chosenID
+        type: string
+      - name: measures
+        in: query
+        description: configure the measures fields to be returned
+        type: boolean
+        default: true
+      - name: project
+        in: query
+        description: filter by project ID
+        type: string
+    responses:
+      '200':
+        description: OK
+        schema:
+          $ref: '#/definitions/DirectionalSurveyResponseList'
+        headers:
+          Link:
+            type: string
+            description: >-
+              Indicates a typed relationship with another resource, where the
+              relation type is defined by RFC 5988. We include the relationships
+              next, prev, first and last, which can be used to move between
+              pages of the list of results.
+      '400':
+        description: Bad Request. There is something wrong with the request data.
+        schema:
+          $ref: '#/definitions/Error'
+    tags:
+      - ComboCurveV1
+/v1/directional-surveys/{id}:
+  put:
+    consumes:
+      - application/json
+    produces:
+      - application/json
+    operationId: put-v1-directional-surveys
+    description: Update a Directional Survey.
+    parameters:
+      - in: body
+        name: body-payload
+        description: Update Directional Survey input.
+        schema:
+          $ref: '#/definitions/DirectionalSurveyUpdateRequest'
+      - in: path
+        name: id
+        required: true
+        type: string
+        description: ''
+    responses:
+      '200':
+        description: OK
+        schema:
+          $ref: '#/definitions/DirectionalSurveyCreatedResponse'
+      '400':
+        description: Bad Request
+        schema:
+          $ref: '#/definitions/DirectionalSurveyCreatedResponse'
+    tags:
+      - ComboCurveV1
+  get:
+    produces:
+      - application/json
+    operationId: get-v1-directional-surveys-by-id
+    description: Returns the DS document that matches the given id.
+    parameters:
+      - in: path
+        name: id
+        required: true
+        type: string
+        description: 'the directional survey ID'
+    responses:
+      '200':
+        description: OK
+        schema:
+          $ref: '#/definitions/DirectionalSurveyResponse'
+      '400':
+        description: Bad Request. There is something wrong with the request data.
+      '404':
+        description: Was not found any item that matches with the given id.
+    tags:
+      - ComboCurveV1
+  delete:
+    operationId: delete-v1-directional-surveys-by-id
+    description: Delete the directional survey document that matches the given id.
+    parameters:
+      - in: path
+        name: id
+        required: true
+        type: string
+        description: 'the directional survey ID'
+    responses:
+      '204':
+        description: OK
+        headers:
+          X-Delete-Count:
+            type: integer
+            description: >-
+              The number of records that match the given filters and were deleted.
+      '400':
+        description: Bad Request. There is something wrong with the request data.
+    tags:
+      - ComboCurveV1

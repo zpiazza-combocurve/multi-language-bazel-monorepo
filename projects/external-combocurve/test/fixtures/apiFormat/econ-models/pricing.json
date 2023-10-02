@@ -1,0 +1,50 @@
+{
+	"name": "test",
+	"unique": false,
+	"priceModel": {
+		"oil": {
+			"escalationModel": "none",
+			"rows": [
+				{
+					"entireWellLife": "Flat",
+					"price": 10000000
+				}
+			]
+		},
+		"gas": {
+			"escalationModel": "none",
+			"rows": [
+				{
+					"entireWellLife": "Flat",
+					"dollarPerMmbtu": 0
+				}
+			]
+		},
+		"ngl": {
+			"escalationModel": "none",
+			"rows": [
+				{
+					"pctOfOilPrice": 100,
+					"offsetToAsOf": 5
+				},
+				{
+					"pctOfOilPrice": 100,
+					"offsetToAsOf": 5
+				}
+			]
+		},
+		"dripCondensate": {
+			"escalationModel": "none",
+			"rows": [
+				{
+					"dollarPerBbl": 0,
+					"dates": "2023-04-01"
+				},
+				{
+					"dollarPerBbl": 0,
+					"dates": "2023-10-01"
+				}
+			]
+		}
+	}
+}

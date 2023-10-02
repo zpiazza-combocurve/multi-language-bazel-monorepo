@@ -1,0 +1,42 @@
+{
+	"name": "Date Settings Test",
+	"unique": false,
+	"dateSetting": {
+		"maxWellLife": 50,
+		"asOfDate": {
+			"dynamic": "first_of_next_year"
+		},
+		"discountDate": {
+			"dynamic": "first_of_next_month"
+		},
+		"cashFlowPriorAsOfDate": false,
+		"productionDataResolution": "same_as_forecast",
+		"fpdSourceHierarchy": {
+			"firstFpdSource": {
+				"wellHeader": true
+			},
+			"secondFpdSource": {
+				"productionData": true
+			},
+			"thirdFpdSource": {
+				"forecast": true
+			},
+			"fourthFpdSource": {
+				"notUsed": true
+			},
+			"useForecastSchedule": true
+		}
+	},
+	"cutOff": {
+		"firstNegativeCashFlow": true,
+		"minLife": {
+			"none": true
+		},
+		"triggerEclCapex": false,
+		"includeCapex": false,
+		"discount": 0,
+		"econLimitDelay": 0,
+		"alignDependentPhases": true,
+		"tolerateNegativeCF": 23
+	}
+}

@@ -1,0 +1,178 @@
+ForecastSeriesVolumes:
+  type: object
+  properties:
+    eur:
+      type: number
+      description: Eur
+    series:
+      type: string
+      description: Series
+      enum:
+      - P10
+      - P50
+      - P90
+      - best
+    startDate:
+      type: string
+      format: date
+      description: Start Date
+    endDate:
+      type: string
+      format: date
+      description: End Date
+    volumes:
+      type: array
+      items:
+        type: number
+  example:
+    series: best
+    startDate: '2020-03-15T00:00:00.000Z'
+    endDate: '2025-03-15T00:00:00.000Z'
+    eur: 610156.72736362
+    volumes:
+      - 0
+      - 1
+      - 2
+ForecastRatioVolumes:
+  type: object
+  properties:
+    eur:
+      type: number
+      description: Eur
+    basePhase:
+      type: string
+      description: Base Phase
+      enum:
+      - oil
+      - gas
+      - water
+    startDate:
+      type: string
+      format: date
+      description: Start Date
+    endDate:
+      type: string
+      format: date
+      description: End Date
+    volumes:
+      type: array
+      items:
+        type: number
+  example:
+    basePhase: oil
+    startDate: '2020-03-15T00:00:00.000Z'
+    endDate: '2025-03-15T00:00:00.000Z'
+    eur: 610156.72736362
+    volumes:
+      - 0
+      - 1
+      - 2      
+ForecastPhaseVolumes:
+  type: object
+  properties:
+    phase:
+      type: string
+      description: Phase
+      enum:
+      - oil
+      - gas
+      - water
+    series:
+      type: array
+      items:
+          $ref: '#/definitions/ForecastSeriesVolumes'
+    forecastOutputId:
+      type: string
+      description: Id of the forecast output used to generate the volumes
+    ratio:
+      $ref: '#/definitions/ForecastRatioVolumes'
+  example:
+    phase: gas
+    forecastOutputId: 63bdce17dc401f0012614f34
+ForecastVolumes:
+  type: object
+  properties:
+    project:
+      type: string
+      description: Project Id
+    forecast:
+      type: string
+      description: Forecast Id
+    well:
+      type: string
+      description: Well Id      
+    resolution:
+      type: string
+      description: Volume resolution
+      enum:
+      - daily
+      - monthly
+    phases:
+      type: array
+      items:
+        $ref: '#/definitions/ForecastPhaseVolumes'
+  example:
+    project: 63bdcdf1dc401f0012613185
+    forecast: 63bdce14dc401f00126131a7
+    well: 63bdcdf56782656f8aaad644
+    resolution: daily
+ForecastVolumesList:
+  type: array
+  items:
+    $ref: '#/definitions/ForecastVolumes'
+  maxItems: 200
+  example:
+    - project: 63bdcdf1dc401f0012613185
+      forecast: 63bdce14dc401f00126131a7
+      well: 63bdcdf56782656f8aaad644
+      resolution: daily
+      phases:
+        - phase: gas
+          forecastOutputId: 63bdce17dc401f0012614f34
+          series: 
+            - series: best
+              startDate: '2020-03-15T00:00:00.000Z'
+              endDate: '2025-03-15T00:00:00.000Z'
+              eur: 1980202.8287785284
+              volumes:
+                - 0
+                - 1
+                - 2
+        - phase: oil
+          forecastOutputId: 63bdce17dc401f0012614f34
+          series: 
+            - series: best
+              startDate: '2020-03-15T00:00:00.000Z'
+              endDate: '2025-03-15T00:00:00.000Z'
+              eur: 610156.72736362
+              volumes:
+                - 0
+                - 1
+                - 2
+    - project: 63bdcdf1dc401f0012613185
+      forecast: 63bdce14dc401f00126131a7
+      well: 63bdcdf56782654efaaad6ca
+      resolution: daily
+      phases:
+        - phase: gas
+          forecastOutputId: 63bdce17dc401f00126150f5
+          series: 
+            - series: best
+              startDate: '2020-03-15T00:00:00.000Z'
+              endDate: '2025-03-15T00:00:00.000Z'
+              eur: 1980202.8287785284
+              volumes:
+                - 0
+                - 1
+                - 2
+        - phase: oil
+          forecastOutputId: 63bdce17dc401f00126150f5
+          series: 
+            - series: best
+              startDate: '2020-03-15T00:00:00.000Z'
+              endDate: '2025-03-15T00:00:00.000Z'
+              eur: 610156.72736362
+              volumes:
+                - 0
+                - 1
+                - 2

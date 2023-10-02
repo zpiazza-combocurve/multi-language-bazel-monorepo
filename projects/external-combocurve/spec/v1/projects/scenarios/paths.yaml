@@ -1,0 +1,312 @@
+/v1/projects/{projectId}/scenarios:
+  head:
+    operationId: head-v1-scenarios
+    description: >-
+      Returns metadata about the existing scenario documents scoped to projectId
+      project.
+    parameters:
+      - in: path
+        name: projectId
+        required: true
+        type: string
+        description: ''
+      - $ref: '#/parameters/skipParam'
+      - $ref: '#/parameters/takeParam'
+      - name: createdAt
+        in: query
+        description: "filter by createdAt - Operator values are [lt] = less than, [le] = less than or equal, [gt] = greater than, [ge] = greater than or equal, no operator = equal. Example createdAt[gt]=2018-01-01T00:00:00Z"
+        format: date
+        type: string
+        x-allow-parameter-operator: true
+      - name: name
+        in: query
+        description: filter by name
+        type: string
+      - name: updatedAt
+        in: query
+        description: "filter by updatedAt - Operator values are [lt] = less than, [le] = less than or equal, [gt] = greater than, [ge] = greater than or equal, no operator = equal. Example updatedAt[gt]=2018-01-01T00:00:00Z"
+        format: date
+        type: string
+        x-allow-parameter-operator: true
+    responses:
+      '200':
+        description: OK
+        headers:
+          Link:
+            type: string
+            description: >-
+              Indicates a typed relationship with another resource, where the
+              relation type is defined by RFC 5988. We include the relationships
+              next, prev, first and last, which can be used to move between
+              pages of the list of results.
+          X-Query-Count:
+            type: integer
+            description: >-
+              The number of records in this resource. When filters are provided
+              only matching records are counted.
+      '400':
+        description: Bad Request. There is something wrong with the request data.
+    tags:
+      - ComboCurveV1
+    x-client-generation:
+      x-count-method:
+        name: ScenariosCount
+  get:
+    produces:
+      - application/json
+    operationId: get-v1-scenarios
+    description: Returns a list of scenario documents scoped to projectId project.
+    parameters:
+      - in: path
+        name: projectId
+        required: true
+        type: string
+        description: ''
+      - $ref: '#/parameters/skipParam'
+      - $ref: '#/parameters/takeParam'
+      - $ref: '#/parameters/sortParam'
+      - $ref: '#/parameters/cursorParam'
+      - name: createdAt
+        in: query
+        description: "filter by createdAt - Operator values are [lt] = less than, [le] = less than or equal, [gt] = greater than, [ge] = greater than or equal, no operator = equal. Example createdAt[gt]=2018-01-01T00:00:00Z"
+        format: date
+        type: string
+        x-allow-parameter-operator: true
+      - name: name
+        in: query
+        description: filter by name
+        type: string
+      - name: updatedAt
+        in: query
+        description: "filter by updatedAt - Operator values are [lt] = less than, [le] = less than or equal, [gt] = greater than, [ge] = greater than or equal, no operator = equal. Example updatedAt[gt]=2018-01-01T00:00:00Z"
+        format: date
+        type: string
+        x-allow-parameter-operator: true
+    responses:
+      '200':
+        description: OK
+        schema:
+          $ref: '#/definitions/ScenarioList'
+        headers:
+          Link:
+            type: string
+            description: >-
+              Indicates a typed relationship with another resource, where the
+              relation type is defined by RFC 5988. We include the relationships
+              next, prev, first and last, which can be used to move between
+              pages of the list of results.
+      '400':
+        description: Bad Request. There is something wrong with the request data.
+        schema:
+          $ref: '#/definitions/Error'
+    tags:
+      - ComboCurveV1
+    x-google-quota:
+      metricCosts:
+        read-request-rate: 1
+    x-client-generation:
+      x-get-all-skip-take-method:
+        name: GetAllScenarios
+        baseReturnType: Scenario
+      x-get-all-cursor-method:
+        name: GetAllScenariosV2
+        baseReturnType: Scenario
+  post:
+    x-google-quota:
+      metricCosts:
+        write-request-rate: 1
+    consumes:
+      - application/json
+    produces:
+      - application/json
+    operationId: post-v1-project-scenarios
+    description: Inserts a list of scenario documents.
+    parameters:
+      - in: path
+        name: projectId
+        required: true
+        type: string
+      - in: body
+        name: scenarios
+        description: >-
+          Scenario document(s) to insert
+        schema:
+          $ref: '#/definitions/ScenarioInputList'
+    responses:
+      '207':
+        description: Multi-Status
+        schema:
+          $ref: '#/definitions/ScenarioMultiStatusResponse'
+    tags:
+      - ComboCurveV1
+  put:
+    x-google-quota:
+      metricCosts:
+        write-request-rate: 1
+    consumes:
+      - application/json
+    produces:
+      - application/json
+    operationId: put-v1-project-scenarios
+    description: Update a list of scenario documents.
+    parameters:
+      - in: path
+        name: projectId
+        required: true
+        type: string
+      - in: body
+        name: scenarios
+        description: >-
+          Scenario document(s) to insert
+        schema:
+          $ref: '#/definitions/ScenarioInputList'
+    responses:
+      '207':
+        description: Multi-Status
+        schema:
+          $ref: '#/definitions/ScenarioMultiStatusResponse'
+    tags:
+      - ComboCurveV1
+  delete:
+    operationId: delete-v1-project-scenarios
+    parameters:
+      - in: path
+        name: projectId
+        required: true
+        type: string
+        description: 5e276e31876cd70012ddf3f6
+      - in: query
+        name: name
+        type: array
+        maxItems: 20
+        items:
+          type: string
+          example: scenario_name
+      - in: query
+        name: id
+        type: array
+        items:
+          type: string
+          description: 5e276e31876cd70012ddf3f6
+    responses:
+      '204':
+        description: NoContent Response
+        headers:
+          x-delete-count:
+            type: number
+      '400':
+        description: BadRequest Response
+      '404':
+        description: NotFound Response
+    tags:
+      - ComboCurveV1
+/v1/projects/{projectId}/scenarios/head:
+  get:  
+    x-no-client: true
+    x-no-doc: true
+    operationId: get-head-v1-scenarios
+    description: >-
+      Returns metadata about the existing scenario documents scoped to projectId
+      project.
+    parameters:
+      - in: path
+        name: projectId
+        required: true
+        type: string
+        description: ''
+      - $ref: '#/parameters/skipParam'
+      - $ref: '#/parameters/takeParam'
+      - name: name
+        in: query
+        description: filter by name
+        type: string
+    responses:
+      '200':
+        description: OK
+        headers:
+          Link:
+            type: string
+            description: >-
+              Indicates a typed relationship with another resource, where the
+              relation type is defined by RFC 5988. We include the relationships
+              next, prev, first and last, which can be used to move between
+              pages of the list of results.
+          X-Query-Count:
+            type: integer
+            description: >-
+              The number of records in this resource. When filters are provided
+              only matching records are counted.
+      '400':
+        description: Bad Request. There is something wrong with the request data.
+    tags:
+      - ComboCurveV1
+  delete:
+    operationId: delete-v1-scenarios
+    parameters:
+      - name: projectId
+        in: params
+        required: true
+        type: string
+        example: 5e276e31876cd70012ddf3f6
+      - name: name
+        in: query
+        required: true
+        type: array
+        maxItems: 20
+        items:
+          type: string
+          example: some_string
+      - name: id
+        in: query
+        required: true
+        type: array
+        items:
+          type: string
+          example: 5e276e31876cd70012ddf4c1
+    responses:
+      '204':
+        description: NoContent Response
+        headers:
+          x-delete-count:
+            type: number
+      '400':
+        description: BadRequest Response
+      '404':
+        description: NotFound Response
+/v1/projects/{projectId}/scenarios/{id}:
+  get:
+    produces:
+      - application/json
+    operationId: get-v1-scenario-by-id
+    description: >-
+      Returns the scenario document that matches the given id scoped to
+      projectId project.
+    parameters:
+      - in: path
+        name: projectId
+        required: true
+        type: string
+        description: ''
+      - in: path
+        name: id
+        required: true
+        type: string
+        description: ''
+    responses:
+      '200':
+        description: OK
+        schema:
+          $ref: '#/definitions/Scenario'
+      '400':
+        description: Bad Request. There is something wrong with the request data.
+        schema:
+          $ref: '#/definitions/Error'
+      '404':
+        description: Not Found
+        schema:
+          $ref: '#/definitions/Error'
+    tags:
+      - ComboCurveV1
+    x-google-quota:
+      metricCosts:
+        read-request-rate: 1

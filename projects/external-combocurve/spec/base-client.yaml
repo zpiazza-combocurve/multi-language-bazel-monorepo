@@ -1,0 +1,17 @@
+# base spec for client code
+host: api.combocurve.com
+
+securityDefinitions:
+  # security definition with generic values
+  external-api-test:
+    authorizationUrl: ''
+    flow: implicit
+    type: oauth2
+    x-google-issuer: external-api-test@test-combocurve.iam.gserviceaccount.com
+    x-google-jwks_uri: >-
+      https://www.googleapis.com/robot/v1/metadata/x509/external-api-test@test-combocurve.iam.gserviceaccount.com
+    x-google-audiences: combocurve-external-api
+
+security:
+  - api-key: []
+    external-api-test: []

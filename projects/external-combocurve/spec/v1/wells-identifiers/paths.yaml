@@ -1,0 +1,29 @@
+/v1/wells-identifiers:
+  patch:
+    x-google-quota:
+      metricCosts:
+        write-request-rate: 1
+    consumes:
+      - application/json
+    produces:
+      - application/json
+    operationId: patch-v1-wells-identifiers
+    description: Updates identifiers of a list of well documents.
+    parameters:
+      - in: body
+        name: well-identifiers
+        description: Well documents to update identifiers. See WellIdentifierPatchInput.
+        schema:
+          $ref: '#/definitions/WellIdentifierPatchInputList'
+    responses:
+      '207':
+        description: Multi-Status
+        schema:
+          $ref: '#/definitions/WellIdentifierMultiStatusResponse'
+      '400':
+        description: Bad Request. There is something wrong with the request data.
+        schema:
+          $ref: '#/definitions/Error'
+    x-is-patch: true
+    tags:
+      - ComboCurveV1

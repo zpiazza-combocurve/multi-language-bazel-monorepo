@@ -1,0 +1,331 @@
+{
+	"name": "test",
+	"unique": false,
+	"fluidModel": {
+		"oil": {
+			"composition": {
+				"N2": {
+					"percentage": 1
+				},
+				"CO2": {
+					"percentage": 6
+				},
+				"C1": {
+					"percentage": 0
+				},
+				"C2": {
+					"percentage": 0
+				},
+				"C3": {
+					"percentage": 0
+				},
+				"iC4": {
+					"percentage": 0
+				},
+				"nC4": {
+					"percentage": 0
+				},
+				"iC5": {
+					"percentage": 0
+				},
+				"nC5": {
+					"percentage": 0
+				},
+				"iC6": {
+					"percentage": 0
+				},
+				"nC6": {
+					"percentage": 0
+				},
+				"C7": {
+					"percentage": 0
+				},
+				"C8": {
+					"percentage": 0
+				},
+				"C9": {
+					"percentage": 0
+				},
+				"C10Plus": {
+					"percentage": 0
+				},
+				"H2S": {
+					"percentage": 0
+				},
+				"H2": {
+					"percentage": 0
+				},
+				"H2O": {
+					"percentage": 0
+				},
+				"He": {
+					"percentage": 0
+				},
+				"O2": {
+					"percentage": 0
+				}
+			},
+			"criteria": "flat"
+		},
+		"gas": {
+			"composition": {
+				"N2": {
+					"percentage": 2
+				},
+				"CO2": {
+					"percentage": 7
+				},
+				"C1": {
+					"percentage": 0
+				},
+				"C2": {
+					"percentage": 0
+				},
+				"C3": {
+					"percentage": 0
+				},
+				"iC4": {
+					"percentage": 0
+				},
+				"nC4": {
+					"percentage": 0
+				},
+				"iC5": {
+					"percentage": 0
+				},
+				"nC5": {
+					"percentage": 0
+				},
+				"iC6": {
+					"percentage": 0
+				},
+				"nC6": {
+					"percentage": 0
+				},
+				"C7": {
+					"percentage": 0
+				},
+				"C8": {
+					"percentage": 0
+				},
+				"C9": {
+					"percentage": 0
+				},
+				"C10Plus": {
+					"percentage": 0
+				},
+				"H2S": {
+					"percentage": 0
+				},
+				"H2": {
+					"percentage": 0
+				},
+				"H2O": {
+					"percentage": 0
+				},
+				"He": {
+					"percentage": 0
+				},
+				"O2": {
+					"percentage": 0
+				}
+			},
+			"criteria": "flat"
+		},
+		"water": {
+			"composition": {
+				"N2": {
+					"percentage": 3
+				},
+				"CO2": {
+					"percentage": 8
+				},
+				"C1": {
+					"percentage": 0
+				},
+				"C2": {
+					"percentage": 0
+				},
+				"C3": {
+					"percentage": 0
+				},
+				"iC4": {
+					"percentage": 0
+				},
+				"nC4": {
+					"percentage": 0
+				},
+				"iC5": {
+					"percentage": 0
+				},
+				"nC5": {
+					"percentage": 0
+				},
+				"iC6": {
+					"percentage": 0
+				},
+				"nC6": {
+					"percentage": 0
+				},
+				"C7": {
+					"percentage": 0
+				},
+				"C8": {
+					"percentage": 0
+				},
+				"C9": {
+					"percentage": 0
+				},
+				"C10Plus": {
+					"percentage": 0
+				},
+				"H2S": {
+					"percentage": 0
+				},
+				"H2": {
+					"percentage": 0
+				},
+				"H2O": {
+					"percentage": 0
+				},
+				"He": {
+					"percentage": 0
+				},
+				"O2": {
+					"percentage": 0
+				}
+			},
+			"criteria": "flat"
+		},
+		"ngl": {
+			"composition": {
+				"N2": {
+					"percentage": 4
+				},
+				"CO2": {
+					"percentage": 9
+				},
+				"C1": {
+					"percentage": 0
+				},
+				"C2": {
+					"percentage": 0
+				},
+				"C3": {
+					"percentage": 0
+				},
+				"iC4": {
+					"percentage": 0
+				},
+				"nC4": {
+					"percentage": 0
+				},
+				"iC5": {
+					"percentage": 0
+				},
+				"nC5": {
+					"percentage": 0
+				},
+				"iC6": {
+					"percentage": 0
+				},
+				"nC6": {
+					"percentage": 0
+				},
+				"C7": {
+					"percentage": 0
+				},
+				"C8": {
+					"percentage": 0
+				},
+				"C9": {
+					"percentage": 0
+				},
+				"C10Plus": {
+					"percentage": 0
+				},
+				"H2S": {
+					"percentage": 0
+				},
+				"H2": {
+					"percentage": 0
+				},
+				"H2O": {
+					"percentage": 0
+				},
+				"He": {
+					"percentage": 0
+				},
+				"O2": {
+					"percentage": 0
+				}
+			},
+			"criteria": "flat"
+		},
+		"dripCondensate": {
+			"composition": {
+				"N2": {
+					"percentage": 5
+				},
+				"CO2": {
+					"percentage": 0
+				},
+				"C1": {
+					"percentage": 0
+				},
+				"C2": {
+					"percentage": 0
+				},
+				"C3": {
+					"percentage": 0
+				},
+				"iC4": {
+					"percentage": 0
+				},
+				"nC4": {
+					"percentage": 0
+				},
+				"iC5": {
+					"percentage": 0
+				},
+				"nC5": {
+					"percentage": 0
+				},
+				"iC6": {
+					"percentage": 0
+				},
+				"nC6": {
+					"percentage": 0
+				},
+				"C7": {
+					"percentage": 0
+				},
+				"C8": {
+					"percentage": 0
+				},
+				"C9": {
+					"percentage": 0
+				},
+				"C10Plus": {
+					"percentage": 0
+				},
+				"H2S": {
+					"percentage": 0
+				},
+				"H2": {
+					"percentage": 0
+				},
+				"H2O": {
+					"percentage": 0
+				},
+				"He": {
+					"percentage": 0
+				},
+				"O2": {
+					"percentage": 0
+				}
+			},
+			"criteria": "flat"
+		}
+	}
+}

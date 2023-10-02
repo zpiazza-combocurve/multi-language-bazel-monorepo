@@ -1,0 +1,27 @@
+# https://artillery.io/docs/http-reference/
+# https://artillery.io/docs/cli-reference/#run
+config:
+    target: "" # we don't set a target by default, an environment must be specified
+    environments:
+        # Describe an environment that we'll refer to as "dev". This is the name
+        # we will use with the --environment flag in artillery run command
+        dev:
+            target: "http://localhost:5007"
+        test:
+            target: "https://test-api.combocurve.com"
+        stage:
+            target: "https://stage-api.combocurve.com"
+        # normally we wouldn't want to run these tests in the production environment
+        # beta:
+        #     target: "https://api.combocurve.com"
+    defaults:
+        headers:
+            Authorization: "Bearer {{ $processEnvironment.API_TESTS_TOKEN }}"
+            x-api-key: "{{ $processEnvironment.API_TESTS_KEY }}"
+    http:
+        # Responses have to be sent within this number of seconds or the request will be aborted
+        timeout: 180
+    # SLO
+    # ensure:
+    #     maxErrorRate: 1
+    #     p99: 11000

@@ -1,0 +1,28 @@
+scenarios:
+    - name: 'POST monthly productions'
+      afterScenario: "requestAssertSuccessAfterResponse"
+      flow:
+          - function: 'injectWells'
+          - post:
+                url: '/v1/wells'
+                json: '{{ wells }}'
+                afterResponse: "logMultiResponseAfterResponse"
+          - loop:
+                - function: 'injectMonthlyProductions'
+                - put:
+                      url: '/v1/monthly-productions'
+                      json: '{{ monthlyProductions }}'
+                      afterResponse:
+                        - "logMultiResponseAfterResponse"
+                        - "requestStoreNoSuccessAfterResponse"
+            count: 20
+config:
+    processor: 'processor.js'
+    variables:
+        monthlyRecordCount: 20000
+        monthlyRecordPerWell: 10000
+        wellsRecordCount: 40
+    phases:
+        - duration: 1
+          arrivalCount: 1
+          name: 'Single client'

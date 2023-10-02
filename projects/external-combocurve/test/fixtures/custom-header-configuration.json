@@ -1,0 +1,208 @@
+[
+	{
+		"_id": "5f076427b75eb83e269199f6",
+		"wells": {
+			"custom_string_0": {
+				"label": "PS comp text 1"
+			},
+			"custom_string_1": {
+				"label": "Biodiversity"
+			},
+			"custom_string_2": {
+				"label": "Sub Type Curve Area"
+			},
+			"custom_string_3": {
+				"label": "LPI random Header"
+			},
+			"custom_string_4": {
+				"label": "CustomHeaderNew"
+			},
+			"custom_string_5": {
+				"label": "Congo Region DK"
+			},
+			"custom_string_6": {
+				"label": "US NAVY BASE"
+			},
+			"custom_string_7": {
+				"label": "Scout"
+			},
+			"custom_string_8": {
+				"label": "new new name for Text Header 9"
+			},
+			"custom_string_9": {
+				"label": "text header ten new name"
+			},
+			"custom_number_0": {
+				"label": "PS Comp Number 1"
+			},
+			"custom_number_1": {
+				"label": "Shota Header2"
+			},
+			"custom_number_2": {
+				"label": "EXETAT DK"
+			},
+			"custom_number_3": {
+				"label": "Employees size"
+			},
+			"custom_number_4": {
+				"label": "QA Smoke Test Number 5"
+			},
+			"custom_number_5": {
+				"label": "Custom Number Header 6"
+			},
+			"custom_number_6": {
+				"label": "Custom Number Header 7"
+			},
+			"custom_number_7": {
+				"label": "Custom Number Header 8"
+			},
+			"custom_number_8": {
+				"label": "Custom Number Header 9"
+			},
+			"custom_number_9": {
+				"label": "_My custom field definition_"
+			},
+			"custom_date_0": {
+				"label": "PS Comp Date 1"
+			},
+			"custom_date_1": {
+				"label": "Inauguration Date"
+			},
+			"custom_date_2": {
+				"label": "Custom Date Header 3"
+			},
+			"custom_date_3": {
+				"label": "Custom Date Header 4"
+			},
+			"custom_date_4": {
+				"label": "Custom Date Header 5"
+			},
+			"custom_date_5": {
+				"label": "Custom Date Header 6"
+			},
+			"custom_date_6": {
+				"label": "Custom Date Header 7"
+			},
+			"custom_date_7": {
+				"label": "Custom Date Header 8"
+			},
+			"custom_date_8": {
+				"label": "Custom Date Header 9"
+			},
+			"custom_date_9": {
+				"label": "Custom Date Header 10"
+			},
+			"custom_bool_0": {
+				"label": "PS Comp Boolean 1"
+			},
+			"custom_bool_1": {
+				"label": "Ecole DK"
+			},
+			"custom_bool_2": {
+				"label": "Electric Compressor"
+			},
+			"custom_bool_3": {
+				"label": "Tankless"
+			},
+			"custom_bool_4": {
+				"label": "Custom Boolean Header 5"
+			},
+			"custom_string_14": {
+				"label": "On-Site Fuel Type"
+			},
+			"custom_number_10": {
+				"label": "umer_heat map"
+			},
+			"custom_number_11": {
+				"label": "Custom Number Header 12"
+			},
+			"custom_number_12": {
+				"label": "Custom Number Header 13"
+			},
+			"custom_number_13": {
+				"label": "jhjhjhj"
+			},
+			"custom_number_14": {
+				"label": "Custom Number Header 15"
+			},
+			"custom_number_15": {
+				"label": "Custom Number Header 16"
+			},
+			"custom_number_16": {
+				"label": "Custom Number Header 17"
+			},
+			"custom_number_17": {
+				"label": "Custom Number Header 18"
+			},
+			"custom_number_18": {
+				"label": "Pneumatic Device Count 2021"
+			},
+			"custom_number_19": {
+				"label": "Pneumatic Device Count 2018"
+			},
+			"custom_string_10": {
+				"label": "1-ThankYou"
+			},
+			"custom_string_11": {
+				"label": "Custom Text Header 12"
+			},
+			"custom_string_12": {
+				"label": "Custom Text Header 13"
+			},
+			"custom_string_13": {
+				"label": "new name for Text Header 14"
+			},
+			"custom_string_15": {
+				"label": "Facility Type"
+			},
+			"custom_string_16": {
+				"label": "Facility Name"
+			},
+			"custom_string_17": {
+				"label": "Facility Design Version"
+			},
+			"custom_string_18": {
+				"label": "Surface/Pad ID"
+			},
+			"custom_string_19": {
+				"label": "Surface/Pad Location Name"
+			}
+		},
+		"daily-productions": {
+			"customNumber0": {
+				"label": "haha-shota"
+			},
+			"customNumber1": {
+				"label": "QA Test Number 1"
+			},
+			"customNumber2": {
+				"label": "Custom Number 2"
+			},
+			"customNumber3": {
+				"label": "Custom Number"
+			},
+			"customNumber4": {
+				"label": "Special Custom"
+			}
+		},
+		"monthly-productions": {
+			"customNumber0": {
+				"label": "Design Test Production 123"
+			},
+			"customNumber1": {
+				"label": "Custom Number 1"
+			},
+			"customNumber2": {
+				"label": "Custom Number 2"
+			},
+			"customNumber3": {
+				"label": "Custom Number 3"
+			},
+			"customNumber4": {
+				"label": "Special Custom"
+			}
+		},
+		"createdAt": "2020-09-22T02:19:36.580+0000",
+		"updatedAt": "2023-08-04T14:11:09.837+0000"
+	}
+]

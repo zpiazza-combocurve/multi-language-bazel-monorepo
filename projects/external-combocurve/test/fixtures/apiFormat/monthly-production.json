@@ -1,0 +1,20 @@
+{
+	"choke": 21000,
+	"date": "1970-01-01T00:00:00.000Z",
+	"daysOn": 31000,
+	"gas": 41600,
+	"oil": 69000,
+	"operationalTag": "test-tag",
+	"water": 39000,
+	"gasInjection": 100,
+	"waterInjection": 200,
+	"co2Injection": 300,
+	"steamInjection": 400,
+	"ngl": 500,
+	"customNumber0": 600,
+	"customNumber1": 700,
+	"customNumber2": 800,
+	"customNumber3": 900,
+	"customNumber4": 1000,
+	"well": "5e18bec08060a6163c54cd1a"
+}

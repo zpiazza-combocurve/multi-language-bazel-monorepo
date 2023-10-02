@@ -1,0 +1,203 @@
+/v1/projects:
+  head:
+    operationId: head-v1-projects
+    description: Returns metadata about the existing project documents.
+    parameters:
+      - $ref: '#/parameters/skipParam'
+      - $ref: '#/parameters/takeParam'
+      - name: createdAt
+        in: query
+        description: "filter by createdAt - Operator values are [lt] = less than, [le] = less than or equal, [gt] = greater than, [ge] = greater than or equal, no operator = equal. Example createdAt[gt]=2018-01-01T00:00:00Z"
+        format: date
+        type: string
+        x-allow-parameter-operator: true
+      - name: name
+        in: query
+        description: filter by name
+        type: string
+      - name: updatedAt
+        in: query
+        description: "filter by updatedAt - Operator values are [lt] = less than, [le] = less than or equal, [gt] = greater than, [ge] = greater than or equal, no operator = equal. Example updatedAt[gt]=2018-01-01T00:00:00Z"
+        format: date
+        type: string
+        x-allow-parameter-operator: true
+    responses:
+      '200':
+        description: OK
+        headers:
+          Link:
+            type: string
+            description: >-
+              Indicates a typed relationship with another resource, where the
+              relation type is defined by RFC 5988. We include the relationships
+              next, prev, first and last, which can be used to move between
+              pages of the list of results.
+          X-Query-Count:
+            type: integer
+            description: >-
+              The number of records in this resource. When filters are provided
+              only matching records are counted.
+      '400':
+        description: Bad Request. There is something wrong with the request data.
+    tags:
+      - ComboCurveV1
+    x-client-generation:
+      x-count-method:
+        name: ProjectsCount
+  get:
+    produces:
+      - application/json
+    operationId: get-v1-projects
+    description: Returns a list of project documents.
+    parameters:
+      - $ref: '#/parameters/skipParam'
+      - $ref: '#/parameters/takeParam'
+      - $ref: '#/parameters/sortParam'
+      - $ref: '#/parameters/cursorParam'
+      - name: createdAt
+        in: query
+        description: "filter by createdAt - Operator values are [lt] = less than, [le] = less than or equal, [gt] = greater than, [ge] = greater than or equal, no operator = equal. Example createdAt[gt]=2018-01-01T00:00:00Z"
+        format: date
+        type: string
+        x-allow-parameter-operator: true
+      - name: name
+        in: query
+        description: filter by name
+        type: string
+      - name: updatedAt
+        in: query
+        description: "filter by updatedAt - Operator values are [lt] = less than, [le] = less than or equal, [gt] = greater than, [ge] = greater than or equal, no operator = equal. Example updatedAt[gt]=2018-01-01T00:00:00Z"
+        format: date
+        type: string
+        x-allow-parameter-operator: true
+    responses:
+      '200':
+        description: OK
+        schema:
+          $ref: '#/definitions/ProjectList'
+        headers:
+          Link:
+            type: string
+            description: >-
+              Indicates a typed relationship with another resource, where the
+              relation type is defined by RFC 5988. We include the relationships
+              next, prev, first and last, which can be used to move between
+              pages of the list of results.
+      '400':
+        description: Bad Request. There is something wrong with the request data.
+        schema:
+          $ref: '#/definitions/Error'
+    tags:
+      - ComboCurveV1
+    x-google-quota:
+      metricCosts:
+        read-request-rate: 1
+    x-client-generation:
+      x-get-all-skip-take-method:
+        name: GetAllProjects
+        baseReturnType: Project
+      x-get-all-cursor-method:
+        name: GetAllProjectsV2
+        baseReturnType: Project
+  post:
+    x-google-quota:
+      metricCosts:
+        write-request-rate: 1
+    consumes:
+      - application/json
+    produces:
+      - application/json
+    operationId: post-v1-projects
+    description: Inserts a list of project documents.
+    parameters:
+      - in: body
+        name: project
+        description: >-
+          Project document(s) to insert. See
+          ProjectInputList.
+        schema:
+          $ref: '#/definitions/ProjectInputList'
+    responses:
+      '207':
+        description: Multi-Status
+        schema:
+          $ref: '#/definitions/ProjectMultiStatusResponse'
+      '400':
+        description: Bad Request. There is something wrong with the request data.
+        schema:
+          $ref: '#/definitions/Error'
+    tags:
+      - ComboCurveV1
+/v1/projects/head:
+  get:
+    x-no-client: true
+    x-no-doc: true
+    operationId: get-head-v1-projects
+    description: Returns metadata about the existing project documents.
+    parameters:
+      - $ref: '#/parameters/skipParam'
+      - $ref: '#/parameters/takeParam'
+      - name: createdAt
+        in: query
+        description: "filter by createdAt - Operator values are [lt] = less than, [le] = less than or equal, [gt] = greater than, [ge] = greater than or equal, no operator = equal. Example createdAt[gt]=2018-01-01T00:00:00Z"
+        format: date
+        type: string
+      - name: name
+        in: query
+        description: filter by name
+        type: string
+      - name: updatedAt
+        in: query
+        description: "filter by updatedAt - Operator values are [lt] = less than, [le] = less than or equal, [gt] = greater than, [ge] = greater than or equal, no operator = equal. Example updatedAt[gt]=2018-01-01T00:00:00Z"
+        format: date
+        type: string
+    responses:
+      '200':
+        description: OK
+        headers:
+          Link:
+            type: string
+            description: >-
+              Indicates a typed relationship with another resource, where the
+              relation type is defined by RFC 5988. We include the relationships
+              next, prev, first and last, which can be used to move between
+              pages of the list of results.
+          X-Query-Count:
+            type: integer
+            description: >-
+              The number of records in this resource. When filters are provided
+              only matching records are counted.
+      '400':
+        description: Bad Request. There is something wrong with the request data.
+    tags:
+      - ComboCurveV1
+/v1/projects/{id}:
+  get:
+    produces:
+      - application/json
+    operationId: get-v1-project-by-id
+    description: Returns the project document that matches the given id.
+    parameters:
+      - in: path
+        name: id
+        required: true
+        type: string
+        description: ''
+    responses:
+      '200':
+        description: OK
+        schema:
+          $ref: '#/definitions/Project'
+      '400':
+        description: Bad Request. There is something wrong with the request data.
+        schema:
+          $ref: '#/definitions/Error'
+      '404':
+        description: Not Found
+        schema:
+          $ref: '#/definitions/Error'
+    tags:
+      - ComboCurveV1
+    x-google-quota:
+      metricCosts:
+        read-request-rate: 1

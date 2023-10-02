@@ -1,0 +1,220 @@
+/v1/projects/{projectId}/scenarios/{scenarioId}/econ-runs/{econRunId}/one-liners:
+  head:
+    operationId: head-v1-one-liners
+    description: >-
+      Returns metadata about the existing econ one liners documents scoped to
+      projectId project, scenarioId scenario and econRunId econ run.
+    parameters:
+      - in: path
+        name: projectId
+        required: true
+        type: string
+        description: ''
+      - in: path
+        name: scenarioId
+        required: true
+        type: string
+        description: ''
+      - in: path
+        name: econRunId
+        required: true
+        type: string
+        description: ''
+      - $ref: '#/parameters/skipParam'
+      - $ref: '#/parameters/takeParam'
+      - name: comboName
+        in: query
+        description: filter by comboName
+        type: string
+      - name: well
+        in: query
+        description: filter by well
+        type: string
+    responses:
+      '200':
+        description: OK
+        headers:
+          Link:
+            type: string
+            description: >-
+              Indicates a typed relationship with another resource, where the
+              relation type is defined by RFC 5988. We include the relationships
+              next, prev, first and last, which can be used to move between
+              pages of the list of results.
+          X-Query-Count:
+            type: integer
+            description: >-
+              The number of records in this resource. When filters are provided
+              only matching records are counted.
+      '400':
+        description: Bad Request. There is something wrong with the request data.
+    tags:
+      - ComboCurveV1
+    x-client-generation:
+      x-count-method:
+        name: OneLinersCount
+  get:
+    produces:
+      - application/json
+    operationId: get-v1-one-liners
+    description: >-
+      Returns a list of econ one liner documents scoped to projectId project,
+      scenarioId scenario and econRunId econ run.
+    parameters:
+      - in: path
+        name: projectId
+        required: true
+        type: string
+        description: ''
+      - in: path
+        name: scenarioId
+        required: true
+        type: string
+        description: ''
+      - in: path
+        name: econRunId
+        required: true
+        type: string
+        description: ''
+      - $ref: '#/parameters/skipParam'
+      - $ref: '#/parameters/takeParam'
+      - $ref: '#/parameters/sortParam'
+      - $ref: '#/parameters/cursorParam'
+      - name: comboName
+        in: query
+        description: filter by comboName
+        type: string
+      - name: well
+        in: query
+        description: filter by well
+        type: string
+    responses:
+      '200':
+        description: OK
+        schema:
+          $ref: '#/definitions/OneLinerList'
+        headers:
+          Link:
+            type: string
+            description: >-
+              Indicates a typed relationship with another resource, where the
+              relation type is defined by RFC 5988. We include the relationships
+              next, prev, first and last, which can be used to move between
+              pages of the list of results.
+      '400':
+        description: Bad Request. There is something wrong with the request data.
+        schema:
+          $ref: '#/definitions/Error'
+    tags:
+      - ComboCurveV1
+    x-google-quota:
+      metricCosts:
+        read-request-rate: 1
+    x-client-generation:
+      x-get-all-skip-take-method:
+        name: GetAllOneLiners
+        baseReturnType: OneLiner
+      x-get-all-cursor-method:
+        name: GetAllOneLinersV2
+        baseReturnType: OneLiner
+/v1/projects/{projectId}/scenarios/{scenarioId}/econ-runs/{econRunId}/one-liners/head:
+  get:
+    x-no-client: true
+    x-no-doc: true
+    operationId: get-head-v1-one-liners
+    description: >-
+      Returns metadata about the existing econ one liners documents scoped to
+      projectId project, scenarioId scenario and econRunId econ run.
+    parameters:
+      - in: path
+        name: projectId
+        required: true
+        type: string
+        description: ''
+      - in: path
+        name: scenarioId
+        required: true
+        type: string
+        description: ''
+      - in: path
+        name: econRunId
+        required: true
+        type: string
+        description: ''
+      - $ref: '#/parameters/skipParam'
+      - $ref: '#/parameters/takeParam'
+      - name: comboName
+        in: query
+        description: filter by comboName
+        type: string
+      - name: well
+        in: query
+        description: filter by well
+        type: string
+    responses:
+      '200':
+        description: OK
+        headers:
+          Link:
+            type: string
+            description: >-
+              Indicates a typed relationship with another resource, where the
+              relation type is defined by RFC 5988. We include the relationships
+              next, prev, first and last, which can be used to move between
+              pages of the list of results.
+          X-Query-Count:
+            type: integer
+            description: >-
+              The number of records in this resource. When filters are provided
+              only matching records are counted.
+      '400':
+        description: Bad Request. There is something wrong with the request data.
+    tags:
+      - ComboCurveV1
+/v1/projects/{projectId}/scenarios/{scenarioId}/econ-runs/{econRunId}/one-liners/{id}:
+  get:
+    produces:
+      - application/json
+    operationId: get-v1-one-liner-by-id
+    description: >-
+      Returns the econ one liner document that matches the given id scoped to
+      projectId project, scenarioId scenario and econRunId econ run.
+    parameters:
+      - in: path
+        name: projectId
+        required: true
+        type: string
+        description: ''
+      - in: path
+        name: scenarioId
+        required: true
+        type: string
+        description: ''
+      - in: path
+        name: econRunId
+        required: true
+        type: string
+        description: ''
+      - in: path
+        name: id
+        required: true
+        type: string
+        description: ''
+    responses:
+      '200':
+        description: OK
+        schema:
+          $ref: '#/definitions/OneLiner'
+      '400':
+        description: Bad Request. There is something wrong with the request data.
+        schema:
+          $ref: '#/definitions/Error'
+      '404':
+        description: Not Found
+        schema:
+          $ref: '#/definitions/Error'
+    tags:
+      - ComboCurveV1
+    x-google-quota:
+      metricCosts:
+        read-request-rate: 1

@@ -1,0 +1,764 @@
+[
+	{
+		"_id": "5e272dec4b97ed00132f2273",
+		"copiedFrom": null,
+		"diagDate": "2020-03-04T23:55:46.544Z",
+		"forecasted": false,
+		"imported": false,
+		"running": false,
+		"prodPref": "monthly_preference",
+		"visibility": "project",
+		"wells": [
+			"5e272d4cb78910dd2a1c58db",
+			"5e272d7ab78910dd2a1dfdc3",
+			"5e272d75b78910dd2a1d8784",
+			"5e272d64b78910dd2a1cf1ac",
+			"5e272d85b78910dd2a1f38c2",
+			"5e272d85b78910dd2a1f384f",
+			"5e272d60b78910dd2a1cdbdf",
+			"5e272d61b78910dd2a1ce13a",
+			"5e272d62b78910dd2a1ce7c6",
+			"5e272d64b78910dd2a1cf1a2",
+			"5e272d64b78910dd2a1cf1b3",
+			"5e272d83b78910dd2a1f11c4",
+			"5e272d85b78910dd2a1f38b1",
+			"5e272d74b78910dd2a1d7d8a",
+			"5e272d6fb78910dd2a1d45ba",
+			"5e272d75b78910dd2a1d8966",
+			"5e272d88b78910dd2a1f779b",
+			"5e272d5ab78910dd2a1cb101",
+			"5e272d82b78910dd2a1efd2f",
+			"5e272d82b78910dd2a1efd39",
+			"5e272d82b78910dd2a1efd43",
+			"5e272d82b78910dd2a1efd04",
+			"5e272d82b78910dd2a1efd12",
+			"5e272d82b78910dd2a1efd22",
+			"5e272d7bb78910dd2a1e2963",
+			"5e272d7ab78910dd2a1dfd65",
+			"5e272d7eb78910dd2a1e99b1",
+			"5e272d74b78910dd2a1d7ae7",
+			"5e272d75b78910dd2a1d84e2",
+			"5e272d88b78910dd2a1f777d",
+			"5e272d6fb78910dd2a1d434c",
+			"5e272d4fb78910dd2a1c632b",
+			"5e272d73b78910dd2a1d65e5",
+			"5e272d86b78910dd2a1f4b39",
+			"5e272d83b78910dd2a1f1317",
+			"5e272d76b78910dd2a1d9ff6",
+			"5e272d70b78910dd2a1d477b",
+			"5e272d70b78910dd2a1d478b",
+			"5e272d80b78910dd2a1ec3e8",
+			"5e272d88b78910dd2a1f7753",
+			"5e272d61b78910dd2a1ce19b",
+			"5e272d61b78910dd2a1ce1af",
+			"5e272d3bb78910dd2a1be7c3",
+			"5e272d7eb78910dd2a1e8e78",
+			"5e272d7bb78910dd2a1e40a2",
+			"5e272d7bb78910dd2a1e40ea",
+			"5e272d7bb78910dd2a1e40eb"
+		],
+		"name": "f1",
+		"project": "5e272bed4b97ed00132f2271",
+		"user": "5bd22c63cc534716dc3929cc",
+		"createdAt": "2020-01-21T16:59:24.949Z",
+		"updatedAt": "2020-09-15T22:38:31.653Z",
+		"tags": ["6143cf0eff35a50013207d51", "614e2a36bd38ffb0a8db0f1b"],
+		"settings": {
+			"oil": {
+				"dispersion": 1,
+				"flat_forecast_thres": 180,
+				"peak_preference": "last",
+				"peak_sensitivity": "low",
+				"q_final": 0.1,
+				"time_dict": {
+					"mode": "last",
+					"num": 18,
+					"range": ["2020-05-15T17:03:30.277Z", "2020-05-15T17:03:30.277Z"],
+					"unit": "month"
+				},
+				"b": [0.5, 1.5],
+				"D_eff": [1, 99],
+				"D_lim_eff": 8
+			},
+			"gas": {
+				"dispersion": 1,
+				"flat_forecast_thres": 180,
+				"peak_preference": "last",
+				"peak_sensitivity": "low",
+				"q_final": 0.1,
+				"time_dict": {
+					"mode": "last",
+					"num": 18,
+					"range": ["2020-05-15T17:03:30.277Z", "2020-05-15T17:03:30.277Z"],
+					"unit": "month"
+				},
+				"b": [0.5, 1.5],
+				"D_eff": [1, 99],
+				"D_lim_eff": 8
+			},
+			"water": {
+				"dispersion": 1,
+				"flat_forecast_thres": 180,
+				"peak_preference": "last",
+				"peak_sensitivity": "low",
+				"q_final": 0.1,
+				"time_dict": {
+					"mode": "last",
+					"num": 18,
+					"range": ["2020-05-15T17:03:30.277Z", "2020-05-15T17:03:30.277Z"],
+					"unit": "month"
+				},
+				"b": [0.5, 1.5],
+				"D_eff": [1, 99],
+				"D_lim_eff": 8
+			},
+			"general": {
+				"model_name": "arps_modified_wp",
+				"percentile": [10, 50, 90],
+				"phases": ["oil", "gas", "water"],
+				"prob_para": ["b", "D"],
+				"resolution": "monthly_only",
+				"well_life": 60
+			}
+		},
+		"runDate": "2020-05-15T17:10:21.981Z",
+		"qFinal": {
+			"oil": 10
+		},
+		"type": "probabilistic"
+	},
+	{
+		"_id": "5e272ecd4b97ed001330284d",
+		"copiedFrom": null,
+		"diagDate": "2020-10-23T20:24:53.377Z",
+		"forecasted": false,
+		"imported": false,
+		"running": false,
+		"prodPref": "monthly_preference",
+		"visibility": "project",
+		"wells": [
+			"5e272d51b78910dd2a1c68a2",
+			"5e272d68b78910dd2a1d1105",
+			"5e272d88b78910dd2a1f77eb",
+			"5e5993873fba1ea7a04f4bd4",
+			"5e5993873fba1ea7a04f4bd7",
+			"5e5993873fba1ea7a04f4bda",
+			"5e59939d3fba1ea7a04faec6",
+			"5e5994513fba1ea7a052dfa7",
+			"5e5994513fba1ea7a052e00c",
+			"5e5994513fba1ea7a052e00e",
+			"5e59946e3fba1ea7a05364d0"
+		],
+		"name": "feelsgudman",
+		"project": "5e272bed4b97ed00132f2271",
+		"user": "5bd23756c8e7ab7654ade04c",
+		"createdAt": "2020-01-21T17:03:09.827Z",
+		"updatedAt": "2020-10-29T16:44:04.796Z",
+		"settings": {
+			"oil": {
+				"dispersion": 1,
+				"flat_forecast_thres": 2000,
+				"internal_filter_all": false,
+				"internal_filter": "low",
+				"peak_sensitivity": "low",
+				"percentile_range": [1, 100],
+				"remove_0": false,
+				"time_dict": {
+					"absolute_range": ["2020-10-29T16:40:30.567Z", "2020-10-29T16:40:30.567Z"],
+					"mode": "last",
+					"num_range": [1, 24],
+					"unit": "month"
+				},
+				"valid_idx": null,
+				"value_range": [0.1, 30000],
+				"b": [0.5, 1.5],
+				"D_eff": [1, 99],
+				"D_lim_eff": 8,
+				"enforce_sw": true,
+				"peak_preference": "max",
+				"q_final": 0.1
+			},
+			"gas": {
+				"dispersion": 1,
+				"flat_forecast_thres": 2000,
+				"internal_filter_all": false,
+				"internal_filter": "low",
+				"peak_sensitivity": "low",
+				"percentile_range": [1, 100],
+				"remove_0": false,
+				"time_dict": {
+					"absolute_range": ["2020-10-29T16:40:30.567Z", "2020-10-29T16:40:30.567Z"],
+					"mode": "last",
+					"num_range": [1, 24],
+					"unit": "month"
+				},
+				"valid_idx": null,
+				"value_range": [0.1, 30000],
+				"b": [0.5, 1.5],
+				"D_eff": [1, 99],
+				"D_lim_eff": 8,
+				"enforce_sw": true,
+				"peak_preference": "max",
+				"q_final": 0.1
+			},
+			"water": {
+				"dispersion": 1,
+				"flat_forecast_thres": 2000,
+				"internal_filter_all": false,
+				"internal_filter": "low",
+				"peak_sensitivity": "low",
+				"percentile_range": [1, 100],
+				"remove_0": false,
+				"time_dict": {
+					"absolute_range": ["2020-10-29T16:40:30.567Z", "2020-10-29T16:40:30.567Z"],
+					"mode": "last",
+					"num_range": [1, 24],
+					"unit": "month"
+				},
+				"valid_idx": null,
+				"value_range": [0.1, 30000],
+				"b": [0.5, 1.5],
+				"D_eff": [1, 99],
+				"D_lim_eff": 8,
+				"enforce_sw": true,
+				"peak_preference": "max",
+				"q_final": 0.1
+			},
+			"general": {
+				"model_name": "arps_modified_wp",
+				"percentile": [10, 50, 90],
+				"phases": ["oil", "gas", "water"],
+				"prob_para": ["b", "D"],
+				"resolution": "monthly_only",
+				"well_life": 60
+			}
+		},
+		"runDate": "2020-10-29T16:45:05.282Z",
+		"lib_para_dict": {
+			"phases": ["oil"],
+			"search_radius": 50,
+			"min_well_count": 5
+		},
+		"lib_user_input": {
+			"phases": ["oil", "gas"],
+			"search_radius": 5,
+			"min_well_count": 5,
+			"mandatory_filters": [
+				{
+					"type": "date",
+					"field": {
+						"label": "FPD",
+						"start_field_name": "first_prod_date",
+						"op_chain": []
+					},
+					"ranges": {
+						"relative_range": {
+							"unit": "year",
+							"range": [-0, 50]
+						},
+						"absolute_range": [40000, 60000]
+					}
+				}
+			],
+			"optional_filters": [
+				{
+					"type": "numeric",
+					"field": {
+						"label": "LL",
+						"start_field_name": "perf_lateral_length",
+						"op_chain": []
+					},
+					"ranges": {
+						"relative_value": [-100, 100],
+						"relative_percentage": [-0.1, 0.1],
+						"absolute_value": [3000, 10000]
+					}
+				},
+				{
+					"type": "text",
+					"field": {
+						"label": "Landing Zone",
+						"start_field_name": "landing_zone",
+						"op_chain": []
+					},
+					"target_well": false,
+					"value": "eagle",
+					"match_option": "contain"
+				}
+			],
+			"phase_filters": {
+				"oil": [],
+				"gas": [],
+				"water": []
+			}
+		},
+		"type": "probabilistic",
+		"comparisonIds": {
+			"view": ["5f845c7a18ce4328842a4eb8", "5f8484cf59b1606880f5c2a1"],
+			"diagnostics": ["5f8484cf59b1606880f5c2a1"]
+		}
+	},
+	{
+		"_id": "5e272f1d4b97ed001331306e",
+		"copiedFrom": null,
+		"diagDate": "2020-01-24T22:47:55.162Z",
+		"forecasted": false,
+		"imported": false,
+		"running": false,
+		"prodPref": "monthly_preference",
+		"visibility": "project",
+		"wells": [
+			"5e272d4cb78910dd2a1c58db",
+			"5e272d6eb78910dd2a1d3f38",
+			"5e272d7eb78910dd2a1e8a2a",
+			"5e272d64b78910dd2a1cf1ac",
+			"5e272d85b78910dd2a1f38c2",
+			"5e272d52b78910dd2a1c6ecb",
+			"5e272d87b78910dd2a1f5e90",
+			"5e272d6fb78910dd2a1d45ba",
+			"5e272d75b78910dd2a1d8966",
+			"5e272d5ab78910dd2a1cb101",
+			"5e272d82b78910dd2a1efd2f",
+			"5e272d82b78910dd2a1efd39",
+			"5e272d82b78910dd2a1efd43",
+			"5e272d82b78910dd2a1efd04"
+		],
+		"name": "zidong_forecast",
+		"project": "5e272bed4b97ed00132f2271",
+		"user": "5c3d2d2dc607f300118873e2",
+		"createdAt": "2020-01-21T17:04:29.695Z",
+		"updatedAt": "2020-09-22T20:42:55.109Z",
+		"settings": {
+			"oil": {
+				"dispersion": 0.8,
+				"flat_forecast_thres": 180,
+				"peak_preference": "last",
+				"peak_sensitivity": "low",
+				"q_final": 0.1,
+				"time_dict": {
+					"mode": "last",
+					"num": 18,
+					"range": ["2020-02-04T19:51:23.441Z", "2020-02-04T19:51:23.441Z"],
+					"unit": "month"
+				},
+				"b": [0.5, 1.5],
+				"D_eff": [1, 99],
+				"D_lim_eff": 8
+			},
+			"gas": {
+				"dispersion": 0.8,
+				"flat_forecast_thres": 180,
+				"peak_preference": "last",
+				"peak_sensitivity": "low",
+				"q_final": 0.1,
+				"time_dict": {
+					"mode": "last",
+					"num": 18,
+					"range": ["2020-02-04T19:51:23.441Z", "2020-02-04T19:51:23.441Z"],
+					"unit": "month"
+				},
+				"b": [0.5, 1.5],
+				"D_eff": [1, 99],
+				"D_lim_eff": 8
+			},
+			"water": {
+				"dispersion": 0.8,
+				"flat_forecast_thres": 180,
+				"peak_preference": "last",
+				"peak_sensitivity": "low",
+				"q_final": 0.1,
+				"time_dict": {
+					"mode": "last",
+					"num": 18,
+					"range": ["2020-02-04T19:51:23.441Z", "2020-02-04T19:51:23.441Z"],
+					"unit": "month"
+				},
+				"b": [0.5, 1.5],
+				"D_eff": [1, 99],
+				"D_lim_eff": 8
+			},
+			"general": {
+				"model_name": "arps_modified_wp",
+				"percentile": [10, 50, 90],
+				"phases": ["oil"],
+				"prob_para": ["b", "D"],
+				"resolution": "monthly_only",
+				"well_life": 60
+			}
+		},
+		"runDate": "2020-02-04T20:09:28.496Z",
+		"type": "probabilistic"
+	},
+	{
+		"_id": "5e278b2d9489150012923fc6",
+		"copiedFrom": null,
+		"diagDate": "2020-01-21T23:43:02.434Z",
+		"forecasted": false,
+		"imported": false,
+		"running": false,
+		"prodPref": "monthly_preference",
+		"visibility": "project",
+		"wells": [
+			"5e272d88b78910dd2a1f7781",
+			"5e272d88b78910dd2a1f7782",
+			"5e272d88b78910dd2a1f7783",
+			"5e272d88b78910dd2a1f7784",
+			"5e272d88b78910dd2a1f7786",
+			"5e272d88b78910dd2a1f7787",
+			"5e272d88b78910dd2a1f7788",
+			"5e272d88b78910dd2a1f7789",
+			"5e272d88b78910dd2a1f778a",
+			"5e272d88b78910dd2a1f778b",
+			"5e272d88b78910dd2a1f778f",
+			"5e272d88b78910dd2a1f7790",
+			"5e272d88b78910dd2a1f7791",
+			"5e272d88b78910dd2a1f7792",
+			"5e272d88b78910dd2a1f7793",
+			"5e272d88b78910dd2a1f7795",
+			"5e272d88b78910dd2a1f7798",
+			"5e272d88b78910dd2a1f779b",
+			"5e272d88b78910dd2a1f779e",
+			"5e272d88b78910dd2a1f77a1",
+			"5e272d88b78910dd2a1f77a4",
+			"5e272d88b78910dd2a1f77a5",
+			"5e272d88b78910dd2a1f77a7",
+			"5e272d88b78910dd2a1f77ac",
+			"5e272d88b78910dd2a1f77ae",
+			"5e272d88b78910dd2a1f77b1",
+			"5e272d88b78910dd2a1f77b3",
+			"5e272d88b78910dd2a1f77b7",
+			"5e272d88b78910dd2a1f77bb",
+			"5e272d88b78910dd2a1f77be",
+			"5e272d88b78910dd2a1f77c1",
+			"5e272d88b78910dd2a1f77ca",
+			"5e272d88b78910dd2a1f7836"
+		],
+		"name": "JDG Baby FC",
+		"project": "5e276a66876cd70012ddf3f5",
+		"user": "5c51c5893e0f9b04e0bbdada",
+		"createdAt": "2020-01-21T23:37:17.685Z",
+		"updatedAt": "2020-07-24T17:33:49.087Z",
+		"settings": {
+			"oil": {
+				"dispersion": 1,
+				"flat_forecast_thres": 1000,
+				"peak_preference": "last",
+				"peak_sensitivity": "low",
+				"q_final": 2,
+				"time_dict": {
+					"mode": "last",
+					"num": 12,
+					"range": ["2020-01-21T22:36:40.269Z", "2020-01-21T22:36:40.269Z"],
+					"unit": "month"
+				},
+				"b": [0.5, 1.5],
+				"D_eff": [1, 99],
+				"D_lim_eff": 10
+			},
+			"gas": {
+				"dispersion": 1,
+				"flat_forecast_thres": 1000,
+				"peak_preference": "last",
+				"peak_sensitivity": "low",
+				"q_final": 2,
+				"time_dict": {
+					"mode": "last",
+					"num": 12,
+					"range": ["2020-01-21T22:36:40.269Z", "2020-01-21T22:36:40.269Z"],
+					"unit": "month"
+				},
+				"b": [0.5, 1.5],
+				"D_eff": [1, 99],
+				"D_lim_eff": 10
+			},
+			"water": {
+				"dispersion": 1,
+				"flat_forecast_thres": 1000,
+				"peak_preference": "last",
+				"peak_sensitivity": "low",
+				"q_final": 2,
+				"time_dict": {
+					"mode": "last",
+					"num": 12,
+					"range": ["2020-01-21T22:36:40.269Z", "2020-01-21T22:36:40.269Z"],
+					"unit": "month"
+				},
+				"b": [0.5, 1.5],
+				"D_eff": [1, 99],
+				"D_lim_eff": 10
+			},
+			"general": {
+				"model_name": "arps_modified_wp",
+				"percentile": [10, 50, 90],
+				"phases": ["oil", "gas", "water"],
+				"prob_para": ["b", "D"],
+				"resolution": "monthly_only",
+				"well_life": 60
+			}
+		},
+		"runDate": "2020-01-21T23:41:50.512Z",
+		"type": "probabilistic"
+	},
+	{
+		"_id": "5e286e9f8f3df51d7ae744c7",
+		"imported": true,
+		"forecasted": true,
+		"wells": [
+			"5e286e0b8f3df51d7ae74494",
+			"5e286e0c8f3df51d7ae74495",
+			"5e286e0c8f3df51d7ae74496",
+			"5e286e0c8f3df51d7ae74497",
+			"5e286e0c8f3df51d7ae74498",
+			"5e286e0c8f3df51d7ae74499",
+			"5e286e0c8f3df51d7ae7449a",
+			"5e286e0c8f3df51d7ae7449b",
+			"5e286e0c8f3df51d7ae7449c",
+			"5e286e0d8f3df51d7ae7449d",
+			"5e286e0d8f3df51d7ae7449e",
+			"5e286e0d8f3df51d7ae7449f",
+			"5e286e0d8f3df51d7ae744a0",
+			"5e286e0d8f3df51d7ae744a1",
+			"5e286e0d8f3df51d7ae744a2",
+			"5e286e0d8f3df51d7ae744a3"
+		],
+		"name": "SPC1016/SPC1016",
+		"user": "5bef093a7db3fb0d60e8e908",
+		"project": "5e27657b876cd70012ddf3f4",
+		"createdAt": "2020-01-22T09:47:43.468Z",
+		"updatedAt": "2020-01-22T09:47:43.468Z",
+		"visibility": "project",
+		"running": false,
+		"settings": {},
+		"type": "probabilistic"
+	},
+	{
+		"_id": "5e2872a38f3df51d7ae787c5",
+		"imported": true,
+		"forecasted": true,
+		"wells": [
+			"5e28720e8f3df51d7ae7878e",
+			"5e28720e8f3df51d7ae7878f",
+			"5e28720e8f3df51d7ae78790",
+			"5e28720e8f3df51d7ae78791",
+			"5e28720e8f3df51d7ae78792",
+			"5e28720e8f3df51d7ae78793",
+			"5e28720e8f3df51d7ae78794",
+			"5e28720e8f3df51d7ae78795",
+			"5e28720f8f3df51d7ae78796",
+			"5e28720f8f3df51d7ae78797",
+			"5e28720f8f3df51d7ae78798",
+			"5e28720f8f3df51d7ae78799",
+			"5e28720f8f3df51d7ae7879a",
+			"5e28720f8f3df51d7ae7879b",
+			"5e28720f8f3df51d7ae7879c",
+			"5e28720f8f3df51d7ae7879d",
+			"5e2872108f3df51d7ae7879e",
+			"5e2872108f3df51d7ae7879f",
+			"5e2872108f3df51d7ae787a0",
+			"5e2872108f3df51d7ae787a1"
+		],
+		"name": "SPC1016/SPC1016",
+		"user": "5bef093a7db3fb0d60e8e908",
+		"project": "5e287183d03e7000132cf88a",
+		"createdAt": "2020-01-22T10:04:51.037Z",
+		"updatedAt": "2020-01-22T10:04:51.037Z",
+		"visibility": "project",
+		"running": false,
+		"settings": {},
+		"type": "probabilistic"
+	},
+	{
+		"_id": "5e287aa5d03e7000132cf890",
+		"copiedFrom": null,
+		"diagDate": null,
+		"forecasted": false,
+		"imported": false,
+		"running": false,
+		"prodPref": "monthly_preference",
+		"visibility": "project",
+		"wells": [
+			"5e287a1bb78910dd2a412b3b",
+			"5e287a1bb78910dd2a412b3d",
+			"5e287a1bb78910dd2a412b40",
+			"5e287a1bb78910dd2a412b43",
+			"5e287a1bb78910dd2a412b47",
+			"5e287a1bb78910dd2a412b48",
+			"5e287a1bb78910dd2a412b49",
+			"5e287a1bb78910dd2a412b4a",
+			"5e287a1bb78910dd2a412b4d",
+			"5e287a1bb78910dd2a412b50",
+			"5e287a1bb78910dd2a412b52",
+			"5e287a1bb78910dd2a412b54",
+			"5e287a1bb78910dd2a412b57",
+			"5e287a1bb78910dd2a412b5a",
+			"5e287a1bb78910dd2a412b61",
+			"5e287a1bb78910dd2a412b64",
+			"5e287a1bb78910dd2a412b66",
+			"5e287a1bb78910dd2a412b67",
+			"5e287a1bb78910dd2a412b6a",
+			"5e287a1bb78910dd2a412b6c",
+			"5e287a1bb78910dd2a412b70",
+			"5e287a1bb78910dd2a412b73",
+			"5e287a1bb78910dd2a412b7b",
+			"5e287a1bb78910dd2a412b7e",
+			"5e287a1bb78910dd2a412b81",
+			"5e287a1bb78910dd2a412b82",
+			"5e287a1bb78910dd2a412b87",
+			"5e287a1bb78910dd2a412b88",
+			"5e287a1bb78910dd2a412b8b"
+		],
+		"name": "fdsf",
+		"project": "5e287758d03e7000132cf88f",
+		"user": "5bd22c63cc534716dc3929cc",
+		"createdAt": "2020-01-22T16:39:02.022Z",
+		"updatedAt": "2020-01-22T16:39:02.022Z",
+		"type": "probabilistic"
+	},
+	{
+		"_id": "5e2883ac22b38d2d06c0393c",
+		"imported": true,
+		"forecasted": true,
+		"wells": [
+			"5e28839822b38d2d06c0391e",
+			"5e28839722b38d2d06c03900",
+			"5e28839722b38d2d06c03902",
+			"5e28839722b38d2d06c03903",
+			"5e28839822b38d2d06c03918",
+			"5e28839822b38d2d06c0391f",
+			"5e28839822b38d2d06c03919",
+			"5e28839822b38d2d06c0391b",
+			"5e28839722b38d2d06c0390b",
+			"5e28839822b38d2d06c03917",
+			"5e28839822b38d2d06c0391c",
+			"5e28839822b38d2d06c03922",
+			"5e28839722b38d2d06c03906",
+			"5e28839822b38d2d06c03925",
+			"5e28839922b38d2d06c03926",
+			"5e28839822b38d2d06c03915",
+			"5e28839822b38d2d06c0391a",
+			"5e28839722b38d2d06c03909",
+			"5e28839822b38d2d06c03916",
+			"5e28839722b38d2d06c0390e",
+			"5e28839722b38d2d06c0390f",
+			"5e28839722b38d2d06c03910",
+			"5e28839722b38d2d06c03907",
+			"5e28839722b38d2d06c03908",
+			"5e28839822b38d2d06c0391d",
+			"5e28839822b38d2d06c03914",
+			"5e28839722b38d2d06c0390a",
+			"5e28839722b38d2d06c03905",
+			"5e28839722b38d2d06c03911",
+			"5e28839722b38d2d06c03901",
+			"5e28839822b38d2d06c03913",
+			"5e28839822b38d2d06c03924",
+			"5e28839822b38d2d06c03921",
+			"5e28839822b38d2d06c03920",
+			"5e28839822b38d2d06c03923",
+			"5e28839722b38d2d06c03904",
+			"5e28839722b38d2d06c0390c",
+			"5e28839722b38d2d06c0390d",
+			"5e28839722b38d2d06c03912",
+			"5e28839622b38d2d06c038ff"
+		],
+		"name": "default1",
+		"user": "5bef093a7db3fb0d60e8e908",
+		"project": "5e28839622b38d2d06c038fe",
+		"createdAt": "2020-01-22T11:17:32.756Z",
+		"updatedAt": "2020-01-22T18:17:09.613Z",
+		"visibility": "project",
+		"running": false,
+		"settings": {},
+		"diagDate": "2020-01-22T18:17:21.976Z",
+		"type": "probabilistic"
+	},
+	{
+		"_id": "5f207ed4dae6f400123db7e2",
+		"qFinal": {
+			"gas": null,
+			"oil": null,
+			"water": null
+		},
+		"copiedFrom": null,
+		"diagDate": "2020-07-29T15:50:50.265Z",
+		"forecasted": false,
+		"imported": false,
+		"running": false,
+		"prodPref": "monthly_preference",
+		"type": "deterministic",
+		"visibility": "project",
+		"wells": [
+			"5f2071954187a3313ecfea7e",
+			"5f2075ab4187a36fb7cfea80",
+			"5f2076344187a355c1cfea81",
+			"5f2078f14187a3a29acfea82"
+		],
+		"name": "ratio_forecat_forecast_parent_document_DO_NOT_TOUCH",
+		"project": "5f20700ddae6f400123db788",
+		"user": "5c3d2d2dc607f300118873e2",
+		"createdAt": "2020-07-28T19:39:00.080Z",
+		"updatedAt": "2020-07-30T23:21:20.652Z",
+		"__v": 0,
+		"settings": {
+			"oil": {
+				"flat_forecast_thres": 180,
+				"internal_filter_all": true,
+				"internal_filter": "low",
+				"peak_sensitivity": "low",
+				"percentile_range": [1, 100],
+				"remove_0": true,
+				"time_dict": {
+					"absolute_range": ["2020-07-30T23:16:43.385Z", "2020-07-30T23:16:43.385Z"],
+					"mode": "last",
+					"num_range": [1, 24],
+					"unit": "month"
+				},
+				"valid_idx": null,
+				"value_range": [0.1, 30000],
+				"base_phase": "gas"
+			},
+			"gas": {
+				"flat_forecast_thres": 180,
+				"internal_filter_all": true,
+				"internal_filter": "low",
+				"peak_sensitivity": "low",
+				"percentile_range": [1, 100],
+				"remove_0": true,
+				"time_dict": {
+					"absolute_range": ["2020-07-30T23:16:43.385Z", "2020-07-30T23:16:43.385Z"],
+					"mode": "last",
+					"num_range": [1, 24],
+					"unit": "month"
+				},
+				"valid_idx": null,
+				"value_range": [0.1, 30000],
+				"base_phase": "oil"
+			},
+			"water": {
+				"flat_forecast_thres": 180,
+				"internal_filter_all": true,
+				"internal_filter": "low",
+				"peak_sensitivity": "low",
+				"percentile_range": [1, 100],
+				"remove_0": true,
+				"time_dict": {
+					"absolute_range": ["2020-07-30T23:16:43.385Z", "2020-07-30T23:16:43.385Z"],
+					"mode": "last",
+					"num_range": [1, 24],
+					"unit": "month"
+				},
+				"valid_idx": null,
+				"value_range": [0.1, 30000],
+				"base_phase": "oil"
+			},
+			"general": {
+				"model_name": "exp",
+				"percentile": [10, 50, 90],
+				"phases": ["oil", "gas", "water"],
+				"prob_para": [],
+				"resolution": "monthly_only",
+				"well_life": 60
+			}
+		},
+		"runDate": "2020-07-30T23:22:50.390Z"
+	}
+]

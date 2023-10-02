@@ -1,0 +1,50 @@
+Project:
+  type: object
+  properties:
+    createdAt:
+      type: string
+      format: date
+      description: Project Creation Date
+    id:
+      type: string
+      description: ID
+    name:
+      type: string
+      maxLength: 16384
+      description: Name
+    updatedAt:
+      type: string
+      format: date
+      description: Updated At
+  example:
+    createdAt: '2020-01-21T16:58:08.986Z'
+    id: 5e5981b9e23dae0012624d72
+    name: Test project
+    updatedAt: '2020-01-21T17:58:08.986Z'
+ProjectList:
+  type: array
+  items:
+    $ref: '#/definitions/Project'
+  maxItems: 200
+  example:
+    - createdAt: '2020-01-21T16:58:08.986Z'
+      id: 5e5981b9e23dae0012624d72
+      name: Test project
+      updatedAt: '2020-01-21T17:58:08.986Z'
+ProjectInput:
+  type: object
+  required:
+    - name
+  properties:
+    name:
+      type: string
+      description: Name
+  example:
+    name: test
+ProjectInputList:
+  type: array
+  items:
+    $ref: '#/definitions/ProjectInput'
+  maxItems: 200
+  example:
+    - name: test

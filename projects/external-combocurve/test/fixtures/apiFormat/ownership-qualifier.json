@@ -1,0 +1,69 @@
+{
+	"well": "5e272d38b78910dd2a1bd691",
+	"chosenID": "42479393790000",
+	"dataSource": "di",
+	"qualifierKey": "q2",
+	"ownership": {
+		"name": "t2",
+		"initialOwnership": {
+			"workingInterest": 100,
+			"netProfitInterestType": "expense",
+			"netProfitInterest": 0,
+			"netRevenueInterest": 100,
+			"leaseNetRevenueInterest": 75,
+			"oilNetRevenueInterest": 4,
+			"gasNetRevenueInterest": 5,
+			"nglNetRevenueInterest": 6,
+			"dripCondensateNetRevenueInterest": 10
+		},
+		"firstReversion": {
+			"reversionType": "Irr",
+			"reversionValue": 2,
+			"balance": "gross",
+			"includeNetProfitInterest": "yes",
+			"workingInterest": 100,
+			"netRevenueInterest": 1,
+			"leaseNetRevenueInterest": 75,
+			"netProfitInterest": 0,
+			"oilNetRevenueInterest": null,
+			"gasNetRevenueInterest": null,
+			"nglNetRevenueInterest": null,
+			"dripCondensateNetRevenueInterest": null
+		},
+		"secondReversion": {
+			"reversionType": "PayoutWithoutInvestment",
+			"reversionValue": 4,
+			"balance": "gross",
+			"includeNetProfitInterest": "yes",
+			"workingInterest": 80,
+			"netRevenueInterest": 3,
+			"leaseNetRevenueInterest": 50,
+			"netProfitInterest": 1,
+			"oilNetRevenueInterest": null,
+			"gasNetRevenueInterest": null,
+			"nglNetRevenueInterest": null,
+			"dripCondensateNetRevenueInterest": null
+		},
+		"thirdReversion": {
+			"reversionType": "UndiscRoi",
+			"reversionValue": 3,
+			"balance": "gross",
+			"includeNetProfitInterest": "yes",
+			"workingInterest": 90,
+			"netRevenueInterest": 100,
+			"leaseNetRevenueInterest": 75,
+			"netProfitInterest": 0,
+			"oilNetRevenueInterest": null,
+			"gasNetRevenueInterest": null,
+			"nglNetRevenueInterest": null,
+			"dripCondensateNetRevenueInterest": null
+		},
+		"fourthReversion": null,
+		"fifthReversion": null,
+		"sixthReversion": null,
+		"seventhReversion": null,
+		"eighthReversion": null,
+		"ninthReversion": null,
+		"tenthReversion": null
+	}
+}

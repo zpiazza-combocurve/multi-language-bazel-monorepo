@@ -1,0 +1,648 @@
+{
+	"$id": "http://combocurve.com/schemas/capex.json",
+	"$ref": "base-econ-model.json",
+	"type": "object",
+	"unevaluatedProperties": false,
+	"properties": {
+		"otherCapex": {
+			"type": "object",
+			"unevaluatedProperties": false,
+			"properties": {
+				"rows": {
+					"type": "array",
+					"unevaluatedItems": false,
+					"maxItems": 100,
+					"minItems": 1,
+					"items": {
+						"type": "object",
+						"allOf": [
+							{
+								"$ref": "#/definitions/BaseCapexFields"
+							},
+							{
+								"$ref": "#/definitions/FromHeaderOrFromScheduleOrCriteriaFields"
+							},
+							{
+								"prohibited": [
+									"distributionType",
+									"mean",
+									"standardDeviation",
+									"lowerBound",
+									"upperBound",
+									"mode",
+									"seed"
+								],
+								"errorMessage": "`distributionType`,`mean`,`standardDeviation`,`lowerBound`,`upperBound`,`mode`,`seed` CANNOT be set"
+							}
+						],
+						"properties": {
+							"category": {
+								"type": "string",
+								"enum": [
+									"drilling",
+									"completion",
+									"legal",
+									"pad",
+									"facilities",
+									"artificial_lift",
+									"workover",
+									"development",
+									"pipelines",
+									"exploration",
+									"waterline",
+									"appraisal",
+									"other_investment",
+									"abandonment",
+									"salvage"
+								]
+							},
+							"description": {
+								"type": "string",
+								"maxLength": 20
+							},
+							"tangible": {
+								"type": "number",
+								"minimum": -10000000000,
+								"maximum": 10000000000
+							},
+							"intangible": {
+								"type": "number",
+								"minimum": -10000000000,
+								"maximum": 10000000000
+							},
+							"capexExpense": {
+								"type": "string",
+								"enum": ["capex"]
+							},
+							"afterEconLimit": {
+								"type": "boolean"
+							},
+							"escalationStart": {
+								"type": "object",
+								"unevaluatedProperties": false,
+								"properties": {
+									"date": {
+										"$ref": "criteria.json#/definitions/Dates"
+									},
+									"applyToCriteria": {
+										"type": "number",
+										"maximum": 2000,
+										"minimum": -2000
+									},
+									"fpd": {
+										"type": "number",
+										"maximum": 2000,
+										"minimum": -2000
+									},
+									"asOfDate": {
+										"type": "number",
+										"maximum": 2000,
+										"minimum": -2000
+									},
+									"econLimit": {
+										"type": "number",
+										"maximum": 2000,
+										"minimum": -2000
+									}
+								},
+								"allOf": [
+									{
+										"errorMessage": "Exactly one of the following properties is required: `date`, `applyToCriteria`, `fpd`, `asOfDate` or `econLimit`",
+										"oneRequired": ["date", "applyToCriteria", "fpd", "asOfDate", "econLimit"]
+									}
+								]
+							}
+						},
+						"required": ["category", "tangible", "intangible", "afterEconLimit", "escalationStart"]
+					}
+				}
+			},
+			"required": ["rows"]
+		},
+		"drillingCost": {
+			"type": "object",
+			"allOf": [
+				{
+					"$ref": "#/definitions/BaseCapexFields"
+				}
+			],
+			"properties": {
+				"dollarPerFtOfVertical": {
+					"type": "number",
+					"maximum": 100000,
+					"minimum": 0
+				},
+				"dollarPerFtOfHorizontal": {
+					"type": "number",
+					"maximum": 100000,
+					"minimum": 0
+				},
+				"fixedCost": {
+					"type": "number",
+					"maximum": 100000000,
+					"minimum": 0
+				},
+				"tangiblePct": {
+					"type": "number",
+					"maximum": 100,
+					"minimum": 0
+				},
+				"rows": { "$ref": "#/definitions/DrillCondensateOrCompletionRow" }
+			},
+			"required": ["tangiblePct", "fixedCost", "dollarPerFtOfHorizontal", "dollarPerFtOfVertical", "rows"]
+		},
+		"completionCost": {
+			"type": "object",
+			"allOf": [
+				{
+					"$ref": "#/definitions/BaseCapexFields"
+				}
+			],
+			"properties": {
+				"dollarPerFtOfVertical": {
+					"type": "number",
+					"maximum": 100000,
+					"minimum": 0
+				},
+				"dollarPerFtOfHorizontal": {
+					"type": "array",
+					"minItems": 1,
+					"maxItems": 100,
+					"unevaluatedItems": false,
+					"items": {
+						"type": "object",
+						"unevaluatedProperties": false,
+						"properties": {
+							"propLl": {
+								"type": "number",
+								"maximum": 20000,
+								"minimum": 1
+							},
+							"unitCost": {
+								"type": "number",
+								"maximum": 100000,
+								"minimum": 0
+							}
+						},
+						"required": ["propLl", "unitCost"]
+					}
+				},
+				"fixedCost": {
+					"type": "number",
+					"maximum": 100000000,
+					"minimum": 0
+				},
+				"tangiblePct": {
+					"type": "number",
+					"maximum": 100,
+					"minimum": 0
+				},
+				"rows": { "$ref": "#/definitions/DrillCondensateOrCompletionRow" }
+			},
+			"required": ["tangiblePct", "fixedCost", "dollarPerFtOfHorizontal", "dollarPerFtOfVertical", "rows"]
+		}
+	},
+	"required": ["otherCapex"],
+	"definitions": {
+		"BaseCapexFields": {
+			"type": "object",
+			"properties": {
+				"calculation": {
+					"type": "string",
+					"enum": ["net", "gross"]
+				},
+				"escalationModel": {
+					"$ref": "rows-validation-defs.json#/definitions/EscalationModel"
+				},
+				"depreciationModel": {
+					"$ref": "rows-validation-defs.json#/definitions/DepreciationModel"
+				},
+				"dealTerms": { "type": "number", "maximum": 1000, "minimum": 0 }
+			},
+			"required": ["calculation", "escalationModel", "depreciationModel", "dealTerms"]
+		},
+		"OtherCapexFromScheduleFieldDataType": {
+			"type": "number",
+			"maximum": 20000,
+			"minimum": -20000
+		},
+		"OtherCapexCriteriaFieldType": {
+			"type": "number",
+			"maximum": 20000,
+			"minimum": -20000
+		},
+		"FromHeaderOrFromScheduleOrCriteriaFields": {
+			"if": {
+				"type": "object",
+				"properties": {
+					"fromSchedule": {}
+				},
+				"required": ["fromSchedule"]
+			},
+			"then": {
+				"type": "object",
+				"properties": {
+					"fromSchedule": {
+						"type": "string",
+						"enum": [
+							"offset_to_pad_preparation_mob_start",
+							"offset_to_pad_preparation_mob_end",
+							"offset_to_pad_preparation_start",
+							"offset_to_pad_preparation_end",
+							"offset_to_pad_preparation_demob_start",
+							"offset_to_pad_preparation_demob_end",
+							"offset_to_spud_mob_start",
+							"offset_to_spud_mob_end",
+							"offset_to_spud_start",
+							"offset_to_spud_end",
+							"offset_to_spud_demob_start",
+							"offset_to_spud_demob_end",
+							"offset_to_drill_mob_start",
+							"offset_to_drill_mob_end",
+							"offset_to_drill_start",
+							"offset_to_drill_end",
+							"offset_to_drill_demob_start",
+							"offset_to_drill_demob_end",
+							"offset_to_completion_mob_start",
+							"offset_to_completion_mob_end",
+							"offset_to_completion_start",
+							"offset_to_completion_end",
+							"offset_to_completion_demob_start",
+							"offset_to_completion_demob_end"
+						]
+					},
+					"padPreparationMobStart": {
+						"$ref": "#/definitions/OtherCapexFromScheduleFieldDataType"
+					},
+					"padPreparationMobEnd": {
+						"$ref": "#/definitions/OtherCapexFromScheduleFieldDataType"
+					},
+					"padPreparationStart": {
+						"$ref": "#/definitions/OtherCapexFromScheduleFieldDataType"
+					},
+					"padPreparationEnd": {
+						"$ref": "#/definitions/OtherCapexFromScheduleFieldDataType"
+					},
+					"padPreparationDemobStart": {
+						"$ref": "#/definitions/OtherCapexFromScheduleFieldDataType"
+					},
+					"padPreparationDemobEnd": {
+						"$ref": "#/definitions/OtherCapexFromScheduleFieldDataType"
+					},
+					"spudMobStart": {
+						"$ref": "#/definitions/OtherCapexFromScheduleFieldDataType"
+					},
+					"spudMobEnd": {
+						"$ref": "#/definitions/OtherCapexFromScheduleFieldDataType"
+					},
+					"spudStart": {
+						"$ref": "#/definitions/OtherCapexFromScheduleFieldDataType"
+					},
+					"spudEnd": {
+						"$ref": "#/definitions/OtherCapexFromScheduleFieldDataType"
+					},
+					"spudDemobStart": {
+						"$ref": "#/definitions/OtherCapexFromScheduleFieldDataType"
+					},
+					"spudDemobEnd": {
+						"$ref": "#/definitions/OtherCapexFromScheduleFieldDataType"
+					},
+					"drillMobStart": {
+						"$ref": "#/definitions/OtherCapexFromScheduleFieldDataType"
+					},
+					"drillMobEnd": {
+						"$ref": "#/definitions/OtherCapexFromScheduleFieldDataType"
+					},
+					"drillStart": {
+						"$ref": "#/definitions/OtherCapexFromScheduleFieldDataType"
+					},
+					"drillEnd": {
+						"$ref": "#/definitions/OtherCapexFromScheduleFieldDataType"
+					},
+					"drillDemobStart": {
+						"$ref": "#/definitions/OtherCapexFromScheduleFieldDataType"
+					},
+					"drillDemobEnd": {
+						"$ref": "#/definitions/OtherCapexFromScheduleFieldDataType"
+					},
+					"completionMobStart": {
+						"$ref": "#/definitions/OtherCapexFromScheduleFieldDataType"
+					},
+					"completionMobEnd": {
+						"$ref": "#/definitions/OtherCapexFromScheduleFieldDataType"
+					},
+					"completionStart": {
+						"$ref": "#/definitions/OtherCapexFromScheduleFieldDataType"
+					},
+					"completionEnd": {
+						"$ref": "#/definitions/OtherCapexFromScheduleFieldDataType"
+					},
+					"completionDemobStart": {
+						"$ref": "#/definitions/OtherCapexFromScheduleFieldDataType"
+					},
+					"completionDemobEnd": {
+						"$ref": "#/definitions/OtherCapexFromScheduleFieldDataType"
+					}
+				},
+				"required": ["fromSchedule"],
+				"allOf": [
+					{
+						"errorMessage": "If `fromSchedule` is set, one of the following properties must be set: `padPreparationMobStart`, `padPreparationMobEnd`, `padPreparationStart`, `padPreparationEnd`, `padPreparationDemobStart`, `padPreparationDemobEnd`, `spudMobStart`, `spudMobEnd`, `spudStart`, `spudEnd`, `spudDemobStart`, `spudDemobEnd`, `drillMobStart`, `drillMobEnd`, `drillStart`, `drillEnd`, `drillDemobStart`, `drillDemobEnd`, `completionMobStart`, `completionMobEnd`, `completionStart`, `completionEnd`, `completionDemobStart`, `completionDemobEnd`",
+						"oneRequired": [
+							"padPreparationMobStart",
+							"padPreparationMobEnd",
+							"padPreparationStart",
+							"padPreparationEnd",
+							"padPreparationDemobStart",
+							"padPreparationDemobEnd",
+							"spudMobStart",
+							"spudMobEnd",
+							"spudStart",
+							"spudEnd",
+							"spudDemobStart",
+							"spudDemobEnd",
+							"drillMobStart",
+							"drillMobEnd",
+							"drillStart",
+							"drillEnd",
+							"drillDemobStart",
+							"drillDemobEnd",
+							"completionMobStart",
+							"completionMobEnd",
+							"completionStart",
+							"completionEnd",
+							"completionDemobStart",
+							"completionDemobEnd"
+						]
+					}
+				]
+			},
+			"else": {
+				"if": {
+					"type": "object",
+					"properties": {
+						"fromHeaders": {}
+					},
+					"required": ["fromHeaders"]
+				},
+				"then": {
+					"type": "object",
+					"properties": {
+						"fromHeaders": {
+							"type": "string",
+							"enum": [
+								"offset_to_refrac_date",
+								"offset_to_completion_end_date",
+								"offset_to_completion_start_date",
+								"offset_to_date_rig_release",
+								"offset_to_drill_end_date",
+								"offset_to_drill_start_date",
+								"offset_to_first_prod_date",
+								"offset_to_permit_date",
+								"offset_to_spud_date",
+								"offset_to_til",
+								"offset_to_first_prod_date_daily_calc",
+								"offset_to_first_prod_date_monthly_calc",
+								"offset_to_last_prod_date_monthly",
+								"offset_to_last_prod_date_daily",
+								"offset_to_custom_date_0",
+								"offset_to_custom_date_1",
+								"offset_to_custom_date_2",
+								"offset_to_custom_date_3",
+								"offset_to_custom_date_4",
+								"offset_to_custom_date_5",
+								"offset_to_custom_date_6",
+								"offset_to_custom_date_7",
+								"offset_to_custom_date_8",
+								"offset_to_custom_date_9"
+							]
+						},
+						"refracDate": {
+							"$ref": "#/definitions/OtherCapexFromScheduleFieldDataType"
+						},
+						"completionEndDate": {
+							"$ref": "#/definitions/OtherCapexFromScheduleFieldDataType"
+						},
+						"completionStartDate": {
+							"$ref": "#/definitions/OtherCapexFromScheduleFieldDataType"
+						},
+						"dateRigRelease": {
+							"$ref": "#/definitions/OtherCapexFromScheduleFieldDataType"
+						},
+						"drillEndDate": {
+							"$ref": "#/definitions/OtherCapexFromScheduleFieldDataType"
+						},
+						"drillStartDate": {
+							"$ref": "#/definitions/OtherCapexFromScheduleFieldDataType"
+						},
+						"firstProdDate": {
+							"$ref": "#/definitions/OtherCapexFromScheduleFieldDataType"
+						},
+						"permitDate": {
+							"$ref": "#/definitions/OtherCapexFromScheduleFieldDataType"
+						},
+						"spudDate": {
+							"$ref": "#/definitions/OtherCapexFromScheduleFieldDataType"
+						},
+						"til": {
+							"$ref": "#/definitions/OtherCapexFromScheduleFieldDataType"
+						},
+						"customDateHeader0": {
+							"$ref": "#/definitions/OtherCapexFromScheduleFieldDataType"
+						},
+						"customDateHeader1": {
+							"$ref": "#/definitions/OtherCapexFromScheduleFieldDataType"
+						},
+						"customDateHeader2": {
+							"$ref": "#/definitions/OtherCapexFromScheduleFieldDataType"
+						},
+						"customDateHeader3": {
+							"$ref": "#/definitions/OtherCapexFromScheduleFieldDataType"
+						},
+						"customDateHeader4": {
+							"$ref": "#/definitions/OtherCapexFromScheduleFieldDataType"
+						},
+						"customDateHeader5": {
+							"$ref": "#/definitions/OtherCapexFromScheduleFieldDataType"
+						},
+						"customDateHeader6": {
+							"$ref": "#/definitions/OtherCapexFromScheduleFieldDataType"
+						},
+						"customDateHeader7": {
+							"$ref": "#/definitions/OtherCapexFromScheduleFieldDataType"
+						},
+						"customDateHeader8": {
+							"$ref": "#/definitions/OtherCapexFromScheduleFieldDataType"
+						},
+						"customDateHeader9": {
+							"$ref": "#/definitions/OtherCapexFromScheduleFieldDataType"
+						},
+						"firstProdDateDaily": {
+							"$ref": "#/definitions/OtherCapexFromScheduleFieldDataType"
+						},
+						"firstProdDateMonthly": {
+							"$ref": "#/definitions/OtherCapexFromScheduleFieldDataType"
+						},
+						"lastProdDateDaily": {
+							"$ref": "#/definitions/OtherCapexFromScheduleFieldDataType"
+						},
+						"lastProdDateMonthly": {
+							"$ref": "#/definitions/OtherCapexFromScheduleFieldDataType"
+						}
+					},
+					"required": ["fromHeaders"],
+					"allOf": [
+						{
+							"errorMessage": "If `fromHeaders` is set, one of the following properties must be set: `refracDate`, `completionEndDate`, `completionStartDate`, `dateRigRelease`, `drillEndDate`, `drillStartDate`, `firstProdDate`, `permitDate`, `spudDate`, `til`, `firstProdDateDaily`, `firstProdDateMonthly`, `lastProdDateDaily`, `lastProdDateMonthly`, `customDateHeader0`, `customDateHeader1`, `customDateHeader2`, `customDateHeader3`, `customDateHeader4`, `customDateHeader5`, `customDateHeader6`, `customDateHeader7`, `customDateHeader8`, `customDateHeader9`",
+							"oneRequired": [
+								"refracDate",
+								"completionEndDate",
+								"completionStartDate",
+								"dateRigRelease",
+								"drillEndDate",
+								"drillStartDate",
+								"firstProdDate",
+								"permitDate",
+								"spudDate",
+								"til",
+								"customDateHeader0",
+								"customDateHeader1",
+								"customDateHeader2",
+								"customDateHeader3",
+								"customDateHeader4",
+								"customDateHeader5",
+								"customDateHeader6",
+								"customDateHeader7",
+								"customDateHeader8",
+								"customDateHeader9",
+								"firstProdDateDaily",
+								"firstProdDateMonthly",
+								"lastProdDateDaily",
+								"lastProdDateMonthly"
+							]
+						}
+					]
+				},
+				"else": {
+					"type": "object",
+					"properties": {
+						"fromHeaders": {},
+						"fromSchedule": {},
+						"offsetToFpd": {
+							"$ref": "#/definitions/OtherCapexCriteriaFieldType"
+						},
+						"offsetToAsOf": {
+							"$ref": "#/definitions/OtherCapexCriteriaFieldType"
+						},
+						"offsetToDiscountDate": {
+							"$ref": "#/definitions/OtherCapexCriteriaFieldType"
+						},
+						"offsetToMajorSegment": {
+							"$ref": "#/definitions/OtherCapexCriteriaFieldType"
+						},
+						"offsetToEconLimit": {
+							"$ref": "#/definitions/OtherCapexCriteriaFieldType"
+						},
+						"oilRate": {
+							"$ref": "#/definitions/OtherCapexCriteriaFieldType"
+						},
+						"gasRate": {
+							"$ref": "#/definitions/OtherCapexCriteriaFieldType"
+						},
+						"waterRate": {
+							"$ref": "#/definitions/OtherCapexCriteriaFieldType"
+						},
+						"totalFluidRate": {
+							"$ref": "#/definitions/OtherCapexCriteriaFieldType"
+						},
+						"date": {
+							"$ref": "criteria.json#/definitions/Dates"
+						}
+					},
+					"allOf": [
+						{
+							"errorMessage": "one of the following properties MUST be set: `fromSchedule`,`fromHeaders`,`offsetToFpd`,`offsetToAsOf`,`offsetToDiscountDate`,`offsetToMajorSegment`,`offsetToEconLimit`,`oilRate`,`gasRate`,`waterRate`,`totalFluidRate`,`date`",
+							"oneRequired": [
+								"fromSchedule",
+								"fromHeaders",
+								"offsetToFpd",
+								"offsetToAsOf",
+								"offsetToDiscountDate",
+								"offsetToMajorSegment",
+								"offsetToEconLimit",
+								"oilRate",
+								"gasRate",
+								"waterRate",
+								"totalFluidRate",
+								"date"
+							]
+						}
+					]
+				}
+			}
+		},
+		"RowNumberCriteria": {
+			"type": "number",
+			"maximum": 20000,
+			"minimum": -20000
+		},
+		"RowNumberRate": {
+			"type": "number",
+			"maximum": 20000,
+			"minimum": -20000
+		},
+		"DrillCondensateOrCompletionRow": {
+			"type": "array",
+			"unevaluatedItems": false,
+			"maxItems": 100,
+			"minItems": 1,
+			"items": {
+				"type": "object",
+				"unevaluatedProperties": false,
+				"properties": {
+					"pctOfTotalCost": {
+						"type": "number",
+						"maximum": 100,
+						"minimum": 0
+					},
+					"offsetToFpd": {
+						"$ref": "#/definitions/RowNumberCriteria"
+					},
+					"offsetToAsOf": {
+						"$ref": "#/definitions/RowNumberCriteria"
+					},
+					"offsetToDiscountDate": {
+						"$ref": "#/definitions/RowNumberCriteria"
+					},
+					"offsetToFirstSegment": {
+						"$ref": "#/definitions/RowNumberCriteria"
+					},
+					"scheduleStart": {
+						"$ref": "#/definitions/RowNumberRate"
+					},
+					"scheduleEnd": {
+						"$ref": "#/definitions/RowNumberRate"
+					},
+					"date": {
+						"$ref": "criteria.json#/definitions/Dates"
+					}
+				},
+				"required": ["pctOfTotalCost"],
+				"allOf": [
+					{
+						"errorMessage": "One of the following properties must be set: `offsetToFpd`,`offsetToAsOf`,`offsetToDiscountDate`,`offsetToFirstSegment`,`scheduleStart`,`scheduleEnd` or `date`",
+						"oneRequired": [
+							"offsetToFpd",
+							"offsetToAsOf",
+							"offsetToDiscountDate",
+							"offsetToFirstSegment",
+							"scheduleStart",
+							"scheduleEnd",
+							"date"
+						]
+					}
+				]
+			}
+		}
+	}
+}

@@ -1,0 +1,192 @@
+QualifiersReadOKResponse:
+  type: 'object'
+  properties:
+    forecast:
+      type: 'array'
+      items:
+        type: 'string'
+        example: 'forecast_qualifier'
+    capex:
+      type: 'array'
+      items:
+        type: 'string'
+        example: 'capex_qualifier'
+    dates:
+      type: 'array'
+      items:
+        type: 'string'
+        example: 'dates_qualifier'
+    depreciation:
+      type: 'array'
+      items:
+        type: 'string'
+        example: 'depreciation_qualifier'
+    escalation:
+      type: 'array'
+      items:
+        type: 'string'
+        example: 'escalation_qualifier'
+    expenses:
+      type: 'array'
+      items:
+        type: 'string'
+        example: 'expenses_qualifier'
+    ownershipReversion:
+      type: 'array'
+      items:
+        type: 'string'
+        example: 'ownershipReversion_qualifier'
+    productionTaxes:
+      type: 'array'
+      items:
+        type: 'string'
+        example: 'productionTaxes_qualifier'
+    actualOrForecast:
+      type: 'array'
+      items:
+        type: 'string'
+        example: 'actualOrForecast_qualifier'
+    reservesCategory:
+      type: 'array'
+      items:
+        type: 'string'
+        example: 'reservesCategory_qualifier'
+    differentials:
+      type: 'array'
+      items:
+        type: 'string'
+        example: 'differentials_qualifier'
+    pricing:
+      type: 'array'
+      items:
+        type: 'string'
+        example: 'pricing_qualifier'
+  example:
+    forecast:	
+      - forecast_qualifier	
+    capex:	
+      - capex_qualifier	
+    dates:	
+      - dates_qualifier	
+    depreciation:	
+      - depreciation_qualifier	
+    escalation:	
+      - escalation_qualifier	
+    expenses:	
+      - expenses_qualifier	
+    ownershipReversion:	
+      - ownershipReversion_qualifier	
+    productionTaxes:	
+      - productionTaxes_qualifier	
+    actualOrForecast:	
+      - actualOrForecast_qualifier	
+    reservesCategory:	
+      - reservesCategory_qualifier	
+    differentials:	
+      - differentials_qualifier	
+    pricing:	
+      - pricing_qualifier	
+QualifierUpsertPayload:
+  type: 'object'
+  required:
+    - econModel
+    - name
+  properties:
+    econModel:
+      type: 'string'
+      example: 'actual-or-forecast'
+    name:
+      type: 'string'
+      example: 'some_string'
+    newName:
+      type: 'string'
+      example: 'some_string'
+  example:
+    econModel: actual-or-forecast	
+    name: some_string	
+    newName: some_string	
+QualifiersUpsertMultiStatusResponse:
+  type: 'object'
+  properties:
+    results:
+      type: 'array'
+      items:
+        $ref: 'QualifiersUpsertResultsOutput'
+    generalErrors:
+      type: 'array'
+      items:
+        $ref: 'QualifiersUpsertGeneralErrorsOutput'
+    failedCount:
+      type: 'number'
+      example: '1'
+    successCount:
+      type: 'number'
+      example: '1'
+  example:
+    results:	
+      - status: created	
+        code: 201	
+        chosenID: chosen_id	
+    generalErrors:	
+      - name: ValidationError	
+        message: The field name is required	
+        location: .person.name	
+        chosenID: chosen_id	
+    failedCount: 1	
+    successCount: 1	
+QualifiersUpsertGeneralErrorsOutput:
+  type: 'object'
+  properties:
+    name:
+      type: 'string'
+      example: 'ValidationError'
+    message:
+      type: 'string'
+      example: 'The field name is required'
+    location:
+      type: 'string'
+      example: '.person.name'
+    chosenID:
+      type: 'string'
+      example: 'chosen_id'
+  example:
+    name: ValidationError	
+    message: The field name is required	
+    location: .person.name	
+    chosenID: chosen_id	
+QualifiersUpsertResultsOutput:
+  type: 'object'
+  properties:
+    status:
+      type: 'string'
+      example: 'created'
+    code:
+      type: 'number'
+      example: '201'
+    chosenID:
+      type: 'string'
+      example: 'chosen_id'
+  example:
+    status: created	
+    code: 201	
+    chosenID: chosen_id	
+QualifiersDeleteBadRequestResponse:
+  type: 'object'
+  properties:
+    name:
+      type: 'string'
+      example: 'ValidationError'
+    message:
+      type: 'string'
+      example: 'The field age is required'
+    location:
+      type: 'string'
+      example: 'people.age'
+    chosenID:
+      type: 'string'
+      example: 'chosen_id'
+  example:
+    name: ValidationError	
+    message: The field age is required	
+    location: people.age	
+    chosenID: chosen_id	

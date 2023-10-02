@@ -1,0 +1,363 @@
+PricingModelOil:
+  properties:
+    cap:
+      type: "number"
+    escalationModel:
+      type: "string"
+    rows:
+      type: "array"
+      items:
+        $ref: '#/definitions/PricingModelOilRow'
+  type: "object"
+PricingModelGas:
+  type: "object"
+  properties:
+    cap:
+      type: "number"
+    escalationModel:
+      type: "string"
+    rows:
+      type: "array"
+      items:
+        $ref: '#/definitions/PricingModelGasRow'
+PricingModelNgl:
+  type: "object"
+  properties:
+    cap:
+      type: "number"
+    escalationModel:
+      type: "string"
+    rows:
+      type: "array"
+      items:
+        $ref: '#/definitions/PricingModelNglRow'
+PricingModelDripCondensate:
+  type: "object"
+  properties:
+      cap:
+        type: "number"
+      escalationModel:
+        type: "string"
+      rows:
+        type: "array"
+        items:
+          $ref: '#/definitions/PricingModelDripCondensateRow'
+PricingModelOilRow:
+  type: "object"
+  properties:
+    price:
+      type: "number"
+    dates:
+      $ref: '#/definitions/StartEndDatesCriteria'
+    offsetToAsOf:
+      $ref: '#/definitions/StartEndPeriodCriteria'
+    entireWellLife:
+      type: "string"
+PricingModelGasRow:
+  type: "object"
+  properties:
+    dollarPerMmbtu:
+      type: "number"
+    dollarPerMcf:
+      type: "number"
+    dates:
+      $ref: '#/definitions/StartEndDatesCriteria'
+    offsetToAsOf:
+      $ref: '#/definitions/StartEndPeriodCriteria'
+    entireWellLife:
+      type: "string"
+PricingModelNglRow:
+  type: "object"
+  properties:
+    price:
+      type: "number"
+    pctOfOilPrice:
+      type: "number"
+    dollarPerGal:
+      type: "number"
+    dates:
+      $ref: '#/definitions/StartEndDatesCriteria'
+    offsetToAsOf:
+      $ref: '#/definitions/StartEndPeriodCriteria'
+    entireWellLife:
+      type: "string"
+PricingModelDripCondensateRow:
+  type: "object"
+  properties:
+    pctOfOilPrice:
+      type: "number"
+    dollarPerBbl:
+      type: "number"
+    dates:
+      $ref: '#/definitions/StartEndDatesCriteria'
+    offsetToAsOf:
+      $ref: '#/definitions/StartEndPeriodCriteria'
+    entireWellLife:
+      type: "string"
+PricingModel:
+  type: object
+  required:
+    - "oil"
+    - "gas"
+    - "ngl"
+    - "dripCondensate"
+  properties:
+    oil:
+      $ref: '#/definitions/PricingModelOil'
+    gas:
+      $ref: '#/definitions/PricingModelGas'
+    ngl:
+      $ref: '#/definitions/PricingModelNgl'
+    dripCondensate:
+      $ref: '#/definitions/PricingModelDripCondensate'
+Pricing:
+  type: object
+  required:
+    - name
+    - unique
+  properties:
+    id:
+      type: string
+      description: ID
+    copiedFrom:
+      type: string
+      description: Copied From
+    name:
+      type: string
+      description: Name
+    scenario:
+      type: string
+      description: Scenario ID
+    tags:
+      type: array
+      items:
+        type: string
+        description: Tag ID
+    unique:
+      type: boolean
+      description: Unique
+    well:
+      type: string
+      description: Well ID
+    createdAt:
+      type: string
+      format: date
+      description: Creation Date
+    updatedAt:
+      type: string
+      format: date
+      description: Updated At
+    createdBy:
+      type: string
+      description: Created By
+    lastUpdatedBy:
+      type: string
+      description: Last Updated By
+    priceModel:
+      $ref: '#/definitions/PricingModel'
+  example:
+      id: 5e272d39b78910dd2a1bd8fe
+      copiedFrom: 63b856e816f758cc5b0f1106
+      name: Test
+      scenario: 63b8571d70ed63f50bd6d63f
+      tags:
+        - 63b85737ff846cee7b1f6fdc
+      unique: true
+      well: 63b85759e1d7eb4e31579f51
+      createdAt: '2020-01-21T16:58:08.986Z'
+      updatedAt: '2020-01-21T17:58:08.986Z'
+      createdBy: 63b857cb68f3b96efc700998
+      lastUpdatedBy: 63b857cb68f3b96efc700998
+      priceModel:
+        oil:
+          escalationModel: none
+          rows:
+          - entireWellLife: Flat
+            price: 150
+        gas:
+          escalationModel: none
+          rows:
+          - entireWellLife: Flat
+            dollarPerMmbtu: 100
+        ngl:
+          escalationModel: none
+          rows:
+          - pctOfOilPrice: 100
+            offsetToAsOf:
+              start: 1
+              end: 5
+              period: 5
+          - pctOfOilPrice: 100
+            offsetToAsOf:
+              start: 4
+              end: 10
+              period: 5
+        dripCondensate:
+          escalationModel: none
+          rows:
+          - dollarPerBbl: 200
+            dates:
+              startDate: '2023-04-01T00:00:00.000Z'
+              endDate: '2023-09-30T00:00:00.000Z'
+          - dollarPerBbl: 150
+            dates:
+              startDate: '2023-10-01T00:00:00.000Z'
+              endDate: Econ Limit
+PricingList:
+  type: array
+  items:
+    $ref: '#/definitions/Pricing'
+  maxItems: 200
+  example:
+    - id: 5e272d39b78910dd2a1bd8fe
+      copiedFrom: 63b856e816f758cc5b0f1106
+      name: Test
+      scenario: 63b8571d70ed63f50bd6d63f
+      tags:
+        - 63b85737ff846cee7b1f6fdc
+      unique: true
+      well: 63b85759e1d7eb4e31579f51
+      createdAt: '2020-01-21T16:58:08.986Z'
+      updatedAt: '2020-01-21T17:58:08.986Z'
+      createdBy: 63b857cb68f3b96efc700998
+      lastUpdatedBy: 63b857cb68f3b96efc700998
+      priceModel:
+        oil:
+          escalationModel: none
+          rows:
+          - entireWellLife: Flat
+            price: 150
+        gas:
+          escalationModel: none
+          rows:
+          - entireWellLife: Flat
+            dollarPerMmbtu: 100
+        ngl:
+          escalationModel: none
+          rows:
+          - pctOfOilPrice: 100
+            offsetToAsOf:
+              start: 1
+              end: 5
+              period: 5
+          - pctOfOilPrice: 100
+            offsetToAsOf:
+              start: 4
+              end: 10
+              period: 5
+        dripCondensate:
+          escalationModel: none
+          rows:
+          - dollarPerBbl: 200
+            dates:
+              startDate: '2023-04-01T00:00:00.000Z'
+              endDate: '2023-09-30T00:00:00.000Z'
+          - dollarPerBbl: 150
+            dates:
+              startDate: '2023-10-01T00:00:00.000Z'
+              endDate: Econ Limit
+PricingInput:
+  type: object
+  required:
+    - name
+    - unique
+  properties:
+    name:
+      type: string
+      description: Name
+    scenario:
+      type: string
+      description: Scenario ID
+    unique:
+      type: boolean
+      description: Unique
+    well:
+      type: string
+      description: Well ID
+    priceModel:
+      $ref: '#/definitions/PricingModel'
+  example:
+    name: Test
+    scenario: 63b8571d70ed63f50bd6d63f
+    unique: true
+    well: 63b85759e1d7eb4e31579f51
+    priceModel:
+      oil:
+        escalationModel: none
+        rows:
+        - entireWellLife: Flat
+          price: 150
+      gas:
+        escalationModel: none
+        rows:
+        - entireWellLife: Flat
+          dollarPerMmbtu: 100
+      ngl:
+        escalationModel: none
+        rows:
+        - pctOfOilPrice: 100
+          offsetToAsOf:
+            start: 1
+            end: 5
+            period: 5
+        - pctOfOilPrice: 100
+          offsetToAsOf:
+            start: 4
+            end: 10
+            period: 5
+      dripCondensate:
+        escalationModel: none
+        rows:
+        - dollarPerBbl: 200
+          dates:
+            startDate: '2023-04-01T00:00:00.000Z'
+            endDate: '2023-09-30T00:00:00.000Z'
+        - dollarPerBbl: 150
+          dates:
+            startDate: '2023-10-01T00:00:00.000Z'
+            endDate: Econ Limit
+PricingInputList:
+  type: array
+  items:
+    $ref: '#/definitions/PricingInput'
+  maxItems: 500
+  example:
+    - name: Test
+      scenario: 63b8571d70ed63f50bd6d63f
+      unique: true
+      well: 63b85759e1d7eb4e31579f51
+      priceModel:
+        oil:
+          escalationModel: none
+          rows:
+          - entireWellLife: Flat
+            price: 150
+        gas:
+          escalationModel: none
+          rows:
+          - entireWellLife: Flat
+            dollarPerMmbtu: 100
+        ngl:
+          escalationModel: none
+          rows:
+          - pctOfOilPrice: 100
+            offsetToAsOf:
+              start: 1
+              end: 5
+              period: 5
+          - pctOfOilPrice: 100
+            offsetToAsOf:
+              start: 4
+              end: 10
+              period: 5
+        dripCondensate:
+          escalationModel: none
+          rows:
+          - dollarPerBbl: 200
+            dates:
+              startDate: '2023-04-01T00:00:00.000Z'
+              endDate: '2023-09-30T00:00:00.000Z'
+          - dollarPerBbl: 150
+            dates:
+              startDate: '2023-10-01T00:00:00.000Z'
+              endDate: Econ Limit

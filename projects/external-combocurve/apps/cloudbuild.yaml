@@ -1,0 +1,120 @@
+substitutions:
+  # required in trigger:
+  _KEYS_PROJECT_ID: <project-id>
+  _PROJECT_PREFIX: <project-prefix>
+  _TEST_INTEG_TARGET_URL: <target-api.combocurve.com>
+  _TEST_INTEG_TENANT: <integration4test>
+  _TEST_PERF_ENABLED: "false"
+  # hardcoded, omit in trigger:
+  _PRODUCT_TAG: app-engine
+  _SERVICE_NAME: external-api
+
+steps:
+  # Cancel any pending deployment builds
+  - name: "gcr.io/cloud-builders/gcloud"
+    entrypoint: "bash"
+    args:
+      - ./apps/cancel.sh
+    env:
+      - "PROJECT_ID=$PROJECT_ID"
+      - "PRODUCT_TAG=$_PRODUCT_TAG"
+      - "SERVICE_NAME=$_SERVICE_NAME"
+      - "CURRENT_BUILD_ID=$BUILD_ID"
+
+  # Set up credentials to download dependencies
+  - name: google/cloud-sdk:latest
+    entrypoint: "/bin/bash"
+    args: ["./apps/setup-credentials.sh", "$_KEYS_PROJECT_ID"]
+    volumes:
+      - name: "ssh"
+        path: /root/.ssh
+
+  # Install api dependencies and build the source code
+  - name: "node:18.16"
+    entrypoint: "/bin/bash"
+    args: ["./apps/build.sh", "${_PROJECT_PREFIX}"]
+    volumes:
+      - name: "ssh"
+        path: /root/.ssh
+    secretEnv: ["API_TENANTS_READER_CS"]
+
+  # Deploy cloud endpoints
+  - name: google/cloud-sdk:latest
+    entrypoint: "/bin/bash"
+    args:
+      - "-c"
+      - |
+        gcloud endpoints services deploy openapi-spec-${_PROJECT_PREFIX}.yaml
+
+  # Deploy app engine backend
+  - name: google/cloud-sdk:latest
+    id: "deploy-app-engine"
+    entrypoint: "/bin/bash"
+    args:
+      - "-c"
+      - |
+        gcloud config set app/cloud_build_timeout 1500
+        . ./apps/deploy.sh $PROJECT_ID
+
+  # Deploy documentation
+  - name: "gcr.io/cloud-builders/git"
+    entrypoint: "bash"
+    args:
+      - "-c"
+      - |
+        git clone git+ssh://git@external-combocurve-docs.github.com/insidepetroleum/external-combocurve-docs.git --branch $$DOCS_BRANCH
+        cd external-combocurve-docs
+
+        git config user.email "build@external.combocurve.com"
+        git config user.name "External Combocurve"
+
+        cp ../openapi-spec-doc.yaml $$SPEC_FILE
+        git add $$SPEC_FILE
+        git commit -m "Update $$SPEC_FILE"
+
+        git push origin $$DOCS_BRANCH
+    env:
+      - "DOCS_BRANCH=${_PROJECT_PREFIX}"
+      - "SPEC_FILE=openapi-spec.yaml"
+    volumes:
+      - name: "ssh"
+        path: /root/.ssh
+
+  # Trigger integration tests
+  - name: google/cloud-sdk:latest
+    id: integration-tests
+    entrypoint: "/bin/bash"
+    args:
+      [
+        "./scripts/trigger-integration-tests.sh",
+        "${_TEST_INTEG_TARGET_URL}",
+        "${_TEST_INTEG_TENANT}",
+      ]
+    waitFor: ["deploy-app-engine"] # can trigger right after deployment, no need to wait for the documentation steps
+
+  # Trigger performance tests
+  - name: google/cloud-sdk:latest
+    entrypoint: "/bin/bash"
+    args:
+      - -c
+      - |
+        if [ "${_TEST_PERF_ENABLED}" = "true" ];
+        then
+          bash "./scripts/trigger-performance-tests.sh" "${_PROJECT_PREFIX}";
+        fi
+    waitFor: ["integration-tests"] # can trigger right after deployment, no need to wait for the documentation steps
+
+availableSecrets:
+  secretManager:
+    - versionName: projects/$PROJECT_NUMBER/secrets/apiTenantsReaderCS/versions/latest
+      env: "API_TENANTS_READER_CS"
+
+options:
+  logging: CLOUD_LOGGING_ONLY
+
+timeout: 1500s
+
+tags:
+  - "$_PRODUCT_TAG"
+  - "deploy"
+  - "$_SERVICE_NAME"

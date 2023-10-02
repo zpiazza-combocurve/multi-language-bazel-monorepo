@@ -1,0 +1,65 @@
+Forecast:
+  type: object
+  properties:
+    createdAt:
+      type: string
+      format: date
+      description: Forecast Creation Date
+    id:
+      type: string
+      description: ID
+    name:
+      type: string
+      maxLength: 16384
+      description: Name
+    runDate:
+      type: string
+      format: date
+      description: Run Date
+    running:
+      type: boolean
+      description: Running
+    tags:
+      $ref: '#/definitions/TagList'
+    type:
+      type: string
+      description: Type
+    updatedAt:
+      type: string
+      format: date
+      description: Updated At
+  example:
+    createdAt: '2020-01-21T16:58:08.986Z'
+    id: 5e5981b9e23dae0012624d72
+    name: Test forecast
+    runDate: '2020-06-08T19:14:22.012Z'
+    running: false
+    type: probabilistic
+    updatedAt: '2020-01-21T17:58:08.986Z'
+ForecastList:
+  type: array
+  items:
+    $ref: '#/definitions/Forecast'
+  maxItems: 200
+  example:
+    - createdAt: '2020-01-21T16:58:08.986Z'
+      id: 5e5981b9e23dae0012624d72
+      name: Test forecast
+      runDate: '2020-06-08T19:14:22.012Z'
+      running: false
+      type: probabilistic
+      updatedAt: '2020-01-21T17:58:08.986Z'
+WellIdInput:
+  type: object
+  required:
+    - wellIds
+  properties:
+    wellIds:
+      type: array
+      items:
+        type: string
+      minItems: 1
+      maxItems: 1000
+      description: an array of well IDs
+  example:
+    - wellIds: ['632240de72c6010512780753','632240b972c6019e7178074e']

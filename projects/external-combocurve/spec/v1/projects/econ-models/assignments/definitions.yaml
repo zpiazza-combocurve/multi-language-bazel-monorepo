@@ -1,0 +1,107 @@
+EconModelsAssignmentsReadOKResponse:
+  type: 'object'
+  properties:
+    scenario:
+      type: 'string'
+      example: '5e276e31876cd70012ddf3f6'
+    well:
+      type: 'string'
+      example: '5e272d75b78910dd2a1d8521'
+    qualifier:
+      type: 'string'
+      example: 'qualifier_name'
+  example:
+    scenario: 5e276e31876cd70012ddf3f6	
+    well: 5e272d75b78910dd2a1d8521	
+    qualifier: qualifier_name	
+EconModelAssignmentUpsertPayload:
+  type: 'object'
+  required:
+    - scenarioID
+    - qualifierName
+  properties:
+    scenarioID:
+      type: 'string'
+      example: '5e276e31876cd70012ddf3f6'
+    wells:
+      type: 'array'
+      items:
+        type: 'string'
+        example: '5e276e31876cd70012ddf3f6'
+    allWells:
+      type: 'boolean'
+      example: 'true'
+    qualifierName:
+      type: 'string'
+      example: 'some_string'
+  example:
+    scenarioID: 5e276e31876cd70012ddf3f6	
+    wells:	
+      - 5e276e31876cd70012ddf3f6	
+    allWells: true	
+    qualifierName: some_string	
+EconModelAssignmentUpsertMultiStatusResponse:
+  type: 'object'
+  properties:
+    results:
+      type: 'array'
+      items:
+        $ref: 'EconModelAssignmentUpsertResultsOutput'
+    generalErrors:
+      type: 'array'
+      items:
+        $ref: 'EconModelAssignmentUpsertGeneralErrorsOutput'
+    failedCount:
+      type: 'number'
+      example: '1'
+    successCount:
+      type: 'number'
+      example: '1'
+  example:
+    results:	
+      - status: created	
+        code: 201	
+        chosenID: chosen_id	
+    generalErrors:	
+      - name: ValidationError	
+        message: The field name is required	
+        location: .person.name	
+        chosenID: chosen_id	
+    failedCount: 1	
+    successCount: 1	
+EconModelAssignmentUpsertGeneralErrorsOutput:
+  type: 'object'
+  properties:
+    name:
+      type: 'string'
+      example: 'ValidationError'
+    message:
+      type: 'string'
+      example: 'The field name is required'
+    location:
+      type: 'string'
+      example: '.person.name'
+    chosenID:
+      type: 'string'
+      example: 'chosen_id'
+  example:
+    name: ValidationError	
+    message: The field name is required	
+    location: .person.name	
+    chosenID: chosen_id	
+EconModelAssignmentUpsertResultsOutput:
+  type: 'object'
+  properties:
+    status:
+      type: 'string'
+      example: 'created'
+    code:
+      type: 'number'
+      example: '201'
+    chosenID:
+      type: 'string'
+      example: 'chosen_id'
+  example:
+    status: created	
+    code: 201	
+    chosenID: chosen_id	

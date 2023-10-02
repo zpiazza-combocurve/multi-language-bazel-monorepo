@@ -1,0 +1,111 @@
+ScenarioWellsReadOKResponse:
+  type: 'object'
+  properties:
+    wells:
+      type: 'array'
+      items:
+        type: 'string'
+        example: '5e272d72b78910dd2a1d5c16'
+  example:
+    wells:	
+      - 5e272d72b78910dd2a1d5c16	
+ScenarioWellsUpsert:
+  type: 'object'
+  required:
+    - wells
+  properties:
+    wells:
+      type: 'array'
+      items:
+        type: 'string'
+        example: '5e276e31876cd70012ddf3f6'
+        maxItems: 25000
+        minItems: 1
+  example:
+    wells:	
+      - 5e276e31876cd70012ddf3f6	
+ScenarioWellsUpsertBadRequestResponse:
+  type: 'object'
+  properties:
+    name:
+      type: 'string'
+      example: 'ValidationError'
+    message:
+      type: 'string'
+      example: 'The field age is required'
+    location:
+      type: 'string'
+      example: 'people.age'
+    chosenID:
+      type: 'string'
+      example: 'chosen_id'
+  example:
+    name: ValidationError	
+    message: The field age is required	
+    location: people.age	
+    chosenID: chosen_id	
+ScenarioWellsUpsertMultiStatusResponse:
+  type: 'object'
+  properties:
+    results:
+      type: 'array'
+      items:
+        $ref: 'ScenarioWellsUpsertResultsOutput'
+    generalErrors:
+      type: 'array'
+      items:
+        $ref: 'ScenarioWellsUpsertGeneralErrorsOutput'
+    failedCount:
+      type: 'number'
+      example: '1'
+    successCount:
+      type: 'number'
+      example: '1'
+  example:
+    results:	
+      - status: created	
+        code: 201	
+        chosenID: chosen_id	
+    generalErrors:	
+      - name: ValidationError	
+        message: The field name is required	
+        location: .person.name	
+        chosenID: chosen_id	
+    failedCount: 1	
+    successCount: 1	
+ScenarioWellsUpsertGeneralErrorsOutput:
+  type: 'object'
+  properties:
+    name:
+      type: 'string'
+      example: 'ValidationError'
+    message:
+      type: 'string'
+      example: 'The field name is required'
+    location:
+      type: 'string'
+      example: '.person.name'
+    chosenID:
+      type: 'string'
+      example: 'chosen_id'
+  example:
+    name: ValidationError	
+    message: The field name is required	
+    location: .person.name	
+    chosenID: chosen_id	
+ScenarioWellsUpsertResultsOutput:
+  type: 'object'
+  properties:
+    status:
+      type: 'string'
+      example: 'created'
+    code:
+      type: 'number'
+      example: '201'
+    chosenID:
+      type: 'string'
+      example: 'chosen_id'
+  example:
+    status: created	
+    code: 201	
+    chosenID: chosen_id	

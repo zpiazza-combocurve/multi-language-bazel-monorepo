@@ -1,0 +1,227 @@
+{
+	"$id": "http://combocurve.com/schemas/general-options.json",
+	"type": "object",
+	"$ref": "base-econ-model.json",
+	"required": ["mainOptions"],
+	"dependentSchemas": {
+		"incomeTax": {
+			"properties": {
+				"mainOptions": {
+					"properties": {
+						"incomeTax": {
+							"const": true
+						}
+					}
+				}
+			}
+		}
+	},
+	"properties": {
+		"mainOptions": {
+			"type": "object",
+			"required": ["aggregationDate"],
+			"properties": {
+				"aggregationDate": {
+					"type": "string",
+					"format": "date",
+					"formatMinimum": "1900-01-01",
+					"formatMaximum": "2262-04-01"
+				},
+				"reportingPeriod": {
+					"type": "string",
+					"enum": ["calendar", "fiscal"]
+				},
+				"fiscal": {
+					"type": "string",
+					"enum": ["0-11", "1-0", "2-1", "3-2", "4-3", "5-4", "6-5", "7-6", "8-7", "9-8", "10-9", "11-10"]
+				},
+				"incomeTax": {
+					"type": "boolean"
+				},
+				"projectType": {
+					"type": "string",
+					"enum": [
+						"primary_recovery",
+						"secondary_recovery",
+						"tertiary_recovery",
+						"water_flood",
+						"co2_flood",
+						"surfactant_flood",
+						"polymer_flood",
+						"sagd",
+						"thermal",
+						"heavy_oil",
+						"oil_sand",
+						"deep_water"
+					]
+				}
+			}
+		},
+		"incomeTax": {
+			"type": "object",
+			"required": ["federalIncomeTax", "stateIncomeTax"],
+			"properties": {
+				"fifteenDepletion": {
+					"type": "boolean"
+				},
+				"carryForward": {
+					"type": "boolean"
+				},
+				"federalIncomeTax": {
+					"$ref": "#/definitions/incomeTaxRows"
+				},
+				"stateIncomeTax": {
+					"$ref": "#/definitions/incomeTaxRows"
+				}
+			}
+		},
+		"discountTable": {
+			"type": "object",
+			"required": [],
+			"properties": {
+				"discountMethod": {
+					"type": "string",
+					"enum": ["yearly", "quarterly", "monthly", "daily"]
+				},
+				"cashAccrualTime": {
+					"type": "string",
+					"enum": ["mid_month", "end_month"]
+				},
+				"first_discount": {
+					"type": "number",
+					"maximum": 100,
+					"minimum": 0
+				},
+				"second_discount": {
+					"type": "number",
+					"maximum": 100,
+					"minimum": 0
+				},
+				"discounts": {
+					"type": "array",
+					"maxItems": 16,
+					"minItems": 16,
+					"items": {
+						"type": "object",
+						"required": ["discountTable"],
+						"properties": {
+							"discountTable": {
+								"type": "number",
+								"maximum": 1000,
+								"minimum": 0
+							}
+						}
+					}
+				}
+			}
+		},
+		"boeConversion": {
+			"type": "object",
+			"properties": {
+				"oil": {
+					"type": "number",
+					"minimum": 1,
+					"maximum": 2
+				},
+				"wetGas": {
+					"type": "number",
+					"minimum": 4,
+					"maximum": 50
+				},
+				"dryGas": {
+					"type": "number",
+					"minimum": 4,
+					"maximum": 50
+				},
+				"ngl": {
+					"type": "number",
+					"minimum": 1,
+					"maximum": 2
+				},
+				"dripCondensate": {
+					"type": "number",
+					"minimum": 1,
+					"maximum": 2
+				}
+			}
+		},
+		"reportingUnits": {
+			"type": "object",
+			"properties": {
+				"oil": {
+					"type": "string",
+					"enum": ["BBL", "MBBL", "MMBBL"]
+				},
+				"gas": {
+					"type": "string",
+					"enum": ["MCF", "MMCF", "BCF"]
+				},
+				"ngl": {
+					"type": "string",
+					"enum": ["BBL", "MBBL", "MMBBL", "GAL", "MGAL", "MMGAL"]
+				},
+				"dripCondensate": {
+					"type": "string",
+					"enum": ["BBL", "MBBL", "MMBBL"]
+				},
+				"water": {
+					"type": "string",
+					"enum": ["BBL", "MBBL", "MMBBL"]
+				},
+				"pressure": {
+					"type": "string",
+					"enum": ["PSI", "KPSI"]
+				},
+				"cash": {
+					"type": "string",
+					"enum": ["$", "M$", "MM$"]
+				},
+				"gor": {
+					"type": "string",
+					"enum": ["CF/BBL", "MCF/BBL"]
+				},
+				"condensateGasRatio": {
+					"type": "string",
+					"enum": ["BBL/MMCF", "BBL/MCF"]
+				},
+				"dripCondensateYield": {
+					"type": "string",
+					"enum": ["BBL/MMCF", "BBL/MCF"]
+				},
+				"nglYield": {
+					"type": "string",
+					"enum": ["BBL/MMCF", "BBL/MCF", "GAL/MCF", "GAL/MMCF"]
+				}
+			}
+		}
+	},
+	"definitions": {
+		"incomeTaxRows": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"required": ["multiplier"],
+				"properties": {
+					"multiplier": {
+						"type": "number",
+						"minimum": 0,
+						"maximum": 100
+					},
+					"offsetToAsOf": {
+						"$ref": "criteria.json#/definitions/OffsetToAsOf"
+					},
+					"offsetToFpd": {
+						"$ref": "criteria.json#/definitions/OffsetToFpd"
+					},
+					"dates": {
+						"$ref": "criteria.json#/definitions/Dates"
+					},
+					"entireWellLife": {
+						"type": "string",
+						"const": "Flat"
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,27 @@
+CompanyWellInput:
+  type: object
+  required:
+    - dataSource
+  properties:
+    chosenID:
+      type: string
+      maxLength: 16384
+      description: Chosen ID
+    dataSource:
+      type: string
+      description: Data Source
+    id:
+      type: string
+      description: ID
+  example:
+    chosenID: '42477309850000'
+    dataSource: internal
+CompanyWellInputList:
+  type: array
+  items:
+    $ref: '#/definitions/CompanyWellInput'
+  maxItems: 1000
+  example:
+    - chosenID: '42477309850000'
+      dataSource: internal
+    - id: '5e272d39b78910dd2a1bd8fe'

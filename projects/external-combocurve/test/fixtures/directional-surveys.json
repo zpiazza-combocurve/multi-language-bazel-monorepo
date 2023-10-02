@@ -1,0 +1,16 @@
+[
+	{
+		"chosenID": "42477308410000",
+		"dataSource": "DI",
+		"projectID": "62fc0449133c6c001360278f",
+		"spatialDataType": "WGS84",
+		"measuredDepth": [1, 2, 3],
+		"trueVerticalDepth": [1, 2, 3],
+		"azimuth": [1, 2, 3],
+		"inclination": [1, 2, 3],
+		"deviationEW": [1, 2, 3],
+		"deviationNS": [1, 2, 3],
+		"latitude": [1, 2, 3],
+		"longitude": [1, 2, 3]
+	}
+]

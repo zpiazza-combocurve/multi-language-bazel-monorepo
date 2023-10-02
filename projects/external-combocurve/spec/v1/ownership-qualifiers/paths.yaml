@@ -1,0 +1,248 @@
+/v1/ownership-qualifiers:
+  head:
+    operationId: head-v1-ownership-qualifiers
+    description: Returns metadata about the existing ownership qualifiers documents.
+    parameters:
+      - $ref: '#/parameters/skipParam'
+      - $ref: '#/parameters/takeParam' 
+      - name: createdAt
+        in: query
+        description: "filter by createdAt - Operator values are [lt] = less than, [le] = less than or equal, [gt] = greater than, [ge] = greater than or equal, no operator = equal. Example createdAt[gt]=2018-01-01T00:00:00Z"
+        format: date
+        type: string
+        x-allow-parameter-operator: true
+      - name: chosenID
+        in: query
+        description: filter by chosenID
+        type: string
+      - name: qualifierKey
+        in: query
+        description: filter by qualifierKey
+        type: string
+      - name: updatedAt
+        in: query
+        description: "filter by updatedAt - Operator values are [lt] = less than, [le] = less than or equal, [gt] = greater than, [ge] = greater than or equal, no operator = equal. Example updatedAt[gt]=2018-01-01T00:00:00Z"
+        format: date
+        type: string
+        x-allow-parameter-operator: true
+      - name: well
+        in: query
+        description: filter by well
+        type: string
+    responses:
+      '200':
+        description: OK
+        headers:
+          Link:
+            type: string
+            description: >-
+              Indicates a typed relationship with another resource, where the
+              relation type is defined by RFC 5988. We include the relationships
+              next, prev, first and last, which can be used to move between
+              pages of the list of results.
+          X-Query-Count:
+            type: integer
+            description: >-
+              The number of records in this resource. When filters are provided
+              only matching records are counted.
+      '400':
+        description: Bad Request. There is something wrong with the request data.
+    tags:
+      - ComboCurveV1
+    x-client-generation:
+      x-count-method:
+        name: OwnershipQualifiersCount
+  get:
+    x-google-quota:
+      metricCosts:
+        read-request-rate: 1
+    produces:
+      - application/json
+    operationId: get-v1-ownership-qualifiers  
+    description: Returns a list of ownership qualifiers documents.
+    parameters:
+      - $ref: '#/parameters/skipParam'
+      - $ref: '#/parameters/takeParam'
+      - $ref: '#/parameters/sortParam'
+      - $ref: '#/parameters/cursorParam'
+      - name: createdAt
+        in: query
+        description: "filter by createdAt - Operator values are [lt] = less than, [le] = less than or equal, [gt] = greater than, [ge] = greater than or equal, no operator = equal. Example createdAt[gt]=2018-01-01T00:00:00Z"
+        format: date
+        type: string
+        x-allow-parameter-operator: true
+      - name: chosenID
+        in: query
+        description: filter by chosenID
+        type: string
+      - name: qualifierKey
+        in: query
+        description: filter by qualifierKey
+        type: string
+      - name: updatedAt
+        in: query
+        description: "filter by updatedAt - Operator values are [lt] = less than, [le] = less than or equal, [gt] = greater than, [ge] = greater than or equal, no operator = equal. Example updatedAt[gt]=2018-01-01T00:00:00Z"
+        format: date
+        type: string
+        x-allow-parameter-operator: true
+      - name: well
+        in: query
+        description: filter by well
+        type: string
+    responses:
+      '200':
+        description: OK
+        schema:
+          $ref: '#/definitions/OwnershipQualifierList'
+        headers:
+          Link:
+            type: string
+            description: >-
+              Indicates a typed relationship with another resource, where the
+              relation type is defined by RFC 5988. We include the relationships
+              next, prev, first and last, which can be used to move between
+              pages of the list of results.
+      '400':
+        description: Bad Request. There is something wrong with the request data.
+        schema:
+          $ref: '#/definitions/Error'
+    tags:
+      - ComboCurveV1
+    x-client-generation:
+      x-get-all-skip-take-method:
+        name: GetAllOwnershipQualifiers
+        baseReturnType: OwnershipQualifier
+      x-get-all-cursor-method:
+        name: GetAllOwnershipQualifiersV2
+        baseReturnType: OwnershipQualifier
+  post:
+    x-google-quota:
+      metricCosts:
+        write-request-rate: 1
+    consumes:
+      - application/json
+    produces:
+      - application/json
+    operationId: post-v1-ownership-qualifiers
+    description: Inserts a list of ownership qualifiers documents.
+    parameters:
+      - in: body
+        name: ownership-qualifiers
+        description: >-
+         Ownership Qualifier document(s) to insert. See
+         OwnershipQualifierInputList.
+        schema:
+          $ref: '#/definitions/OwnershipQualifierInputList'
+    responses:
+      '207':
+        description: Multi-Status
+        schema:
+          $ref: '#/definitions/OwnershipQualifierMultiStatusResponse'
+    tags:
+      - ComboCurveV1
+  put:
+    x-google-quota:
+      metricCosts:
+        write-request-rate: 1
+    consumes:
+      - application/json
+    produces:
+      - application/json
+    operationId: put-v1-ownership-qualifiers
+    description: Replace or create a list of ownership qualifiers documents.
+    parameters:
+      - in: body
+        name: ownership-qualifiers
+        description: >-
+          Ownership qualifier document(s) to replace/create. See
+          OwnershipQualifierInputList.
+        schema:
+          $ref: '#/definitions/OwnershipQualifierInputList'
+    responses:
+      '207':
+        description: Multi-Status
+        schema:
+          $ref: '#/definitions/OwnershipQualifierMultiStatusResponse'
+    tags:
+      - ComboCurveV1
+/v1/ownership-qualifiers/head:
+  get:
+    x-no-client: true
+    x-no-doc: true
+    operationId: get-head-v1-ownership-qualifiers
+    description: Returns metadata about the existing ownership qualifiers documents.
+    parameters:
+      - $ref: '#/parameters/skipParam'
+      - $ref: '#/parameters/takeParam'
+      - name: createdAt
+        in: query
+        description: "filter by createdAt - Operator values are [lt] = less than, [le] = less than or equal, [gt] = greater than, [ge] = greater than or equal, no operator = equal. Example createdAt[gt]=2018-01-01T00:00:00Z"
+        format: date
+        type: string
+      - name: chosenID
+        in: query
+        description: filter by chosenID
+        type: string
+      - name: qualifierKey
+        in: query
+        description: filter by qualifierKey
+        type: string
+      - name: updatedAt
+        in: query
+        description: "filter by updatedAt - Operator values are [lt] = less than, [le] = less than or equal, [gt] = greater than, [ge] = greater than or equal, no operator = equal. Example updatedAt[gt]=2018-01-01T00:00:00Z"
+        format: date
+        type: string
+      - name: well
+        in: query
+        description: filter by well
+        type: string
+    responses:
+      '200':
+        description: OK
+        headers:
+          Link:
+            type: string
+            description: >-
+              Indicates a typed relationship with another resource, where the
+              relation type is defined by RFC 5988. We include the relationships
+              next, prev, first and last, which can be used to move between
+              pages of the list of results.
+          X-Query-Count:
+            type: integer
+            description: >-
+              The number of records in this resource. When filters are provided
+              only matching records are counted.
+      '400':
+        description: Bad Request. There is something wrong with the request data.
+    tags:
+      - ComboCurveV1
+/v1/ownership-qualifiers/{id}:
+  get:
+    produces:
+      - application/json
+    operationId: get-v1-ownership-qualifiers-by-id
+    description: Returns the ownership qualifier document that matches the given id.
+    parameters:
+      - in: path
+        name: id
+        required: true
+        type: string
+        description: ''
+    responses:
+      '200':
+        description: OK
+        schema:
+          $ref: '#/definitions/OwnershipQualifier'
+      '400':
+        description: Bad Request. There is something wrong with the request data.
+        schema:
+          $ref: '#/definitions/Error'
+      '404':
+        description: Not Found
+        schema:
+          $ref: '#/definitions/Error'
+    tags:
+      - ComboCurveV1
+    x-google-quota:
+      metricCosts:
+        read-request-rate: 1

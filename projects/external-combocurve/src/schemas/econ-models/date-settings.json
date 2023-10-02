@@ -1,0 +1,234 @@
+{
+	"$id": "http://combocurve.com/schemas/date-settings.json",
+	"$ref": "base-econ-model.json",
+	"type": "object",
+	"unevaluatedProperties": false,
+	"properties": {
+		"dateSetting": {
+			"type": "object",
+			"unevaluatedProperties": false,
+			"properties": {
+				"maxWellLife": { "type": "number", "maximum": 100, "minimum": 0 },
+				"asOfDate": {
+					"$ref": "#/definitions/AsOfOrDiscount"
+				},
+				"discountDate": {
+					"$ref": "#/definitions/AsOfOrDiscount"
+				},
+				"cashFlowPriorAsOfDate": {
+					"type": "boolean"
+				},
+				"productionDataResolution": {
+					"type": "string",
+					"enum": ["same_as_forecast", "monthly", "daily"]
+				},
+				"fpdSourceHierarchy": {
+					"type": "object",
+					"unevaluatedProperties": false,
+					"properties": {
+						"firstFpdSource": {
+							"$ref": "#/definitions/FPDSource"
+						},
+						"secondFpdSource": {
+							"$ref": "#/definitions/FPDSource"
+						},
+						"thirdFpdSource": {
+							"$ref": "#/definitions/FPDSource"
+						},
+						"fourthFpdSource": {
+							"$ref": "#/definitions/FPDSource"
+						},
+						"useForecastSchedule": { "type": "boolean" }
+					},
+					"required": [
+						"firstFpdSource",
+						"secondFpdSource",
+						"thirdFpdSource",
+						"fourthFpdSource",
+						"useForecastSchedule"
+					]
+				}
+			},
+			"required": [
+				"maxWellLife",
+				"asOfDate",
+				"discountDate",
+				"cashFlowPriorAsOfDate",
+				"productionDataResolution",
+				"fpdSourceHierarchy"
+			]
+		},
+		"cutOff": {
+			"type": "object",
+			"unevaluatedProperties": false,
+			"allOf": [
+				{
+					"errorMessage": "either `maxCumCashFlow`, `firstNegativeCashFlow`, `lastPositiveCashFlow`, `noCutOff`, `oilGas`, `oilWater`, `oilRate`, `date`, `yearsFromAsOf` or `linkToWells` MUST be specified",
+					"oneRequired": [
+						"maxCumCashFlow",
+						"firstNegativeCashFlow",
+						"lastPositiveCashFlow",
+						"noCutOff",
+						"oilRate",
+						"gasRate",
+						"waterRate",
+						"date",
+						"yearsFromAsOf",
+						"linkToWells"
+					]
+				},
+				{
+					"if": {
+						"type": "object",
+						"properties": {
+							"maxCumCashFlow": {}
+						},
+						"required": ["maxCumCashFlow"]
+					},
+					"then": {
+						"required": [
+							"minLife",
+							"triggerEclCapex",
+							"includeCapex",
+							"discount",
+							"econLimitDelay",
+							"alignDependentPhases"
+						]
+					}
+				},
+				{
+					"if": {
+						"type": "object",
+						"properties": {
+							"firstNegativeCashFlow": {}
+						},
+						"required": ["firstNegativeCashFlow"]
+					},
+					"then": {
+						"required": [
+							"minLife",
+							"triggerEclCapex",
+							"includeCapex",
+							"econLimitDelay",
+							"alignDependentPhases",
+							"tolerateNegativeCF"
+						]
+					}
+				},
+				{
+					"if": {
+						"properties": {
+							"lastPositiveCashFlow": {}
+						},
+						"required": ["lastPositiveCashFlow"]
+					},
+					"then": {
+						"required": [
+							"minLife",
+							"triggerEclCapex",
+							"includeCapex",
+							"econLimitDelay",
+							"alignDependentPhases"
+						]
+					}
+				}
+			],
+			"properties": {
+				"maxCumCashFlow": {
+					"type": "boolean"
+				},
+				"firstNegativeCashFlow": {
+					"type": "boolean"
+				},
+				"lastPositiveCashFlow": {
+					"type": "boolean"
+				},
+				"noCutOff": {
+					"type": "boolean"
+				},
+				"oilRate": { "type": "number", "maximum": 10000000, "minimum": 0 },
+				"gasRate": { "type": "number", "maximum": 10000000, "minimum": 0 },
+				"waterRate": { "type": "number", "maximum": 10000000, "minimum": 0 },
+				"date": { "$ref": "criteria.json#/definitions/Dates" },
+				"yearsFromAsOf": { "type": "number", "maximum": 1000, "minimum": 0 },
+				"linkToWells": { "$ref": "rows-validation-defs.json#/definitions/INPTUUID" },
+				"minLife": {
+					"type": "object",
+					"unevaluatedProperties": false,
+					"properties": {
+						"date": { "$ref": "criteria.json#/definitions/Dates" },
+						"asOf": { "type": "number", "maximum": 10000000, "minimum": 0 },
+						"endHist": { "type": "boolean" },
+						"none": { "type": "boolean" }
+					},
+					"allOf": [
+						{
+							"errorMessage": "either `date`, `asOf`, `endHist` or `none` MUST be specified",
+							"oneRequired": ["date", "asOf", "endHist", "none"]
+						}
+					]
+				},
+				"triggerEclCapex": {
+					"type": "boolean"
+				},
+				"includeCapex": {
+					"type": "boolean"
+				},
+				"discount": {
+					"type": "number",
+					"maximum": 100,
+					"minimum": 0
+				},
+				"econLimitDelay": {
+					"type": "number",
+					"maximum": 100,
+					"minimum": 0
+				},
+				"alignDependentPhases": {
+					"type": "boolean"
+				},
+				"tolerateNegativeCF": {
+					"type": "number",
+					"minimum": 0
+				}
+			},
+			"required": ["minLife", "alignDependentPhases"]
+		}
+	},
+	"required": ["dateSetting", "cutOff"],
+	"definitions": {
+		"AsOfOrDiscount": {
+			"type": "object",
+			"properties": {
+				"date": { "$ref": "criteria.json#/definitions/Dates" },
+				"dynamic": { "type": "string", "enum": ["first_of_next_year", "first_of_next_month"] },
+				"fpd": { "type": "boolean" },
+				"majorSegment": { "type": "boolean" }
+			},
+			"allOf": [
+				{
+					"errorMessage": "either `date`, `dynamic`,`fpd` or `majorSegment` MUST be specified",
+					"oneRequired": ["date", "dynamic", "fpd", "majorSegment"]
+				}
+			]
+		},
+		"FPDSource": {
+			"type": "object",
+			"unevaluatedProperties": false,
+			"properties": {
+				"date": { "$ref": "criteria.json#/definitions/Dates" },
+				"wellHeader": { "type": "boolean" },
+				"forecast": { "type": "boolean" },
+				"notUsed": { "type": "boolean" },
+				"productionData": { "type": "boolean" },
+				"linkToWells": { "$ref": "rows-validation-defs.json#/definitions/INPTUUID" }
+			},
+			"allOf": [
+				{
+					"errorMessage": "either `date`, `wellHeader`,`forecast`, `linkToWells`, `notUsed` or `productionData` MUST be specified",
+					"oneRequired": ["date", "wellHeader", "forecast", "linkToWells", "notUsed", "productionData"]
+				}
+			]
+		}
+	}
+}

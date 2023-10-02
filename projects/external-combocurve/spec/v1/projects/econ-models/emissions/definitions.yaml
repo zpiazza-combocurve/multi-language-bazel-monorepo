@@ -1,0 +1,228 @@
+EmissionRow:
+  type: object
+  required:
+    - category
+    - co2e
+    - co2
+    - ch4
+    - n2o
+    - unit
+  properties:
+    category:
+      type: string
+      description: Emissions Category
+      enum:
+        - associated_gas
+        - acid_gas_removal_units
+        - centrifugal_compressor
+        - eor_hydrocarbon_liquids
+        - eor_injection_pumps
+        - liquids_unloading
+        - pneumatic_device
+        - dehydrators
+        - equipment_leaks
+        - atmospheric_tank
+        - reciprocating_compressor
+        - completions_with_fracturing
+        - completions_without_fracturing
+        - drilling
+        - completion
+        - combustion
+        - pneumatic_pump
+        - well_testing
+        - blowdown_vent_stacks
+        - flare
+        - scope2
+        - scope3
+    co2e:
+      type: number
+      description: CO2e
+    co2:
+      type: number
+      description: CO2
+    ch4:
+      type: number
+      description: CH4
+    n2o:
+      type: number
+      description: N2O
+    unit:
+      type: string
+      description: Emissions Unit
+      enum:
+        - mt_per_mbbl
+        - mt_per_mmcf
+        - mt_per_mboe
+        - mt_per_well_per_year
+        - mt_per_new_well
+    selected:
+      type: boolean
+      description: Selected
+    escalationModel:
+      type: string
+      description: Escalation Model
+
+EmissionModel:
+  type: object
+  required:
+    - rows
+  properties:
+    rows:
+      type: "array"
+      items:
+        $ref: '#/definitions/EmissionRow' 
+
+EmissionsEconModel:
+  type: object
+  required:
+    - emissions
+    - name
+    - unique
+  properties:
+    emissions:
+      $ref: '#/definitions/EmissionModel'
+    name:
+      type: string
+      description: Name
+    unique:
+      type: boolean
+      description: Unique
+    id:
+      type: string
+      description: ID
+    copiedFrom:
+      type: string
+      description: Copied From
+    scenario:
+      type: string
+      description: Scenario ID
+    tags:
+      type: array
+      items:
+        type: string
+        description: Tag ID
+    well:
+      type: string
+      description: Well ID
+    createdAt:
+      type: string
+      format: date
+      description: Creation Date
+    updatedAt:
+      type: string
+      format: date
+      description: Updated At
+    createdBy:
+      type: string
+      description: Created By
+    lastUpdatedBy:
+      type: string
+      description: Last Updated By
+  example:
+    id: 5e272d39b78910dd2a1bd8fe
+    copiedFrom: 63b856e816f758cc5b0f1106
+    name: Test
+    scenario: 63b8571d70ed63f50bd6d63f
+    tags: 
+      - 63b85737ff846cee7b1f6fdc
+    unique: true
+    well: 63b85759e1d7eb4e31579f51
+    createdAt: '2020-01-21T16:58:08.986Z'
+    updatedAt: '2020-01-21T17:58:08.986Z'
+    createdBy: 63b857cb68f3b96efc700998
+    lastUpdatedBy: 63b857cb68f3b96efc700998
+    emissions:
+      rows:
+        - selected: true
+          category: associated_gas
+          co2e: 123
+          co2: 0
+          ch4: 0
+          n2o: 0
+          unit: mt_per_mbbl
+          escalationModel: 63b857cb68f3b96efc700998
+
+EmissionsEconModelList:
+  type: array
+  items:
+    $ref: '#/definitions/EmissionsEconModel'
+  maxItems: 200
+  example:
+    - id: 5e272d39b78910dd2a1bd8fe
+      copiedFrom: 63b856e816f758cc5b0f1106
+      name: Test
+      scenario: 63b8571d70ed63f50bd6d63f
+      tags: 
+        - 63b85737ff846cee7b1f6fdc
+      unique: true
+      well: 63b85759e1d7eb4e31579f51
+      createdAt: '2020-01-21T16:58:08.986Z'
+      updatedAt: '2020-01-21T17:58:08.986Z'
+      createdBy: 63b857cb68f3b96efc700998
+      lastUpdatedBy: 63b857cb68f3b96efc700998
+      emissions:
+        rows:
+          - selected: true
+            category: associated_gas
+            co2e: 123
+            co2: 0
+            ch4: 0
+            n2o: 0
+            unit: mt_per_mbbl
+            escalationModel: 63b857cb68f3b96efc700998
+EmissionsInput:
+  type: object
+  required:
+    - name
+    - unique
+    - emissions
+  properties:
+    name:
+      type: string
+      description: Name
+    unique:
+      type: boolean
+      description: Unique
+    emissions:
+      $ref: '#/definitions/EmissionModel'
+    scenario:
+      type: string
+      description: Scenario ID
+    well:
+      type: string
+      description: Well ID
+  example:
+    name: Test
+    scenario: 63b8571d70ed63f50bd6d63f
+    unique: true
+    well: 63b85759e1d7eb4e31579f51
+    emissions:
+      rows:
+        - selected: true
+          category: associated_gas
+          co2e: 123
+          co2: 0
+          ch4: 0
+          n2o: 0
+          unit: mt_per_mbbl
+          escalationModel: 63b857cb68f3b96efc700998
+EmissionsInputList:
+  type: array
+  items:
+    $ref: '#/definitions/EmissionsInput'
+  maxItems: 500
+  example:
+    - name: Test
+      scenario: 63b8571d70ed63f50bd6d63f
+      unique: true
+      well: 63b85759e1d7eb4e31579f51
+      emissions:
+        rows:
+          - selected: true
+            category: associated_gas
+            co2e: 123
+            co2: 0
+            ch4: 0
+            n2o: 0
+            unit: mt_per_mbbl
+            escalationModel: 63b857cb68f3b96efc700998

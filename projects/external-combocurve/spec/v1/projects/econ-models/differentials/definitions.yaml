@@ -1,0 +1,464 @@
+DifferentialPhaseRow:
+  type: object
+  properties:
+    dollarPerBbl:
+      type: number
+      description: "Dollar per barrel"
+    dollarPerMmbtu:
+      type: number
+      description: "Dollar per MMBTU"
+    dollarPerGal:
+      type: number
+      description: "Dollar per gallon"
+    dollarPerMcf:
+      type: number
+      description: "Dollar per MCF"
+    pctOfBasePrice:
+      type: number
+      description: "Percentage of base price"
+    entireWellLife:
+      type: string
+      description: "Entire well life: 'Flat'"
+    offsetToAsOf:
+      $ref: '#/definitions/StartEndPeriodCriteria'
+    dates:
+      $ref: '#/definitions/StartEndDatesCriteria'
+DifferentialPhase:
+  type: object
+  properties:
+    escalationModel:
+      type: string
+      description: "Escalation model: 'none' | 'escalation model ID'"
+    rows:
+      type: array
+      description: "Array of objects containing one value property & one time interval interval"
+      items:
+        $ref: '#/definitions/DifferentialPhaseRow'
+DifferentialPhases:
+  type: object
+  required:
+    - oil
+    - gas
+    - ngl
+    - dripCondensate
+  properties:
+    oil:
+      $ref: '#/definitions/DifferentialPhase'
+    gas:
+      $ref: '#/definitions/DifferentialPhase'
+    ngl:
+      $ref: '#/definitions/DifferentialPhase'
+    dripCondensate:
+      $ref: '#/definitions/DifferentialPhase'
+DifferentialModel:
+  type: object
+  required:
+    - firstDifferential
+    - secondDifferential
+    - thirdDifferential
+  properties:
+    firstDifferential:
+      $ref: '#/definitions/DifferentialPhases'
+    secondDifferential:
+      $ref: '#/definitions/DifferentialPhases'
+    thirdDifferential:
+      $ref: '#/definitions/DifferentialPhases'
+Differentials:
+  type: object
+  required:
+    - name
+    - unique
+  properties:
+    id:
+      type: string
+      description: ID
+    copiedFrom:
+      type: string
+      description: Copied From
+    name:
+      type: string
+      description: Name
+    scenario:
+      type: string
+      description: Scenario ID
+    tags:
+      type: array
+      items:
+        type: string
+        description: Tag ID
+    unique:
+      type: boolean
+      description: Unique
+    well:
+      type: string
+      description: Well ID
+    createdAt:
+      type: string
+      format: date
+      description: Creation Date
+    updatedAt:
+      type: string
+      format: date
+      description: Updated At
+    createdBy:
+      type: string
+      description: Created By
+    lastUpdatedBy:
+      type: string
+      description: Last Updated By
+    differentials:
+      $ref: '#/definitions/DifferentialModel'
+  example:
+    id: 5e272d39b78910dd2a1bd8fe
+    copiedFrom: 63b856e816f758cc5b0f1106
+    name: Test
+    scenario: 63b8571d70ed63f50bd6d63f
+    tags: 
+      - 63b85737ff846cee7b1f6fdc
+    unique: true
+    well: 63b85759e1d7eb4e31579f51
+    createdAt: '2020-01-21T16:58:08.986Z'
+    updatedAt: '2020-01-21T17:58:08.986Z'
+    createdBy: 63b857cb68f3b96efc700998
+    lastUpdatedBy: 63b857cb68f3b96efc700998
+    differentials:
+      firstDifferential:
+        oil:
+          escalationModel: 63b857cb68f3b96efc700998
+          rows:
+            - dollarPerBbl: 0.0000001
+              entireWellLife: "Flat"
+        gas:
+          escalationModel: 63b857cb68f3b96efc700998
+          rows:
+            - dollarPerMcf: 0
+              entireWellLife: "Flat"
+        ngl:
+          escalationModel: 63b857cb68f3b96efc700998
+          rows:
+            - pctOfBasePrice: 999999999999999900000
+              entireWellLife: "Flat"
+        dripCondensate:
+          escalationModel: 63b857cb68f3b96efc700998
+          rows:
+            - pctOfBasePrice: 25
+              entireWellLife: "Flat"
+      secondDifferential:
+        oil:
+          escalationModel: 63b857cb68f3b96efc700998
+          rows:
+            - pctOfBasePrice: 0.0000001
+              entireWellLife: "Flat"
+        gas:
+          escalationModel: 63b857cb68f3b96efc700998
+          rows:
+            - dollarPerMmbtu: 0
+              entireWellLife: "Flat"
+        ngl:
+          escalationModel: 63b857cb68f3b96efc700998
+          rows:
+            - dollarPerGal: 200
+              entireWellLife: "Flat"
+        dripCondensate:
+          escalationModel: 63b857cb68f3b96efc700998
+          rows:
+            - pctOfBasePrice: 25
+              entireWellLife: "Flat"
+      thirdDifferential:
+        oil:
+          escalationModel: 63b857cb68f3b96efc700998
+          rows:
+            - pctOfBasePrice: 0.0000001
+              entireWellLife: "Flat"
+        gas:
+          escalationModel: 63b857cb68f3b96efc700998
+          rows:
+            - dollarPerMmbtu : 5
+              monthPeriod:
+                start: 1
+                end : 24
+                period : 24
+            - dollarPerMmbtu: 0
+              monthPeriod:
+                start: 25
+                end: 30
+                period: 6
+        ngl:
+          escalationModel: 63b857cb68f3b96efc700998
+          rows:
+            - dollarPerGal: 200
+              entireWellLife: "Flat"
+        dripCondensate:
+          escalationModel: 63b857cb68f3b96efc700998
+          rows:
+            - pctOfBasePrice: 25
+              entireWellLife: "Flat"
+DifferentialsList:
+  type: array
+  items:
+    $ref: '#/definitions/Differentials'
+  maxItems: 200
+  example:
+    - id: 5e272d39b78910dd2a1bd8fe
+      copiedFrom: 63b856e816f758cc5b0f1106
+      name: Test
+      scenario: 63b8571d70ed63f50bd6d63f
+      tags: 
+        - 63b85737ff846cee7b1f6fdc
+      unique: true
+      well: 63b85759e1d7eb4e31579f51
+      createdAt: '2020-01-21T16:58:08.986Z'
+      updatedAt: '2020-01-21T17:58:08.986Z'
+      createdBy: 63b857cb68f3b96efc700998
+      lastUpdatedBy: 63b857cb68f3b96efc700998
+      differentials:
+        firstDifferential:
+          oil:
+            escalationModel: 63b857cb68f3b96efc700998
+            rows:
+              - dollarPerBbl: 0.0000001
+                entireWellLife: "Flat"
+          gas:
+            escalationModel: 63b857cb68f3b96efc700998
+            rows:
+              - dollarPerMcf: 0
+                entireWellLife: "Flat"
+          ngl:
+            escalationModel: 63b857cb68f3b96efc700998
+            rows:
+              - pctOfBasePrice: 999999999999999900000
+                entireWellLife: "Flat"
+          dripCondensate:
+            escalationModel: 63b857cb68f3b96efc700998
+            rows:
+              - pctOfBasePrice: 25
+                entireWellLife: "Flat"
+        secondDifferential:
+          oil:
+            escalationModel: 63b857cb68f3b96efc700998
+            rows:
+              - pctOfBasePrice: 0.0000001
+                entireWellLife: "Flat"
+          gas:
+            escalationModel: 63b857cb68f3b96efc700998
+            rows:
+              - dollarPerMmbtu: 0
+                entireWellLife: "Flat"
+          ngl:
+            escalationModel: 63b857cb68f3b96efc700998
+            rows:
+              - dollarPerGal: 200
+                entireWellLife: "Flat"
+          dripCondensate:
+            escalationModel: 63b857cb68f3b96efc700998
+            rows:
+              - pctOfBasePrice: 25
+                entireWellLife: "Flat"
+        thirdDifferential:
+          oil:
+            escalationModel: 63b857cb68f3b96efc700998
+            rows:
+              - pctOfBasePrice: 0.0000001
+                entireWellLife: "Flat"
+          gas:
+            escalationModel: 63b857cb68f3b96efc700998
+            rows:
+              - dollarPerMmbtu : 5
+                monthPeriod:
+                  start: 1
+                  end : 24
+                  period : 24
+              - dollarPerMmbtu: 0
+                monthPeriod:
+                  start: 25
+                  end: 30
+                  period: 6
+          ngl:
+            escalationModel: 63b857cb68f3b96efc700998
+            rows:
+              - dollarPerGal: 200
+                entireWellLife: "Flat"
+          dripCondensate:
+            escalationModel: 63b857cb68f3b96efc700998
+            rows:
+              - pctOfBasePrice: 25
+                entireWellLife: "Flat"
+DifferentialsInput:
+  type: object
+  required:
+    - name
+    - unique
+  properties:
+    name:
+      type: string
+      description: Name
+    scenario:
+      type: string
+      description: Scenario ID
+    unique:
+      type: boolean
+      description: Unique
+    well:
+      type: string
+      description: Well ID
+    differentials:
+      $ref: '#/definitions/DifferentialModel'   
+  example:
+    name: Test
+    scenario: 63b8571d70ed63f50bd6d63f
+    unique: true
+    well: 63b85759e1d7eb4e31579f51
+    differentials:
+      firstDifferential:
+        oil:
+          escalationModel: 63b857cb68f3b96efc700998
+          rows:
+            - dollarPerBbl: 0.0000001
+              entireWellLife: "Flat"
+        gas:
+          escalationModel: 63b857cb68f3b96efc700998
+          rows:
+            - dollarPerMcf: 0
+              entireWellLife: "Flat"
+        ngl:
+          escalationModel: 63b857cb68f3b96efc700998
+          rows:
+            - pctOfBasePrice: 999999999999999900000
+              entireWellLife: "Flat"
+        dripCondensate:
+          escalationModel: 63b857cb68f3b96efc700998
+          rows:
+            - pctOfBasePrice: 25
+              entireWellLife: "Flat"
+      secondDifferential:
+        oil:
+          escalationModel: 63b857cb68f3b96efc700998
+          rows:
+            - pctOfBasePrice: 0.0000001
+              entireWellLife: "Flat"
+        gas:
+          escalationModel: 63b857cb68f3b96efc700998
+          rows:
+            - dollarPerMmbtu: 0
+              entireWellLife: "Flat"
+        ngl:
+          escalationModel: 63b857cb68f3b96efc700998
+          rows:
+            - dollarPerGal: 200
+              entireWellLife: "Flat"
+        dripCondensate:
+          escalationModel: 63b857cb68f3b96efc700998
+          rows:
+            - pctOfBasePrice: 25
+              entireWellLife: "Flat"
+      thirdDifferential:
+        oil:
+          escalationModel: 63b857cb68f3b96efc700998
+          rows:
+            - pctOfBasePrice: 0.0000001
+              entireWellLife: "Flat"
+        gas:
+          escalationModel: 63b857cb68f3b96efc700998
+          rows:
+            - dollarPerMmbtu : 5
+              monthPeriod:
+                start: 1
+                end : 24
+                period : 24
+            - dollarPerMmbtu: 0
+              monthPeriod:
+                start: 25
+                end: 30
+                period: 6
+        ngl:
+          escalationModel: 63b857cb68f3b96efc700998
+          rows:
+            - dollarPerGal: 200
+              entireWellLife: "Flat"
+        dripCondensate:
+          escalationModel: 63b857cb68f3b96efc700998
+          rows:
+            - pctOfBasePrice: 25
+              entireWellLife: "Flat"
+DifferentialsInputList:
+  type: array
+  items:
+    $ref: '#/definitions/DifferentialsInput'
+  maxItems: 200
+  example:
+    - name: Test
+      scenario: 63b8571d70ed63f50bd6d63f
+      unique: true
+      well: 63b85759e1d7eb4e31579f51
+      differentials:
+        firstDifferential:
+          oil:
+            escalationModel: 63b857cb68f3b96efc700998
+            rows:
+              - dollarPerBbl: 0.0000001
+                entireWellLife: "Flat"
+          gas:
+            escalationModel: 63b857cb68f3b96efc700998
+            rows:
+              - dollarPerMcf: 0
+                entireWellLife: "Flat"
+          ngl:
+            escalationModel: 63b857cb68f3b96efc700998
+            rows:
+              - pctOfBasePrice: 999999999999999900000
+                entireWellLife: "Flat"
+          dripCondensate:
+            escalationModel: 63b857cb68f3b96efc700998
+            rows:
+              - pctOfBasePrice: 25
+                entireWellLife: "Flat"
+        secondDifferential:
+          oil:
+            escalationModel: 63b857cb68f3b96efc700998
+            rows:
+              - pctOfBasePrice: 0.0000001
+                entireWellLife: "Flat"
+          gas:
+            escalationModel: 63b857cb68f3b96efc700998
+            rows:
+              - dollarPerMmbtu: 0
+                entireWellLife: "Flat"
+          ngl:
+            escalationModel: 63b857cb68f3b96efc700998
+            rows:
+              - dollarPerGal: 200
+                entireWellLife: "Flat"
+          dripCondensate:
+            escalationModel: 63b857cb68f3b96efc700998
+            rows:
+              - pctOfBasePrice: 25
+                entireWellLife: "Flat"
+        thirdDifferential:
+          oil:
+            escalationModel: 63b857cb68f3b96efc700998
+            rows:
+              - pctOfBasePrice: 0.0000001
+                entireWellLife: "Flat"
+          gas:
+            escalationModel: 63b857cb68f3b96efc700998
+            rows:
+              - dollarPerMmbtu : 5
+                monthPeriod:
+                  start: 1
+                  end : 24
+                  period : 24
+              - dollarPerMmbtu: 0
+                monthPeriod:
+                  start: 25
+                  end: 30
+                  period: 6
+          ngl:
+            escalationModel: 63b857cb68f3b96efc700998
+            rows:
+              - dollarPerGal: 200
+                entireWellLife: "Flat"
+          dripCondensate:
+            escalationModel: 63b857cb68f3b96efc700998
+            rows:
+              - pctOfBasePrice: 25
+                entireWellLife: "Flat"

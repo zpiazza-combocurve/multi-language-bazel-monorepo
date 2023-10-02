@@ -1,0 +1,28 @@
+scenarios:
+    - name: 'POST daily productions'
+      afterScenario: "requestAssertSuccessAfterResponse"
+      flow:
+          - function: 'injectWells'
+          - post:
+                url: '/v1/wells'
+                json: '{{ wells }}'
+                afterResponse: "logMultiResponseAfterResponse"
+          - loop:
+                - function: 'injectDailyProductions'
+                - put:
+                      url: '/v1/daily-productions'
+                      json: '{{ dailyProductions }}'
+                      afterResponse:
+                        - "logMultiResponseAfterResponse"
+                        - "requestStoreNoSuccessAfterResponse"
+            count: 20
+config:
+    processor: 'processor.js'
+    variables:
+        dailyRecordCount: 20000
+        dailyRecordPerWell: 200000
+        wellsRecordCount: 2
+    phases:
+        - duration: 1
+          arrivalCount: 1
+          name: 'Single client'

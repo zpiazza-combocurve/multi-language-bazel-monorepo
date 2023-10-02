@@ -1,0 +1,112 @@
+{
+	"name": "postman-test-general-options",
+	"unique": false,
+	"mainOptions": {
+		"aggregationDate": "2021-07-01",
+		"currency": "USD",
+		"reportingPeriod": "fiscal",
+		"fiscal": "5-4",
+		"incomeTax": true,
+		"projectType": "tertiary_recovery"
+	},
+	"incomeTax": {
+		"carryForward": false,
+		"fifteenDepletion": false,
+		"federalIncomeTax": [
+			{
+				"multiplier": 50,
+				"offsetToFpd": 500
+			},
+			{
+				"multiplier": 50,
+				"offsetToFpd": 710
+			}
+		],
+		"stateIncomeTax": [
+			{
+				"multiplier": 50,
+				"offsetToAsOf": 100
+			},
+			{
+				"multiplier": 50,
+				"offsetToAsOf": 200
+			}
+		]
+	},
+	"discountTable": {
+		"discountMethod": "yearly",
+		"cashAccrualTime": "end_month",
+		"firstDiscount": 10,
+		"secondDiscount": 15,
+		"discounts": [
+			{
+				"discountTable": 0
+			},
+			{
+				"discountTable": 2
+			},
+			{
+				"discountTable": 5
+			},
+			{
+				"discountTable": 8
+			},
+			{
+				"discountTable": 10
+			},
+			{
+				"discountTable": 12
+			},
+			{
+				"discountTable": 15
+			},
+			{
+				"discountTable": 20
+			},
+			{
+				"discountTable": 25
+			},
+			{
+				"discountTable": 30
+			},
+			{
+				"discountTable": 40
+			},
+			{
+				"discountTable": 50
+			},
+			{
+				"discountTable": 60
+			},
+			{
+				"discountTable": 70
+			},
+			{
+				"discountTable": 80
+			},
+			{
+				"discountTable": 100
+			}
+		]
+	},
+	"boeConversion": {
+		"oil": 1,
+		"wetGas": 8,
+		"dryGas": 6,
+		"ngl": 2,
+		"dripCondensate": 1
+	},
+	"reportingUnits": {
+		"oil": "MBBL",
+		"gas": "MMCF",
+		"ngl": "MBBL",
+		"dripCondensate": "MBBL",
+		"water": "MBBL",
+		"pressure": "PSI",
+		"cash": "M$",
+		"gor": "CF/BBL",
+		"condensateGasRatio": "BBL/MMCF",
+		"dripCondensateYield": "BBL/MMCF",
+		"nglYield": "BBL/MMCF"
+	}
+}

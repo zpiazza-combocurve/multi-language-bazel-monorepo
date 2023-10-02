@@ -1,0 +1,678 @@
+{
+	"$id": "http://combocurve.com/schemas/rows-validation-defs.json",
+	"definitions": {
+		"EscalationModel": {
+			"if": {
+				"errorMessage": "escalationModel should either be a valid ObjectId or `none`",
+				"oneOf": [
+					{
+						"type": "string",
+						"const": "none"
+					},
+					{
+						"type": "string",
+						"description": "Escalation Model ID",
+						"regexp": "/^[a-f\\d]{24}$/i"
+					}
+				]
+			},
+			"else": {
+				"errorMessage": "If Escalation Model is provided it must be either 'none' or a valid Object Id",
+				"const": null
+			}
+		},
+		"DepreciationModel": {
+			"if": {
+				"errorMessage": "depreciationModel should either be a valid ObjectId or `none`",
+				"oneOf": [
+					{
+						"type": "string",
+						"const": "none"
+					},
+					{
+						"type": "string",
+						"description": "Depreciation Model ID",
+						"regexp": "/^[a-f\\d]{24}$/i"
+					}
+				]
+			},
+			"else": {
+				"errorMessage": "If Depreciation Model is provided it must be either 'none' or a valid Object Id",
+				"const": null
+			}
+		},
+		"DollarPerMmbtuArray": {
+			"type": "array",
+			"minItems": 1,
+			"maxItems": 100,
+			"unevaluatedItems": false,
+			"items": {
+				"type": "object",
+				"properties": {
+					"dollarPerMmbtu": {}
+				},
+				"required": ["dollarPerMmbtu"]
+			}
+		},
+		"DollarPerMcfArray": {
+			"type": "array",
+			"unevaluatedItems": false,
+			"minItems": 1,
+			"items": {
+				"type": "object",
+				"properties": {
+					"dollarPerMcf": {}
+				},
+				"required": ["dollarPerMcf"]
+			}
+		},
+		"PctOfBasePriceArray": {
+			"type": "array",
+			"unevaluatedItems": false,
+			"minItems": 1,
+			"items": {
+				"type": "object",
+				"properties": {
+					"pctOfBasePrice": {}
+				},
+				"required": ["pctOfBasePrice"]
+			}
+		},
+		"PctOfOilPriceArray": {
+			"type": "array",
+			"unevaluatedItems": false,
+			"minItems": 1,
+			"items": {
+				"type": "object",
+				"properties": {
+					"pctOfOilPrice": {}
+				},
+				"required": ["pctOfOilPrice"]
+			}
+		},
+		"PriceArray": {
+			"type": "array",
+			"unevaluatedItems": false,
+			"minItems": 1,
+			"items": {
+				"type": "object",
+				"properties": {
+					"price": {}
+				},
+				"required": ["price"]
+			}
+		},
+		"DollarPerGalArray": {
+			"type": "array",
+			"unevaluatedItems": false,
+			"minItems": 1,
+			"items": {
+				"type": "object",
+				"properties": {
+					"dollarPerGal": {}
+				},
+				"required": ["dollarPerGal"]
+			}
+		},
+		"DollarPerBblArray": {
+			"type": "array",
+			"unevaluatedItems": false,
+			"minItems": 1,
+			"items": {
+				"type": "object",
+				"properties": {
+					"dollarPerBbl": {}
+				},
+				"required": ["dollarPerBbl"]
+			}
+		},
+		"PctOfOilRevArray": {
+			"type": "array",
+			"unevaluatedItems": false,
+			"minItems": 1,
+			"items": {
+				"type": "object",
+				"properties": {
+					"pctOfOilRev": {}
+				},
+				"required": ["pctOfOilRev"]
+			}
+		},
+		"PctOfGasRevArray": {
+			"type": "array",
+			"unevaluatedItems": false,
+			"minItems": 1,
+			"items": {
+				"type": "object",
+				"properties": {
+					"pctOfGasRev": {}
+				},
+				"required": ["pctOfGasRev"]
+			}
+		},
+		"PctOfNglRevArray": {
+			"type": "array",
+			"unevaluatedItems": false,
+			"minItems": 1,
+			"items": {
+				"type": "object",
+				"properties": {
+					"pctOfNglRev": {}
+				},
+				"required": ["pctOfNglRev"]
+			}
+		},
+		"PctOfDripCondensateRevArray": {
+			"type": "array",
+			"unevaluatedItems": false,
+			"minItems": 1,
+			"items": {
+				"type": "object",
+				"properties": {
+					"pctOfDripCondensateRev": {}
+				},
+				"required": ["pctOfDripCondensateRev"]
+			}
+		},
+		"PctOfTotalRevArray": {
+			"type": "array",
+			"unevaluatedItems": false,
+			"minItems": 1,
+			"items": {
+				"type": "object",
+				"properties": {
+					"pctOfTotalRev": {}
+				},
+				"required": ["pctOfTotalRev"]
+			}
+		},
+		"CarbonExpenseArray": {
+			"type": "array",
+			"unevaluatedItems": false,
+			"minItems": 1,
+			"items": {
+				"type": "object",
+				"properties": {
+					"carbonExpense": {}
+				},
+				"required": ["carbonExpense"]
+			}
+		},
+		"FixedExpenseArray": {
+			"type": "array",
+			"unevaluatedItems": false,
+			"minItems": 1,
+			"items": {
+				"type": "object",
+				"properties": {
+					"fixedExpense": {}
+				},
+				"required": ["fixedExpense"]
+			}
+		},
+		"FixedExpensePerWellArray": {
+			"type": "array",
+			"unevaluatedItems": false,
+			"minItems": 1,
+			"items": {
+				"type": "object",
+				"properties": {
+					"fixedExpensePerWell": {}
+				},
+				"required": ["fixedExpensePerWell"]
+			}
+		},
+		"SeasonalArray": {
+			"type": "object",
+			"errorMessage": "Seasonal rows array must contain exactly 12 rows, one for each of the following `seasonal` values: `Jan`,`Feb`,`Mar`,`Apr`,`May`,`Jun`,`Jul`,`Aug`,`Sep`,`Oct`,`Nov`,`Dec`",
+			"properties": {
+				"rows": {
+					"type": "array",
+					"minItems": 12,
+					"additionalItems": false,
+					"items": [
+						{
+							"type": "object",
+							"properties": {
+								"seasonal": {
+									"type": "string",
+									"const": "Jan"
+								}
+							},
+							"required": ["seasonal"]
+						},
+						{
+							"type": "object",
+							"properties": {
+								"seasonal": {
+									"type": "string",
+									"const": "Feb"
+								}
+							},
+							"required": ["seasonal"]
+						},
+						{
+							"type": "object",
+							"properties": {
+								"seasonal": {
+									"type": "string",
+									"const": "Mar"
+								}
+							},
+							"required": ["seasonal"]
+						},
+						{
+							"type": "object",
+							"properties": {
+								"seasonal": {
+									"type": "string",
+									"const": "Apr"
+								}
+							},
+							"required": ["seasonal"]
+						},
+						{
+							"type": "object",
+							"properties": {
+								"seasonal": {
+									"type": "string",
+									"const": "May"
+								}
+							},
+							"required": ["seasonal"]
+						},
+						{
+							"type": "object",
+							"properties": {
+								"seasonal": {
+									"type": "string",
+									"const": "Jun"
+								}
+							},
+							"required": ["seasonal"]
+						},
+						{
+							"type": "object",
+							"properties": {
+								"seasonal": {
+									"type": "string",
+									"const": "Jul"
+								}
+							},
+							"required": ["seasonal"]
+						},
+						{
+							"type": "object",
+							"properties": {
+								"seasonal": {
+									"type": "string",
+									"const": "Aug"
+								}
+							},
+							"required": ["seasonal"]
+						},
+						{
+							"type": "object",
+							"properties": {
+								"seasonal": {
+									"type": "string",
+									"const": "Sep"
+								}
+							},
+							"required": ["seasonal"]
+						},
+						{
+							"type": "object",
+							"properties": {
+								"seasonal": {
+									"type": "string",
+									"const": "Oct"
+								}
+							},
+							"required": ["seasonal"]
+						},
+						{
+							"type": "object",
+							"properties": {
+								"seasonal": {
+									"type": "string",
+									"const": "Nov"
+								}
+							},
+							"required": ["seasonal"]
+						},
+						{
+							"type": "object",
+							"properties": {
+								"seasonal": {
+									"type": "string",
+									"const": "Dec"
+								}
+							},
+							"required": ["seasonal"]
+						}
+					]
+				}
+			}
+		},
+		"Seasonal": {
+			"type": "string",
+			"enum": ["yes", "no"]
+		},
+		"PercentageArray": {
+			"type": "object",
+			"properties": {
+				"rows": {
+					"type": "array",
+					"unevaluatedItems": false,
+					"items": {
+						"type": "object",
+						"properties": {
+							"percentage": {
+								"type": "number"
+							}
+						},
+						"required": ["percentage"]
+					}
+				}
+			},
+			"required": ["rows"]
+		},
+		"CountArray": {
+			"type": "object",
+			"properties": {
+				"rows": {
+					"type": "array",
+					"unevaluatedItems": false,
+					"items": {
+						"type": "object",
+						"properties": {
+							"count": {
+								"type": "number"
+							}
+						},
+						"required": ["count"]
+					}
+				}
+			},
+			"required": ["rows"]
+		},
+		"MultiplierArray": {
+			"properties": {
+				"rows": {
+					"type": "array",
+					"unevaluatedItems": false,
+					"items": {
+						"type": "object",
+						"properties": {
+							"count": {
+								"type": "number"
+							}
+						},
+						"required": ["count"]
+					}
+				}
+			},
+			"required": ["rows"]
+		},
+		"EmptyRowsArray": {
+			"oneOf": [
+				{
+					"properties": {
+						"rows": {
+							"type": "array",
+							"maxItems": 0
+						}
+					},
+					"required": ["rows"]
+				},
+				{
+					"prohibited": ["rows"]
+				}
+			]
+		},
+		"EntireWellLifeArray": {
+			"properties": {
+				"rows": {
+					"type": "array",
+					"unevaluatedItems": false,
+					"minItems": 1,
+					"items": {
+						"type": "object",
+						"properties": {
+							"entireWellLife": {}
+						},
+						"required": ["entireWellLife"]
+					}
+				}
+			},
+			"required": ["rows"]
+		},
+		"OffsetToFpdArray": {
+			"properties": {
+				"rows": {
+					"type": "array",
+					"unevaluatedItems": false,
+					"minItems": 1,
+					"items": {
+						"type": "object",
+						"properties": {
+							"offsetToFpd": {}
+						},
+						"required": ["offsetToFpd"]
+					}
+				}
+			},
+			"required": ["rows"]
+		},
+		"OffsetToAsOfArray": {
+			"properties": {
+				"rows": {
+					"type": "array",
+					"unevaluatedItems": false,
+					"minItems": 1,
+					"items": {
+						"type": "object",
+						"properties": {
+							"offsetToAsOf": {}
+						},
+						"required": ["offsetToAsOf"]
+					}
+				}
+			},
+			"required": ["rows"]
+		},
+		"OffsetToFirstSegmentArray": {
+			"properties": {
+				"rows": {
+					"type": "array",
+					"unevaluatedItems": false,
+					"minItems": 1,
+					"items": {
+						"type": "object",
+						"properties": {
+							"offsetToFirstSegment": {}
+						},
+						"required": ["offsetToFirstSegment"]
+					}
+				}
+			},
+			"required": ["rows"]
+		},
+		"OffsetToEndHistoryArray": {
+			"properties": {
+				"rows": {
+					"type": "array",
+					"unevaluatedItems": false,
+					"minItems": 1,
+					"items": {
+						"type": "object",
+						"properties": {
+							"offsetToEndHistory": {}
+						},
+						"required": ["offsetToEndHistory"]
+					}
+				}
+			},
+			"required": ["rows"]
+		},
+		"OffsetToDiscountDateArray": {
+			"properties": {
+				"rows": {
+					"type": "array",
+					"unevaluatedItems": false,
+					"minItems": 1,
+					"items": {
+						"type": "object",
+						"properties": {
+							"offsetToDiscountDate": {}
+						},
+						"required": ["offsetToDiscountDate"]
+					}
+				}
+			},
+			"required": ["rows"]
+		},
+		"DatesArray": {
+			"properties": {
+				"rows": {
+					"type": "array",
+					"unevaluatedItems": false,
+					"minItems": 1,
+					"items": {
+						"type": "object",
+						"properties": {
+							"dates": {}
+						},
+						"required": ["dates"]
+					}
+				}
+			},
+			"required": ["rows"]
+		},
+		"OilRateArray": {
+			"properties": {
+				"rows": {
+					"type": "array",
+					"unevaluatedItems": false,
+					"minItems": 1,
+					"items": {
+						"type": "object",
+						"properties": {
+							"oilRate": {}
+						},
+						"required": ["oilRate"]
+					}
+				}
+			},
+			"required": ["rows"]
+		},
+		"GasRateArray": {
+			"properties": {
+				"rows": {
+					"type": "array",
+					"unevaluatedItems": false,
+					"minItems": 1,
+					"items": {
+						"type": "object",
+						"properties": {
+							"gasRate": {}
+						},
+						"required": ["gasRate"]
+					}
+				}
+			},
+			"required": ["rows"]
+		},
+		"WaterRateArray": {
+			"properties": {
+				"rows": {
+					"type": "array",
+					"unevaluatedItems": false,
+					"minItems": 1,
+					"items": {
+						"type": "object",
+						"properties": {
+							"waterRate": {}
+						},
+						"required": ["waterRate"]
+					}
+				}
+			},
+			"required": ["rows"]
+		},
+		"TotalFluidRateArray": {
+			"properties": {
+				"rows": {
+					"type": "array",
+					"unevaluatedItems": false,
+					"minItems": 1,
+					"items": {
+						"type": "object",
+						"properties": {
+							"totalFluidRate": {}
+						},
+						"required": ["totalFluidRate"]
+					}
+				}
+			},
+			"required": ["rows"]
+		},
+		"ShrinkageCondition": {
+			"type": "string",
+			"enum": ["unshrunk", "shrunk"]
+		},
+		"Calculation": {
+			"type": "string",
+			"enum": [
+				"wi",
+				"nri",
+				"lease_nri",
+				"one_minus_wi",
+				"one_minus_nri",
+				"wi_minus_one",
+				"nri_minus_one",
+				"one_minus_lease_nri",
+				"lease_nri_minus_one",
+				"100_pct_wi"
+			]
+		},
+		"MultipleRateTypeRowCalculationMethodFields": {
+			"type": "object",
+			"properties": {
+				"rateType": {
+					"type": "string",
+					"enum": ["gross_well_head", "gross_sales", "net_sales"]
+				},
+				"rowsCalculationMethod": {
+					"type": "string",
+					"enum": ["monotonic", "non_monotonic"]
+				}
+			},
+			"required": ["rateType", "rowsCalculationMethod"]
+		},
+		"SingleRateTypeRowCalculationMethodFields": {
+			"type": "object",
+			"properties": {
+				"rateType": {
+					"type": "string",
+					"const": "gross_well_head"
+				},
+				"rowsCalculationMethod": {
+					"type": "string",
+					"const": "non_monotonic"
+				}
+			},
+			"required": ["rateType", "rowsCalculationMethod"]
+		},
+		"Cap": {
+			"type": "number",
+			"minimum": 0
+		},
+		"INPTUUID": {
+			"type": "string",
+			"regexp": "/^INPT.?[0-9a-zA-z]{1,10}$/i",
+			"errorMessage": "invalid INPTID"
+		}
+	}
+}

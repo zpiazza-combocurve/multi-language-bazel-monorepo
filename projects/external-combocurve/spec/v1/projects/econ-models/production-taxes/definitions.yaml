@@ -1,0 +1,630 @@
+AdValoremRows:
+  type: "object"
+  properties:
+    dollarPerBoe:
+      type: "number"
+    pctOfRevenue:
+      type: "number"
+    dollarPerMonth:
+      type: "number"
+    dates:
+      $ref: '#/definitions/StartEndDatesCriteria'
+    offsetToAsOf:
+      $ref: '#/definitions/StartEndPeriodCriteria'
+    entireWellLife:
+      type: "string"
+    offsetToFpd:
+      $ref: '#/definitions/StartEndPeriodCriteria'
+    offsetToDiscountDate:
+      $ref: '#/definitions/StartEndPeriodCriteria'
+    offsetToFirstSegment:
+      $ref: '#/definitions/StartEndPeriodCriteria'
+    offsetToEndHistory:
+      $ref: '#/definitions/StartEndPeriodCriteria'
+    oilRate:
+      $ref: '#/definitions/StartEndRateCriteria'
+    gasRate:
+      $ref: '#/definitions/StartEndRateCriteria'
+    waterRate:
+      $ref: '#/definitions/StartEndRateCriteria'
+EscalationModelObject:
+ type: object
+ properties:
+  escalationModel1:
+    type: string
+  escalationModel2:
+    type: string
+AdValoremModel:
+  type: "object"
+  required:
+    - deductSeveranceTax
+    - shrinkageCondition
+    - calculation
+    - escalationModel
+    - rowsCalculationMethod
+    - rateType
+    - rows
+  properties:
+    deductSeveranceTax:
+      type: boolean
+    shrinkageCondition:
+      type: string
+      enum:
+        - shrunk
+        - unshrunk
+    calculation:
+      type: string
+      enum:
+        - wi
+        - nri
+        - lease_nri
+        - one_minus_wi
+        - one_minus_nri
+        - wi_minus_one
+        - nri_minus_one
+        - one_minus_lease_nri
+        - lease_nri_minus_one
+        - 100_pct_wi
+    rateType:
+      type: string
+      enum:
+        - gross_well_head
+        - gross_sales
+        - net_sales
+    rowsCalculationMethod:
+      type: string
+      enum:
+        - monotonic
+        - non_monotonic
+    rows:
+      type: array
+      items:
+        $ref: '#/definitions/AdValoremRows'
+    escalationModel:
+      $ref: '#/definitions/EscalationModelObject'
+SeveranceTaxPhaseRows:
+  type: "object"
+  properties:
+    dollarPerMcf:
+      type: "number"
+    dollarPerBbl:
+      type: "number"
+    pctOfRevenue:
+      type: "number"
+    dollarPerMonth:
+      type: "number"
+    dates:
+      $ref: '#/definitions/StartEndDatesCriteria'
+    offsetToAsOf:
+      $ref: '#/definitions/StartEndPeriodCriteria'
+    entireWellLife:
+      type: "string"
+    offsetToFpd:
+      $ref: '#/definitions/StartEndPeriodCriteria'
+    offsetToDiscountDate:
+      $ref: '#/definitions/StartEndPeriodCriteria'
+    offsetToFirstSegment:
+      $ref: '#/definitions/StartEndPeriodCriteria'
+    offsetToEndHistory:
+      $ref: '#/definitions/StartEndPeriodCriteria'
+    oilRate:
+      $ref: '#/definitions/StartEndRateCriteria'
+    gasRate:
+      $ref: '#/definitions/StartEndRateCriteria'
+    waterRate:
+      $ref: '#/definitions/StartEndRateCriteria'
+SeveranceTaxPhase:
+ type: "object"
+ required:
+  - rows
+ properties:
+  rows:
+    type: array
+    items:
+      $ref: '#/definitions/SeveranceTaxPhaseRows'
+  escalationModel:
+    $ref: '#/definitions/EscalationModelObject'
+SeveranceTaxModel:
+  type: "object"
+  required:
+    - state
+    - shrinkageCondition
+    - calculation
+    - rateType
+    - rowsCalculationMethod
+    - oil
+    - gas
+    - ngl
+    - dripCondensate
+  properties:
+    state:
+      type: string
+      enum:
+        - "custom"
+        - "alaska"
+        - "alabama"
+        - "arkansas"
+        - "arizona"
+        - "california"
+        - "colorado"
+        - "florida"
+        - "idaho"
+        - "indiana"
+        - "kansas"
+        - "kentucky"
+        - "louisiana"
+        - "maryland"
+        - "michigan"
+        - "mississippi"
+        - "montana"
+        - "north_dakota"
+        - "nebraska"
+        - "new_mexico"
+        - "nevada"
+        - "new_york"
+        - "ohio"
+        - "oklahoma"
+        - "oregon"
+        - "pennsylvania"
+        - "pennsylvania horizontal"
+        - "pennsylvania vertical"
+        - "south_dakota"
+        - "tennessee"
+        - "texas"
+        - "utah"
+        - "virginia"
+        - "west_virginia"
+        - "wyoming"
+    shrinkageCondition:
+      type: string
+      enum:
+        - shrunk
+        - unshrunk
+    calculation:
+      type: string
+      enum:
+        - wi
+        - nri
+        - lease_nri
+        - one_minus_wi
+        - one_minus_nri
+        - wi_minus_one
+        - nri_minus_one
+        - one_minus_lease_nri
+        - lease_nri_minus_one
+        - 100_pct_wi
+    rateType:
+      type: string
+      enum:
+        - gross_well_head
+        - gross_sales
+        - net_sales
+    rowsCalculationMethod:
+      type: string
+      enum:
+        - monotonic
+        - non_monotonic
+    oil:
+     $ref: '#/definitions/SeveranceTaxPhase'
+    gas:
+     $ref: '#/definitions/SeveranceTaxPhase'
+    ngl:
+     $ref: '#/definitions/SeveranceTaxPhase'
+    dripCondensate:
+     $ref: '#/definitions/SeveranceTaxPhase'
+ProductionTaxes:
+  type: object
+  required:
+    - name
+    - unique
+  properties:
+    id:
+      type: string
+      description: ID
+    copiedFrom:
+      type: string
+      description: Copied From
+    name:
+      type: string
+      description: Name
+    scenario:
+      type: string
+      description: Scenario ID
+    tags:
+      type: array
+      items:
+        type: string
+        description: Tag ID
+    unique:
+      type: boolean
+      description: Unique
+    well:
+      type: string
+      description: Well ID
+    createdAt:
+      type: string
+      format: date
+      description: Creation Date
+    updatedAt:
+      type: string
+      format: date
+      description: Updated At
+    createdBy:
+      type: string
+      description: Created By
+    lastUpdatedBy:
+      type: string
+      description: Last Updated By
+    adValoremTax:
+      $ref: '#/definitions/AdValoremModel'
+    severanceTax:
+      $ref: '#/definitions/SeveranceTaxModel'
+  example:
+    id: 5e272d39b78910dd2a1bd8fe
+    copiedFrom: 63b856e816f758cc5b0f1106
+    name: Test
+    scenario: 63b8571d70ed63f50bd6d63f
+    tags: 
+      - 63b85737ff846cee7b1f6fdc
+    unique: true
+    well: 63b85759e1d7eb4e31579f51
+    createdAt: '2020-01-21T16:58:08.986Z'
+    updatedAt: '2020-01-21T17:58:08.986Z'
+    createdBy: 63b857cb68f3b96efc700998
+    lastUpdatedBy: 63b857cb68f3b96efc700998
+    adValoremTax:
+      deductSeveranceTax: true
+      shrinkageCondition: shrunk
+      calculation: nri
+      rateType: gross_well_head
+      rowsCalculationMethod: non_monotonic
+      escalationModel:
+        escalationModel1: none
+        escalationModel2: 62fbcecfcab9dfc5b88427cd
+      rows:
+      - pctOfRevenue: 0
+        dollarPerBoe: 100
+        waterRate:
+          start: 20
+          end: 22
+      - pctOfRevenue: 0
+        dollarPerBoe: 100
+        waterRate:
+          start: 23
+          end: 24
+      - pctOfRevenue: 0
+        dollarPerBoe: 100
+        waterRate:
+          start: 25
+          end: inf
+    severanceTax:
+      state: alabama
+      shrinkageCondition: shrunk
+      calculation: nri
+      rateType: gross_well_head
+      rowsCalculationMethod: non_monotonic
+      oil:
+        escalationModel:
+          escalationModel1: 62fbcecfcab9dfc5b88427c4
+          escalationModel2: 62fbcecfcab9dfc5b88427c4
+        rows:
+        - pctOfRevenue: 0
+          waterRate:
+            start: 20
+            end: 22
+          dollarPerMonth: 100
+        - pctOfRevenue: 0
+          waterRate:
+            start: 23
+            end: 24
+          dollarPerMonth: 100
+        - pctOfRevenue: 0
+          waterRate:
+            start: 25
+            end: inf
+          dollarPerMonth: 100
+      gas:
+        escalationModel:
+          escalationModel1: 62fbcecfcab9dfc5b88427cf
+          escalationModel2: 62fbcecfcab9dfc5b88427c4
+        rows:
+        - dollarPerMcf: 0
+          entireWellLife: Flat
+          pctOfRevenue: 10
+      ngl:
+        escalationModel:
+          escalationModel1: 62fbcecfcab9dfc5b88427c4
+          escalationModel2: 62fbcecfcab9dfc5b88427cd
+        rows:
+        - dollarPerBbl: 0
+          entireWellLife: Flat
+          pctOfRevenue: 10
+      dripCondensate:
+        escalationModel:
+          escalationModel1: 642f2f56670d176d8558ef7b
+          escalationModel2: 642f2f56670d176d8558ef7b
+        rows:
+        - dollarPerBbl: 0
+          entireWellLife: Flat
+          pctOfRevenue: 10
+
+ProductionTaxesList:
+  type: array
+  items:
+    $ref: '#/definitions/ProductionTaxes'
+  maxItems: 200
+  example:
+   - id: 5e272d39b78910dd2a1bd8fe
+     copiedFrom: 63b856e816f758cc5b0f1106
+     name: Test
+     scenario: 63b8571d70ed63f50bd6d63f
+     tags: 
+       - 63b85737ff846cee7b1f6fdc
+     unique: true
+     well: 63b85759e1d7eb4e31579f51
+     createdAt: '2020-01-21T16:58:08.986Z'
+     updatedAt: '2020-01-21T17:58:08.986Z'
+     createdBy: 63b857cb68f3b96efc700998
+     lastUpdatedBy: 63b857cb68f3b96efc700998
+     adValoremTax:
+      deductSeveranceTax: true
+      shrinkageCondition: shrunk
+      calculation: nri
+      rateType: gross_well_head
+      rowsCalculationMethod: non_monotonic
+      escalationModel:
+        escalationModel1: none
+        escalationModel2: 62fbcecfcab9dfc5b88427cd
+      rows:
+      - pctOfRevenue: 0
+        dollarPerBoe: 100
+        waterRate:
+          start: 20
+          end: 22
+      - pctOfRevenue: 0
+        dollarPerBoe: 100
+        waterRate:
+          start: 23
+          end: 24
+      - pctOfRevenue: 0
+        dollarPerBoe: 100
+        waterRate:
+          start: 25
+          end: inf
+     severanceTax:
+      state: alabama
+      shrinkageCondition: shrunk
+      calculation: nri
+      rateType: gross_well_head
+      rowsCalculationMethod: non_monotonic
+      oil:
+        escalationModel:
+          escalationModel1: 62fbcecfcab9dfc5b88427c4
+          escalationModel2: 62fbcecfcab9dfc5b88427c4
+        rows:
+        - pctOfRevenue: 0
+          waterRate:
+            start: 20
+            end: 22
+          dollarPerMonth: 100
+        - pctOfRevenue: 0
+          waterRate:
+            start: 23
+            end: 24
+          dollarPerMonth: 100
+        - pctOfRevenue: 0
+          waterRate:
+            start: 25
+            end: inf
+          dollarPerMonth: 100
+      gas:
+        escalationModel:
+          escalationModel1: 62fbcecfcab9dfc5b88427cf
+          escalationModel2: 62fbcecfcab9dfc5b88427c4
+        rows:
+        - dollarPerMcf: 0
+          entireWellLife: Flat
+          pctOfRevenue: 10
+      ngl:
+        escalationModel:
+          escalationModel1: 62fbcecfcab9dfc5b88427c4
+          escalationModel2: 62fbcecfcab9dfc5b88427cd
+        rows:
+        - dollarPerBbl: 0
+          entireWellLife: Flat
+          pctOfRevenue: 10
+      dripCondensate:
+        escalationModel:
+          escalationModel1: 642f2f56670d176d8558ef7b
+          escalationModel2: 642f2f56670d176d8558ef7b
+        rows:
+        - dollarPerBbl: 0
+          entireWellLife: Flat
+          pctOfRevenue: 10
+ProductionTaxesInput:
+  type: "object"
+  required:
+    - name
+    - unique
+  properties:
+    name:
+      type: string
+      description: Name
+    scenario:
+      type: string
+      description: Scenario ID
+    unique:
+      type: boolean
+      description: Unique
+    well:
+      type: string
+      description: Well ID
+    adValoremTax:
+      $ref: '#/definitions/AdValoremModel'
+    severanceTax:
+      $ref: '#/definitions/SeveranceTaxModel'
+  example:
+    name: Test
+    scenario: 63b8571d70ed63f50bd6d63f
+    unique: true
+    well: 63b85759e1d7eb4e31579f51
+    adValoremTax:
+      deductSeveranceTax: true
+      shrinkageCondition: shrunk
+      calculation: nri
+      rateType: gross_well_head
+      rowsCalculationMethod: non_monotonic
+      escalationModel:
+        escalationModel1: none
+        escalationModel2: 62fbcecfcab9dfc5b88427cd
+      rows:
+      - pctOfRevenue: 0
+        dollarPerBoe: 100
+        waterRate:
+          start: 20
+          end: 22
+      - pctOfRevenue: 0
+        dollarPerBoe: 100
+        waterRate:
+          start: 23
+          end: 24
+      - pctOfRevenue: 0
+        dollarPerBoe: 100
+        waterRate:
+          start: 25
+          end: inf
+    severanceTax:
+      state: alabama
+      shrinkageCondition: shrunk
+      calculation: nri
+      rateType: gross_well_head
+      rowsCalculationMethod: non_monotonic
+      oil:
+        escalationModel:
+          escalationModel1: 62fbcecfcab9dfc5b88427c4
+          escalationModel2: 62fbcecfcab9dfc5b88427c4
+        rows:
+        - pctOfRevenue: 0
+          waterRate:
+            start: 20
+            end: 22
+          dollarPerMonth: 100
+        - pctOfRevenue: 0
+          waterRate:
+            start: 23
+            end: 24
+          dollarPerMonth: 100
+        - pctOfRevenue: 0
+          waterRate:
+            start: 25
+            end: inf
+          dollarPerMonth: 100
+      gas:
+        escalationModel:
+          escalationModel1: 62fbcecfcab9dfc5b88427cf
+          escalationModel2: 62fbcecfcab9dfc5b88427c4
+        rows:
+        - dollarPerMcf: 0
+          entireWellLife: Flat
+          pctOfRevenue: 10
+      ngl:
+        escalationModel:
+          escalationModel1: 62fbcecfcab9dfc5b88427c4
+          escalationModel2: 62fbcecfcab9dfc5b88427cd
+        rows:
+        - dollarPerBbl: 0
+          entireWellLife: Flat
+          pctOfRevenue: 10
+      dripCondensate:
+        escalationModel:
+          escalationModel1: 642f2f56670d176d8558ef7b
+          escalationModel2: 642f2f56670d176d8558ef7b
+        rows:
+        - dollarPerBbl: 0
+          entireWellLife: Flat
+          pctOfRevenue: 10
+ProductionTaxesInputList:
+  type: array
+  items:
+    $ref: '#/definitions/ProductionTaxesInput'
+  maxItems: 500
+  example:
+   - name: Test
+     scenario: 63b8571d70ed63f50bd6d63f
+     unique: true
+     well: 63b85759e1d7eb4e31579f51
+     adValoremTax:
+      deductSeveranceTax: true
+      shrinkageCondition: shrunk
+      calculation: nri
+      rateType: gross_well_head
+      rowsCalculationMethod: non_monotonic
+      escalationModel:
+        escalationModel1: none
+        escalationModel2: 62fbcecfcab9dfc5b88427cd
+      rows:
+      - pctOfRevenue: 0
+        dollarPerBoe: 100
+        waterRate:
+          start: 20
+          end: 22
+      - pctOfRevenue: 0
+        dollarPerBoe: 100
+        waterRate:
+          start: 23
+          end: 24
+      - pctOfRevenue: 0
+        dollarPerBoe: 100
+        waterRate:
+          start: 25
+          end: inf
+     severanceTax:
+      state: alabama
+      shrinkageCondition: shrunk
+      calculation: nri
+      rateType: gross_well_head
+      rowsCalculationMethod: non_monotonic
+      oil:
+        escalationModel:
+          escalationModel1: 62fbcecfcab9dfc5b88427c4
+          escalationModel2: 62fbcecfcab9dfc5b88427c4
+        rows:
+        - pctOfRevenue: 0
+          waterRate:
+            start: 20
+            end: 22
+          dollarPerMonth: 100
+        - pctOfRevenue: 0
+          waterRate:
+            start: 23
+            end: 24
+          dollarPerMonth: 100
+        - pctOfRevenue: 0
+          waterRate:
+            start: 25
+            end: inf
+          dollarPerMonth: 100
+      gas:
+        escalationModel:
+          escalationModel1: 62fbcecfcab9dfc5b88427cf
+          escalationModel2: 62fbcecfcab9dfc5b88427c4
+        rows:
+        - dollarPerMcf: 0
+          entireWellLife: Flat
+          pctOfRevenue: 10
+      ngl:
+        escalationModel:
+          escalationModel1: 62fbcecfcab9dfc5b88427c4
+          escalationModel2: 62fbcecfcab9dfc5b88427cd
+        rows:
+        - dollarPerBbl: 0
+          entireWellLife: Flat
+          pctOfRevenue: 10
+      dripCondensate:
+        escalationModel:
+          escalationModel1: 642f2f56670d176d8558ef7b
+          escalationModel2: 642f2f56670d176d8558ef7b
+        rows:
+        - dollarPerBbl: 0
+          entireWellLife: Flat
+          pctOfRevenue: 10

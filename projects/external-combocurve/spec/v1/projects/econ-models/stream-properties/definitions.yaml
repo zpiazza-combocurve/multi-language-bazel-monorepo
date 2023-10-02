@@ -1,0 +1,671 @@
+YieldsRows:
+  type: "object"
+  properties:
+    yield:
+      $ref: "#/definitions/Yield"
+    shrunkGas:
+      $ref: "#/definitions/ShrunkGas"
+    unshrunkGas:
+      $ref: "#/definitions/UnshrunkGas"
+    entireWellLife:
+      $ref: "#/definitions/EntireWellLifeCriteria"
+    offsetToFpd:
+      $ref: "#/definitions/StartEndPeriodCriteria"
+    offsetToAsOf:
+      $ref: "#/definitions/StartEndPeriodCriteria"
+    offsetToFirstSegment:
+      $ref: "#/definitions/StartEndPeriodCriteria"
+    offsetToEndHistory:
+      $ref: "#/definitions/StartEndPeriodCriteria"
+    dates:
+      $ref: "#/definitions/StartEndDatesCriteria"
+    oilRate:
+      $ref: "#/definitions/StartEndRateCriteria"
+    gasRate:
+      $ref: "#/definitions/StartEndRateCriteria"
+    waterRate:
+      $ref: "#/definitions/StartEndRateCriteria"
+
+ShrinkageRows:
+  type: "object"
+  properties:
+    pctRemaining:
+      $ref: "#/definitions/ShrinkagePctRemaining"
+    entireWellLife:
+      $ref: "#/definitions/EntireWellLifeCriteria"
+    offsetToFpd:
+      $ref: "#/definitions/StartEndPeriodCriteria"
+    offsetToAsOf:
+      $ref: "#/definitions/StartEndPeriodCriteria"
+    offsetToFirstSegment:
+      $ref: "#/definitions/StartEndPeriodCriteria"
+    offsetToEndHistory:
+      $ref: "#/definitions/StartEndPeriodCriteria"
+    dates:
+      $ref: "#/definitions/StartEndDatesCriteria"
+    oilRate:
+      $ref: "#/definitions/StartEndRateCriteria"
+    gasRate:
+      $ref: "#/definitions/StartEndRateCriteria"
+    waterRate:
+      $ref: "#/definitions/StartEndRateCriteria"
+
+LossFlareRows:
+  type: "object"
+  properties:
+    pctRemaining:
+      $ref: "#/definitions/LossFlarePctRemaining"
+    entireWellLife:
+      $ref: "#/definitions/EntireWellLifeCriteria"
+    offsetToFpd:
+      $ref: "#/definitions/StartEndPeriodCriteria"
+    offsetToAsOf:
+      $ref: "#/definitions/StartEndPeriodCriteria"
+    offsetToFirstSegment:
+      $ref: "#/definitions/StartEndPeriodCriteria"
+    offsetToEndHistory:
+      $ref: "#/definitions/StartEndPeriodCriteria"
+    dates:
+      $ref: "#/definitions/StartEndDatesCriteria"
+    oilRate:
+      $ref: "#/definitions/StartEndRateCriteria"
+    gasRate:
+      $ref: "#/definitions/StartEndRateCriteria"
+    waterRate:
+      $ref: "#/definitions/StartEndRateCriteria"
+
+Yield:
+  type: number
+  minimum: 0
+  maximum: 1000000
+
+ShrunkGas:
+  type: string
+  enum:
+  - Shrunk Gas
+
+UnshrunkGas:
+  type: string
+  enum:
+    - Unshrunk Gas
+
+RowsCalculationMethod:
+  type: string
+  enum:
+    - monotonic
+    - non_monotonic
+
+ShrinkagePctRemaining:
+  type: number
+  minimum: 0
+  maximum: 200
+
+LossFlarePctRemaining:
+  type: number
+  minimum: 0
+  maximum: 100
+
+YieldsModel:
+  type: "object"
+  required:
+    - rowsCalculationMethod
+    - ngl
+    - dripCondensate
+  properties:
+    rowsCalculationMethod:
+      $ref: '#/definitions/RowsCalculationMethod'
+    ngl:
+      type: "object"
+      properties:
+        rows:
+          type: array
+          items:
+            $ref: '#/definitions/YieldsRows'
+      required:
+      - rows
+    dripCondensate:
+      type: "object"
+      properties:
+        rows:
+          type: array
+          maxItems: 100
+          minItems: 1
+          items:
+            $ref: '#/definitions/YieldsRows'
+      required:
+      - rows
+
+
+ShrinkageModel:
+  type: "object"
+  required:
+    - rowsCalculationMethod
+    - oil
+    - gas
+  properties:
+    rowsCalculationMethod:
+      $ref: '#/definitions/RowsCalculationMethod'
+    oil:
+      type: "object"
+      properties:
+        rows:
+          type: array
+          maxItems: 100
+          minItems: 1
+          items:
+            $ref: '#/definitions/ShrinkageRows'
+      required:
+        - rows
+    gas:
+      type: "object"
+      properties:
+        rows:
+          type: array
+          maxItems: 100
+          minItems: 1
+          items:
+            $ref: '#/definitions/ShrinkageRows'
+      required:
+        - rows
+
+LossFlareModel:
+  type: "object"
+  required:
+    - rowsCalculationMethod
+    - oilLoss
+    - gasLoss
+    - gasFlare
+  properties:
+    rowsCalculationMethod:
+      $ref: '#/definitions/RowsCalculationMethod'
+    oilLoss:
+      type: "object"
+      properties:
+        rows:
+          type: array
+          maxItems: 100
+          minItems: 1
+          items:
+            $ref: '#/definitions/LossFlareRows'
+      required:
+        - rows
+    gasLoss:
+      type: "object"
+      properties:
+        rows:
+          type: array
+          maxItems: 100
+          minItems: 1
+          items:
+            $ref: '#/definitions/LossFlareRows'
+      required:
+        - rows
+    gasFlare:
+      type: "object"
+      properties:
+        rows:
+          type: array
+          maxItems: 100
+          minItems: 1
+          items:
+            $ref: '#/definitions/LossFlareRows'
+      required:
+        - rows
+
+BtuContentModel:
+  type: "object"
+  required:
+    - unshrunkGas
+    - shrunkGas
+  properties:
+    unshrunkGas:
+      type: number
+    shrunkGas:
+      type: number
+
+StreamProperties:
+  type: "object"
+  required:
+    - name
+    - unique
+  properties:
+    id:
+      type: string
+      description: ID
+    copiedFrom:
+      type: string
+      description: Copied From
+    name:
+      type: string
+      description: Name
+    scenario:
+      type: string
+      description: Scenario ID
+    tags:
+      type: array
+      items:
+        type: string
+        description: Tag ID
+    unique:
+      type: boolean
+      description: Unique
+    well:
+      type: string
+      description: Well ID
+    createdAt:
+      type: string
+      format: date
+      description: Creation Date
+    updatedAt:
+      type: string
+      format: date
+      description: Updated At
+    createdBy:
+      type: string
+      description: Created By
+    lastUpdatedBy:
+      type: string
+      description: Last Updated By
+    yields:
+      $ref: '#/definitions/YieldsModel'
+    shrinkage:
+      $ref: '#/definitions/ShrinkageModel'
+    lossFlare:
+      $ref: '#/definitions/LossFlareModel'
+    btuContent:
+      $ref: '#/definitions/BtuContentModel'
+  example:
+    id: 5e272d39b78910dd2a1bd8fe
+    copiedFrom: 63b856e816f758cc5b0f1106
+    name: Test
+    scenario: 63b8571d70ed63f50bd6d63f
+    tags:
+      - some tag
+    unique: true
+    well: 63b85759e1d7eb4e31579f51
+    createdAt: '2020-01-21T16:58:08.986Z'
+    updatedAt: '2020-01-21T17:58:08.986Z'
+    createdBy: 63b857cb68f3b96efc700998
+    lastUpdatedBy: 63b857cb68f3b96efc700998
+    yields:
+      rowsCalculationMethod: monotonic
+      ngl:
+        rows:
+          - gasRate:
+              start: 1
+              end: 6
+            yield: 0.9
+            shrunkGas: Shrunk Gas
+          - gasRate:
+              start: 6
+              end: 12
+            yield: 0.5
+            shrunkGas: Shrunk Gas
+          - gasRate:
+              start: 12
+              end: "inf"
+            yield: 0.1
+            shrunkGas: Shrunk Gas
+      dripCondensate:
+        rows:
+          - offsetToFpd:
+              start: 1
+              end: 12
+              period: 12
+            yield: 0.9
+            shrunkGas: Shrunk Gas
+    shrinkage:
+      rowsCalculationMethod: non_monotonic
+      oil:
+        rows:
+          - oilRate:
+              start: 1
+              end: 6
+            pctRemaining: 0.9
+          - oilRate:
+              start: 6
+              end: 12
+            pctRemaining: 0.5
+          - oilRate:
+              start: 12
+              end: "inf"
+            pctRemaining: 0.1
+      gas:
+        rows:
+          - gasRate:
+              start: 1
+              end: 6
+            pctRemaining: 0.9
+          - gasRate:
+              start: 6
+              end: 12
+            pctRemaining: 0.5
+          - gasRate:
+              start: 12
+              end: "inf"
+            pctRemaining: 0.1
+    lossFlare:
+      rowsCalculationMethod: monotonic
+      oilLoss:
+        rows:        
+          - entireWellLife: Flat
+            pctRemaining: 20.6
+      gasLoss:
+        rows:        
+          - offsetToAsOf:
+              start: 1
+              end: 99
+              period: 99
+            pctRemaining: 100
+      gasFlare:
+        rows:        
+          - offsetToFirstSegment:
+              start: 1
+              end: 20
+              period: 20
+            pctRemaining: 55
+    btuContent:
+      unshrunkGas: 123.1
+      shrunkGas: 55.2
+
+StreamPropertiesList:
+  type: array
+  items:
+    $ref: '#/definitions/StreamProperties'
+  maxItems: 200
+  example:
+    - id: 5e272d39b78910dd2a1bd8fe
+      copiedFrom: 63b856e816f758cc5b0f1106
+      name: Test
+      scenario: 63b8571d70ed63f50bd6d63f
+      tags:
+        - 63b85737ff846cee7b1f6fdc
+      unique: true
+      well: 63b85759e1d7eb4e31579f51
+      createdAt: '2020-01-21T16:58:08.986Z'
+      updatedAt: '2020-01-21T17:58:08.986Z'
+      createdBy: 63b857cb68f3b96efc700998
+      lastUpdatedBy: 63b857cb68f3b96efc700998
+      yields:
+        rowsCalculationMethod: monotonic
+        ngl:
+          rows:        
+            - gasRate:
+                start: 1
+                end: 6
+              yield: 0.9
+              shrunkGas: Shrunk Gas
+            - gasRate:
+                start: 6
+                end: 12
+              yield: 0.5
+              shrunkGas: Shrunk Gas
+            - gasRate:
+                start: 12
+                end: "inf"
+              yield: 0.1
+              shrunkGas: Shrunk Gas
+        dripCondensate:
+          rows:        
+            - offsetToFpd:
+                start: 1
+                end: 12
+                period: 12
+              yield: 0.9
+              shrunkGas: Shrunk Gas
+      shrinkage:
+        rowsCalculationMethod: non_monotonic
+        oil:
+          rows:        
+            - oilRate:
+                start: 1
+                end: 6
+              pctRemaining: 0.9
+            - oilRate:
+                start: 6
+                end: 12
+              pctRemaining: 0.5
+            - oilRate:
+                start: 12
+                end: "inf"
+              pctRemaining: 0.1
+        gas:
+          rows:        
+            - gasRate:
+                start: 1
+                end: 6
+              pctRemaining: 0.9
+            - gasRate:
+                start: 6
+                end: 12
+              pctRemaining: 0.5
+            - gasRate:
+                start: 12
+                end: "inf"
+              pctRemaining: 0.1
+      lossFlare:
+        rowsCalculationMethod: monotonic
+        oilLoss:
+          rows:        
+            - entireWellLife: Flat
+              pctRemaining: 20.6
+        gasLoss:
+          rows:        
+            - offsetToAsOf:
+                start: 1
+                end: 99
+                period: 99
+              pctRemaining: 100
+        gasFlare:
+          rows:        
+            - offsetToFirstSegment:
+                start: 1
+                end: 20
+                period: 20
+              pctRemaining: 55
+      btuContent:
+        unshrunkGas: 123.1
+        shrunkGas: 55.2
+
+StreamPropertiesInput:
+  type: "object"
+  required:
+    - name
+    - unique
+  properties:
+    name:
+      type: string
+      description: Name
+    unique:
+      type: boolean
+      description: Unique
+    scenario:
+      type: string
+      description: Scenario ID
+    well:
+      type: string
+      description: Well ID
+    yields:
+      $ref: '#/definitions/YieldsModel'
+    shrinkage:
+      $ref: '#/definitions/ShrinkageModel'
+    lossFlare:
+      $ref: '#/definitions/LossFlareModel'
+    btuContent:
+      $ref: '#/definitions/BtuContentModel'
+  example:
+    name: Test
+    scenario: 63b8571d70ed63f50bd6d63f
+    unique: true
+    well: 63b85759e1d7eb4e31579f51
+    yields:
+      rowsCalculationMethod: monotonic
+      ngl:
+        rows:        
+          - gasRate:
+              start: 1
+              end: 6
+            yield: 0.9
+            shrunkGas: Shrunk Gas
+          - gasRate:
+              start: 6
+              end: 12
+            yield: 0.5
+            shrunkGas: Shrunk Gas
+          - gasRate:
+              start: 12
+              end: "inf"
+            yield: 0.1
+            shrunkGas: Shrunk Gas
+      dripCondensate:
+        rows:        
+          - offsetToFpd:
+              start: 1
+              end: 12
+              period: 12
+            yield: 0.9
+            shrunkGas: Shrunk Gas
+    shrinkage:
+      rowsCalculationMethod: non_monotonic
+      oil:
+        rows:        
+          - oilRate:
+              start: 1
+              end: 6
+            pctRemaining: 0.9
+          - oilRate:
+              start: 6
+              end: 12
+            pctRemaining: 0.5
+          - oilRate:
+              start: 12
+              end: "inf"
+            pctRemaining: 0.1
+      gas:
+        rows:        
+          - gasRate:
+              start: 1
+              end: 6
+            pctRemaining: 0.9
+          - gasRate:
+              start: 6
+              end: 12
+            pctRemaining: 0.5
+          - gasRate:
+              start: 12
+              end: "inf"
+            pctRemaining: 0.1
+    lossFlare:
+      rowsCalculationMethod: monotonic
+      oilLoss:
+        rows:        
+          - entireWellLife: Flat
+            pctRemaining: 20.6
+      gasLoss:
+        rows:        
+          - offsetToAsOf:
+              start: 1
+              end: 99
+              period: 99
+            pctRemaining: 100
+      gasFlare:
+        rows:        
+          - offsetToFirstSegment:
+              start: 1
+              end: 20
+              period: 20
+            pctRemaining: 55
+    btuContent:
+      unshrunkGas: 123.1
+      shrunkGas: 55.2
+
+StreamPropertiesInputList:
+  type: array
+  items:
+    $ref: '#/definitions/StreamPropertiesInput'
+  maxItems: 200
+  example:
+    - name: Test
+      scenario: 63b8571d70ed63f50bd6d63f
+      unique: true
+      well: 63b85759e1d7eb4e31579f51
+      yields:
+        rowsCalculationMethod: monotonic
+        ngl:
+          rows:
+            - gasRate:
+                start: 1
+                end: 6
+              yield: 0.9
+              shrunkGas: Shrunk Gas
+            - gasRate:
+                start: 6
+                end: 12
+              yield: 0.5
+              shrunkGas: Shrunk Gas
+            - gasRate:
+                start: 12
+                end: "inf"
+              yield: 0.1
+              shrunkGas: Shrunk Gas
+        dripCondensate:
+          rows:
+            - offsetToFpd:
+                start: 1
+                end: 12
+                period: 12
+              yield: 0.9
+              shrunkGas: Shrunk Gas
+      shrinkage:
+        rowsCalculationMethod: non_monotonic
+        oil:
+          rows:        
+            - oilRate:
+                start: 1
+                end: 6
+              pctRemaining: 0.9
+            - oilRate:
+                start: 6
+                end: 12
+              pctRemaining: 0.5
+            - oilRate:
+                start: 12
+                end: "inf"
+              pctRemaining: 0.1
+        gas:
+          rows:        
+            - gasRate:
+                start: 1
+                end: 6
+              pctRemaining: 0.9
+            - gasRate:
+                start: 6
+                end: 12
+              pctRemaining: 0.5
+            - gasRate:
+                start: 12
+                end: "inf"
+              pctRemaining: 0.1
+      lossFlare:
+        rowsCalculationMethod: monotonic
+        oilLoss:
+          rows:        
+            - entireWellLife: Flat
+              pctRemaining: 20.6
+        gasLoss:
+          rows:        
+            - offsetToAsOf:
+                start: 1
+                end: 99
+                period: 99
+              pctRemaining: 100
+        gasFlare:
+          rows:        
+            - offsetToFirstSegment:
+                start: 1
+                end: 20
+                period: 20
+              pctRemaining: 55
+      btuContent:
+        unshrunkGas: 123.1
+        shrunkGas: 55.2

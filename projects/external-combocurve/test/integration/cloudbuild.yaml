@@ -1,0 +1,45 @@
+substitutions:
+    _API_URL: https://test-api.combocurve.com
+    _TENANT_NAME: test
+
+serviceAccount: projects/$PROJECT_ID/serviceAccounts/external-api-build@$PROJECT_ID.iam.gserviceaccount.com
+
+availableSecrets:
+    secretManager:
+        - versionName: projects/$PROJECT_ID/secrets/apiTestsKey/versions/latest
+          env: "API_TESTS_KEY"
+        - versionName: projects/$PROJECT_ID/secrets/apiTestsToken/versions/latest
+          env: "API_TESTS_TOKEN"
+        - versionName: projects/$PROJECT_ID/secrets/apiTestsWriterCS/versions/latest
+          env: "API_TESTS_WRITER_CS"
+
+steps:
+    - name: "node:18.16"
+      entrypoint: "/bin/bash"
+      dir: integration
+      args:
+          - "-c"
+          - |
+              npm ci && \
+              ln -s $(readlink -f node_modules) ../node_modules
+
+    - name: "node:18.16"
+      entrypoint: "/bin/bash"
+      dir: integration
+      args:
+          - "-c"
+          - |
+              npm run test
+      env:
+          - "API_URL=${_API_URL}"
+          - "TENANT_NAME=${_TENANT_NAME}"
+      secretEnv: ["API_TESTS_KEY", "API_TESTS_TOKEN", "API_TESTS_WRITER_CS"]
+
+options:
+    logging: CLOUD_LOGGING_ONLY
+
+timeout: 1500s
+
+tags:
+    - "external-api"
+    - "integration"

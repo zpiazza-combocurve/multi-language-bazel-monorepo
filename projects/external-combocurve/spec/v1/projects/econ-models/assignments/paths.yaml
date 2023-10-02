@@ -1,0 +1,265 @@
+/v1/projects/{projectId}/econ-models/{econName}/{econModelId}/assignments/count:
+  get:
+    operationId: get-v1-econmodelsassignmentscount
+    parameters:
+      - name: projectId
+        in: params
+        required: true
+        type: string
+        example: 5e276e31876cd70012ddf3f6
+      - name: econName
+        in: params
+        required: true
+        type: string
+        example: capex
+      - name: econModelId
+        in: params
+        required: true
+        type: string
+        example: 5e276e31876cd70012ddf3f6
+      - name: wells
+        in: query
+        type: array
+        items:
+          type: string
+          example: 5e276e31876cd70012ddf3f6
+      - name: scenarios
+        in: query
+        type: array
+        items:
+          type: string
+          example: 5e276e31876cd70012ddf3f6
+    responses:
+      '200':
+        description: OK Response
+        headers:
+          X-Query-Count:
+            type: number
+      '400':
+        description: BadRequest Response
+/v1/projects/{projectId}/econ-models/{econName}/{econModelId}/assignments/:
+  head:
+    operationId: head-v1-econmodelsassignmentscount
+    parameters:
+      - name: projectId
+        in: params
+        required: true
+        type: string
+        example: 5e276e31876cd70012ddf3f6
+      - name: econName
+        in: params
+        required: true
+        type: string
+        example: capex
+      - name: econModelId
+        in: params
+        required: true
+        type: string
+        example: 5e276e31876cd70012ddf3f6
+      - name: wells
+        in: query
+        type: array
+        items:
+          type: string
+          example: 5e276e31876cd70012ddf3f6
+      - name: scenarios
+        in: query
+        type: array
+        items:
+          type: string
+          example: 5e276e31876cd70012ddf3f6
+    responses:
+      '200':
+        description: OK Response
+        headers:
+          X-Query-Count:
+            type: number
+      '400':
+        description: BadRequest Response
+  get:
+    operationId: get-v1-econmodelsassignmentsread
+    parameters:
+      - name: projectId
+        in: params
+        required: true
+        type: string
+        example: 5e276e31876cd70012ddf3f6
+      - name: econName
+        in: params
+        required: true
+        type: string
+        example: capex
+      - name: econModelId
+        in: params
+        required: true
+        type: string
+        example: 5e276e31876cd70012ddf3f6
+      - name: skip
+        in: query
+        description: number of items to skip
+        type: integer
+        format: int32
+      - name: skip
+        in: query
+        type: skip
+      - name: take
+        in: query
+        description: max records to return
+        type: integer
+        format: int32
+        minimum: 1
+        maximum: 200
+      - name: take
+        in: query
+        type: take
+      - name: wells
+        in: query
+        type: array
+        items:
+          type: string
+          example: 5e276e31876cd70012ddf3f6
+      - name: scenarios
+        in: query
+        type: array
+        items:
+          type: string
+          example: 5e276e31876cd70012ddf3f6
+      - name: sort
+        in: query
+        description: field to sort by, including + or - at the beginning for ascending or descending order, respectively
+        type: string
+        enum:
+          - 'scenario'
+          - 'well'
+      - name: sort
+        in: query
+        type: sort
+    responses:
+      '200':
+        description: OK Response
+        headers:
+          X-Query-Count:
+            type: number
+          Link:
+            type: string
+        schema:
+          $ref: #/definitions/EconModelsAssignmentsReadOKResponse
+      '400':
+        description: BadRequest Response
+  post:
+    operationId: post-v1-econmodelassignmentupsert
+    consumes:
+      - application/json
+    produces:
+      - application/json
+    parameters:
+      - name: payload
+        in: body
+        required: true
+        type: array
+        items:
+          $ref: #/definitions/EconModelAssignmentUpsertPayload
+      - name: projectId
+        in: params
+        required: true
+        type: string
+        example: 5e276e31876cd70012ddf3f6
+      - name: econName
+        in: params
+        required: true
+        type: string
+        example: capex
+      - name: econModelId
+        in: params
+        required: true
+        type: string
+        example: 5e276e31876cd70012ddf3f6
+    responses:
+      '207':
+        description: MultiStatus Response
+        schema:
+          $ref: #/definitions/EconModelAssignmentUpsertMultiStatusResponse
+      '404':
+        description: NotFound Response
+  put:
+    operationId: put-v1-econmodelassignmentupsert
+    consumes:
+      - application/json
+    produces:
+      - application/json
+    parameters:
+      - name: payload
+        in: body
+        required: true
+        type: array
+        items:
+          $ref: #/definitions/EconModelAssignmentUpsertPayload
+      - name: projectId
+        in: params
+        required: true
+        type: string
+        example: 5e276e31876cd70012ddf3f6
+      - name: econName
+        in: params
+        required: true
+        type: string
+        example: capex
+      - name: econModelId
+        in: params
+        required: true
+        type: string
+        example: 5e276e31876cd70012ddf3f6
+    responses:
+      '207':
+        description: MultiStatus Response
+        schema:
+          $ref: #/definitions/EconModelAssignmentUpsertMultiStatusResponse
+      '404':
+        description: NotFound Response
+  delete:
+    operationId: delete-v1-econmodelassignmentdelete
+    parameters:
+      - name: projectId
+        in: params
+        required: true
+        type: string
+        example: 5e276e31876cd70012ddf3f6
+      - name: econName
+        in: params
+        required: true
+        type: string
+        example: capex
+      - name: econModelId
+        in: params
+        required: true
+        type: string
+        example: 5e276e31876cd70012ddf3f6
+      - name: scenarioId
+        in: query
+        required: true
+        type: string
+        example: 5e276e31876cd70012ddf3f6
+      - name: qualifierName
+        in: query
+        required: true
+        type: string
+        example: some_string
+      - name: wells
+        in: query
+        type: array
+        maxItems: 25000
+        items:
+          type: string
+          example: 5e276e31876cd70012ddf3f6
+      - name: allWells
+        in: query
+        type: boolean
+        example: true
+    responses:
+      '204':
+        description: NoContent Response
+        headers:
+          x-delete-count:
+            type: number
+      '404':
+        description: NotFound Response

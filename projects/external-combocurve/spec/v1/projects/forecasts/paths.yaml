@@ -1,0 +1,274 @@
+/v1/projects/{projectId}/forecasts:
+  head:
+    operationId: head-v1-forecasts
+    description: >-
+      Returns metadata about the existing forecast documents scoped to projectId
+      project.
+    parameters:
+      - in: path
+        name: projectId
+        required: true
+        type: string
+        description: ''
+      - $ref: '#/parameters/skipParam'
+      - $ref: '#/parameters/takeParam'
+      - name: createdAt
+        in: query
+        description: "filter by createdAt - Operator values are [lt] = less than, [le] = less than or equal, [gt] = greater than, [ge] = greater than or equal, no operator = equal. Example createdAt[gt]=2018-01-01T00:00:00Z"
+        format: date
+        type: string
+        x-allow-parameter-operator: true
+      - name: name
+        in: query
+        description: filter by name
+        type: string
+        x-example: f1
+      - name: runDate
+        in: query
+        description: filter by runDate
+        format: date
+        type: string
+        x-allow-parameter-operator: true
+      - name: type
+        in: query
+        description: filter by type
+        type: string
+        x-example: deterministic
+      - name: updatedAt
+        in: query
+        description: "filter by updatedAt - Operator values are [lt] = less than, [le] = less than or equal, [gt] = greater than, [ge] = greater than or equal, no operator = equal. Example updatedAt[gt]=2018-01-01T00:00:00Z"
+        format: date
+        type: string
+        x-allow-parameter-operator: true
+    responses:
+      '200':
+        description: OK
+        headers:
+          Link:
+            type: string
+            description: >-
+              Indicates a typed relationship with another resource, where the
+              relation type is defined by RFC 5988. We include the relationships
+              next, prev, first and last, which can be used to move between
+              pages of the list of results.
+          X-Query-Count:
+            type: integer
+            description: >-
+              The number of records in this resource. When filters are provided
+              only matching records are counted.
+      '400':
+        description: Bad Request. There is something wrong with the request data.
+    tags:
+      - ComboCurveV1
+    x-client-generation:
+      x-count-method:
+        name: ForecastsCount
+  get:
+    produces:
+      - application/json
+    operationId: get-v1-forecasts
+    description: Returns a list of forecast documents scoped to projectId project.
+    parameters:
+      - in: path
+        name: projectId
+        required: true
+        type: string
+        description: ''
+      - $ref: '#/parameters/skipParam'
+      - $ref: '#/parameters/takeParam'
+      - $ref: '#/parameters/sortParam'
+      - $ref: '#/parameters/cursorParam'
+      - name: createdAt
+        in: query
+        description: "filter by createdAt - Operator values are [lt] = less than, [le] = less than or equal, [gt] = greater than, [ge] = greater than or equal, no operator = equal. Example createdAt[gt]=2018-01-01T00:00:00Z"
+        format: date
+        type: string
+        x-allow-parameter-operator: true
+      - name: name
+        in: query
+        description: filter by name
+        type: string
+        x-example: default1
+      - name: runDate
+        in: query
+        description: filter by runDate, can be used for incremental pull
+        format: date
+        type: string
+      - name: type
+        in: query
+        description: filter by type
+        type: string
+        x-example: probabilistic
+      - name: tag
+        in: query
+        description: filter by tag
+        type: string
+        x-example: tagName
+        x-allow-multiple: true
+      - name: updatedAt
+        in: query
+        description: "filter by updatedAt - Operator values are [lt] = less than, [le] = less than or equal, [gt] = greater than, [ge] = greater than or equal, no operator = equal. Example updatedAt[gt]=2018-01-01T00:00:00Z"
+        format: date
+        type: string
+        x-allow-parameter-operator: true
+    responses:
+      '200':
+        description: OK
+        schema:
+          $ref: '#/definitions/ForecastList'
+        headers:
+          Link:
+            type: string
+            description: >-
+              Indicates a typed relationship with another resource, where the
+              relation type is defined by RFC 5988. We include the relationships
+              next, prev, first and last, which can be used to move between
+              pages of the list of results.
+      '400':
+        description: Bad Request. There is something wrong with the request data.
+        schema:
+          $ref: '#/definitions/Error'
+    tags:
+      - ComboCurveV1
+    x-google-quota:
+      metricCosts:
+        read-request-rate: 1
+    x-client-generation:
+      x-get-all-skip-take-method:
+        name: GetAllForecasts
+        baseReturnType: Forecast
+      x-get-all-cursor-method:
+        name: GetAllForecastsV2
+        baseReturnType: Forecast
+/v1/projects/{projectId}/forecasts/head:
+  get:
+    x-no-client: true
+    x-no-doc: true
+    operationId: get-head-v1-forecasts
+    description: >-
+      Returns metadata about the existing forecast documents scoped to projectId
+      project.
+    parameters:
+      - in: path
+        name: projectId
+        required: true
+        type: string
+        description: ''
+      - $ref: '#/parameters/skipParam'
+      - $ref: '#/parameters/takeParam'
+      - name: createdAt
+        in: query
+        description: "filter by createdAt - Operator values are [lt] = less than, [le] = less than or equal, [gt] = greater than, [ge] = greater than or equal, no operator = equal. Example createdAt[gt]=2018-01-01T00:00:00Z"
+        format: date
+        type: string
+      - name: name
+        in: query
+        description: filter by name
+        type: string
+      - name: runDate
+        in: query
+        description: filter by runDate
+        format: date
+        type: string
+      - name: type
+        in: query
+        description: filter by type
+        type: string
+      - name: updatedAt
+        in: query
+        description: "filter by updatedAt - Operator values are [lt] = less than, [le] = less than or equal, [gt] = greater than, [ge] = greater than or equal, no operator = equal. Example updatedAt[gt]=2018-01-01T00:00:00Z"
+        format: date
+        type: string
+    responses:
+      '200':
+        description: OK
+        headers:
+          Link:
+            type: string
+            description: >-
+              Indicates a typed relationship with another resource, where the
+              relation type is defined by RFC 5988. We include the relationships
+              next, prev, first and last, which can be used to move between
+              pages of the list of results.
+          X-Query-Count:
+            type: integer
+            description: >-
+              The number of records in this resource. When filters are provided
+              only matching records are counted.
+      '400':
+        description: Bad Request. There is something wrong with the request data.
+    tags:
+      - ComboCurveV1
+/v1/projects/{projectId}/forecasts/{id}:
+  get:
+    produces:
+      - application/json
+    operationId: get-v1-forecast-by-id
+    description: >-
+      Returns the forecast document that matches the given id scoped to
+      projectId project.
+    parameters:
+      - in: path
+        name: projectId
+        required: true
+        type: string
+        description: ''
+      - in: path
+        name: id
+        required: true
+        type: string
+        description: ''
+    responses:
+      '200':
+        description: OK
+        schema:
+          $ref: '#/definitions/Forecast'
+      '400':
+        description: Bad Request. There is something wrong with the request data.
+        schema:
+          $ref: '#/definitions/Error'
+      '404':
+        description: Not Found
+        schema:
+          $ref: '#/definitions/Error'
+    tags:
+      - ComboCurveV1
+    x-google-quota:
+      metricCosts:
+        read-request-rate: 1
+/v1/projects/{projectId}/forecasts/{id}/wells:
+  post:
+    consumes:
+      - application/json
+    produces:
+      - application/json
+    operationId: post-v1-wells-to-forecast
+    description: Inserts a list of well into a forecast.
+    parameters:
+      - in: path
+        name: projectId
+        required: true
+        type: string
+        description: ''
+      - in: path
+        name: id
+        required: true
+        type: string
+        description: ''
+      - in: body
+        name: WellIds
+        description: WellIds documents to insert. See WellInputList.
+        required: true
+        schema:
+          $ref: '#/definitions/WellIdInput'
+    responses:
+      '207':
+        description: Multi-Status
+        schema:
+          $ref: '#/definitions/WellMultiStatusResponse'
+      '400':
+        description: Bad Request. There is something wrong with the request data.
+        schema:
+          $ref: '#/definitions/Error'
+    tags:
+      - ComboCurveV1

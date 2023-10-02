@@ -1,0 +1,85 @@
+{
+	"name": "test",
+	"unique": false,
+	"yields": {
+		"rowsCalculationMethod": "monotonic",
+		"ngl": {
+			"rows": [
+				{
+					"yield": 0.000001,
+					"gasRate": 5,
+					"shrunkGas": "Shrunk Gas"
+				},
+				{
+					"yield": 9,
+					"gasRate": 10,
+					"shrunkGas": "Shrunk Gas"
+				},
+				{
+					"yield": 9,
+					"gasRate": 15,
+					"shrunkGas": "Shrunk Gas"
+				}
+			]
+		},
+		"dripCondensate": {
+			"rows": [
+				{
+					"yield": 2001,
+					"offsetToFpd": 99,
+					"unshrunkGas": "Unshrunk Gas"
+				}
+			]
+		}
+	},
+	"shrinkage": {
+		"rowsCalculationMethod": "non_monotonic",
+		"oil": {
+			"rows": [
+				{
+					"gasRate": 123132132,
+					"pctRemaining": 100
+				}
+			]
+		},
+		"gas": {
+			"rows": [
+				{
+					"entireWellLife": "Flat",
+					"pctRemaining": 100
+				}
+			]
+		}
+	},
+	"lossFlare": {
+		"rowsCalculationMethod": "non_monotonic",
+		"oilLoss": {
+			"rows": [
+				{
+					"entireWellLife": "Flat",
+					"pctRemaining": 100
+				}
+			]
+		},
+		"gasLoss": {
+			"rows": [
+				{
+					"offsetToFpd": 24,
+					"pctRemaining": 100
+				}
+			]
+		},
+		"gasFlare": {
+			"rows": [
+				{
+					"entireWellLife": "Flat",
+					"pctRemaining": 100
+				}
+			]
+		}
+	},
+	"btuContent": {
+		"unshrunkGas": 1231.999999999,
+		"shrunkGas": 999.999
+	}
+}

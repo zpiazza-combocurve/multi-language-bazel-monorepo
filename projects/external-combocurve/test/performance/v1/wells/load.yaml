@@ -1,0 +1,21 @@
+scenarios:
+    - name: 'POST wells'
+      afterScenario: "requestAssertSuccessAfterResponse"
+      flow:
+          - loop:
+                - function: 'injectWells'
+                - post:
+                      url: '/v1/wells'
+                      json: '{{ wells }}'
+                      afterResponse:
+                        - "logMultiResponseAfterResponse"
+                        - "requestStoreNoSuccessAfterResponse"
+            count: 20
+config:
+    processor: 'processor.js'
+    variables:
+        wellsRecordCount: 1000
+    phases:
+        - duration: 1
+          arrivalCount: 1
+          name: 'Single client'

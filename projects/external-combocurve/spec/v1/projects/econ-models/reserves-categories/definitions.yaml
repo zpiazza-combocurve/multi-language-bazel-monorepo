@@ -1,0 +1,147 @@
+ReservesCategory:
+  type: object
+  required:
+    - name
+    - unique
+  properties:
+    id:
+      type: string
+      description: ID
+    copiedFrom:
+      type: string
+      description: Copied From
+    name:
+      type: string
+      description: Name
+    scenario:
+      type: string
+      description: Scenario ID
+    tags:
+      type: array
+      items:
+        type: string
+        description: Tag ID
+    unique:
+      type: boolean
+      description: Unique
+    well:
+      type: string
+      description: Well ID
+    createdAt:
+      type: string
+      format: date
+      description: Creation Date
+    updatedAt:
+      type: string
+      format: date
+      description: Updated At
+    createdBy:
+      type: string
+      description: Created By
+    lastUpdatedBy:
+      type: string
+      description: Last Updated By
+    reservesCategory:
+      type: object
+      properties:
+        prmsClass:
+          type: string
+          description: PRMS Class
+        prmsCategory:
+          type: string
+          description: PRMS Category
+        prmsSubCategory:
+          type: string
+          description: PRMS Sub Category
+  example:
+    id: 5e272d39b78910dd2a1bd8fe
+    copiedFrom: 63b856e816f758cc5b0f1106
+    name: Test
+    scenario: 63b8571d70ed63f50bd6d63f
+    tags: 
+      - 63b85737ff846cee7b1f6fdc
+    unique: true
+    well: 63b85759e1d7eb4e31579f51
+    createdAt: '2020-01-21T16:58:08.986Z'
+    updatedAt: '2020-01-21T17:58:08.986Z'
+    createdBy: 63b857cb68f3b96efc700998
+    lastUpdatedBy: 63b857cb68f3b96efc700998
+    reservesCategory:
+      prmsClass: reserves
+      prmsCategory: proved
+      prmsSubCategory: behind_pipe
+ReservesCategoryList:
+  type: array
+  items:
+    $ref: '#/definitions/ReservesCategory'
+  maxItems: 200
+  example:
+    - id: 5e272d39b78910dd2a1bd8fe
+      copiedFrom: 63b856e816f758cc5b0f1106
+      name: Test
+      scenario: 63b8571d70ed63f50bd6d63f
+      tags: 
+        - 63b85737ff846cee7b1f6fdc
+      unique: true
+      well: 63b85759e1d7eb4e31579f51
+      createdAt: '2020-01-21T16:58:08.986Z'
+      updatedAt: '2020-01-21T17:58:08.986Z'
+      createdBy: 63b857cb68f3b96efc700998
+      lastUpdatedBy: 63b857cb68f3b96efc700998
+      reservesCategory:
+        prmsClass: reserves
+        prmsCategory: proved
+        prmsSubCategory: behind_pipe
+ReservesCategoryInput:
+  type: object
+  required:
+    - name
+    - unique
+  properties:
+    name:
+      type: string
+      description: Name
+    scenario:
+      type: string
+      description: Scenario ID
+    unique:
+      type: boolean
+      description: Unique
+    well:
+      type: string
+      description: Well ID
+    reservesCategory:
+      type: object
+      properties:
+        prmsClass:
+          type: string
+          description: PRMS Class
+        prmsCategory:
+          type: string
+          description: PRMS Category
+        prmsSubCategory:
+          type: string
+          description: PRMS Sub Category
+  example:
+    name: Test
+    scenario: 63b8571d70ed63f50bd6d63f
+    unique: true
+    well: 63b85759e1d7eb4e31579f51
+    reservesCategory:
+      prmsClass: reserves
+      prmsCategory: proved
+      prmsSubCategory: behind_pipe
+ReservesCategoryInputList:
+  type: array
+  items:
+    $ref: '#/definitions/ReservesCategoryInput'
+  maxItems: 500
+  example:
+    - name: Test
+      scenario: 63b8571d70ed63f50bd6d63f
+      unique: true
+      well: 63b85759e1d7eb4e31579f51
+      reservesCategory:
+        prmsClass: reserves
+        prmsCategory: proved
+        prmsSubCategory: behind_pipe

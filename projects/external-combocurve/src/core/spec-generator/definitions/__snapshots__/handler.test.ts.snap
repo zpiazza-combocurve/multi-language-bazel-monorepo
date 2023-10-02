@@ -1,0 +1,164 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`spec handler getDefinitions 1`] = `
+"TestModelCustomInput:
+  type: 'object'
+  properties:
+    prop1:
+      type: 'string'
+      example: 'qwe'
+    prop2:
+      type: 'number'
+      example: '123'
+  example:
+    prop1: qwe	
+    prop2: 123	
+TestModel:
+  type: 'object'
+  required:
+    - name
+    - isCool
+    - inner
+  properties:
+    name:
+      type: 'string'
+      example: 'test1'
+      enum:
+        - 'test1'
+        - 'test2'
+    isCool:
+      type: 'boolean'
+      example: 'true'
+    inner:
+      $ref: '#/definitions/InnerModel'
+    address:
+      type: 'string'
+      example: 'some_string'
+    custom:
+      $ref: '#/definitions/TestModelCustomInput'
+  example:
+    name: test1	
+    isCool: true	
+    inner:	
+      profession: some_string	
+      yearsOfExperience: 42	
+      lookingForJob: true	
+    address: some_string	
+    custom:	
+      prop1: qwe	
+      prop2: 123	
+InnerModel:
+  type: 'object'
+  required:
+    - profession
+    - yearsOfExperience
+    - lookingForJob
+  properties:
+    profession:
+      type: 'string'
+      example: 'some_string'
+    yearsOfExperience:
+      type: 'number'
+      format: 'int32'
+      example: '42'
+    lookingForJob:
+      type: 'boolean'
+      example: 'true'
+  example:
+    profession: some_string	
+    yearsOfExperience: 42	
+    lookingForJob: true	
+TestModelOKResponse:
+  type: 'object'
+  properties:
+    name:
+      type: 'string'
+      example: 'test'
+    age:
+      type: 'number'
+      example: '10'
+    isCool:
+      type: 'boolean'
+      example: 'true'
+    id:
+      type: 'string'
+      example: '5f0b4e3b9b0b3e1b3c9d3b3b'
+    inner:
+      $ref: '#/definitions/TestModelInnerOutput'
+    address:
+      type: 'string'
+      example: 'default address'
+    numbers:
+      type: 'array'
+      items:
+        type: 'string'
+        example: 'one'
+  example:
+    name: test	
+    age: 10	
+    isCool: true	
+    id: 5f0b4e3b9b0b3e1b3c9d3b3b	
+    inner:	
+      profession: developer	
+      yearsOfExperience: 10	
+      lookingForJob: false	
+    address: default address	
+    numbers:	
+      - one	
+TestModelInnerOutput:
+  type: 'object'
+  properties:
+    profession:
+      type: 'string'
+      example: 'developer'
+    yearsOfExperience:
+      type: 'number'
+      example: '10'
+    lookingForJob:
+      type: 'boolean'
+      example: 'false'
+  example:
+    profession: developer	
+    yearsOfExperience: 10	
+    lookingForJob: false	
+TestModelNotFoundResponse:
+  type: 'object'
+  properties:
+    name:
+      type: 'string'
+      example: 'test'
+    errorMsg:
+      type: 'string'
+      example: 'test'
+    location:
+      type: 'string'
+      example: 'test'
+  example:
+    name: test	
+    errorMsg: test	
+    location: test	
+TestModelCreatedResponse:
+  type: 'object'
+  properties:
+    peoples:
+      type: 'array'
+      items:
+        $ref: 'TestModelPeoplesOutput'
+  example:
+    peoples:	
+      - name: test	
+        age: 10	
+TestModelPeoplesOutput:
+  type: 'object'
+  properties:
+    name:
+      type: 'string'
+      example: 'test'
+    age:
+      type: 'number'
+      example: '10'
+  example:
+    name: test	
+    age: 10	
+"
+`;

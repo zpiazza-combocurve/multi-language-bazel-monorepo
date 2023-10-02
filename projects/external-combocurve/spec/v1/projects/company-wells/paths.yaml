@@ -1,0 +1,357 @@
+/v1/projects/{projectId}/company-wells:
+  delete:
+    operationId: delete-v1-project-company-wells
+    description: >-
+      Remove the company wells documents that match the given
+      filters from the projectId scope.
+    parameters:
+      - in: path
+        name: projectId
+        required: true
+        type: string
+        description: ''
+      - name: chosenID
+        in: query
+        description: filter by chosenID
+        type: string
+        x-allow-multiple: true
+      - name: dataSource
+        in: query
+        description: filter by dataSource
+        type: string
+      - name: id
+        in: query
+        description: filter by id
+        type: string
+        x-allow-multiple: true
+    responses:
+      '204':
+        description: OK
+        headers:
+          X-Delete-Count:
+            type: integer
+            description: >-
+              The number of records that match the given filters and were deleted.
+      '400':
+        description: Bad Request. There is something wrong with the request data.
+    tags:
+      - ComboCurveV1
+  head:
+    operationId: head-v1-project-company-wells
+    description: Returns metadata about the existing company well documents in projectId scope.
+    parameters:
+      - in: path
+        name: projectId
+        required: true
+        type: string
+        description: ''
+      - $ref: '#/parameters/skipParam'
+      - $ref: '#/parameters/takeParam'
+      - name: api10
+        in: query
+        description: filter by api10
+        type: string
+      - name: api12
+        in: query
+        description: filter by api12
+        type: string
+      - name: county
+        in: query
+        description: filter by county
+        type: string
+      - name: state
+        in: query
+        description: filter by state
+        type: string
+      - name: wellName
+        in: query
+        description: filter by wellName
+        type: string
+      - name: chosenID
+        in: query
+        description: filter by chosenID
+        type: string
+      - name: inptID
+        in: query
+        description: filter by inptID
+        type: string
+      - name: api14
+        in: query
+        description: filter by api14
+        type: string
+      - name: createdAt
+        in: query
+        description: "filter by createdAt - Operator values are [lt] = less than, [le] = less than or equal, [gt] = greater than, [ge] = greater than or equal, no operator = equal. Example createdAt[gt]=2018-01-01T00:00:00Z"
+        format: date
+        type: string
+        x-allow-parameter-operator: true
+      - name: updatedAt
+        in: query
+        description: "filter by updatedAt - Operator values are [lt] = less than, [le] = less than or equal, [gt] = greater than, [ge] = greater than or equal, no operator = equal. Example updatedAt[gt]=2018-01-01T00:00:00Z"
+        format: date
+        type: string
+        x-allow-parameter-operator: true
+      - name: dataSource
+        in: query
+        description: filter by dataSource
+        type: string
+      - name: currentOperator
+        in: query
+        description: filter by dataSource
+        type: string
+    responses:
+      '200':
+        description: OK
+        headers:
+          Link:
+            type: string
+            description: >-
+              Indicates a typed relationship with another resource, where the
+              relation type is defined by RFC 5988. We include the relationships
+              next, prev, first and last, which can be used to move between
+              pages of the list of results.
+          X-Query-Count:
+            type: integer
+            description: >-
+              The number of records in this resource. When filters are provided
+              only matching records are counted.
+      '400':
+        description: Bad Request. There is something wrong with the request data.
+    tags:
+      - ComboCurveV1
+    x-client-generation:
+      x-count-method:
+        name: ProjectCompanyWellsCount
+  get:
+    produces:
+      - application/json
+    x-google-quota:
+      metricCosts:
+        read-request-rate: 4
+    description: Returns a list of company well documents in projectId scope.
+    operationId: get-v1-project-company-wells
+    parameters:
+      - in: path
+        name: projectId
+        required: true
+        type: string
+        description: ''
+      - $ref: '#/parameters/skipParam'
+      - $ref: '#/parameters/takeParam'
+      - $ref: '#/parameters/sortParam'
+      - $ref: '#/parameters/cursorParam'
+      - name: api10
+        in: query
+        description: filter by api10
+        type: string
+      - name: api12
+        in: query
+        description: filter by api12
+        type: string
+      - name: county
+        in: query
+        description: filter by county
+        type: string
+      - name: state
+        in: query
+        description: filter by state
+        type: string
+      - name: wellName
+        in: query
+        description: filter by wellName
+        type: string
+      - name: chosenID
+        in: query
+        description: filter by chosenID
+        type: string
+      - name: inptID
+        in: query
+        description: filter by inptID
+        type: string
+      - name: api14
+        in: query
+        description: filter by api14
+        type: string
+      - name: createdAt
+        in: query
+        description: "filter by createdAt - Operator values are [lt] = less than, [le] = less than or equal, [gt] = greater than, [ge] = greater than or equal, no operator = equal. Example createdAt[gt]=2018-01-01T00:00:00Z"
+        format: date
+        type: string
+        x-allow-parameter-operator: true
+      - name: updatedAt
+        in: query
+        description: "filter by updatedAt - Operator values are [lt] = less than, [le] = less than or equal, [gt] = greater than, [ge] = greater than or equal, no operator = equal. Example updatedAt[gt]=2018-01-01T00:00:00Z"
+        format: date
+        type: string
+        x-allow-parameter-operator: true
+      - name: dataSource
+        in: query
+        description: filter by dataSource
+        type: string
+      - name: currentOperator
+        in: query
+        description: filter by dataSource
+        type: string
+    responses:
+      '200':
+        description: OK
+        schema:
+          $ref: '#/definitions/WellList'
+        headers:
+          Link:
+            type: string
+            description: >-
+              Indicates a typed relationship with another resource, where the
+              relation type is defined by RFC 5988. We include the relationships
+              next, prev, first and last, which can be used to move between
+              pages of the list of results.
+      '400':
+        description: Bad Request. There is something wrong with the request data.
+        schema:
+          $ref: '#/definitions/Error'
+    tags:
+      - ComboCurveV1
+    x-client-generation:
+      x-get-all-skip-take-method:
+        name: GetAllProjectCompanyWells
+        baseReturnType: Well
+      x-get-all-cursor-method:
+        name: GetAllProjectCompanyWellsV2
+        baseReturnType: Well
+  post:
+    consumes:
+      - application/json
+    produces:
+      - application/json
+    x-google-quota:
+      metricCosts:
+        write-request-rate: 1
+    operationId: post-v1-project-company-wells
+    parameters:
+      - in: path
+        name: projectId
+        required: true
+        type: string
+        description: ''
+      - in: body
+        name: well
+        description: Company Well documents to insert. See CompanyWellInputList.
+        schema:
+          $ref: '#/definitions/CompanyWellInputList'
+    responses:
+      '207':
+        description: Multi-Status
+        schema:
+          $ref: '#/definitions/CompanyWellMultiStatusResponse'
+      '400':
+        description: Bad Request. There is something wrong with the request data.
+        schema:
+          $ref: '#/definitions/Error'
+    tags:
+        - ComboCurveV1
+/v1/projects/{projectId}/company-wells/head:
+  get:
+    x-no-client: true
+    x-no-doc: true
+    operationId: get-head-v1-project-company-wells
+    description: Returns metadata about the existing company well documents in projectId scope.
+    parameters:
+      - in: path
+        name: projectId
+        required: true
+        type: string
+        description: ''
+      - $ref: '#/parameters/skipParam'
+      - $ref: '#/parameters/takeParam'
+      - name: api10
+        in: query
+        description: filter by api10
+        type: string
+      - name: api12
+        in: query
+        description: filter by api12
+        type: string
+      - name: county
+        in: query
+        description: filter by county
+        type: string
+      - name: state
+        in: query
+        description: filter by state
+        type: string
+      - name: wellName
+        in: query
+        description: filter by wellName
+        type: string
+      - name: chosenID
+        in: query
+        description: filter by chosenID
+        type: string
+      - name: inptID
+        in: query
+        description: filter by inptID
+        type: string
+      - name: api14
+        in: query
+        description: filter by api14
+        type: string
+      - name: createdAt
+        in: query
+        description: "filter by createdAt - Operator values are [lt] = less than, [le] = less than or equal, [gt] = greater than, [ge] = greater than or equal, no operator = equal. Example createdAt[gt]=2018-01-01T00:00:00Z"
+        format: date
+        type: string
+      - name: updatedAt
+        in: query
+        description: "filter by updatedAt - Operator values are [lt] = less than, [le] = less than or equal, [gt] = greater than, [ge] = greater than or equal, no operator = equal. Example updatedAt[gt]=2018-01-01T00:00:00Z"
+        format: date
+        type: string
+    responses:
+      '200':
+        description: OK
+        headers:
+          Link:
+            type: string
+            description: >-
+              Indicates a typed relationship with another resource, where the
+              relation type is defined by RFC 5988. We include the relationships
+              next, prev, first and last, which can be used to move between
+              pages of the list of results.
+          X-Query-Count:
+            type: integer
+            description: >-
+              The number of records in this resource. When filters are provided
+              only matching records are counted.
+      '400':
+        description: Bad Request. There is something wrong with the request data.
+    tags:
+      - ComboCurveV1
+/v1/projects/{projectId}/company-wells/{id}:
+  get:
+    produces:
+      - application/json
+    x-google-quota:
+      metricCosts:
+        read-request-rate: 1
+    operationId: get-v1-project-company-well-by-id
+    parameters:
+      - in: path
+        name: projectId
+        required: true
+        type: string
+        description: ''
+      - in: path
+        name: id
+        required: true
+        type: string
+        description: ''
+    responses:
+      '200':
+        description: OK
+        schema:
+          $ref: '#/definitions/Well'
+      '400':
+        description: Bad Request. There is something wrong with the request data.
+        schema:
+          $ref: '#/definitions/Error'
+    tags:
+      - ComboCurveV1

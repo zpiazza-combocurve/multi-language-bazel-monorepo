@@ -1,0 +1,81 @@
+{
+	"name": "Capex Test",
+	"unique": false,
+	"otherCapex": {
+		"rows": [
+			{
+				"category": "other_investment",
+				"description": "R Api Desc",
+				"tangible": 5,
+				"intangible": 10,
+				"capexExpense": "capex",
+				"afterEconLimit": true,
+				"calculation": "gross",
+				"escalationModel": "none",
+				"escalationStart": {
+					"fpd": 10
+				},
+				"depreciationModel": "none",
+				"dealTerms": 1,
+				"offsetToFpd": -120
+			}
+		]
+	},
+	"drillingCost": {
+		"dollarPerFtOfVertical": 25,
+		"dollarPerFtOfHorizontal": 1,
+		"fixedCost": 88,
+		"tangiblePct": 26,
+		"calculation": "net",
+		"escalationModel": "642f2f56670d176d8558ef7b",
+		"depreciationModel": "643c2c55ecea760012942188",
+		"dealTerms": 445,
+		"rows": [
+			{
+				"pctOfTotalCost": 25,
+				"scheduleEnd": 10
+			},
+			{
+				"pctOfTotalCost": 25,
+				"scheduleEnd": 20
+			},
+			{
+				"pctOfTotalCost": 25,
+				"scheduleEnd": 30
+			},
+			{
+				"pctOfTotalCost": 25,
+				"scheduleEnd": 40
+			}
+		]
+	},
+	"completionCost": {
+		"dollarPerFtOfVertical": 32,
+		"dollarPerFtOfHorizontal": [
+			{
+				"propLl": 222,
+				"unitCost": 14
+			},
+			{
+				"propLl": 77,
+				"unitCost": 15
+			}
+		],
+		"fixedCost": 225,
+		"tangiblePct": 80,
+		"calculation": "net",
+		"escalationModel": "62fbcecfcab9dfc5b88427c4",
+		"depreciationModel": "643c83a9caa3710012596294",
+		"dealTerms": 3,
+		"rows": [
+			{
+				"pctOfTotalCost": 50,
+				"offsetToAsOf": 10
+			},
+			{
+				"pctOfTotalCost": 50,
+				"offsetToAsOf": 100
+			}
+		]
+	}
+}

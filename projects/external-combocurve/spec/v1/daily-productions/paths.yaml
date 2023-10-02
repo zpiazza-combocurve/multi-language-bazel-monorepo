@@ -1,0 +1,227 @@
+/v1/daily-productions:
+  delete:
+    operationId: delete-v1-daily-productions
+    description: Delete the daily productions documents that match the given filters.
+    parameters:
+      - name: well
+        in: query
+        description: filter by well
+        type: string
+    responses:
+      '204':
+        description: OK
+        headers:
+          X-Delete-Count:
+            type: integer
+            description: >-
+              The number of records that match the given filters and were deleted.
+      '400':
+        description: Bad Request. There is something wrong with the request data.
+    tags:
+      - ComboCurveV1
+  head:
+    operationId: head-v1-daily-productions
+    description: Returns metadata about the existing daily production documents in the company scope.
+    parameters:
+      - $ref: '#/parameters/skipParam'
+      - $ref: '#/parameters/takeParam'
+      - name: createdAt
+        in: query
+        description: "filter by createdAt - Operator values are [lt] = less than, [le] = less than or equal, [gt] = greater than, [ge] = greater than or equal, no operator = equal. Example createdAt[gt]=2018-01-01T00:00:00Z"
+        format: date
+        type: string
+        x-allow-parameter-operator: true
+      - name: date
+        in: query
+        description: filter by date
+        format: date
+        type: string
+        x-allow-parameter-operator: true
+      - name: well
+        in: query
+        description: filter by well
+        type: string
+        x-allow-multiple: true
+        x-example: 123456789abcdef012345678
+      - name: updatedAt
+        in: query
+        description: "filter by updatedAt - Operator values are [lt] = less than, [le] = less than or equal, [gt] = greater than, [ge] = greater than or equal, no operator = equal. Example updatedAt[gt]=2018-01-01T00:00:00Z"
+        format: date
+        type: string
+        x-allow-parameter-operator: true
+    responses:
+      '200':
+        description: OK
+        headers:
+          Link:
+            type: string
+            description: >-
+              Indicates a typed relationship with another resource, where the
+              relation type is defined by RFC 5988. We include the relationships
+              next, prev, first and last, which can be used to move between
+              pages of the list of results.
+          X-Query-Count:
+            type: integer
+            description: >-
+              The number of records in this resource. When filters are provided
+              only matching records are counted.
+      '400':
+        description: Bad Request. There is something wrong with the request data.
+    tags:
+      - ComboCurveV1
+    x-client-generation:
+      x-count-method:
+        name: DailyProductionsCount
+  get:
+    x-google-quota:
+      metricCosts:
+        read-request-rate: 1
+    produces:
+      - application/json
+    operationId: get-v1-daily-productions
+    description: Returns a list of daily production documents in the company scope.
+    parameters:
+      - $ref: '#/parameters/skipParam'
+      - $ref: '#/parameters/takeParam'
+      - $ref: '#/parameters/sortParam'
+      - $ref: '#/parameters/cursorParam'
+      - name: createdAt
+        in: query
+        description: "filter by createdAt - Operator values are [lt] = less than, [le] = less than or equal, [gt] = greater than, [ge] = greater than or equal, no operator = equal. Example createdAt[gt]=2018-01-01T00:00:00Z"
+        format: date
+        type: string
+        x-allow-parameter-operator: true
+      - name: date
+        in: query
+        description: filter by date
+        format: date
+        type: string
+        x-allow-parameter-operator: true
+      - name: well
+        in: query
+        description: filter by well
+        type: string
+        x-allow-multiple: true
+        x-example: 123456789abcdef012345678
+      - name: updatedAt
+        in: query
+        description: "filter by updatedAt - Operator values are [lt] = less than, [le] = less than or equal, [gt] = greater than, [ge] = greater than or equal, no operator = equal. Example updatedAt[gt]=2018-01-01T00:00:00Z"
+        format: date
+        type: string
+        x-allow-parameter-operator: true
+    responses:
+      '200':
+        description: OK
+        schema:
+          $ref: '#/definitions/DailyProductionList'
+        headers:
+          Link:
+            type: string
+            description: >-
+              Indicates a typed relationship with another resource, where the
+              relation type is defined by RFC 5988. We include the relationships
+              next, prev, first and last, which can be used to move between
+              pages of the list of results.
+      '400':
+        description: Bad Request. There is something wrong with the request data.
+        schema:
+          $ref: '#/definitions/Error'
+    tags:
+      - ComboCurveV1
+    x-client-generation:
+      x-get-all-skip-take-method:
+        name: GetAllDailyProductions
+        baseReturnType: DailyProduction
+      x-get-all-cursor-method:
+        name: GetAllDailyProductionsV2
+        baseReturnType: DailyProduction
+  post:
+    x-google-quota:
+      metricCosts:
+        write-request-rate: 1
+    consumes:
+      - application/json
+    produces:
+      - application/json
+    operationId: post-v1-daily-productions
+    description: Inserts a list of daily production documents.
+    parameters:
+      - in: body
+        name: daily-production
+        description: Daily production document(s) to insert. See DailyProductionInputList.
+        schema:
+          $ref: '#/definitions/DailyProductionInputList'
+    responses:
+      '207':
+        description: Multi-Status
+        schema:
+          $ref: '#/definitions/ProductionMultiStatusResponse'
+    tags:
+      - ComboCurveV1
+  put:
+    x-google-quota:
+      metricCosts:
+        write-request-rate: 1
+    consumes:
+      - application/json
+    produces:
+      - application/json
+    operationId: put-v1-daily-productions
+    description: Upserts a list of daily production documents.
+    parameters:
+      - in: body
+        name: daily-production
+        description: Daily production document(s) to upsert. See DailyProductionInputList.
+        schema:
+          $ref: '#/definitions/DailyProductionInputList'
+    responses:
+      '207':
+        description: Multi-Status
+        schema:
+          $ref: '#/definitions/ProductionMultiStatusResponse'
+    tags:
+      - ComboCurveV1
+/v1/daily-productions/head:
+  get:
+    x-no-client: true
+    x-no-doc: true
+    operationId: get-head-v1-daily-productions
+    description: Returns metadata about the existing daily production documents in the company scope.
+    parameters:
+      - $ref: '#/parameters/skipParam'
+      - $ref: '#/parameters/takeParam'
+      - name: createdAt
+        in: query
+        description: "filter by createdAt - Operator values are [lt] = less than, [le] = less than or equal, [gt] = greater than, [ge] = greater than or equal, no operator = equal. Example createdAt[gt]=2018-01-01T00:00:00Z"
+        format: date
+        type: string
+      - name: well
+        in: query
+        description: filter by well
+        type: string
+        x-example: 123456789abcdef012345678
+      - name: updatedAt
+        in: query
+        description: "filter by updatedAt - Operator values are [lt] = less than, [le] = less than or equal, [gt] = greater than, [ge] = greater than or equal, no operator = equal. Example updatedAt[gt]=2018-01-01T00:00:00Z"
+        format: date
+        type: string
+    responses:
+      '200':
+        description: OK
+        headers:
+          Link:
+            type: string
+            description: >-
+              Indicates a typed relationship with another resource, where the
+              relation type is defined by RFC 5988. We include the relationships
+              next, prev, first and last, which can be used to move between
+              pages of the list of results.
+          X-Query-Count:
+            type: integer
+            description: >-
+              The number of records in this resource. When filters are provided
+              only matching records are counted.
+      '400':
+        description: Bad Request. There is something wrong with the request data.
+    tags:
+      - ComboCurveV1

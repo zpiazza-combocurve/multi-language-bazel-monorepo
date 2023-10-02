@@ -1,0 +1,11 @@
+#!include:.gcloudignore
+
+!/performance/
+!/.gcloudignore.performance
+
+/performance/.env
+/performance/report.json
+/performance/report.html
+/performance/.gitignore
+/performance/cloudbuild.yaml
+/performance/README.md

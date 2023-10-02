@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`spec handler mapRequestObjects 1`] = `
+"test_route/:
+  delete:
+    operationId: delete-v1-testmodel
+    parameters:
+      - name: name
+        in: body
+        required: true
+        type: string
+        example: some_string
+      - name: age
+        in: query
+        type: number
+        example: 42
+      - name: isCool
+        in: body
+        required: true
+        type: boolean
+        example: true
+      - name: id
+        in: params
+        required: true
+        type: string
+        example: 5e276e31876cd70012ddf3f6
+      - name: compositionTest
+        in: query
+        type: string
+        example: some_string
+      - name: inner
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/InnerModel'
+      - name: address
+        in: body
+        type: string
+        example: some_string
+      - name: custom
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/TestModelCustomInput'
+    responses:
+      '201':
+        description: Created Response
+        schema:
+          $ref: #/definitions/TestModelCreatedResponse
+      '404':
+        description: NotFound Response
+        schema:
+          $ref: #/definitions/TestModelNotFoundResponse
+      '200':
+        description: OK Response
+        schema:
+          $ref: #/definitions/TestModelOKResponse
+      '401':
+        description: Unauthorized Response
+      '400':
+        description: BadRequest Response
+"
+`;

@@ -1,0 +1,187 @@
+ActualForecastResponseList:
+  type: array
+  items:
+    $ref: '#/definitions/ActualForecastResponse'
+  maxItems: 200
+  example:
+    - id: 5e272d39b78910dd2a1bd8fe
+      copiedFrom: 63b856e816f758cc5b0f1106
+      name: Test
+      scenario: 63b8571d70ed63f50bd6d63f
+      tags:
+        - 63b85737ff846cee7b1f6fdc
+      unique: true
+      well: 63b85759e1d7eb4e31579f51
+      createdAt: '2020-01-21T16:58:08.986Z'
+      updatedAt: '2020-01-21T17:58:08.986Z'
+      createdBy: 63b857cb68f3b96efc700998
+      lastUpdatedBy: 63b857cb68f3b96efc700998
+      actualOrForecast:
+      ignoreHistoryProd: false
+      replaceActualWithForecast:
+        oil:
+          asOfDate: true
+        gas:
+          never: true
+        water:
+          date: '2020-05-05'
+
+ActualForecastResponse:
+  type: object
+  properties:
+    copiedFrom:
+      type: string
+      description: Copied From
+    createdAt:
+      type: string
+      format: date-time
+    createdBy:
+      type: string
+      description: Created By
+    id:
+      type: string
+      description: ID
+    lastUpdatedBy:
+      type: string
+      description: Last Updated By
+    name:
+      type: string
+      description: Name
+    scenario:
+      type: string
+      description: Scenario ID
+    tags:
+      type: array
+      items:
+        type: string
+        description: Tag ID
+    unique:
+      type: boolean
+      description: Unique
+    updatedAt:
+      type: string
+      format: date
+      description: Updated At
+    actualOrForecast:
+      $ref: '#/definitions/ActualForecastModel'
+  example:
+    id: 5e272d39b78910dd2a1bd8fe
+    copiedFrom: 63b856e816f758cc5b0f1106
+    name: Test
+    scenario: 63b8571d70ed63f50bd6d63f
+    tags:
+      - 63b85737ff846cee7b1f6fdc
+    unique: true
+    well: 63b85759e1d7eb4e31579f51
+    createdAt: '2020-01-21T16:58:08.986Z'
+    updatedAt: '2020-01-21T17:58:08.986Z'
+    createdBy: 63b857cb68f3b96efc700998
+    lastUpdatedBy: 63b857cb68f3b96efc700998
+    actualOrForecast:
+    ignoreHistoryProd: false
+    replaceActualWithForecast:
+      oil:
+        asOfDate: true
+      gas:
+        never: true
+      water:
+        date: '2020-05-05'
+
+ActualForecastInputList:
+  type: array
+  items:
+    $ref: '#/definitions/ActualForecastInput'
+  maxItems: 500
+  example:
+    - name: "example"
+      unique: false
+      actualOrForecast:
+        ignoreHistoryProd: false
+        replaceActualWithForecast:
+          oil:
+            asOfDate: true
+          gas:
+            never: true
+          water:
+            date: '2020-05-05'
+
+ActualForecastModel:
+  type: object
+  required:
+    - ignoreHistoryProd
+  properties:
+    ignoreHistoryProd:
+      type: boolean
+      description: "Ignore History Production | 'true' or 'false'" 
+    replaceActualWithForecast:
+      type: object
+      required:
+        - oil
+        - gas
+        - water
+      properties:
+        oil:
+          type: object
+          properties:
+            asOfDate:
+              type: boolean
+            never:
+              type: boolean
+            date:
+              type: string
+              format: date
+        gas:
+          type: object
+          properties:
+            asOfDate:
+              type: boolean
+            never:
+              type: boolean
+            date:
+              type: string
+              format: date
+        water:
+          type: object
+          properties:
+            asOfDate:
+              type: boolean
+            never:
+              type: boolean
+            date:
+              type: string
+              format: date
+
+ActualForecastInput:
+  type: object
+  required:
+    - name
+    - unique
+  properties:
+    name:
+      type: string
+      description: Name
+    unique:
+      type: boolean
+      description: Unique
+    well:
+      type: string
+      description: Well ID
+    scenario:
+      type: string
+      description: Scenario ID
+    actualOrForecast:
+      $ref: '#/definitions/ActualForecastModel'
+  example:
+    name: "example"
+    unique: false
+    actualOrForecast:
+      ignoreHistoryProd: false
+      replaceActualWithForecast:
+        oil:
+          asOfDate: true
+        gas:
+          never: true
+        water:
+          date: '2020-05-05'
+
+

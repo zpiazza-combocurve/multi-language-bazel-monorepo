@@ -1,0 +1,252 @@
+{
+	"$id": "http://combocurve.com/schemas/ReversionType.json",
+	"type": "object",
+	"unevaluatedProperties": false,
+	"nullable": true,
+	"discriminator": {
+		"propertyName": "reversionType"
+	},
+	"required": [
+		"reversionType",
+		"netProfitInterest",
+		"workingInterest",
+		"netRevenueInterest",
+		"leaseNetRevenueInterest"
+	],
+	"properties": {
+		"reversionType": {
+			"type": "string",
+			"enum": [
+				"Irr",
+				"PayoutWithInvestment",
+				"PayoutWithoutInvestment",
+				"UndiscRoi",
+				"AsOf",
+				"Date",
+				"WhCumOil",
+				"WhCumGas",
+				"WhCumBoe"
+			]
+		},
+		"reversionValue": {
+			"type": ["string", "number"]
+		},
+		"workingInterest": {
+			"type": "number",
+			"description": "working Interest",
+			"minimum": 0,
+			"maximum": 100
+		},
+		"netProfitInterest": {
+			"type": "number",
+			"description": "Net Profit Interest",
+			"minimum": 0,
+			"maximum": 100,
+			"default": 0
+		},
+		"netRevenueInterest": {
+			"type": "number",
+			"description": "Net Revenue Interest",
+			"minimum": 0,
+			"maximum": 100
+		},
+		"includeNetProfitInterest": {
+			"type": "string",
+			"description": "Include Net Profit Interest",
+			"enum": ["yes", "no"]
+		},
+		"balance": {
+			"type": "string",
+			"description": "Balance",
+			"enum": ["gross", "net"]
+		},
+		"leaseNetRevenueInterest": {
+			"type": "number",
+			"description": "Lease Net Revenue Interest",
+			"minimum": 0,
+			"maximum": 100
+		},
+		"oilNetRevenueInterest": {
+			"type": "number",
+			"nullable": true,
+			"description": "Oil Net Revenue Interest",
+			"minimum": 0,
+			"maximum": 100
+		},
+		"gasNetRevenueInterest": {
+			"type": "number",
+			"nullable": true,
+			"description": "Gas Net Revenue Interest",
+			"minimum": 0,
+			"maximum": 100
+		},
+		"nglNetRevenueInterest": {
+			"type": "number",
+			"nullable": true,
+			"description": "Ngl Net Revenue Interest",
+			"minimum": 0,
+			"maximum": 100
+		},
+		"dripCondensateNetRevenueInterest": {
+			"type": "number",
+			"nullable": true,
+			"description": "Drip Condensate Net Revenue Interest",
+			"minimum": 0,
+			"maximum": 100
+		}
+	},
+	"oneOf": [
+		{
+			"description": "Irr",
+			"type": "object",
+			"properties": {
+				"reversionType": {
+					"type": "string",
+					"const": "Irr"
+				},
+				"reversionValue": {
+					"type": "number",
+					"description": "Reversion Value",
+					"minimum": 0,
+					"maximum": 10000
+				}
+			},
+			"required": ["reversionType", "reversionValue"]
+		},
+		{
+			"description": "Payout With Investment",
+			"type": "object",
+			"properties": {
+				"reversionType": {
+					"type": "string",
+					"const": "PayoutWithInvestment"
+				},
+				"reversionValue": {
+					"type": "number",
+					"description": "Reversion Value",
+					"minimum": 0,
+					"maximum": 10000000000
+				}
+			},
+			"required": ["reversionType", "reversionValue"]
+		},
+		{
+			"description": "Payout Without Investment",
+			"type": "object",
+			"properties": {
+				"reversionType": {
+					"type": "string",
+					"const": "PayoutWithoutInvestment"
+				},
+				"reversionValue": {
+					"type": "number",
+					"description": "Reversion Value",
+					"minimum": 0,
+					"maximum": 10000000000
+				}
+			},
+			"required": ["reversionType", "reversionValue"]
+		},
+		{
+			"description": "Undisc Roi",
+			"type": "object",
+			"properties": {
+				"reversionType": {
+					"type": "string",
+					"const": "UndiscRoi"
+				},
+				"reversionValue": {
+					"type": "number",
+					"description": "Reversion Value",
+					"minimum": 0,
+					"maximum": 1000
+				}
+			},
+			"required": ["reversionType", "reversionValue"]
+		},
+		{
+			"description": "As Of",
+			"type": "object",
+			"properties": {
+				"reversionType": {
+					"type": "string",
+					"const": "AsOf"
+				},
+				"reversionValue": {
+					"type": "number",
+					"description": "Reversion Value",
+					"minimum": -1200,
+					"maximum": 1200
+				}
+			},
+			"required": ["reversionType", "reversionValue"]
+		},
+		{
+			"description": "Date",
+			"type": "object",
+			"properties": {
+				"reversionType": {
+					"type": "string",
+					"const": "Date"
+				},
+				"reversionValue": {
+					"type": "string",
+					"format": "date",
+					"description": "Reversion Value"
+				}
+			},
+			"required": ["reversionType", "reversionValue"]
+		},
+		{
+			"description": "Well Head Cum Oil",
+			"type": "object",
+			"properties": {
+				"reversionType": {
+					"type": "string",
+					"const": "WhCumOil"
+				},
+				"reversionValue": {
+					"type": "number",
+					"description": "Reversion Value",
+					"minimum": 0,
+					"maximum": 10000000000
+				}
+			},
+			"required": ["reversionType", "reversionValue"]
+		},
+		{
+			"description": "Well Head Cum Gas",
+			"type": "object",
+			"properties": {
+				"reversionType": {
+					"type": "string",
+					"const": "WhCumGas"
+				},
+				"reversionValue": {
+					"type": "number",
+					"description": "Reversion Value",
+					"minimum": 0,
+					"maximum": 10000000000
+				}
+			},
+			"required": ["reversionType", "reversionValue"]
+		},
+		{
+			"description": "Well Head Cum Boe",
+			"type": "object",
+			"properties": {
+				"reversionType": {
+					"type": "string",
+					"const": "WhCumBoe"
+				},
+				"reversionValue": {
+					"type": "number",
+					"description": "Reversion Value",
+					"minimum": 0,
+					"maximum": 10000000000
+				}
+			},
+			"required": ["reversionType", "reversionValue"]
+		}
+	]
+}

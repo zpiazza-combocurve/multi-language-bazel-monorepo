@@ -1,0 +1,77 @@
+{
+	"$id": "http://combocurve.com/schemas/actual-or-forecast.json",
+	"type": "object",
+	"$ref": "base-econ-model.json",
+	"required": ["actualOrForecast"],
+	"properties": {
+		"actualOrForecast": {
+			"type": "object",
+			"required": ["ignoreHistoryProd"],
+			"properties": {
+				"ignoreHistoryProd": {
+					"type": "boolean"
+				}
+			},
+			"if": {
+				"properties": {
+					"ignoreHistoryProd": {
+						"const": false
+					}
+				}
+			},
+			"then": {
+				"required": ["ignoreHistoryProd", "replaceActualWithForecast"],
+				"unevaluatedProperties": false,
+				"properties": {
+					"ignoreHistoryProd": {
+						"type": "boolean"
+					},
+					"replaceActualWithForecast": {
+						"type": "object",
+						"unevaluatedProperties": false,
+						"required": ["oil", "gas", "water"],
+						"properties": {
+							"oil": {
+								"$ref": "#/definitions/oilGasWater"
+							},
+							"gas": {
+								"$ref": "#/definitions/oilGasWater"
+							},
+							"water": {
+								"$ref": "#/definitions/oilGasWater"
+							}
+						}
+					}
+				}
+			},
+			"else": {
+				"properties": {
+					"ignoreHistoryProd": {
+						"type": "boolean"
+					}
+				},
+				"type": "object",
+				"unevaluatedProperties": false,
+				"required": ["ignoreHistoryProd"]
+			}
+		}
+	},
+	"definitions": {
+		"oilGasWater": {
+			"type": "object",
+			"unevaluatedProperties": false,
+			"properties": {
+				"never": {
+					"type": "boolean"
+				},
+				"asOfDate": {
+					"type": "boolean"
+				},
+				"date": {
+					"$ref": "criteria.json#/definitions/Dates"
+				}
+			},
+			"oneRequired": ["never", "asOfDate", "date"]
+		}
+	}
+}

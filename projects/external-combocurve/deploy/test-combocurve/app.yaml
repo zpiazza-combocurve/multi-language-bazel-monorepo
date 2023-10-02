@@ -1,0 +1,40 @@
+runtime: nodejs
+env: flex
+
+runtime_config:
+  operating_system: "ubuntu22"
+  runtime_version: 18
+
+service: external-api
+
+# [START configuration]
+endpoints_api_service:
+  # The following values are to be replaced by information from the output of
+  # 'gcloud endpoints services deploy openapi-appengine.yaml' command.
+  rollout_strategy: managed
+  name: test-api.combocurve.com
+# [END configuration]
+
+env_variables:
+  EXTERNAL_API_IMPORT_URL: "https://external-api-import-4ah2s2tcoa-uc.a.run.app"
+  WELL_SERVICE_URL: "https://well-service-4ah2s2tcoa-uc.a.run.app"
+  FORECAST_SERVICE_URL: "https://forecast-service-4ah2s2tcoa-uc.a.run.app"
+  GCP_PRIMARY_PROJECT_ID: test-combocurve
+  GCP_REGIONAL_PROJECT_ID: test-combocurve
+  REGION: "us-central1"
+  DATABASE_TIMEOUT_SECONDS: 60
+  CLOUD_FUNCTION_DEFAULT_MAX_RETRIES: 3
+  CLOUD_FUNCTION_MAX_TIMEOUT_SECONDS: 180
+  DAILY_FORECAST_VOLUME_YEAR_NUMBER_LIMIT: 5
+  ECON_MONTHLY_CONCURRENCY: 4
+  ECON_MONTHLY_ATTEMPTS: 4
+  ECON_MONTHLY_ATTEMPT_DELAY_MS: 1000
+  DAL_ADDRESS: "https://dal-4ah2s2tcoa-uc.a.run.app"
+  
+automatic_scaling:
+  cool_down_period_sec: 120
+  min_num_instances: 2
+  cpu_utilization:
+    target_utilization: 0.5
+  # default max_num_instances is 20
+  max_num_instances: 10

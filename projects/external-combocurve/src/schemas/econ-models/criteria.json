@@ -1,0 +1,75 @@
+{
+	"$id": "http://combocurve.com/schemas/criteria.json",
+	"definitions": {
+		"StartEndPeriod": {
+			"type": "integer",
+			"minimum": 1,
+			"maximum": 1200
+		},
+		"StartEndRange": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 10000000000
+		},
+		"EntireWellLife": {
+			"type": "string",
+			"enum": ["Flat"]
+		},
+		"Dates": {
+			"type": "string",
+			"format": "date",
+			"formatMinimum": "1900-01-01",
+			"formatMaximum": "2262-04-01"
+		},
+		"States": {
+			"type": "string",
+			"enum": [
+				"custom",
+				"alaska",
+				"alabama",
+				"arkansas",
+				"arizona",
+				"california",
+				"colorado",
+				"florida",
+				"idaho",
+				"indiana",
+				"kansas",
+				"kentucky",
+				"louisiana",
+				"maryland",
+				"michigan",
+				"mississippi",
+				"montana",
+				"north_dakota",
+				"nebraska",
+				"new_mexico",
+				"nevada",
+				"new_york",
+				"ohio",
+				"oklahoma",
+				"oregon",
+				"pennsylvania",
+				"pennsylvania horizontal",
+				"pennsylvania vertical",
+				"south_dakota",
+				"tennessee",
+				"texas",
+				"utah",
+				"virginia",
+				"west_virginia",
+				"wyoming"
+			]
+		},
+		"GasRate": { "$ref": "#/definitions/StartEndRange" },
+		"MonthPeriod": { "$ref": "#/definitions/StartEndPeriod" },
+		"OffsetToAsOf": { "$ref": "#/definitions/StartEndPeriod" },
+		"OffsetToDiscountDate": { "$ref": "#/definitions/StartEndPeriod" },
+		"OffsetToEndHistory": { "$ref": "#/definitions/StartEndPeriod" },
+		"OffsetToFirstSegment": { "$ref": "#/definitions/StartEndPeriod" },
+		"OffsetToFpd": { "$ref": "#/definitions/StartEndPeriod" },
+		"OilRate": { "$ref": "#/definitions/StartEndRange" },
+		"WaterRate": { "$ref": "#/definitions/StartEndRange" },
+		"TotalFluidRate": { "$ref": "#/definitions/StartEndRange" }
+	}
+}

@@ -1,0 +1,115 @@
+{
+	"$id": "http://combocurve.com/schemas/ownership-reversion.json",
+	"$ref": "base-econ-model.json",
+	"unevaluatedProperties": false,
+	"type": "object",
+	"properties": {
+		"ownership": {
+			"type": "object",
+			"unevaluatedProperties": false,
+			"required": ["initialOwnership"],
+			"properties": {
+				"initialOwnership": {
+					"type": "object",
+					"unevaluatedProperties": false,
+					"required": [
+						"workingInterest",
+						"netProfitInterestType",
+						"netProfitInterest",
+						"netRevenueInterest",
+						"leaseNetRevenueInterest"
+					],
+					"properties": {
+						"workingInterest": {
+							"type": "number",
+							"description": "working Interest",
+							"minimum": 0,
+							"maximum": 100
+						},
+						"netProfitInterestType": {
+							"type": "string",
+							"description": "Net Profit Interest Type",
+							"enum": ["expense", "revenue"]
+						},
+						"netProfitInterest": {
+							"type": "number",
+							"description": "Net Profit Interest",
+							"minimum": 0,
+							"maximum": 100
+						},
+						"netRevenueInterest": {
+							"type": "number",
+							"description": "Net Revenue Interest",
+							"minimum": 0,
+							"maximum": 100
+						},
+						"leaseNetRevenueInterest": {
+							"type": "number",
+							"description": "Lease Net Revenue Interest",
+							"minimum": 0,
+							"maximum": 100
+						},
+						"oilNetRevenueInterest": {
+							"type": "number",
+							"nullable": true,
+							"description": "Oil Net Revenue Interest",
+							"minimum": 0,
+							"maximum": 100
+						},
+						"gasNetRevenueInterest": {
+							"type": "number",
+							"nullable": true,
+							"description": "Gas Net Revenue Interest",
+							"minimum": 0,
+							"maximum": 100
+						},
+						"nglNetRevenueInterest": {
+							"type": "number",
+							"nullable": true,
+							"description": "Ngl Net Revenue Interest",
+							"minimum": 0,
+							"maximum": 100
+						},
+						"dripCondensateNetRevenueInterest": {
+							"type": "number",
+							"nullable": true,
+							"description": "Drip Condensate Net Revenue Interest",
+							"minimum": 0,
+							"maximum": 100
+						}
+					}
+				},
+				"firstReversion": {
+					"$ref": "http://combocurve.com/schemas/ReversionType.json"
+				},
+				"secondReversion": {
+					"$ref": "http://combocurve.com/schemas/ReversionType.json"
+				},
+				"thirdReversion": {
+					"$ref": "http://combocurve.com/schemas/ReversionType.json"
+				},
+				"fourthReversion": {
+					"$ref": "http://combocurve.com/schemas/ReversionType.json"
+				},
+				"fifthReversion": {
+					"$ref": "http://combocurve.com/schemas/ReversionType.json"
+				},
+				"sixthReversion": {
+					"$ref": "http://combocurve.com/schemas/ReversionType.json"
+				},
+				"seventhReversion": {
+					"$ref": "http://combocurve.com/schemas/ReversionType.json"
+				},
+				"eighthReversion": {
+					"$ref": "http://combocurve.com/schemas/ReversionType.json"
+				},
+				"ninthReversion": {
+					"$ref": "http://combocurve.com/schemas/ReversionType.json"
+				},
+				"tenthReversion": {
+					"$ref": "http://combocurve.com/schemas/ReversionType.json"
+				}
+			}
+		}
+	}
+}

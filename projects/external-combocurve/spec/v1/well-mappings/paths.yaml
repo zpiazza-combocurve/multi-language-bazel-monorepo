@@ -1,0 +1,66 @@
+/v1/well-mappings:
+  get:
+    x-no-doc: true
+    x-google-quota:
+      metricCosts:
+        read-request-rate: 1
+    produces:
+      - application/json
+    operationId: get-v1-well-mappings
+    description: Returns a list of well mapping documents.
+    parameters:
+      - $ref: '#/parameters/takeParam'
+      - $ref: '#/parameters/cursorParam'
+      - name: chosenID
+        in: query
+        description: filter by chosenID
+        type: string
+        x-allow-multiple: true
+      - name: dataSource
+        in: query
+        description: filter by dataSource
+        type: string
+      - name: projectId
+        in: query
+        description: filter by projectId
+        type: string
+      - name: createdAt
+        in: query
+        description: "filter by createdAt - Operator values are [lt] = less than, [le] = less than or equal, [gt] = greater than, [ge] = greater than or equal, no operator = equal. Example createdAt[gt]=2018-01-01T00:00:00Z"
+        format: date
+        type: string
+        x-allow-parameter-operator: true
+      - name: updatedAt
+        in: query
+        description: "filter by updatedAt - Operator values are [lt] = less than, [le] = less than or equal, [gt] = greater than, [ge] = greater than or equal, no operator = equal. Example updatedAt[gt]=2018-01-01T00:00:00Z"
+        format: date
+        type: string
+        x-allow-parameter-operator: true
+      - name: id
+        in: query
+        description: filter by id
+        type: string
+        x-allow-multiple: true
+    responses:
+      '200':
+        description: OK
+        schema:
+          $ref: '#/definitions/WellMappingList'
+        headers:
+          Link:
+            type: string
+            description: >-
+              Indicates a typed relationship with another resource, where the
+              relation type is defined by RFC 5988. We include the relationships
+              next, prev, first and last, which can be used to move between
+              pages of the list of results.
+      '400':
+        description: Bad Request. There is something wrong with the request data.
+        schema:
+          $ref: '#/definitions/Error'
+    tags:
+      - ComboCurveV1
+    x-client-generation:
+      x-get-all-cursor-method:
+        name: GetAllWellMappingsV2
+        baseReturnType: WellMapping

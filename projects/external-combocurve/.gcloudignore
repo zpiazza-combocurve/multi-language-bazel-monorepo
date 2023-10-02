@@ -1,0 +1,7 @@
+jest.config.js
+.*
+!.gcloudignore
+!.gitignore
+!openapi-spec*.yaml
+#!include:.gitignore
+!dist

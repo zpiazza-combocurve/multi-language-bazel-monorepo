@@ -1,0 +1,17 @@
+node_modules
+dist
+out
+openapi-spec*.yaml
+cc-service.json
+coverage
+combocurve
+
+report.json
+
+.vscode/settings.json
+.DS_Store
+junit.xml
+test/integration/api-account.json
+Local.postman_environment.json
+
+memoryMongoConfig.txt

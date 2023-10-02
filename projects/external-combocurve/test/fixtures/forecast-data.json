@@ -1,0 +1,1214 @@
+[
+	{
+		"_id": "5e272dec4b97ed00132f2278",
+		"warning": {
+			"status": false,
+			"message": ""
+		},
+		"ratio": {
+			"enabled": false,
+			"phase": "oil",
+			"value": 1
+		},
+		"data_freq": "monthly",
+		"diagDate": "2020-03-04T23:54:07.710+0000",
+		"forecasted": true,
+		"forecastedAt": "2020-05-15T17:04:38.819Z",
+		"forecastedBy": "5e4ac3f103a08f0012337d71",
+		"phase": "gas",
+		"runDate": "2020-05-15T17:04:38.819Z",
+		"forecastType": "prob",
+		"status": "in_progress",
+		"forecast": "5e272dec4b97ed00132f2273",
+		"P_dict": {
+			"P10": {
+				"segments": [
+					{
+						"start_idx": 42868.0,
+						"end_idx": 43497.0,
+						"q_start": 32.13141683778234,
+						"q_end": 0.10028062722879517,
+						"name": "arps_modified",
+						"slope": -1.0,
+						"D_eff": 0.9916056945700182,
+						"D": 0.056466880703140654,
+						"b": 0.5120222561190331,
+						"target_D_eff_sw": 0.08,
+						"realized_D_eff_sw": 0.08000000000000007,
+						"sw_idx": 51207.30575258588,
+						"q_sw": 0.000709353381362992,
+						"D_exp_eff": 0.08165957818775005,
+						"D_exp": 0.0002332296433708617
+					}
+				],
+				"diagnostics": {}
+			},
+			"P50": {
+				"segments": [
+					{
+						"start_idx": 42868.0,
+						"end_idx": 43487.0,
+						"q_start": 32.13141683778234,
+						"q_end": 0.10005941543825023,
+						"name": "arps_modified",
+						"slope": -1.0,
+						"D_eff": 0.9918091075073028,
+						"D": 0.05646688075602509,
+						"b": 0.5078549125989166,
+						"target_D_eff_sw": 0.08,
+						"realized_D_eff_sw": 0.07999999999999974,
+						"sw_idx": 51277.213566886094,
+						"q_sw": 0.0006493911588363245,
+						"D_exp_eff": 0.08164589115801013,
+						"D_exp": 0.00023318883849610182
+					}
+				],
+				"diagnostics": {}
+			},
+			"P90": {
+				"segments": [
+					{
+						"start_idx": 42868.0,
+						"end_idx": 43474.0,
+						"q_start": 32.13141683778234,
+						"q_end": 0.1000717861593049,
+						"name": "arps_modified",
+						"slope": -1.0,
+						"D_eff": 0.9920560705556072,
+						"D": 0.05646694216588399,
+						"b": 0.5027231564739381,
+						"target_D_eff_sw": 0.08,
+						"realized_D_eff_sw": 0.08000000000000007,
+						"sw_idx": 51364.892198486996,
+						"q_sw": 0.0005812982621627474,
+						"D_exp_eff": 0.0816290407470065,
+						"D_exp": 0.00023313860352971278
+					}
+				],
+				"diagnostics": {}
+			},
+			"best": {
+				"segments": [
+					{
+						"start_idx": 42868.0,
+						"end_idx": 42993.0,
+						"q_start": 32.13141683778234,
+						"q_end": 0.10132935584469452,
+						"name": "arps_modified",
+						"slope": -1.0,
+						"D_eff": 0.9996017675185681,
+						"D": 0.2689162895107547,
+						"b": 0.5,
+						"target_D_eff_sw": 0.08,
+						"realized_D_eff_sw": 0.07999999999999996,
+						"sw_idx": 51440.13140107601,
+						"q_sw": 0.00002414486262676629,
+						"D_exp_eff": 0.0816201009421762,
+						"D_exp": 0.0002331119522813075
+					}
+				],
+				"diagnostics": {}
+			}
+		},
+		"p_extra": {
+			"eur_ratio": {
+				"P10": 1.0000703636666388,
+				"P50": 1.0,
+				"P90": 0.9999137851941978
+			}
+		},
+		"project": "5e272bed4b97ed00132f2271",
+		"well": "5e272d7ab78910dd2a1dfdc3",
+		"reviewedAt": "2020-05-15T17:04:38.819Z",
+		"reviewedBy": "5e4ac3f103a08f0012337d71",
+		"createdAt": "2020-01-21T16:59:25.843Z",
+		"updatedAt": "2020-01-21T16:59:25.843Z"
+	},
+	{
+		"_id": "5e272dec4b97ed00132f2274",
+		"warning": {
+			"status": true,
+			"message": "Valid data not enough to generate a valid forecast."
+		},
+		"ratio": {
+			"enabled": false,
+			"phase": "oil",
+			"value": 1
+		},
+		"data_freq": "monthly",
+		"diagDate": "2020-03-04T23:54:07.223+0000",
+		"forecasted": false,
+		"forecastedAt": "2020-05-15T17:04:36.191+0000",
+		"forecastedBy": "5e4ac3f103a08f0012337d71",
+		"phase": "oil",
+		"runDate": "2020-05-15T17:04:36.191+0000",
+		"forecastType": "not_forecasted",
+		"status": "in_progress",
+		"forecast": "5e272dec4b97ed00132f2273",
+		"P_dict": {
+			"P10": {
+				"segments": [],
+				"diagnostics": {}
+			},
+			"P50": {
+				"segments": [],
+				"diagnostics": {}
+			},
+			"P90": {
+				"segments": [],
+				"diagnostics": {}
+			},
+			"best": {
+				"segments": [],
+				"diagnostics": {}
+			}
+		},
+		"p_extra": {
+			"eur_ratio": {
+				"P10": 1,
+				"P50": 1,
+				"P90": 1
+			}
+		},
+		"project": "5e272bed4b97ed00132f2271",
+		"well": "5e272d4cb78910dd2a1c58db",
+		"reviewedAt": "2020-05-15T17:04:38.819Z",
+		"reviewedBy": "5e4ac3f103a08f0012337d71",
+		"createdAt": "2020-01-21T16:59:25.842Z",
+		"updatedAt": "2020-01-24T15:48:50.998Z"
+	},
+	{
+		"_id": "5e272dec4b97ed00132f227c",
+		"warning": {
+			"status": true,
+			"message": "Valid data not enough to generate a valid forecast."
+		},
+		"ratio": {
+			"enabled": false,
+			"phase": "oil",
+			"value": 1
+		},
+		"data_freq": "monthly",
+		"diagDate": "2020-03-04T23:54:07.604+0000",
+		"forecasted": true,
+		"forecastedAt": "2020-05-15T17:04:37.623+0000",
+		"forecastedBy": "5e4ac3f103a08f0012337d71",
+		"phase": "water",
+		"runDate": "2020-05-15T17:04:37.623+0000",
+		"forecastType": "manual",
+		"status": "approved",
+		"forecast": "5e272dec4b97ed00132f2273",
+		"P_dict": {
+			"P10": {
+				"diagnostics": {},
+				"segments": [
+					{
+						"end_idx": 65879,
+						"name": "arps_modified",
+						"start_idx": 43979,
+						"b": 0.9,
+						"D_eff": 0.5,
+						"D_exp_eff": 0.06164852108561836,
+						"D_exp": 0.00017421133241999357,
+						"D": 0.0026346215927404814,
+						"q_start": 1000,
+						"q_sw": 48.89752072607084,
+						"realized_D_eff_sw": 0.06000000000000005,
+						"slope": -1,
+						"sw_idx": 49935.215065243414,
+						"target_D_eff_sw": 0.06,
+						"q_end": 3.040854851364888
+					}
+				]
+			},
+			"P50": {
+				"diagnostics": {},
+				"segments": [
+					{
+						"end_idx": 65879,
+						"name": "arps_modified",
+						"start_idx": 43979,
+						"b": 0.9,
+						"D_eff": 0.5,
+						"D_exp_eff": 0.06164852108561836,
+						"D_exp": 0.00017421133241999357,
+						"D": 0.0026346215927404814,
+						"q_start": 1000,
+						"q_sw": 48.89752072607084,
+						"realized_D_eff_sw": 0.06000000000000005,
+						"slope": -1,
+						"sw_idx": 49935.215065243414,
+						"target_D_eff_sw": 0.06,
+						"q_end": 3.040854851364888
+					}
+				]
+			},
+			"P90": {
+				"diagnostics": {},
+				"segments": [
+					{
+						"end_idx": 65879,
+						"name": "arps_modified",
+						"start_idx": 43979,
+						"b": 0.9,
+						"D_eff": 0.5,
+						"D_exp_eff": 0.06164852108561836,
+						"D_exp": 0.00017421133241999357,
+						"D": 0.0026346215927404814,
+						"q_start": 1000,
+						"q_sw": 48.89752072607084,
+						"realized_D_eff_sw": 0.06000000000000005,
+						"slope": -1,
+						"sw_idx": 49935.215065243414,
+						"target_D_eff_sw": 0.06,
+						"q_end": 3.040854851364888
+					}
+				]
+			},
+			"best": {
+				"segments": [
+					{
+						"end_idx": 65879,
+						"name": "arps_modified",
+						"start_idx": 43979,
+						"b": 0.9,
+						"D_eff": 0.5,
+						"D_exp_eff": 0.06164852108561836,
+						"D_exp": 0.00017421133241999357,
+						"D": 0.0026346215927404814,
+						"q_start": 1000,
+						"q_sw": 48.89752072607084,
+						"realized_D_eff_sw": 0.06000000000000005,
+						"slope": -1,
+						"sw_idx": 49935.215065243414,
+						"target_D_eff_sw": 0.06,
+						"q_end": 3.040854851364888
+					}
+				],
+				"diagnostics": {}
+			}
+		},
+		"p_extra": {
+			"eur_ratio": {
+				"P10": 1,
+				"P50": 1,
+				"P90": 1
+			}
+		},
+		"project": "5e272bed4b97ed00132f2271",
+		"well": "5e272d75b78910dd2a1d8784",
+		"reviewedAt": "2020-05-15T17:04:38.819Z",
+		"reviewedBy": "5e4ac3f103a08f0012337d71",
+		"createdAt": "2020-01-21T16:59:25.843Z",
+		"updatedAt": "2020-05-29T23:03:59.890Z"
+	},
+	{
+		"_id": "5e272dec4b97ed00132f2289",
+		"warning": {
+			"status": false,
+			"message": ""
+		},
+		"ratio": {
+			"enabled": false,
+			"phase": "oil",
+			"value": 1
+		},
+		"data_freq": "monthly",
+		"diagDate": "2020-03-04T23:54:08.066+0000",
+		"forecasted": true,
+		"forecastedAt": "2020-05-15T17:04:44.613+0000",
+		"forecastedBy": "5e4ac3f103a08f0012337d71",
+		"phase": "oil",
+		"runDate": "2020-05-15T17:04:44.613+0000",
+		"forecastType": "prob",
+		"status": "in_progress",
+		"forecast": "5e272dec4b97ed00132f2273",
+		"P_dict": {
+			"P10": {
+				"segments": [
+					{
+						"start_idx": 28381.0,
+						"end_idx": 39936.0,
+						"q_start": 6.242299794661191,
+						"q_end": 0.10001587780520536,
+						"name": "arps_modified",
+						"slope": -1.0,
+						"D_eff": 0.5617773122466149,
+						"D": 0.004403361252771907,
+						"b": 1.4711850198900682,
+						"target_D_eff_sw": 0.08,
+						"realized_D_eff_sw": 0.07999999999999996,
+						"sw_idx": 31025.249081214235,
+						"q_sw": 0.8709303217413268,
+						"D_exp_eff": 0.08489045868407785,
+						"D_exp": 0.00024287885992333258
+					}
+				],
+				"diagnostics": {}
+			},
+			"P50": {
+				"segments": [
+					{
+						"start_idx": 28381.0,
+						"end_idx": 39286.0,
+						"q_start": 6.242299794661191,
+						"q_end": 0.1000185129832945,
+						"name": "arps_modified",
+						"slope": -1.0,
+						"D_eff": 0.6022102532788574,
+						"D": 0.005201766962295792,
+						"b": 1.4169830760531157,
+						"target_D_eff_sw": 0.08,
+						"realized_D_eff_sw": 0.07999999999999996,
+						"sw_idx": 31157.700795182183,
+						"q_sw": 0.7169470232168734,
+						"D_exp_eff": 0.08470352856727181,
+						"D_exp": 0.00024231965418903024
+					}
+				],
+				"diagnostics": {}
+			},
+			"P90": {
+				"segments": [
+					{
+						"start_idx": 28381.0,
+						"end_idx": 38394.0,
+						"q_start": 6.242299794661191,
+						"q_end": 0.1000188124515337,
+						"name": "arps_modified",
+						"slope": -1.0,
+						"D_eff": 0.6646966633079083,
+						"D": 0.007156311759668967,
+						"b": 1.4169817087836756,
+						"target_D_eff_sw": 0.08,
+						"realized_D_eff_sw": 0.07999999999999996,
+						"sw_idx": 31194.758167901295,
+						"q_sw": 0.5724217143518195,
+						"D_exp_eff": 0.08470352385856161,
+						"D_exp": 0.0002423196401042541
+					}
+				],
+				"diagnostics": {}
+			},
+			"best": {
+				"segments": [
+					{
+						"start_idx": 28381.0,
+						"end_idx": 39242.0,
+						"q_start": 6.242299794661191,
+						"q_end": 0.10002138339507369,
+						"name": "arps_modified",
+						"slope": -1.0,
+						"D_eff": 0.617862837257211,
+						"D": 0.005864246608691613,
+						"b": 1.4893438660750367,
+						"target_D_eff_sw": 0.08,
+						"realized_D_eff_sw": 0.08000000000000007,
+						"sw_idx": 31028.8600339458,
+						"q_sw": 0.7363635111218578,
+						"D_exp_eff": 0.08495320316127275,
+						"D_exp": 0.00024306658707293425
+					}
+				],
+				"diagnostics": {}
+			}
+		},
+		"p_extra": {
+			"eur_ratio": {
+				"P10": 1.1668805127281625,
+				"P50": 1.0,
+				"P90": 0.8054987138262404
+			}
+		},
+		"project": "5e272bed4b97ed00132f2271",
+		"well": "5e272d85b78910dd2a1f384f",
+		"reviewedAt": "2020-05-15T17:04:38.819Z",
+		"reviewedBy": "5e4ac3f103a08f0012337d71",
+		"createdAt": "2020-01-21T16:59:25.847Z",
+		"updatedAt": "2020-01-21T16:59:25.847Z"
+	},
+	{
+		"_id": "5e272dec4b97ed00132f2287",
+		"warning": {
+			"status": false,
+			"message": ""
+		},
+		"ratio": {
+			"enabled": false,
+			"phase": "oil",
+			"value": 1
+		},
+		"data_freq": "monthly",
+		"diagDate": "2020-03-04T23:54:08.103+0000",
+		"forecasted": true,
+		"forecastedAt": "2020-05-15T17:04:46.061+0000",
+		"forecastedBy": "5e4ac3f103a08f0012337d71",
+		"phase": "gas",
+		"runDate": "2020-05-15T17:04:46.061+0000",
+		"forecastType": "prob",
+		"status": "in_progress",
+		"forecast": "5e272dec4b97ed00132f2273",
+		"P_dict": {
+			"P10": {
+				"segments": [
+					{
+						"start_idx": 28593.0,
+						"end_idx": 28965.0,
+						"q_start": 4.698151950718686,
+						"q_end": 0.10021635303753199,
+						"name": "arps_modified",
+						"slope": -1.0,
+						"D_eff": 0.978119448714186,
+						"D": 0.0479680503469137,
+						"b": 0.663359126202275,
+						"target_D_eff_sw": 0.08,
+						"realized_D_eff_sw": 0.07999999999999996,
+						"sw_idx": 34984.087082580096,
+						"q_sw": 0.0015453919071918,
+						"D_exp_eff": 0.08215864537884521,
+						"D_exp": 0.0002347179181736666
+					}
+				],
+				"diagnostics": {}
+			},
+			"P50": {
+				"segments": [
+					{
+						"start_idx": 28593.0,
+						"end_idx": 28889.0,
+						"q_start": 4.698151950718686,
+						"q_end": 0.10013120403992716,
+						"name": "arps_modified",
+						"slope": -1.0,
+						"D_eff": 0.9844745808908262,
+						"D": 0.051649673160405044,
+						"b": 0.604538835531859,
+						"target_D_eff_sw": 0.08,
+						"realized_D_eff_sw": 0.07999999999999996,
+						"sw_idx": 35625.83973653177,
+						"q_sw": 0.0006241085239057908,
+						"D_exp_eff": 0.08196420358171008,
+						"D_exp": 0.00023413797454396689
+					}
+				],
+				"diagnostics": {}
+			},
+			"P90": {
+				"segments": [
+					{
+						"start_idx": 28593.0,
+						"end_idx": 28811.0,
+						"q_start": 4.698151950718686,
+						"q_end": 0.10027832558792385,
+						"name": "arps_modified",
+						"slope": -1.0,
+						"D_eff": 0.9903969197641522,
+						"D": 0.06809985461745428,
+						"b": 0.5936374756177103,
+						"target_D_eff_sw": 0.08,
+						"realized_D_eff_sw": 0.08000000000000007,
+						"sw_idx": 35766.1646351713,
+						"q_sw": 0.00033224545547506056,
+						"D_exp_eff": 0.08192823260356052,
+						"D_exp": 0.00023403070068616665
+					}
+				],
+				"diagnostics": {}
+			},
+			"best": {
+				"segments": [
+					{
+						"start_idx": 28593.0,
+						"end_idx": 28906.0,
+						"q_start": 4.698151950718686,
+						"q_end": 0.10016835308880855,
+						"name": "arps_modified",
+						"slope": -1.0,
+						"D_eff": 0.9827540934215203,
+						"D": 0.05928994147202936,
+						"b": 0.6779048574493209,
+						"target_D_eff_sw": 0.08,
+						"realized_D_eff_sw": 0.08000000000000007,
+						"sw_idx": 34848.9811057491,
+						"q_sw": 0.0013440262266576346,
+						"D_exp_eff": 0.08220682129671852,
+						"D_exp": 0.0002348616270354321
+					}
+				],
+				"diagnostics": {}
+			}
+		},
+		"p_extra": {
+			"eur_ratio": {
+				"P10": 1.5668108075922018,
+				"P50": 1.0,
+				"P90": 0.5073210190794881
+			}
+		},
+		"project": "5e272bed4b97ed00132f2271",
+		"well": "5e272d85b78910dd2a1f38c2",
+		"reviewedAt": "2020-05-15T17:04:38.819Z",
+		"reviewedBy": "5e4ac3f103a08f0012337d71",
+		"createdAt": "2020-01-21T16:59:25.847Z",
+		"updatedAt": "2020-01-21T16:59:25.847Z"
+	},
+	{
+		"_id": "5e272dec4b97ed00132f22b3",
+		"warning": {
+			"status": false,
+			"message": ""
+		},
+		"ratio": {
+			"enabled": false,
+			"phase": "oil",
+			"value": 1
+		},
+		"data_freq": "monthly",
+		"diagDate": "2020-03-04T23:54:07.617+0000",
+		"forecasted": true,
+		"forecastedAt": "2020-05-15T17:04:45.485+0000",
+		"forecastedBy": "5e4ac3f103a08f0012337d71",
+		"phase": "oil",
+		"runDate": "2020-05-15T17:04:45.485+0000",
+		"forecastType": "prob",
+		"status": "in_progress",
+		"forecast": "5e272dec4b97ed00132f2273",
+		"P_dict": {
+			"P10": {
+				"segments": [
+					{
+						"start_idx": 43294.0,
+						"end_idx": 54967.0,
+						"q_start": 22.17659137577002,
+						"q_end": 0.5150139983544421,
+						"name": "arps_modified",
+						"slope": -1.0,
+						"D_eff": 0.42011205207867075,
+						"D": 0.002266493782268851,
+						"b": 1.4410028444248515,
+						"target_D_eff_sw": 0.08,
+						"realized_D_eff_sw": 0.07999999999999996,
+						"sw_idx": 45848.71932286675,
+						"q_sw": 4.703162453870987,
+						"D_exp_eff": 0.08478630179012847,
+						"D_exp": 0.00024256725809450333
+					}
+				],
+				"diagnostics": {}
+			},
+			"P50": {
+				"segments": [
+					{
+						"start_idx": 43294.0,
+						"end_idx": 54967.0,
+						"q_start": 22.17659137577002,
+						"q_end": 0.2667528145317606,
+						"name": "arps_modified",
+						"slope": -1.0,
+						"D_eff": 0.6352545039800035,
+						"D": 0.006202387955110189,
+						"b": 1.4346828423201532,
+						"target_D_eff_sw": 0.08,
+						"realized_D_eff_sw": 0.07999999999999996,
+						"sw_idx": 46055.8980859807,
+						"q_sw": 2.3152736430236605,
+						"D_exp_eff": 0.08476451267819485,
+						"D_exp": 0.00024250207700372787
+					}
+				],
+				"diagnostics": {}
+			},
+			"P90": {
+				"segments": [
+					{
+						"start_idx": 43294.0,
+						"end_idx": 54353.0,
+						"q_start": 22.17659137577002,
+						"q_end": 0.10002304836691826,
+						"name": "arps_modified",
+						"slope": -1.0,
+						"D_eff": 0.866458803479882,
+						"D": 0.0323778127129462,
+						"b": 1.4346828423201532,
+						"target_D_eff_sw": 0.08,
+						"realized_D_eff_sw": 0.07999999999999996,
+						"sw_idx": 46146.74943893284,
+						"q_sw": 0.731745992216073,
+						"D_exp_eff": 0.08476451267819485,
+						"D_exp": 0.0002425020770037279
+					}
+				],
+				"diagnostics": {}
+			},
+			"best": {
+				"segments": [
+					{
+						"start_idx": 43294.0,
+						"end_idx": 54967.0,
+						"q_start": 22.17659137577002,
+						"q_end": 0.23002862701663784,
+						"name": "arps_modified",
+						"slope": -1.0,
+						"D_eff": 0.6872126291705964,
+						"D": 0.008608618858814301,
+						"b": 1.5,
+						"target_D_eff_sw": 0.08,
+						"realized_D_eff_sw": 0.07999999999999996,
+						"sw_idx": 45958.047375377435,
+						"q_sw": 2.056935220331818,
+						"D_exp_eff": 0.0849900512240106,
+						"D_exp": 0.00024317683993566798
+					}
+				],
+				"diagnostics": {}
+			}
+		},
+		"p_extra": {
+			"eur_ratio": {
+				"P10": 1.6238968106862803,
+				"P50": 1.0,
+				"P90": 0.5208348673491748
+			}
+		},
+		"project": "5e272bed4b97ed00132f2271",
+		"well": "5e272d75b78910dd2a1d8966",
+		"reviewedAt": "2020-05-15T17:04:38.819Z",
+		"reviewedBy": "5e4ac3f103a08f0012337d71",
+		"createdAt": "2020-01-21T16:59:25.849Z",
+		"updatedAt": "2020-01-21T16:59:25.849Z"
+	},
+	{
+		"_id": "5e272dec4b97ed00132f229d",
+		"warning": {
+			"status": true,
+			"message": "Valid data not enough to generate a valid forecast."
+		},
+		"ratio": {
+			"enabled": false,
+			"phase": "oil",
+			"value": 1
+		},
+		"data_freq": "monthly",
+		"diagDate": "2020-03-04T23:54:07.388+0000",
+		"forecasted": false,
+		"forecastedAt": "2020-05-15T17:04:45.656+0000",
+		"forecastedBy": "5e4ac3f103a08f0012337d71",
+		"phase": "water",
+		"runDate": "2020-05-15T17:04:45.656+0000",
+		"forecastType": "not_forecasted",
+		"status": "in_progress",
+		"forecast": "5e272dec4b97ed00132f2273",
+		"P_dict": {
+			"P10": {
+				"segments": [],
+				"diagnostics": {}
+			},
+			"P50": {
+				"segments": [],
+				"diagnostics": {}
+			},
+			"P90": {
+				"segments": [],
+				"diagnostics": {}
+			},
+			"best": {
+				"segments": [],
+				"diagnostics": {}
+			}
+		},
+		"p_extra": {
+			"eur_ratio": {
+				"P10": 1,
+				"P50": 1,
+				"P90": 1
+			}
+		},
+		"project": "5e272bed4b97ed00132f2271",
+		"well": "5e272d64b78910dd2a1cf1b3",
+		"reviewedAt": "2020-05-15T17:04:38.819Z",
+		"reviewedBy": "5e4ac3f103a08f0012337d71",
+		"createdAt": "2020-01-21T16:59:25.848Z",
+		"updatedAt": "2020-01-21T16:59:25.848Z"
+	},
+	{
+		"_id": "5e272dec4b97ed00132f228f",
+		"warning": {
+			"status": false,
+			"message": ""
+		},
+		"ratio": {
+			"enabled": false,
+			"phase": "oil",
+			"value": 1
+		},
+		"data_freq": "monthly",
+		"diagDate": "2020-03-04T23:54:07.264+0000",
+		"forecasted": true,
+		"forecastedAt": "2020-05-15T17:04:42.438+0000",
+		"forecastedBy": "5e4ac3f103a08f0012337d71",
+		"phase": "oil",
+		"runDate": "2020-05-15T17:04:42.438+0000",
+		"forecastType": "prob",
+		"status": "in_progress",
+		"forecast": "5e272dec4b97ed00132f2273",
+		"P_dict": {
+			"P10": {
+				"segments": [
+					{
+						"start_idx": 30480.0,
+						"end_idx": 37554.0,
+						"q_start": 1.1827515400410678,
+						"q_end": 0.10002085324009695,
+						"name": "arps_modified",
+						"slope": -1.0,
+						"D_eff": 0.3015046079191487,
+						"D": 0.0011884547887330067,
+						"b": 1.0295569173162409,
+						"target_D_eff_sw": 0.08,
+						"realized_D_eff_sw": 0.07999999999999996,
+						"sw_idx": 33737.421315930485,
+						"q_sw": 0.24842548358601135,
+						"D_exp_eff": 0.08338271824948651,
+						"D_exp": 0.00023837167117014528
+					}
+				],
+				"diagnostics": {}
+			},
+			"P50": {
+				"segments": [
+					{
+						"start_idx": 30480.0,
+						"end_idx": 34906.0,
+						"q_start": 1.1827515400410678,
+						"q_end": 0.10001313344837667,
+						"name": "arps_modified",
+						"slope": -1.0,
+						"D_eff": 0.4492322773529255,
+						"D": 0.0021871277540046847,
+						"b": 0.9363118579769504,
+						"target_D_eff_sw": 0.08,
+						"realized_D_eff_sw": 0.08000000000000007,
+						"sw_idx": 34489.852532875164,
+						"q_sw": 0.11039989179248351,
+						"D_exp_eff": 0.08306880508882475,
+						"D_exp": 0.00023743420219853568
+					}
+				],
+				"diagnostics": {}
+			},
+			"P90": {
+				"segments": [
+					{
+						"start_idx": 30480.0,
+						"end_idx": 32616.0,
+						"q_start": 1.1827515400410678,
+						"q_end": 0.10001989139951224,
+						"name": "arps_modified",
+						"slope": -1.0,
+						"D_eff": 0.6041687014354579,
+						"D": 0.00382066235101651,
+						"b": 0.8303094476761199,
+						"target_D_eff_sw": 0.08,
+						"realized_D_eff_sw": 0.08000000000000007,
+						"sw_idx": 35259.955153678035,
+						"q_sw": 0.0414348749027161,
+						"D_exp_eff": 0.08271379766730547,
+						"D_exp": 0.00023637439613406234
+					}
+				],
+				"diagnostics": {}
+			},
+			"best": {
+				"segments": [
+					{
+						"start_idx": 30480.0,
+						"end_idx": 34824.0,
+						"q_start": 1.1827515400410678,
+						"q_end": 0.10002247778226035,
+						"name": "arps_modified",
+						"slope": -1.0,
+						"D_eff": 0.4725508013498855,
+						"D": 0.0024478106292741744,
+						"b": 0.9941408897444312,
+						"target_D_eff_sw": 0.08,
+						"realized_D_eff_sw": 0.07999999999999996,
+						"sw_idx": 34295.24095670145,
+						"q_sw": 0.11343699099076608,
+						"D_exp_eff": 0.08326330848328856,
+						"D_exp": 0.00023801502850581991
+					}
+				],
+				"diagnostics": {}
+			}
+		},
+		"p_extra": {
+			"eur_ratio": {
+				"P10": 1.5329584189272762,
+				"P50": 1.0,
+				"P90": 0.6878678213222488
+			}
+		},
+		"project": "5e272bed4b97ed00132f2271",
+		"well": "5e272d60b78910dd2a1cdbdf",
+		"reviewedAt": "2020-05-15T17:04:38.819Z",
+		"reviewedBy": "5e4ac3f103a08f0012337d71",
+		"createdAt": "2020-01-21T16:59:25.847Z",
+		"updatedAt": "2020-01-21T16:59:25.847Z"
+	},
+	{
+		"_id": "5e272dec4b97ed00132f2283",
+		"warning": {
+			"status": false,
+			"message": ""
+		},
+		"ratio": {
+			"enabled": false,
+			"phase": "oil",
+			"value": 1
+		},
+		"data_freq": "monthly",
+		"diagDate": "2020-03-04T23:54:07.372+0000",
+		"forecasted": true,
+		"forecastedAt": "2020-05-15T17:04:42.009+0000",
+		"forecastedBy": "5e4ac3f103a08f0012337d71",
+		"phase": "oil",
+		"runDate": "2020-05-15T17:04:42.009+0000",
+		"forecastType": "prob",
+		"status": "in_progress",
+		"forecast": "5e272dec4b97ed00132f2273",
+		"P_dict": {
+			"P10": {
+				"segments": [
+					{
+						"start_idx": 30449.0,
+						"end_idx": 34868.0,
+						"q_start": 0.5256673511293635,
+						"q_end": 0.10000561576508372,
+						"name": "arps_modified",
+						"slope": -1.0,
+						"D_eff": 0.3034647319993867,
+						"D": 0.0013114050099220793,
+						"b": 1.4877279508717507,
+						"target_D_eff_sw": 0.08,
+						"realized_D_eff_sw": 0.07999999999999996,
+						"sw_idx": 32701.993201417998,
+						"q_sw": 0.1693002932563047,
+						"D_exp_eff": 0.08494761725087485,
+						"D_exp": 0.00024304987389219465
+					}
+				],
+				"diagnostics": {}
+			},
+			"P50": {
+				"segments": [
+					{
+						"start_idx": 30449.0,
+						"end_idx": 33656.0,
+						"q_start": 0.5256673511293635,
+						"q_end": 0.1000092097983925,
+						"name": "arps_modified",
+						"slope": -1.0,
+						"D_eff": 0.4095185124761799,
+						"D": 0.0021893752427354363,
+						"b": 1.4877266354026482,
+						"target_D_eff_sw": 0.08,
+						"realized_D_eff_sw": 0.07999999999999996,
+						"sw_idx": 32907.53689108627,
+						"q_sw": 0.11996213289600315,
+						"D_exp_eff": 0.08494761270374185,
+						"D_exp": 0.00024304986028710307
+					}
+				],
+				"diagnostics": {}
+			},
+			"P90": {
+				"segments": [
+					{
+						"start_idx": 30449.0,
+						"end_idx": 32174.0,
+						"q_start": 0.5256673511293635,
+						"q_end": 0.10000824255186672,
+						"name": "arps_modified",
+						"slope": -1.0,
+						"D_eff": 0.5507393332964261,
+						"D": 0.004211353676878451,
+						"b": 1.4877227161545108,
+						"target_D_eff_sw": 0.08,
+						"realized_D_eff_sw": 0.07999999999999985,
+						"sw_idx": 33054.94896184058,
+						"q_sw": 0.077282011622088,
+						"D_exp_eff": 0.08494759915622474,
+						"D_exp": 0.00024304981975272418
+					}
+				],
+				"diagnostics": {}
+			},
+			"best": {
+				"segments": [
+					{
+						"start_idx": 30449.0,
+						"end_idx": 33745.0,
+						"q_start": 0.5256673511293635,
+						"q_end": 0.10000120798751184,
+						"name": "arps_modified",
+						"slope": -1.0,
+						"D_eff": 0.40326731251004544,
+						"D": 0.0021333870032721938,
+						"b": 1.498461103852757,
+						"target_D_eff_sw": 0.08,
+						"realized_D_eff_sw": 0.08000000000000007,
+						"sw_idx": 32880.67128909126,
+						"q_sw": 0.12339038917747268,
+						"D_exp_eff": 0.0849847285728913,
+						"D_exp": 0.00024316091378951915
+					}
+				],
+				"diagnostics": {}
+			}
+		},
+		"p_extra": {
+			"eur_ratio": {
+				"P10": 1.3421770975545702,
+				"P50": 1.0,
+				"P90": 0.6800291988824175
+			}
+		},
+		"project": "5e272bed4b97ed00132f2271",
+		"well": "5e272d64b78910dd2a1cf1ac",
+		"reviewedAt": "2020-05-15T17:04:38.819Z",
+		"reviewedBy": "5e4ac3f103a08f0012337d71",
+		"createdAt": "2020-01-21T16:59:25.846Z",
+		"updatedAt": "2020-05-12T22:19:08.317Z"
+	},
+	{
+		"_id": "5e272dec4b97ed00132f227b",
+		"warning": {
+			"status": true,
+			"message": "Valid data not enough to generate a valid forecast."
+		},
+		"ratio": {
+			"enabled": false,
+			"phase": "oil",
+			"value": 1
+		},
+		"data_freq": "monthly",
+		"diagDate": "2020-03-04T23:54:07.608+0000",
+		"forecasted": false,
+		"forecastedAt": "2020-05-15T17:04:37.618+0000",
+		"forecastedBy": "5e4ac3f103a08f0012337d71",
+		"phase": "gas",
+		"runDate": "2020-05-15T17:04:37.618+0000",
+		"forecastType": "not_forecasted",
+		"status": "in_progress",
+		"forecast": "5e272dec4b97ed00132f2273",
+		"P_dict": {
+			"P10": {
+				"segments": [],
+				"diagnostics": {}
+			},
+			"P50": {
+				"segments": [],
+				"diagnostics": {}
+			},
+			"P90": {
+				"segments": [],
+				"diagnostics": {}
+			},
+			"best": {
+				"segments": [],
+				"diagnostics": {}
+			}
+		},
+		"p_extra": {
+			"eur_ratio": {
+				"P10": 1,
+				"P50": 1,
+				"P90": 1
+			}
+		},
+		"project": "5e272bed4b97ed00132f2271",
+		"well": "5e272d75b78910dd2a1d8784",
+		"reviewedAt": "2020-05-15T17:04:38.819Z",
+		"reviewedBy": "5e4ac3f103a08f0012337d71",
+		"createdAt": "2020-01-21T16:59:25.843Z",
+		"updatedAt": "2020-01-21T16:59:25.843Z"
+	},
+	{
+		"_id": "5e272dec4b97ed00132f2276",
+		"warning": {
+			"status": true,
+			"message": "Valid data not enough to generate a valid forecast."
+		},
+		"ratio": {
+			"enabled": false,
+			"phase": "oil",
+			"value": 1
+		},
+		"data_freq": "monthly",
+		"diagDate": "2020-03-04T23:54:07.234+0000",
+		"forecasted": false,
+		"forecastedAt": "2020-05-15T17:04:36.195+0000",
+		"forecastedBy": "5e4ac3f103a08f0012337d71",
+		"phase": "water",
+		"runDate": "2020-05-15T17:04:36.195+0000",
+		"forecastType": "not_forecasted",
+		"status": "in_progress",
+		"forecast": "5e272dec4b97ed00132f2273",
+		"P_dict": {
+			"P10": {
+				"segments": [],
+				"diagnostics": {}
+			},
+			"P50": {
+				"segments": [],
+				"diagnostics": {}
+			},
+			"P90": {
+				"segments": [],
+				"diagnostics": {}
+			},
+			"best": {
+				"segments": [],
+				"diagnostics": {}
+			}
+		},
+		"p_extra": {
+			"eur_ratio": {
+				"P10": 1,
+				"P50": 1,
+				"P90": 1
+			}
+		},
+		"project": "5e272bed4b97ed00132f2271",
+		"well": "5e272d4cb78910dd2a1c58db",
+		"reviewedAt": "2020-05-15T17:04:38.819Z",
+		"reviewedBy": "5e4ac3f103a08f0012337d71",
+		"createdAt": "2020-01-21T16:59:25.843Z",
+		"updatedAt": "2020-01-21T16:59:25.843Z"
+	},
+	{
+		"_id": "5e272dec4b97ed00132f228a",
+		"warning": {
+			"status": false,
+			"message": ""
+		},
+		"ratio": {
+			"enabled": false,
+			"phase": "oil",
+			"value": 1
+		},
+		"data_freq": "monthly",
+		"diagDate": "2020-03-04T23:54:08.074+0000",
+		"forecasted": true,
+		"forecastedAt": "2020-05-15T17:04:45.324+0000",
+		"forecastedBy": "5e4ac3f103a08f0012337d71",
+		"phase": "gas",
+		"runDate": "2020-05-15T17:04:45.324+0000",
+		"forecastType": "prob",
+		"status": "in_progress",
+		"forecast": "5e272dec4b97ed00132f2273",
+		"P_dict": {
+			"P10": {
+				"segments": [
+					{
+						"start_idx": 28381.0,
+						"end_idx": 32658.0,
+						"q_start": 12.878850102669405,
+						"q_end": 0.10002521332664563,
+						"name": "arps_modified",
+						"slope": -1.0,
+						"D_eff": 0.7535447611938207,
+						"D": 0.005792351873919533,
+						"b": 0.5534460312123809,
+						"target_D_eff_sw": 0.08,
+						"realized_D_eff_sw": 0.08000000000000007,
+						"sw_idx": 35802.72669748012,
+						"q_sw": 0.03895316132032295,
+						"D_exp_eff": 0.08179579055824848,
+						"D_exp": 0.00023363576379954466
+					}
+				],
+				"diagnostics": {}
+			},
+			"P50": {
+				"segments": [
+					{
+						"start_idx": 28381.0,
+						"end_idx": 30947.0,
+						"q_start": 12.878850102669405,
+						"q_end": 0.10006256025337162,
+						"name": "arps_modified",
+						"slope": -1.0,
+						"D_eff": 0.8519712823729089,
+						"D": 0.0091210575056489,
+						"b": 0.5367551433281315,
+						"target_D_eff_sw": 0.08,
+						"realized_D_eff_sw": 0.07999999999999985,
+						"sw_idx": 36156.486212254305,
+						"q_sw": 0.013939902526646756,
+						"D_exp_eff": 0.08174087104746985,
+						"D_exp": 0.0002334720127213549
+					}
+				],
+				"diagnostics": {}
+			},
+			"P90": {
+				"segments": [
+					{
+						"start_idx": 28381.0,
+						"end_idx": 29436.0,
+						"q_start": 12.878850102669405,
+						"q_end": 0.100169153284793,
+						"name": "arps_modified",
+						"slope": -1.0,
+						"D_eff": 0.9534638217117738,
+						"D": 0.020330027744149437,
+						"b": 0.5109697621447585,
+						"target_D_eff_sw": 0.08,
+						"realized_D_eff_sw": 0.07999999999999996,
+						"sw_idx": 36676.247803014114,
+						"q_sw": 0.0020532608708768827,
+						"D_exp_eff": 0.0816561211442911,
+						"D_exp": 0.00023321933689723237
+					}
+				],
+				"diagnostics": {}
+			},
+			"best": {
+				"segments": [
+					{
+						"start_idx": 28381.0,
+						"end_idx": 30566.0,
+						"q_start": 12.878850102669405,
+						"q_end": 0.10007614528791052,
+						"name": "arps_modified",
+						"slope": -1.0,
+						"D_eff": 0.8657413699481787,
+						"D": 0.00946836058594729,
+						"b": 0.5,
+						"target_D_eff_sw": 0.08,
+						"realized_D_eff_sw": 0.07999999999999996,
+						"sw_idx": 36749.338850525615,
+						"q_sw": 0.007806504128405451,
+						"D_exp_eff": 0.0816201009421762,
+						"D_exp": 0.00023311195228130748
+					}
+				],
+				"diagnostics": {}
+			}
+		},
+		"p_extra": {
+			"eur_ratio": {
+				"P10": 2.2662967714076627,
+				"P50": 1.0,
+				"P90": 0.23065314286676514
+			}
+		},
+		"project": "5e272bed4b97ed00132f2271",
+		"well": "5e272d85b78910dd2a1f384f",
+		"reviewedAt": "2020-05-15T17:04:38.819Z",
+		"reviewedBy": "5e4ac3f103a08f0012337d71",
+		"createdAt": "2020-01-21T16:59:25.847Z",
+		"updatedAt": "2020-01-21T16:59:25.847Z"
+	}
+]

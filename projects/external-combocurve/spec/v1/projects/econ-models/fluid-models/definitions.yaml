@@ -1,0 +1,1087 @@
+FluidModelEconFunction:
+  type: object
+  required:
+    - dripCondensate
+    - gas
+    - ngl
+    - oil
+    - water
+  properties:
+    dripCondensate:
+      $ref: '#/definitions/FluidModelPhase'
+    gas:
+      $ref: '#/definitions/FluidModelPhase'
+    ngl:
+      $ref: '#/definitions/FluidModelPhase'
+    oil:
+      $ref: '#/definitions/FluidModelPhase'
+    water:
+      $ref: '#/definitions/FluidModelPhase'
+
+FluidModelPhase:
+  type: object
+  required:
+    - composition
+    - criteria
+  properties:
+    criteria:
+      type: string
+      description: Criteria
+      enum:
+        - flat
+    composition:
+      $ref: '#/definitions/FluidModelComposition'
+
+FluidModelComposition:
+  type: object
+  required:
+    - N2
+    - CO2
+    - C1
+    - C2
+    - C3
+    - iC4
+    - nC4
+    - iC5
+    - nC5
+    - iC6
+    - nC6
+    - C7
+    - C8
+    - C9
+    - C10Plus
+    - H2S
+    - H2
+    - H2O
+    - He
+    - O2
+  properties:
+    N2:
+      $ref: '#/definitions/FluidModelComponent'
+    CO2:
+      $ref: '#/definitions/FluidModelComponent'
+    C1:
+      $ref: '#/definitions/FluidModelComponent'
+    C2:
+      $ref: '#/definitions/FluidModelComponent'
+    C3:
+      $ref: '#/definitions/FluidModelComponent'
+    iC4:
+      $ref: '#/definitions/FluidModelComponent'
+    nC4:
+      $ref: '#/definitions/FluidModelComponent'
+    iC5:
+      $ref: '#/definitions/FluidModelComponent'
+    nC5:
+      $ref: '#/definitions/FluidModelComponent'
+    iC6:
+      $ref: '#/definitions/FluidModelComponent'
+    nC6:
+      $ref: '#/definitions/FluidModelComponent'
+    C7:
+      $ref: '#/definitions/FluidModelComponent'
+    C8:
+      $ref: '#/definitions/FluidModelComponent'
+    C9:
+      $ref: '#/definitions/FluidModelComponent'
+    C10Plus:
+      $ref: '#/definitions/FluidModelComponent'
+    H2S:
+      $ref: '#/definitions/FluidModelComponent'
+    H2:
+      $ref: '#/definitions/FluidModelComponent'
+    H2O:
+      $ref: '#/definitions/FluidModelComponent'
+    He:
+      $ref: '#/definitions/FluidModelComponent'
+    O2:
+      $ref: '#/definitions/FluidModelComponent'
+
+FluidModelComponent:
+  type: object
+  required:
+    - percentage
+  properties:
+    percentage:
+      type: number
+      description: Percentage
+
+FluidModel:
+  type: object
+  required:
+    - name
+    - unique
+    - fluidModel
+  properties:
+    name:
+      type: string
+      description: Name
+    unique:
+      type: boolean
+      description: Unique
+    fluidModel:
+      $ref: '#/definitions/FluidModelEconFunction'
+    id:
+      type: string
+      description: ID
+    copiedFrom:
+      type: string
+      description: Copied From
+    scenario:
+      type: string
+      description: Scenario ID
+    tags:
+      type: array
+      items:
+        type: string
+        description: Tag ID
+    well:
+      type: string
+      description: Well ID
+    createdAt:
+      type: string
+      format: date
+      description: Creation Date
+    updatedAt:
+      type: string
+      format: date
+      description: Updated At
+    createdBy:
+      type: string
+      description: Created By
+    lastUpdatedBy:
+      type: string
+      description: Last Updated By
+  example:
+    id: 5e272d39b78910dd2a1bd8fe
+    copiedFrom: 63b856e816f758cc5b0f1106
+    name: Test
+    scenario: 63b8571d70ed63f50bd6d63f
+    tags: 
+      - 63b85737ff846cee7b1f6fdc
+    unique: true
+    well: 63b85759e1d7eb4e31579f51
+    createdAt: '2020-01-21T16:58:08.986Z'
+    updatedAt: '2020-01-21T17:58:08.986Z'
+    createdBy: 63b857cb68f3b96efc700998
+    lastUpdatedBy: 63b857cb68f3b96efc700998
+    fluidModel: 
+      oil: 
+        composition: 
+          N2: 
+            percentage: 100
+          CO2: 
+            percentage: 2
+          C1: 
+            percentage: 3
+          C2: 
+            percentage: 4
+          C3: 
+            percentage: 5
+          iC4: 
+            percentage: 6
+          nC4: 
+            percentage: 7
+          iC5: 
+            percentage: 8
+          nC5: 
+            percentage: 9
+          iC6: 
+            percentage: 10
+          nC6: 
+            percentage: 11
+          C7: 
+            percentage: 12
+          C8: 
+            percentage: 13
+          C9: 
+            percentage: 14
+          C10Plus: 
+            percentage: 15
+          H2S: 
+            percentage: 16
+          H2: 
+            percentage: 17
+          H2O: 
+            percentage: 18
+          He: 
+            percentage: 19
+          O2: 
+            percentage: 20
+        criteria: flat
+      gas: 
+        composition: 
+          N2: 
+            percentage: 0
+          CO2: 
+            percentage: 0
+          C1: 
+            percentage: 0
+          C2: 
+            percentage: 0
+          C3: 
+            percentage: 0
+          iC4: 
+            percentage: 0
+          nC4: 
+            percentage: 0
+          iC5: 
+            percentage: 0
+          nC5: 
+            percentage: 0
+          iC6: 
+            percentage: 0
+          nC6: 
+            percentage: 0
+          C7: 
+            percentage: 0
+          C8: 
+            percentage: 0
+          C9: 
+            percentage: 0
+          C10Plus: 
+            percentage: 0
+          H2S: 
+            percentage: 0
+          H2: 
+            percentage: 0
+          H2O: 
+            percentage: 0
+          He: 
+            percentage: 0
+          O2: 
+            percentage: 0
+        criteria: flat
+      water: 
+        composition: 
+          N2: 
+            percentage: 0
+          CO2: 
+            percentage: 0
+          C1: 
+            percentage: 0
+          C2: 
+            percentage: 0
+          C3: 
+            percentage: 0
+          iC4: 
+            percentage: 0
+          nC4: 
+            percentage: 0
+          iC5: 
+            percentage: 0
+          nC5: 
+            percentage: 0
+          iC6: 
+            percentage: 0
+          nC6: 
+            percentage: 0
+          C7: 
+            percentage: 0
+          C8: 
+            percentage: 0
+          C9: 
+            percentage: 0
+          C10Plus: 
+            percentage: 0
+          H2S: 
+            percentage: 0
+          H2: 
+            percentage: 0
+          H2O: 
+            percentage: 0
+          He: 
+            percentage: 0
+          O2: 
+            percentage: 0
+        criteria: flat
+      ngl: 
+        composition: 
+          N2: 
+            percentage: 0
+          CO2: 
+            percentage: 0
+          C1: 
+            percentage: 0
+          C2: 
+            percentage: 0
+          C3: 
+            percentage: 0
+          iC4: 
+            percentage: 0
+          nC4: 
+            percentage: 0
+          iC5: 
+            percentage: 0
+          nC5: 
+            percentage: 0
+          iC6: 
+            percentage: 0
+          nC6: 
+            percentage: 0
+          C7: 
+            percentage: 0
+          C8: 
+            percentage: 0
+          C9: 
+            percentage: 0
+          C10Plus: 
+            percentage: 0
+          H2S: 
+            percentage: 0
+          H2: 
+            percentage: 0
+          H2O: 
+            percentage: 0
+          He: 
+            percentage: 0
+          O2: 
+            percentage: 0
+        criteria: flat
+      dripCondensate: 
+        composition: 
+          N2: 
+            percentage: 0
+          CO2: 
+            percentage: 0
+          C1: 
+            percentage: 0
+          C2: 
+            percentage: 0
+          C3: 
+            percentage: 0
+          iC4: 
+            percentage: 0
+          nC4: 
+            percentage: 0
+          iC5: 
+            percentage: 0
+          nC5: 
+            percentage: 0
+          iC6: 
+            percentage: 0
+          nC6: 
+            percentage: 0
+          C7: 
+            percentage: 0
+          C8: 
+            percentage: 0
+          C9: 
+            percentage: 0
+          C10Plus: 
+            percentage: 99
+          H2S: 
+            percentage: 0
+          H2: 
+            percentage: 0
+          H2O: 
+            percentage: 0
+          He: 
+            percentage: 0
+          O2: 
+            percentage: 0
+        criteria: flat
+FluidModelList:
+  type: array
+  items:
+    $ref: '#/definitions/FluidModel'
+  maxItems: 200
+  example:
+    - id: 5e272d39b78910dd2a1bd8fe
+      copiedFrom: 63b856e816f758cc5b0f1106
+      name: Test
+      scenario: 63b8571d70ed63f50bd6d63f
+      tags: 
+        - 63b85737ff846cee7b1f6fdc
+      unique: true
+      well: 63b85759e1d7eb4e31579f51
+      createdAt: '2020-01-21T16:58:08.986Z'
+      updatedAt: '2020-01-21T17:58:08.986Z'
+      createdBy: 63b857cb68f3b96efc700998
+      lastUpdatedBy: 63b857cb68f3b96efc700998
+      fluidModel: 
+        oil: 
+          composition: 
+            N2: 
+              percentage: 100
+            CO2: 
+              percentage: 2
+            C1: 
+              percentage: 3
+            C2: 
+              percentage: 4
+            C3: 
+              percentage: 5
+            iC4: 
+              percentage: 6
+            nC4: 
+              percentage: 7
+            iC5: 
+              percentage: 8
+            nC5: 
+              percentage: 9
+            iC6: 
+              percentage: 10
+            nC6: 
+              percentage: 11
+            C7: 
+              percentage: 12
+            C8: 
+              percentage: 13
+            C9: 
+              percentage: 14
+            C10Plus: 
+              percentage: 15
+            H2S: 
+              percentage: 16
+            H2: 
+              percentage: 17
+            H2O: 
+              percentage: 18
+            He: 
+              percentage: 19
+            O2: 
+              percentage: 20
+          criteria: flat
+        gas: 
+          composition: 
+            N2: 
+              percentage: 0
+            CO2: 
+              percentage: 0
+            C1: 
+              percentage: 0
+            C2: 
+              percentage: 0
+            C3: 
+              percentage: 0
+            iC4: 
+              percentage: 0
+            nC4: 
+              percentage: 0
+            iC5: 
+              percentage: 0
+            nC5: 
+              percentage: 0
+            iC6: 
+              percentage: 0
+            nC6: 
+              percentage: 0
+            C7: 
+              percentage: 0
+            C8: 
+              percentage: 0
+            C9: 
+              percentage: 0
+            C10Plus: 
+              percentage: 0
+            H2S: 
+              percentage: 0
+            H2: 
+              percentage: 0
+            H2O: 
+              percentage: 0
+            He: 
+              percentage: 0
+            O2: 
+              percentage: 0
+          criteria: flat
+        water: 
+          composition: 
+            N2: 
+              percentage: 0
+            CO2: 
+              percentage: 0
+            C1: 
+              percentage: 0
+            C2: 
+              percentage: 0
+            C3: 
+              percentage: 0
+            iC4: 
+              percentage: 0
+            nC4: 
+              percentage: 0
+            iC5: 
+              percentage: 0
+            nC5: 
+              percentage: 0
+            iC6: 
+              percentage: 0
+            nC6: 
+              percentage: 0
+            C7: 
+              percentage: 0
+            C8: 
+              percentage: 0
+            C9: 
+              percentage: 0
+            C10Plus: 
+              percentage: 0
+            H2S: 
+              percentage: 0
+            H2: 
+              percentage: 0
+            H2O: 
+              percentage: 0
+            He: 
+              percentage: 0
+            O2: 
+              percentage: 0
+          criteria: flat
+        ngl: 
+          composition: 
+            N2: 
+              percentage: 0
+            CO2: 
+              percentage: 0
+            C1: 
+              percentage: 0
+            C2: 
+              percentage: 0
+            C3: 
+              percentage: 0
+            iC4: 
+              percentage: 0
+            nC4: 
+              percentage: 0
+            iC5: 
+              percentage: 0
+            nC5: 
+              percentage: 0
+            iC6: 
+              percentage: 0
+            nC6: 
+              percentage: 0
+            C7: 
+              percentage: 0
+            C8: 
+              percentage: 0
+            C9: 
+              percentage: 0
+            C10Plus: 
+              percentage: 0
+            H2S: 
+              percentage: 0
+            H2: 
+              percentage: 0
+            H2O: 
+              percentage: 0
+            He: 
+              percentage: 0
+            O2: 
+              percentage: 0
+          criteria: flat
+        dripCondensate: 
+          composition: 
+            N2: 
+              percentage: 0
+            CO2: 
+              percentage: 0
+            C1: 
+              percentage: 0
+            C2: 
+              percentage: 0
+            C3: 
+              percentage: 0
+            iC4: 
+              percentage: 0
+            nC4: 
+              percentage: 0
+            iC5: 
+              percentage: 0
+            nC5: 
+              percentage: 0
+            iC6: 
+              percentage: 0
+            nC6: 
+              percentage: 0
+            C7: 
+              percentage: 0
+            C8: 
+              percentage: 0
+            C9: 
+              percentage: 0
+            C10Plus: 
+              percentage: 99
+            H2S: 
+              percentage: 0
+            H2: 
+              percentage: 0
+            H2O: 
+              percentage: 0
+            He: 
+              percentage: 0
+            O2: 
+              percentage: 0
+          criteria: flat
+
+FluidModelInput:
+  type: object
+  required:
+    - name
+    - unique
+    - fluidModel
+  properties:
+    name:
+      type: string
+      description: Name
+    unique:
+      type: boolean
+      description: Unique
+    fluidModel:
+      $ref: '#/definitions/FluidModelEconFunction'
+    scenario:
+      type: string
+      description: Scenario ID
+    well:
+      type: string
+      description: Well ID
+  example:
+    name: Test
+    scenario: 63b8571d70ed63f50bd6d63f
+    unique: true
+    well: 63b85759e1d7eb4e31579f51
+    fluidModel: 
+      oil: 
+        composition: 
+          N2: 
+            percentage: 100
+          CO2: 
+            percentage: 2
+          C1: 
+            percentage: 3
+          C2: 
+            percentage: 4
+          C3: 
+            percentage: 5
+          iC4: 
+            percentage: 6
+          nC4: 
+            percentage: 7
+          iC5: 
+            percentage: 8
+          nC5: 
+            percentage: 9
+          iC6: 
+            percentage: 10
+          nC6: 
+            percentage: 11
+          C7: 
+            percentage: 12
+          C8: 
+            percentage: 13
+          C9: 
+            percentage: 14
+          C10Plus: 
+            percentage: 15
+          H2S: 
+            percentage: 16
+          H2: 
+            percentage: 17
+          H2O: 
+            percentage: 18
+          He: 
+            percentage: 19
+          O2: 
+            percentage: 20
+        criteria: flat
+      gas: 
+        composition: 
+          N2: 
+            percentage: 0
+          CO2: 
+            percentage: 0
+          C1: 
+            percentage: 0
+          C2: 
+            percentage: 0
+          C3: 
+            percentage: 0
+          iC4: 
+            percentage: 0
+          nC4: 
+            percentage: 0
+          iC5: 
+            percentage: 0
+          nC5: 
+            percentage: 0
+          iC6: 
+            percentage: 0
+          nC6: 
+            percentage: 0
+          C7: 
+            percentage: 0
+          C8: 
+            percentage: 0
+          C9: 
+            percentage: 0
+          C10Plus: 
+            percentage: 0
+          H2S: 
+            percentage: 0
+          H2: 
+            percentage: 0
+          H2O: 
+            percentage: 0
+          He: 
+            percentage: 0
+          O2: 
+            percentage: 0
+        criteria: flat
+      water: 
+        composition: 
+          N2: 
+            percentage: 0
+          CO2: 
+            percentage: 0
+          C1: 
+            percentage: 0
+          C2: 
+            percentage: 0
+          C3: 
+            percentage: 0
+          iC4: 
+            percentage: 0
+          nC4: 
+            percentage: 0
+          iC5: 
+            percentage: 0
+          nC5: 
+            percentage: 0
+          iC6: 
+            percentage: 0
+          nC6: 
+            percentage: 0
+          C7: 
+            percentage: 0
+          C8: 
+            percentage: 0
+          C9: 
+            percentage: 0
+          C10Plus: 
+            percentage: 0
+          H2S: 
+            percentage: 0
+          H2: 
+            percentage: 0
+          H2O: 
+            percentage: 0
+          He: 
+            percentage: 0
+          O2: 
+            percentage: 0
+        criteria: flat
+      ngl: 
+        composition: 
+          N2: 
+            percentage: 0
+          CO2: 
+            percentage: 0
+          C1: 
+            percentage: 0
+          C2: 
+            percentage: 0
+          C3: 
+            percentage: 0
+          iC4: 
+            percentage: 0
+          nC4: 
+            percentage: 0
+          iC5: 
+            percentage: 0
+          nC5: 
+            percentage: 0
+          iC6: 
+            percentage: 0
+          nC6: 
+            percentage: 0
+          C7: 
+            percentage: 0
+          C8: 
+            percentage: 0
+          C9: 
+            percentage: 0
+          C10Plus: 
+            percentage: 0
+          H2S: 
+            percentage: 0
+          H2: 
+            percentage: 0
+          H2O: 
+            percentage: 0
+          He: 
+            percentage: 0
+          O2: 
+            percentage: 0
+        criteria: flat
+      dripCondensate: 
+        composition: 
+          N2: 
+            percentage: 0
+          CO2: 
+            percentage: 0
+          C1: 
+            percentage: 0
+          C2: 
+            percentage: 0
+          C3: 
+            percentage: 0
+          iC4: 
+            percentage: 0
+          nC4: 
+            percentage: 0
+          iC5: 
+            percentage: 0
+          nC5: 
+            percentage: 0
+          iC6: 
+            percentage: 0
+          nC6: 
+            percentage: 0
+          C7: 
+            percentage: 0
+          C8: 
+            percentage: 0
+          C9: 
+            percentage: 0
+          C10Plus: 
+            percentage: 99
+          H2S: 
+            percentage: 0
+          H2: 
+            percentage: 0
+          H2O: 
+            percentage: 0
+          He: 
+            percentage: 0
+          O2: 
+            percentage: 0
+        criteria: flat
+
+FluidModelInputList:
+  type: array
+  items:
+    $ref: '#/definitions/FluidModelInput'
+  maxItems: 500
+  example:
+    - name: Test
+      scenario: 63b8571d70ed63f50bd6d63f
+      unique: true
+      well: 63b85759e1d7eb4e31579f51
+      fluidModel: 
+        oil: 
+          composition: 
+            N2: 
+              percentage: 100
+            CO2: 
+              percentage: 2
+            C1: 
+              percentage: 3
+            C2: 
+              percentage: 4
+            C3: 
+              percentage: 5
+            iC4: 
+              percentage: 6
+            nC4: 
+              percentage: 7
+            iC5: 
+              percentage: 8
+            nC5: 
+              percentage: 9
+            iC6: 
+              percentage: 10
+            nC6: 
+              percentage: 11
+            C7: 
+              percentage: 12
+            C8: 
+              percentage: 13
+            C9: 
+              percentage: 14
+            C10Plus: 
+              percentage: 15
+            H2S: 
+              percentage: 16
+            H2: 
+              percentage: 17
+            H2O: 
+              percentage: 18
+            He: 
+              percentage: 19
+            O2: 
+              percentage: 20
+          criteria: flat
+        gas: 
+          composition: 
+            N2: 
+              percentage: 0
+            CO2: 
+              percentage: 0
+            C1: 
+              percentage: 0
+            C2: 
+              percentage: 0
+            C3: 
+              percentage: 0
+            iC4: 
+              percentage: 0
+            nC4: 
+              percentage: 0
+            iC5: 
+              percentage: 0
+            nC5: 
+              percentage: 0
+            iC6: 
+              percentage: 0
+            nC6: 
+              percentage: 0
+            C7: 
+              percentage: 0
+            C8: 
+              percentage: 0
+            C9: 
+              percentage: 0
+            C10Plus: 
+              percentage: 0
+            H2S: 
+              percentage: 0
+            H2: 
+              percentage: 0
+            H2O: 
+              percentage: 0
+            He: 
+              percentage: 0
+            O2: 
+              percentage: 0
+          criteria: flat
+        water: 
+          composition: 
+            N2: 
+              percentage: 0
+            CO2: 
+              percentage: 0
+            C1: 
+              percentage: 0
+            C2: 
+              percentage: 0
+            C3: 
+              percentage: 0
+            iC4: 
+              percentage: 0
+            nC4: 
+              percentage: 0
+            iC5: 
+              percentage: 0
+            nC5: 
+              percentage: 0
+            iC6: 
+              percentage: 0
+            nC6: 
+              percentage: 0
+            C7: 
+              percentage: 0
+            C8: 
+              percentage: 0
+            C9: 
+              percentage: 0
+            C10Plus: 
+              percentage: 0
+            H2S: 
+              percentage: 0
+            H2: 
+              percentage: 0
+            H2O: 
+              percentage: 0
+            He: 
+              percentage: 0
+            O2: 
+              percentage: 0
+          criteria: flat
+        ngl: 
+          composition: 
+            N2: 
+              percentage: 0
+            CO2: 
+              percentage: 0
+            C1: 
+              percentage: 0
+            C2: 
+              percentage: 0
+            C3: 
+              percentage: 0
+            iC4: 
+              percentage: 0
+            nC4: 
+              percentage: 0
+            iC5: 
+              percentage: 0
+            nC5: 
+              percentage: 0
+            iC6: 
+              percentage: 0
+            nC6: 
+              percentage: 0
+            C7: 
+              percentage: 0
+            C8: 
+              percentage: 0
+            C9: 
+              percentage: 0
+            C10Plus: 
+              percentage: 0
+            H2S: 
+              percentage: 0
+            H2: 
+              percentage: 0
+            H2O: 
+              percentage: 0
+            He: 
+              percentage: 0
+            O2: 
+              percentage: 0
+          criteria: flat
+        dripCondensate: 
+          composition: 
+            N2: 
+              percentage: 0
+            CO2: 
+              percentage: 0
+            C1: 
+              percentage: 0
+            C2: 
+              percentage: 0
+            C3: 
+              percentage: 0
+            iC4: 
+              percentage: 0
+            nC4: 
+              percentage: 0
+            iC5: 
+              percentage: 0
+            nC5: 
+              percentage: 0
+            iC6: 
+              percentage: 0
+            nC6: 
+              percentage: 0
+            C7: 
+              percentage: 0
+            C8: 
+              percentage: 0
+            C9: 
+              percentage: 0
+            C10Plus: 
+              percentage: 99
+            H2S: 
+              percentage: 0
+            H2: 
+              percentage: 0
+            H2O: 
+              percentage: 0
+            He: 
+              percentage: 0
+            O2: 
+              percentage: 0
+          criteria: flat

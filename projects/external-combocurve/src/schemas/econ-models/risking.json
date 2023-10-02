@@ -1,0 +1,582 @@
+{
+	"$id": "http://combocurve.com/schemas/risking.json",
+	"$ref": "base-econ-model.json",
+	"type": "object",
+	"unevaluatedProperties": false,
+	"properties": {
+		"risking": {
+			"type": "object",
+			"unevaluatedProperties": false,
+			"properties": {
+				"riskProd": {
+					"type": "boolean"
+				},
+				"riskNglDripCondViaGasRisk": {
+					"type": "boolean"
+				},
+				"oil": {
+					"$ref": "#/definitions/SeasonalOrMultiplierArray"
+				},
+				"gas": {
+					"$ref": "#/definitions/SeasonalOrMultiplierArray"
+				},
+				"ngl": {
+					"$ref": "#/definitions/SeasonalOrMultiplierArray"
+				},
+				"dripCondensate": {
+					"$ref": "#/definitions/SeasonalOrMultiplierArray"
+				},
+				"water": {
+					"$ref": "#/definitions/SeasonalOrMultiplierArray"
+				}
+			},
+			"required": ["riskProd", "riskNglDripCondViaGasRisk", "oil", "gas", "ngl", "dripCondensate", "water"]
+		},
+		"shutIn": {
+			"$ref": "#/definitions/ShutInArray"
+		}
+	},
+	"required": ["risking", "shutIn"],
+	"definitions": {
+		"ShutInArray": {
+			"type": "object",
+			"unevaluatedProperties": false,
+			"properties": {
+				"rows": {
+					"type": "array",
+					"maxItems": 100,
+					"unevaluatedItems": false,
+					"items": {
+						"$ref": "#/definitions/ShutInRow"
+					}
+				}
+			},
+			"required": ["rows"],
+			"if": {
+				"not": {
+					"oneOf": [
+						{
+							"$ref": "rows-validation-defs.json#/definitions/OffsetToAsOfArray"
+						},
+						{
+							"$ref": "rows-validation-defs.json#/definitions/DatesArray"
+						}
+					]
+				}
+			},
+			"then": {
+				"if": {
+					"$ref": "rows-validation-defs.json#/definitions/EmptyRowsArray"
+				},
+				"else": {
+					"errorMessage": "All objects in the array must contain either offsetToAsOf or dates properties",
+					"const": null
+				}
+			}
+		},
+		"CountPercentArray": {
+			"type": "object",
+			"allOf": [
+				{
+					"if": {
+						"oneOf": [
+							{
+								"$ref": "rows-validation-defs.json#/definitions/EntireWellLifeArray"
+							},
+							{
+								"$ref": "rows-validation-defs.json#/definitions/OffsetToFpdArray"
+							},
+							{
+								"$ref": "rows-validation-defs.json#/definitions/OffsetToAsOfArray"
+							},
+							{
+								"$ref": "rows-validation-defs.json#/definitions/OffsetToDiscountDateArray"
+							},
+							{
+								"$ref": "rows-validation-defs.json#/definitions/DatesArray"
+							},
+							{
+								"$ref": "rows-validation-defs.json#/definitions/EmptyRowsArray"
+							}
+						]
+					},
+					"else": {
+						"if": {
+							"type": "object"
+						},
+						"then": {
+							"errorMessage": "All rows must contain exactly one of the following properties: `entireWellLife`, `offsetToFpd`, `offsetToAsOf`, `offsetToDiscountDate`, `dates`",
+							"const": null
+						}
+					}
+				},
+				{
+					"if": {
+						"oneOf": [
+							{
+								"$ref": "rows-validation-defs.json#/definitions/CountArray"
+							},
+							{
+								"$ref": "rows-validation-defs.json#/definitions/PercentageArray"
+							}
+						]
+					},
+					"then": {
+						"type": "object",
+						"properties": {
+							"rows": {
+								"type": "array",
+								"minItems": 1,
+								"maxItems": 100,
+								"unevaluatedItems": false,
+								"items": {
+									"$ref": "#/definitions/CountPercentRow"
+								}
+							}
+						},
+						"required": ["rows"]
+					},
+					"else": {
+						"const": null,
+						"errorMessage": "All objects in the array must contain either `count` or `percentage` properties"
+					}
+				}
+			]
+		},
+		"SeasonalOrMultiplierArray": {
+			"if": {
+				"type": "object",
+				"properties": {
+					"rows": {
+						"type": "array",
+						"contains": {
+							"type": "object",
+							"properties": {
+								"seasonal": {
+									"type": "string"
+								}
+							},
+							"required": ["seasonal"]
+						}
+					}
+				},
+				"required": ["rows"]
+			},
+			"then": {
+				"$ref": "#/definitions/SeasonalMultiplierArray"
+			},
+			"else": {
+				"$ref": "#/definitions/MultiplierArray"
+			}
+		},
+		"MultiplierArray": {
+			"type": "object",
+			"unevaluatedProperties": false,
+			"if": {
+				"oneOf": [
+					{
+						"$ref": "rows-validation-defs.json#/definitions/EntireWellLifeArray"
+					},
+					{
+						"$ref": "rows-validation-defs.json#/definitions/OffsetToFpdArray"
+					},
+					{
+						"$ref": "rows-validation-defs.json#/definitions/OffsetToAsOfArray"
+					},
+					{
+						"$ref": "rows-validation-defs.json#/definitions/OffsetToFirstSegmentArray"
+					},
+					{
+						"$ref": "rows-validation-defs.json#/definitions/OffsetToEndHistoryArray"
+					},
+					{
+						"$ref": "rows-validation-defs.json#/definitions/DatesArray"
+					},
+					{
+						"$ref": "rows-validation-defs.json#/definitions/EmptyRowsArray"
+					}
+				]
+			},
+			"else": {
+				"if": {
+					"type": "object"
+				},
+				"then": {
+					"errorMessage": "All rows must contain exactly one of the following properties: `entireWellLife`, `offsetToFpd`, `offsetToAsOf`, `offsetToFirstSegment`, `offsetToEndHistory`, `dates`, `seasonal`",
+					"const": null
+				}
+			},
+			"properties": {
+				"rows": {
+					"type": "array",
+					"minItems": 1,
+					"maxItems": 100,
+					"unevaluatedItems": false,
+					"items": {
+						"$ref": "#/definitions/MultiplierRow"
+					}
+				}
+			},
+			"required": ["rows"]
+		},
+		"SeasonalMultiplierArray": {
+			"type": "object",
+			"unevaluatedProperties": false,
+			"allOf": [
+				{
+					"type": "object",
+					"properties": {
+						"rows": {
+							"type": "array",
+							"items": {
+								"type": "object",
+								"properties": {
+									"multiplier": {
+										"type": "number",
+										"minimum": 0,
+										"maximum": 1000000
+									}
+								},
+								"required": ["multiplier"]
+							}
+						}
+					},
+					"required": ["rows"]
+				},
+				{
+					"$ref": "rows-validation-defs.json#/definitions/SeasonalArray"
+				}
+			]
+		},
+		"CountPercentRow": {
+			"type": "object",
+			"properties": {
+				"percentage": {
+					"type": "number",
+					"minimum": 0,
+					"maximum": 1000000
+				},
+				"count": {
+					"type": "number",
+					"minimum": 1,
+					"maximum": 250000
+				},
+				"entireWellLife": {
+					"$ref": "criteria.json#/definitions/EntireWellLife"
+				},
+				"offsetToFpd": {
+					"$ref": "criteria.json#/definitions/OffsetToFpd"
+				},
+				"offsetToAsOf": {
+					"$ref": "criteria.json#/definitions/OffsetToAsOf"
+				},
+				"offsetToDiscountDate": {
+					"$ref": "criteria.json#/definitions/OffsetToDiscountDate"
+				},
+				"dates": {
+					"$ref": "criteria.json#/definitions/Dates"
+				}
+			},
+			"allOf": [
+				{
+					"type": "object",
+					"oneRequired": ["count", "percentage"],
+					"errorMessage": "Exactly one of the following properties is required: `count`, `percentage`"
+				}
+			]
+		},
+		"MultiplierRow": {
+			"type": "object",
+			"properties": {
+				"multiplier": {
+					"type": "number",
+					"minimum": 0,
+					"maximum": 1000000
+				},
+				"entireWellLife": {
+					"$ref": "criteria.json#/definitions/EntireWellLife"
+				},
+				"offsetToFpd": {
+					"$ref": "criteria.json#/definitions/OffsetToFpd"
+				},
+				"offsetToAsOf": {
+					"$ref": "criteria.json#/definitions/OffsetToAsOf"
+				},
+				"offsetToFirstSegment": {
+					"$ref": "criteria.json#/definitions/OffsetToFirstSegment"
+				},
+				"offsetToEndHistory": {
+					"$ref": "criteria.json#/definitions/OffsetToEndHistory"
+				},
+				"dates": {
+					"$ref": "criteria.json#/definitions/Dates"
+				}
+			},
+			"required": ["multiplier"],
+			"prohibited": ["seasonal"]
+		},
+		"Dates": {
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"startDate": {
+					"type": "string",
+					"format": "date",
+					"formatMinimum": "1900-01-01",
+					"formatMaximum": "2262-04-01"
+				},
+				"endDate": {
+					"type": "string",
+					"format": "date",
+					"formatMinimum": {
+						"$data": "1/startDate"
+					},
+					"formatMaximum": "2262-04-01"
+				}
+			},
+			"required": ["startDate", "endDate"]
+		},
+		"OffsetToAsOf": {
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"start": {
+					"type": "number",
+					"minimum": 1,
+					"maximum": 1000000
+				},
+				"end": {
+					"type": "number",
+					"minimum": {
+						"$data": "1/start"
+					},
+					"maximum": 1000000
+				}
+			},
+			"required": ["start", "end"]
+		},
+		"ShutInRow": {
+			"type": "object",
+			"properties": {
+				"phase": {
+					"type": "string",
+					"enum": ["all", "oil", "gas", "water"]
+				},
+				"offsetToAsOf": {
+					"$ref": "#/definitions/OffsetToAsOf"
+				},
+				"dates": {
+					"$ref": "#/definitions/Dates"
+				},
+				"repeatRangeOfDates": {
+					"type": "string"
+				},
+				"totalOccurrences": {
+					"type": "number",
+					"minimum": 1,
+					"maximum": 1200
+				},
+				"unit": {
+					"type": "string"
+				},
+				"multiplier": {
+					"type": "number",
+					"exclusiveMinimum": 0,
+					"maximum": 1000
+				},
+				"scalePostShutInEndCriteria": {
+					"type": "string"
+				},
+				"scalePostShutInEnd": {},
+				"fixedExpense": {
+					"type": "boolean"
+				},
+				"capex": {
+					"type": "boolean"
+				}
+			},
+			"required": ["phase", "multiplier", "scalePostShutInEndCriteria", "fixedExpense", "capex"],
+			"allOf": [
+				{
+					"if": {
+						"type": "object",
+						"properties": {
+							"offsetToAsOf": {
+								"$ref": "#/definitions/OffsetToAsOf"
+							}
+						},
+						"required": ["offsetToAsOf"]
+					},
+					"then": {
+						"allOf": [
+							{
+								"if": {
+									"type": "object",
+									"properties": {
+										"scalePostShutInEndCriteria": {
+											"type": "string",
+											"const": "offset_to_as_of_date"
+										}
+									},
+									"required": ["scalePostShutInEndCriteria"]
+								},
+								"then": {
+									"type": "object",
+									"properties": {
+										"scalePostShutInEnd": {
+											"type": "string",
+											"format": "stringNumber",
+											"formatMinimum": "1",
+											"formatMaximum": "1000000"
+										}
+									},
+									"required": ["scalePostShutInEnd"]
+								},
+								"else": {
+									"type": "object",
+									"errorMessage": "scalePostShutInEnd cannot have a value when scalePostShutInEndCriteria is `econ_limit`",
+									"properties": {
+										"scalePostShutInEnd": {
+											"type": "string",
+											"regexp": "/^\\s*$/i"
+										}
+									}
+								}
+							},
+							{
+								"type": "object",
+								"properties": {
+									"scalePostShutInEndCriteria": {
+										"type": "string",
+										"enum": ["offset_to_as_of_date", "econ_limit"]
+									}
+								},
+								"required": ["scalePostShutInEndCriteria"]
+							},
+							{
+								"type": "object",
+								"properties": {
+									"unit": {
+										"type": "string",
+										"enum": ["day", "month"]
+									}
+								},
+								"required": ["unit"]
+							},
+							{
+								"type": "object",
+								"errorMessage": "When OffsetToAsOf criteria is used repeatRangeOfDates must have the following value: `no_repeat`",
+								"properties": {
+									"repeatRangeOfDates": {
+										"type": "string",
+										"const": "no_repeat"
+									}
+								}
+							},
+							{
+								"type": "object",
+								"errorMessage": "When OffsetToAsOf criteria is used totalOccurrences must have the following value: 1",
+								"properties": {
+									"totalOccurrences": {
+										"type": "number",
+										"const": 1
+									}
+								}
+							}
+						]
+					}
+				},
+				{
+					"if": {
+						"type": "object",
+						"properties": {
+							"dates": {
+								"$ref": "#/definitions/Dates"
+							}
+						},
+						"required": ["dates"]
+					},
+					"then": {
+						"allOf": [
+							{
+								"if": {
+									"type": "object",
+									"properties": {
+										"scalePostShutInEndCriteria": {
+											"type": "string",
+											"const": "dates"
+										}
+									},
+									"required": ["scalePostShutInEndCriteria"]
+								},
+								"then": {
+									"type": "object",
+									"properties": {
+										"scalePostShutInEnd": {
+											"type": "string",
+											"format": "date",
+											"formatMinimum": "1900-01-01",
+											"formatMaximum": "2262-04-01"
+										}
+									},
+									"required": ["scalePostShutInEnd"]
+								},
+								"else": {
+									"type": "object",
+									"errorMessage": "scalePostShutInEnd cannot have a value when scalePostShutInEndCriteria is `econ_limit`",
+									"properties": {
+										"scalePostShutInEnd": {
+											"type": "string",
+											"regexp": "/^\\s*$/i"
+										}
+									}
+								}
+							},
+							{
+								"type": "object",
+								"properties": {
+									"scalePostShutInEndCriteria": {
+										"type": "string",
+										"enum": ["dates", "econ_limit"]
+									}
+								},
+								"required": ["scalePostShutInEndCriteria"]
+							},
+							{
+								"type": "object",
+								"errorMessage": "When Dates criteria is used unit must have the following value: `day`",
+								"properties": {
+									"unit": {
+										"type": "string",
+										"const": "day"
+									}
+								}
+							},
+							{
+								"type": "object",
+								"properties": {
+									"repeatRangeOfDates": {
+										"type": "string",
+										"enum": ["no_repeat", "monthly", "yearly"]
+									}
+								},
+								"required": ["repeatRangeOfDates"]
+							},
+							{
+								"type": "object",
+								"properties": {
+									"totalOccurrences": {
+										"type": "number",
+										"minimum": 1,
+										"maximum": 1200
+									}
+								},
+								"required": ["totalOccurrences"]
+							}
+						]
+					}
+				}
+			]
+		}
+	}
+}

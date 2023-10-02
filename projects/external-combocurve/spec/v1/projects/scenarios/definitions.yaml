@@ -1,0 +1,105 @@
+# Requests:
+Scenario:
+  type: object
+  properties:
+    createdAt:
+      type: string
+      format: date
+      description: Scenario Creation Date
+    id:
+      type: string
+      description: ID
+    name:
+      type: string
+      maxLength: 16384
+      description: Name
+    updatedAt:
+      type: string
+      format: date
+      description: Updated At
+  example:
+    createdAt: '2020-01-21T16:58:08.986Z'
+    id: 5e5981b9e23dae0012624d72
+    name: Test scenario
+    updatedAt: '2020-01-21T17:58:08.986Z'
+ScenarioList:
+  type: array
+  items:
+    $ref: '#/definitions/Scenario'
+  maxItems: 200
+  example:
+    - createdAt: '2020-01-21T16:58:08.986Z'
+      id: 5e5981b9e23dae0012624d72
+      name: Test scenario
+      updatedAt: '2020-01-21T17:58:08.986Z'
+ScenarioPayload:
+  type: object
+  properties:
+    id:
+      type: string
+      description: ID (for updates)
+    name:
+      type: string
+      description: Scenario Name
+  example:
+    name: Test scenario
+    id: 5e5981b9e23dae0012624d72
+ScenarioInputList:
+  type: array
+  items:
+    $ref: '#/definitions/ScenarioPayload'
+  maxItems: 200
+  example:
+    - name: Test scenario
+      id: 5e5981b9e23dae0012624d72
+
+# Responses:
+ScenarioStatus:
+  type: object
+  required:
+  - status
+  - code
+  properties:
+    status:
+      type: string
+    code:
+      type: integer
+    chosenID:
+      type: string
+    errors:
+      type: array
+      items:
+        $ref: '#/definitions/ErrorEntry'
+  example:
+    status: Success
+    code: 200
+    name: test
+ScenarioMultiStatusResponse:
+  type: object
+  properties:
+    generalErrors:
+      type: array
+      items:
+        $ref: '#/definitions/ErrorEntry'
+    results:
+      type: array
+      items:
+        $ref: '#/definitions/ScenarioStatus'
+    failedCount:
+      type: integer
+    successCount:
+      type: integer
+  example:
+    generalErrors:
+      - name: ValidationError
+        message: The field 'name' is required.
+        location: '[0]'
+      - name: ValidationError
+        message: The field 'unique' is required.
+        location: '[2]'
+    results:
+      - status: Success
+        code: 200
+        chosenID: 5e5981b9e23dae0012624d72
+    failedCount: 2
+    successCount: 2

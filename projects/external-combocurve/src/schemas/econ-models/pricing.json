@@ -1,0 +1,272 @@
+{
+	"$id": "http://combocurve.com/schemas/pricing.json",
+	"$ref": "base-econ-model.json",
+	"unevaluatedProperties": false,
+	"type": "object",
+	"properties": {
+		"priceModel": {
+			"type": "object",
+			"properties": {
+				"oil": {
+					"type": "object",
+					"unevaluatedProperties": false,
+					"properties": {
+						"cap": {
+							"$ref": "rows-validation-defs.json#/definitions/Cap"
+						},
+						"escalationModel": {
+							"$ref": "rows-validation-defs.json#/definitions/EscalationModel"
+						},
+						"rows": {
+							"type": "array",
+							"maxItems": 100,
+							"minItems": 1,
+							"items": {
+								"type": "object",
+								"unevaluatedProperties": false,
+								"properties": {
+									"price": {
+										"type": "number",
+										"maximum": 100000000,
+										"minimum": -100000000
+									},
+									"entireWellLife": {
+										"$ref": "criteria.json#/definitions/EntireWellLife"
+									},
+									"offsetToAsOf": {
+										"$ref": "criteria.json#/definitions/OffsetToAsOf"
+									},
+									"dates": {
+										"$ref": "criteria.json#/definitions/Dates"
+									}
+								},
+								"allOf": [
+									{
+										"errorMessage": "Exactly one of the following properties is required: `price`",
+										"oneRequired": ["price"]
+									},
+									{
+										"errorMessage": "Exactly one of the following properties is required: `entireWellLife`, `offsetToAsOf`, or `dates`",
+										"oneRequired": ["entireWellLife", "offsetToAsOf", "dates"]
+									}
+								]
+							}
+						}
+					},
+					"required": ["rows"]
+				},
+				"gas": {
+					"type": "object",
+					"unevaluatedProperties": false,
+					"properties": {
+						"cap": {
+							"$ref": "rows-validation-defs.json#/definitions/Cap"
+						},
+						"escalationModel": {
+							"$ref": "rows-validation-defs.json#/definitions/EscalationModel"
+						},
+						"rows": {
+							"if": {
+								"oneOf": [
+									{
+										"$ref": "rows-validation-defs.json#/definitions/DollarPerMmbtuArray"
+									},
+									{
+										"$ref": "rows-validation-defs.json#/definitions/DollarPerMcfArray"
+									},
+									{
+										"type": "array",
+										"maxItems": 0
+									}
+								]
+							},
+							"else": {
+								"errorMessage": "All rows must contain exactly one of the following properties: `dollarPerMmbtu` or `dollarPerMcf`",
+								"const": null
+							},
+							"type": "array",
+							"maxItems": 100,
+							"minItems": 1,
+							"items": {
+								"type": "object",
+								"unevaluatedProperties": false,
+								"properties": {
+									"dollarPerMmbtu": {
+										"type": "number",
+										"maximum": 100000000,
+										"minimum": -100000000
+									},
+									"dollarPerMcf": {
+										"type": "number",
+										"maximum": 100000000,
+										"minimum": -100000000
+									},
+									"entireWellLife": {
+										"$ref": "criteria.json#/definitions/EntireWellLife"
+									},
+									"offsetToAsOf": {
+										"$ref": "criteria.json#/definitions/OffsetToAsOf"
+									},
+									"dates": {
+										"$ref": "criteria.json#/definitions/Dates"
+									}
+								},
+								"allOf": [
+									{
+										"errorMessage": "Exactly one of the following properties is required: `entireWellLife`, `offsetToAsOf`, or `dates`",
+										"oneRequired": ["entireWellLife", "offsetToAsOf", "dates"]
+									}
+								]
+							}
+						}
+					},
+					"required": ["rows"]
+				},
+				"ngl": {
+					"type": "object",
+					"unevaluatedProperties": false,
+					"properties": {
+						"cap": {
+							"$ref": "rows-validation-defs.json#/definitions/Cap"
+						},
+						"escalationModel": {
+							"$ref": "rows-validation-defs.json#/definitions/EscalationModel"
+						},
+						"rows": {
+							"if": {
+								"oneOf": [
+									{
+										"$ref": "rows-validation-defs.json#/definitions/PctOfOilPriceArray"
+									},
+									{
+										"$ref": "rows-validation-defs.json#/definitions/PriceArray"
+									},
+									{
+										"$ref": "rows-validation-defs.json#/definitions/DollarPerGalArray"
+									},
+									{
+										"type": "array",
+										"maxItems": 0
+									}
+								]
+							},
+							"else": {
+								"errorMessage": "All rows must contain exactly one of the following properties: `pctOfOilPrice`, `price`, or `dollarPerGal`",
+								"const": null
+							},
+							"type": "array",
+							"maxItems": 100,
+							"minItems": 1,
+							"items": {
+								"type": "object",
+								"unevaluatedProperties": false,
+								"properties": {
+									"pctOfOilPrice": {
+										"type": "number",
+										"maximum": 100,
+										"minimum": 0
+									},
+									"price": {
+										"type": "number",
+										"maximum": 100000000,
+										"minimum": -100000000
+									},
+									"dollarPerGal": {
+										"type": "number",
+										"maximum": 100000000,
+										"minimum": -100000000
+									},
+									"entireWellLife": {
+										"$ref": "criteria.json#/definitions/EntireWellLife"
+									},
+									"offsetToAsOf": {
+										"$ref": "criteria.json#/definitions/OffsetToAsOf"
+									},
+									"dates": {
+										"$ref": "criteria.json#/definitions/Dates"
+									}
+								},
+								"allOf": [
+									{
+										"errorMessage": "Exactly one of the following properties is required: `entireWellLife`, `offsetToAsOf`, or `dates`",
+										"oneRequired": ["entireWellLife", "offsetToAsOf", "dates"]
+									}
+								]
+							}
+						}
+					},
+					"required": ["rows"]
+				},
+				"dripCondensate": {
+					"type": "object",
+					"unevaluatedProperties": false,
+					"properties": {
+						"cap": {
+							"$ref": "rows-validation-defs.json#/definitions/Cap"
+						},
+						"escalationModel": {
+							"$ref": "rows-validation-defs.json#/definitions/EscalationModel"
+						},
+						"rows": {
+							"if": {
+								"oneOf": [
+									{
+										"$ref": "rows-validation-defs.json#/definitions/PctOfOilPriceArray"
+									},
+									{
+										"$ref": "rows-validation-defs.json#/definitions/DollarPerBblArray"
+									},
+									{
+										"type": "array",
+										"maxItems": 0
+									}
+								]
+							},
+							"else": {
+								"errorMessage": "All rows must contain exactly one of the following properties: `pctOfOilPrice` or `dollarPerBbl`",
+								"const": null
+							},
+							"type": "array",
+							"maxItems": 100,
+							"minItems": 1,
+							"items": {
+								"type": "object",
+								"unevaluatedProperties": false,
+								"properties": {
+									"pctOfOilPrice": {
+										"type": "number",
+										"maximum": 100,
+										"minimum": 0
+									},
+									"entireWellLife": {
+										"$ref": "criteria.json#/definitions/EntireWellLife"
+									},
+									"offsetToAsOf": {
+										"$ref": "criteria.json#/definitions/OffsetToAsOf"
+									},
+									"dollarPerBbl": {
+										"type": "number",
+										"maximum": 100000000,
+										"minimum": -100000000
+									},
+									"dates": {
+										"$ref": "criteria.json#/definitions/Dates"
+									}
+								},
+								"allOf": [
+									{
+										"errorMessage": "Exactly one of the following properties is required: `entireWellLife`, `offsetToAsOf`, or `dates`",
+										"oneRequired": ["entireWellLife", "offsetToAsOf", "dates"]
+									}
+								]
+							}
+						}
+					},
+					"required": ["rows"]
+				}
+			},
+			"required": ["oil", "gas", "ngl", "dripCondensate"]
+		}
+	},
+	"required": ["priceModel"]
+}

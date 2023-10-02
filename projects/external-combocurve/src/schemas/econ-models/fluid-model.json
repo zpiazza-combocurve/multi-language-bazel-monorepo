@@ -1,0 +1,150 @@
+{
+	"$id": "http://combocurve.com/schemas/fluid-model.json",
+	"$ref": "base-econ-model.json",
+	"unevaluatedProperties": false,
+	"properties": {
+		"fluidModel": {
+			"$ref": "#/definitions/FluidModel"
+		}
+	},
+	"required": ["fluidModel"],
+	"definitions": {
+		"Percentage": {
+			"type": "number",
+			"minimum": 0,
+			"maximum": 100
+		},
+		"Component": {
+			"type": "object",
+			"unevaluatedProperties": false,
+			"properties": {
+				"percentage": { "$ref": "#/definitions/Percentage" }
+			},
+			"required": ["percentage"]
+		},
+		"Composition": {
+			"type": "object",
+			"unevaluatedProperties": false,
+			"properties": {
+				"N2": {
+					"$ref": "#/definitions/Component"
+				},
+				"CO2": {
+					"$ref": "#/definitions/Component"
+				},
+				"C1": {
+					"$ref": "#/definitions/Component"
+				},
+				"C2": {
+					"$ref": "#/definitions/Component"
+				},
+				"C3": {
+					"$ref": "#/definitions/Component"
+				},
+				"iC4": {
+					"$ref": "#/definitions/Component"
+				},
+				"nC4": {
+					"$ref": "#/definitions/Component"
+				},
+				"iC5": {
+					"$ref": "#/definitions/Component"
+				},
+				"nC5": {
+					"$ref": "#/definitions/Component"
+				},
+				"iC6": {
+					"$ref": "#/definitions/Component"
+				},
+				"nC6": {
+					"$ref": "#/definitions/Component"
+				},
+				"C7": {
+					"$ref": "#/definitions/Component"
+				},
+				"C8": {
+					"$ref": "#/definitions/Component"
+				},
+				"C9": {
+					"$ref": "#/definitions/Component"
+				},
+				"C10Plus": {
+					"$ref": "#/definitions/Component"
+				},
+				"H2S": {
+					"$ref": "#/definitions/Component"
+				},
+				"H2": {
+					"$ref": "#/definitions/Component"
+				},
+				"H2O": {
+					"$ref": "#/definitions/Component"
+				},
+				"He": {
+					"$ref": "#/definitions/Component"
+				},
+				"O2": {
+					"$ref": "#/definitions/Component"
+				}
+			},
+			"required": [
+				"N2",
+				"CO2",
+				"C1",
+				"C2",
+				"C3",
+				"iC4",
+				"nC4",
+				"iC5",
+				"nC5",
+				"iC6",
+				"nC6",
+				"C7",
+				"C8",
+				"C9",
+				"C10Plus",
+				"H2S",
+				"H2",
+				"H2O",
+				"He",
+				"O2"
+			]
+		},
+		"Phase": {
+			"type": "object",
+			"unevaluatedProperties": false,
+			"properties": {
+				"composition": {
+					"$ref": "#/definitions/Composition"
+				},
+				"criteria": {
+					"type": "string",
+					"enum": ["flat"]
+				}
+			},
+			"required": ["composition"]
+		},
+		"FluidModel": {
+			"type": "object",
+			"unevaluatedProperties": false,
+			"properties": {
+				"dripCondensate": {
+					"$ref": "#/definitions/Phase"
+				},
+				"gas": {
+					"$ref": "#/definitions/Phase"
+				},
+				"ngl": {
+					"$ref": "#/definitions/Phase"
+				},
+				"oil": {
+					"$ref": "#/definitions/Phase"
+				},
+				"water": {
+					"$ref": "#/definitions/Phase"
+				}
+			},
+			"required": ["dripCondensate", "gas", "ngl", "oil", "water"]
+		}
+	}
+}

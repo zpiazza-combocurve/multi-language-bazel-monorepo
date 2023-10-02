@@ -1,0 +1,9 @@
+{
+	"env": {
+		"es6": true
+	},
+	"rules": {
+		"import/no-commonjs": "off",
+		"@typescript-eslint/no-var-requires": "off"
+	}
+}

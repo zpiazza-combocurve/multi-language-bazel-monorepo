@@ -1,0 +1,9 @@
+{
+	"name": "test",
+	"unique": false,
+	"reservesCategory": {
+		"prmsClass": "reserves",
+		"prmsCategory": "proved",
+		"prmsSubCategory": "behind_pipe"
+	}
+}

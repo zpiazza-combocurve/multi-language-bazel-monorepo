@@ -1,0 +1,151 @@
+/v1/well-comments:
+  head:
+    operationId: head-v1-well-comments
+    description: Returns metadata about the existing well comment documents.
+    parameters:
+      - $ref: '#/parameters/skipParam'
+      - $ref: '#/parameters/takeParam'
+      - name: commentedAt
+        in: query
+        description: filter by commentedAt, can be used for incremental pull
+        format: date
+        type: string
+        x-allow-parameter-operator: true
+      - name: forecast
+        in: query
+        description: filter by forecast
+        type: string
+      - name: project
+        in: query
+        description: filter by project
+        type: string
+      - name: well
+        in: query
+        description: filter by well
+        type: string
+    responses:
+      '200':
+        description: OK
+        headers:
+          Link:
+            type: string
+            description: >-
+              Indicates a typed relationship with another resource, where the
+              relation type is defined by RFC 5988. We include the relationships
+              next, prev, first and last, which can be used to move between
+              pages of the list of results.
+          X-Query-Count:
+            type: integer
+            description: >-
+              The number of records in this resource. When filters are provided
+              only matching records are counted.
+      '400':
+        description: Bad Request. There is something wrong with the request data.
+    tags:
+      - ComboCurveV1
+    x-client-generation:
+      x-count-method:
+        name: WellCommentsCount
+  get:
+    produces:
+      - application/json
+    operationId: get-v1-well-comments
+    description: Returns a list of well comment documents.
+    parameters:
+      - $ref: '#/parameters/skipParam'
+      - $ref: '#/parameters/takeParam'
+      - $ref: '#/parameters/sortParam'
+      - $ref: '#/parameters/cursorParam'
+      - name: commentedAt
+        in: query
+        description: filter by commentedAt
+        format: date
+        type: string
+        x-allow-parameter-operator: true
+      - name: forecast
+        in: query
+        description: filter by forecast
+        type: string
+      - name: project
+        in: query
+        description: filter by project
+        type: string
+      - name: well
+        in: query
+        description: filter by well
+        type: string
+    responses:
+      '200':
+        description: OK
+        schema:
+          $ref: '#/definitions/WellCommentList'
+        headers:
+          Link:
+            type: string
+            description: >-
+              Indicates a typed relationship with another resource, where the
+              relation type is defined by RFC 5988. We include the relationships
+              next, prev, first and last, which can be used to move between
+              pages of the list of results.
+      '400':
+        description: Bad Request. There is something wrong with the request data.
+        schema:
+          $ref: '#/definitions/Error'
+    tags:
+      - ComboCurveV1
+    x-google-quota:
+      metricCosts:
+        read-request-rate: 1
+    x-client-generation:
+      x-get-all-skip-take-method:
+        name: GetAllWellComments
+        baseReturnType: WellComment
+      x-get-all-cursor-method:
+        name: GetAllWellCommentsV2
+        baseReturnType: WellComment
+/v1/well-comments/head:
+  get:
+    x-no-client: true
+    x-no-doc: true
+    operationId: get-head-v1-well-comments
+    description: Returns metadata about the existing well comment documents.
+    parameters:
+      - $ref: '#/parameters/skipParam'
+      - $ref: '#/parameters/takeParam'
+      - name: commentedAt
+        in: query
+        description: filter by commentedAt
+        format: date
+        type: string
+      - name: forecast
+        in: query
+        description: filter by forecast
+        type: string
+      - name: project
+        in: query
+        description: filter by project
+        type: string
+      - name: well
+        in: query
+        description: filter by well
+        type: string
+    responses:
+      '200':
+        description: OK
+        headers:
+          Link:
+            type: string
+            description: >-
+              Indicates a typed relationship with another resource, where the
+              relation type is defined by RFC 5988. We include the relationships
+              next, prev, first and last, which can be used to move between
+              pages of the list of results.
+          X-Query-Count:
+            type: integer
+            description: >-
+              The number of records in this resource. When filters are provided
+              only matching records are counted.
+      '400':
+        description: Bad Request. There is something wrong with the request data.
+    tags:
+      - ComboCurveV1

@@ -1,0 +1,45 @@
+WellMapping:
+  x-no-doc: true
+  type: object
+  properties:
+    chosenID:
+      type: string
+      maxLength: 16384
+      description: Chosen ID
+    dataSource:
+      type: string
+      description: Data Source
+    projectId:
+      type: string
+      description: Project ID
+    createdAt:
+      type: string
+      format: date
+      description: Well Creation Date
+    updatedAt:
+      type: string
+      format: date
+      description: Well Update Date
+    id:
+      type: string
+      description: ID
+  example:
+    chosenID: '42477309850000'
+    dataSource: internal
+    projectId: 622be02ae575fa0013ba0983
+    createdAt: '2020-01-21T16:56:24.869Z'
+    updatedAt: '2020-01-21T16:56:24.869Z'
+    id: 5e272d39b78910dd2a1bd8fe
+WellMappingList:
+  x-no-doc: true
+  type: array
+  items:
+    $ref: '#/definitions/WellMapping'
+  maxItems: 100000
+  example:
+    - chosenID: '42477309850000'
+      dataSource: internal
+      projectId: 622be02ae575fa0013ba0983
+      createdAt: '2020-01-21T16:56:24.869Z'
+      updatedAt: '2020-01-21T16:56:24.869Z'
+      id: 5e272d39b78910dd2a1bd8fe

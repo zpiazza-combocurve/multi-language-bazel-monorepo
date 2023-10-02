@@ -1,0 +1,874 @@
+OtherCapexRowEscalationStart:
+  type: object
+  properties:
+    date:
+      type: string
+      format: date
+    applyToCriteria:
+      type: number
+      minimum: -2000
+      maximum: 2000
+    fpd:
+      type: number
+      minimum: -2000
+      maximum: 2000
+    asOfDate:
+      type: number
+      minimum: -2000
+      maximum: 2000
+    econLimit:
+      type: number
+      minimum: -2000
+      maximum: 2000
+OtherCapexRow:
+  type: "object"
+  properties:
+    category:
+      type: string
+      enum:
+       - "drilling"
+       - "completion"
+       - "legal"
+       - "pad"
+       - "facilities"
+       - "artificial_lift"
+       - "workover"
+       - "development"
+       - "pipelines"
+       - "exploration"
+       - "waterline"
+       - "appraisal"
+       - "other_investment"
+       - "abandonment"
+       - "salvage"
+    description:
+      type: string
+      maxLength: 20
+    tangible:
+      type: number
+      minimum: -10000000000
+      maximum: 10000000000
+    intangible:
+      type: number
+      minimum: -10000000000
+      maximum: 10000000000
+    capexExpense:
+      type: string
+      enum:
+        - capex
+    afterEconLimit:
+      type: boolean
+    calculation:
+      type: string
+      enum:
+       - net
+       - gross
+    escalationModel:
+      type: string
+    escalationStart:
+      $ref: '#/definitions/OtherCapexRowEscalationStart'
+    depreciationModel:
+      type: string
+    dealTerms:
+      type: number
+      minimum: 0
+      maximum: 1000
+    fromHeaders:
+      type: string
+      enum:
+        - "offset_to_refrac_date"
+        - "offset_to_completion_end_date"
+        - "offset_to_completion_start_date"
+        - "offset_to_date_rig_release"
+        - "offset_to_drill_end_date"
+        - "offset_to_drill_start_date"
+        - "offset_to_first_prod_date"
+        - "offset_to_permit_date"
+        - "offset_to_spud_date"
+        - "offset_to_til"
+        - "offset_to_first_prod_date_daily_calc"
+        - "offset_to_first_prod_date_monthly_calc"
+        - "offset_to_last_prod_date_monthly"
+        - "offset_to_last_prod_date_daily"
+        - "customDateHeader0"
+        - "customDateHeader1"
+        - "customDateHeader2"
+        - "customDateHeader3"
+        - "customDateHeader4"
+        - "customDateHeader5"
+        - "customDateHeader6"
+        - "customDateHeader7"
+        - "customDateHeader8"
+        - "customDateHeader9"
+    refracDate:
+      type: number
+      maximum: 2000
+      minimum: -2000
+    completionEndDate:
+      type: number
+      maximum: 2000
+      minimum: -2000
+    completionStartDate:
+      type: number
+      maximum: 2000
+      minimum: -2000
+    dateRigRelease:
+      type: number
+      maximum: 2000
+      minimum: -2000
+    drillEndDate:
+      type: number
+      maximum: 2000
+      minimum: -2000
+    drillStartDate:
+      type: number
+      maximum: 2000
+      minimum: -2000
+    firstProdDate:
+      type: number
+      maximum: 2000
+      minimum: -2000
+    permitDate:
+      type: number
+      maximum: 2000
+      minimum: -2000
+    spudDate:
+      type: number
+      maximum: 2000
+      minimum: -2000
+    til:
+      type: number
+      maximum: 2000
+      minimum: -2000
+    customDateHeader0:
+      type: number
+      maximum: 2000
+      minimum: -2000
+    customDateHeader1:
+      type: number
+      maximum: 2000
+      minimum: -2000
+    customDateHeader2:
+      type: number
+      maximum: 2000
+      minimum: -2000
+    customDateHeader3:
+      type: number
+      maximum: 2000
+      minimum: -2000
+    customDateHeader4:
+      type: number
+      maximum: 2000
+      minimum: -2000
+    customDateHeader5:
+      type: number
+      maximum: 2000
+      minimum: -2000
+    customDateHeader6:
+      type: number
+      maximum: 2000
+      minimum: -2000
+    customDateHeader7:
+      type: number
+      maximum: 2000
+      minimum: -2000
+    customDateHeader8:
+      type: number
+      maximum: 2000
+      minimum: -2000
+    customDateHeader9:
+      type: number
+      maximum: 2000
+      minimum: -2000
+    firstProdDateDaily:
+      type: number
+      maximum: 2000
+      minimum: -2000
+    firstProdDateMonthly:
+      type: number
+      maximum: 2000
+      minimum: -2000
+    lastProdDateDaily:
+      type: number
+      maximum: 2000
+      minimum: -2000
+    lastProdDateMonthly:
+      type: number
+      maximum: 2000
+      minimum: -2000
+    fromSchedule:
+      type: string
+      enum:
+        - "offset_to_pad_preparation_mob_start"
+        - "offset_to_pad_preparation_mob_end"
+        - "offset_to_pad_preparation_start"
+        - "offset_to_pad_preparation_end"
+        - "offset_to_pad_preparation_demob_start"
+        - "offset_to_pad_preparation_demob_end"
+        - "offset_to_spud_mob_start"
+        - "offset_to_spud_mob_end"
+        - "offset_to_spud_start"
+        - "offset_to_spud_end"
+        - "offset_to_spud_demob_start"
+        - "offset_to_spud_demob_end"
+        - "offset_to_drill_mob_start"
+        - "offset_to_drill_mob_end"
+        - "offset_to_drill_start"
+        - "offset_to_drill_end"
+        - "offset_to_drill_demob_start"
+        - "offset_to_drill_demob_end"
+        - "offset_to_completion_mob_start"
+        - "offset_to_completion_mob_end"
+        - "offset_to_completion_start"
+        - "offset_to_completion_end"
+        - "offset_to_completion_demob_start"
+        - "offset_to_completion_demob_end"
+    padPreparationMobStart: 
+      type: number
+      maximum: 2000
+      minimum: -2000
+    padPreparationMobEnd: 
+      type: number
+      maximum: 2000
+      minimum: -2000
+    padPreparationStart: 
+      type: number
+      maximum: 2000
+      minimum: -2000
+    padPreparationEnd: 
+      type: number
+      maximum: 2000
+      minimum: -2000
+    padPreparationDemobStart: 
+      type: number
+      maximum: 2000
+      minimum: -2000
+    padPreparationDemobEnd: 
+      type: number
+      maximum: 2000
+      minimum: -2000
+    spudMobStart: 
+      type: number
+      maximum: 2000
+      minimum: -2000
+    spudMobEnd: 
+      type: number
+      maximum: 2000
+      minimum: -2000
+    spudStart: 
+      type: number
+      maximum: 2000
+      minimum: -2000
+    spudEnd: 
+      type: number
+      maximum: 2000
+      minimum: -2000
+    spudDemobStart: 
+      type: number
+      maximum: 2000
+      minimum: -2000
+    spudDemobEnd: 
+      type: number
+      maximum: 2000
+      minimum: -2000
+    drillMobStart: 
+      type: number
+      maximum: 2000
+      minimum: -2000
+    drillMobEnd: 
+      type: number
+      maximum: 2000
+      minimum: -2000
+    drillStart: 
+      type: number
+      maximum: 2000
+      minimum: -2000
+    drillEnd: 
+      type: number
+      maximum: 2000
+      minimum: -2000
+    drillDemobStart: 
+      type: number
+      maximum: 2000
+      minimum: -2000
+    drillDemobEnd: 
+      type: number
+      maximum: 2000
+      minimum: -2000
+    completionMobStart: 
+      type: number
+      maximum: 2000
+      minimum: -2000
+    completionMobEnd: 
+      type: number
+      maximum: 2000
+      minimum: -2000
+    completionStart: 
+      type: number
+      maximum: 2000
+      minimum: -2000
+    completionEnd: 
+      type: number
+      maximum: 2000
+      minimum: -2000
+    completionDemobStart: 
+      type: number
+      maximum: 2000
+      minimum: -2000
+    completionDemobEnd: 
+      type: number
+      maximum: 2000
+      minimum: -2000
+    offsetToAsOf:
+      type: number
+      maximum: 20000
+      minimum: -20000
+    offsetToDiscountDate:
+      type: number
+      maximum: 20000
+      minimum: -20000
+    offsetToFpd:
+      type: number
+      maximum: 20000
+      minimum: -20000
+    offsetToMajorSegment:
+      type: number
+      maximum: 20000
+      minimum: -20000
+    offsetToEconLimit:
+      type: number
+      maximum: 20000
+      minimum: -20000
+    oilRate:
+      type: number
+      maximum: 10000000000
+      minimum: 0
+    gasRate:
+      type: number
+      maximum: 10000000000
+      minimum: 0
+    waterRate:
+      type: number
+      maximum: 10000000000
+      minimum: 0
+    totalFluidRate:
+      type: number
+      maximum: 10000000000
+      minimum: 0
+    date:
+      type: string
+      format: date
+  required:
+  - category
+  - tangible
+  - intangible
+  - afterEconLimit
+  - escalationStart
+  - calculation
+  - escalationModel
+  - depreciationModel
+  - dealTerms
+OtherCapex:
+  type: "object"
+  properties:
+    rows:
+      type: array
+      items:
+        $ref: '#/definitions/OtherCapexRow'
+  required:
+  - rows
+
+DrillingOrCompletionCostRow:
+  type: object
+  properties:
+    pctOfTotalCost:
+      type: number
+      maximum: 20000
+      minimum: -20000
+    offsetToFpd:
+      type: number
+      maximum: 20000
+      minimum: -20000
+    offsetToAsOf:
+      type: number
+      maximum: 20000
+      minimum: -20000
+    offsetToDiscountDate:
+      type: number
+      maximum: 20000
+      minimum: -20000
+    offsetToFirstSegment:
+      type: number
+      maximum: 20000
+      minimum: -20000
+    scheduleStart:
+      type: number
+      maximum: 20000
+      minimum: -20000
+    scheduleEnd:
+      type: number
+      maximum: 20000
+      minimum: -20000
+    date:
+      type: string
+      format: date
+  required:
+   - pctOfTotalCost
+DrillingCost:
+  type: "object"
+  properties:
+    tangiblePct:
+      type: number
+      minimum: 1
+      maximum: 100
+    calculation:
+      type: string
+      enum:
+       - net
+       - gross
+    escalationModel:
+      type: string
+    depreciationModel:
+      type: string
+    dealTerms:
+      type: number
+      minimum: 0
+      maximum: 1000
+    fixedCost:
+      type: number
+      minimum: 0
+      maximum: 100000000
+    dollarPerFtOfVertical:
+      type: number
+      minimum: 0
+      maximum: 100000
+    dollarPerFtOfHorizontal:
+      type: number
+      minimum: 0
+      maximum: 100000
+    rows:
+      type: array
+      maxItems: 100
+      minItems: 1
+      items:
+        $ref: '#/definitions/DrillingOrCompletionCostRow'
+  required:
+    - tangiblePct
+    - calculation
+    - escalationModel
+    - depreciationModel
+    - fixedCost
+    - dealTerms
+    - dollarPerFtOfVertical
+    - dollarPerFtOfHorizontal
+    - rows
+
+DollarPerFtOfHorizontalRow:
+  type: "object"
+  properties:
+    propLl:
+      type: number
+      minimum: 0
+      maximum: 20000
+    unitCost:
+      type: number
+      minimum: 0
+      maximum: 100000
+  required:
+    - propLl
+    - unitCost
+CompletionCost:
+  type: "object"
+  properties:
+    tangiblePct:
+      type: number
+      minimum: 1
+      maximum: 100
+    calculation:
+      type: string
+      enum:
+       - net
+       - gross
+    escalationModel:
+      type: string
+    depreciationModel:
+      type: string
+    dealTerms:
+      type: number
+      minimum: 0
+      maximum: 1000
+    fixedCost:
+      type: number
+      minimum: 0
+      maximum: 100000000
+    dollarPerFtOfVertical:
+      type: number
+      minimum: 0
+      maximum: 100000
+    dollarPerFtOfHorizontal:
+      type: array
+      maxItems: 100
+      minItems: 1
+      items:
+        $ref: '#/definitions/DollarPerFtOfHorizontalRow'
+    rows:
+      type: array
+      maxItems: 100
+      minItems: 1
+      items:
+        $ref: '#/definitions/DrillingOrCompletionCostRow'
+  required:
+    - tangiblePct
+    - calculation
+    - escalationModel
+    - depreciationModel
+    - fixedCost
+    - dealTerms
+    - dollarPerFtOfVertical
+    - dollarPerFtOfHorizontal
+    - rows
+
+Capex:
+  type: object
+  properties:
+    id:
+      type: string
+      description: ID
+    copiedFrom:
+      type: string
+      description: Copied From
+    name:
+      type: string
+      description: Name
+    scenario:
+      type: string
+      description: Scenario ID
+    tags:
+      type: array
+      items:
+        type: string
+        description: Tag ID
+    unique:
+      type: boolean
+      description: Unique
+    well:
+      type: string
+      description: Well ID
+    createdAt:
+      type: string
+      format: date
+      description: Creation Date
+    updatedAt:
+      type: string
+      format: date
+      description: Updated At
+    createdBy:
+      type: string
+      description: Created By
+    lastUpdatedBy:
+      type: string
+      description: Last Updated By
+    otherCapex:
+      $ref: '#/definitions/OtherCapex'
+    drillingCost:
+      $ref: '#/definitions/DrillingCost'
+    completionCost:
+      $ref: '#/definitions/CompletionCost'
+  required:
+    - name
+    - unique
+    - otherCapex
+  example:
+    id: 5e272d39b78910dd2a1bd8fe
+    copiedFrom: 63b856e816f758cc5b0f1106
+    name: Test
+    scenario: 63b8571d70ed63f50bd6d63f
+    tags:
+      - 63b85737ff846cee7b1f6fdc
+    unique: true
+    well: 63b85759e1d7eb4e31579f51
+    createdAt: '2020-01-21T16:58:08.986Z'
+    updatedAt: '2020-01-21T17:58:08.986Z'
+    createdBy: 63b857cb68f3b96efc700998
+    lastUpdatedBy: 63b857cb68f3b96efc700998
+    otherCapex:
+      rows:
+      - category: pad
+        description: R Api Desc
+        tangible: 50
+        intangible: 10
+        capexExpense: capex
+        afterEconLimit: true
+        calculation: net
+        escalationModel: none
+        escalationStart:
+          applyToCriteria: 10
+        depreciationModel: none
+        dealTerms: 1
+        fromHeaders: offset_to_completion_start_date
+        refracDate: -200
+        distributionType: uniform
+        lowerBound: 78
+        upperBound: 65
+        seed: 1
+    drillingCost:
+      dollarPerFtOfVertical: 25
+      dollarPerFtOfHorizontal: 1
+      fixedCost: 88
+      tangiblePct: 26
+      calculation: net
+      escalationModel: 642f2f56670d176d8558ef7b
+      depreciationModel: 643c2c55ecea760012942188
+      dealTerms: 445
+      rows:
+      - pctOfTotalCost: 25
+        scheduleEnd: 10
+      - pctOfTotalCost: 25
+        scheduleEnd: 20
+      - pctOfTotalCost: 25
+        scheduleEnd: 30
+      - pctOfTotalCost: 25
+        scheduleEnd: 40
+    completionCost:
+      dollarPerFtOfVertical: 23
+      dollarPerFtOfHorizontal:
+      - propLl: 222
+        unitCost: 15
+      - propLl: 77
+        unitCost: 15
+      fixedCost: 225
+      tangiblePct: 80
+      calculation: net
+      escalationModel: 62fbcecfcab9dfc5b88427c4
+      depreciationModel: 643c83a9caa3710012596294
+      dealTerms: 3
+      rows:
+      - pctOfTotalCost: 50
+        offsetToAsOf: 10
+      - pctOfTotalCost: 50
+        offsetToAsOf: 100
+
+CapexList:
+  type: array
+  items:
+    $ref: '#/definitions/Capex'
+  maxItems: 200
+  example:
+    - id: 5e272d39b78910dd2a1bd8fe
+      copiedFrom: 63b856e816f758cc5b0f1106
+      name: Test
+      scenario: 63b8571d70ed63f50bd6d63f
+      tags:
+        - 63b85737ff846cee7b1f6fdc
+      unique: true
+      well: 63b85759e1d7eb4e31579f51
+      createdAt: '2020-01-21T16:58:08.986Z'
+      updatedAt: '2020-01-21T17:58:08.986Z'
+      createdBy: 63b857cb68f3b96efc700998
+      lastUpdatedBy: 63b857cb68f3b96efc700998
+      otherCapex:
+        rows:
+        - category: pad
+          description: R Api Desc
+          tangible: 50
+          intangible: 10
+          capexExpense: capex
+          afterEconLimit: true
+          calculation: net
+          escalationModel: none
+          escalationStart:
+            applyToCriteria: 10
+          depreciationModel: none
+          dealTerms: 1
+          fromHeaders: offset_to_completion_start_date
+          refracDate: -200
+          distributionType: uniform
+          lowerBound: 78
+          upperBound: 65
+          seed: 1
+      drillingCost:
+        dollarPerFtOfVertical: 25
+        dollarPerFtOfHorizontal: 1
+        fixedCost: 88
+        tangiblePct: 26
+        calculation: net
+        escalationModel: 642f2f56670d176d8558ef7b
+        depreciationModel: 643c2c55ecea760012942188
+        dealTerms: 445
+        rows:
+        - pctOfTotalCost: 25
+          scheduleEnd: 10
+        - pctOfTotalCost: 25
+          scheduleEnd: 20
+        - pctOfTotalCost: 25
+          scheduleEnd: 30
+        - pctOfTotalCost: 25
+          scheduleEnd: 40
+      completionCost:
+        dollarPerFtOfVertical: 23
+        dollarPerFtOfHorizontal:
+        - propLl: 222
+          unitCost: 15
+        - propLl: 77
+          unitCost: 15
+        fixedCost: 225
+        tangiblePct: 80
+        calculation: net
+        escalationModel: 62fbcecfcab9dfc5b88427c4
+        depreciationModel: 643c83a9caa3710012596294
+        dealTerms: 3
+        rows:
+        - pctOfTotalCost: 50
+          offsetToAsOf: 10
+        - pctOfTotalCost: 50
+          offsetToAsOf: 100
+
+CapexInput:
+  type: object
+  properties:
+    name:
+      type: string
+      description: Name
+    scenario:
+      type: string
+      description: Scenario ID
+    unique:
+      type: boolean
+      description: Unique
+    well:
+      type: string
+      description: Well ID
+    otherCapex:
+      $ref: '#/definitions/OtherCapex'
+    drillingCost:
+      $ref: '#/definitions/DrillingCost'
+    completionCost:
+      $ref: '#/definitions/CompletionCost'
+  required:
+    - name
+    - unique
+    - otherCapex
+  example:
+    name: Test
+    unique: true
+    otherCapex:
+      rows:
+      - category: pad
+        description: R Api Desc
+        tangible: 50
+        intangible: 10
+        capexExpense: capex
+        afterEconLimit: true
+        calculation: net
+        escalationModel: none
+        escalationStart:
+          applyToCriteria: 10
+        depreciationModel: none
+        dealTerms: 1
+        fromHeaders: offset_to_completion_start_date
+        refracDate: -200
+        distributionType: uniform
+        lowerBound: 78
+        upperBound: 65
+        seed: 1
+    drillingCost:
+      dollarPerFtOfVertical: 25
+      dollarPerFtOfHorizontal: 1
+      fixedCost: 88
+      tangiblePct: 26
+      calculation: net
+      escalationModel: 642f2f56670d176d8558ef7b
+      depreciationModel: 643c2c55ecea760012942188
+      dealTerms: 445
+      rows:
+      - pctOfTotalCost: 25
+        scheduleEnd: 10
+      - pctOfTotalCost: 25
+        scheduleEnd: 20
+      - pctOfTotalCost: 25
+        scheduleEnd: 30
+      - pctOfTotalCost: 25
+        scheduleEnd: 40
+    completionCost:
+      dollarPerFtOfVertical: 23
+      dollarPerFtOfHorizontal:
+      - propLl: 222
+        unitCost: 15
+      - propLl: 77
+        unitCost: 15
+      fixedCost: 225
+      tangiblePct: 80
+      calculation: net
+      escalationModel: 62fbcecfcab9dfc5b88427c4
+      depreciationModel: 643c83a9caa3710012596294
+      dealTerms: 3
+      rows:
+      - pctOfTotalCost: 50
+        offsetToAsOf: 10
+      - pctOfTotalCost: 50
+        offsetToAsOf: 100
+
+CapexInputList:
+  type: array
+  items:
+    $ref: '#/definitions/CapexInput'
+  maxItems: 500
+  example:
+    - name: Test
+      unique: true
+      otherCapex:
+        rows:
+        - category: pad
+          description: R Api Desc
+          tangible: 50
+          intangible: 10
+          capexExpense: capex
+          afterEconLimit: true
+          calculation: net
+          escalationModel: none
+          escalationStart:
+            applyToCriteria: 10
+          depreciationModel: none
+          dealTerms: 1
+          fromHeaders: offset_to_completion_start_date
+          refracDate: -200
+          distributionType: uniform
+          lowerBound: 78
+          upperBound: 65
+          seed: 1
+      drillingCost:
+        dollarPerFtOfVertical: 25
+        dollarPerFtOfHorizontal: 1
+        fixedCost: 88
+        tangiblePct: 26
+        calculation: net
+        escalationModel: 642f2f56670d176d8558ef7b
+        depreciationModel: 643c2c55ecea760012942188
+        dealTerms: 445
+        rows:
+        - pctOfTotalCost: 25
+          scheduleEnd: 10
+        - pctOfTotalCost: 25
+          scheduleEnd: 20
+        - pctOfTotalCost: 25
+          scheduleEnd: 30
+        - pctOfTotalCost: 25
+          scheduleEnd: 40
+      completionCost:
+        dollarPerFtOfVertical: 23
+        dollarPerFtOfHorizontal:
+        - propLl: 222
+          unitCost: 15
+        - propLl: 77
+          unitCost: 15
+        fixedCost: 225
+        tangiblePct: 80
+        calculation: net
+        escalationModel: 62fbcecfcab9dfc5b88427c4
+        depreciationModel: 643c83a9caa3710012596294
+        dealTerms: 3
+        rows:
+        - pctOfTotalCost: 50
+          offsetToAsOf: 10
+        - pctOfTotalCost: 50
+          offsetToAsOf: 100
