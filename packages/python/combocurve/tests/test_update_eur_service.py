@@ -6,6 +6,7 @@ import pytest
 import mongomock
 import os
 from bson import ObjectId
+import importlib.resources
 from combocurve.services.forecast.deterministic_forecast_service import DeterministicForecastService
 from combocurve.services.forecast.forecast_service import ForecastService
 from combocurve.services.forecast.update_eur_service import UpdateEurService
@@ -52,8 +53,9 @@ def _create_db():
     file_dir = os.path.dirname(os.path.realpath('__file__'))
     for data_freq in ('daily', 'monthly'):
         production_collection = mongomock.MongoClient().db.collection
-        data_path = os.path.join(file_dir, f'combocurve/services/forecast/db_test_data/{data_freq}_production.json')
-        with open(data_path, 'r') as f:
+        # data_path = os.path.join(file_dir, f'combocurve/services/forecast/db_test_data/{data_freq}_production.json')
+        # with open(data_path, 'r') as f:
+        with importlib.resources.open_text('combocurve.services.forecast.db_test_data', f"{data_freq}_production.json") as f:
             prod_data = json.load(f)
         for doc in prod_data:
             doc['_id'] = ObjectId(doc['_id'])
@@ -63,8 +65,8 @@ def _create_db():
     deterministic_forecast_collection = mongomock.MongoClient().db.collection
     forecast_collection = mongomock.MongoClient().db.collection
     for forecast_kind in ('daily', 'monthly', 'probabilistic'):
-        data_path = os.path.join(file_dir, f'combocurve/services/forecast/db_test_data/{forecast_kind}_forecast.json')
-        with open(data_path, 'r') as f:
+        # data_path = os.path.join(file_dir, f'combocurve/services/forecast/db_test_data/{forecast_kind}_forecast.json')
+        with importlib.resources.open_text('combocurve.services.forecast.db_test_data', f"{forecast_kind}_forecast.json") as f:
             forecast_data = json.load(f)
         for doc in forecast_data:
             doc['_id'] = ObjectId(doc['_id'])

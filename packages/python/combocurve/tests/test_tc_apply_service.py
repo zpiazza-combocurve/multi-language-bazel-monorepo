@@ -5,6 +5,7 @@ from math import isclose
 from datetime import datetime
 import json
 import mongomock
+import importlib.resources
 import os
 from bson import ObjectId
 from combocurve.services.type_curve.tc_apply_service import _get_segments_list, TypeCurveApplyService
@@ -18,9 +19,12 @@ def _create_db():
     file_dir = os.path.dirname(os.path.realpath('__file__'))
 
     wells_collection = mongomock.MongoClient().db.collection
-    data_path = os.path.join(file_dir, 'combocurve/services/forecast/db_test_data/wells.json')
+    data_path = os.path.join(file_dir, 'packages/python/combocurve/services/forecast/db_test_data/wells.json')
 
-    with open(data_path, 'r') as f:
+    # raise Exception(f"CURRENT DIR: {os.path.abspath(__file__)}")
+
+    # with open(data_path, 'r') as f:
+    with importlib.resources.open_text("combocurve.services.forecast.db_test_data", "wells.json") as f:
         prod_data = json.load(f)
     for doc in prod_data:
         doc['_id'] = ObjectId(doc['_id'])

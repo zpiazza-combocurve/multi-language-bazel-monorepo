@@ -3,6 +3,7 @@ import pytest
 import numpy as np
 import pandas as pd
 from bson.objectid import ObjectId
+import importlib.resources
 
 from combocurve.science.scheduling.utils import DEFAULT_CHUNK_SIZE, create_chunks, parse_schedule
 from combocurve.science.scheduling.scheduling_data_models import OutputModel
@@ -199,9 +200,7 @@ def test_create_chunks(list_, chunk_size, results):
 
 @pytest.mark.unittest
 def test_parse_schedule():
-    file_dir = os.path.dirname(os.path.realpath('__file__'))
-    data_path = os.path.join(file_dir, 'combocurve/science/scheduling/schedule_outputs.csv')
-    with open(data_path, 'r', encoding='utf-8-sig') as f:
+    with importlib.resources.open_text("combocurve.science.scheduling", "schedule_outputs.csv", "utf-8-sig") as f:
         schedule_ouput = pd.read_csv(f)
     schedule_ouput['job'] = list(map(ObjectId, schedule_ouput['job']))
     for well, parsed_schedule in parse_schedule(schedule_ouput, resource_names, step_names):
