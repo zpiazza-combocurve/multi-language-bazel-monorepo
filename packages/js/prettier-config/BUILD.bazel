@@ -1,0 +1,14 @@
+load("@aspect_rules_js//npm:defs.bzl", "npm_package")
+
+
+npm_package(
+    name = "prettier-config",
+    srcs = [
+        "index.js",
+        "single-quotes.js",
+        # package.json needed here so that the "typings" field appears in the
+        # downstream typecheck and so "main" field is seen at runtime
+        "package.json",
+    ],
+    visibility = ["//visibility:public"],
+)
